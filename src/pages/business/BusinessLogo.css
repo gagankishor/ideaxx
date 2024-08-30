@@ -1,0 +1,143 @@
+.container {
+    display: flex;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  #heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .brand-name {
+    font-size: 1.5rem;
+    color: #555;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo-card {
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    border: 2px dashed #ddd;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5%;
+  }
+  
+  .brand-logo-font {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  .brand-logo-font .card {
+    width: 100%;
+    max-width: 300px; /* Optional: Set a max-width for better layout control */
+    height: auto;
+    background-color: var(--bg-highlight);
+    border-radius: 15px;
+    display: block;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: transform 0.4s ease, background-color 0.4s ease;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  }
+  .brand-name {
+    margin: 0; /* Remove default margin from h2 */
+    text-align: center; /* Center the text within the h2 element */
+  }
+  .based-on-card {
+    width: 100%;
+    /* max-width: 300px;  */
+    height: auto;
+    background-color: var(--bg-highlight);
+    border-radius: 15px;
+    display: block;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: transform 0.4s ease, background-color 0.4s ease;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  }
+  .drop-here {
+    color: #888;
+    text-align: center;
+  }
+  
+  .logo-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0px;
+  }
+  
+  .uploaded-logo {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+  }
+  
+  .brand-guidelines {
+    margin-top: 2rem;
+  }
+  
+  .brand-guidelines p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  #section-heading {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .platform-slider {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .platform-card {
+    min-width: 150px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .platform-logo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .platform-name {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #333;
+  }
+  .logo-upload-main{
+    display: flex;
+
+  }
+  .logo-upload-main .logoUploadForm{
+    display: block;
+    padding: 20px;
+
+  }
+  
+  

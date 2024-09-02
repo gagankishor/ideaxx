@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import { RestAPI } from "../../config/Api";
 import { userToken } from "../../config/Auth";
+import { EnterpriseLaunch } from "../../components/EnterpriseLaunch";
 
 export default function IdeaFind() {
   const loggedToken = userToken();
@@ -174,6 +175,7 @@ export default function IdeaFind() {
               })}
             </div>
           </form>
+        {/* <EnterpriseLaunch/>  */}
         </div>
       </div>
     </>

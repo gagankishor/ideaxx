@@ -3,6 +3,7 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { RestAPI } from '../../../config/Api';
 import { isAuthenticated } from '../../../config/Auth';
+import Swal from 'sweetalert2';
 // import jwtDecode from 'jwt-decode';
 const LoginWithGoogle = ({ handleLogin }) => {
   const [user, setUser] = useState(null);
@@ -31,12 +32,24 @@ const LoginWithGoogle = ({ handleLogin }) => {
         // Handle success, e.g., store the token and user information
       } catch (error) {
         console.error('Google login failed:', error);
-        alert('Google login failed');
+        // alert('Google login failed');
+        Swal.fire({
+          title: "error",
+          text: "Google login failed",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       }
   };
 
   const handleFailure = (error) => {
     alert(error)
+    Swal.fire({
+      title: "error",
+      text: error,
+      icon: "error",
+      confirmButtonText: "OK",
+    });
     console.log(error)
     console.error('Login failed:', error);
     // Handle login failure here, e.g., display an error message

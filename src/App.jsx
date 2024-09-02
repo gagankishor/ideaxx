@@ -21,6 +21,7 @@ import { MainNavBar } from "./pages/Home/components/MainNavBar";
 import { ToastContainer } from 'react-toastify';
 import IdeaEdit from "./pages/idea/IdeaEdit";
 import IdeaPlanViewer from "./pages/idea/ideaPlanView";
+import PlanDetails from "./pages/Plans/PlanDetails";
 
 export default function App() {
   const ref = useRef(null);
@@ -49,6 +50,13 @@ export default function App() {
           path="/"
           element={
               <Home />
+          }
+        />
+        <Route
+          index
+          path="/plan-details"
+          element={
+              <PlanDetails />
           }
         />
         <Route

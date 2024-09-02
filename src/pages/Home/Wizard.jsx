@@ -8,7 +8,10 @@ import axios from "axios";
 import LoginWithGoogle from "./components/LoginWithGoogle";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
-
+import useAxiosWithAuth from "../../config/useAxiosWithAuth";
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
+import "./Wizard.css";
 const steps = [
   {
     title: "It all starts with an idea",
@@ -16,8 +19,8 @@ const steps = [
       "Here we want to know about your idea, whether it has already started or you are still thinking about it.",
     choices: [
       { id: "i1a", label: "It is still an idea", value: "1" },
-      { id: "i1b", label: "It has already started", value: "2" },
-      { id: "i1c", label: "Other", value: "3" },
+      { id: "i1b", label: "I made a plan for it", value: "3" },
+      { id: "i1c", label: "I already start it", value: "5" },
     ],
   },
   {
@@ -25,10 +28,10 @@ const steps = [
     description:
       "What is your current job type so we can find how much time do you have to devote to your idea",
     choices: [
-      { id: "i2a", label: "Full-time job", value: "1" },
-      { id: "i2b", label: "Part time", value: "2" },
-      { id: "i2c", label: "Free lance", value: "3" },
-      { id: "i2d", label: "Self employed", value: "4" },
+      { id: "i2a", label: "Full-time job", value: "2" },
+      { id: "i2b", label: "Part time", value: "3" },
+      { id: "i2c", label: "Freelance", value: "4" },
+      { id: "i2d", label: "Self employed", value: "5" },
     ],
   },
   {
@@ -56,7 +59,7 @@ const steps = [
     description:
       "We want to know if you have any connection between your current job and your project",
     choices: [
-      { id: "i6a", label: "Yes", value: "1" },
+      { id: "i6a", label: "Yes", value: "5" },
       { id: "i6b", label: "No", value: "2" },
     ],
   },
@@ -68,8 +71,8 @@ const steps = [
       { id: "i4a", label: "Less than 2,000$", value: "1" },
       { id: "i4b", label: "2,000$ - 10,000$", value: "2" },
       { id: "i4c", label: "10,000$ - 50,000$", value: "3" },
-      { id: "i4d", label: "50,000$ - 100,000$", value: "4" },
-      { id: "i4e", label: "More than 100,000$", value: "5" },
+      { id: "i4d", label: "50,000$ - 1,00,000$", value: "4" },
+      { id: "i4e", label: "More than 1,00,000$", value: "5" },
     ],
   },
   {
@@ -77,10 +80,10 @@ const steps = [
     description:
       "If you ever worked in any job or business before, tell us how many years of experience do you have.",
     choices: [
-      { id: "i5a", label: "No experience", value: "1" },
-      { id: "i5b", label: "1 - 3 Years", value: "2" },
-      { id: "i5c", label: "3 - 5 Years", value: "3" },
-      { id: "i5d", label: "More than 5 years", value: "4" },
+      { id: "i5a", label: "No experience", value: "0" },
+      { id: "i5b", label: "1 - 3 Years", value: "3" },
+      { id: "i5c", label: "3 - 5 Years", value: "4" },
+      { id: "i5d", label: "More than 5 years", value: "5" },
     ],
   },
 
@@ -89,8 +92,18 @@ const steps = [
     description:
       "Where are you willing to present your idea or do your project?",
     choices: [
-      { id: "i7a", label: "India", value: "5" },
-      { id: "i7b", label: "Us", value: "5 " },
+      { id: "i7a", label: "INDIA", value: "5" },
+      { id: "i7b", label: "USA", value: "5 " },
+      { id: "i7c", label: "CHINA", value: "5 " },
+      { id: "i7d", label: "JAPAN", value: "5 " },
+      { id: "i7e", label: "GERMANY", value: "5 " },
+      { id: "i7f", label: "UK", value: "5 " },
+      { id: "i7g", label: "FRANCE", value: "5 " },
+      { id: "i7h", label: "ITALY", value: "5 " },
+      { id: "i7i", label: "BRAZIL", value: "5 " },
+      { id: "i7j", label: "CANADA", value: "5 " },
+      { id: "i7k", label: "RUSSIA", value: "5 " },
+      { id: "i7l", label: "SWITZERLAND", value: "5 " },
     ],
 
     options: [{}],
@@ -103,7 +116,7 @@ const steps = [
     options: [{}],
   },
   {
-    title: " Email Verify",
+    title: " Email Address",
     description: "Confirm your emailAddress on ideax",
   },
 ];
@@ -117,7 +130,11 @@ export default function Wizard() {
   const [loading, setLoading] = useState(false);
 
   const [status, setStatus] = useState(isAuthenticated());
+  const [emailLoginModalOpen, setEmailLoginModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const isAuth = isAuthenticated();
+  const axiosInstance = useAxiosWithAuth();
 
   let n = step != 8 ? (isAuth ? 7 : 8) : 8;
   const isStepValid = () => {
@@ -159,7 +176,13 @@ export default function Wizard() {
   const handleGoogleLogin = (status) => {
     setStatus(status);
     // alert("login successful")
-    toast.success("Login successful");
+    Swal.fire({
+      title: "Success",
+      text: "Login successful",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+    // toast.success("Login successful");
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -180,13 +203,12 @@ export default function Wizard() {
     const endpoint = `${RestAPI}/wizard`;
 
     try {
-      const response = await axios({
+      const response = await axiosInstance({
         method: "post",
         url: endpoint,
         data: payloadFormData,
         headers: {
           Accept: "application/vnd.api+json",
-          Authorization: `Bearer ${loggedToken}`,
           "Content-Type": "multipart/form-data",
         },
       });
@@ -194,150 +216,213 @@ export default function Wizard() {
 
       setResult(data);
       setLoading(false);
-      toast.success(response.data.massage);
+      console.log(response.data);
+      Swal.fire({
+        title: "Success",
+        text: response.data.message,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+      // toast.success(response.data.massage);
     } catch (error) {
       console.error("Error:", error);
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while processing your request",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
       setLoading(false);
+    }
+  };
+  const openEmailLoginModal = () => {
+    setEmailLoginModalOpen(true);
+  };
+
+  const closeEmailLoginModal = () => {
+    setEmailLoginModalOpen(false);
+  };
+
+  const handleEmailLogin = async () => {
+    try {
+      const response = await axios.post(`${RestAPI}/auth/login`, {
+        email,
+        password,
+      });
+      if (response.data) {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userName", response.data?.userName);
+        handleGoogleLogin(true); // Use this to set status
+        closeEmailLoginModal();
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: "An error occurred while logging in.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        // toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      // toast.error("An error occurred while logging in.");
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while logging in.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 
   return (
     <div className="wizard">
       <div className="container">
-        {loading ? (
-          <div className="spinner"></div>
-        ) : (
-          <div className="box">
-            <form onSubmit={handleSubmit}>
-              {step === 1 ? (
-                <motion.img
-                  src={`/wizard/${step + 1}.jpg`}
-                  alt={`Step ${step + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
-                  className="wizard-image step-1"
-                />
-              ) : step === 5 ? (
-                <motion.img
-                  src={`/wizard/${step + 1}.jpg`}
-                  alt={`Step ${step + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
-                  className="wizard-image step-5"
-                />
-              ) : step === 4 ? (
-                <motion.img
-                  src={`/wizard/${step + 1}.jpg`}
-                  alt={`Step ${step + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
-                  className="wizard-image step-4"
-                />
-              ) : step === 3 ? (
-                <motion.img
-                  src={`/wizard/${step + 1}.jpg`}
-                  alt={`Step ${step + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
-                  className="wizard-image step-3"
-                />
-              ) : (
-                <motion.img
-                  src={`/wizard/${step + 1}.jpg`}
-                  alt={`Step ${step + 1}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
-                  className="wizard-image step-1" 
-                />
-              )}
+        <div className="box">
+          <form onSubmit={handleSubmit}>
+            {step === 1 ? (
+              <motion.img
+                src={`/wizard/${step + 1}.webp`}
+                alt={`Step ${step + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="wizard-image step-1"
+              />
+            ) : step === 5 ? (
+              <motion.img
+                src={`/wizard/${step + 1}.webp`}
+                alt={`Step ${step + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="wizard-image step-5"
+              />
+            ) : step === 4 ? (
+              <motion.img
+                src={`/wizard/${step + 1}.webp`}
+                alt={`Step ${step + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="wizard-image step-4"
+              />
+            ) : step === 3 ? (
+              <motion.img
+                src={`/wizard/${step + 1}.webp`}
+                alt={`Step ${step + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="wizard-image step-3"
+              />
+            ) : (
+              <motion.img
+                src={`/wizard/${step + 1}.webp`}
+                alt={`Step ${step + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="wizard-image step-1"
+              />
+            )}
 
-              <div className="content">
-                <div className="left">
-                  <div className="text">
-                    <h2>{steps[step].title}</h2>
-                    <p>{steps[step].description}</p>
-                  </div>
-                  <div className="choices">
-                    {step === 8 ? (
-                      <div className="final-step">
-                        <h3>Email Verification</h3>
-                        <p>Confirm your email address on Google.</p>
-                        <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
-                        <p>Start your dream business</p>
-                      </div>
-                    ) : step === 6 ? (
-                      <select
-                        onChange={(e) => handleChoiceChange(e.target.value)}
-                      >
-                        {" "}
-                        <option value="">Select Country</option>
-                        {steps[step].choices.map((option) => (
-                          <option key={option.id} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                        {additionalOptions.map((option, index) => (
-                          <option key={index} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </select>
-                    ) : (
-                      steps[step].choices.map((choice) => (
-                        <div className="custom-check" key={choice.id}>
-                          {step === 7 ? (
-                            <>
-                              <textarea
-                                placeholder="Provide detailed information or notes here..."
-                                value={formData.description || ""}
-                                onChange={(e) =>
-                                  setFormData({
-                                    ...formData,
-                                    description: e.target.value,
-                                  })
-                                }
-                                className="description-box"
-                                aria-label="Description box"
-                                rows="5"
-                                maxLength="500"
-                              />
-                              <small className="description-info">
-                                You can enter up to 500 characters.
-                              </small>
-                            </>
-                          ) : (
-                            <>
-                              <input
-                                id={choice.id}
-                                type="radio"
-                                value={choice.value}
-                                checked={
-                                  formData[`step${step + 1}`] === choice.value
-                                }
-                                onChange={() =>
-                                  handleChoiceChange(choice.value)
-                                }
-                              />
-                              <label htmlFor={choice.id}>{choice.label}</label>
-                            </>
-                          )}
-                        </div>
-                      ))
-                    )}
-                  </div>
+            <div className="content">
+              <div className="left">
+                <div className="text">
+                  <h2>{steps[step].title}</h2>
+                  <p>{steps[step].description}</p>
                 </div>
-                <div className="right">
-                  {step < n && (
-                    <button
-                      disabled={isNextDisabled}
-                      type="button"
-                      onClick={nextStep}
-                      className="btn"
+                <div className="choices">
+                  {step === 8 ? (
+                    <div className="final-step">
+                      <h3>Email Verification</h3>
+                      <p>Confirm your email address on Google.</p>
+                      <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
+                      <button
+                        type="button"
+                        className="btn"
+                        onClick={openEmailLoginModal}
+                      >
+                        Login with Email
+                      </button>
+                      <button className="btn">
+                        <Link to="/login-linkedin" className="register-link">
+                          Login with LinkedIn
+                        </Link>
+                      </button>
+                    </div>
+                  ) : step === 6 ? (
+                    <select
+                      onChange={(e) => handleChoiceChange(e.target.value)}
                     >
-                      Next <IoIosArrowForward />
-                    </button>
+                      {" "}
+                      <option value="">Select Country</option>
+                      {steps[step].choices.map((option) => (
+                        <option key={option.id} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                      {additionalOptions.map((option, index) => (
+                        <option key={index} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    steps[step].choices.map((choice) => (
+                      <div className="custom-check" key={choice.id}>
+                        {step === 7 ? (
+                          <div>
+                            <textarea
+                              placeholder="Provide detailed information or notes here..."
+                              value={formData.description || ""}
+                              onChange={(e) =>
+                                setFormData({
+                                  ...formData,
+                                  description: e.target.value,
+                                })
+                              }
+                              className="description-box"
+                              aria-label="Description box"
+                              rows="5"
+                              maxLength="500"
+                            />
+                            <small className="description-info">
+                              You can enter up to 500 characters.
+                            </small>
+                          </div>
+                        ) : (
+                          <>
+                            <input
+                              id={choice.id}
+                              type="radio"
+                              value={choice.value}
+                              checked={
+                                formData[`step${step + 1}`] === choice.value
+                              }
+                              onChange={() => handleChoiceChange(choice.value)}
+                            />
+                            <label htmlFor={choice.id}>{choice.label}</label>
+                          </>
+                        )}
+                      </div>
+                    ))
                   )}
-                  {step === n && (
+                </div>
+              </div>
+              <div className="right">
+                {step < n && (
+                  <button
+                    disabled={isNextDisabled}
+                    type="button"
+                    onClick={nextStep}
+                    className="btn"
+                  >
+                    Next <IoIosArrowForward />
+                  </button>
+                )}
+                {loading ? (
+                  <div className="spinner-parent">
+                    <div className="spinner"></div>
+                  </div>
+                ) : (
+                  step === n && (
                     <button
                       type="submit"
                       className="btn generate"
@@ -345,22 +430,69 @@ export default function Wizard() {
                     >
                       Generate <BsStars />
                     </button>
-                  )}
-                  {step > 0 && (
-                    <button
-                      type="button"
-                      onClick={prevStep}
-                      className="btn prev"
-                    >
-                      <IoIosArrowBack /> Back
-                    </button>
-                  )}
-                </div>
+                  )
+                )}
+                {step > 0 && (
+                  <button type="button" onClick={prevStep} className="btn prev">
+                    <IoIosArrowBack /> Back
+                  </button>
+                )}
               </div>
-            </form>
-          </div>
-        )}
+            </div>
+          </form>
+        </div>
       </div>
+      <Modal
+        isOpen={emailLoginModalOpen}
+        onRequestClose={closeEmailLoginModal}
+        contentLabel="Email Login"
+        ariaHideApp={false}
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <div className="modal-content">
+          <h2 className="modal-title">Login with Email</h2>
+          <form onSubmit={handleEmailLogin} className="modal-form">
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email:
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="form-input"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password" className="form-label">
+                Password:
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="form-input"
+              />
+            </div>
+            <div className="button-contener">
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+              <button
+                onClick={closeEmailLoginModal}
+                className="btn btn-secondary"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+        </div>
+      </Modal>
     </div>
   );
 }

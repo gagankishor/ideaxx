@@ -54,7 +54,7 @@ export default function Login() {
         email,
         password,
       });
-      console.log(response.data)
+      // console.log(response.data)
       // alert(response.data)
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("userName", response.data?.userName);

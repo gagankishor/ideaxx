@@ -40,9 +40,9 @@
     align-items: center;
   }
   .brand-logo-font .card {
-    width: 100%;
-    max-width: 300px; /* Optional: Set a max-width for better layout control */
-    height: auto;
+    /* width: 100%;
+    max-width: 300px;
+    height: auto; */
     background-color: var(--bg-highlight);
     border-radius: 15px;
     display: block;
@@ -139,5 +139,34 @@
     padding: 20px;
 
   }
+  .immage-type-card-contaner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .immage-type-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px 10px ;
+    background-color:#faf8f8;
+  }
+  .remove-logo-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
   
+  .remove-logo-button:hover {
+    background-color: darkred;
+  }
   
+  .logo-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

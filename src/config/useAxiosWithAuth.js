@@ -9,7 +9,6 @@ const useAxiosWithAuth = () => {
     baseURL: RestAPI,
   });
 
-  // Request interceptor to add the token to headers
   instance.interceptors.request.use(
     (config) => {
       const token = localStorage.getItem('token');
@@ -23,16 +22,14 @@ const useAxiosWithAuth = () => {
     }
   );
 
-  // Response interceptor to handle token expiration
   instance.interceptors.response.use(
     (response) => {
       return response;
     },
     (error) => {
       if (error.response && error.response.status === 401) {
-        // Token expired or user not authorized
-        localStorage.removeItem('token'); // Clear the token
-        navigate('/login'); // Redirect to login page
+        localStorage.removeItem('token'); 
+        navigate('/login'); 
       }
       return Promise.reject(error);
     }

@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom';
 import { RxHamburgerMenu, RxMoon } from 'react-icons/rx';
 import { TfiClose } from 'react-icons/tfi';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ThemeToggle } from './Theme';
 import { LogoutButton } from '../../auth/Logout';
+import { isAuthenticated } from '../../../config/Auth';
+import { AuthContext } from '../../../config/AuthContext';
 
 export const MainNavBar = () => {
   // menu state
   const [toggle, setToggle] = useState(false);
   const isLoggedIn = !!localStorage.getItem('token');
+  const { isAuthenticated, logout } = useContext(AuthContext);
 
   // toggle menu on mobiles
   const showMenu = () => {
     toggle ? setToggle(false) : setToggle(true);
   };
-
+  
   return (
     <>
       <nav>
@@ -44,11 +47,7 @@ export const MainNavBar = () => {
             </ul>
 
             <ul className="main-menu">
-            {!isLoggedIn ? (
-                <li>
-                  <Link to="/login">Log in</Link>
-                </li>
-              ) : null}
+            
               <li>
                 <Link to="/mainWizard" className="btn">
                   Test Idea
@@ -58,6 +57,15 @@ export const MainNavBar = () => {
                 <ThemeToggle />
               </li>
               
+              {isAuthenticated ? (
+                <li style={{ marginLeft: '15px', cursor: 'pointer' }} onClick={logout}>
+                  Logout
+                </li>
+              ) : (
+                <li>
+                  <Link to="/login">Log in</Link>
+                </li>
+              )}
               
               
             </ul>

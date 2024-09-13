@@ -3,7 +3,7 @@ import { FaEdit, FaFile } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export const DataTable = ({ data, note }) => {
-  console.log(data)
+  // console.log(data)
   return (
     <>
       {note && <div className="data-note">{note}</div>}

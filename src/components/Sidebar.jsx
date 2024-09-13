@@ -9,12 +9,15 @@ import {
   FaCoins,
   FaCompass,
   FaConfluence,
+  FaDesktop,
   FaEye,
   FaFolder,
   FaFont,
   FaHandsHelping,
+  FaHome,
   FaLayerGroup,
   FaLightbulb,
+  FaNeuter,
   FaPalette,
   FaPallet,
   FaPeopleCarry,
@@ -25,13 +28,19 @@ import {
   FaTextHeight,
   FaTools,
   FaUser,
+  FaVoicemail,
 } from "react-icons/fa";
+import { FaSchoolCircleXmark, FaSignsPost } from "react-icons/fa6";
+import { TbSeo, TbSocial } from "react-icons/tb";
+import { SiAmazonsimpleemailservice, SiBillboard, SiMarketo } from "react-icons/si";
+import { MdOutlineBusiness } from "react-icons/md";
+import { RiCalendarEventLine, RiPresentationLine } from "react-icons/ri";
 
 export const SideBar = () => {
   const location = useLocation();
   const isIdeaRoute = location.pathname.includes("/idea");
   const isBusinessRoute = location.pathname.includes("/business-identity");
-
+  const isMarketingRoute = location.pathname.includes("/marketing");
   return (
     <div className="sidebar">
       <div className="part-one">
@@ -61,7 +70,10 @@ export const SideBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="#">
+            <Link 
+              to="/marketing/social-media/home"
+              className={isMarketingRoute ? "active" : undefined}
+            >
               <FaCompass />
               Marketing
             </Link>
@@ -237,6 +249,141 @@ export const SideBar = () => {
                   Slogan
                 </Link>
               </li>
+            </>
+          )}
+          {isMarketingRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    location.pathname.includes("/marketing/social-media") ? "active" : undefined
+                  }
+                  to="/marketing/social-media/home"
+                >
+                  <TbSocial />
+                  Social Media
+
+                </Link>
+                <ul style={{marginLeft:'10px'}}>
+                  <li>
+                    <Link 
+                      className={
+                        location.pathname.includes("/marketing/social-media/home") ? "active" : undefined
+                      }
+                      to="/marketing/social-media/home"
+                    >
+                    <FaHome/>
+                     Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                    className={
+                      location.pathname.includes("/marketing/social-media/my-design") ? "active" : undefined
+                    }
+                    to="/marketing/social-media/my-design"
+                    >
+                    <FaDesktop/>
+                    My Designs
+
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                    className={
+                      location.pathname.includes("/marketing/social-media/new-design") ? "active" : undefined
+                    }
+                    to="/marketing/social-media/new-design"
+                    >
+                    <FaSignsPost/>
+                    New Post Design
+
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link
+                  className={
+                    location.pathname === "/business-identity/logo" ? "active" : undefined
+                  }
+                  // to="/business-identity/logo"
+                  to="#"
+                >
+                  <SiAmazonsimpleemailservice  />
+                  Email Marketing
+
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    location.pathname === "/business-identity/font" ? "active" : undefined
+                  }
+                  // to="/business-identity/font"
+                  to="#"
+
+                >
+                  <TbSeo  />
+                  SEO
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    location.pathname === "/business-identity/color" ? "active" : undefined
+                  }
+                  // to="/business-identity/color"
+                  to="#"
+
+                >
+                  <SiMarketo  />
+                  Marketing Material
+
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    location.pathname === "/business-identity/slogan" ? "active" : undefined
+                  }
+                  // to="/business-identity/slogan"
+                  to="#"
+
+                >
+<RiCalendarEventLine />
+Marketing Events
+
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    location.pathname === "/business-identity/slogan" ? "active" : undefined
+                  }
+                  // to="/business-identity/slogan"
+                  to="#"
+
+                >
+                  <SiBillboard/>
+                  Billboards
+
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    location.pathname === "/business-identity/slogan" ? "active" : undefined
+                  }
+                  // to="/business-identity/slogan"
+                  to="#"
+
+                >
+<RiPresentationLine />
+Online Campaigns
+                </Link>
+              </li>
+              
             </>
           )}
         </ul>

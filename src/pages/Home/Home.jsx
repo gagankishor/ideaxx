@@ -4,6 +4,7 @@ import TestCard from './components/landing/TestCard';
 import More from './components/landing/More';
 import { TrustpilotWidget } from './components/landing/Trustpilot';
 import { Hero } from './components/landing/Hero';
+import Validation from './components/landing/validation';
 
 export default function Home() {
   return (
@@ -11,7 +12,10 @@ export default function Home() {
       <Helmet>
         <title>ideax | Welcome to ideax platform</title>
       </Helmet>
+
       <Hero />
+      <div className='home-main-contaner' >
+      <Validation/>
       <Features />
       <TestCard text="If you're uncertain about an idea brewing in your mind, this is the right place to test it." />
       <More />
@@ -24,6 +28,7 @@ export default function Home() {
       </div>
       <TestCard text="Begin exploration – Dive into your idea's potential with just one click!" />
       <TrustpilotWidget />
+      </div>
     </>
   );
 }

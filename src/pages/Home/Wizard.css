@@ -12,7 +12,6 @@
     outline: none;
     font-family: var(--font-family);
   }
-  
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -22,41 +21,41 @@
     background: rgba(0, 0, 0, 0.5);
   }
   
-  .modal-content {
+  .modal .modal-content {
     text-align: center;
   }
   
-  .modal-title {
+  .modal .modal-content .modal-title {
     margin-bottom: 20px;
     font-size: 1.6rem;
     color: var(--text-color);
   }
   
-  .modal-form {
+  .modal .modal-content .modal-form {
     display: flex;
     flex-direction: column;
   }
   
-  .form-group {
+  .modal-form .form-group {
     margin-bottom: 15px;
     text-align: left;
   }
   
-  .form-label {
+  .modal-form .form-group .form-label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--text-color);
   }
   
-  .form-input {
+  .modal-form .form-group .form-input {
     width: 100%;
     padding: 10px;
     border-radius: var(--radius);
     border: 1px solid var(--bg-second);
   }
   
-  .btn {
+  .button-contener .btn {
     padding: 12px 25px;
     border-radius: var(--radius);
     border: none;
@@ -65,24 +64,30 @@
     margin-top: 15px;
   }
   
-  .btn-primary {
+  .button-contener .btn-primary {
     background-color: var(--main-color);
     color: var(--white);
   }
   
-  .btn-secondary {
+  .button-contener.btn-secondary {
     background-color: var(--bg-dark);
     color: var(--white);
   }
   
-  .btn-primary:hover,
-  .btn-secondary:hover {
+  .button-contener.btn-primary:hover,
+  .button-contener.btn-secondary:hover {
     opacity: 0.8;
   }
   
-  .button-contener {
+  .modal-form .button-contener {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  
+  .login-methods-buttons {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .login-methods-buttons .btn {
+    margin-top: 10px;
+  }

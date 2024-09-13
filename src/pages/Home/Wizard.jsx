@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { BsStars } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -9,9 +9,11 @@ import LoginWithGoogle from "./components/LoginWithGoogle";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useAxiosWithAuth from "../../config/useAxiosWithAuth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import "./Wizard.css";
+import LinkedInLogin from "./components/LinkedInLogin";
+import { AuthContext } from "../../config/AuthContext";
 const steps = [
   {
     title: "It all starts with an idea",
@@ -28,6 +30,7 @@ const steps = [
     description:
       "What is your current job type so we can find how much time do you have to devote to your idea",
     choices: [
+      { id: "i2e", label: "Do nothing", value: "1" },
       { id: "i2a", label: "Full-time job", value: "2" },
       { id: "i2b", label: "Part time", value: "3" },
       { id: "i2c", label: "Freelance", value: "4" },
@@ -128,15 +131,19 @@ export default function Wizard() {
   const [result, setResult] = useState("");
   const [additionalOptions, setAdditionalOptions] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loadingmailLogin, setLoadingmailLogin] = useState(false);
+  const { isAuthenticated, logout } = useContext(AuthContext);
 
-  const [status, setStatus] = useState(isAuthenticated());
+  const [status, setStatus] = useState(isAuthenticated);
   const [emailLoginModalOpen, setEmailLoginModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const isAuth = isAuthenticated();
   const axiosInstance = useAxiosWithAuth();
+  const navigate = useNavigate();
 
-  let n = step != 8 ? (isAuth ? 7 : 8) : 8;
+  const { login } = useContext(AuthContext);
+  // console.log('AuthContext Value:', contextValue);
+  let n = step != 8 ? (isAuthenticated ? 7 : 8) : 8;
   const isStepValid = () => {
     const currentStepData = formData[`step${step + 1}`];
     // Validate if a selection is made for the current step
@@ -151,9 +158,13 @@ export default function Wizard() {
       setStep((step) => step + 1);
     } else {
       // toast.error("Please make a selection before proceeding.")
+      let textmassge = "Please make a selection before proceeding."
+      if(step === 7 ){
+        textmassge = "Please Describe your idea"
+      }
       Swal.fire({
         title: "Info",
-        text: "Please make a selection before proceeding.",
+        text: textmassge,
         icon: "info",
         confirmButtonText: "OK",
       });
@@ -186,53 +197,73 @@ export default function Wizard() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true);
-
-    const payloadFormData = new FormData();
-    payloadFormData.append("phase1", formData.step1 || "");
-    payloadFormData.append("phase2", formData.step2 || "");
-    payloadFormData.append("phase3", formData.step3 || "");
-    payloadFormData.append("phase4", formData.step4 || "");
-    payloadFormData.append("phase5", formData.step5 || "");
-    payloadFormData.append("phase6", formData.step6 || "");
-    payloadFormData.append("phase7", formData.step7 || "5");
-    payloadFormData.append("idea_description", formData.description || "");
-    payloadFormData.append("idea_name", "Google");
-
-    const loggedToken = userToken();
-    const endpoint = `${RestAPI}/wizard`;
-
-    try {
-      const response = await axiosInstance({
-        method: "post",
-        url: endpoint,
-        data: payloadFormData,
-        headers: {
-          Accept: "application/vnd.api+json",
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      const data = response.data;
-
-      setResult(data);
-      setLoading(false);
-      console.log(response.data);
-      Swal.fire({
-        title: "Success",
-        text: response.data.message,
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-      // toast.success(response.data.massage);
-    } catch (error) {
-      console.error("Error:", error);
+    if (!isAuthenticated) {
       Swal.fire({
         title: "Error",
-        text: "An error occurred while processing your request",
+        text: "Please Login First",
         icon: "error",
         confirmButtonText: "OK",
       });
-      setLoading(false);
+    } 
+    else if(!isStepValid()){
+      Swal.fire({
+        title: "Info",
+        text: "Please Describe your idea",
+        icon: "info",
+        confirmButtonText: "OK",
+      });
+    } 
+    else {
+      setLoading(true);
+
+      const payloadFormData = new FormData();
+      payloadFormData.append("phase1", formData.step1 || "");
+      payloadFormData.append("phase2", formData.step2 || "");
+      payloadFormData.append("phase3", formData.step3 || "");
+      payloadFormData.append("phase4", formData.step4 || "");
+      payloadFormData.append("phase5", formData.step5 || "");
+      payloadFormData.append("phase6", formData.step6 || "");
+      payloadFormData.append("phase7", formData.step7 || "5");
+      payloadFormData.append("idea_description", formData.description || "");
+      payloadFormData.append("idea_name", "Google");
+
+      const loggedToken = userToken();
+      const endpoint = `${RestAPI}/wizard`;
+
+      try {
+        const response = await axiosInstance({
+          method: "post",
+          url: endpoint,
+          data: payloadFormData,
+          headers: {
+            Accept: "application/vnd.api+json",
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        const data = response.data;
+
+        setResult(data);
+        setLoading(false);
+        // console.log(response.data);
+        navigate('/plan-details');
+        Swal.fire({
+          title: "Success",
+          text: response.data.message,
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+
+        // toast.success(response.data.massage);
+      } catch (error) {
+        console.error("Error:", error);
+        Swal.fire({
+          title: "Error",
+          text: "An error occurred while processing your request",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        setLoading(false);
+      }
     }
   };
   const openEmailLoginModal = () => {
@@ -243,18 +274,25 @@ export default function Wizard() {
     setEmailLoginModalOpen(false);
   };
 
-  const handleEmailLogin = async () => {
+  const handleEmailLogin = async (e) => {
+    e.preventDefault();
+    setLoadingmailLogin(true)
     try {
       const response = await axios.post(`${RestAPI}/auth/login`, {
         email,
         password,
       });
       if (response.data) {
-        localStorage.setItem("token", response.data.token);
+        setLoadingmailLogin(false)
+
+        // localStorage.setItem("token", response.data.token);
+        login(response.data.token);
         localStorage.setItem("userName", response.data?.userName);
         handleGoogleLogin(true); // Use this to set status
         closeEmailLoginModal();
       } else {
+        setLoadingmailLogin(false)
+
         Swal.fire({
           title: "Error",
           text: "An error occurred while logging in.",
@@ -266,6 +304,7 @@ export default function Wizard() {
     } catch (error) {
       console.error("Login error:", error);
       // toast.error("An error occurred while logging in.");
+      setLoadingmailLogin(false)
       Swal.fire({
         title: "Error",
         text: "An error occurred while logging in.",
@@ -333,19 +372,19 @@ export default function Wizard() {
                     <div className="final-step">
                       <h3>Email Verification</h3>
                       <p>Confirm your email address on Google.</p>
-                      <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={openEmailLoginModal}
-                      >
-                        Login with Email
-                      </button>
-                      <button className="btn">
-                        <Link to="/login-linkedin" className="register-link">
-                          Login with LinkedIn
-                        </Link>
-                      </button>
+                      {!isAuthenticated && (
+                        <div className="login-methods-buttons">
+                          <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
+                          <LinkedInLogin />
+                          <button
+                            type="button"
+                            className="btn"
+                            onClick={openEmailLoginModal}
+                          >
+                            Login with Email
+                          </button>
+                        </div>
+                      )}
                     </div>
                   ) : step === 6 ? (
                     <select
@@ -368,7 +407,7 @@ export default function Wizard() {
                     steps[step].choices.map((choice) => (
                       <div className="custom-check" key={choice.id}>
                         {step === 7 ? (
-                          <div>
+                          <div className="description-box-preant">
                             <textarea
                               placeholder="Provide detailed information or notes here..."
                               value={formData.description || ""}
@@ -426,7 +465,7 @@ export default function Wizard() {
                     <button
                       type="submit"
                       className="btn generate"
-                      disabled={!status}
+                      disabled={!isAuthenticated}
                     >
                       Generate <BsStars />
                     </button>
@@ -480,9 +519,11 @@ export default function Wizard() {
               />
             </div>
             <div className="button-contener">
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
+              {loadingmailLogin ?<div className="spinner" style={{marginTop:'20px'}}></div>: (
+                <button type="submit" className="btn btn-primary">
+                  Login
+                </button>
+              )}
               <button
                 onClick={closeEmailLoginModal}
                 className="btn btn-secondary"

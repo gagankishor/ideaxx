@@ -9,12 +9,7 @@ import { status } from "nprogress";
 
 export const MyDesign = () => {
 const platforms = [
-  {
-    id: 1,
-    name: "",
-    logo: "/vantom.jpg",
-    link: "https://canva.com/",
-  },
+  { id: 1, name: "", logo: "/vantom.jpg", link: "https://canva.com/"},
   { id: 2, name: "", logo: "/business1.webp", link: "#" },
   { id: 3, name: "", logo: "/business2.webp", link: "#" },
   { id: 4, name: "", logo: "/business3.webp", link: "#" },

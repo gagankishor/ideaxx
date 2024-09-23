@@ -370,8 +370,8 @@ export default function Wizard() {
                 <div className="choices">
                   {step === 8 ? (
                     <div className="final-step">
-                      <h3>Email Verification</h3>
-                      <p>Confirm your email address on Google.</p>
+                      {/* <h3>Email Verification</h3>
+                      <p>Confirm your email address on Google.</p> */}
                       {!isAuthenticated && (
                         <div className="login-methods-buttons">
                           <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}

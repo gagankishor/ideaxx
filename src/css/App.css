@@ -149,6 +149,36 @@ form .form-group .special-select {
   margin: 0;
 }
 
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin: 5px 0;
+}
+.social-media-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 40px;
+  color: #000;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
 .container {
   max-width: 1920px;
   margin: auto;
@@ -498,6 +528,7 @@ nav .container .burger {
 
 .dashboard .content .form .slider .card .item img {
   width: 80%;
+  height: 90%;
   display: flex;
   filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.195));
 }
@@ -924,7 +955,7 @@ table tr:nth-child(even) {
   height: 100%;
 }
 .wizard .container .box {
-  background: rgba(10, 10, 10, 0.4);
+  background: rgba(10, 10, 10, 0.6);
   color: rgb(255, 255, 255);
   padding: 2rem;
   border-radius: 20px;
@@ -985,6 +1016,8 @@ table tr:nth-child(even) {
 }
 .wizard .container .box .content .left .text p {
   font-weight: 500;
+  color: white;
+  text-align: unset;
 }
 .wizard .container .box .content .left .choices {
   display: flex;
@@ -1183,6 +1216,7 @@ footer {
   background: var(--bg-dark);
   color: white;
   font-weight: 200;
+  height: 80px;
 }
 footer .container {
   display: flex;
@@ -1677,20 +1711,6 @@ nav .container .burger {
   color: #007bff;
 }
 
-h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 10px 0;
-  color: #333;
-  text-align: center;
-}
-
-p {
-  font-size: 14px;
-  color: #666;
-  text-align: center;
-  margin: 5px 0;
-}
 
 .status-icon {
   font-size: 18px;
@@ -1795,11 +1815,61 @@ p {
   justify-content:space-between;
   align-items: center;
   position: sticky;
-  top: 70px;
+  top: 63px;
   z-index: 5;
-  background-color: rgba(204, 202, 202, 0.3);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   height: 80px;
+}
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px
+
+}
+
+.dropdown {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  border: 1px solid #ccc;
+  z-index: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px
+
+}
+
+.dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+  border-radius: 10px
+}
+
+.dropdown div:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.dropdown p {
+  margin: 5px 0 0 0;
+  font-size: 12px;
+  color: #777;
 }
 @keyframes spin {
   to {

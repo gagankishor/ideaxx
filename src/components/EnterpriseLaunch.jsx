@@ -4,7 +4,7 @@ import { px } from "framer-motion";
 
 export const EnterpriseLaunch = () => {
   return (
-    <div className="enterprise-launch" id="section-haing" style={{display:'flex' ,flexWrap:'wrap'}} >
+    <div className="enterprise-launch" id="section-haing" style={{display:'flex' ,flexWrap:'wrap', margin:'50px'}} >
       <div className="text-card" >
         <h2 id="section-heaqding" >Take a rest, we will do it for you</h2>
       </div>

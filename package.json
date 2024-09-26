@@ -15,7 +15,7 @@
     "bootstrap": "^5.3.3",
     "docx": "^8.5.0",
     "firebase": "^10.13.1",
-    "framer-motion": "^11.3.30",
+    "framer-motion": "^11.7.0",
     "html-docx-js": "^0.1.0",
     "html2pdf": "^0.0.11",
     "html2pdf.js": "^0.10.2",

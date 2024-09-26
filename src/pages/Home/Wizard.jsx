@@ -416,13 +416,14 @@ export default function Wizard() {
                         <div className="login-methods-buttons">
                           <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
                           <LinkedInLogin />
-                          <button
+                          <div 
                             type="button"
-                            className="btn"
+                            className=""
                             onClick={openEmailLoginModal}
+                            style={{backgroundColor:'white',width:'180px',borderRadius:'5px',textAlign:'center',height:'35px'}}
                           >
                             Login with Email
-                          </button>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -466,12 +467,9 @@ export default function Wizard() {
                             onBlur={handleBlur}
                           />
                           <div className="description-info">
-                            <small>
-                              {formData.description?.length || 0}/250 characters written
-                            </small>
-                            <small>
-                              {250 - (formData.description?.length || 0)} characters remaining
-                            </small>
+                            <small style={{color:'black',fontWeight:'300'}}>
+                              {formData.description?.length || 0}/250 characters written {250 - (formData.description?.length || 0)} characters remaining
+                            </small> 
                             
                           </div>
                           {showError && formData.description.length < 50 && (
@@ -521,7 +519,7 @@ export default function Wizard() {
                     <button
                       type="submit"
                       className="btn generate"
-                      disabled={!isAuthenticated}
+                      // disabled={!isAuthenticated}
                     >
                       Generate <BsStars />
                     </button>

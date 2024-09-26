@@ -1,6 +1,7 @@
 import { FaArrowAltCircleRight, FaBusinessTime, FaHeadphones, FaPhone, FaRobot } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import CardSlider from '../../../../components/CardSlider';
+import { motion } from 'framer-motion';
 
 export const Hero = () => {
 return (
@@ -26,7 +27,24 @@ return (
     <img src="/roadmap.jpeg" alt="Roadmap" style={{overflow:'hidden',objectFit:'cover', width:'650px',borderRadius:"5px",border:'1px solid #dfe6f2', margin:'50px 0px 0px 0px'}} />
     <div className="card" style={{width:'280px',position:'absolute', top:'0px',left:'490px', background:"linear-gradient(180deg, rgba(255, 255, 255, 0.8) 40%, rgba(240, 243, 255, 0.3) 80%)" ,borderRadius:'20px', height:"380px"}}>dfsdfsfsddsfs</div>
     <img src="/card22.webp" alt="Roadmap" style={{overflow:'hidden',objectFit:'cover', width:'250px',borderRadius:"5px",border:'1px solid #dfe6f2', margin:'50px 0px 0px 0px', position:"absolute", left:'-140px' ,top:'-50px'}} />
-    <img src="/card23.webp" alt="Roadmap" style={{overflow:'hidden',objectFit:'cover', width:'250px',borderRadius:"5px",border:'1px solid #dfe6f2', margin:'50px 0px 0px 0px', position:"absolute", left:'-140px' ,top:'300px' }} />
+    <motion.img
+        src="/card23.webp"
+        alt="Roadmap"
+        style={{
+          overflow: 'hidden',
+          objectFit: 'cover',
+          width: '250px',
+          borderRadius: "5px",
+          border: '1px solid #dfe6f2',
+          margin: '50px 0px 0px 0px',
+          position: "absolute",
+          left: '-140px',
+          top: '300px'
+        }}
+        initial={{ x: -140, y:0, opacity: 0 }} // Initial state before animation
+        animate={{ x: 0, opacity: 1 }}    // Animate to this state
+        transition={{ duration: 1 }}       // Animation duration (1 second)
+      />
   </div>
 </div>
 

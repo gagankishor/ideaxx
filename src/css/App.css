@@ -970,10 +970,10 @@ table tr:nth-child(even) {
   /* min-height: 80vh; */
   /* max-height: 80vh; */
   height: calc(100vh - 176px);
-  color: #f0f0f0;
+  color: #000000;
 }
 .wizard .container {
-  width: 80%;
+  width: 98%;
 }
 .file-types {
   margin: 10px 0;
@@ -995,35 +995,30 @@ table tr:nth-child(even) {
 
   height: 100%;
 }
-@keyframes gradientAnimation {
-  0% {
-    background: linear-gradient(45deg, rgba(223, 199, 199, 0.4), rgba(173, 216, 230, 0.5), rgba(255, 255, 255, 0.7));
-  }
-  50% {
-    background: linear-gradient(45deg, rgba(255, 182, 193, 0.6), rgba(144, 238, 144, 0.5), rgba(224, 255, 255, 0.7));
-  }
-  100% {
-    background: linear-gradient(45deg, rgba(223, 199, 199, 0.4), rgba(173, 216, 230, 0.5), rgba(255, 255, 255, 0.7));
-  }
-}
+
 
 /* Apply the gradient animation to your element */
 .gradient-background {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, rgba(223, 199, 199, 0.4), rgba(173, 216, 230, 0.5), rgba(255, 255, 255, 0.7));
+  /* background: linear-gradient(45deg, rgba(223, 199, 199, 0.4), rgba(173, 216, 230, 0.5), rgba(255, 255, 255, 0.7)); */
+  background-color: #f0f3fe;
   background-size: 400% 400%;
   animation: gradientAnimation 8s ease infinite;
 }
 .wizard .container .box {
-  background: linear-gradient(50deg, rgba(79, 96, 107, 0.733), rgba(79, 172, 234, 0.877), rgba(77, 101, 117, 0.801));
-  color: rgb(255, 255, 255);
+  /* background: linear-gradient(50deg, rgba(79, 96, 107, 0.733), rgba(79, 172, 234, 0.877), rgba(77, 101, 117, 0.801)); */
+  /* background: #f0f3fe; */
+  background-color: #f0f3fe;
+  color: rgb(0, 0, 0);
   padding: 2rem;
   border-radius: 20px;
   width: 100%;
   position: relative;
   overflow: hidden;
   height: 100%;
+  justify-content: center;
+  display:flex;
 }
 .wizard .container .box::before {
   content: '';
@@ -1032,8 +1027,9 @@ table tr:nth-child(even) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgb(79, 173, 234), rgb(79, 173, 234), rgb(79, 173, 234));
-  z-index: -1;
+  /* background: linear-gradient(45deg, rgb(79, 173, 234), rgb(79, 173, 234), rgb(79, 173, 234)); */
+  background-color: #f0f3fe;
+  /* z-index: -1; */
 }
 .wizard .container .box form {
   height: 100%;
@@ -1041,7 +1037,7 @@ table tr:nth-child(even) {
 .wizard .container .box img {
   position: absolute;
   top: 0;
-  color:#f0f0f0;
+  color:#000000;
   overlay: var(--bg-dark);
   /* left: 0; */
   opacity: 1;
@@ -1059,9 +1055,11 @@ table tr:nth-child(even) {
   display: flex;
   align-items: center;
   overflow-y: overlay;
+  width: 1000px;
+  justify-content: center;
 }
 .wizard .container .box .content .left {
-  width: 55%;
+  width: 70%;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   justify-content: flex-start; /* Align content to the top */
@@ -1077,7 +1075,7 @@ table tr:nth-child(even) {
 }
 .wizard .container .box .content .left .text p {
   font-weight: 500;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: unset;
 }
 .wizard .container .box .content .left .choices {
@@ -1099,6 +1097,13 @@ table tr:nth-child(even) {
   height: 20px;
   margin-right: 1rem;
   cursor: pointer;
+}
+.wizard .container .box {
+  overflow-y:overlay;
+}
+::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0);
+  width: 0px;
 }
 .wizard .container .box .content .left .choices .custom-check label {
   cursor: pointer;
@@ -1125,9 +1130,10 @@ table tr:nth-child(even) {
 }
 .wizard .container .box .content .right {
   display: flex;
-  width: 25%;
+  width: 30%;
   flex-direction: column;
   padding: 0 1rem;
+  justify-content: center;
 }
 .wizard .container .box .content .right .btn {
   width: 80%;
@@ -1139,14 +1145,14 @@ table tr:nth-child(even) {
 .wizard .container .box .content .right .prev {
   background: transparent;
   /* color: var(--main-color); */
-  color: white;
-  border-color: white;
+  color: var(--main-color);
+  border-color: var(--main-color);
   text-align: center;
 
 }
 .wizard .container .box .content .right .prev:hover {
   background: var(--main-color);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .wizard .container .box .content .right .generate {
   background: rgb(98, 200, 98);

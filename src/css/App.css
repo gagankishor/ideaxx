@@ -966,14 +966,14 @@ table tr:nth-child(even) {
 
 
 .wizard {
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   /* min-height: 80vh; */
   /* max-height: 80vh; */
-  height: calc(100vh - 176px);
+  height: calc(100vh - 128px);
   color: #000000;
 }
 .wizard .container {
-  width: 98%;
+  width: 100%;
 }
 .file-types {
   margin: 10px 0;
@@ -1011,30 +1011,24 @@ table tr:nth-child(even) {
   /* background: #f0f3fe; */
   background-color: #f0f3fe;
   color: rgb(0, 0, 0);
-  padding: 2rem;
-  border-radius: 20px;
+  /* padding: 2rem 0px; */
+  /* border-radius: 20px; */
   width: 100%;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
+  /* display: flex; */
+  flex-direction: row;
   justify-content: center;
   display:flex;
 }
-.wizard .container .box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background: linear-gradient(45deg, rgb(79, 173, 234), rgb(79, 173, 234), rgb(79, 173, 234)); */
-  background-color: #f0f3fe;
-  /* z-index: -1; */
-}
+
 .wizard .container .box form {
   height: 100%;
+  display: flex;
+  margin-top: 60px;
 }
-.wizard .container .box img {
+.wizard .container .box .img {
   position: absolute;
   top: 0;
   color:#000000;
@@ -1054,12 +1048,12 @@ table tr:nth-child(even) {
   z-index: 1;
   display: flex;
   align-items: center;
-  overflow-y: overlay;
-  width: 1000px;
+  /* overflow-y: overlay; */
+  width: 100%;
   justify-content: center;
 }
 .wizard .container .box .content .left {
-  width: 70%;
+  width: 68%;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   justify-content: flex-start; /* Align content to the top */
@@ -1081,6 +1075,7 @@ table tr:nth-child(even) {
 .wizard .container .box .content .left .choices {
   display: flex;
   flex-direction: column;
+  width: 50%;
   font-size: 1rem;
   padding-left: 2rem;
   max-height: auto;
@@ -1098,9 +1093,9 @@ table tr:nth-child(even) {
   margin-right: 1rem;
   cursor: pointer;
 }
-.wizard .container .box {
+/* .wizard .container .box {
   overflow-y:overlay;
-}
+} */
 ::-webkit-scrollbar {
   background-color: rgba(255, 255, 255, 0);
   width: 0px;
@@ -1130,7 +1125,7 @@ table tr:nth-child(even) {
 }
 .wizard .container .box .content .right {
   display: flex;
-  width: 30%;
+  width: 25%;
   flex-direction: column;
   padding: 0 1rem;
   justify-content: center;
@@ -1288,7 +1283,10 @@ footer {
   background: var(--bg-dark);
   color: white;
   font-weight: 200;
-  height: 80px;
+  height: 60px;
+  align-items: center;
+  text-align: center;
+
 }
 footer .container {
   display: flex;

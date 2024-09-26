@@ -360,56 +360,18 @@ export default function Wizard() {
     <div className="wizard">
       <div className="container">
         <div className="box">
-          <form onSubmit={handleSubmit}>
-            {step === 1 ? (
-              <motion.img
-                src={`/wizard/${step + 1}.webp`}
-                alt={`Step ${step + 1}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="wizard-image step-1"
-              />
-            ) : step === 5 ? (
-              <motion.img
-                src={`/wizard/${step + 1}.webp`}
-                alt={`Step ${step + 1}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="wizard-image step-5"
-              />
-            ) : step === 4 ? (
-              <motion.img
-                src={`/wizard/${step + 1}.webp`}
-                alt={`Step ${step + 1}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="wizard-image step-4"
-              />
-            ) : step === 3 ? (
-              <motion.img
-                src={`/wizard/${step + 1}.webp`}
-                alt={`Step ${step + 1}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="wizard-image step-3"
-              />
-            ) : (
-              <motion.img
-                src={`/wizard/${step + 1}.webp`}
-                alt={`Step ${step + 1}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="wizard-image step-1"
-              />
-            )}
+          <form onSubmit={handleSubmit} style={{width:"60%"}}>
+            
 
-            <div className="content">
-              <div className="left">
+            <div className="content" >
+              <div className="left" style={{width:'100%', marginLeft:'40px' }} >
                 <div className="text">
                   <h2>{steps[step].title}</h2>
                   <p>{steps[step].description}</p>
                 </div>
-                <div className="choices">
+                <div style={{display:'flex',}}>
+
+                <div className="choices" style={{overflowY:'scroll', width:"60%",maxHeight:'270px'}}>
                   {step === 8 ? (
                     <div className="final-step">
                       {!isAuthenticated && (
@@ -497,8 +459,7 @@ export default function Wizard() {
                     ))
                   )}
                 </div>
-              </div>
-              <div className="right">
+                <div className="right">
                 {step < n && (
                   <button
                     disabled={isNextDisabled}
@@ -531,8 +492,21 @@ export default function Wizard() {
                   </button>
                 )}
               </div>
+              </div>
+
+                
+              </div>
+              
             </div>
+            
+            
+                
           </form>
+          <div style={{ width: '40%', height: '100%', backgroundColor: "#6061f6", marginRight: '0px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <img src="idea1.png" alt="" style={{ width: '80%' ,height:'100%'}} />
+</div>
+
+          
         </div>
       </div>
       <Modal

@@ -65,6 +65,9 @@ import { ToolEquipment } from "./pages/BusinessTools/ToolEquipment";
 import { ToolTemplates } from "./pages/BusinessTools/ToolTemplates";
 import { ToolInvoicing } from "./pages/BusinessTools/ToolInvoicing";
 import { ToolPlatforms } from "./pages/BusinessTools/ToolPlatforms";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export default function App() {
   const ref = useRef(null);
   const isLoggedIn = !!localStorage.getItem("token");

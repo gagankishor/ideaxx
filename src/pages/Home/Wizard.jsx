@@ -18,11 +18,11 @@ const steps = [
   {
     title: "It all starts with an idea",
     description:
-      "Here we want to know about your idea, whether it has already started or you are still thinking about it.",
+      "Here we want to know about your idea, whether it has already started or you are still thinking about it ?",
     choices: [
       { id: "i1a", label: "It is still an idea", value: "1" },
       { id: "i1b", label: "I made a plan for it", value: "3" },
-      { id: "i1c", label: "I already start it", value: "5" },
+      { id: "i1c", label: "I already started", value: "5" },
     ],
   },
   {
@@ -37,30 +37,61 @@ const steps = [
       { id: "i2d", label: "Self employed", value: "5" },
     ],
   },
+  // {
+  //   title: "What is your project type?",
+  //   description:
+  //     "Numerous types of projects exist, Select the type of project that is closest to your idea.",
+  //   choices: [
+  //     { id: "i3a", label: "Related to IT Services", value: "Related to IT Services" },
+  //     { id: "i3b", label: "Building a brand", value: "Building a brand" },
+  //     {
+  //       id: "i3c",
+  //       label: "Profession (Engineer, Doctor, Teacher, Photographer, Etc...)",
+  //       value: "Profession (Engineer, Doctor, Teacher, Photographer, Etc...)",
+  //     },
+  //     { id: "i3d", label: "Marketing Services", value: "Marketing Services" },
+  //     { id: "i3e", label: "Retailer", value: "Retailer" },
+  //     { id: "i3f", label: "Wholesaler", value: "Wholesaler" },
+  //     { id: "i3g", label: "Restaurant and Food", value: "Restaurant and Food" },
+  //     { id: "i3h", label: "Entertainment", value: "Entertainment" },
+  //     { id: "i3i", label: "Other", value: "Other" },
+  //   ],
+  // },
   {
     title: "What is your project type?",
     description:
       "Numerous types of projects exist, Select the type of project that is closest to your idea.",
     choices: [
-      { id: "i3a", label: "Related to IT Services", value: "1" },
-      { id: "i3b", label: "Building a brand", value: "2" },
+      { id: "i3a", label: "Services", value: "Services" },
+      { id: "i3b", label: "Retail", value: "Retail" },
       {
         id: "i3c",
-        label: "Profession (Engineer, Doctor, Teacher, Photographer, Etc...)",
-        value: "3",
+        label: "Technology",
+        value: "Technology",
       },
-      { id: "i3d", label: "Marketing Services", value: "4" },
-      { id: "i3e", label: "Retailer", value: "5" },
-      { id: "i3f", label: "Wholesaler", value: "6" },
-      { id: "i3g", label: "Restaurant and Food", value: "7" },
-      { id: "i3h", label: "Entertainment", value: "8" },
-      { id: "i3i", label: "Other", value: "9" },
+      { id: "i3d", label: "Health and Wellness", value: "Health and Wellness" },
+      { id: "i3e", label: "Hospitality", value: "Hospitality" },
+      { id: "i3f", label: "Entertainment", value: "Entertainment" },
+      { id: "i3g", label: "Manufacturing", value: "Manufacturing" },
+      { id: "i3h", label: "Finance", value: "Finance" },
+      { id: "i3i", label: "Real Estate", value: "Real Estate" },
+      { id: "i3j", label: "Education", value: "Education" },
+      { id: "i3k", label: "Transportation", value: "Transportation" },
+      { id: "i3l", label: "Environmental and Energy", value: "Environmental and Energy" },
+      { id: "i3m", label: "Legal and Compliance", value: "Legal and Compliance" },
+      { id: "i3n", label: "Social and Community", value: "Social and Community" },
+      { id: "i3o", label: "Communication", value: "Communication" },
+      { id: "i3p", label: "Automotive", value: "Automotive" },
+      { id: "i3q", label: "Agriculture and Farming", value: "Agriculture and Farming" },
+      { id: "i3r", label: "Innovation and Technology", value: "Innovation and Technology" },
+      { id: "i3s", label: "Beauty and Personal Care", value: "Beauty and Personal Care" },
+      { id: "i3t", label: "Training and Development", value: "Training and Development" },
     ],
   },
   {
     title: "Is your current job somehow related to your idea?",
     description:
-      "We want to know if you have any connection between your current job and your project",
+      "We’d like to understand if there’s any connection between your current job and your project.",
     choices: [
       { id: "i6a", label: "Yes", value: "5" },
       { id: "i6b", label: "No", value: "2" },
@@ -71,17 +102,17 @@ const steps = [
     description:
       "While every type of business has its own financing needs, Your idea can always be started on a small budget.",
     choices: [
-      { id: "i4a", label: "Less than 2,000$", value: "1" },
-      { id: "i4b", label: "2,000$ - 10,000$", value: "2" },
-      { id: "i4c", label: "10,000$ - 50,000$", value: "3" },
-      { id: "i4d", label: "50,000$ - 1,00,000$", value: "4" },
-      { id: "i4e", label: "More than 1,00,000$", value: "5" },
+      { id: "i4a", label: "less than 1,00,000 ₹", value: "1" },
+      { id: "i4b", label: "1,00,000 ₹ - 10,00,000 ₹", value: "2" },
+      { id: "i4c", label: "10,00,000 ₹ - 50,00,000 ₹", value: "3" },
+      { id: "i4d", label: "50,00,000 ₹ - 1,00,00,000 ₹", value: "4" },
+      { id: "i4e", label: "more than 1,00,00,000 ₹", value: "5" },
     ],
   },
   {
     title: "What is your work or business experience?",
     description:
-      "If you ever worked in any job or business before, tell us how many years of experience do you have.",
+      "If you’ve previously worked in any job or business, please share how many years of experience you have in that field.",
     choices: [
       { id: "i5a", label: "No experience", value: "0" },
       { id: "i5b", label: "1 - 3 Years", value: "3" },
@@ -95,18 +126,18 @@ const steps = [
     description:
       "Where are you willing to present your idea or do your project?",
     choices: [
-      { id: "i7a", label: "INDIA", value: "5" },
-      { id: "i7b", label: "USA", value: "5 " },
-      { id: "i7c", label: "CHINA", value: "5 " },
-      { id: "i7d", label: "JAPAN", value: "5 " },
-      { id: "i7e", label: "GERMANY", value: "5 " },
-      { id: "i7f", label: "UK", value: "5 " },
-      { id: "i7g", label: "FRANCE", value: "5 " },
-      { id: "i7h", label: "ITALY", value: "5 " },
-      { id: "i7i", label: "BRAZIL", value: "5 " },
-      { id: "i7j", label: "CANADA", value: "5 " },
-      { id: "i7k", label: "RUSSIA", value: "5 " },
-      { id: "i7l", label: "SWITZERLAND", value: "5 " },
+      { id: "i7a", label: "INDIA", value: "5_a" },
+      { id: "i7b", label: "USA", value: "5_b" },
+      { id: "i7c", label: "CHINA", value: "5_c" },
+      { id: "i7d", label: "JAPAN", value: "5_d" },
+      { id: "i7e", label: "GERMANY", value: "5_e" },
+      { id: "i7f", label: "UK", value: "5_f" },
+      { id: "i7g", label: "FRANCE", value: "5_g" },
+      { id: "i7h", label: "ITALY", value: "5_h" },
+      { id: "i7i", label: "BRAZIL", value: "5_i" },
+      { id: "i7j", label: "CANADA", value: "5_j" },
+      { id: "i7k", label: "RUSSIA", value: "5_l" },
+      { id: "i7l", label: "SWITZERLAND", value: "5_m" },
     ],
 
     options: [{}],
@@ -114,13 +145,13 @@ const steps = [
   {
     title: "Tell us more about your idea",
     description: "Describe your idea in few line",
-    choices: [{ id: "i7a", label: "India", value: "5" }],
+    choices: [{ id: "i8a", label: "India", value: "5" }],
 
     options: [{}],
   },
   {
     title: " Email Address",
-    description: "Confirm your emailAddress on ideax",
+    description: "Confirm your email Address on ideax",
   },
 ];
 
@@ -133,6 +164,7 @@ export default function Wizard() {
   const [loading, setLoading] = useState(false);
   const [loadingmailLogin, setLoadingmailLogin] = useState(false);
   const { isAuthenticated, logout } = useContext(AuthContext);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const [status, setStatus] = useState(isAuthenticated);
   const [emailLoginModalOpen, setEmailLoginModalOpen] = useState(false);
@@ -142,14 +174,20 @@ export default function Wizard() {
   const navigate = useNavigate();
 
   const { login } = useContext(AuthContext);
-  // console.log('AuthContext Value:', contextValue);
+  const [showError, setShowError] = useState(false); // To control when to show the error
+
+  const handleBlur = () => {
+    if (formData.description.length < 50) {
+      setShowError(true);
+    } else {
+      setShowError(false); 
+    }
+  };
   let n = step != 8 ? (isAuthenticated ? 7 : 8) : 8;
   const isStepValid = () => {
     const currentStepData = formData[`step${step + 1}`];
-    // Validate if a selection is made for the current step
     if (step === 7) {
-      // Check if the description box is filled on step 7
-      return formData.description && formData.description.trim().length > 0;
+      return formData.description && formData.description.trim().length > 50;
     }
     return currentStepData !== undefined && currentStepData !== "";
   };
@@ -157,10 +195,9 @@ export default function Wizard() {
     if (isStepValid()) {
       setStep((step) => step + 1);
     } else {
-      // toast.error("Please make a selection before proceeding.")
       let textmassge = "Please make a selection before proceeding."
       if(step === 7 ){
-        textmassge = "Please Describe your idea"
+        textmassge = "Please describe your idea in at least 50 characters."
       }
       Swal.fire({
         title: "Info",
@@ -168,32 +205,29 @@ export default function Wizard() {
         icon: "info",
         confirmButtonText: "OK",
       });
-      // alert("Please make a selection before proceeding.");
     }
-    // setStep((step) => step + 1);
-
-    // setIsNextDisabled(true);
   };
 
   const prevStep = () => {
     setStep((step) => step - 1);
-    // setIsNextDisabled(false); // Enable the next button when going back
   };
 
   const handleChoiceChange = (value) => {
+    console.log(value,step
+    )
+    setSelectedOption(value);
     setFormData((prevData) => ({ ...prevData, [`step${step + 1}`]: value }));
+    console.log(formData)
     setIsNextDisabled(false);
   };
   const handleGoogleLogin = (status) => {
     setStatus(status);
-    // alert("login successful")
     Swal.fire({
       title: "Success",
       text: "Login successful",
       icon: "success",
       confirmButtonText: "OK",
     });
-    // toast.success("Login successful");
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -205,10 +239,10 @@ export default function Wizard() {
         confirmButtonText: "OK",
       });
     } 
-    else if(!isStepValid()){
+    else if(step === 7 &&!isStepValid()){
       Swal.fire({
         title: "Info",
-        text: "Please Describe your idea",
+        text: "Please describe your idea in at least 50 characters.",
         icon: "info",
         confirmButtonText: "OK",
       });
@@ -242,18 +276,26 @@ export default function Wizard() {
         });
         const data = response.data;
 
-        setResult(data);
-        setLoading(false);
-        // console.log(response.data);
-        navigate('/plan-details');
-        Swal.fire({
-          title: "Success",
-          text: response.data.message,
-          icon: "success",
-          confirmButtonText: "OK",
-        });
-
-        // toast.success(response.data.massage);
+        
+        if(response.data.message){
+          setResult(data);
+          setLoading(false);
+          navigate('/plan-details');
+          Swal.fire({
+            title: "Success",
+            text: response.data.message ,
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }else{
+          Swal.fire({
+            title: "Error",
+            text: response.data.error ,
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+        
       } catch (error) {
         console.error("Error:", error);
         Swal.fire({
@@ -263,6 +305,10 @@ export default function Wizard() {
           confirmButtonText: "OK",
         });
         setLoading(false);
+      }
+      finally{
+        setLoading(false);
+
       }
     }
   };
@@ -284,11 +330,9 @@ export default function Wizard() {
       });
       if (response.data) {
         setLoadingmailLogin(false)
-
-        // localStorage.setItem("token", response.data.token);
         login(response.data.token);
         localStorage.setItem("userName", response.data?.userName);
-        handleGoogleLogin(true); // Use this to set status
+        handleGoogleLogin(true);
         closeEmailLoginModal();
       } else {
         setLoadingmailLogin(false)
@@ -299,11 +343,9 @@ export default function Wizard() {
           icon: "error",
           confirmButtonText: "OK",
         });
-        // toast.error(response.data.message);
       }
     } catch (error) {
       console.error("Login error:", error);
-      // toast.error("An error occurred while logging in.");
       setLoadingmailLogin(false)
       Swal.fire({
         title: "Error",
@@ -370,8 +412,6 @@ export default function Wizard() {
                 <div className="choices">
                   {step === 8 ? (
                     <div className="final-step">
-                      {/* <h3>Email Verification</h3>
-                      <p>Confirm your email address on Google.</p> */}
                       {!isAuthenticated && (
                         <div className="login-methods-buttons">
                           <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
@@ -389,6 +429,7 @@ export default function Wizard() {
                   ) : step === 6 ? (
                     <select
                       onChange={(e) => handleChoiceChange(e.target.value)}
+                      value={selectedOption} 
                     >
                       {" "}
                       <option value="">Select Country</option>
@@ -407,25 +448,39 @@ export default function Wizard() {
                     steps[step].choices.map((choice) => (
                       <div className="custom-check" key={choice.id}>
                         {step === 7 ? (
-                          <div className="description-box-preant">
-                            <textarea
-                              placeholder="Provide detailed information or notes here..."
-                              value={formData.description || ""}
-                              onChange={(e) =>
-                                setFormData({
-                                  ...formData,
-                                  description: e.target.value,
-                                })
-                              }
-                              className="description-box"
-                              aria-label="Description box"
-                              rows="5"
-                              maxLength="500"
-                            />
-                            <small className="description-info">
-                              You can enter up to 500 characters.
+                          <div className="description-box-parent">
+                          <textarea
+                            placeholder="Provide detailed information or notes here..."
+                            value={formData.description || ""}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                description: e.target.value,
+                              })
+                            }
+                            className="description-box"
+                            aria-label="Description box"
+                            rows="5"
+                            maxLength="250"
+                            minLength="50"
+                            onBlur={handleBlur}
+                          />
+                          <div className="description-info">
+                            <small>
+                              {formData.description?.length || 0}/250 characters written
                             </small>
+                            <small>
+                              {250 - (formData.description?.length || 0)} characters remaining
+                            </small>
+                            
                           </div>
+                          {showError && formData.description.length < 50 && (
+                            <small className="error-message" style={{ color: 'red' }}>
+                              Please describe your idea in at least 50 characters.
+                            </small>
+                          )}
+                        </div>
+                        
                         ) : (
                           <>
                             <input
@@ -452,8 +507,9 @@ export default function Wizard() {
                     type="button"
                     onClick={nextStep}
                     className="btn"
+                    style={{textAlign:'center'}}
                   >
-                    Next <IoIosArrowForward />
+                    Next &lt;
                   </button>
                 )}
                 {loading ? (
@@ -472,8 +528,8 @@ export default function Wizard() {
                   )
                 )}
                 {step > 0 && (
-                  <button type="button" onClick={prevStep} className="btn prev">
-                    <IoIosArrowBack /> Back
+                  <button type="button" onClick={prevStep} className="btn prev" style={{textAlign:'center'}}>
+                    &gt; Back 
                   </button>
                 )}
               </div>

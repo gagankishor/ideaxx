@@ -6,6 +6,7 @@ import { ThemeToggle } from './Theme';
 import { LogoutButton } from '../../auth/Logout';
 import { isAuthenticated } from '../../../config/Auth';
 import { AuthContext } from '../../../config/AuthContext';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 export const MainNavBar = () => {
   // menu state
@@ -47,16 +48,6 @@ export const MainNavBar = () => {
             </ul>
 
             <ul className="main-menu">
-            
-              <li>
-                <Link to="/mainWizard" className="btn">
-                  Test Idea
-                </Link>
-              </li> 
-              <li>
-                <ThemeToggle />
-              </li>
-              
               {isAuthenticated ? (
                 <li style={{ marginLeft: '15px', cursor: 'pointer' }} onClick={logout}>
                   Logout
@@ -66,6 +57,21 @@ export const MainNavBar = () => {
                   <Link to="/login">Log in</Link>
                 </li>
               )}
+              {/* <li> */}
+              <div className="btns-container">
+                <Link className="btn2" to="/mainWizard">
+                Contact Us  
+                </Link>
+        </div>
+              {/* </li>  */}
+              
+              <div className="btns-container">
+                <Link className="btn" to="/mainWizard">
+                  Test Your Idea <FaArrowAltCircleRight />
+                </Link>
+        </div>
+              
+             
               
               
             </ul>

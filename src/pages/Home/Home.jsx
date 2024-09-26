@@ -5,6 +5,7 @@ import More from './components/landing/More';
 import { TrustpilotWidget } from './components/landing/Trustpilot';
 import { Hero } from './components/landing/Hero';
 import Validation from './components/landing/validation';
+import CardSlider from '../../components/CardSlider';
 
 export default function Home() {
   return (
@@ -12,8 +13,10 @@ export default function Home() {
       <Helmet>
         <title>ideax | Welcome to ideax platform</title>
       </Helmet>
-
+      
       <Hero />
+    {/* <CardSlider/> */}
+
       <div className='home-main-contaner' >
       <Validation/>
       <Features />

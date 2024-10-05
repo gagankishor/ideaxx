@@ -13,19 +13,17 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     checkAuthStatus(); 
   }, []);
-
-  const login = (token) => {
+  const login = async (token,email) => {
     localStorage.setItem('token', token);
+    localStorage.setItem('email', email);
     setIsAuthenticated(true);
   };
-
   const logout = () => {
     localStorage.removeItem('token');
     setIsAuthenticated(false);
   };
-
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout,setIsAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

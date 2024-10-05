@@ -1,0 +1,78 @@
+/* General styling for the container */
+.slider-container {
+    margin: 30px 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .slider-item {
+    text-align: center;
+  }
+  
+  .slider-item span {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Highlighting the selected icon */
+  .slider-item span:hover,
+  .slider-item span.selected {
+    color: #4fadfa; /* Highlight color (change as needed) */
+  }
+  
+  /* Styling for the custom arrows */
+  .custom-arrow {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  
+  .custom-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .slick-prev.custom-arrow {
+    left: -40px; /* Adjust position as needed */
+  }
+  
+  .slick-next.custom-arrow {
+    right: -40px; /* Adjust position as needed */
+  }
+  
+  /* Image container */
+  .image-container {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .image-container img {
+    width: 80%; /* Adjust size as needed */
+    max-height: 500px; /* Adjust the maximum height */
+    object-fit: contain; /* Keep image proportions */
+    margin: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  /* Animation for the image */
+  .image-container img.fade-in {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  .image-container img.fade-out {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  

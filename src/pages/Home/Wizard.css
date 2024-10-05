@@ -1,10 +1,10 @@
 .modal {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     width: 90%;
-    max-width: 300px;
+    max-width: 500px;
     background: var(--bg-main);
     padding: 25px;
     border-radius: var(--radius);
@@ -28,6 +28,7 @@
   .modal .modal-content .modal-title {
     margin-bottom: 20px;
     font-size: 1.6rem;
+    font-weight: 400;
     color: var(--text-color);
   }
   
@@ -44,7 +45,7 @@
   .modal-form .form-group .form-label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 300;
     color: var(--text-color);
   }
   
@@ -86,8 +87,275 @@
   }
   .login-methods-buttons {
     justify-content: space-between;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }
   .login-methods-buttons .btn {
     margin-top: 10px;
   }
+  .info-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .info-button {
+    background-color: #4fadea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .info-button:hover {
+    background-color: #79cfff;
+  }
+  
+  .info-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    top: 40px;
+    left: -80px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info-content p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+  }
+  /* Styles for the modal overlay and content */
+.login-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+/* Login button styles */
+.login-methods-buttons2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-methods-buttons2 button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  width: 180px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.email-login-btn {
+  background-color: white;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  /* padding: 10px; */
+  width: 100%;
+  border-radius: 5px;
+  margin: 0px;
+  height: 40px;
+}
+
+.close-modal-btn {
+  background-color: #3085d6;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Modal Overlay */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* OTP Section */
+.otp-message {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.otp-input {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.otp-input:focus {
+  border-color: #007bff;
+}
+
+.resend-message {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.resend-btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  color: #007bff;
+  margin-left: 5px;
+}
+
+.resend-btn:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Spinner */
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

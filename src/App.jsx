@@ -67,6 +67,7 @@ import { ToolInvoicing } from "./pages/BusinessTools/ToolInvoicing";
 import { ToolPlatforms } from "./pages/BusinessTools/ToolPlatforms";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WizardResult from "./pages/Home/WizardResult";
 
 export default function App() {
   const ref = useRef(null);
@@ -76,10 +77,12 @@ export default function App() {
     <>
       <AuthProvider>
         <IdeaProvider>
-          {!isLoggedIn ? <MainNavBar /> : <Navbar />}
+          {/* {!isLoggedIn ? <MainNavBar /> : <Navbar />} */}
+          <MainNavBar />
           <Routes>
             <Route index path="/" element={<Home />} />
             <Route index path="/plan-details" element={<PlanDetails />} />
+            <Route index path="/wizard-result" element={<WizardResult />} />
             <Route
               index
               path="/dashboard"

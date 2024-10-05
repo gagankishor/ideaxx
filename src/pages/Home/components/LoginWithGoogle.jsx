@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RestAPI } from '../../../config/Api';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../config/AuthContext';
+import { div } from 'framer-motion/client';
 const LoginWithGoogle = ({ handleLogin }) => {
   const [user, setUser] = useState(null);
   const { isAuthenticated, logout, login  } = useContext(AuthContext);
@@ -18,9 +19,10 @@ const LoginWithGoogle = ({ handleLogin }) => {
         });
         const responseStatus = true;
         handleLogin(responseStatus);
-        const { token, userName } = res.data;
+        const { token, userName,email } = res.data;
+        console.log(token)
         setLoginStatus(true)
-        login(token)
+        login(token,email)
         localStorage.setItem("userName", userName);
         setLoading(false)
       } catch (error) {
@@ -44,13 +46,14 @@ const LoginWithGoogle = ({ handleLogin }) => {
     });
     console.log(error)
     console.error('Login failed:', error);
-    // Handle login failure here, e.g., display an error message
   };
 
   return (
     <>{loading ? (
       <div className="spinner"></div>
     ) :!loginStasus?
+    <div style={{maxWidth:"180px"}}>
+
     <Suspense fallback={<div className="spinner"></div>}>
 
     <GoogleOAuthProvider clientId="852076800262-vr2pscp25e4vmddb054istrou9dbp4me.apps.googleusercontent.com">
@@ -63,6 +66,8 @@ const LoginWithGoogle = ({ handleLogin }) => {
       {/* </div> */}
     </GoogleOAuthProvider>
     </Suspense>
+    </div>
+
     :<></>
 }</>
   );

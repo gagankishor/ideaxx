@@ -9,7 +9,7 @@ export default function Features() {
           <div className="card">
             <div className="image">
               <img src="/1.webp" alt="" />
-              <h2>Creat Your Startup</h2>
+              <h2>Test your Idea</h2>
             </div>
           </div>
           <div className="card">
@@ -21,7 +21,7 @@ export default function Features() {
           <div className="card">
             <div className="image">
               <img src="/2.webp" alt="" />
-              <h2>Start Your Side Hustle</h2>
+              <h2>Grow Your Business</h2>
             </div>
           </div>
         </div>
@@ -40,15 +40,15 @@ export default function Features() {
           <p>
             <FaPhone />
             <span>
-              <span>24/7 Support</span>
-              Support always ready
+              <span>Business As sistance</span>
+              Complete Brand Building Tools
             </span>
           </p>
           <p>
             <FaBusinessTime />
             <span>
-              <span>Business Ready</span>
-              Trained AI Generation
+              <span>Business Mentor</span>
+              AI Based Mentors Available 24/7
             </span>
           </p>
         </div>

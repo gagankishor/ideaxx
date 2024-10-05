@@ -13,7 +13,7 @@ export default function IdeaPlanViewer() {
   useEffect(() => {
     const fetchFileContent = async () => {
       try {
-        console.log(ideaPlan)
+        // console.log(ideaPlan)
         alert(ideaPlan)
         const response = await axios.get(`${ideaPlan}`);
         setFileContent(response.data);

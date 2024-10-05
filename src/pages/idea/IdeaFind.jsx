@@ -35,7 +35,7 @@ export default function IdeaFind() {
     const fetchSectors = async () => {
       try {
         const response = await axiosInstance.get(`${RestAPI}/sectors`);
-        console.log('API Response:', response.data); // Add this line to inspect the response
+        // console.log('API Response:', response.data); 
         setSectors(response.data); // Adjust based on the actual response structure
       } catch (error) {
         console.error('Error fetching sectors:', error);
@@ -75,7 +75,7 @@ export default function IdeaFind() {
 
       setShowTextArea(true);
 
-      console.log(response);
+      // console.log(response);
     } catch (error) {
       console.error("Error fetching idea:", error);
     } finally {

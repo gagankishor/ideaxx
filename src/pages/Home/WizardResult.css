@@ -1,0 +1,396 @@
+/* Container */
+.wizard-result-container {
+  max-width: 80%; /* Reduce width for readability */
+  margin: 0 auto; /* Center the content */
+  padding: 40px; /* Add generous padding */
+  background: linear-gradient(135deg, #f3f4f6 0%, #e2e8f0 100%); /* Subtle gradient background */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  line-height: 1.7; 
+}
+
+/* Title */
+h1 {
+  color: #1a202c; /* Darker color for better contrast */
+  text-align: center; /* Center the title */
+  font-size: 2.5rem; /* Larger font size */
+  font-weight: 700; /* Bolder font weight */
+  margin-bottom: 20px; /* Add space below title */
+  letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Typing Text */
+.typed-text {
+  white-space: pre-wrap; /* Preserve whitespace */
+  color: #2d3748; /* Slightly lighter than black for comfortable reading */
+  font-size: 18px; /* Larger font size */
+  border: none; /* Remove border */
+  padding: 20px; /* Increase padding */
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for modern feel */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Add space below the text area */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  animation: fadeIn 1s ease-in-out; /* Add fade-in effect */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Button Styling */
+button {
+  background-color: #3182ce; /* Primary color */
+  color: white; /* Button text color */
+  padding: 12px 25px; /* Padding for a comfortable button size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Button text size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  display: inline-block; /* Ensure buttons don’t take up full width */
+  margin-top: 20px; /* Space above button */
+}
+
+button:hover {
+  background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+/* Typing Effect Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Move upwards on fade-in */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wizard-result-container {
+    max-width: 100%; /* Increase width on smaller screens */
+    padding: 20px; /* Reduce padding */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+  }
+
+  .typed-text {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  button {
+    font-size: 14px; /* Adjust button size */
+  }
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+}
+
+.business-check-container {
+  max-width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.business-overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.overview-left {
+  width: 60%;
+}
+
+.business-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.overview-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.overview-item p {
+  flex: 1;
+  margin: 0;
+  text-align: left;
+}
+
+.progress-bar {
+  flex: 3;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  height: 10px;
+}
+
+.progress {
+  background-color: var(--main-color);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s;
+}
+
+.overview-item span {
+  flex-shrink: 0;
+  width: 40px;
+  text-align: right;
+}
+.overview-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+}
+
+.business-score-circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.doughnut-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.circle-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle-inner {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.business-additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  border: 0.5px solid #ddd;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: #ffffff;
+  /* height: 200px; */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-item:last-child {
+  margin-right: 0;
+}
+
+.business-improvements {
+  margin-top: 40px;
+}
+
+.business-improvements h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.business-improvements ul {
+  list-style: none;
+  padding: 20px 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.business-improvements li {
+  padding: 15px;
+  width: 600px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  /* border-left: 8px solid #ddd; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.business-improvements li:hover {
+  background-color: #eaeaea;
+  border: 1px solid #726f6f;
+}
+
+/* .business-improvements li.important {
+  border-left-color: orange;
+  background-color: #fff4e5;
+} */
+.ai-generated-content {
+  max-width: 80%;
+  margin: 20px auto;
+  margin-top: 40px;
+  padding: 50px 180px;
+  background-color: #fff;
+  /* border-left: 5px solid #4caf50; */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ai-generated-content h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+.ai-generated-content p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-wrap; /* Ensure newlines are preserved */
+}
+
+.ai-generated-content p::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.7s infinite; /* Blinking cursor */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.wizard-result-container {
+  max-width: 80%; /* Reduce width for readability */
+  margin: 0 auto; /* Center the content */
+  padding: 40px; /* Add generous padding */
+  background: linear-gradient(135deg, #f3f4f6 0%, #e2e8f0 100%); /* Subtle gradient background */
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  line-height: 1.7; 
+}
+
+/* Title */
+h1 {
+  color: #1a202c; /* Darker color for better contrast */
+  text-align: center; /* Center the title */
+  font-size: 2.5rem; /* Larger font size */
+  font-weight: 700; /* Bolder font weight */
+  margin-bottom: 20px; /* Add space below title */
+  letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Typing Text */
+.typed-text {
+  white-space: pre-wrap; /* Preserve whitespace */
+  color: #2d3748; /* Slightly lighter than black for comfortable reading */
+  font-size: 18px; /* Larger font size */
+  border: none; /* Remove border */
+  padding: 20px; /* Increase padding */
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for modern feel */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Add space below the text area */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  animation: fadeIn 1s ease-in-out; /* Add fade-in effect */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Button Styling */
+button {
+  background-color: #3182ce; /* Primary color */
+  color: white; /* Button text color */
+  padding: 12px 25px; /* Padding for a comfortable button size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Button text size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  display: inline-block; /* Ensure buttons don’t take up full width */
+  margin-top: 20px; /* Space above button */
+}
+
+button:hover {
+  background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+/* Typing Effect Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Move upwards on fade-in */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wizard-result-container {
+    max-width: 100%; /* Increase width on smaller screens */
+    padding: 20px; /* Reduce padding */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+  }
+
+  .typed-text {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  button {
+    font-size: 14px; /* Adjust button size */
+  }
+}

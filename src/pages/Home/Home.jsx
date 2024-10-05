@@ -6,7 +6,6 @@ import { TrustpilotWidget } from "./components/landing/Trustpilot";
 import { Hero } from "./components/landing/Hero";
 import Validation from "./components/landing/validation";
 import CardSlider from "../../components/CardSlider";
-import SlickSlider from "../../components/SlickSlider";
 import IconSlider from "./components/landing/IconSlider";
 import TrustedBySection from "./components/landing/TrustedBySection";
 import CoreSolutionsSection from "./components/landing/CoreSolutionsSection";

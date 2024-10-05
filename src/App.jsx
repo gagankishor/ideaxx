@@ -26,7 +26,7 @@ import { IdeaProvider } from "./config/ideaDataContext";
 import SocialMidea from "./pages/marketing/SocialMidea";
 import { MyDesign } from "./pages/marketing/SocialMidea/MyDesign";
 import { NewDesign } from "./pages/marketing/SocialMidea/NewDesign";
-import { SEO } from "./pages/marketing/SEO/SEO";
+import { SEO } from "./pages/marketing/SEO/Seo";
 import { CreateNewBlog } from "./pages/marketing/Blogs/CreateNewBlog";
 import { EmailMarketing } from "./pages/marketing/EmailMarketing/EmailMarketing";
 import { MyBlogs } from "./pages/marketing/Blogs/MyBlogs";

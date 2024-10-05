@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeToggle } from "./Theme";
-import { isAuthenticated } from "../config/Auth";
+// import { isAuthenticated } from "../config/Auth";
+import { AuthContext } from "../config/AuthContext";
+import { IdeaContext } from "../config/ideaDataContext";
 
 export const Navbar = () => {
   // menu state
   const [toggle, setToggle] = useState(false);
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { ideaData  } = useContext(IdeaContext);
 
   // toggle menu on mobiles
   const showMenu = () => {
@@ -18,17 +22,16 @@ export const Navbar = () => {
     idea_name: "", // Default empty state
   });
   let userName = localStorage.getItem('userName')
-  console.log(userName)
   useEffect(() => {
-    // Attempt to load formData from localStorage
     const storedFormData = localStorage.getItem("formData");
     if (storedFormData) {
-      setFormData(JSON.parse(storedFormData)); // Update state with stored data
+      setFormData(JSON.parse(storedFormData));
+      localStorage.setItem('idea_name',formData.idea_name) 
     }
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []); 
 
   return (
-    <>
+    <>  
       <nav>
         <div className="container">
           <div className="logo-side">
@@ -47,11 +50,11 @@ export const Navbar = () => {
 
           <div className={`right-side ${toggle ? "show" : "hide"}`}>
             <ul className="logo-menu">
-              {isAuthenticated() ? (
+              {isAuthenticated ? (
                 <li>
                   <h4>
-                    {formData.idea_name ? (
-                      formData.idea_name
+                    {ideaData?.idea_name ? (
+                      ideaData?.idea_name
                     ) : (
                       <Link to="/idea/new">Make Idea</Link>
                     )}
@@ -61,7 +64,7 @@ export const Navbar = () => {
             </ul>
 
             <ul className="main-menu">
-              {isAuthenticated() ? (
+              {isAuthenticated ? (
                 <li>
                   <p>
                     Welcome <span>{userName?userName:null}</span>
@@ -71,6 +74,15 @@ export const Navbar = () => {
               <li>
                 <ThemeToggle />
               </li>
+              {isAuthenticated ? (
+                <li style={{ marginLeft: '15px', cursor: 'pointer' }} onClick={logout}>
+                  Logout
+                </li>
+              ) : (
+                <li>
+                  <Link to="/login">Log in</Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>

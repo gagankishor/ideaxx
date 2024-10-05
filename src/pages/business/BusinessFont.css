@@ -1,0 +1,22 @@
+
+.brand-logo-font {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.brand-logo-font .card {
+  width: 180px;
+  /* max-width: 100px; */
+  height: 180px ;
+  align-items: center;
+  align-content: center;
+  margin: 0px 15px;
+  background-color: var(--bg-highlight);
+  border-radius: 15px;
+  display: block;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}

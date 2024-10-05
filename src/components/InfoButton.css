@@ -1,0 +1,46 @@
+.info-container {
+    position: relative;
+    display: inline-block;
+    margin: 0px 10px;
+  }
+  
+  .info-button {
+    background-color: #4fadea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .info-button:hover {
+    background-color: #79cfff;
+  }
+  
+  .info-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    top: 40px;
+    left: -80px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Show the info content when hovering over the container */
+  .info-container:hover .info-content {
+    display: block;
+  }
+  
+  .info-content p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+  }
+  

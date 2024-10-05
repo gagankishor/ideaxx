@@ -1,23 +1,37 @@
-import { Link } from 'react-router-dom';
-import { RxHamburgerMenu, RxMoon } from 'react-icons/rx';
-import { TfiClose } from 'react-icons/tfi';
-import { useState } from 'react';
-import { ThemeToggle } from './Theme';
-import { LogoutButton } from '../../auth/Logout';
+import { Link, useLocation } from "react-router-dom";
+import { RxHamburgerMenu, RxMoon } from "react-icons/rx";
+import { TfiClose } from "react-icons/tfi";
+import { useContext, useState } from "react";
+import { ThemeToggle } from "./Theme";
+import { LogoutButton } from "../../auth/Logout";
+import { isAuthenticated } from "../../../config/Auth";
+import { AuthContext } from "../../../config/AuthContext";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import EmailSignUpModal from "./EmailSignUpModal ";
 
 export const MainNavBar = () => {
   // menu state
   const [toggle, setToggle] = useState(false);
-  const isLoggedIn = !!localStorage.getItem('token');
-
+  const isLoggedIn = !!localStorage.getItem("token");
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const location = useLocation();
+  const [emailLoginModalOpen, setEmailLoginModalOpen] = useState(false);
   // toggle menu on mobiles
   const showMenu = () => {
     toggle ? setToggle(false) : setToggle(true);
+    setEmailLoginModalOpen(toggle);
   };
-
+  // Function to close the modal
+  // const closeEmailLoginModal = () => {
+  //   setEmailLoginModalOpen(false);
+  // };
   return (
     <>
       <nav>
+      <EmailSignUpModal
+                    emailLoginModalOpen={emailLoginModalOpen}
+                    setEmailLoginModalOpen={setEmailLoginModalOpen}
+                  />
         <div className="container">
           <div className="logo-side">
             <Link to="/">
@@ -25,9 +39,15 @@ export const MainNavBar = () => {
             </Link>
           </div>
 
-          <div className="burger">{toggle ? <TfiClose onClick={showMenu} /> : <RxHamburgerMenu onClick={showMenu} />}</div>
+          <div className="burger">
+            {toggle ? (
+              <TfiClose onClick={showMenu} color='var(--main-color)' />
+            ) : (
+              <RxHamburgerMenu onClick={showMenu} color='var(--main-color)'/>
+            )}
+          </div>
 
-          <div className={`right-side ${toggle ? 'show' : 'hide'}`}>
+          <div className={`right-side ${toggle ? "show" : "hide"}`}>
             <ul className="logo-menu">
               <li>
                 <a href="#">Home</a>
@@ -44,22 +64,45 @@ export const MainNavBar = () => {
             </ul>
 
             <ul className="main-menu">
-            {!isLoggedIn ? (
-                <li>
-                  <Link to="/login">Log in</Link>
+              {isAuthenticated ? (
+                <li
+                  className="nav-login-btn"
+                  style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px' }}
+                  onClick={logout}
+                >
+                  <a href="#">Sing Out</a>
+                  
                 </li>
-              ) : null}
-              <li>
-                <Link to="/mainWizard" className="btn">
-                  Test Idea
+              ) : (
+                <li style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px',fontWeight:'700' }} onClick={showMenu} >
+                  <a href="#">
+
+                  Sing Up
+                  </a>
+                  
+                </li>
+              )}
+              {/* <li> */}
+              <div className="btns-container">
+                <Link
+                  className="btn2"
+                  style={{ fontSize: "14px" }}
+                  to="#"
+                >
+                  Contact Us
                 </Link>
-              </li> 
-              <li>
-                <ThemeToggle />
-              </li>
-              
-              
-              
+              </div>
+              {/* </li>  */}
+
+              {!location.pathname.includes("/mainWizard")?<div className="btns-container">
+                <Link
+                  className="btn"
+                  style={{ fontSize: "14px" }}
+                  to="/mainWizard"
+                >
+                  Test Your Idea <FaArrowAltCircleRight/>
+                </Link>
+              </div>:""}
             </ul>
           </div>
         </div>

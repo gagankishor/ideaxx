@@ -72,7 +72,7 @@ export default function IdeaNew() {
     const fetchSectors = async () => {
       try {
         const response = await axiosInstance.get(`${RestAPI}/sectors`);
-        console.log('API Response:', response.data); // Add this line to inspect the response
+        // console.log('API Response:', response.data); 
         setSectors(response.data); // Adjust based on the actual response structure
       } catch (error) {
         console.error('Error fetching sectors:', error);
@@ -239,8 +239,9 @@ export default function IdeaNew() {
   // Save generated idea
   const saveIdea = async () => {
     const ideaformData = new FormData();
-    console.log(formData)
+    // console.log(formData)
     ideaformData.append("idea_name", formData?.idea_name?formData?.idea_name:"");
+    ideaformData.append("idea_description", formData?.idea_description?formData?.idea_description:"");
     ideaformData.append("status", "Active");
     ideaformData.append("sector_id", formData?.sector_id ?formData?.sector_id:"");
     ideaformData.append("idea_plan", contentToDisplay);
@@ -261,15 +262,14 @@ export default function IdeaNew() {
       // Redirect on successful POST request
       if (response.status === 200) {
         // history.push("/idea/my");
+        localStorage.setItem('idea',response.data.idea)
         window.location.href = "/idea/my";
-        console.log(response);
-      }
+      }   
     } catch (error) {
       console.error("There was an error saving the idea:", error);
     }
   };
 
-  // Handle textarea
   const handleTextareaChange = (e) => {
     setFormData({ ...formData, idea_description: e.target.value });
     setIsEditing(true);
@@ -293,7 +293,7 @@ export default function IdeaNew() {
         setFormData({ ...formData, idea_description: response.data.data });
         setIsEditing(false);
         setIsFetching(false);
-        console.log(response.data.data);
+        // console.log(response.data.data);
       })
       .catch((error) => {
         console.error("Error fetching concept:", error);
@@ -310,7 +310,7 @@ export default function IdeaNew() {
     setIsLoading(true); // Start loading
 
     window.scrollTo(0, 0);
-    console.log(formData)
+    // console.log(formData)
     const formDataToSend = new FormData();
     formDataToSend.append("sector_id", formData.sector_id);
     formDataToSend.append("idea_description", formData.idea_description);
@@ -370,7 +370,7 @@ export default function IdeaNew() {
         Authorization: `Bearer ${loggedToken}`,
       },
     };
-    console.log("formDataToSend",formDataToSend)
+    // console.log("formDataToSend",formDataToSend)
     try {
       const response = await axios.post(
         `${RestAPI}/ai/generate-plan`,
@@ -379,7 +379,8 @@ export default function IdeaNew() {
       );
       setGeneratedPlan(response.data); // Save the response data to state
       setIsLoading(false); // End loading
-      localStorage.removeItem("formData"); // Clear formData from localStorage
+      localStorage.removeItem("formData"); 
+      
     } catch (error) {
       console.error(error);
       setIsLoading(false); // End loading in case of error

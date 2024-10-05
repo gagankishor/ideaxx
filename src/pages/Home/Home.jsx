@@ -4,7 +4,7 @@ import TestCard from "./components/landing/TestCard";
 import More from "./components/landing/More";
 import { TrustpilotWidget } from "./components/landing/Trustpilot";
 import { Hero } from "./components/landing/Hero";
-import Validation from "./components/landing/validation";
+import Validation from "./components/landing/Validation";
 import CardSlider from "../../components/CardSlider";
 import IconSlider from "./components/landing/IconSlider";
 import TrustedBySection from "./components/landing/TrustedBySection";

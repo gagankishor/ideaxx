@@ -34,7 +34,7 @@ export default function Home() {
         Strategy to Execution—We’ve Got You Covered{" "}
       </h2>
       <CardSlider />
-      <IconSlider/>
+      {/* <IconSlider/> */}
       <TrustedBySection />
       {/* <CoreSolutionsSection />  */}
 

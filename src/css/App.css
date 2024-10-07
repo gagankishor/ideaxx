@@ -977,14 +977,16 @@ table tr:nth-child(even) {
   align-items: center;
 }
 .hero .container .hero-block .btns-container .btn  :hover{
-  margin: auto;
+  /* margin: auto; */
   border-radius: 25px;
-  background-color: var(--main-color);
+  transform: scale(1.1);
+  opacity: 0.2;
+  /* background-color: var(--main-color);
   color: white;
   padding: 10px 20px;
   font-weight: bold;
   display: flex;
-  align-items: center;
+  align-items: center; */
 }
 @keyframes ripple_animation {
   0% {
@@ -1048,17 +1050,17 @@ table tr:nth-child(even) {
 
 }
 .btns-container .btn :hover {
-  margin: auto;
+  /* margin: auto; */
   border-radius: 25px;
   background-color: var(--main-color);
   color: white;
-  padding: 10px 20px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  margin: 0px 5px;
-  font-size: 14px;
-  border: 2px solid;
+  /* padding: 10px 20px; */
+  /* font-weight: bold; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* margin: 0px 5px; */
+  /* font-size: 14px; */
+  /* border: 2px solid; */
 
 }
 .btns-container .btn2 {
@@ -1697,9 +1699,9 @@ footer .container ul li a:hover {
 .cards-wide .container .card-info .left .btn svg {
   transition: 0.5s;
 }
-.cards-wide .container .card-info .left .btn:hover svg {
+/* .cards-wide .container .card-info .left .btn:hover svg {
   margin-left: 0.1rem;
-}
+} */
 .cards-wide .container .card-info .left p {
   font-size: 10px;
   margin-top: 0.5rem;

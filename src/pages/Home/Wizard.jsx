@@ -384,12 +384,15 @@ export default function Wizard() {
       if (step === 7) {
         textmassge = showError;
       }
-      // Swal.fire({
-      //   title: "Info",
-      //   text: textmassge,
-      //   icon: "info",
-      //   confirmButtonText: "OK",
-      // });
+      else {
+
+        Swal.fire({
+          title: "Info",
+          text: textmassge,
+          icon: "info",
+          confirmButtonText: "OK",
+        });
+      }
     }
   };
   const loggedToken = userToken();
@@ -612,7 +615,7 @@ export default function Wizard() {
         setLoadingmailLogin(false);
         await login(response.data.token, response.data.email);
         localStorage.setItem("userName", response.data?.userName);
-        handleGoogleLogin(true);
+        // handleGoogleLogin(true);
         closeEmailLoginModal();
         setLoading(true);
         const payloadFormData = new FormData();
@@ -876,7 +879,7 @@ export default function Wizard() {
                           {step === 7 ? (
                             <div className="description-box-parent">
                               <textarea
-                                placeholder="Provide detailed information or notes here..."
+                                placeholder="Describe your idea in few line ..."
                                 value={formData.description || ""}
                                 onChange={(e) =>
                                   setFormData({
@@ -916,8 +919,8 @@ export default function Wizard() {
                                         <div className="spinner2"></div>
                                       </div>
                                     </div>
-                                  ) : (
-                                    showError
+                                  ) : ( formData?.description?.length < 50?
+                                    showError:" "
                                   )}
                                 </small>
                               )}

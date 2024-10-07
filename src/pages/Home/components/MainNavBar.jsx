@@ -20,6 +20,7 @@ export const MainNavBar = () => {
   const showMenu = () => {
     toggle ? setToggle(false) : setToggle(true);
     setEmailLoginModalOpen(toggle);
+    console.log("first")
   };
   // Function to close the modal
   // const closeEmailLoginModal = () => {
@@ -70,15 +71,18 @@ export const MainNavBar = () => {
                   style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px' }}
                   onClick={logout}
                 >
+
                   <a href="#">Sing Out</a>
                   
                 </li>
               ) : (
                 <li style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px',fontWeight:'700' }} onClick={showMenu} >
-                  <a href="#">
+                  
+                  <span style={{color:"black"}}>
 
                   Sing Up
-                  </a>
+                  </span>
+                
                   
                 </li>
               )}

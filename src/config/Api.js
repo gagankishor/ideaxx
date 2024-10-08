@@ -1,8 +1,8 @@
 // export const RestAPI = "https://api.middle-east-music.com/api";
-// export const RestAPI = "http://127.0.0.1:3000/api";
+export const RestAPI = "http://127.0.0.1:3000/api";
 // export const RestAPI = "https://lgbl2b34-3000.inc1.devtunnels.ms/api";
 // export const RestAPI = "http://88.222.212.243/api";
-export const RestAPI = "https://ideax.in/api";
+// export const RestAPI = "https://ideax.in/api";
 
 // https://lgbl2b34-3000.inc1.devtunnels.ms/
 import axios from 'axios';

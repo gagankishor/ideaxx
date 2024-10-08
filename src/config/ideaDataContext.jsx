@@ -38,25 +38,25 @@ export const IdeaProvider = ({ children }) => {
     }
   };
   
-  useEffect(() => {
-    // Safely attempt to load ideaData from localStorage on initial render
-    const storedIdeaData = localStorage.getItem('idea');
-    getLastIdea();
+  // useEffect(() => {
+  //   // Safely attempt to load ideaData from localStorage on initial render
+  //   const storedIdeaData = localStorage.getItem('idea');
+  //   getLastIdea();
 
-    if (storedIdeaData && storedIdeaData !== "undefined") {
-        try {
-            const parsedData = JSON.parse(storedIdeaData);
-            setIdeaData(parsedData);
-            console.log(parsedData)
-            setBrandDataMain(parsedData?.brand)
-        } catch (error) {
-            console.error("Error parsing stored idea data:", error);
-        }
-    } else {
-        getLastIdea();
-    }
-    console.log(ideaData)
-  }, []);
+  //   if (storedIdeaData && storedIdeaData !== "undefined") {
+  //       try {
+  //           const parsedData = JSON.parse(storedIdeaData);
+  //           setIdeaData(parsedData);
+  //           console.log(parsedData)
+  //           setBrandDataMain(parsedData?.brand)
+  //       } catch (error) {
+  //           console.error("Error parsing stored idea data:", error);
+  //       }
+  //   } else {
+  //       getLastIdea();
+  //   }
+  //   console.log(ideaData)
+  // }, []);
 
   return (
     <IdeaContext.Provider value={{ ideaData, getLastIdea ,brandData,setBrandDataMain }}>

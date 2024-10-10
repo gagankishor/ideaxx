@@ -44,7 +44,30 @@ export default function Wizard() {
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [secondsLeft, setSecondsLeft] = useState(300); // 300 seconds = 5 minutes
   const [canResend, setCanResend] = useState(false);
-  const steps = [
+  const [countriesChoices, setCountriesChoices] = useState([]);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await axios.get(`${RestAPI}/countries`); // Replace with your API endpoint
+        // setCountries(response.data.data);
+        const countries = response.data.data;
+        const transformedChoices = countries.map((country, index) => ({
+          id: `iaq7${String.fromCharCode(97 + index)}`, // Generates IDs like i7a, i7b, etc.
+          label: country.country.toUpperCase(), // Capitalizes the country name
+          value: `${country.id}`, // Assuming score is available in country data
+        }));
+        setCountriesChoices(transformedChoices)
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCountries();
+  }, []);
+  const steps = [             
     {
       title: "It all starts with an idea",
       description:
@@ -256,32 +279,11 @@ export default function Wizard() {
       ],
       bgColor: "#F69679",
     },
-
     {
       title: "Your project location",
       description:
         "Where are you willing to present your idea or do your project?",
-      choices: [
-        { id: "i7a", label: "INDIA", value: "5_a" },
-        { id: "i7b", label: "USA", value: "5_b" },
-        { id: "i7c", label: "CHINA", value: "5_c" },
-        { id: "i7d", label: "JAPAN", value: "5_d" },
-        { id: "i7e", label: "GERMANY", value: "5_e" },
-        { id: "i7f", label: "UK", value: "3_f" },
-        { id: "i7g", label: "FRANCE", value: "3_g" },
-        { id: "i7h", label: "ITALY", value: "3_h" },
-        { id: "i7i", label: "BRAZIL", value: "3_i" },
-        { id: "i7j", label: "CANADA", value: "3_j" },
-        { id: "i7k", label: "RUSSIA", value: "3_k" },
-        { id: "i7l", label: "SWITZERLAND", value: "3_l" },
-        { id: "i7m", label: "MAXICO", value: "3_m" },
-        { id: "i7n", label: "AUSTRALIEA", value: "3_n" },
-        { id: "i7O", label: "SOUTH KOREA", value: "3_o" },
-        { id: "i7P", label: "SPAIN", value: "3_p" },
-        { id: "i7Q", label: "INDONESIA", value: "3_q" },
-        { id: "i7R", label: "NETHERLANDS", value: "3_r" },
-      ],
-
+      choices: countriesChoices,
       options: [{}],
       bgColor: "#0D004C",
     },
@@ -344,7 +346,7 @@ export default function Wizard() {
           confirmButtonText: "OK",
         });
       } else if (showError === null) {
-        // setIsNextDisabled(true);
+        
         try {
           if (previousValue !== formData?.description) {
             setShowError("Checking...");
@@ -359,14 +361,10 @@ export default function Wizard() {
                 icon: "info",
                 confirmButtonText: "OK",
               });
-              console.log("----------------------", showError);
               return false;
             } else {
               setShowError(null);
-              // return false;
               return showError === null;
-
-              // setIsNextDisabled(false);
             }
           } else {
             setPreviousValue(formData?.description);
@@ -703,6 +701,8 @@ export default function Wizard() {
       });
       if (response.data.message) {
         setisOtpSent(true);
+        setCanResend(false);
+        setSecondsLeft(300);
         // Swal.fire({
         //   title: "Success",
         //   text: response.data.message,
@@ -737,9 +737,9 @@ export default function Wizard() {
       const timer = setInterval(() => {
         setSecondsLeft((prev) => prev - 1);
       }, 1000);
-      return () => clearInterval(timer); // Clear interval when component unmounts or timer ends
+      return () => clearInterval(timer); 
     } else {
-      setCanResend(true); // Enable resend once the timer reaches 0
+      setCanResend(true); 
     }
   }, [secondsLeft]);
 
@@ -845,8 +845,8 @@ export default function Wizard() {
                                 <span
                                   style={{
                                     fontSize: "16px",
-                                    color: "#333", // Text color for readability
-                                    fontWeight: "bold", // Bold text for emphasis
+                                    color: "#333",
+                                    fontWeight: "bold",
                                   }}
                                 >
                                   {localStorage.getItem("email")}
@@ -1166,9 +1166,10 @@ export default function Wizard() {
                       Resend OTP
                     </button>
                   ) : (
-                    <button disabled className="btn" style={{ margin: "auto" }}>
-                      Resend OTP
-                    </button>
+                    // <button disabled className="btn" style={{ margin: "auto" }}>
+                    //   Resend OTP
+                    // </button>
+                    <></>
                   )}
                   {resendOTPLodaing && (
                     <div className="spinner2-overlay">

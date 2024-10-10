@@ -96,7 +96,7 @@ export const MainNavBar = () => {
                   Contact Us
                 </Link>
               </div>
-              {/* </li>  */}
+              {/* </li>  */}  
 
               {!location.pathname.includes("/mainWizard")?<div className="btns-container">
                 <Link

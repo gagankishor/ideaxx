@@ -272,10 +272,10 @@ export default function Wizard() {
       description:
         "If you’ve previously worked in any job or business, please share how many years of experience you have in that field.",
       choices: [
-        { id: "i5a", label: "No experience", value: "0" },
-        { id: "i5b", label: "1 - 3 Years", value: "3" },
-        { id: "i5c", label: "3 - 5 Years", value: "4" },
-        { id: "i5d", label: "More than 5 years", value: "5" },
+        { id: "i5a", label: "No experience", value: "0a" },
+        { id: "i5b", label: "1 - 3 Years", value: "3a" },
+        { id: "i5c", label: "3 - 5 Years", value: "4a" },
+        { id: "i5d", label: "More than 5 years", value: "5a" },
       ],
       bgColor: "#F69679",
     },

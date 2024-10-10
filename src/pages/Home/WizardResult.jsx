@@ -172,7 +172,20 @@ const WizardResult = () => {
             <strong>Partnerships</strong>
             <span>3 major partnerships</span>
           </div>
-        </div>
+        </div></div>
+        
+      <div className="ai-generated-content">
+        <h3>
+          Your Idea Overview{" "}
+          <FaRobot size={28} style={{ color: "var(--main-color)" }} />
+        </h3>
+        {loading ? (
+          <p>Loading AI-generated insights...</p>
+        ) : (
+          <p>{displayedText}</p>
+        )}
+      </div>
+      <div className="business-check-container">
         <div className="business-improvements">
           <h3>Task list of Business Idea Improvements</h3>
           <ul>
@@ -203,17 +216,6 @@ const WizardResult = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className="ai-generated-content">
-        <h3>
-          Your Idea Overview{" "}
-          <FaRobot size={28} style={{ color: "var(--main-color)" }} />
-        </h3>
-        {loading ? (
-          <p>Loading AI-generated insights...</p>
-        ) : (
-          <p>{displayedText}</p>
-        )}
       </div>
     </>
   );

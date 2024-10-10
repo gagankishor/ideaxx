@@ -107,9 +107,9 @@ const WizardResult = () => {
             <div className="overview-item" style={{ marginTop: "50px" }}>
               <p>Market Potential</p>
               <div className="progress-bar">
-                <div className="progress" style={{ width: data?.marketPotential }}></div>
+                <div className="progress" style={{ width: `${data?.marketPotential}%` }} > </div>
               </div>
-              <span>{data?.marketPotential}</span>
+              <span>{data?.marketPotential} %</span>
             </div>
             <div className="overview-item">
               <p>Unique Value Proposition</p>
@@ -154,7 +154,7 @@ const WizardResult = () => {
         <div className="business-additional-info">
           <div className="info-item" >
             <strong>Target Market Size</strong>
-            <span>{data?.totalMarketSize} potential users</span>
+            <span>{data?.totalMarketSize}  potential users</span>
           </div>
           <div className="info-item">
             <strong>Estimated Budget</strong>

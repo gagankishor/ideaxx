@@ -4,6 +4,7 @@ import "./WizardResult.css";
 import { FaArrowAltCircleRight, FaRobot } from "react-icons/fa";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
+import SpeedTestGauge from "./components/wizard/NivoSpeedomeetr";
 Chart.register(ArcElement, Tooltip, Legend);
 
 const WizardResult = () => {
@@ -17,7 +18,7 @@ const WizardResult = () => {
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString
-      .replace(/\n/g, '')  // Remove all newline characters
+      .replace(/\n/g, '') 
       .replace(/\s{2,}/g, ' ') // Replace multiple spaces with a single space
       .replace(/\\"/g, '"')  // Unescape quotes
       .replace(/\+-/g, ''); 
@@ -33,11 +34,11 @@ const WizardResult = () => {
   const CompetitiveLandscapeData = parseJSON(data?.CompetitiveLandscapeData);
   const TimeToMarketData = parseJSON(data?.TimeToMarketData);
   
-  console.log(uniqueValueProposition);
-  console.log(TeamAndResourcesData);
-  console.log(CompetitiveLandscapeData);
-  console.log(RevenueModelData);
-  console.log(TimeToMarketData);
+  // console.log(uniqueValueProposition);
+  // console.log(TeamAndResourcesData);
+  // console.log(CompetitiveLandscapeData);
+  // console.log(RevenueModelData);
+  // console.log(TimeToMarketData);
   
   const fullAiContent = `
   ${data.resultText} 
@@ -101,7 +102,7 @@ const WizardResult = () => {
     <>
       <div className="business-check-container">
         <h2>Overview of the Business Idea Check</h2>
-
+        
         <div className="business-overview">
           <div className="overview-left">
             <div className="overview-item" style={{ marginTop: "50px" }}>
@@ -136,12 +137,13 @@ const WizardResult = () => {
             <div className="overview-item">
               <p>Team & Resources</p>
               <div className="progress-bar">
-                <div className="progress" style={{ width: TeamAndResourcesData?.finalScore }}></div>
+                <div className="progress" style={{ width: `${TeamAndResourcesData}%` }}></div>
               </div>
-              <span>{TeamAndResourcesData?.finalScore}</span>
+              <span>{TeamAndResourcesData}%</span>
             </div>
           </div>
           <div className="overview-right">
+          {/* <SpeedTestGauge score={data.success_percentage}/> */}
             <div className="business-score-circle">
               <Doughnut data={bardata} options={options} />
               <div className="doughnut-center">
@@ -162,7 +164,7 @@ const WizardResult = () => {
           </div>
           <div className="info-item">
             <strong>Time to Market</strong>
-            <span> {TimeToMarketData ?TimeToMarketData?.match(/\d+/):'0'} Month</span>
+            <span> {TimeToMarketData ?TimeToMarketData.totalTTM:'0'} </span>
           </div>
           <div className="info-item">
             <strong>Expected ROI</strong>

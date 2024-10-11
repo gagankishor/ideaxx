@@ -313,20 +313,7 @@ export default function Wizard() {
         setShowError("Please describe your idea in at least 50 characters.");
       } else {
         setShowError(null);
-        // if(previousValue!== formData?.description){
-        //   setShowError("Checking...");
-        //   setIsNextDisabled(true);
-        //   const response = await axios.post(`${RestAPI}/ai/text-checker`, {
-        //     text: formData.description,
-        //   });
-        //   if (response.data.data.isvalid === false) {
-        //     setShowError("Please enter valid text.");
-        //   } else {
-        //     setShowError(null);
-        //     setIsNextDisabled(false);
-        //   }
-        //   setPreviousValue(formData?.description)
-        // }
+        
       }
     } catch (error) {
       console.error("Error validating text:", error);

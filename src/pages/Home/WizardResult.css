@@ -394,3 +394,53 @@ button:hover {
     font-size: 14px; /* Adjust button size */
   }
 }
+@media (max-width: 1050px) {
+  .wizard-result-container {
+    max-width: 95%;
+   
+  }
+  .business-check-container {
+    max-width: 95%;
+  }
+  h1, h2, h3 {
+    font-size: 1.8rem;
+  }
+
+  .typed-text {
+    font-size: 16px;
+  }
+
+  .wizard-result-container {
+    padding: 15px;
+  }
+
+  .overview-left, .overview-right {
+    flex: 1 1 100%;
+  }
+  .business-additional-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .business-additional-info .info-item {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .business-overview {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ai-generated-content, .business-improvements {
+    padding: 15px;
+  }
+  .business-improvements li{
+    display: none;
+  }
+  .ai-generated-content {
+    max-width: 95%;
+  }
+  button {
+    font-size: 14px;
+  }
+}

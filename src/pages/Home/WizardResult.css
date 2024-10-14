@@ -271,7 +271,7 @@ h2 {
 /* Tooltip text - hidden by default */
 .tooltip .tooltip-text {
   visibility: hidden;
-  width: 180px;
+  width: 240px;
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   text-align: center;
@@ -284,6 +284,8 @@ h2 {
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease;
+  font-weight:300;
+  font-size: 12px;
 }
 
 /* Show tooltip on hover */

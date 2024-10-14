@@ -115,8 +115,7 @@ const WizardResult = () => {
                 <div className="tooltip">
                   ?
                   <span className="tooltip-text">
-                    This is the description of Market Potential. It shows the
-                    potential of the market to grow.
+                  Total demand for a product or service within a target market, indicating growth opportunities and revenue potential.
                   </span>
                 </div>
               </p>
@@ -139,8 +138,7 @@ const WizardResult = () => {
                 <div className="tooltip">
                   ?
                   <span className="tooltip-text">
-                    This is the description of Market Potential. It shows the
-                    potential of the market to grow.
+                  Distinct benefit offered to customers, differentiating the business from competitors and solving key problems effectively.
                   </span>
                 </div>
               </p>
@@ -160,8 +158,7 @@ const WizardResult = () => {
                 <div className="tooltip">
                   ?
                   <span className="tooltip-text">
-                    This is the description of Market Potential. It shows the
-                    potential of the market to grow.
+                  Strategy for generating income, detailing pricing structure, sales approaches, and various revenue streams for sustainability.
                   </span>
                 </div>
               </p>
@@ -180,8 +177,7 @@ const WizardResult = () => {
                 Competitive Landscape<div className="tooltip">
                   ?
                   <span className="tooltip-text">
-                    This is the description of Market Potential. It shows the
-                    potential of the market to grow.
+                  Analysis of competitors, market share, strengths, and weaknesses, identifying opportunities and challenges for differentiation in business.
                   </span>
                 </div>
               </p>
@@ -197,9 +193,7 @@ const WizardResult = () => {
             {/* Team & Resources */}
             <div className="overview-item">
               <p>
-                Team & Resources<div className="tooltip">?<span className="tooltip-text">
-                    This is the description of Market Potential. It shows the
-                    potential of the market to grow.
+                Team & Resources<div className="tooltip">?<span className="tooltip-text">Key personnel and assets required for successful execution, essential for achieving business goals and long-term growth.
                   </span>
                 </div>
               </p>

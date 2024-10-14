@@ -289,7 +289,7 @@ export default function Wizard() {
     },
     {
       title: "Tell us more about your idea",
-      description: "Describe your idea in few line (minimun 50 characters  )",
+      description: "Please describe your idea in 50 to 250 letters. What is your idea? Who is it designed for? What makes it unique or special?",
       choices: [{ id: "i8a", label: "India", value: "5" }],
       bgColor: "#8781BD",
 

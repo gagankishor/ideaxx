@@ -31,7 +31,7 @@ export default function Features() {
         <h1 className="heading">Ideax Features</h1>
         <div className="container">
           <p>
-            <FaRobot />
+            <FaRobot /> 
             <span>
               <span>AI Plans</span>
               AI Based Systems
@@ -44,7 +44,7 @@ export default function Features() {
               Complete Brand Building Tools
             </span>
           </p>
-          <p>
+          <p>   
             <FaBusinessTime />
             <span>
               <span>Business Mentor</span>

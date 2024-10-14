@@ -161,7 +161,6 @@ const WizardResult = () => {
       </div>
     </div>
   </div>
-
   <div className="business-additional-info">
     <div className="info-item">
       <strong>Target Market Size</strong>
@@ -184,12 +183,14 @@ const WizardResult = () => {
       <span>Optimistic 1.5%</span>
     </div>
   </div>
-
+  </div>
+  <div className="business-check-container">
   <div className="ai-generated-content">
     <h3>Your Idea Overview <FaRobot size={28} style={{ color: "var(--main-color)" }} /></h3>
     {loading ? <p>Loading AI-generated insights...</p> : <p>{displayedText}</p>}
   </div>
-
+  </div>
+  <div className="business-check-container">
   <div className="business-improvements">
     <h3>How you can improve your idea</h3>
     <ul>

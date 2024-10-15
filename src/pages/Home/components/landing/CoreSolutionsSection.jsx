@@ -18,19 +18,19 @@ import { MdArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const icons = [
-  { icon: <FaTasks />, label: "Tasks" },
-  { icon: <FaChartLine />, label: "Sales pipeline" },
-  { icon: <FaFilter />, label: "Lead capturing" },
-  { icon: <FaUsers />, label: "Contacts" },
-  { icon: <FaSuitcase />, label: "Leads" },
-  { icon: <FaUsers />, label: "Customer onboarding" },
-  { icon: <FaRoad />, label: "Roadmap planning" },
-  { icon: <FaBug />, label: "Feature releases" },
-  { icon: <FaBriefcase />, label: "Bug tracking" },
-  { icon: <FaUsers />, label: "Retrospectives" },
-  { icon: <FaSuitcase />, label: "Resource management" },
-  { icon: <FaUsers />, label: "Recruitment" },
-  { icon: <FaChartLine />, label: "Operations" },
+  { icon: <FaTasks />, label: "Tasks",image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
+  { icon: <FaChartLine />, label: "Sales pipeline",image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png' },
+  { icon: <FaFilter />, label: "Lead capturing" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
+  { icon: <FaUsers />, label: "Contacts" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
+  { icon: <FaSuitcase />, label: "Leads" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
+  { icon: <FaUsers />, label: "Customer onboarding" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
+  { icon: <FaRoad />, label: "Roadmap planning" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
+  { icon: <FaBug />, label: "Feature releases",image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png' },
+  { icon: <FaBriefcase />, label: "Bug tracking" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
+  { icon: <FaUsers />, label: "Retrospectives" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
+  { icon: <FaSuitcase />, label: "Resource management" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
+  { icon: <FaUsers />, label: "Recruitment" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
+  { icon: <FaChartLine />, label: "Operations" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
 ];
 
 const CoreSolutionsSection = () => {
@@ -183,11 +183,12 @@ const CoreSolutionsSection = () => {
             <Slider {...settings}>
               {icons.map((item, index) => (
                 <div
-                  key={index}
-                  className="icon-item"
-                  style={{ textAlign: "center", padding: "0px" }}
-                >
-                  <div style={{ fontSize: "24px", cursor: "pointer" }}>
+                key={index}
+                className="icon-item"
+                onClick={() => setSelectedIcon(item.label)}
+                style={{ textAlign: "center", padding: "0px" }}
+              >
+                  <div style={{ fontSize: "24px", cursor: "pointer",color:selectedIcon===item.label? '#6161FF':'white' }}>
                     {item.icon}
                   </div>
                   <div
@@ -199,6 +200,7 @@ const CoreSolutionsSection = () => {
                       margin: "auto",
                       fontSize: "0.875rem",
                       fontWeight: "200",
+                      color:selectedIcon===item.label? '#6161FF':'white'
                     }}
                   >
                     {item.label}

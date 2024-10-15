@@ -72,7 +72,7 @@ export const MainNavBar = () => {
                   onClick={logout}
                 >
 
-                  <a href="#">Sing Out</a>
+                  <a href="#">Sign Out</a>
                   
                 </li>
               ) : (
@@ -80,7 +80,7 @@ export const MainNavBar = () => {
                   
                   <span style={{color:"black"}}>
 
-                  Sing Up
+                  Sign Up
                   </span>
                 
                   

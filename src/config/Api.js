@@ -19,7 +19,6 @@ const savePostDesign = async (postData) => {
   formData.append('productMarketingHighlights', postData.productMarketingHighlights);
   formData.append('notesToDesigner', postData.notesToDesigner);
   formData.append('selectedPlatform',postData.selectedPlatform);
-
   postData?.uploadedFiles?.forEach((file, index) => {
     formData.append(`uploadedFiles`, file);
   }); 
@@ -29,7 +28,6 @@ const savePostDesign = async (postData) => {
         'Content-Type': 'multipart/form-data',
       },
     });
-
     return response.data;
   } catch (error) {
     console.error('Error saving post design:', error);

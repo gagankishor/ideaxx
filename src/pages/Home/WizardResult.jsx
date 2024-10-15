@@ -1,10 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaArrowAltCircleRight, FaRobot } from "react-icons/fa";
+import {  FaRobot } from "react-icons/fa";
+import { BsFillQuestionCircleFill, BsQuestionDiamondFill } from 'react-icons/bs';
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import SpeedTestGauge from "./components/wizard/NivoSpeedomeetr";
+import { FcQuestions } from "react-icons/fc";
+import { PiQuestion } from "react-icons/pi";
+
 Chart.register(ArcElement, Tooltip, Legend);
 
 const WizardResult = () => {
@@ -14,7 +18,7 @@ const WizardResult = () => {
   const [isTypingComplete, setIsTypingComplete] = useState(false); // To prevent re-typing
   const location = useLocation();
   const { data } = location.state || {};
-
+  
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString
@@ -27,13 +31,19 @@ const WizardResult = () => {
       return jsonString;
     }
   };
-
+  const getBarColor = (score) => {
+    if (score <= 50) return "red";       // Red for 0-50%
+    if (score <= 70) return "orange";    // Orange for 50-70%
+    if (score <= 90) return "green";     // Green for 70-90%
+    if (score <= 100) return "blue";     // Blue for 90-100%
+    return "blue";                       // Fallback color for scores out of range
+  };
   const uniqueValueProposition = parseJSON(data?.UniqueValuePropositionData);
   const TeamAndResourcesData = parseJSON(data?.TeamAndResourcesData);
   const RevenueModelData = parseJSON(data?.RevenueModelData);
   const CompetitiveLandscapeData = parseJSON(data?.CompetitiveLandscapeData);
   const TimeToMarketData = parseJSON(data?.TimeToMarketData);
-
+  console.log(data?.marketPotential)
   // console.log(uniqueValueProposition);
   // console.log(TeamAndResourcesData);
   // console.log(CompetitiveLandscapeData);
@@ -105,114 +115,99 @@ const WizardResult = () => {
 
         <div className="business-overview">
           <div className="overview-left">
-            {/* Market Potential */}
             <div
               className="overview-item"
               style={{ marginTop: "50px", position: "relative" }}
             >
-              <p style={{ display: "inline-block", marginRight: "5px" }}>
-                Market Potential{" "}
-                <div className="tooltip">
-                  ?
+              <p>Market Potential </p>
+              
+                <div className="progress-bar">
+                  <div
+                    className="progress"
+                    style={{
+                      width: `${data?.marketPotential}%`
+                      ,backgroundColor: getBarColor(parseFloat(data?.marketPotential) || 0) 
+                    }}
+                  ></div>
+                </div>
+                <span>{data?.marketPotential} %</span>
+                <div className="tooltip" style={{color:"unset"}}>
+                <BsFillQuestionCircleFill size={20} />
+
                   <span className="tooltip-text">
                     Total demand for a product or service within a target
                     market, indicating growth opportunities and revenue
                     potential.
                   </span>
                 </div>
-              </p>
-
-              {/* Tooltip Container */}
-              <div style={{display:'flex',width:'77%'}}>
-
-              <div className="progress-bar">
-                <div
-                  className="progress"
-                  style={{ width: `${data?.marketPotential}%` }}
-                  ></div>
-              </div>
-              <span>{data?.marketPotential} %</span>
-                  </div>
             </div>
 
             {/* Unique Value Proposition */}
             <div className="overview-item">
-              <p>
-                Unique Value Proposition{" "}
-                <div className="tooltip">
-                  ?
-                  <span className="tooltip-text">
-                    Distinct benefit offered to customers, differentiating the
-                    business from competitors and solving key problems
-                    effectively.
-                  </span>
-                </div>
-              </p>
+              <p>Unique Value Proposition </p>
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: uniqueValueProposition?.finalScore }}
+                  style={{ width: uniqueValueProposition?.finalScore,backgroundColor: getBarColor(parseFloat(uniqueValueProposition?.finalScore.replace('%', '')) || 0)   }}
                 ></div>
               </div>
+
               <span>{uniqueValueProposition?.finalScore}</span>
+              <div className="tooltip" style={{color:"unset"}}>
+              <FcQuestions size={20}/>
+
+                <span className="tooltip-text">
+                  Distinct benefit offered to customers, differentiating the
+                  business from competitors and solving key problems
+                  effectively.
+                </span>
+              </div>
             </div>
 
             {/* Revenue Model */}
             <div className="overview-item">
-              <p>
-                Revenue Model
-                <div className="tooltip">
-                  ?
-                  <span className="tooltip-text">
-                    Strategy for generating income, detailing pricing structure,
-                    sales approaches, and various revenue streams for
-                    sustainability.
-                  </span>
-                </div>
-              </p>
+              <p>Revenue Model</p>
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: RevenueModelData?.finalScore }}
+                  style={{ width: RevenueModelData?.finalScore,backgroundColor: getBarColor(parseFloat(RevenueModelData?.finalScore?.replace('%', '')) || 0) }}
                 ></div>
               </div>
               <span>{RevenueModelData?.finalScore}</span>
+              <div className="tooltip" style={{color:"gray"}}>
+              <BsFillQuestionCircleFill size={20} />
+                <span className="tooltip-text">
+                  Strategy for generating income, detailing pricing structure,
+                  sales approaches, and various revenue streams for
+                  sustainability.
+                </span>
+              </div>
             </div>
 
             {/* Competitive Landscape */}
             <div className="overview-item">
-              <p>
-                Competitive Landscape
-                <div className="tooltip">
-                  ?
-                  <span className="tooltip-text">
-                    Analysis of competitors, market share, strengths, and
-                    weaknesses, identifying opportunities and challenges for
-                    differentiation in business.
-                  </span>
-                </div>
-              </p>
+              <p>Competitive Landscape</p>
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: CompetitiveLandscapeData?.finalScore }}
+                  style={{ width: CompetitiveLandscapeData?.finalScore ,backgroundColor: getBarColor(parseFloat(CompetitiveLandscapeData?.finalScore?.replace('%', '')) || 0) }}
                 ></div>
               </div>
               <span>{CompetitiveLandscapeData?.finalScore}</span>
+              <div className="tooltip">
+              <BsQuestionDiamondFill size={20}/>
+
+                <span className="tooltip-text">
+                  Analysis of competitors, market share, strengths, and
+                  weaknesses, identifying opportunities and challenges for
+                  differentiation in business.
+                </span>
+              </div>
             </div>
 
             {/* Team & Resources */}
             <div className="overview-item">
-              <p>
-                Team & Resources
-                <div className="tooltip">
-                  ?
-                  <span className="tooltip-text">
-                    Key personnel and assets required for successful execution,
-                    essential for achieving business goals and long-term growth.
-                  </span>
-                </div>
-              </p>
+              <p>Team & Resources</p>
               <div className="progress-bar">
                 <div
                   className="progress"
@@ -220,6 +215,14 @@ const WizardResult = () => {
                 ></div>
               </div>
               <span>{TeamAndResourcesData}%</span>
+              <div className="tooltip" style={{color:"gray"}}>
+              <PiQuestion size={20}/>
+
+                <span className="tooltip-text">
+                  Key personnel and assets required for successful execution,
+                  essential for achieving business goals and long-term growth.
+                </span>
+              </div>
             </div>
           </div>
           <div className="overview-right">

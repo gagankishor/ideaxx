@@ -11,7 +11,7 @@ const ProductLineupSection = () => {
             <img
               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/michael-testing/Ellipse_5790.png"
               alt="Background"
-              style={{ width: "70%" }}
+              style={{ width: "70%",margin:'auto' }}
             />
           </div>
 

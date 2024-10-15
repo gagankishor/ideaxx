@@ -158,7 +158,7 @@ const CoreSolutionsSection = () => {
               wordBreak: "break-word",
             }}
           >
-            Core solutions that span across your business. All on one platform.
+            From Concept to Execution—Your All-in-One Business Solution.
           </h2>
         </div>
         <div className="slider-container" style={{ marginTop: "50px" }}>
@@ -260,5 +260,4 @@ function SamplePrevArrow(props) {
     </div>
   );
 }
-
 export default CoreSolutionsSection;

@@ -115,19 +115,17 @@
     background-color: gray; /* Slightly darker background on hover */
   }
   
-  /* Custom positioning (optional) */
   .slick-prev {
-    left: 10px; /* Adjust the position of the left arrow */
+    left: 10px; 
   }
   
   .slick-next {
-    right: 10px; /* Adjust the position of the right arrow */
+    right: 10px;
   }
   
-  /* If you're using default arrow icons */
   .slick-prev:before, .slick-next:before {
     font-size: 20px; /* Adjust size of the arrow icon */
-    color: black; /* Make arrow icon black (change if needed) */
+    color: black; 
   }
   .right-sedow2 {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);

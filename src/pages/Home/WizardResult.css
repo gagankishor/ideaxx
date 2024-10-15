@@ -167,6 +167,7 @@ h2 {
   .overview-left,
   .overview-right {
     width: 100%;
+    margin: unset;
   }
 
   .overview-left {
@@ -191,6 +192,7 @@ h2 {
   .business-check-container {
     max-width: 100%;
     padding: 15px;
+    width: 96%;
   }
 
   h2 {

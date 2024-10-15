@@ -36,7 +36,7 @@ export default function Home() {
       <CardSlider />
       {/* <IconSlider/> */}
       <TrustedBySection />
-      {/* <CoreSolutionsSection />  */}
+      <CoreSolutionsSection /> 
 
       <ProductLineupSection />
       <div className="home-main-contaner">

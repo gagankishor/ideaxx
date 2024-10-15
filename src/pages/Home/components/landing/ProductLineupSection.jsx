@@ -5,12 +5,13 @@ const ProductLineupSection = () => {
     <div style={{ padding: "0px 0px" }}>
       <div style={{ backgroundColor: "black", zIndex: "0" }}>
         <div style={{ position: "relative", overflow: "hidden" }}>
+      <p style={{fontSize:'2.75rem',fontWeight:"200",color:"white"}}> One core platform for all your work </p>
           {/* Background Image */}
           <div style={{ position: "absolute", zIndex: 1 }}>
             <img
               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/michael-testing/Ellipse_5790.png"
               alt="Background"
-              style={{ width: "100%" }}
+              style={{ width: "70%" }}
             />
           </div>
 
@@ -116,12 +117,13 @@ const ProductLineupSection = () => {
 
       {/* Footer Text */}
       <div style={{ backgroundColor: "black", zIndex: "0", textAlign: "center", padding: "20px 0" }}>
-        <span style={{ fontSize: "20px", fontWeight: "bold", color: "white" }}>
+        <span style={{ fontSize: "60px", fontWeight: "200", color: "white" }}>
           Meet the product lineup
         </span>
         <p style={{ color: "white", fontSize: "16px" }}>
           Step into a world of seamless work experiences.
         </p>
+              <img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto:best/remote_mondaycom_static/uploads/NaamaGros/Switcher_2.png" alt="" style={{width:'600px',margin:"auto"}}/>
       </div>
     </div>
   );

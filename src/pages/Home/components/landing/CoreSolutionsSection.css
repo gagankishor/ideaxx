@@ -1,3 +1,8 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+
 /* General styling for the container */
 .slider-container {
     margin: 30px 0;
@@ -42,7 +47,8 @@
   }
   
   .slick-prev.custom-arrow {
-    left: -40px; /* Adjust position as needed */
+    left: -40px; 
+    
   }
   
   .slick-next.custom-arrow {
@@ -75,4 +81,68 @@
     transform: scale(0.95);
     opacity: 0;
   }
+  .carousel-container {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+  }
   
+  .icon-item {
+    text-align: center;
+  }
+  
+  .slick-prev, .slick-next {
+    background-color: #fff;
+    border-radius: 50%;
+    color: #000;
+  }
+  
+  .slick-prev, .slick-next {
+    background-color: white; /* White background to contrast with black background */
+    border-radius: 50%; /* Make the buttons circular */
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure they appear above other elements */
+    color: black; /* Color of the arrow (you can change to another color if you want) */
+    opacity: 1;
+  }
+  
+  /* Custom hover effect */
+  .slick-prev:hover, .slick-next:hover {
+    background-color: gray; /* Slightly darker background on hover */
+  }
+  
+  /* Custom positioning (optional) */
+  .slick-prev {
+    left: 10px; /* Adjust the position of the left arrow */
+  }
+  
+  .slick-next {
+    right: 10px; /* Adjust the position of the right arrow */
+  }
+  
+  /* If you're using default arrow icons */
+  .slick-prev:before, .slick-next:before {
+    font-size: 20px; /* Adjust size of the arrow icon */
+    color: black; /* Make arrow icon black (change if needed) */
+  }
+  .right-sedow2 {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);
+    z-index: 1;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
+  
+  .left-sedow2 {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);
+    z-index: 1;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }

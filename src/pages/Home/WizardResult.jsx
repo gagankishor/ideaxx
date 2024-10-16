@@ -1,8 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import {  FaRobot } from "react-icons/fa";
-import { BsFillQuestionCircleFill, BsQuestionDiamondFill } from 'react-icons/bs';
+import { FaRobot } from "react-icons/fa";
+import {
+  BsFillQuestionCircleFill,
+  BsQuestionDiamondFill,
+} from "react-icons/bs";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import SpeedTestGauge from "./components/wizard/NivoSpeedomeetr";
@@ -18,7 +21,7 @@ const WizardResult = () => {
   const [isTypingComplete, setIsTypingComplete] = useState(false); // To prevent re-typing
   const location = useLocation();
   const { data } = location.state || {};
-  
+
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString
@@ -32,18 +35,18 @@ const WizardResult = () => {
     }
   };
   const getBarColor = (score) => {
-    if (score <= 50) return "red";       // Red for 0-50%
-    if (score <= 70) return "orange";    // Orange for 50-70%
-    if (score <= 90) return "green";     // Green for 70-90%
-    if (score <= 100) return "blue";     // Blue for 90-100%
-    return "blue";                       // Fallback color for scores out of range
+    if (score <= 50) return "red"; // Red for 0-50%
+    if (score <= 70) return "orange"; // Orange for 50-70%
+    if (score <= 90) return "green"; // Green for 70-90%
+    if (score <= 100) return "blue"; // Blue for 90-100%
+    return "blue"; // Fallback color for scores out of range
   };
   const uniqueValueProposition = parseJSON(data?.UniqueValuePropositionData);
   const TeamAndResourcesData = parseJSON(data?.TeamAndResourcesData);
   const RevenueModelData = parseJSON(data?.RevenueModelData);
   const CompetitiveLandscapeData = parseJSON(data?.CompetitiveLandscapeData);
   const TimeToMarketData = parseJSON(data?.TimeToMarketData);
-  console.log(data?.marketPotential)
+  console.log(data?.marketPotential);
   // console.log(uniqueValueProposition);
   // console.log(TeamAndResourcesData);
   // console.log(CompetitiveLandscapeData);
@@ -88,13 +91,13 @@ const WizardResult = () => {
     datasets: [
       {
         data: [data?.success_percentage, 100 - data?.success_percentage],
-        backgroundColor: ["#4caf50", "#e0e0e0"],
+        backgroundColor: [`${getBarColor(parseFloat(data?.success_percentage))}`, "#e0e0e0"],
         hoverBackgroundColor: ["#4caf50", "#e0e0e0"],
         borderWidth: 1,
       },
     ],
   };
-
+ 
   const options = {
     cutout: "70%", // Makes it a ring
     responsive: true,
@@ -120,26 +123,27 @@ const WizardResult = () => {
               style={{ marginTop: "50px", position: "relative" }}
             >
               <p>Market Potential </p>
-              
-                <div className="progress-bar">
-                  <div
-                    className="progress"
-                    style={{
-                      width: `${data?.marketPotential}%`
-                      ,backgroundColor: getBarColor(parseFloat(data?.marketPotential) || 0) 
-                    }}
-                  ></div>
-                </div>
-                <span>{data?.marketPotential} %</span>
-                <div className="tooltip" style={{color:"unset"}}>
+
+              <div className="progress-bar">
+                <div
+                  className="progress"
+                  style={{
+                    width: `${data?.marketPotential}%`,
+                    backgroundColor: getBarColor(
+                      parseFloat(data?.marketPotential) || 0
+                    ),
+                  }}
+                ></div>
+              </div>
+              <span>{data?.marketPotential} %</span>
+              <div className="tooltip" style={{ color: "unset" }}>
                 <BsFillQuestionCircleFill size={20} />
 
-                  <span className="tooltip-text">
-                    Total demand for a product or service within a target
-                    market, indicating growth opportunities and revenue
-                    potential.
-                  </span>
-                </div>
+                <span className="tooltip-text">
+                  Total demand for a product or service within a target market,
+                  indicating growth opportunities and revenue potential.
+                </span>
+              </div>
             </div>
 
             {/* Unique Value Proposition */}
@@ -148,13 +152,20 @@ const WizardResult = () => {
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: uniqueValueProposition?.finalScore,backgroundColor: getBarColor(parseFloat(uniqueValueProposition?.finalScore.replace('%', '')) || 0)   }}
+                  style={{
+                    width: uniqueValueProposition?.finalScore,
+                    backgroundColor: getBarColor(
+                      parseFloat(
+                        uniqueValueProposition?.finalScore.replace("%", "")
+                      ) || 0
+                    ),
+                  }}
                 ></div>
               </div>
 
               <span>{uniqueValueProposition?.finalScore}</span>
-              <div className="tooltip" style={{color:"unset"}}>
-              <FcQuestions size={20}/>
+              <div className="tooltip" style={{ color: "unset" }}>
+                <FcQuestions size={20} />
 
                 <span className="tooltip-text">
                   Distinct benefit offered to customers, differentiating the
@@ -170,12 +181,19 @@ const WizardResult = () => {
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: RevenueModelData?.finalScore,backgroundColor: getBarColor(parseFloat(RevenueModelData?.finalScore?.replace('%', '')) || 0) }}
+                  style={{
+                    width: RevenueModelData?.finalScore,
+                    backgroundColor: getBarColor(
+                      parseFloat(
+                        RevenueModelData?.finalScore?.replace("%", "")
+                      ) || 0
+                    ),
+                  }}
                 ></div>
               </div>
               <span>{RevenueModelData?.finalScore}</span>
-              <div className="tooltip" style={{color:"gray"}}>
-              <BsFillQuestionCircleFill size={20} />
+              <div className="tooltip" style={{ color: "gray" }}>
+                <BsFillQuestionCircleFill size={20} />
                 <span className="tooltip-text">
                   Strategy for generating income, detailing pricing structure,
                   sales approaches, and various revenue streams for
@@ -183,20 +201,25 @@ const WizardResult = () => {
                 </span>
               </div>
             </div>
-
             {/* Competitive Landscape */}
             <div className="overview-item">
               <p>Competitive Landscape</p>
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: CompetitiveLandscapeData?.finalScore ,backgroundColor: getBarColor(parseFloat(CompetitiveLandscapeData?.finalScore?.replace('%', '')) || 0) }}
+                  style={{
+                    width: CompetitiveLandscapeData?.finalScore,
+                    backgroundColor: getBarColor(
+                      parseFloat(
+                        CompetitiveLandscapeData?.finalScore?.replace("%", "")
+                      ) || 0
+                    ),
+                  }}
                 ></div>
               </div>
               <span>{CompetitiveLandscapeData?.finalScore}</span>
               <div className="tooltip">
-              <BsQuestionDiamondFill size={20}/>
-
+                <BsQuestionDiamondFill size={20} />
                 <span className="tooltip-text">
                   Analysis of competitors, market share, strengths, and
                   weaknesses, identifying opportunities and challenges for
@@ -204,8 +227,6 @@ const WizardResult = () => {
                 </span>
               </div>
             </div>
-
-            {/* Team & Resources */}
             <div className="overview-item">
               <p>Team & Resources</p>
               <div className="progress-bar">
@@ -215,9 +236,8 @@ const WizardResult = () => {
                 ></div>
               </div>
               <span>{TeamAndResourcesData}%</span>
-              <div className="tooltip" style={{color:"gray"}}>
-              <PiQuestion size={20}/>
-
+              <div className="tooltip" style={{ color: "gray" }}>
+                <PiQuestion size={20} />
                 <span className="tooltip-text">
                   Key personnel and assets required for successful execution,
                   essential for achieving business goals and long-term growth.
@@ -226,6 +246,7 @@ const WizardResult = () => {
             </div>
           </div>
           <div className="overview-right">
+                        
             <div className="business-score-circle">
               <Doughnut data={bardata} options={options} />
               <div className="doughnut-center">
@@ -233,6 +254,7 @@ const WizardResult = () => {
                 <p>Idea Score</p>
               </div>
             </div>
+            
           </div>
         </div>
         <div className="business-additional-info">

@@ -2946,3 +2946,264 @@ nav .container .burger {
 .slick-next {
   z-index: 1;
 }
+.awards-section {
+  background-color: #000;
+  color: #fff;
+  padding: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-section h1 {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+.cta-button {
+  background-color: #567ef7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.info-cards {
+  display: flex;
+  padding: 20px 120px;
+  margin-top: 30px;
+}
+.info-cards2 {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+}
+.info-cards2 .card {
+  background: linear-gradient(rgba(66,66,66,1) 0%,rgba(0,0,0,1) 100%);
+  border: 1px solid #545454;
+  padding: 20px;
+  border-radius: 10px;
+  width: 95%;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* height: 100%; */
+}
+
+.info-cards2 .card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-align: left;
+  color: white;
+}
+
+.info-cards2 .card p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: left;
+  color: white;
+
+}
+.forrester {
+  margin-top: 30px;
+}
+
+.read-more {
+  color: #ffffff;
+  text-decoration:underline;
+  text-align: left;
+  line-height: 160%;
+
+}
+
+.badge-section {
+  /* margin-top: 30px; */
+  background: linear-gradient(rgba(66,66,66,1) 0%,rgba(0,0,0,1) 100%);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid #545454;
+}
+
+.badge-category {
+  margin-bottom: 20px;
+}
+
+.badge-category h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: left;
+
+}
+
+.badge-category p {
+  margin-bottom: 10px;
+  color: white;
+  text-align: left;
+
+
+}
+
+.badges img {
+  height: 70px;
+  margin-right: 10px;
+}
+.impact-section {
+  
+  color: white;
+  padding: 4rem 0rem;
+  text-align: center;
+}
+
+.impact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.logo-slider {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.client-logo {
+  height: 80px;
+  opacity: 0.7;
+  margin: 0 auto;
+}
+
+.client-logo:hover {
+  opacity: 1;
+}
+
+.impact-details {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.impact-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quote-author {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-link {
+  font-weight: 600;
+  color: #4db9f3;
+  text-decoration: none;
+}
+
+.report-link:hover {
+  text-decoration: underline;
+}
+
+.stats-slider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  position: relative;
+  height: 445px;
+  border-radius: 8px;
+  overflow: hidden; /* Ensure the image doesn't overflow the borders */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Ensure the text is readable */
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.1); /* Add the translucent background color */
+}
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Image should be behind the text */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the div without distortion */
+  opacity: 0.4; /* Optional: Adjust image opacity if needed */
+}
+
+.stat-item h4, .stat-item p {
+  position: relative;
+  z-index: 1; /* Ensure the text stays on top of the image */
+  margin: 0;
+}
+
+.stat-item h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: white;
+
+}
+
+/* Style the dots only for the custom-slider */
+.custom-slider .slick-dots {
+  display: flex;
+  justify-content: center;
+  bottom: -30px; 
+  gap: 180px;
+}
+
+.custom-slider .slick-dots li {
+  display: inline-block;
+  margin: 0 90px; /* Spacing between the dots */
+}
+
+.custom-slider .slick-dots li button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Style each dot as a line */
+.custom-slider .slick-dots li button:before {
+  content: '';
+  width: 90px; /* Length of each dot */
+  height: 4px; /* Height of each dot (thin line) */
+  display: block;
+  background-color: #7366d0; /* Inactive dot color (purple) */
+  opacity: 0.5; /* Lower opacity for inactive dots */
+  transition: background-color 0.3s, opacity 0.3s; /* Smooth transition */
+}
+
+/* Style the active dot */
+.custom-slider .slick-dots li.slick-active button:before {
+  background-color: #fff; /* White color for the active dot */
+  opacity: 1; /* Full opacity for the active dot */
+}

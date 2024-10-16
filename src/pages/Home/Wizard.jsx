@@ -1033,8 +1033,6 @@ export default function Wizard() {
               alt=""
               style={{
                 width:  "100%",
-                
-                  
                 position: "absolute",
               }}
             />

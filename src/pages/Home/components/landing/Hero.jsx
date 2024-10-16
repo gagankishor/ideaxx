@@ -73,7 +73,9 @@ export const Hero = () => {
               borderRadius: "20px",
               height: "380px",
             }}
-          ></div>
+          >
+            
+          </div>
           {/* <img
             src="/card22.webp"
             alt="Roadmap"
@@ -90,7 +92,7 @@ export const Hero = () => {
             }}
           /> */}
           <motion.img
-            src="/card22.webp"
+            src="/idiaxsection1.png"
             alt="Roadmap"
             style={{
               overflow: "hidden",
@@ -113,7 +115,7 @@ export const Hero = () => {
           />
 
           <motion.img
-            src="/card23.webp"
+            src="/ideaxsection1i2.png"
             alt="Roadmap"
             className="hero-image2"
             style={{

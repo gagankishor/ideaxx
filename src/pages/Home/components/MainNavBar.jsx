@@ -76,11 +76,12 @@ export const MainNavBar = () => {
                   
                 </li>
               ) : (
-                <li style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px',fontWeight:'700' }} onClick={showMenu} >
+                <li style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px',fontWeight:'700' }}  >
                   
                   <span style={{color:"black"}}>
 
-                  Sign Up
+                  
+                  <a href="/login">Sign Up</a>
                   </span>
                 
                   

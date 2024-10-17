@@ -108,11 +108,11 @@ const ProductLineupSection = () => {
             One core platform for all your work{" "}
           </p>
           {/* Background Image */}
-          <div style={{ position: "absolute", zIndex: 1 }}>
+          <div style={{ position: "absolute", zIndex: 1,left:"470px",top:'340px' }}>
             <img
               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/michael-testing/Ellipse_5790.png"
               alt="Background"
-              style={{ width: "70%", margin: "auto" }}
+              style={{ width: "50%", margin: "auto" }}
             />
           </div>
 
@@ -129,11 +129,11 @@ const ProductLineupSection = () => {
             }}
           >
             {/* Stage Border */}
-            <img
+            {/* <img
               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/NaamaGros/platform2.0/Stage_border.png"
               alt="Stage Border"
               style={{ position: "absolute", width: "100%" }}
-            />
+            /> */}
 
             {/* Product Blocks */}
             <div

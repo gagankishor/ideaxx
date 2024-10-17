@@ -76,8 +76,8 @@ export const Hero = () => {
           >
             
           </div>
-          {/* <img
-            src="/card22.webp"
+          <img
+            src="/idiaxsection1233.png"
             alt="Roadmap"
             style={{
               overflow: "hidden",
@@ -90,7 +90,7 @@ export const Hero = () => {
               left: "-140px",
               top: "-50px",
             }}
-          /> */}
+          />
           <motion.img
             src="/idiaxsection1.png"
             alt="Roadmap"

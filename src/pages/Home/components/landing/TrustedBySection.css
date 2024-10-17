@@ -19,8 +19,11 @@
   }
   
   .company-logo {
-    width: 80px;
+    width: 100px;
     margin: 0 20px;
+    height: 80px;
+    padding: 5px;
+    border-radius: 5px;
   }
   
   .logos {
@@ -55,6 +58,15 @@
   
   .highlight-text {
     font-weight: 700;
+  }
+  .image-contener {
+    min-height: 60px;
+  }
+  /* .image-contener h3{
+    
+  } */
+  .image-contener-h{
+    font-size:'12px';
   }
   
   /* Responsive Styles */

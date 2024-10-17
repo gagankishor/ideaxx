@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './CardSlider.css';
-import { FaArrowDown, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowDown, FaArrowLeft, FaArrowRight, FaCheckCircle, FaCoins, FaCommentSlash, FaDotCircle } from 'react-icons/fa';
 
 const CardSlider = () => {
   const settings = {
@@ -9,7 +9,7 @@ const CardSlider = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4.5,
-    slidesToScroll: 3,
+    slidesToScroll: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -38,18 +38,34 @@ const CardSlider = () => {
     // { id: 2, title: '', description: '', bgImage: '/homeslider/bisness.jpeg' },
     // { id: 3, title: '', description: '', bgImage: '/homeslider/community.jpeg' },
     // { id: 4, title: '', description: '', bgImage: '/homeslider/cashflow.jpeg' },
-    { id: 1, title: 'Cashflow', description: 'cash flow', bgImage: '/cashflow.webp' },
-    { id: 2, title: 'Business', description: 'Business', bgImage: '/bisness.webp' },
-    { id: 3, title: 'Community', description: 'community', bgImage: '/community.webp' },
-    { id: 4, title: 'Consult', description: '', bgImage: '/cashflow.webp' },
-    { id: 5, title: 'Legal', description: '', bgImage: '/lawer.webp' },
-    { id: 6, title: 'Graphic', description: '', bgImage: '/graphic.webp' },
-    { id: 7, title: 'Logo', description: '', bgImage: '/logo.webp' },
-    { id: 8, title: 'Slogan', description: '', bgImage: '/tagline.webp' },
-    { id: 9, title: 'Team', description: '', bgImage: '/team.webp' },
-    { id: 10, title: 'Web development', description: '', bgImage: '/webdevelopment.webp' },
+    { id: 1, title: 'Community', description: 'Community', bgImage: 'sliderLandigPage/1.jpg' },
+    { id: 2, title: 'Strategies', description: 'Business', bgImage: '/sliderLandigPage/2.jpg' },
+    { id: 3, title: 'Consulting', description: 'community', bgImage: '/sliderLandigPage/3.jpg' },
+    { id: 4, title: 'Marketing', description: '', bgImage: '/sliderLandigPage/4.jpg' },
+    { id: 5, title: 'Legal', description: '', bgImage: '/sliderLandigPage/5.jpg' },
+    // { id: 6, title: 'Integrity', description: '', bgImage: '/sliderLandigPage/6.jpg' },
+    // { id: 7, title: 'Inovation', description: '', bgImage: '/sliderLandigPage/7.jpg' },
+    { id: 8, title: 'Idea', description: '', bgImage: '/sliderLandigPage/8.jpg' },
+    { id: 9, title: 'Entrepreneur', description: '', bgImage: '/sliderLandigPage/9.jpg' },
+    // { id: 10, title: 'Col', description: '', bgImage: '/sliderLandigPage/10.jpg' },
+    { id: 11, title: 'Cash Flow', description: '', bgImage: '/sliderLandigPage/11.jpg' },
+    { id: 12, title: 'Buy-Sell', description: '', bgImage: '/sliderLandigPage/12.jpg' },
+    { id: 13, title: 'Business Tools', description: '', bgImage: '/sliderLandigPage/13.jpg' },
+    { id: 14, title: 'Business identity', description: '', bgImage: '/sliderLandigPage/14.jpg' },
+    { id: 15, title: 'Team', description: '', bgImage: '/sliderLandigPage/15.jpg' },
   ];
-
+  // - idea
+  // 2- Business identity 
+  // 3- Marketing 
+  // 4- Legal
+  // 5- Team
+  // 6- Business Tools
+  // 7- Cash Flow
+  // 8- Consulting 
+  // 9- Entrepreneur 
+  // 10- Strategies
+  // 11- Community
+  // 12- Buy-Sell
   return (
     <>
     <div className="card-slider-improved">
@@ -68,14 +84,47 @@ const CardSlider = () => {
                 height: '350px',
               }}
               />
-            <div className="card-content" style={{color:'white'}}>
+            {/* <div className="card-content" style={{color:'white'}}>
               <h3>{card.title}</h3>
               <p className="card-description">{card.description}</p>
-            </div>
+            </div> */}
             <div className="card-content2">
 
-              <p className="card-description">{card.description}</p>
-              <h3>{card.title}</h3>
+            <h3 style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '14px' }}>
+              <FaCoins
+                size={30}
+                style={{
+                  margin: '0 5px',
+                  color: 'white',
+                  backgroundColor: 'blue',
+                  padding: '8px',
+                  borderRadius: '5px'
+                }}
+              /> 
+              {card.title}
+            </h3>
+              <p className="card-description " style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '10px' ,lineHeight:'30px'}}>
+                <FaCheckCircle 
+                style={{
+                  margin: '0 5px',
+                  
+                  borderRadius: '5px'
+                }}/> Pointer 1</p>
+                <p className="card-description " style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '10px',lineHeight:'30px' }}>
+                <FaCheckCircle 
+                style={{
+                  margin: '0 5px',
+                  
+                  borderRadius: '5px'
+                }}/> Pointer 1</p>
+                <p className="card-description " style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '10px' ,lineHeight:'30px'}}>
+                <FaCheckCircle 
+
+                style={{
+                  margin: '0 5px',
+                  
+                  borderRadius: '5px'
+                }}/> Pointer 1</p>
             </div>
            
           </div>

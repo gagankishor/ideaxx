@@ -2148,6 +2148,10 @@ nav .container .burger {
   font-size: 12px;
   color: #777;
 }
+
+
+
+
 @media (max-height: 690px) {
   /* .wizard .container .box {
     overflow-y:overlay;
@@ -3136,7 +3140,9 @@ nav .container .burger {
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.1); /* Add the translucent background color */
 }
+.stat-item-content-left {
 
+}
 .image-container {
   position: absolute;
   top: 0;
@@ -3207,3 +3213,6 @@ nav .container .burger {
   background-color: #fff; /* White color for the active dot */
   opacity: 1; /* Full opacity for the active dot */
 }
+
+
+

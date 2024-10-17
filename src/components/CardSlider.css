@@ -60,7 +60,7 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  padding: 20px;
   color: #fff;
   text-align: left;
   width: 100%;
@@ -69,7 +69,9 @@
   opacity: 0; /* Hidden initially */
   transition: opacity 0.8s ease, background 0.5s ease; /* Smooth transitions for opacity and background */
 }
-
+.card-content2 h3 {
+  color: #888686ea;
+}
 .card:hover .card-content2 {
   visibility: visible;
   opacity: 1; /* Fade in smoothly */

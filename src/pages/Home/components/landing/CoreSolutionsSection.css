@@ -22,15 +22,14 @@
     transition: color 0.3s ease-in-out;
   }
   
-  /* Highlighting the selected icon */
   .slider-item span:hover,
   .slider-item span.selected {
-    color: #4fadfa; /* Highlight color (change as needed) */
+    color: #4fadfa;
   }
   
   /* Styling for the custom arrows */
   .custom-arrow {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     font-size: 30px;
     padding: 10px;
@@ -83,6 +82,7 @@
   }
   .carousel-container {
     width: 100%;
+    padding: 20px;
     background-color: #000;
     color: #fff;
   }
@@ -90,7 +90,25 @@
   .icon-item {
     text-align: center;
   }
-  
+  .icon-item .icon-title {
+    margin-top: 5px;
+    cursor: pointer;
+    width: 80px;
+    text-align: center;
+    margin: auto;
+    font-size: 0.875rem;
+    font-weight: 200;
+    color: #b8b4b4;
+  }
+  .icon-item .icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #b8b4b4;
+  }
+  .icon-item :hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+  }
   .slick-prev, .slick-next {
     background-color: #fff;
     border-radius: 50%;
@@ -131,7 +149,7 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);
     z-index: 1;
     width: 200px;
-    height: 100%;
+    height: 120%;
     position: absolute;
     right: 0;
   }
@@ -140,8 +158,64 @@
     background: linear-gradient(270deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);
     z-index: 1;
     width: 200px;
-    height: 100%;
+    height: 120%;
     position: absolute;
     left: 0;
   }
-  
+.from-concept-continer {
+    margin: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.from-concept-main-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.from-concept-card {
+   background: linear-gradient(270deg, rgba(0, 0, 0, 0.0) 10%, #242424 40%);
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgba(112, 109, 109, 0.63);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(104, 103, 103, 0.1);
+    position: relative;
+}
+
+.from-concept-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.from-concept-card h3, .from-concept-card p {
+    transition: color 0.3s ease;
+}
+
+.from-concept-card:hover h3 {
+    color: #00bcd4; /* Add a highlight color on hover */
+}
+
+.from-concept-card:hover p {
+    color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

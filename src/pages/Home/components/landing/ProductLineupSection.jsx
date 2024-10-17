@@ -9,6 +9,10 @@ import {
 } from "react-icons/fa";
 import { FaSeedling } from "react-icons/fa6";
 import Slider from "react-slick";
+import { GrValidate } from "react-icons/gr";
+import { RiPassValidFill } from "react-icons/ri";
+import { PiPlugsConnectedFill } from "react-icons/pi";
+import { HiRocketLaunch } from "react-icons/hi2";
 
 const ProductLineupSection = () => {
   const containerStyle = {
@@ -51,10 +55,10 @@ const ProductLineupSection = () => {
     padding: "30px",
     borderRadius: "10px",
     textAlign: "left",
-    width: "23%",
+    width: "31%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     border: "1px solid white",
   };
 
@@ -69,6 +73,7 @@ const ProductLineupSection = () => {
     fontWeight: "700",
     color: "white",
     textAlign: "start",
+    // minHeight:'60px'
   };
 
   const textStyle = {
@@ -134,17 +139,17 @@ const ProductLineupSection = () => {
             <div
               style={{
                 position: "relative",
-                width: "210px",
-                height: "115px",
-                margin: "300px 0px 0px 10px",
+                width: "310px",
+                height: "255px",
+                margin: "300px 0px 0px -40px",
                 border: "1px solid blue",
                 borderRadius: "5px",
               }}
             >
               <img
-                src="/darksection2iq.jpeg"
+                src="/darksection1/Integrity.jpg"
                 alt="Product"
-                style={{ width: "200px", borderRadius: "3px" }}
+                style={{ width: "300px", borderRadius: "15px" }}
               />
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -153,18 +158,18 @@ const ProductLineupSection = () => {
             <div
               style={{
                 position: "relative",
-                width: "210px",
-                height: "115px",
-                margin: "50px -150px 50px 10px",
+                width: "310px",
+                height: "245px",
+                margin: "20px 150px 50px 10px",
                 border: "1px solid blue",
                 borderRadius: "5px",
                 backgroundColor: "black",
               }}
             >
               <img
-                src="/darksection2i2.jpeg"
+                src="/darksection1/innovation.jpg"
                 alt="Product"
-                style={{ width: "200px" }}
+                style={{ width: "300px" }}
               />
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -173,24 +178,24 @@ const ProductLineupSection = () => {
             <div
               style={{
                 position: "relative",
-                width: "210px",
-                height: "115px",
-                margin: "300px 50px",
+                width: "310px",
+                height: "228px",
+                margin: "200px -60px",
                 border: "1px solid blue",
                 borderRadius: "5px",
               }}
             >
               <img
-                src="/darksection2i3.jpeg"
+                src="/darksection1/collaboration.jpg"
                 alt="Product"
-                style={{ width: "200px" }}
+                style={{ width: "300px", borderRadius: "15px" }}
               />
 
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
             </div>
 
-            <div
+            {/* <div
               style={{
                 position: "relative",
                 width: "210px",
@@ -207,7 +212,7 @@ const ProductLineupSection = () => {
               />
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -222,7 +227,7 @@ const ProductLineupSection = () => {
         }}
       >
         <span style={{ fontSize: "60px", fontWeight: "200", color: "white" }}>
-          Meet the product lineup
+          What our clints have say about us.
         </span>
         <p style={{ color: "white", fontSize: "16px" }}>
           Step into a world of seamless work experiences.
@@ -238,19 +243,35 @@ const ProductLineupSection = () => {
           <video
             src="https://dapulse-res.cloudinary.com/video/upload/q_auto,f_auto,cs_copy/remote_mondaycom_static/uploads/Yotam_Ron/110224-card-vid-wm-v1.mp4"
             style={{ width: "49%" }}
+            autoPlay
+            loop
+            muted
+            playsInline
           ></video>
           <video
             src="https://dapulse-res.cloudinary.com/video/upload/q_auto,f_auto,cs_copy/remote_mondaycom_static/uploads/Yotam_Ron/110224-card-vid-crm-v1.mp4"
             style={{ width: "49%" }}
+            autoPlay
+            loop
+            muted
+            playsInline
           ></video>
 
           <video
             src="https://dapulse-res.cloudinary.com/video/upload/q_auto,f_auto,cs_copy/remote_mondaycom_static/uploads/Yotam_Ron/110224-card-vid-crm-v1.mp4"
             style={{ width: "49%" }}
+            autoPlay
+            loop
+            muted
+            playsInline
           ></video>
           <video
             src="https://dapulse-res.cloudinary.com/video/upload/q_auto,f_auto,cs_copy/remote_mondaycom_static/uploads/Yotam_Ron/110224-card-vid-wm-v1.mp4"
             style={{ width: "49%" }}
+            autoPlay
+            loop
+            muted
+            playsInline
           ></video>
         </div>
       </div>
@@ -304,58 +325,71 @@ const ProductLineupSection = () => {
       </div>
       <div style={containerStyle}>
         <div style={topSectionStyle}>
-          <h1>
-            61% of Fortune 500 enterprises scale their success with monday.com
-          </h1>
+          <h1>How It Works</h1>
           <button style={buttonStyle}>Talk to Sales</button>
         </div>
-
         <div style={cardSectionStyle}>
           <div style={cardStyle}>
             <div style={iconStyle}>
-              <FaDatabase />
+              {/* <FaDatabase /> */}
+              {/* <GrValidate /> */}
+              <RiPassValidFill />
             </div>{" "}
             {/* Replace with an actual icon */}
-            <h3 style={titleStyle}>Built for flexibility, speed, and scale</h3>
-            <p style={textStyle}>
-              mondayDB is our in-house data engine, enabling you to move fast,
-              expand to more teams, and adapt to the most complex business
-              workflows.
-            </p>
+            <div>
+              <h3 style={titleStyle}>Validate Your Idea</h3>
+              <p style={textStyle}>Sign up and submit your business idea.</p>
+              <p style={textStyle}>
+                Receive an instant report with AI-driven insights.
+              </p>
+            </div>
           </div>
           <div style={cardStyle}>
             <div style={iconStyle}>
-              <FaLock />
+              {/* <FaLock /> */}
+              <PiPlugsConnectedFill />
             </div>
-            <h3 style={titleStyle}>Industry-leading data security</h3>
-            <p style={textStyle}>
-              Confidently manage data with custom granular permissions all in a
-              secure environment, backed by industry-leading compliance
-              standards.
-            </p>
+            <div>
+              <h3 style={titleStyle}>Connect with Your Team</h3>
+              <p style={textStyle}>
+                Choose from our pool of experts in various fields to join your
+                idea.
+              </p>
+              <p style={textStyle}>
+                Collaborate seamlessly through our platform.
+              </p>
+            </div>
           </div>
           <div style={cardStyle}>
             <div style={iconStyle}>
-              <FaClock />
+              {/* <FaClock /> */}
+              <HiRocketLaunch />
             </div>
-            <h3 style={titleStyle}>Accelerate time to value from day one</h3>
-            <p style={textStyle}>
-              Gain instant value from the platform with our white glove
-              services, from advanced onboarding and training to premium
-              support.
-            </p>
+            <div>
+              <h3 style={titleStyle}>Launch & Grow</h3>
+              <p style={textStyle}>
+                Execute your strategy with ongoing support and optimization.
+              </p>
+              <p style={textStyle}>
+                Monitor progress and make data-driven decisions
+              </p>
+            </div>
           </div>
-          <div style={cardStyle}>
+          {/* <div style={cardStyle}>
             <div style={iconStyle}>
               <FaSeedling />
             </div>
+            <div>
+
             <h3 style={titleStyle}>Intuitive adoption across the org</h3>
             <p style={textStyle}>
-              Get teams on the same page with a platform they'll love, allowing
+              Get teams on the same page with a platform they'll love, allowing</p>
+              <p style={textStyle}>
               real-time, accurate visibility of your organization's OKRs and
               metrics.
             </p>
-          </div>
+            </div>
+          </div> */}
         </div>
 
         <div className="impact-section">
@@ -439,9 +473,37 @@ const ProductLineupSection = () => {
                 </div>
                 <div style={{ zIndex: "1000" }}>
                   <div className="row">
-                    <div className="col" style={{ width: "70%" }}>
-                      <h4>346%</h4>
-                      <p>ROI over 3 years</p>
+                    <div
+                      className="col stat-item-content-left"
+                      style={{
+                        width: "70%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-end", // Content aligned to the bottom
+                        alignItems: "flex-start", // Align content to the left
+                        
+                      }}
+                    >
+                      <div>
+                      <p style={{ textAlign: "left", margin: "0 0 10px 0",fontSize:'14px',fontWeight:'500px' }}>
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Corrupti dolore deserunt alias dolorem error
+                        suscipit perferendis labore. Ab dolore dignissimos
+                        placeat adipisci distinctio sit esse fugiat, aut tempore
+                        numquam nam, veniam odit totam laboriosam nulla."
+                      </p>
+                        <div >
+                        <div>
+                        </div>
+                        <div>
+
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'16px',fontWeight:'700px'}}>John due</p>
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'14px',fontWeight:'500px'}}>Ceo Xyz</p>
+
+                        </div>
+                        </div>
+                      
+                      </div>
                     </div>
                     <div className="col" style={{ textAlign: "left" }}>
                       <div>
@@ -476,9 +538,37 @@ const ProductLineupSection = () => {
                 </div>
                 <div style={{ zIndex: "1000" }}>
                   <div className="row">
-                    <div className="col" style={{ width: "70%" }}>
-                      <h4>$121K</h4>
-                      <p>In value due to increased team productivity</p>
+                  <div
+                      className="col stat-item-content-left"
+                      style={{
+                        width: "70%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-end", // Content aligned to the bottom
+                        alignItems: "flex-start", // Align content to the left
+                        
+                      }}
+                    >
+                      <div>
+                      <p style={{ textAlign: "left", margin: "0 0 10px 0",fontSize:'14px',fontWeight:'500px' }}>
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Corrupti dolore deserunt alias dolorem error
+                        suscipit perferendis labore. Ab dolore dignissimos
+                        placeat adipisci distinctio sit esse fugiat, aut tempore
+                        numquam nam, veniam odit totam laboriosam nulla."
+                      </p>
+                        <div >
+                        <div>
+                        </div>
+                        <div>
+
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'16px',fontWeight:'700px'}}>John due</p>
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'14px',fontWeight:'500px'}}>Ceo Xyz</p>
+
+                        </div>
+                        </div>
+                      
+                      </div>
                     </div>
                     <div className="col" style={{ textAlign: "left" }}>
                       <div>
@@ -517,9 +607,37 @@ const ProductLineupSection = () => {
                 </div>
                 <div style={{ zIndex: "1000" }}>
                   <div className="row">
-                    <div className="col" style={{ width: "70%" }}>
-                      <h4>346%</h4>
-                      <p>ROI over 3 years</p>
+                  <div
+                      className="col stat-item-content-left"
+                      style={{
+                        width: "70%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-end", // Content aligned to the bottom
+                        alignItems: "flex-start", // Align content to the left
+                        
+                      }}
+                    >
+                      <div>
+                      <p style={{ textAlign: "left", margin: "0 0 10px 0",fontSize:'14px',fontWeight:'500px' }}>
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Corrupti dolore deserunt alias dolorem error
+                        suscipit perferendis labore. Ab dolore dignissimos
+                        placeat adipisci distinctio sit esse fugiat, aut tempore
+                        numquam nam, veniam odit totam laboriosam nulla."
+                      </p>
+                        <div >
+                        <div>
+                        </div>
+                        <div>
+
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'16px',fontWeight:'700px'}}>John due</p>
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'14px',fontWeight:'500px'}}>Ceo Xyz</p>
+
+                        </div>
+                        </div>
+                      
+                      </div>
                     </div>
                     <div className="col" style={{ textAlign: "left" }}>
                       <div>
@@ -554,16 +672,50 @@ const ProductLineupSection = () => {
                 </div>
                 <div style={{ zIndex: "1000" }}>
                   <div className="row">
-                    <div className="col" style={{ width: "70%" }}>
-                      <h4>$123K</h4>
-                      <p>Saved due to reduced administration time</p>
+                  <div
+                      className="col stat-item-content-left"
+                      style={{
+                        width: "70%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-end", // Content aligned to the bottom
+                        alignItems: "flex-start", // Align content to the left
+                        
+                      }}
+                    >
+                      <div>
+                      <p style={{ textAlign: "left", margin: "0 0 10px 0",fontSize:'14px',fontWeight:'500px' }}>
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Corrupti dolore deserunt alias dolorem error
+                        suscipit perferendis labore. Ab dolore dignissimos
+                        placeat adipisci distinctio sit esse fugiat, aut tempore
+                        numquam nam, veniam odit totam laboriosam nulla."
+                      </p>
+                        <div >
+                        <div>
+                        </div>
+                        <div>
+
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'16px',fontWeight:'700px'}}>John due</p>
+                        <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'14px',fontWeight:'500px'}}>Ceo Xyz</p>
+
+                        </div>
+                        </div>
+                      
+                      </div>
                     </div>
                     <div className="col" style={{ textAlign: "left" }}>
-                      <div>
-                        <h4>$121K</h4>
+                      <div className="" style={{display:"flex"}}>
+                        <div className="" style={{backgroundColor:'white',width:'2px',height:'100px'}}>
+
+                        </div>
+                        <div className="">
+
+                        <h4>$121Kdsfsdff</h4>
                         <p style={{ textAlign: "left" }}>
                           In value due to increased team productivity
                         </p>
+                        </div>
                       </div>
                       <div>
                         <h4>$121K</h4>
@@ -580,7 +732,7 @@ const ProductLineupSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
             </Slider>
           </div>
         </div>

@@ -274,7 +274,7 @@ h2 {
 .tooltip .tooltip-text {
   visibility: hidden;
   width: 240px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgb(255, 255, 255);
   color: #000000;
   text-align: center;
   border: 1px solid rgba(202, 202, 202, 0.671);

@@ -447,17 +447,7 @@ const ProductLineupSection = () => {
 
           {/* Impact details section */}
           <div className="impact-details">
-            {/* <div className="impact-text">
-          <h3>The Total Economic Impact™ of monday.com</h3>
-          <p>
-            "From the time that we started to the time that people became comfortable with it,
-            I would say two weeks to a month."
-          </p>
-          <p className="quote-author">Global CRM Director</p>
-          <a href="https://example.com" className="report-link">Get the report →</a>
-        </div> */}
-
-            {/* Statistics Slider */}
+            
             <Slider {...settings} className="stats-slider">
               <div className="stat-item">
                 <div style={{ position: "absolute" }}>
@@ -745,7 +735,7 @@ const ProductLineupSection = () => {
           padding: "20px 0",
         }}
       >
-        <div className="awards-section">
+        <div className="awards-section" style={{maxWidth:'1400px',margin:'auto'}}>
           {/* Title */}
           <div className="title-section">
             <h1>Recognized by leaders. Loved by customers.</h1>

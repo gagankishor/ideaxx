@@ -39,7 +39,7 @@ export default function Home() {
       <CoreSolutionsSection /> 
 
       <ProductLineupSection />
-      <div className="home-main-contaner">
+      {/* <div className="home-main-contaner">
         <Validation />
         <Features />
         <TestCard text="If you're uncertain about an idea brewing in your mind, this is the right place to test it." />
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         <TestCard text="Begin exploration – Dive into your idea's potential with just one click!" />
         <TrustpilotWidget />
-      </div>
+      </div> */}
     </>
   );
 }

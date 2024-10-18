@@ -34,29 +34,36 @@ const WizardResult = () => {
       return jsonString;
     }
   };
-  const getBarColor = (score) => {
-    if (score <= 50) return "red"; // Red for 0-50%
-    if (score <= 70) return "orange"; // Orange for 50-70%
-    if (score <= 90) return "green"; // Green for 70-90%
-    if (score <= 100) return "blue"; // Blue for 90-100%
+  const getBarColor2 = (score) => {
+    if (score <= 50) return "red";
+    if (score <= 70) return "orange";
+    if (score <= 90) return "green"; 
+    if (score <= 100) return "blue"; 
     return "blue"; // Fallback color for scores out of range
   };
+  const getBarColor = (score) => {
+    // Before 50%, bright salmon
+    if (score <= 50) return 'linear-gradient(to right, salmon, salmon)';
+
+    // Between 50 and 52, bright salmon with light pink
+    
+
+    if (score <= 100) return 'linear-gradient(to right,#f77e4a, lightgreen)';
+
+    // For scores above 100
+    return 'linear-gradient(to right, salmon, lightgreen, mintcream, lightyellow, palegreen)';
+};
+
+  
   const uniqueValueProposition = parseJSON(data?.UniqueValuePropositionData);
   const TeamAndResourcesData = parseJSON(data?.TeamAndResourcesData);
   const RevenueModelData = parseJSON(data?.RevenueModelData);
   const CompetitiveLandscapeData = parseJSON(data?.CompetitiveLandscapeData);
   const TimeToMarketData = parseJSON(data?.TimeToMarketData);
-  console.log(data?.marketPotential);
-  // console.log(uniqueValueProposition);
-  // console.log(TeamAndResourcesData);
-  // console.log(CompetitiveLandscapeData);
-  // console.log(RevenueModelData);
-  // console.log(TimeToMarketData);
-
   const fullAiContent = `
   ${data.resultText} 
   `;
-
+ 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -91,15 +98,14 @@ const WizardResult = () => {
     datasets: [
       {
         data: [data?.success_percentage, 100 - data?.success_percentage],
-        backgroundColor: [`${getBarColor(parseFloat(data?.success_percentage))}`, "#e0e0e0"],
+        backgroundColor: [`${getBarColor2(parseFloat(data?.success_percentage))}`, "#e0e0e0"],
         hoverBackgroundColor: ["#4caf50", "#e0e0e0"],
         borderWidth: 1,
       },
     ],
   };
- 
   const options = {
-    cutout: "70%", // Makes it a ring
+    cutout: "70%",
     responsive: true,
     plugins: {
       tooltip: {
@@ -129,15 +135,16 @@ const WizardResult = () => {
                   className="progress"
                   style={{
                     width: `${data?.marketPotential}%`,
-                    backgroundColor: getBarColor(
+                    background: getBarColor(
                       parseFloat(data?.marketPotential) || 0
                     ),
                   }}
                 ></div>
               </div>
               <span>{data?.marketPotential} %</span>
-              <div className="tooltip" style={{ color: "unset" }}>
-                <BsFillQuestionCircleFill size={20} />
+              <div className="tooltip" style={{ color: "gray" }}>
+                {/* <BsFillQuestionCircleFill size={20} /> */}
+                <PiQuestion size={20} />
 
                 <span className="tooltip-text">
                   Total demand for a product or service within a target market,
@@ -145,8 +152,6 @@ const WizardResult = () => {
                 </span>
               </div>
             </div>
-
-            {/* Unique Value Proposition */}
             <div className="overview-item">
               <p>Unique Value Proposition </p>
               <div className="progress-bar">
@@ -154,7 +159,7 @@ const WizardResult = () => {
                   className="progress"
                   style={{
                     width: uniqueValueProposition?.finalScore,
-                    backgroundColor: getBarColor(
+                    background: getBarColor(
                       parseFloat(
                         uniqueValueProposition?.finalScore.replace("%", "")
                       ) || 0
@@ -164,8 +169,9 @@ const WizardResult = () => {
               </div>
 
               <span>{uniqueValueProposition?.finalScore}</span>
-              <div className="tooltip" style={{ color: "unset" }}>
-                <FcQuestions size={20} />
+              <div className="tooltip" style={{ color: "gray" }}>
+                {/* <FcQuestions size={20} /> */}
+                <PiQuestion size={20} />
 
                 <span className="tooltip-text">
                   Distinct benefit offered to customers, differentiating the
@@ -183,7 +189,7 @@ const WizardResult = () => {
                   className="progress"
                   style={{
                     width: RevenueModelData?.finalScore,
-                    backgroundColor: getBarColor(
+                    background: getBarColor(
                       parseFloat(
                         RevenueModelData?.finalScore?.replace("%", "")
                       ) || 0
@@ -193,7 +199,7 @@ const WizardResult = () => {
               </div>
               <span>{RevenueModelData?.finalScore}</span>
               <div className="tooltip" style={{ color: "gray" }}>
-                <BsFillQuestionCircleFill size={20} />
+                <PiQuestion size={20} />
                 <span className="tooltip-text">
                   Strategy for generating income, detailing pricing structure,
                   sales approaches, and various revenue streams for
@@ -201,7 +207,6 @@ const WizardResult = () => {
                 </span>
               </div>
             </div>
-            {/* Competitive Landscape */}
             <div className="overview-item">
               <p>Competitive Landscape</p>
               <div className="progress-bar">
@@ -209,7 +214,7 @@ const WizardResult = () => {
                   className="progress"
                   style={{
                     width: CompetitiveLandscapeData?.finalScore,
-                    backgroundColor: getBarColor(
+                    background: getBarColor(
                       parseFloat(
                         CompetitiveLandscapeData?.finalScore?.replace("%", "")
                       ) || 0
@@ -218,8 +223,9 @@ const WizardResult = () => {
                 ></div>
               </div>
               <span>{CompetitiveLandscapeData?.finalScore}</span>
-              <div className="tooltip">
-                <BsQuestionDiamondFill size={20} />
+              <div className="tooltip" style={{ color: "gray" }}>
+                {/* <BsQuestionDiamondFill size={20} /> */}
+                <PiQuestion size={20} />
                 <span className="tooltip-text">
                   Analysis of competitors, market share, strengths, and
                   weaknesses, identifying opportunities and challenges for
@@ -232,7 +238,11 @@ const WizardResult = () => {
               <div className="progress-bar">
                 <div
                   className="progress"
-                  style={{ width: `${TeamAndResourcesData}%` }}
+                  style={{ width: `${TeamAndResourcesData}%`,background: getBarColor(
+                    parseFloat(
+                      TeamAndResourcesData
+                    ) || 0
+                  ), }}
                 ></div>
               </div>
               <span>{TeamAndResourcesData}%</span>

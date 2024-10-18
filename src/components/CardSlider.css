@@ -3,6 +3,8 @@
   position: relative;
   /* margin: 60px 0px; */
   /* padding: 60px 0px; */
+  max-width: 2400px;
+  margin: auto;
  
 }
 .right-sedow {

@@ -1,60 +1,116 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './CardSlider.css';
-import { FaArrowDown, FaArrowLeft, FaArrowRight, FaCheckCircle, FaCoins, FaCommentSlash, FaDotCircle } from 'react-icons/fa';
+import {  FaArrowLeft, FaArrowRight, FaBluetoothB, FaCheckCircle, FaCoins, FaLightbulb } from 'react-icons/fa';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faLightbulb as solidLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { PiIdentificationCardBold, PiIdentificationCardLight } from "react-icons/pi";
 
 const CardSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4.5,
+    slidesToShow: 8, // Initial setting for very large screens
     slidesToScroll: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 2200, // Ultra-wide screens
+        settings: {
+          slidesToShow: 7.5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 2000, // Very large screens
+        settings: {
+          slidesToShow: 6.5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1800, // Large screens
+        settings: {
+          slidesToShow: 5.5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1600, // Medium-large screens
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1400, // Medium screens
+        settings: {
+          slidesToShow: 4.5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1200, // Small desktop or large tablets
+        settings: {
+          slidesToShow: 3.5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1024, // Tablets and smaller screens
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768, // Small tablets
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
+        },
       },
       {
-        breakpoint: 600,
+        breakpoint: 600, // Mobile devices (landscape)
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // Mobile devices (portrait)
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
-
+  
   const cards = [
     // { id: 1, title: '', description: '', bgImage: '/homeslider/cashflow.jpeg' },
     // { id: 2, title: '', description: '', bgImage: '/homeslider/bisness.jpeg' },
     // { id: 3, title: '', description: '', bgImage: '/homeslider/community.jpeg' },
     // { id: 4, title: '', description: '', bgImage: '/homeslider/cashflow.jpeg' },
-    { id: 1, title: 'Community', description: 'Community', bgImage: 'sliderLandigPage/1.jpg' },
-    { id: 2, title: 'Strategies', description: 'Business', bgImage: '/sliderLandigPage/2.jpg' },
-    { id: 3, title: 'Consulting', description: 'community', bgImage: '/sliderLandigPage/3.jpg' },
-    { id: 4, title: 'Marketing', description: '', bgImage: '/sliderLandigPage/4.jpg' },
-    { id: 5, title: 'Legal', description: '', bgImage: '/sliderLandigPage/5.jpg' },
+    { pointers:[""], icon:'main-icon/Buy-Sell.png', id: 12, title: 'Buy-Sell', description: '', bgImage: '/sliderLandigPage/12.jpg' },
+    { pointers:["New Idea finalise","Find and discover Ideas","Save all Ideas in one place"], icon:'/main-icon/Idea.png' , id: 8, title: 'Idea', description: '', bgImage: '/sliderLandigPage/8.jpg' },
+    { pointers:["Brand Name","Logo", "Font", "Colors", "Slogan"], icon:'/main-icon/Businessidentity.png'     , id: 14, title: 'Business identity', description: '', bgImage: '/sliderLandigPage/14.jpg' },
+    { pointers:["Social Media", "Email Marketing", "SEO", "Marketing Material", "Business Card","Marketing Events", "Billboards", "Online Campaigns"], icon:'/main-icon/Marketing.png', id: 4, title: 'Marketing', description: '', bgImage: '/sliderLandigPage/4.jpg' },
+    { pointers:["Location", "Contact", "Registration Certificate", "Bank account", "Brand registration", "Partners"], icon:'/main-icon/Legal.png', id: 5, title: 'Legal', description: '', bgImage: '/sliderLandigPage/5.jpg' },
+    { pointers:["Employees"], icon:'/main-icon/team.png', id: 15, title: 'Team', description: '', bgImage: '/sliderLandigPage/15.jpg' },
+    { pointers:["Equipment", "Templates", "Platform"], icon:'/main-icon/BusinessTools.png', id: 13, title: 'Business Tools', description: '', bgImage: '/sliderLandigPage/13.jpg' },
+    { pointers:["Funds", "Expenses", "Income", "Reports"], icon:'/main-icon/CashFlow.png', id: 11, title: 'Cash Flow', description: '', bgImage: '/sliderLandigPage/11.jpg' },
+    { pointers:["Book an appointment","AI consulting"], icon:'/main-icon/Consulting.png', id: 3, title: 'Consulting', description: 'community', bgImage: '/sliderLandigPage/3.jpg' },
+    { pointers:["Ideas", "Books", "Courses", "Entertainment"], icon:'/main-icon/Entrepreneur.png', id: 9, title: 'Entrepreneur', description: '', bgImage: '/sliderLandigPage/9.jpg' },
+    { pointers:["Marketing Strategies","Investors"], icon:'/main-icon/Strategies.png', id: 2, title: 'Strategies', description: 'Business', bgImage: '/sliderLandigPage/2.jpg' },
+    { pointers:["Clients","Suppliers","logistics"], icon:'/main-icon/Community.png', id: 1, title: 'Community', description: 'Community', bgImage: 'sliderLandigPage/1.jpg' },
     // { id: 6, title: 'Integrity', description: '', bgImage: '/sliderLandigPage/6.jpg' },
     // { id: 7, title: 'Inovation', description: '', bgImage: '/sliderLandigPage/7.jpg' },
-    { id: 8, title: 'Idea', description: '', bgImage: '/sliderLandigPage/8.jpg' },
-    { id: 9, title: 'Entrepreneur', description: '', bgImage: '/sliderLandigPage/9.jpg' },
     // { id: 10, title: 'Col', description: '', bgImage: '/sliderLandigPage/10.jpg' },
-    { id: 11, title: 'Cash Flow', description: '', bgImage: '/sliderLandigPage/11.jpg' },
-    { id: 12, title: 'Buy-Sell', description: '', bgImage: '/sliderLandigPage/12.jpg' },
-    { id: 13, title: 'Business Tools', description: '', bgImage: '/sliderLandigPage/13.jpg' },
-    { id: 14, title: 'Business identity', description: '', bgImage: '/sliderLandigPage/14.jpg' },
-    { id: 15, title: 'Team', description: '', bgImage: '/sliderLandigPage/15.jpg' },
   ];
-  // - idea
+  // 1- idea
   // 2- Business identity 
   // 3- Marketing 
   // 4- Legal
@@ -74,62 +130,74 @@ const CardSlider = () => {
       <div className='left-sedow'>
       </div>
       <Slider {...settings}>
-        {cards.map((card) => (
-          <div key={card.id} className="card">
-            <div
-              style={{
-                backgroundImage: `url(${card.bgImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: '350px',
-              }}
-              />
-            {/* <div className="card-content" style={{color:'white'}}>
-              <h3>{card.title}</h3>
-              <p className="card-description">{card.description}</p>
-            </div> */}
-            <div className="card-content2">
-
-            <h3 style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '14px' }}>
-              <FaCoins
-                size={30}
+          {cards.map((card) => (
+            <div key={card.id} className="card" style={{ width: '100%' }}>
+              <div
                 style={{
-                  margin: '0 5px',
-                  color: 'white',
-                  backgroundColor: 'blue',
-                  padding: '8px',
-                  borderRadius: '5px'
+                  backgroundImage: `url(${card.bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: '350px', // Fixed height for the card
                 }}
-              /> 
-              {card.title}
-            </h3>
-              <p className="card-description " style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '10px' ,lineHeight:'30px'}}>
-                <FaCheckCircle 
-                style={{
-                  margin: '0 5px',
-                  
-                  borderRadius: '5px'
-                }}/> Pointer 1</p>
-                <p className="card-description " style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '10px',lineHeight:'30px' }}>
-                <FaCheckCircle 
-                style={{
-                  margin: '0 5px',
-                  
-                  borderRadius: '5px'
-                }}/> Pointer 1</p>
-                <p className="card-description " style={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontSize: '10px' ,lineHeight:'30px'}}>
-                <FaCheckCircle 
-
-                style={{
-                  margin: '0 5px',
-                  
-                  borderRadius: '5px'
-                }}/> Pointer 1</p>
-            </div>
-           
-          </div>
-        ))}
-      </Slider>
+              />
+              <div className="card-content2">
+              <h3
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'left',
+    fontSize: '18px',
+    fontWeight: '300',
+  }}
+>
+  <div
+    style={{
+      marginRight: '10px',  // Adjusted spacing between icon and text
+      display: 'flex',      // Ensures the icon stays centered
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'white',
+      padding: '0px',
+      width: '38px',
+      height: '38px',       // Ensures the div is square
+      borderRadius: '5px',
+    }}
+  >
+    <img 
+      src={card.icon} 
+      alt={card.title} 
+      width={25} 
+      style={{
+        objectFit: 'contain',
+        color: 'white',      // Correcting the color to apply to the icon (if SVG)
+      }} 
+    />
+  </div>
+  {card.title}
+</h3>
+        {card.pointers.map((pointer)=>(<p
+          className="card-description"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            textAlign: 'left',
+            fontSize: '10px',
+            lineHeight: '30px',
+          }}
+        >
+          <FaCheckCircle
+            style={{
+              margin: '0 5px',
+              borderRadius: '5px',
+            }}
+          />
+          {pointer}
+        </p>))}
+        
+      </div>
+    </div>
+  ))}
+</Slider>
       <div className='right-sedow'>
 
       </div>

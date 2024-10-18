@@ -75,22 +75,39 @@ export const Hero = () => {
             }}
           >
             
-          </div>
+            <img
+            src="/idiaxsection122.png"
+            alt="Roadmap"
+            style={{
+              overflow: "hidden",
+              // objectFit: "cover",
+              width: "100%",
+              borderRadius: "0px",
+              border: "1px solid #dfe6f2",
+              // margin: "0px 0px 0px 0px",
+              // position: "absolute",
+              // left: "0px",
+              // top: "50px",
+            }}
+          />
           <img
             src="/idiaxsection1233.png"
             alt="Roadmap"
             style={{
               overflow: "hidden",
-              objectFit: "cover",
-              width: "250px",
-              borderRadius: "5px",
+              // objectFit: "cover",
+              width: "100%",
+              borderRadius: "0px",
               border: "1px solid #dfe6f2",
-              margin: "50px 0px 0px 0px",
-              position: "absolute",
-              left: "-140px",
-              top: "-50px",
+              height:'80px',
+              margin: "0px 0px 0px 0px",
+              // position: "absolute",
+              // left: "0px",
+              // top: "50px",
             }}
           />
+          </div>
+          
           <motion.img
             src="/idiaxsection1.png"
             alt="Roadmap"

@@ -105,7 +105,7 @@ const ProductLineupSection = () => {
         <div style={{ position: "relative", overflow: "hidden" }}>
           <p style={{ fontSize: "2.75rem", fontWeight: "200", color: "white" }}>
             {" "}
-            One core platform for all your work{" "}
+            One core platform powered by <span style={{color:'blue',fontWeight:'400'}}>AI</span>  for all your work{" "}
           </p>
           {/* Background Image */}
           <div style={{ position: "absolute", zIndex: 1,left:"470px",top:'340px' }}>

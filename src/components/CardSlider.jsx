@@ -54,7 +54,14 @@ const CardSlider = () => {
       {
         breakpoint: 1200, // Small desktop or large tablets
         settings: {
-          slidesToShow: 3.5,
+          slidesToShow: 3.8,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1100, // Small desktop or large tablets
+        settings: {
+          slidesToShow: 3.4,
           slidesToScroll: 2,
         },
       },

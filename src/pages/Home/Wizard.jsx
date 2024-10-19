@@ -5,7 +5,6 @@ import { RestAPI } from "../../config/Api";
 import { isAuthenticated, userToken } from "../../config/Auth";
 import axios from "axios";
 import LoginWithGoogle from "./components/LoginWithGoogle";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useAxiosWithAuth from "../../config/useAxiosWithAuth";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,8 +13,6 @@ import "./Wizard.css";
 import LinkedInLogin from "./components/LinkedInLogin";
 import { AuthContext } from "../../config/AuthContext";
 import { CiMail } from "react-icons/ci";
-import { FaRedo } from "react-icons/fa";
-import { FaVirus } from "react-icons/fa6";
 import { MdVerified } from "react-icons/md";
 
 export default function Wizard() {
@@ -292,7 +289,6 @@ export default function Wizard() {
       description: "Please describe your idea in 50 to 250 letters. What is your idea? Who is it designed for? What makes it unique or special?",
       choices: [{ id: "i8a", label: "India", value: "5" }],
       bgColor: "#8781BD",
-
       options: [{}],
     },
     {

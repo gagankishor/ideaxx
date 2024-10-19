@@ -3,7 +3,7 @@
   position: relative;
   /* margin: 60px 0px; */
   /* padding: 60px 0px; */
-  max-width: 2400px;
+  max-width: 1400px;
   margin: auto;
  
 }
@@ -35,15 +35,12 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease; /* Smooth transform when hover */
 }
-
 /* .card:hover {
   background: #000;
 } */
-
 .card img {
   border-radius: 15px;
 }
-
 .card-content {
   position: absolute;
   bottom: 0;
@@ -55,7 +52,6 @@
   width: 50%;
   height: 100%;
 }
-
 .card-content2 {
   position: absolute;
   bottom: 0;
@@ -79,9 +75,6 @@
   opacity: 1; /* Fade in smoothly */
   background: rgba(0, 0, 0, 0.8); /* Smooth background change */
 }
-
-
-
 .card-content h3 {
   font-size: 1.8rem;
   margin-bottom: 10px;

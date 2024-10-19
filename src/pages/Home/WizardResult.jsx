@@ -2,32 +2,23 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
 import { FaRobot } from "react-icons/fa";
-import {
-  BsFillQuestionCircleFill,
-  BsQuestionDiamondFill,
-} from "react-icons/bs";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
-import SpeedTestGauge from "./components/wizard/NivoSpeedomeetr";
-import { FcQuestions } from "react-icons/fc";
 import { PiQuestion } from "react-icons/pi";
-
 Chart.register(ArcElement, Tooltip, Legend);
-
 const WizardResult = () => {
-  const [aiContent, setAiContent] = useState(""); // Final content to be typed
-  const [displayedText, setDisplayedText] = useState(""); // Typing effect text
+  const [aiContent, setAiContent] = useState(""); 
+  const [displayedText, setDisplayedText] = useState("");
   const [loading, setLoading] = useState(true);
-  const [isTypingComplete, setIsTypingComplete] = useState(false); // To prevent re-typing
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
   const location = useLocation();
   const { data } = location.state || {};
-
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString
         .replace(/\n/g, "")
-        .replace(/\s{2,}/g, " ") // Replace multiple spaces with a single space
-        .replace(/\\"/g, '"') // Unescape quotes
+        .replace(/\s{2,}/g, " ")
+        .replace(/\\"/g, '"')
         .replace(/\+-/g, "");
       return JSON.parse(cleanedString);
     } catch (error) {
@@ -39,20 +30,39 @@ const WizardResult = () => {
     if (score <= 70) return "orange";
     if (score <= 90) return "green"; 
     if (score <= 100) return "blue"; 
-    return "blue"; // Fallback color for scores out of range
+    return "blue";
   };
-  const getBarColor = (score) => {
-    // Before 50%, bright salmon
-    if (score <= 50) return 'linear-gradient(to right, salmon, salmon)';
-
-    // Between 50 and 52, bright salmon with light pink
-    
-
-    if (score <= 100) return 'linear-gradient(to right,#f77e4a, lightgreen)';
-
-    // For scores above 100
-    return 'linear-gradient(to right, salmon, lightgreen, mintcream, lightyellow, palegreen)';
+ const getBarColor = (score) => {
+    if (score <= 50) return 'linear-gradient(to right, #FE0000, #FE0000)';
+    if (score <= 52) return 'linear-gradient(to right, #FE0000, #FF8E11)';
+    if (score <= 54) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 56) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 58) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 60) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 62) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 64) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 66) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 68) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C)';
+    if (score <= 70) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 72) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 74) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 76) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 78) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 80) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 82) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 84) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 86) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 88) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D)';
+    if (score <= 90) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
+    if (score <= 92) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
+    if (score <= 94) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
+    if (score <= 96) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
+    if (score <= 98) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
+    if (score <= 100) return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
+    return 'linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)';
 };
+
+
 
   
   const uniqueValueProposition = parseJSON(data?.UniqueValuePropositionData);

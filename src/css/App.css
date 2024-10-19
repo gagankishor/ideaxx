@@ -1039,19 +1039,19 @@ table tr:nth-child(even) {
 }
 @keyframes ripple_animation {
   0% {
-    transform: scale(1.1);
+    transform: scale(1.0);
     opacity: 0.2;
   }
   30% {
-    transform: scale(1.3);
+    transform: scale(1.1);
     opacity: 0.4;
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.2);
     opacity: 0.7;
   }
   100% {  
-    transform: scale(1.7);
+    transform: scale(1.3);
     opacity: 0;
   }
 }
@@ -1067,7 +1067,7 @@ table tr:nth-child(even) {
   width: 100%;
   height: 100%;
   transform: scale(1);
-  animation: ripple_animation 2s linear infinite;
+  animation: ripple_animation 4s linear infinite;
   box-sizing: border-box;
   user-select: none;
   pointer-events: none;
@@ -1075,7 +1075,7 @@ table tr:nth-child(even) {
 }
 
 .ripple-border-2 {
-  animation-delay: 0.5s; /* Offset the second ripple for staggered effect */
+  animation-delay: 1s; /* Offset the second ripple for staggered effect */
 }
 
 /* div:hover .ripple-border {
@@ -2956,11 +2956,13 @@ nav .container .burger {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .title-section h1 {
   font-size: 2.5rem;
   font-weight: 200;
+  text-align: left;
 }
 
 .cta-button {
@@ -2975,53 +2977,44 @@ nav .container .burger {
 
 .info-cards {
   display: flex;
-  padding: 20px 120px;
-  margin-top: 30px;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 20px;
 }
+
 .info-cards2 {
   display: flex;
   flex-direction: column;
-  justify-content:space-between
+  gap: 30px;
 }
+
 .info-cards2 .card {
   background: linear-gradient(rgba(66,66,66,1) 0%,rgba(0,0,0,1) 100%);
   border: 1px solid #545454;
   padding: 20px;
   border-radius: 10px;
-  width: 95%;
-  height: 100%;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  /* height: 100%; */
 }
 
 .info-cards2 .card h3 {
-  margin-bottom: 10px;
   font-size: 1.5rem;
-  text-align: left;
   color: white;
 }
 
 .info-cards2 .card p {
-  margin-bottom: 20px;
   font-size: 1rem;
-  text-align: left;
   color: white;
-
-}
-.forrester {
-  margin-top: 30px;
 }
 
 .read-more {
   color: #ffffff;
-  text-decoration:underline;
+  text-decoration: underline;
   text-align: left;
   line-height: 160%;
-
 }
 
 .badge-section {
-  /* margin-top: 30px; */
   background: linear-gradient(rgba(66,66,66,1) 0%,rgba(0,0,0,1) 100%);
   padding: 20px;
   border-radius: 10px;
@@ -3034,25 +3027,105 @@ nav .container .burger {
 }
 
 .badge-category h4 {
-  margin-bottom: 5px;
   font-size: 1.2rem;
   color: white;
-  text-align: left;
-
 }
 
 .badge-category p {
-  margin-bottom: 10px;
   color: white;
-  text-align: left;
-
-
 }
 
 .badges img {
   height: 70px;
   margin-right: 10px;
 }
+
+@media (max-width: 1024px) {
+  .title-section {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .title-section h1 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    margin-top: 15px;
+  }
+
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .info-cards2 {
+    width: 100%;
+  }
+
+  .info-cards2 .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .info-cards {
+    gap: 15px;
+    padding: 0;
+  }
+
+  .info-cards2 .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .info-cards2 .card p {
+    font-size: 0.9rem;
+  }
+
+  .badges img {
+    height: 60px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+
+  .info-cards {
+    padding: 0;
+  }
+
+  .info-cards2 .card {
+    padding: 15px;
+  }
+
+  .badges img {
+    height: 50px;
+    margin-right: 5px;
+  }
+}
+
 .impact-section {
   
   color: white;
@@ -3088,6 +3161,19 @@ nav .container .burger {
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (max-width: 1090px) {
+  .impact-section {
+    display: none;
+  }
+  .impact-details {
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 .impact-text h3 {
@@ -3211,3 +3297,201 @@ nav .container .burger {
 
 
 
+/* styles.css */
+
+/* Top Section Styles */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+.talk-button {
+  background-color: white;
+  color: #362976;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+}
+
+/* Card Section Styles */
+.card-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap; /* Allows wrapping of cards on smaller screens */
+}
+
+.card1 {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: left;
+  width: 31%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  margin: 10px; /* Space between cards */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Icon Styles */
+.icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Title Styles */
+.card-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-align: start;
+}
+
+/* Text Styles */
+.card-text {
+  font-size: 14px;
+  color: white;
+  text-align: start;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column; /* Stack title and button on smaller screens */
+    align-items: center; /* Center align items */
+  }
+
+  .talk-button {
+    width: 100%; /* Full width button on smaller screens */
+    margin-top: 20px; /* Add space above button */
+  }
+
+  .card1 {
+    width: 100%; /* Cards take full width on smaller screens */
+    margin: 10px 0; /* Margin between stacked cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 18px; /* Smaller font size for titles */
+  }
+
+  .card-text {
+    font-size: 12px; /* Smaller font size for text */
+  }
+
+  .icon {
+    font-size: 30px; /* Smaller icon size */
+  }
+}
+/* styles.css */
+
+/* Video Section Styles */
+.video-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between videos */
+  max-width: 1400px;
+  margin: 0 auto; /* Center the video section */
+}
+
+.video-frame {
+  width: 49%; /* Default width for desktop */
+  height: 315px; /* Fixed height */
+  border: none; /* Remove default border */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .video-frame {
+    width: 100%; /* Full width on smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+  }
+}
+
+/* styles.css */
+
+/* Main Section Styles */
+.responsive-section {
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Center text */
+}
+
+.main-text {
+  font-size: 2.75rem;
+  font-weight: 200;
+  color: white;
+}
+
+.highlighted-text {
+  font-weight: 500;
+}
+
+.image-background {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  top: 340px; /* Adjust as needed */
+}
+
+.background-image {
+  width: 50%;
+  margin: auto; /* Center background image */
+}
+
+/* Product Container Styles */
+.product-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center content */
+  position: relative;
+  margin-top: 100px; /* Space above the product boxes */
+}
+
+.product-box {
+  position: relative;
+  width: 310px; /* Default width */
+  margin: 20px; /* Uniform margin for all boxes */
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.product-image {
+  width: 100%; /* Full width */
+  border-radius: 15px;
+}
+
+/* Black Background Style */
+.black-background {
+  background-color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-text {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .background-image {
+    width: 80%; /* Increase width for smaller screens */
+  }
+
+  .product-box {
+    width: 90%; /* Full width for product boxes on smaller screens */
+  }
+
+  .product-container {
+    margin-top: 50px; /* Adjust top margin for smaller screens */
+  }
+}

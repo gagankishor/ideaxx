@@ -444,10 +444,7 @@ const ProductLineupSection = () => {
             <div></div>
             <div></div>
           </Slider>
-
-          {/* Impact details section */}
           <div className="impact-details">
-            
             <Slider {...settings} className="stats-slider">
               <div className="stat-item">
                 <div style={{ position: "absolute" }}>
@@ -486,13 +483,10 @@ const ProductLineupSection = () => {
                         <div>
                         </div>
                         <div>
-
                         <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'16px',fontWeight:'700px'}}>John due</p>
                         <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'14px',fontWeight:'500px'}}>Ceo Xyz</p>
-
                         </div>
                         </div>
-                      
                       </div>
                     </div>
                     <div className="col" style={{ textAlign: "left" }}>
@@ -554,10 +548,8 @@ const ProductLineupSection = () => {
 
                         <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'16px',fontWeight:'700px'}}>John due</p>
                         <p style={{ textAlign: "left", margin: "0 0 10px 0" ,fontSize:'14px',fontWeight:'500px'}}>Ceo Xyz</p>
-
                         </div>
                         </div>
-                      
                       </div>
                     </div>
                     <div className="col" style={{ textAlign: "left" }}>

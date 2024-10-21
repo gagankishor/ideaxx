@@ -99,7 +99,7 @@ const CardSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -264,13 +264,12 @@ const CardSlider = () => {
           <div className="left-sedow"></div>
           <Slider {...settings}>
             {cards.map((card) => (
-              <div key={card.id} className="card" style={{ width: "100%" }}>
-                <div
+              <div key={card.id} className="slider-card" style={{ width: "100%" }}>
+                <div 
+                  className="slider-card-image"
                   style={{
                     backgroundImage: `url(${card.bgImage})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    height: "350px", // Fixed height for the card
+                   
                   }}
                 />
                 <div className="card-content2">
@@ -281,6 +280,7 @@ const CardSlider = () => {
                       textAlign: "left",
                       fontSize: "18px",
                       fontWeight: "300",
+                      padding:"0px"
                     }}
                   >
                     <div

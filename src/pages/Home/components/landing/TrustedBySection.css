@@ -1,36 +1,30 @@
 .base-layout-segment-component-4 {
-    padding: 70px;
+    /* padding: 70px; */
   }
   
   .segment-wrapper {
-    max-width: 1200px; /* Limit the width for larger screens */
-    margin: 0 auto; /* Center the layout */
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .logosTitleWrapper {
     text-align: center;
   }
-  
   .logos-container {
     display: flex;
     justify-content: center;
-    margin: 0 20px; /* Reduced margin for better responsiveness */
-    flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+    margin: 0 20px; 
+    flex-wrap: wrap;
   }
-  
   .company-logo {
-    /* width: 100px; */
-    /* max-width: 180px; */
     margin: 0 20px;
     height: 60px;
-    padding: 5px;
+    padding: 0px;
     border-radius: 5px;
   }
-  
   .logos {
-    padding: 150px 40px;
+    padding: 100px 40px;
   }
-  
   .highlight-section {
     border: 1px solid black;
     border-radius: 20px;
@@ -39,42 +33,33 @@
     color: white;
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    flex-wrap: wrap;
   }
-  
   .col {
     padding: 80px;
     width: 50%;
   }
-  
   .col-left {
     position: relative;
   }
-  
   .gartner-logo {
     width: 180px;
     position: absolute;
     top: 0;
   }
-  
   .highlight-text {
     font-weight: 700;
   }
   .image-contener {
     min-height: 60px;
   }
-  /* .image-contener h3{
-    
-  } */
   .image-contener-h{
     font-size:'12px';
   }
-  
-  /* Responsive Styles */
   @media (max-width: 1024px) {
     .col {
-      width: 100%; /* Stack columns on medium screens */
-      padding: 40px; /* Reduce padding */
+      width: 100%;
+      padding: 40px 10px 0px;
     }
     .base-layout-segment-component-4 {
         padding: unset;
@@ -84,34 +69,39 @@
         font-size: 38px;
     }
     .segment-wrapper {
-        max-width: unset; /* Limit the width for larger screens */
-        margin: 0; /* Center the layout */
+        max-width: unset;
+        margin: 0;
       }
   }
   
   @media (max-width: 768px) {
+    .logos {
+      padding: 100px 20px;
+    }
     .highlight-section {
-      height: auto; /* Remove fixed height for smaller screens */
-      padding: 20px; /* Add padding for smaller screens */
+      height: auto;
+      padding: 28px; /* Add padding for smaller screens */
       
     }
     .col-left-content {
         margin-top: 40px;
-        font-size: 38px;
+        font-size: 28px;
     }
   
     .company-logo {
-      width: 60px; /* Reduce logo size on smaller screens */
+      width: 60px;
     }
   
     .logos-container {
-      margin: 0 10px; /* Further reduce margins */
+      margin: 0 10px; 
     }
+
   }
   
   @media (max-width: 480px) {
     .logosTitleWrapper h2 {
       font-size: 20px; /* Adjust title size for small screens */
     }
+    
   }
   

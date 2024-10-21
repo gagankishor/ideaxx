@@ -20,14 +20,7 @@ export default function Home() {
 
       <Hero />
       <h2
-        className=""
-        style={{
-          padding: "32px 0",
-          fontSize: "20px",
-          fontWeight: "600",
-          margin: "0",
-          textAlign: "center",
-        }}
+        className="card-slider-haedding"
       >
         {" "}
         Empowering Your Business with a Fully Integrated Online Team From

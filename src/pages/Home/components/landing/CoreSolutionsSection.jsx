@@ -2,22 +2,11 @@ import React, { useState } from "react";
 // import Slider from "react-slick";
 import "./CoreSolutionsSection.css";
 import {
-  FaArrowAltCircleLeft,
   FaArrowAltCircleRight,
   FaRobot,
 } from "react-icons/fa";
 
 import Slider from "react-slick";
-import {
-  FaTasks,
-  FaChartLine,
-  FaFilter,
-  FaUsers,
-  FaSuitcase,
-  FaRoad,
-  FaBug,
-  FaBriefcase,
-} from "react-icons/fa";
 import { GiTeamIdea } from "react-icons/gi";
 import { TiCloudStorage } from "react-icons/ti";
 
@@ -66,14 +55,6 @@ const icons = [
       "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png",
   },
 ];
-// { icon: <FaUsers />, label: "Customer onboarding" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
-//   { icon: <FaRoad />, label: "Roadmap planning" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
-//   { icon: <FaBug />, label: "Feature releases",image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png' },
-//   { icon: <FaBriefcase />, label: "Bug tracking" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
-//   { icon: <FaUsers />, label: "Retrospectives" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
-//   { icon: <FaSuitcase />, label: "Resource management" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
-//   { icon: <FaUsers />, label: "Recruitment" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png'},
-//   { icon: <FaChartLine />, label: "Operations" ,image:'https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Retrospectives.png' },
 const contentData = {
   "AI Business Idea Checker": [
     {
@@ -187,7 +168,6 @@ const contentData = {
   ],
 };
 const CoreSolutionsSection = () => {
-  // State to track the selected icon
   const [selectedIcon, setSelectedIcon] = useState("Community");
   const settings = {
     dots: false,
@@ -199,9 +179,10 @@ const CoreSolutionsSection = () => {
       <button
         className="next-arrow"
         style={{
-          backgroundColor: "black",
+          backgroundColor: "white",
           borderRadius: "50%",
           width: "40px",
+          background:"white",
           height: "40px",
           display: "flex",
           alignItems: "center",
@@ -216,7 +197,7 @@ const CoreSolutionsSection = () => {
           cursor: "pointer",
         }}
       >
-        <MdOutlineArrowForwardIos color="black" size={30} />
+        <MdOutlineArrowForwardIos color="white" size={30} />
       </button>
     ),
     prevArrow: (
@@ -240,7 +221,7 @@ const CoreSolutionsSection = () => {
           cursor: "pointer",
         }}
       >
-        <MdArrowBackIosNew color="black" size={30} />
+        <MdArrowBackIosNew color="white" size={30} />
       </button>
     ),
     responsive: [
@@ -267,63 +248,13 @@ const CoreSolutionsSection = () => {
       },
     ],
   };
-  
-
-  // Settings for the slider
-  // const settings = {
-  //   dots: false,
-  //   infinite: true,
-  //   slidesToShow: 6,
-  //   slidesToScroll: 1,
-  //   nextArrow: <SampleNextArrow />,
-  //   prevArrow: <SamplePrevArrow />,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 5,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 480,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //   ],
-  // };
-
-  // const iconImages = {
-  //   Portfolios: "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/global-010224-icons/icon-client-projects.png",
-  //   Projects: "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/global-010224-icons/icon-client-projects.png",
-  //   Tasks: "url-to-tasks-image.jpg",
-  //   "Sales pipeline": "url-to-sales-pipeline-image.jpg",
-  //   "Lead capturing": "url-to-lead-capturing-image.jpg",
-  //   Contacts: "url-to-contacts-image.jpg",
-  //   Leads: "url-to-leads-image.jpg",
-  //   "Customer onboarding": "url-to-customer-onboarding-image.jpg",
-  //   "Roadmap planning": "url-to-roadmap-planning-image.jpg",
-  // };
-
-  const handleIconClick = (iconName) => {
-    setSelectedIcon(iconName);
-  };
-
   return (
     <div style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "100px 0" }}>
         <div style={{ margin: "auto", maxWidth: "1200px" }}>
           <div>
-            <h2
+            <h2 
+              className=""
               style={{
                 fontSize: "2.75rem",
                 width: "60%",
@@ -336,23 +267,10 @@ const CoreSolutionsSection = () => {
                 wordBreak: "break-word",
               }}
             >
-              From Concept to Execution—Your All-in-One Business Solution.
+              Ideax provide
             </h2>
           </div>
           <div className="slider-container" style={{ marginTop: "50px" }}>
-            {/* <div style={{display:'flex', gap:'60px'}}>
-            <FaArrowAltCircleLeft/>
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-            <img src="/darksection1/Portfolios.webp" alt="" />
-          </div> */}
             <div className="left-sedow2"></div>
             <div
               className="carousel-container"
@@ -369,7 +287,7 @@ const CoreSolutionsSection = () => {
                     key={index}
                     className="icon-item"
                     onClick={() => setSelectedIcon(item.label)}
-                    style={{ textAlign: "center", padding: "0px" }}
+                    style={{ textAlign: "center", padding: "0px" ,gap:'20px'}}
                   >
                     <div
                       className="icon"
@@ -403,21 +321,7 @@ const CoreSolutionsSection = () => {
               </Slider>
             </div>
             <div className="right-sedow2"></div>
-            {/* <Slider {...settings}>
-            {Object.keys(iconImages).map((icon) => (
-              <div className="slider-item" key={icon}>
-                <span
-                  style={{
-                    cursor: "pointer",
-                    color: selectedIcon === icon ? "blue" : "white",
-                  }}
-                  onClick={() => handleIconClick(icon)}
-                >
-                  {icon}
-                </span>
-              </div>
-            ))}
-          </Slider> */}
+
           </div>
           <div style={{ overflow: "hidden" }}>
             {/* <img
@@ -440,79 +344,6 @@ const CoreSolutionsSection = () => {
                   ))}
               </div>
             </div>
-            {/* <div className="from-concept-continer">
-            <div className="from-concept-main-card">
-              <div className="from-concept-card">
-                <div>
-                  <h3 style={{color:'white'}}> Idea Validation</h3>
-                </div>
-                <div>
-                  <p style={{color:'white'}}>
-                    Use our AI algorithms to assess the feasibility of your business idea based 
-                    on market trends, competition, and potential profitability.
-                  </p>
-
-                </div>
-
-              </div>
-              <div className="from-concept-card">
-                <div>
-                  <h3 style={{color:'white'}}> Feedback & Insights: </h3>
-                </div>
-                <div>
-                  <p style={{color:'white'}}>
-                  Receive detailed reports with actionable insights to refine your idea 
-                  and strategy.
-                  </p>
-
-                </div>
-
-              </div>
-              <div className="from-concept-card">
-                <div>
-                  <h3 style={{color:'white'}}> Market Research: </h3>
-                </div>
-                <div>
-                  <p style={{color:'white'}}>
-                  Access curated data that highlights opportunities and challenges in your 
-                  industry.
-                  </p>
-
-                </div>
-
-              </div>
-              <div className="from-concept-card">
-                <div>
-                  <h3 style={{color:'white'}}> Competitor Analysis: </h3>
-                </div>
-                <div>
-                  <p style={{color:'white'}}>
-                  Gain in-depth insights into your competitors to identify your unique 
-                  value proposition.
-                  </p>
-
-                </div>
-
-              </div>
-              <div className="from-concept-card">
-                <div>
-                  <h3 style={{color:'white'}}> Risk Assessment: </h3>
-                </div>
-                <div>
-                  <p style={{color:'white'}}>
-                  Evaluate potential risks associated with your business idea to prepare for 
-                  challenges.
-                  </p>
-
-                </div>
-
-              </div>
-
-              
-
-
-            </div>
-          </div> */}
             <div style={{ position: "absolute", zIndex: 1000 }}></div>
           </div>
           <div className="btns-container">
@@ -525,22 +356,4 @@ const CoreSolutionsSection = () => {
     </div>
   );
 };
-
-function SampleNextArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div className={`${className} custom-arrow`} onClick={onClick}>
-      &#8250;
-    </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div className={`${className} custom-arrow`} onClick={onClick}>
-      &#8249;
-    </div>
-  );
-}
 export default CoreSolutionsSection;

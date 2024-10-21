@@ -15,20 +15,15 @@ export const Hero = () => {
       {/* <img src="/heros.jpg" alt="Background" /> */}
       <div className="container">
         <div className="hero-block">
-          <h1 style={{ backgroundColor: "#111111" }}>
-            {" "}
-            AI Startup/ Business Idea Checker
-            <span style={{ margin: "20px 0px 30px 0px", fontSize: "30px" }}>
-              {" "}
-              <p style={{ fontSize: "20px" }}>
-                {/* No Matter What you do, there's always time to chase your dreams.
-                Every success story begins with an idea{" "} */}
-                Use our AI algorithms to assess the feasibility of your business
-                idea based on market trends, competition, and potential
-                profitability.
-              </p>
-            </span>
-          </h1>
+        <h1 className="idea-checker-heading">
+  AI Startup/ Business Idea Checker
+  <span className="idea-checker-subheading">
+    <p className="idea-checker-description" style={{fontSize:'1.2rem'}}>
+      Use our AI algorithms to assess the feasibility of your business idea based on market trends, competition, and potential profitability.
+    </p>
+  </span>
+</h1>
+
           <div className="btns-container">
             <Link className="btn" to="/mainWizard">
               Test Your Idea <FaArrowAltCircleRight />
@@ -37,125 +32,41 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <div
-        className="container hero-container2"
-        style={{ marginBottom: "0px", paddingBottom: "0px" }}
-      >
-        <div
-          className="hero-block2"
-          style={{
-            position: "relative",
-            marginBottom: "0px",
-            paddingBottom: "0px",
-          }}
-        >
-          <img
-            src="/roadmap.jpeg"
-            alt="Roadmap"
-            style={{
-              overflow: "hidden",
-              objectFit: "cover",
-              width: "650px",
-              borderRadius: "5px",
-              border: "1px solid #dfe6f2",
-              margin: "50px 0px 0px 0px",
-            }}
-          />
-          <div
-            className="card"
-            style={{
-              width: "280px",
-              position: "absolute",
-              top: "0px",
-              left: "490px",
-              background:
-                "linear-gradient(180deg, rgba(255, 255, 255, 0.8) 40%, rgba(240, 243, 255, 0.3) 80%)",
-              borderRadius: "20px",
-              height: "380px",
-            }}
-          >
-            
-            <img
-            src="/idiaxsection122.png"
-            alt="Roadmap"
-            style={{
-              overflow: "hidden",
-              // objectFit: "cover",
-              width: "100%",
-              borderRadius: "0px",
-              border: "1px solid #dfe6f2",
-              // margin: "0px 0px 0px 0px",
-              // position: "absolute",
-              // left: "0px",
-              // top: "50px",
-            }}
-          />
-          <img
-            src="/idiaxsection1233.png"
-            alt="Roadmap"
-            style={{
-              overflow: "hidden",
-              // objectFit: "cover",
-              width: "100%",
-              borderRadius: "0px",
-              border: "1px solid #dfe6f2",
-              height:'80px',
-              margin: "0px 0px 0px 0px",
-              // position: "absolute",
-              // left: "0px",
-              // top: "50px",
-            }}
-          />
-          </div>
-          
-          <motion.img
-            src="/idiaxsection1.png"
-            alt="Roadmap"
-            style={{
-              overflow: "hidden",
-              objectFit: "cover",
-              width: "250px",
-              borderRadius: "5px",
-              border: "1px solid #dfe6f2",
-              margin: "50px 0px 0px 0px",
-              position: "absolute",
-              left: "-140px",
-              top: "-50px",
-            }}
-            initial={{ x: 0, y: 0, opacity: 1 }}
-            animate={{ x: 0, opacity: 1, y: [0, -20, 0] }} // Changed y: 20 to y: -20 for up-down effect
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "mirror",
-            }}
-          />
+      <div className="container hero-container2">
+  <div className="hero-block2">
+    <img src="/roadmap.jpeg" alt="Roadmap" className="hero-roadmap-img" />
+    <div className=" roadmap-card">
+      <img src="/idiaxsection122.png" alt="Roadmap" className="roadmap-card-img" />
+      <img src="/idiaxsection12331.png" alt="Roadmap" className="roadmap-card-img-small" />
+      <img src="/idiaxsection12332.png" alt="Roadmap" className="roadmap-card-img-tiny" />
+    </div>
+    <motion.img
+      src="/idiaxsection1.png"
+      alt="Roadmap"
+      className="motion-img1"
+      initial={{ x: 0, y: 0, opacity: 1 }}
+      animate={{ x: 0, opacity: 1, y: [0, -20, 0] }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "mirror",
+      }}
+    />
+    <motion.img
+      src="/ideaxsection1i2.png"
+      alt="Roadmap"
+      className="motion-img2"
+      initial={{ x: 0, y: 0, opacity: 1 }}
+      animate={{ x: 0, opacity: 1, y: [0, 20, 0] }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "mirror",
+      }}
+    />
+  </div>
+</div>
 
-          <motion.img
-            src="/ideaxsection1i2.png"
-            alt="Roadmap"
-            className="hero-image2"
-            style={{
-              overflow: "hidden",
-              objectFit: "cover",
-              width: "250px",
-              borderRadius: "5px",
-              border: "1px solid #dfe6f2",
-              margin: "50px 0px 0px 0px",
-              position: "absolute",
-              left: "-140px",
-              top: "300px",
-            }}
-            initial={{ x: 0, y: 0, opacity: 1 }}
-            animate={{ x: 0, opacity: 1, y: [0, 20, 0] }} // Up and down animation for y-axis
-            transition={{
-              duration: 2, // Duration for one full cycle (up and down)
-              repeat: Infinity, // Infinite loop
-              repeatType: "mirror", // Mirror the animation for smooth transition
-            }}
-          />
-        </div>
-      </div>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const icons = [
   {
     id: 2,
     icon: <GiTeamIdea />,
-    label: "Integrated Online Team Solutions",
+    label: "Integrated Online Team",
     image:
       "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/usescases3/2Bug_tracking.png",
   },

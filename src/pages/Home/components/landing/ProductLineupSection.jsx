@@ -242,7 +242,7 @@ const ProductLineupSection = () => {
               }}
             >
               Deliver your best work with{" "}
-              <span style={{ color: "gray" }}>ideax.in</span>
+              <span style={{ fontWeight:'600' }}>ideax</span>
             </span>
 
             <div className="btns-container" style={{ marginBottom: "40px" }}>

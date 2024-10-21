@@ -34,7 +34,7 @@ const TrustedBySection = () => {
               </a>
               <a href="">
                 <img
-                  src="https://static.wixstatic.com/media/b2643d_b12bc7ec2a1345fb8f7b7c598ef50fd1~mv2.png/v1/fill/w_367,h_91,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Basha-Export-logos.png"
+                  src="trustedby/BashaExportlogos.jpg"
                   alt="Company logo"
                   className="company-logo"
                   style={{ backgroundColor: "" }}
@@ -64,11 +64,11 @@ const TrustedBySection = () => {
           <div className="logos">
             <div className="highlight-section">
               <div className="col col-left">
-                <img
+                {/* <img
                   src="gartner.avif"
                   alt="Gartner logo"
                   className="gartner-logo"
-                />
+                /> */}
                 <div className="col-left-content">
                 From Concept to Execution—Your All-in-One Business Solution
                 </div>

@@ -1124,7 +1124,7 @@ table tr:nth-child(even) {
     font-size: 3.5rem;
     width: 80%;
   }
-
+  
   .hero .container .hero-block p {
     font-size: 1rem;
     width: 90%;
@@ -1133,6 +1133,7 @@ table tr:nth-child(even) {
   .hero .container .hero-block .btns-container .btn {
     padding: 8px 16px;
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -2461,6 +2462,15 @@ nav .container .burger {
     overflow: hidden;
     display: none;
   }
+  .roadmap-card{
+    display: none;
+  }
+  .motion-img2 {
+    display: none;
+  }
+  .motion-img1 {
+    display: none;
+  }
   footer {
     background: var(--bg-dark);
     font-size: 11px;
@@ -3338,6 +3348,9 @@ nav .container .burger {
 @media (max-width: 1090px) {
   .impact-section {
     display: none;
+  }
+  .product-box {
+    margin: 20px;
   }
   .impact-details {
     display: none;

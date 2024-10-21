@@ -56,6 +56,9 @@
   .image-contener-h{
     font-size:'12px';
   }
+  .col-left-content {
+    font-size: 2.25rem;
+  }
   @media (max-width: 1024px) {
     .col {
       width: 100%;

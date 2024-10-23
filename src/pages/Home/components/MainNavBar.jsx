@@ -7,7 +7,6 @@ import { LogoutButton } from "../../auth/Logout";
 import { isAuthenticated } from "../../../config/Auth";
 import { AuthContext } from "../../../config/AuthContext";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import EmailSignUpModal from "./EmailSignUpModal ";
 
 export const MainNavBar = () => {
   // menu state
@@ -15,12 +14,9 @@ export const MainNavBar = () => {
   const isLoggedIn = !!localStorage.getItem("token");
   const { isAuthenticated, logout } = useContext(AuthContext);
   const location = useLocation();
-  const [emailLoginModalOpen, setEmailLoginModalOpen] = useState(false);
   // toggle menu on mobiles
   const showMenu = () => {
     toggle ? setToggle(false) : setToggle(true);
-    setEmailLoginModalOpen(toggle);
-    console.log("first")
   };
   // Function to close the modal
   // const closeEmailLoginModal = () => {
@@ -29,10 +25,6 @@ export const MainNavBar = () => {
   return (
     <>
       <nav>
-      <EmailSignUpModal
-                    emailLoginModalOpen={emailLoginModalOpen}
-                    setEmailLoginModalOpen={setEmailLoginModalOpen}
-                  />
         <div className="container">
           <div className="logo-side">
             <Link to="/">
@@ -68,7 +60,7 @@ export const MainNavBar = () => {
               {isAuthenticated ? (
                 <li
                   className="nav-login-btn"
-                  style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px' }}
+                  style={{  cursor: "pointer",marginRight:'20px' }}
                   onClick={logout}
                 >
 

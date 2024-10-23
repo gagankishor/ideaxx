@@ -29,6 +29,7 @@
   gap: 200px;
 }
 .slider-card {
+  width: 100%;
   position: relative;
   border-radius: 15px;
   overflow: hidden;
@@ -159,11 +160,9 @@
   color: #000;
 }
 
-.slider-card-image {
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-}
+/* .slider-card-image {
+  
+} */
 @media (max-width: 480px) {
   .right-sedow {
     display: none;
@@ -171,8 +170,9 @@
   .left-sedow {
     display: none;
   }
-  .slider-card-image {
-    min-height: 560px;
-    height: auto;
+  .slider-card {
+    /* margin: 0 30px; */
+    width: 50%;
   }
+
 }

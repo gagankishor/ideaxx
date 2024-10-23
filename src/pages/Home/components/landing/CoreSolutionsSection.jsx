@@ -83,7 +83,7 @@ const contentData = {
         "Evaluate potential risks associated with your business idea to prepare for challenges.",
     },
   ],
-  "Integrated Online Team Solutions": [
+  "Integrated Online Team": [
     {
       title: "Strategic Planning",
       description:
@@ -278,16 +278,15 @@ const CoreSolutionsSection = () => {
                 padding: "20px",
                 backgroundColor: "#000",
                 color: "#fff",
-                width: "70%",
               }}
             >
               <Slider {...settings}>
                 {icons.map((item, index) => (
                   <div
                     key={index}
+                    style={{ textAlign: "center", padding: "110px" ,width:'40%'}}
                     className="icon-item"
                     onClick={() => setSelectedIcon(item.label)}
-                    style={{ textAlign: "center", padding: "0px" ,gap:'20px'}}
                   >
                     <div
                       className="icon"

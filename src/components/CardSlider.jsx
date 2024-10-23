@@ -11,14 +11,10 @@ import {
 } from "react-icons/fa";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faLightbulb as solidLightbulb } from '@fortawesome/free-solid-svg-icons';
-import {
-  PiIdentificationCardBold,
-  PiIdentificationCardLight,
-} from "react-icons/pi";
 
 const CardSlider = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4.8,
@@ -99,8 +95,10 @@ const CardSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.1,
           slidesToScroll: 1,
+          nextArrow: <></>,
+          prevArrow: <></>,
         },
       },
       {
@@ -108,6 +106,8 @@ const CardSlider = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          nextArrow: <></>,
+          prevArrow: <></>,
         },
       },
     ],
@@ -118,14 +118,7 @@ const CardSlider = () => {
     // { id: 2, title: '', description: '', bgImage: '/homeslider/bisness.jpeg' },
     // { id: 3, title: '', description: '', bgImage: '/homeslider/community.jpeg' },
     // { id: 4, title: '', description: '', bgImage: '/homeslider/cashflow.jpeg' },
-    {
-      pointers: [""],
-      icon: "main-icon/Buy-Sell.png",
-      id: 12,
-      title: "Buy-Sell",
-      description: "",
-      bgImage: "/sliderLandigPage/12.jpg",
-    },
+    
     {
       pointers: [
         "New Idea finalise",
@@ -234,6 +227,14 @@ const CardSlider = () => {
       description: "Community",
       bgImage: "sliderLandigPage/1.jpg",
     },
+    {
+      pointers: [""],
+      icon: "main-icon/Buy-Sell.png",
+      id: 12,
+      title: "Buy-Sell",
+      description: "",
+      bgImage: "/sliderLandigPage/12.jpg",
+    },
     // { id: 6, title: 'Integrity', description: '', bgImage: '/sliderLandigPage/6.jpg' },
     // { id: 7, title: 'Inovation', description: '', bgImage: '/sliderLandigPage/7.jpg' },
     // { id: 10, title: 'Col', description: '', bgImage: '/sliderLandigPage/10.jpg' },
@@ -264,14 +265,21 @@ const CardSlider = () => {
           <div className="left-sedow"></div>
           <Slider {...settings}>
             {cards.map((card) => (
-              <div key={card.id} className="slider-card" style={{ width: "100%" }}>
-                <div 
-                  className="slider-card-image"
-                  style={{
-                    backgroundImage: `url(${card.bgImage})`,
-                   
-                  }}
-                />
+              <div
+                key={card.id}
+                className="slider-card"
+                style={{ width: "90%" }}
+              >
+              <img
+                src={card.bgImage}
+                alt="Slider Image"
+                style={{
+                  width: "100%",
+                  height: "auto", // Let the height be determined by the width (maintain aspect ratio)
+                  objectFit: "cover"
+                }}
+                className="slider-card-image"
+              />
                 <div className="card-content2">
                   <h3
                     style={{
@@ -280,7 +288,7 @@ const CardSlider = () => {
                       textAlign: "left",
                       fontSize: "18px",
                       fontWeight: "300",
-                      padding:"0px"
+                      padding: "0px",
                     }}
                   >
                     <div

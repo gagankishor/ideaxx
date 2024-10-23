@@ -32,7 +32,7 @@ const ProductLineupSection = () => {
           <div className="product-container">
             <div className="product-box">
               <img
-                src="/darksection1/Integrity.jpg"
+                src="/darksection1/Integrity.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -42,7 +42,7 @@ const ProductLineupSection = () => {
 
             <div className="product-box black-background">
               <img
-                src="/darksection1/innovation.jpg"
+                src="/darksection1/innovation.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -52,7 +52,7 @@ const ProductLineupSection = () => {
 
             <div className="product-box">
               <img
-                src="/darksection1/collaboration.jpg"
+                src="/darksection1/collaboration.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -268,7 +268,7 @@ const ProductLineupSection = () => {
               }}
             >
               <img
-                src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/Contact_sales_lital_4.png"
+                src="darksection1/ideax-bottom.png"
                 style={{ width: "100%", maxWidth: "300px", height: "auto" }}
                 alt=""
               />

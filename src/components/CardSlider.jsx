@@ -95,8 +95,8 @@ const CardSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.1,
-          slidesToScroll: 1,
+          slidesToShow: 1,
+          slidesToScroll: 1.0,
           nextArrow: <></>,
           prevArrow: <></>,
         },
@@ -275,8 +275,10 @@ const CardSlider = () => {
                 alt="Slider Image"
                 style={{
                   width: "100%",
-                  height: "auto", // Let the height be determined by the width (maintain aspect ratio)
-                  objectFit: "cover"
+                  height: "auto",
+                  objectFit: "cover",
+                  backgroundColor:'transparent',
+
                 }}
                 className="slider-card-image"
               />
@@ -293,14 +295,14 @@ const CardSlider = () => {
                   >
                     <div
                       style={{
-                        marginRight: "10px", // Adjusted spacing between icon and text
-                        display: "flex", // Ensures the icon stays centered
+                        marginRight: "10px",
+                        display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
                         backgroundColor: "white",
                         padding: "0px",
                         width: "38px",
-                        height: "38px", // Ensures the div is square
+                        height: "38px",
                         borderRadius: "5px",
                       }}
                     >
@@ -310,7 +312,7 @@ const CardSlider = () => {
                         width={25}
                         style={{
                           objectFit: "cover",
-                          color: "white", // Correcting the color to apply to the icon (if SVG)
+                          color: "white",
                         }}
                       />
                     </div>
@@ -347,7 +349,6 @@ const CardSlider = () => {
   );
 };
 
-// Custom next and previous arrows
 const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (

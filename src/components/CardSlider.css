@@ -174,5 +174,15 @@
     /* margin: 0 30px; */
     width: 50%;
   }
-
+  .slider-card {
+    box-shadow:none;
+    padding: 0 20px;
+    background-color: transparent;
+  }
+  .slider-card:hover .card-content2 {
+    width: 90%; 
+    height: 100%;
+    margin: auto;
+    border-radius: 15px;
+  }
 }

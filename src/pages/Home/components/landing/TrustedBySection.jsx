@@ -21,7 +21,6 @@ const TrustedBySection = () => {
                   className="company-logo"
                   style={{ backgroundColor: "white" }}
                 />
-               
               </a>
               <a href="https://pickitup.ae/">
                 <img
@@ -30,7 +29,6 @@ const TrustedBySection = () => {
                   className="company-logo"
                   style={{ backgroundColor: "" }}
                 />
-              
               </a>
               <a href="">
                 <img
@@ -59,7 +57,6 @@ const TrustedBySection = () => {
               </a>
             </div>
           </div>
-
           {/* Highlight Section */}
           <div className="logos">
             <div className="highlight-section">
@@ -70,7 +67,7 @@ const TrustedBySection = () => {
                   className="gartner-logo"
                 /> */}
                 <div className="col-left-content">
-                From Concept to Execution—Your All-in-One Business Solution
+                From Concept to Execution Your All-in-One Business Solutions
                 </div>
               </div>
 
@@ -89,5 +86,4 @@ const TrustedBySection = () => {
     </div>
   );
 };
-
 export default TrustedBySection;

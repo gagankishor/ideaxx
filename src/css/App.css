@@ -1017,6 +1017,7 @@ table tr:nth-child(even) {
   font-weight: bold;
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .hero .container .hero-block .btns-container span {
@@ -3608,7 +3609,8 @@ nav .container .burger {
   flex-wrap: wrap;
   gap: 30px; /* Space between videos */
   max-width: 1400px;
-  margin: 0 auto; /* Center the video section */
+  margin: auto; /* Center the video section */
+  margin-top: 40px;
 }
 
 .video-frame {
@@ -3674,6 +3676,8 @@ nav .container .burger {
   justify-content: center;
   position: relative;
   margin-top: 100px; 
+  max-width: 1400px;
+  margin: auto;
 }
 
 .product-box {

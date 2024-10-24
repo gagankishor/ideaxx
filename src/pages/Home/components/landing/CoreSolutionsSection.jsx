@@ -250,7 +250,7 @@ const CoreSolutionsSection = () => {
   };
   return (
     <div style={{ padding: "0px 0px", color: "white" }}>
-      <div style={{ backgroundColor: "black", padding: "100px 0" }}>
+      <div style={{ backgroundColor: "black", padding: "30px 0" }}>
         <div style={{ margin: "auto", maxWidth: "1200px" }}>
           <div>
             <h2 
@@ -302,13 +302,7 @@ const CoreSolutionsSection = () => {
                     <div
                       className="icon-title"
                       style={{
-                        marginTop: "5px",
-                        cursor: "pointer",
-                        width: "80px",
-                        textAlign: "center",
-                        margin: "auto",
-                        fontSize: "0.875rem",
-                        fontWeight: "200",
+                        
                         color:
                           selectedIcon === item.label ? "white" : "#b8b4b4",
                       }}

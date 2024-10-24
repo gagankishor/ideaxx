@@ -1006,6 +1006,7 @@ table tr:nth-child(even) {
   font-weight: 300;
   color: white;
   line-height: 1.5;
+  padding-top: 20px;
 }
 
 .hero .container .hero-block .btns-container .btn {
@@ -2377,7 +2378,7 @@ nav .container .burger {
 
   nav .container .logo-side a img {
     width: 90px;
-    margin: 10px 0 0 10px;
+    /* margin: 10px 0 0 10px; */
   }
 
   nav .container .right-side {
@@ -2647,6 +2648,7 @@ nav .container .burger {
     /* margin-bottom: 10px; */
     min-height: 200px;
   }
+
   .wizard .container .box .content .right .btn {
     max-width: unset;
   }
@@ -2937,7 +2939,14 @@ nav .container .burger {
   .wizard .container .box .content .left .left-contenner .choices {
     margin-left: 0px;
     padding-left: 0px;
+    margin-bottom: 20px;
   }
+  @media screen and (max-height:667px) {
+    .wizard .container .box .content .left .left-contenner .choices {
+      margin-bottom: 20px;
+      max-height: 240px;
+    }
+  } 
   /* @media (max-height:950px){
     .wizard {
       min-height: calc(100vh - 176px);
@@ -3005,7 +3014,7 @@ nav .container .burger {
 
 @media (max-width: 480px) {
   nav .container {
-    padding: 0.5rem;
+    padding: 1rem;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -3543,7 +3552,7 @@ nav .container .burger {
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 10px;
-  text-align: left;
+  text-align: center;
   width: 31%;
   display: flex;
   flex-direction: column;
@@ -3555,7 +3564,7 @@ nav .container .burger {
 /* Icon Styles */
 .icon {
   font-size: 40px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .card-title {
@@ -3563,13 +3572,13 @@ nav .container .burger {
   font-size: 20px;
   font-weight: 700;
   color: white;
-  text-align: start;
+  text-align: center;
 }
 
 .card-text {
   font-size: 14px;
   color: white;
-  text-align: start;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -3589,19 +3598,36 @@ nav .container .burger {
     width: 100%;
     margin: 10px 0;
   }
+  .card-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .card-text {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 30px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
   .card-title {
     font-size: 18px;
+    text-align: center;
   }
 
   .card-text {
     font-size: 12px;
+    text-align: center;
   }
 
   .icon {
     font-size: 30px;
+    text-align: center;
   }
 }
 .video-section {
@@ -3746,6 +3772,6 @@ nav .container .burger {
   }
 
   .product-container {
-    margin-top: 50px; /* Adjust top margin for smaller screens */
+    margin-top: 0px; /* Adjust top margin for smaller screens */
   }
 }

@@ -68,7 +68,7 @@ export const MainNavBar = () => {
                   
                 </li>
               ) : (
-                <li style={{ marginLeft: "15px", cursor: "pointer",marginRight:'20px',fontWeight:'700' }}  >
+                <li style={{  cursor: "pointer",marginRight:'20px',fontWeight:'700' }}  >
                   
                   <span style={{color:"black"}}>
 

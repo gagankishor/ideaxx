@@ -302,7 +302,7 @@ const WizardResult = () => {
       </div>
       <div className="business-check-container">
         <div className="ai-generated-content">
-          <h3>
+          <h3 style={{display:'flex',justifyContent:"center",alignItems:"center",gap:"10px"}}>
             Your Idea Overview{" "}
             <FaRobot size={28} style={{ color: "var(--main-color)" }} />
           </h3>
@@ -319,28 +319,32 @@ const WizardResult = () => {
           <ul>
             <li className="important">
               <span>
-                <input type="checkbox" /> Clarify the Unique Value Proposition
+                {/* <input type="checkbox" /> */}
+                 Clarify the Unique Value Proposition
                 (UVP).
               </span>
               <span style={{ color: "orange" }}>Important!</span>
             </li>
             <li>
               <span>
-                <input type="checkbox" /> Improve the scalability of the
+                {/* <input type="checkbox" /> */}
+                 Improve the scalability of the
                 business model.
               </span>
               <span>Tip!</span>
             </li>
             <li>
               <span>
-                <input type="checkbox" /> Analyze the competitive landscape
+                {/* <input type="checkbox" /> */}
+                 Analyze the competitive landscape
                 further.
               </span>
               <span>Tip!</span>
             </li>
             <li>
               <span>
-                <input type="checkbox" /> Identify additional potential
+                {/* <input type="checkbox" /> */}
+                 Identify additional potential
                 partnerships.
               </span>
               <span>Tip!</span>

@@ -99,9 +99,9 @@
 
 
     }
-    .company-logo {
+    /* .company-logo {
       width: 60px;
-    }
+    } */
   
     .logos-container {
       margin: 0 10px; 
@@ -115,7 +115,7 @@
     }
     .col {
       width: 100%;
-      padding: 20px 10px 0px;
+      padding: 10px;
     }
   }
   

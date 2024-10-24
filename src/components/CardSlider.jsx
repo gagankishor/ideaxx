@@ -326,7 +326,7 @@ const CardSlider = () => {
                         alignItems: "center",
                         textAlign: "left",
                         fontSize: "10px",
-                        lineHeight: "30px",
+                        lineHeight: "20px",
                       }}
                     >
                       <FaCheckCircle

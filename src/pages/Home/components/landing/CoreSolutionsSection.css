@@ -94,19 +94,17 @@
 
 .icon-item .icon-title {
   margin-top: 5px;
-  width: 80px;
+  /* width: 100px; */
   text-align: center;
   margin: auto;
   font-size: 0.875rem;
   font-weight: 200;
   color: #b8b4b4;
 }
-
 .icon-item .icon {
   font-size: 24px;
   color: #b8b4b4;
 }
-
 .icon-item:hover {
   transform: translateY(-3px);
   transition: transform 0.3s ease;
@@ -321,6 +319,9 @@
         width: 90%; /* Adjust for mobile screens */
         padding: 15px;
         margin: 5px;
+    }
+    .icon-item .icon-title {
+      width: unset;
     }
 
     .from-concept-main-card {

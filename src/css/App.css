@@ -3442,9 +3442,6 @@ nav .container .burger {
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.1); /* Add the translucent background color */
 }
-.stat-item-content-left {
-
-}
 .image-container {
   position: absolute;
   top: 0;

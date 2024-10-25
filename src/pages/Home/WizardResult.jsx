@@ -70,6 +70,10 @@ const WizardResult = () => {
   const RevenueModelData = parseJSON(data?.RevenueModelData);
   const CompetitiveLandscapeData = parseJSON(data?.CompetitiveLandscapeData);
   const TimeToMarketData = parseJSON(data?.TimeToMarketData);
+  const MarketShareData = parseJSON(data?.MarketShareData);
+  const InvestmentLevelData = parseJSON(data?.InvestmentLevelData);
+  const ExpectedROIData = parseJSON(data?.ExpectedROIData);
+  console.log("MarketShareData",MarketShareData)
   const fullAiContent = `
   ${data.resultText} 
   `;
@@ -171,7 +175,7 @@ const WizardResult = () => {
                     width: uniqueValueProposition?.finalScore,
                     background: getBarColor(
                       parseFloat(
-                        uniqueValueProposition?.finalScore.replace("%", "")
+                        uniqueValueProposition?.finalScore?.replace("%", "")
                       ) || 0
                     ),
                   }}
@@ -284,19 +288,19 @@ const WizardResult = () => {
           </div>
           <div className="info-item">
             <strong>Investment Level</strong>
-            <span>{data?.InvestmentLevelData}</span>
+            <span>{InvestmentLevelData?.chosenInvestmentLevel}</span>
           </div>
           <div className="info-item">
             <strong>Time to Market</strong>
-            <span> {TimeToMarketData ? TimeToMarketData.totalTTM : "0"} </span>
+            <span> {TimeToMarketData ? TimeToMarketData?.totalTTM : "0"} </span>
           </div>
           <div className="info-item">
             <strong>Expected ROI</strong>
-            <span>{data?.ExpectedROIData?.split(":")[1]?.trim() || ""}</span>
+            <span>{`${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}`  || `${data?.ExpectedROIData}`}</span>
           </div>
           <div className="info-item">
             <strong>Market Share</strong>
-            <span>{data?.MarketShareData}</span>
+            <span>{MarketShareData?.chosenOutcome ||MarketShareData }</span>
           </div>
         </div>
       </div>

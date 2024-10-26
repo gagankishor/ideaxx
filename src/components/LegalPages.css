@@ -1,0 +1,97 @@
+/* src/components/LegalPages.css */
+
+.legal-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.7;
+    color: #333;
+  }
+  
+  .legal-page-container h1 {
+    font-size: 2.4em;
+    color: #4FADEA;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .legal-page-container h2 {
+    font-size: 1.6em;
+    color: #4FADEA;
+    margin-top: 30px;
+  }
+  
+  .legal-page-container p {
+    font-size: 1.1em;
+    margin: 15px 0;
+    color: #555;
+  }
+  
+  .legal-page-container a {
+    color: #4FADEA;
+    text-decoration: underline;
+  }
+  
+  .legal-page-container a:hover {
+    text-decoration: none;
+  }
+  
+  /* Button Styling for Better Navigation */
+  .legal-page-container .contact-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4FADEA;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .legal-page-container .contact-button:hover {
+    background-color: #3c8dbb;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .legal-page-container {
+      padding: 20px 15px;
+    }
+  
+    .legal-page-container h1 {
+      font-size: 2em;
+    }
+  
+    .legal-page-container h2 {
+      font-size: 1.4em;
+    }
+  
+    .legal-page-container p {
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .legal-page-container {
+      padding: 15px 10px;
+    }
+  
+    .legal-page-container h1 {
+      font-size: 1.8em;
+    }
+  
+    .legal-page-container h2 {
+      font-size: 1.2em;
+    }
+  
+    .legal-page-container p {
+      font-size: 0.95em;
+    }
+  }
+
+  

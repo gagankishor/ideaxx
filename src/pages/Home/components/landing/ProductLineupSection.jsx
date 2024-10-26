@@ -132,6 +132,12 @@ const ProductLineupSection = () => {
         }}
       >
         <div style={{}}>
+          {/* <img
+            src="main-icon/Idea.png"
+            style={{ marginRight: "10px",color:'white' ,backgroundColor:"#6161FF",padding:"7px",borderRadius:'5px'}}
+            alt=""
+            width={50}
+          /> */}
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
             style={{ marginRight: "10px" }}
@@ -222,7 +228,12 @@ const ProductLineupSection = () => {
           </div>
         </div>
       </div>
-      <div style={containerStyle}>
+      <div style={{display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    background: "linear-gradient(180deg, #341E81 0%, #341E81 100%)",
+    padding: "0px 30px 50px",
+    color: "white",}}>
         <div style={{ margin: "40px 5%", maxWidth: "1200px" }}>
           <div
             style={{
@@ -233,7 +244,7 @@ const ProductLineupSection = () => {
           >
             <span
               style={{
-                fontSize: "3.25rem",
+                fontSize: "2.75rem",
                 fontWeight: "200",
                 color: "white",
                 lineHeight: "110%",

@@ -68,11 +68,11 @@ import { ToolPlatforms } from "./pages/BusinessTools/ToolPlatforms";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import WizardResult from "./pages/Home/WizardResult";
-
+import TermsOfService from "./components/TermsOfService";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 export default function App() {
   const ref = useRef(null);
   const isLoggedIn = !!localStorage.getItem("token");
-
   return (
     <>
       <AuthProvider>
@@ -419,10 +419,10 @@ export default function App() {
               element={
                 <PrivateRoute>
                   <LegalConsultation />
-                </PrivateRoute> 
+                </PrivateRoute>
               }
             />
-{/* --------------------------------------Team */}
+            {/* --------------------------------------Team */}
             <Route
               path="/business-tools/website"
               element={
@@ -452,7 +452,7 @@ export default function App() {
               element={
                 <PrivateRoute>
                   <ToolEquipment />
-                </PrivateRoute> 
+                </PrivateRoute>
               }
             />
             <Route
@@ -476,11 +476,12 @@ export default function App() {
               element={
                 <PrivateRoute>
                   <ToolInvoicing />
-                </PrivateRoute> 
+                </PrivateRoute>
               }
             />
-
             {/* --------------------Business Tools------------------- */}
+            <Route path="/TermsOfService" element={<TermsOfService />} />
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<Error404 />} />

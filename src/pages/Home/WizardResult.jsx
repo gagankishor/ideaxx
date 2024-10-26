@@ -98,7 +98,7 @@ const WizardResult = () => {
         setDisplayedText((prevText) => prevText + aiContent[currentIndex]);
         currentIndex++;
 
-        if (currentIndex >= aiContent.length) {
+        if (currentIndex >= aiContent.length-1) {
           clearInterval(typingInterval);
           setIsTypingComplete(true);
         }

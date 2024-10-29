@@ -9,8 +9,6 @@ import { GiTeamIdea } from "react-icons/gi";
 import { TiCloudStorage } from "react-icons/ti";
 
 import {
-  MdArrowBackIosNew,
-  MdOutlineArrowForwardIos,
   MdOutlineSell,
 } from "react-icons/md";
 import Link from "next/link"; // Correct import for Link

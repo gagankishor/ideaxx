@@ -726,9 +726,7 @@
 "use client"; // Ensure this component is client-rendered
 import PropTypes from 'prop-types';
 import Slider from "react-slick";
-import Image from "next/image";
 import { FaArrowLeft, FaArrowRight, FaCheckCircle } from "react-icons/fa";
-import styles from "./CardSlider.module.css"; // Use CSS modules or Tailwind for scoped styling
 
 const CardSlider = () => {
     const settings = {
@@ -940,7 +938,7 @@ const CardSlider = () => {
                   {card.title}
                 </h3>
                 {card.pointers.map((pointer, index) => (
-  <p key={index} className="card-description">
+  <p key={index} className="card-description" style={{textAlign:"left"}}>
       <FaCheckCircle style={{ margin: "0 5px", borderRadius: "5px" }} />
       {pointer}
   </p>
@@ -956,17 +954,62 @@ const CardSlider = () => {
 };
 
 const SampleNextArrow = ({ onClick }) => (
-    <div className={styles.nextArrow} onClick={onClick}>
-        <FaArrowRight />
+        <div
+      className="slick-arrow slick-next"
+      style={{
+        display: "block",
+        background: "black",
+        color: "white",
+        borderRadius: "50%",
+        padding: "10px",
+        width: "60px",
+        height: "60px",
+        textAlign: "center",
+        lineHeight: "20px",
+        fontSize: "18px",
+        cursor: "pointer",
+        position: "absolute",
+        top: "50%",
+        right: "10px",
+        transform: "translateY(-50%)",
+      }}
+      onClick={onClick}
+    >
+      <FaArrowRight />
     </div>
 );
-
+SampleNextArrow.propTypes = {
+  onClick: PropTypes.func.isRequired, // Validate onClick as a required function
+};
 const SamplePrevArrow = ({ onClick }) => (
-    <div className={styles.prevArrow} onClick={onClick}>
-        <FaArrowLeft />
+        <div
+      className="slick-arrow slick-prev"
+      style={{
+        display: "block",
+        background: "black",
+        color: "white",
+        borderRadius: "50%",
+        padding: "10px",
+        width: "60px",
+        height: "60px",
+        textAlign: "center",
+        lineHeight: "20px",
+        fontSize: "18px",
+        cursor: "pointer",
+        position: "absolute",
+        top: "50%",
+        left: "10px",
+        transform: "translateY(-50%)",
+        content: "none",
+      }}
+      onClick={onClick}
+    >
+      <FaArrowLeft />
     </div>
 );
-
+SamplePrevArrow.propTypes = {
+  onClick: PropTypes.func.isRequired, // Validate onClick as a required function
+};
 CardSlider.propTypes = {
     cards: PropTypes.arrayOf(
         PropTypes.shape({

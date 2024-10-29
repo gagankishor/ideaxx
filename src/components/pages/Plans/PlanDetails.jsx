@@ -103,7 +103,6 @@ const Plans = () => {
             </div>
           </div>
         </div>
-
         <div style={{ alignItems: "center", textAlign: "center" }}>
           <h2
             style={{
@@ -127,7 +126,6 @@ const Plans = () => {
               animation: "slideDown 2s infinite"
             }}
           />
-
           <style>
             {`
               @keyframes slideDown {
@@ -143,10 +141,8 @@ const Plans = () => {
               }
             `}
           </style>
-
-          <h1 className="heading">Our Plans</h1>
+          <h2 className="heading">Our Plans</h2>
         </div>
-
         <div className="plans-container">
           {/* One Life-Time Plan - Start-Up */}
           <div className="plan-card">
@@ -169,7 +165,6 @@ const Plans = () => {
             </div>
             <button className="subscribe-button">Subscribe Now</button>
           </div>
-
           {/* Enterprise Launch Plan */}
           <div className="plan-card">
             <div>
@@ -192,9 +187,8 @@ const Plans = () => {
     </>
   );
 };
-
 export default Plans;
-
+ 
 // import React from "react";
 // import "./PlanDetails.css";
 // import { FaArrowAltCircleRight } from "react-icons/fa";

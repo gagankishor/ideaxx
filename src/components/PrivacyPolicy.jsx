@@ -4,7 +4,7 @@ import './LegalPages.css';
 const PrivacyPolicy = () => {
   return (
     <div className="legal-page-container">
-      <h1>Privacy Policy</h1>
+      <h3>Privacy Policy</h3>
       <p>
         Welcome to our Privacy Policy page. Your privacy is critically important to us. We are committed to
         protecting your personal information and your right to privacy.

@@ -9,8 +9,10 @@ export const Hero = () => {
     <div className="hero">
       <div className="container">
         <div className="hero-block">
+
           <h1 className="idea-checker-heading">
             AI Startup/ Business Idea Checker
+          </h1>
             <span className="idea-checker-subheading">
               <p className="idea-checker-description" style={{ fontSize: "1.2rem" }}>
                 Use our AI algorithms to assess the feasibility of your business
@@ -18,7 +20,6 @@ export const Hero = () => {
                 profitability.
               </p>
             </span>
-          </h1>
 
           <div className="btns-container">
             <Link className="btn" href="/mainWizard">

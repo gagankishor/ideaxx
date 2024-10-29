@@ -1004,7 +1004,7 @@ table tr:nth-child(even) {
   width: 80%;
   margin: auto;
   font-weight: 300;
-  color: white;
+  color: var(--text-color);
   line-height: 1.5;
   padding-top: 20px;
 }
@@ -1212,6 +1212,7 @@ table tr:nth-child(even) {
     font-size: 0.8rem;
     width: 100%;
     margin: auto;
+    color: var(--text-color);
 }
   .hero .container .hero-block .btns-container .btn {
     padding: 14px 28px;

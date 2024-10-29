@@ -12,7 +12,7 @@ const AwardsSection = () => {
     >
       <div className="awards-section" style={{ maxWidth: "1400px", margin: "auto" }}>
         <div className="title-section">
-          <h1 style={{ color: "white" }}>Recognized by leaders. Loved by customers.</h1>
+          <h3 style={{ color: "white" }}>Recognized by leaders. Loved by customers.</h3>
           <button className="cta-button">Test Yeor Idea →</button>
         </div>
         <div className="info-cards">

@@ -4,7 +4,7 @@ import './LegalPages.css';
 const TermsOfService = () => {
   return (
     <div className="legal-page-container">
-      <h1>Terms of Service</h1>
+      <h3>Terms of Service</h3>
       <p>
         Welcome to our website. By accessing or using our site, you agree to be bound by these Terms of Service, all
         applicable laws and regulations, and agree that you are responsible for compliance with any applicable local

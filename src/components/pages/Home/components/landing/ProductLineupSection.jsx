@@ -170,7 +170,7 @@ const ProductLineupSection = () => {
       </div>
       <div style={containerStyle}>
         <div className="top-section">
-          <h1>How It Works</h1>
+          <h2>How It Works</h2>
           <div className="btns-container">
             <Link
               className="btn"

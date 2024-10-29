@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "ideax-3ddd4",
+    "staging": "ideax-3ddd4"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

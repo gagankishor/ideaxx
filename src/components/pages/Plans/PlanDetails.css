@@ -1,0 +1,179 @@
+/* app.css */
+
+
+  .main-plan-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+    margin-top: 0;
+  }
+  
+  .plans-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .plan-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .plan-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+  }
+  
+  .plan-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .plan-features {
+    list-style: none;
+    padding-left: 0;
+
+  }
+  
+  .plan-features li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+  }
+  
+  .plan-features li span {
+    color: #28a745;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .subscribe-button {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    align-self: center;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .subscribe-button:hover {
+    background-color: var(--main-color);
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .plans-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .plan-card {
+      width: 45%;
+    }
+  }
+  .testimonials-section {
+    background-color: #f9f9f900;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .testimonial-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--main-color);
+  }
+  
+  .testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: left;
+  }
+  
+  .testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .client-name {
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  .selling-points-section {
+    background-color: #f5f5f500;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .selling-points-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--main-color);
+  }
+  
+  .selling-points-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .selling-point {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .selling-point h3 {
+    color: var(--main-color);
+    margin-bottom: 15px;
+  }
+  
+  .selling-point p {
+    color: #333;
+  }
+    

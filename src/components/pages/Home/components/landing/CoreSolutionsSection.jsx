@@ -176,50 +176,17 @@ const CoreSolutionsSection = () => {
     nextArrow: (
       <button
         className="next-arrow"
-        style={{
-          backgroundColor: "white",
-          borderRadius: "50%",
-          width: "40px",
-          background: "white",
-          height: "40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "absolute",
-          top: "50%",
-          right: "10px",
-          transform: "translateY(-50%)",
-          zIndex: 1000,
-          color: "white",
-          border: "none",
-          cursor: "pointer",
-        }}
+        
       >
-        <MdOutlineArrowForwardIos color="white" size={30} />
+        {/* <MdOutlineArrowForwardIos color="white" size={30} /> */}
       </button>
     ),
     prevArrow: (
       <button
         className="prev-arrow"
-        style={{
-          backgroundColor: "white",
-          borderRadius: "50%",
-          width: "40px",
-          height: "40px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "absolute",
-          top: "50%",
-          left: "10px",
-          transform: "translateY(-50%)",
-          zIndex: 1000,
-          color: "white",
-          border: "none",
-          cursor: "pointer",
-        }}
+        
       >
-        <MdArrowBackIosNew color="white" size={30} />
+        {/* <MdArrowBackIosNew color="white" size={30} /> */}
       </button>
     ),
     responsive: [

@@ -86,6 +86,8 @@
   font-size: 1rem;
   margin: 0;
   color: white;
+  text-align: left;
+
 }
 .card-content2 h3 {
   font-size: 1.8rem;

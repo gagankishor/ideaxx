@@ -1087,7 +1087,7 @@ table tr:nth-child(even) {
 .motion-img1 {
   overflow: hidden;
   object-fit: cover;
-  width: 250px;
+  width: 320px;
   border-radius: 5px;
   border: 1px solid #dfe6f2;
   margin: 50px 0px 0px 0px;
@@ -1099,7 +1099,7 @@ table tr:nth-child(even) {
 .motion-img2 {
   overflow: hidden;
   object-fit: cover;
-  width: 250px;
+  width: 320px;
   border-radius: 5px;
   border: 1px solid #dfe6f2;
   margin: 50px 0px 0px 0px;
@@ -1121,6 +1121,536 @@ table tr:nth-child(even) {
   margin: 0;
   text-align: center;
 }
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+
+/* General styling for the container */
+.slider-container {
+  margin: 30px 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.slider-item {
+  text-align: center;
+}
+
+.slider-item span {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.slider-item span:hover,
+.slider-item span.selected {
+  color: #4fadfa;
+}
+
+/* Custom arrow styles */
+.custom-arrow {
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.custom-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slick-prev.custom-arrow {
+  left: -40px; 
+}
+
+.slick-next.custom-arrow {
+  right: -40px; 
+}
+
+.image-container {
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.image-container img {
+  width: 80%; /* Adjust size as needed */
+  max-height: 500px; /* Adjust the maximum height */
+  object-fit: contain;
+  margin: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Animation for the image */
+.image-container img.fade-in {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.image-container img.fade-out {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.carousel-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+
+.icon-item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon-item .icon-title {
+  margin-top: 5px;
+  /* width: 100px; */
+  text-align: center;
+  margin: auto;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #b8b4b4;
+}
+.icon-item .icon {
+  font-size: 24px;
+  color: #b8b4b4;
+}
+.icon-item:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+
+.slick-prev,
+.slick-next {
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: black;
+  opacity: 1;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: gray;
+}
+
+.slick-prev {
+  left: 10px; 
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: black;
+}
+
+.right-sedow2,
+.left-sedow2 {
+  width: 200px;
+  height: 120%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.right-sedow2 {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);
+  right: 0;
+}
+
+.left-sedow2 {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.0) 10%, #000000 40%);
+  left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .carousel-container {
+      width: 90%;
+  }
+  
+  .image-container img {
+      width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+      width: 95%;
+      padding: 10px;
+  }
+
+  .slick-prev,
+  .slick-next {
+      width: 30px;
+      height: 30px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+      font-size: 16px;
+  }
+
+  .image-container img {
+      width: 90%;
+      max-height: 400px;
+  }
+
+  .right-sedow2,
+  .left-sedow2 {
+      width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-container {
+      width: 100%;
+      padding: 5px;
+  }
+
+  .slick-prev,
+  .slick-next {
+      width: 25px;
+      height: 25px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+      font-size: 14px;
+  }
+
+  .image-container img {
+      width: 100%;
+      max-height: 300px;
+  }
+
+  .right-sedow2,
+  .left-sedow2 {
+      width: 50px;
+  }
+}
+
+  .from-concept-continer {
+    margin: auto;
+    animation: fadeIn 1s ease-in-out;
+    padding: 20px;
+}
+
+.from-concept-main-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    animation: fadeIn 1s ease-in-out;
+    justify-content: center;
+}
+
+.from-concept-card {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.0) 10%, #242424 40%);
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid rgba(112, 109, 109, 0.63);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(104, 103, 103, 0.1);
+    position: relative;
+}
+
+.from-concept-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.from-concept-card h3,
+.from-concept-card p {
+    transition: color 0.3s ease;
+}
+
+.from-concept-card:hover h3 {
+    color: #00bcd4; /* Highlight color on hover */
+}
+
+.from-concept-card:hover p {
+    color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .from-concept-card {
+        width: 45%; /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .from-concept-card {
+        width: 60%; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .from-concept-card {
+        width: 80%; /* Adjust for tablets */
+    }
+    
+    .from-concept-main-card {
+        gap: 10px; /* Reduce gap on smaller screens */
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .from-concept-card {
+        width: 90%; /* Adjust for mobile screens */
+        padding: 15px;
+        margin: 5px;
+    }
+    .icon-item .icon-title {
+      width: unset;
+    }
+
+    .from-concept-main-card {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .from-concept-card {
+        width: 100%; /* Full width for very small screens */
+        
+    }
+}
+
+.card-slider-improved {
+  /* padding: 40px 0px; */
+  position: relative;
+  /* margin: 60px 0px; */
+  /* padding: 60px 0px; */
+  max-width: 1400px;
+  margin: auto;
+ 
+}
+.right-sedow {
+  background: linear-gradient(270deg,  #FFF 0%,rgba(255, 255, 255, 0.00) 100%);
+  z-index: 0;
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.left-sedow {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+  z-index: 1;
+  width: 200px;
+  height: 100%;
+  position: absolute;
+}
+.card-slider-improved .slick-slide {
+  padding: 0 15px; /* Adjust this value to increase or decrease the gap */
+}
+.slick-track {
+  gap: 200px;
+}
+.slider-card {
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Smooth transform when hover */
+}
+/* .card:hover {
+  background: #000;
+} */
+.slider-card img {
+  border-radius: 15px;
+}
+.slider-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: left;
+  color: white;
+  width: 50%;
+  height: 100%;
+}
+.card-content2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0; 
+  transition: opacity 0.8s ease, background 0.5s ease; 
+}
+.card-content2 h3 {
+  color: #888686ea;
+}
+.slider-card:hover .card-content2 {
+  visibility: visible;
+  opacity: 1; /* Fade in smoothly */
+  background: rgba(0, 0, 0, 0.8); /* Smooth background change */
+}
+.slider-card-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: left;
+  color: white;
+}
+
+.card-content p {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+  text-align: left;
+
+}
+.card-content2 h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card-content2 p {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+
+.slick-arrow {
+  background-color: #111;
+  color: #cf2525;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  margin-left: 60px;
+}
+.custom-arrow {
+  display: block;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+  background-color: #000;
+  width: 100px;
+  color: #000;
+  height: 100px;
+  margin-right: 60px;
+}
+
+.slick-next:before, .slick-prev:before {
+  content: none !important;
+}
+
+.slick-arrow:hover {
+  background-color: #333;
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  color: #111;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #000;
+}
+
+/* .slider-card-image {
+  
+} */
+@media (max-width: 480px) {
+  .right-sedow {
+    display: none;
+  }
+  .left-sedow {
+    display: none;
+  }
+  .slider-card {
+    /* margin: 0 30px; */
+    width: 50%;
+  }
+  .slider-card {
+    box-shadow:none;
+    padding: 0 20px;
+    background-color: transparent;
+  }
+  .slider-card:hover .card-content2 {
+    width: 90%; 
+    height: 100%;
+    margin: auto;
+    border-radius: 15px;
+  }
+}
+
 @media (max-width: 1200px) {
   .hero .container .hero-block h1 {
     font-size: 3.5rem;

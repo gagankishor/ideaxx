@@ -141,13 +141,13 @@ const ProductLineupSection = () => {
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
             style={{ marginRight: "10px" }}
-            alt=""
+            alt="Startup business idea checker"
             width={50}
           />
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
             style={{ marginRight: "10px" }}
-            alt=""
+            alt="Business idea checker free"
             width={50}
           />
           <img

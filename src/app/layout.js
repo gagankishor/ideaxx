@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Startup Business Idea Checker Online - Ideax",
   description: "Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now.",
-  keywords: "Business Idea Checker, Startup Idea Checker, Business idea checker online, Startup business idea checker, Business idea checker free, Seo data for home page",
+  keywords: "Business Idea Checker, Startup Idea Checker, Business idea checker online, Startup business idea checker, Business idea checker free",
   icons: {
     icon: "/idea.svg", // Path to your favicon in the public folder
   },

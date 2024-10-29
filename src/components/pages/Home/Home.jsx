@@ -2,13 +2,10 @@
 import { Helmet } from "react-helmet";
 
 import { Hero } from "./components/landing/Hero";
-// import CardSlider from "../../components/CardSlider";
 import TrustedBySection from "./components/landing/TrustedBySection";
-// import CoreSolutionsSection from "./components/landing/CoreSolutionsSection";
 import ProductLineupSection from "./components/landing/ProductLineupSection";
-// import CardSlider from "@/components/CardSlider";
-// import CoreSolutionsSection from "./components/landing/CoreSolutionsSection";
-// import CardSlider from "@/components/CardSlider";
+import CoreSolutionsSection from "./components/landing/CoreSolutionsSection";
+import CardSlider from "@/components/CardSlider";
 
 export default function Home() {
   return (
@@ -25,12 +22,13 @@ export default function Home() {
       >
         {" "}
         Empowering Your Business with a Fully Integrated Online Team From
-        Strategy to Execution—We’ve Got You Covered{" "}
+        Strategy to Execution <br/>
+        We’ve Got You Covered{" "}
       </h2>
-      {/* <CardSlider /> */}
+      <CardSlider />
       {/* <IconSlider/> */}
       <TrustedBySection />
-      {/* <CoreSolutionsSection />  */}
+      <CoreSolutionsSection /> 
 
       <ProductLineupSection />
       {/* <div className="home-main-contaner">

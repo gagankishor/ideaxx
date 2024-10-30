@@ -174,7 +174,7 @@ const CoreSolutionsSection = () => {
     nextArrow: (
       <button
         className="next-arrow"
-        
+        style={{display:'none',backgroundColor:'#47333300'}}
       >
         {/* <MdOutlineArrowForwardIos color="white" size={30} /> */}
       </button>
@@ -182,6 +182,7 @@ const CoreSolutionsSection = () => {
     prevArrow: (
       <button
         className="prev-arrow"
+        style={{display:'none'}}
         
       >
         {/* <MdArrowBackIosNew color="white" size={30} /> */}

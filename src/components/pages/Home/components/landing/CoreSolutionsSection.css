@@ -131,10 +131,16 @@
 
 .slick-prev {
   left: 10px; 
+  display: none;
+  background: #00000000;
+
 }
 
 .slick-next {
   right: 10px;
+  display: none;
+  background: #00000000;
+
 }
 
 .slick-prev:before,

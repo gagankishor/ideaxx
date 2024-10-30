@@ -55,7 +55,7 @@ export const MainNavBar = () => {
               )}
               
               <div className="btns-container">
-                <Link className="btn2" style={{ fontSize: "14px" }} href="#">Contact Us</Link>
+                <Link className="btn2" style={{ fontSize: "14px" }} href="/contectUs">Help Guide</Link>
               </div>
 
               {/* Conditionally render the button based on the current pathname */}

@@ -1254,11 +1254,17 @@ table tr:nth-child(even) {
 }
 
 .slick-prev {
-  left: 10px; 
+  left: 10px;
+  display: none;
+  background-color: #00000000;
+
 }
 
 .slick-next {
   right: 10px;
+  display: none;
+  background-color: #00000000;
+
 }
 
 .slick-prev:before,
@@ -1597,6 +1603,9 @@ table tr:nth-child(even) {
 
 .slick-prev {
   left: -50px;
+  display: none;
+  background-color: #00000000;
+
 }
 
 .slick-next {
@@ -1606,6 +1615,9 @@ table tr:nth-child(even) {
   color: #000;
   height: 100px;
   margin-right: 60px;
+  display: none;
+  background-color: #00000000;
+
 }
 
 .slick-next:before, .slick-prev:before {

@@ -1,5 +1,4 @@
 // src/components/PrivacyPolicy.js
-import './LegalPages.css';
 
 const PrivacyPolicy = () => {
   return (

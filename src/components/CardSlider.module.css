@@ -134,6 +134,7 @@
 
 .slick-prev {
   left: -50px;
+  display: none;
 }
 
 .slick-next {
@@ -143,6 +144,7 @@
   color: #000;
   height: 100px;
   margin-right: 60px;
+  display: none;
 }
 
 .slick-next:before, .slick-prev:before {

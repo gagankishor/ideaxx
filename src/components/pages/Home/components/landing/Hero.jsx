@@ -30,7 +30,7 @@ export const Hero = () => {
         </div>
       </div>
       <div className="container hero-container2">
-        <div className="hero-block2">
+        <div className="hero-block2" >
           <img src="/roadmap.jpeg" alt="Business Idea Checker" className="hero-roadmap-img" />
           <div className="roadmap-card">
             <img src="/ideaX_aa.jpg" alt="Roadmap" className="roadmap-card-img" />

@@ -251,6 +251,7 @@ const CoreSolutionsSection = () => {
                       textAlign: "center",
                       padding: "110px",
                       width: "40%",
+
                     }}
                     className="icon-item"
                     onClick={() => setSelectedIcon(item.label)}
@@ -260,6 +261,9 @@ const CoreSolutionsSection = () => {
                       style={{
                         fontSize: "24px",
                         cursor: "pointer",
+                        textAlign:'center',
+                        margin:'auto',
+                        width:'fit-content',
                         color:
                           selectedIcon === item.label ? "#6161FF" : "#b8b4b4",
                       }}

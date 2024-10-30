@@ -13,6 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@nivo/pie": "^0.87.0",
     "@react-oauth/google": "^0.12.1",
+    "autoprefixer": "^10.4.20",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.4",
@@ -25,6 +26,7 @@
     "jspdf": "^2.5.2",
     "next": "^15.0.1",
     "nprogress": "^0.2.0",
+    "postcss": "^8.4.47",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-aiwriter": "^1.0.0",
@@ -41,7 +43,8 @@
     "react-typing-effect": "^2.0.5",
     "recharts": "^2.12.7",
     "slick-carousel": "^1.8.1",
-    "sweetalert2": "^11.6.13"
+    "sweetalert2": "^11.6.13",
+    "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

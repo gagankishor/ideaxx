@@ -1,3 +1,9 @@
+/* In your global CSS file (e.g., globals.css or App.css) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap');
@@ -657,13 +663,6 @@ table tr:nth-child(even) {
   background-color: var(--bg-highlight);
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 10px;
-}
-
 .financial-projection {
   padding: 20px;
   margin-bottom: 2rem;
@@ -1031,6 +1030,8 @@ table tr:nth-child(even) {
 .hero-container2 {
   margin-bottom: 0px;
   padding-bottom: 0px;
+  width: fit-content;
+  margin: auto;
 }
 
 .hero-block2 {
@@ -1051,7 +1052,7 @@ table tr:nth-child(even) {
 .roadmap-card {
   width: 280px;
   position: absolute;
-  top: 0px;
+  top: -50px;
   left: 490px;
   background: linear-gradient(180deg, rgb(252, 251, 251) 40%, rgb(255, 255, 255) 80%);
   border-radius: 20px;
@@ -1105,7 +1106,7 @@ table tr:nth-child(even) {
   margin: 50px 0px 0px 0px;
   position: absolute;
   left: -140px;
-  top: 300px;
+  top: 250px;
 }
 .card-slider-haedding {
   padding: 32px 30px;

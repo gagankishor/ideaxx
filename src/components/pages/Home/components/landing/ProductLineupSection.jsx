@@ -4,6 +4,7 @@ import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import Link from "next/link"; // Correct import for Link
+// import ImpactSection from "./ImpactSection";
 const ProductLineupSection = () => {
   const containerStyle = {
     display: "flex",
@@ -131,7 +132,7 @@ const ProductLineupSection = () => {
           padding: "80px 0",
         }}
       >
-        <div style={{}}>
+        <div style={{display:'flex',margin:"auto",width:'fit-content' }}>
           {/* <img
             src="main-icon/Idea.png"
             style={{ marginRight: "10px",color:'white' ,backgroundColor:"#6161FF",padding:"7px",borderRadius:'5px'}}
@@ -232,6 +233,7 @@ const ProductLineupSection = () => {
           </div>
         </div>
       </div>
+      {/* <ImpactSection/> */}
       <div
         style={{
           display: "flex",

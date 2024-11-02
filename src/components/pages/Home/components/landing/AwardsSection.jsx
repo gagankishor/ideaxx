@@ -16,24 +16,24 @@ const AwardsSection = () => {
           <button className="cta-button">Test Yeor Idea →</button>
         </div>
         <div className="info-cards">
-          <div className="info-cards2" style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
-            <div className="card gartner" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px"  }}>
+          <div className="info-cards2" style={{ display: "flex", justifyContent: "center", gap: "20px" ,paddingTop:"40px" }}>
+            <div className="card gartner" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px" ,height:'50%' }}>
               <h3>Gartner</h3>
-              <p>
+              <p className=" w-5/6 m-auto">
                 monday.com named a Leader in the 2023 Gartner® Magic Quadrant™
                 for Collaborative Work Management.
               </p>
-              <a href="#" className="read-more">
+              <a href="#" className="read-more flex justify-center items-center">
                 <FaBookOpen /> Read the report →
               </a>
             </div>
-            <div className="card forrester" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px"}}>
+            <div className="card forrester" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px",height:'50%'}}>
               <h3>Forrester</h3>
-              <p>
+              <p className=" w-5/6 m-auto">
                 Forrester Total Economic Impact™ research: Motorola sees 346%
                 ROI with monday.com.
               </p>
-              <a href="#" className="read-more">
+              <a href="#" className="read-more flex justify-center items-center">
                 <FaBookOpen /> Read the report →
               </a>
             </div>

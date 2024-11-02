@@ -117,7 +117,7 @@ const ContactUs = () => {
             ))
           ) : (
             <p className="text-center text-gray-600">
-              No results found for "{searchQuery}"
+              No results found for &quot;{searchQuery}&quot;
             </p>
           )}
         </div>

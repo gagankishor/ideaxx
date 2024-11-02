@@ -4,7 +4,6 @@ import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import Link from "next/link"; // Correct import for Link
-import Slider from "react-slick";
 import ImpactSection from "./ImpactSection";
 import AwardsSection from "./AwardsSection";
 // import ImpactSection from "./ImpactSection";
@@ -17,104 +16,8 @@ const ProductLineupSection = () => {
     padding: "50px 30px",
     color: "white",
   };
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    customPaging: (i) => (
-      <div
-        style={{
-          width: "30px",
-          height: "5px",
-          backgroundColor: "gray",
-          margin: "0 auto",
-          position: "relative",
-        }}
-      >
-        <span
-          style={{
-            position: "absolute",
-            top: "20px",
-            left: "50%",
-            transform: "translateX(50%)",
-            fontSize: "12px",
-          }}
-        >
-          {`Step ${i + 1}`} s
-        </span>
-      </div>
-    ),
-    appendDots: (dots) => (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginBottom: "10px",
-        }}
-      >
-        {dots}
-      </div>
-    ),
-  };
-  const testimonials = [
-    {
-      videoSrc: "360img.jpg",
-      quote:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
-      stats: [
-        {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-        },
-      ],
-    },
-    {
-      videoSrc: "360img.jpg",
-      quote:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
-      stats: [
-        {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-        },
-      ],
-    },
-    {
-      videoSrc: "360img.jpg",
-      quote:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
-      stats: [
-        {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-        },
-      ],
-    },
-    {
-      videoSrc: "360img.jpg",
-      quote:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
-      stats: [
-        {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-        },
-      ],
-    },
-  ];
+ 
+ 
   return (
     <div style={{ padding: "0px 0px" }}>
       <div style={{ backgroundColor: "black", zIndex: "0" }}>

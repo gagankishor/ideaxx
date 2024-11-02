@@ -1,111 +1,174 @@
 import Slider from 'react-slick';
+import { useEffect, useRef, useState } from 'react';
 
 const ImpactSection = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: false,
-      };
-
-  const clients = [
-    { src: "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/Motorola_1.png", alt: "Zippo", width: 180 },
-    { src: "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/Motorola_1.png", alt: "Canva", width: 180 },
-    { src: "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/Motorola_1.png", alt: "Universal Music Group", width: 180 },
-    { src: "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/Motorola_1.png", alt: "Motorola", width: 180 }
-  ];
-
+  const sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
     {
-      videoSrc: "https://dapulse-res.cloudinary.com/video/upload/q_auto,f_auto,cs_copy/remote_mondaycom_static/video/video-library/Zippo_-_FC1.2_-_Clean_dark.mp4",
+      videoSrc: "360img.jpg",
       quote: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
       name: "John Doe",
       title: "CEO XYZ",
-      stats: [{ amount: "$121K", description: "In value due to increased team productivity" }]
-    },
-    // Add more testimonials as needed
-  ];
+      stats: [
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-green-400'
 
-  return (
-    <div className="impact-section">
-      {/* Header section with client logos in slider */}
-      <h2 className="impact-title">Delivering impact across 200+ industries</h2>
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "30px" }}>
-        {clients.map((client, index) => (
-          <div key={index}>
-            <img src={client.src} alt={client.alt} className="client-logo" width={client.width} />
-          </div>
+        },
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-blue-400'
+
+        },
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-red-400'
+
+        },
+      ],
+    },
+    {
+      videoSrc: "carsa.jpg",
+      quote: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
+      name: "John Doe",
+      title: "CEO XYZ",
+      stats: [
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-blue-400'
+
+        },
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-blue-400'
+
+        },
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-red-400'
+
+        },
+      ],
+    },
+    {
+      videoSrc: "360img.jpg",
+      quote: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
+      name: "John Doe",
+      title: "CEO XYZ",
+      stats: [
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-green-400'
+        },
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-blue-400'
+
+        },
+        {
+          amount: "$121K",
+          description: "In value due to increased team productivity",
+          color:'bg-red-400'
+
+        },
+      ],
+    },
+  ];
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000, // Controls the speed of slide change
+    arrows: false,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+    customPaging: (i) => (
+      <div
+        key={`custom-dot-${i}`} // Add a unique key here
+        onClick={() => sliderRef.current.slickGoTo(i)}
+        className="w-36 h-1 bg-gray-500 mx-2 relative cursor-pointer"
+      >
+        <div
+          className={`absolute top-0 left-0 h-1 ${
+            i === currentSlide ? 'bg-white animate-progress' : 'bg-gray-500'
+          }`}
+          style={{ width: i === currentSlide ? '100%' : '0%' }}
+        ></div>
+      </div>
+    ),
+    appendDots: (dots) => (
+      <div className="flex justify-center mb-2 space-x-2">
+        {dots.map((dot, index) => (
+          <div key={`append-dot-${index}`}>{dot}</div> // Add unique keys to each dot in appendDots
         ))}
       </div>
+    ),
+  };
 
-      {/* Slider for logos */}
-      <Slider {...settings} className="logo-slider custom-slider">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </Slider>
+  useEffect(() => {
+    // Reset slider to first slide after the last slide
+    if (currentSlide === testimonials.length) {
+      setCurrentSlide(0);
+      sliderRef.current.slickGoTo(0);
+    }
+  }, [currentSlide, testimonials.length]);
 
-      {/* Impact details with slider */}
-      <div className="impact-details">
-        <Slider {...settings} className="stats-slider">
-          {testimonials.map((testimonial, index) => (
-            <div className="stat-item" key={index}>
-              <div style={{ position: "absolute" }}>
-                <video
-                  src={testimonial.videoSrc}
-                  alt=""
-                  style={{ width: "100%", zIndex: "0" }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
-              <div style={{ zIndex: "1000" }}>
-                <div className="row">
-                  <div
-                    className="col stat-item-content-left"
-                    style={{
-                      width: "70%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "flex-end",
-                      alignItems: "flex-start"
-                    }}
-                  >
-                    <p style={{ textAlign: "left", margin: "0 0 10px 0", fontSize: "14px", fontWeight: "500px" }}>
-                      {testimonial.quote}
-                    </p>
-                    <div>
-                      <p style={{ textAlign: "left", margin: "0 0 10px 0", fontSize: "16px", fontWeight: "700px" }}>
-                        {testimonial.name}
-                      </p>
-                      <p style={{ textAlign: "left", margin: "0 0 10px 0", fontSize: "14px", fontWeight: "500px" }}>
-                        {testimonial.title}
-                      </p>
+  
+  return (
+    <div className="flex flex-col items-center bg-gradient-to-b from-[#341E81] to-[#341E81] py-12 text-white">
+      <div className="impact-section text-center">
+        <h2 className="text-3xl font-bold mb-14">Delivering impact across 200+ industries</h2>
+        <div className="impact-details flex justify-center items-start gap-8 max-w-5xl mx-auto">
+          <div className="relative">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
+              {settings.appendDots([...Array(testimonials.length).keys()].map(settings.customPaging))}
+            </div>
+            <Slider ref={sliderRef} {...settings} className="stats-slider w-full pt-8">
+              {testimonials.map((testimonial, index) => (
+                <div className="stat-item relative" key={index}>
+                  <div className="absolute w-full">
+                    <img src={testimonial.videoSrc} alt="360 home decor" className="w-full object-cover z-0" />
+                  </div>
+                  <div className="relative z-10 p-14 bg-opacity-75 bg-black h-full">
+                    <div className="flex flex-col md:flex-row items-start h-full">
+                      <div className="md:w-2/3 flex flex-col justify-end space-y-2 h-full">
+                        <p className="text-sm font-medium text-left">{testimonial.quote}</p>
+                        <div>
+                          <p className="text-base font-bold mb-1 text-left">{testimonial.name}</p>
+                          <p className="text-sm font-medium text-left">{testimonial.title}</p>
+                        </div>
+                      </div>
+                      <div className="md:w-1/3 text-left space-y-2 h-full">
+                        {testimonial.stats.map((stat, statIndex) => (
+                          <div key={statIndex} className="h-1/3 align-middle items-center justify-center flex flex-row">
+                            <div className={`w-1 h-24 m-2 rounded-sm ${stat.color}`} />
+                            <div>
+                              <h4 className="text-xl font-bold">{stat.amount}</h4>
+                              <p className="text-sm text-left">{stat.description}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <div className="col" style={{ textAlign: "left" }}>
-                    {testimonial.stats.map((stat, statIndex) => (
-                      <div key={statIndex}>
-                        <h4>{stat.amount}</h4>
-                        <p style={{ textAlign: "left" }}>{stat.description}</p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+              ))}
+            </Slider>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
-
 export default ImpactSection;

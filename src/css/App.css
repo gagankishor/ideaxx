@@ -4316,3 +4316,17 @@ nav .container .burger {
     margin-top: 0px; /* Adjust top margin for smaller screens */
   }
 }
+
+
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: fillProgress 3s linear forwards;
+}

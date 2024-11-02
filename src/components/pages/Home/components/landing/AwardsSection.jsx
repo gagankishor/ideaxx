@@ -10,14 +10,14 @@ const AwardsSection = () => {
         padding: "20px 0",
       }}
     >
-      <div className="awards-section" style={{ maxWidth: "1400px", margin: "auto" }}>
+      <div className="awards-section" style={{ maxWidth: "1000px", margin: "auto" }}>
         <div className="title-section">
           <h3 style={{ color: "white" }}>Recognized by leaders. Loved by customers.</h3>
           <button className="cta-button">Test Yeor Idea →</button>
         </div>
         <div className="info-cards">
           <div className="info-cards2" style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
-            <div className="card gartner" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px", maxWidth: "300px" }}>
+            <div className="card gartner" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px"  }}>
               <h3>Gartner</h3>
               <p>
                 monday.com named a Leader in the 2023 Gartner® Magic Quadrant™
@@ -27,7 +27,7 @@ const AwardsSection = () => {
                 <FaBookOpen /> Read the report →
               </a>
             </div>
-            <div className="card forrester" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px", maxWidth: "300px" }}>
+            <div className="card forrester" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px"}}>
               <h3>Forrester</h3>
               <p>
                 Forrester Total Economic Impact™ research: Motorola sees 346%

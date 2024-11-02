@@ -3,83 +3,75 @@
 import { useState } from "react";
 
 const ContactUs = () => {
-
+  const [searchQuery, setSearchQuery] = useState("");
+  
+  // FAQ data
   const helpSections = [
     {
-      title: "AI-Powered Idea Checker",
-      description: "Assess the feasibility of your business idea using our AI-driven algorithms that analyze market trends, competition, and profitability.",
-      pointers: ["Market Analysis", "Competitive Landscape", "Profitability Insights"],
-      icon: "/main-icon/Idea.png",
+      title: "What is included in the Business Identity service?",
+      description:
+        "Our Business Identity service provides tools to create a cohesive brand for your business, including logo design, brand name suggestions, typography, color palette selection, and tagline creation.",
     },
     {
-      title: "Business Identity",
-      description: "Define a cohesive identity for your business with essential branding tools.",
-      pointers: ["Brand Name", "Logo Design", "Typography", "Color Palette", "Tagline Creation"],
-      icon: "/main-icon/Businessidentity.png",
+      title: "How can I start using the Marketing Solutions?",
+      description:
+        "To start, simply navigate to the Marketing Solutions section. You’ll find tools and strategies like social media outreach, SEO, and campaign management designed to help you reach a wider audience.",
     },
     {
-      title: "Marketing Solutions",
-      description: "Leverage targeted marketing strategies to expand your reach effectively.",
-      pointers: ["Social Media Outreach", "Email Marketing", "SEO", "Marketing Events", "Campaign Management"],
-      icon: "/main-icon/Marketing.png",
+      title: "Do you offer tools for financial management?",
+      description:
+        "Yes, our Financial Management section provides tools to track expenses, manage income, and generate insightful financial reports to help you optimize cash flow.",
     },
     {
-      title: "Legal Support",
-      description: "Handle critical legal requirements with confidence, from registration to partnerships.",
-      pointers: ["Business Registration", "Legal Compliance", "Trademarking", "Partnership Agreements"],
-      icon: "/main-icon/Legal.png",
+      title: "Can I find partners or collaborators on this platform?",
+      description:
+        "Absolutely! Our Team Building & Networking section connects you with a network of experts and collaborators to build a strong business team.",
     },
     {
-      title: "Team Building & Networking",
-      description: "Access a network of experts and collaborators to strengthen your business team.",
-      pointers: ["Recruitment Tools", "Team Collaboration", "Networking Opportunities"],
-      icon: "/main-icon/team.png",
+      title: "What kind of legal support is provided?",
+      description:
+        "The Legal Support section covers essential services such as business registration, legal compliance, trademarking, and drafting partnership agreements.",
     },
     {
-      title: "Business Tools",
-      description: "Explore essential tools and templates to streamline business operations.",
-      pointers: ["Operational Software", "Customizable Templates", "Platform Integration"],
-      icon: "/main-icon/BusinessTools.png",
+      title: "How do I access the Entrepreneurial Resources?",
+      description:
+        "Head over to the Entrepreneurial Resources section for curated books, online courses, and community interactions tailored for entrepreneurs at all stages.",
     },
     {
-      title: "Financial Management",
-      description: "Manage cash flow and optimize financial resources for growth.",
-      pointers: ["Funding", "Expense Tracking", "Income Reports", "Financial Insights"],
-      icon: "/main-icon/CashFlow.png",
+      title: "Is there a marketplace where I can buy or sell business assets?",
+      description:
+        "Yes, our Marketplace feature allows you to explore opportunities to buy or sell businesses, products, and services in one convenient place.",
     },
     {
-      title: "Consulting & Expert Advice",
-      description: "Book consultations with industry experts and leverage AI for insights.",
-      pointers: ["Schedule Consultations", "AI-Powered Advice"],
-      icon: "/main-icon/Consulting.png",
+      title: "How can I stay connected with clients and suppliers?",
+      description:
+        "Our Community & Partnerships section facilitates client engagement and allows you to connect with suppliers and logistics partners, helping you build essential business relationships.",
     },
     {
-      title: "Entrepreneurial Resources",
-      description: "Access tailored resources for entrepreneurs, including books, courses, and networking.",
-      pointers: ["Inspiration & Ideas", "Recommended Reads", "Online Courses", "Community Interaction"],
-      icon: "/main-icon/Entrepreneur.png",
+      title: "What is the AI-Powered Idea Checker?",
+      description:
+        "Our AI-Powered Idea Checker assesses the feasibility of your business idea by analyzing market trends, competition, and profitability, giving you valuable insights before you launch.",
     },
     {
-      title: "Strategic Planning",
-      description: "Develop strategies and connect with potential investors through our platform.",
-      pointers: ["Business Strategy", "Investor Network"],
-      icon: "/main-icon/Strategies.png",
+      title: "What tools are available under Business Tools?",
+      description:
+        "Our Business Tools include operational software, customizable templates, and platform integrations to streamline and optimize your daily business activities.",
     },
     {
-      title: "Community & Partnerships",
-      description: "Engage with a community of clients, suppliers, and logistics partners.",
-      pointers: ["Client Engagement", "Supplier Connections", "Logistics Partnerships"],
-      icon: "/main-icon/Community.png",
+      title: "How do I access Consulting & Expert Advice?",
+      description:
+        "Our Consulting & Expert Advice service offers personalized consultations with industry experts and AI-driven insights tailored to your business needs.",
     },
     {
-      title: "Marketplace",
-      description: "Explore opportunities to buy or sell businesses, products, or services.",
-      pointers: ["Buy & Sell Listings", "Market Opportunities"],
-      icon: "/main-icon/Buy-Sell.png",
-    },
+      title: "How can I benefit from Strategic Planning?",
+      description:
+        "Strategic Planning helps you develop business strategies and connect with investors, making it easier to navigate growth opportunities and secure funding.",
+    }
+    // Add more FAQ entries here as needed
   ];
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredSections, setFilteredSections] = useState(helpSections);
+  
+
+  const [filteredSections, setFilteredSections] = useState(helpSections); 
 
   // Handle search input change
   const handleSearchChange = (e) => {
@@ -90,41 +82,14 @@ const ContactUs = () => {
     const filtered = helpSections.filter(
       (section) =>
         section.title.toLowerCase().includes(query) ||
-        section.description.toLowerCase().includes(query) ||
-        section.pointers.some((pointer) => pointer.toLowerCase().includes(query))
+        section.description.toLowerCase().includes(query)
     );
 
     setFilteredSections(filtered);
   };
-  
+
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-xl mt-10 mb-20">
-      {/* Header Section */}
-      
-      {/* FAQ Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold text-[#4FADEA] mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-xl font-medium text-gray-800">How does the AI Startup Checker work?</h3>
-            <p className="text-gray-700 mt-1 leading-relaxed">
-              Simply submit your business idea, and our AI will provide instant insights on its market potential, competition, and profitability.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-medium text-gray-800">How can I connect with investors?</h3>
-            <p className="text-gray-700 mt-1 leading-relaxed">
-              Use our &quot;Investor Access&quot; feature under Strategic Planning to connect with potential investors looking for innovative projects.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-medium text-gray-800">How do I get personalized consulting?</h3>
-            <p className="text-gray-700 mt-1 leading-relaxed">
-              Schedule an appointment under Consulting Services to connect with our AI advisors and industry experts.
-            </p>
-          </div>
-        </div>
-      </div>
       {/* Search Bar */}
       <div className="relative mb-10">
         <input
@@ -138,47 +103,27 @@ const ContactUs = () => {
           Search
         </button>
       </div>
-      <div className="space-y-12">
-        {filteredSections.length > 0 ? (
-          filteredSections.map((section, index) => (
-            <div key={index} className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <img src={section.icon} alt={`${section.title} icon`} className="w-10 h-10 mr-4" />
-                <h2 className="text-2xl font-semibold text-[#4FADEA]">{section.title}</h2>
+
+      {/* FAQ Section */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold text-[#4FADEA] mb-4">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          {filteredSections.length > 0 ? (
+            filteredSections.map((section, index) => (
+              <div key={index}>
+                <h3 className="text-xl font-medium text-gray-800">{section.title}</h3>
+                <p className="text-gray-700 mt-1 leading-relaxed">{section.description}</p>
               </div>
-              <p className="text-gray-700 mb-4">{section.description}</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                {section.pointers.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-600">No results found for &quot;{searchQuery}&quot;</p>
-        )}
-      </div>
-      
-  
-      {/* Dynamic Help Section */}
-      
-  
-      {/* Contact Support Section */}
-      <div className="text-center mt-12">
-        <h2 className="text-2xl font-semibold text-[#4FADEA] mb-4">Still need help?</h2>
-        <p className="text-lg text-gray-600 mb-6">
-          Our support team is here to assist you. Get in touch if you have additional questions.
-        </p>
-        <a
-          href="mailto:support@ideax.com"
-          className="inline-block px-6 py-3 bg-[#4FADEA] text-white font-semibold rounded-lg hover:bg-[#3c8dbb] transition-colors"
-        >
-          Contact Support
-        </a>
+            ))
+          ) : (
+            <p className="text-center text-gray-600">
+              No results found for "{searchQuery}"
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
-  
 };
 
 export default ContactUs;

@@ -4,15 +4,15 @@ export default {
   async redirects() {
     return [
       {
-        source: '/:path*', // Matches all paths
+        source: '/:path*',
         has: [
           {
             type: 'host',
-            value: 'www.ideax.in', // Your domain with www
+            value: 'www.ideax.in',
           },
         ],
-        destination: 'https://ideax.in/:path*', // Redirects to the non-www version with the same path
-        permanent: true, // Indicates a 301 permanent redirect
+        destination: 'https://ideax.in/:path*',
+        permanent: true,
       },
     ];
   },

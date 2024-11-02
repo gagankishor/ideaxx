@@ -19,10 +19,10 @@ const ProductLineupSection = () => {
     <div style={{ padding: "0px 0px" }}>
       <div style={{ backgroundColor: "black", zIndex: "0" }}>
         <div className="responsive-section">
-          <p className="main-text">
+          <h2 className="main-text">
             One core platform powered by{" "}
             <span className="highlighted-text">AI</span> for all your work
-          </p>
+          </h2>
           <div className="image-background">
             <img
               src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/michael-testing/Ellipse_5790.png"
@@ -163,7 +163,7 @@ const ProductLineupSection = () => {
             width={50}
           />
         </div>
-        <span className="client-heading-text">Work together</span>
+        <h2 className="client-heading-text">Work together</h2>
         <p className="client-description">
           Now any team can streamline work, collaborate, and solve their most
           complex problems together with our suite of products.
@@ -252,7 +252,7 @@ const ProductLineupSection = () => {
               alignItems: "center",
             }}
           >
-            <span
+            <h2
               style={{
                 fontSize: "2.75rem",
                 fontWeight: "200",
@@ -264,7 +264,7 @@ const ProductLineupSection = () => {
             >
               Deliver your best work with{" "}
               <span style={{ fontWeight: "600" }}>ideax</span>
-            </span>
+            </h2>
 
             <div className="btns-container" style={{ marginBottom: "40px" }}>
               <button

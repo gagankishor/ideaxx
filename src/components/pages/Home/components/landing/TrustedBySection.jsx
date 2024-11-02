@@ -71,14 +71,14 @@ const TrustedBySection = () => {
                 </div>
               </div>
 
-              <div className="col col-right">
+              <p className="col col-right" style={{textAlign:'left',color:"white",fontSize:'16px'}}>
                 Welcome to ideax, the ultimate platform for entrepreneurs! 
                 <span className="highlight-text">
                  Whether you’re brainstorming 
                 your next big idea or looking for a dedicated online team to bring it to life, we offer the tools 
                 and expertise you need to succeed.
                 </span>
-              </div>
+              </p>
             </div>
           </div>
         </div>

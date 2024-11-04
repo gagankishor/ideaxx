@@ -7,82 +7,75 @@ const ImpactSection = () => {
   const testimonials = [
     {
       videoSrc: "360img.jpg",
-      quote: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
+      quote: "This platform revolutionized our workflow and boosted our overall team efficiency.",
+      name: "Alice Johnson",
+      title: "Founder & CEO, TechNova",
       stats: [
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-green-400'
-
+          amount: "$150K",
+          description: "Saved annually through process automation",
+          color: 'bg-green-400'
         },
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-blue-400'
-
+          amount: "$98K",
+          description: "Revenue increase due to faster project completion",
+          color: 'bg-blue-400'
         },
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-red-400'
-
+          amount: "25%",
+          description: "Growth in team productivity",
+          color: 'bg-red-400'
         },
       ],
     },
     {
       videoSrc: "carsa.jpg",
-      quote: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
+      quote: "The insights and tools provided helped us achieve milestones we didn't think were possible.",
+      name: "Michael Smith",
+      title: "CTO, Innovate Corp",
       stats: [
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-blue-400'
-
+          amount: "$200K",
+          description: "Gains from improved client satisfaction",
+          color: 'bg-blue-400'
         },
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-blue-400'
-
+          amount: "$120K",
+          description: "Saved on operational expenses",
+          color: 'bg-yellow-400'
         },
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-red-400'
-
+          amount: "30%",
+          description: "Increase in task efficiency",
+          color: 'bg-red-400'
         },
       ],
     },
     {
-      videoSrc: "360img.jpg",
-      quote: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolore deserunt alias dolorem error suscipit perferendis labore.",
-      name: "John Doe",
-      title: "CEO XYZ",
+      videoSrc: "carsa.jpg",
+      quote: "Utilizing this service transformed our marketing strategy and strengthened our customer base.",
+      name: "Sophia Williams",
+      title: "CMO, Bright Ventures",
       stats: [
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-green-400'
+          amount: "$180K",
+          description: "Increased annual revenue from new clients",
+          color: 'bg-green-400'
         },
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-blue-400'
-
+          amount: "40%",
+          description: "Growth in customer engagement",
+          color: 'bg-blue-400'
         },
         {
-          amount: "$121K",
-          description: "In value due to increased team productivity",
-          color:'bg-red-400'
-
+          amount: "$75K",
+          description: "Saved from reduced marketing expenses",
+          color: 'bg-purple-400'
         },
       ],
     },
   ];
+
   const settings = {
     dots: false,
     infinite: true,
@@ -149,7 +142,7 @@ const ImpactSection = () => {
                           <p className="text-sm font-medium text-left">{testimonial.title}</p>
                         </div>
                       </div>
-                      <div className="md:w-1/3 text-left space-y-2 h-full">
+                      <div className="md:w-1/3 text-left space-y-2 h-full flex flex-col items-start">
                         {testimonial.stats.map((stat, statIndex) => (
                           <div key={statIndex} className="h-1/3 align-middle items-center justify-center flex flex-row">
                             <div className={`w-1 h-24 m-2 rounded-sm ${stat.color}`} />

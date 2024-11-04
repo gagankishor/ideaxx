@@ -1020,7 +1020,7 @@ export default function Wizard() {
               }}
             /> */}
             <img
-              src={`wizard4/${step + 1}.jpg`}
+              src={`wizard4/${step + 1}.webp`}
               alt="wizard 4"
               style={{
                 width:  "100%",

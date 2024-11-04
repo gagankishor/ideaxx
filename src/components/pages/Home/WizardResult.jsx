@@ -168,8 +168,8 @@ const WizardResult = () => {
   return (
     <>
       <div className="business-check-container">
-        <h2>Overview of the Business Idea Check</h2>
-
+        <h2 className=" mb-0">Overview of Market Research for the Idea</h2>
+        <p className=" text-left">Slight changes may occur in the results depending on market trends.</p>
         <div className="business-overview">
           <div className="overview-left">
             <div

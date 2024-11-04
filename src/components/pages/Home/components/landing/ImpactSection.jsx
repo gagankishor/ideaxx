@@ -6,7 +6,7 @@ const ImpactSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
     {
-      videoSrc: "360img.jpg",
+      imageSrc: "360img.jpg",
       quote: "This platform revolutionized our workflow and boosted our overall team efficiency.",
       name: "Alice Johnson",
       title: "Founder & CEO, TechNova",
@@ -29,7 +29,7 @@ const ImpactSection = () => {
       ],
     },
     {
-      videoSrc: "carsa.jpg",
+      videoSrc: "Vantom_Solar_Batteries.mp4",
       quote: "The insights and tools provided helped us achieve milestones we didn't think were possible.",
       name: "Michael Smith",
       title: "CTO, Innovate Corp",
@@ -52,7 +52,7 @@ const ImpactSection = () => {
       ],
     },
     {
-      videoSrc: "carsa.jpg",
+      imageSrc: "carsa.jpg",
       quote: "Utilizing this service transformed our marketing strategy and strengthened our customer base.",
       name: "Sophia Williams",
       title: "CMO, Bright Ventures",
@@ -131,8 +131,23 @@ const ImpactSection = () => {
               {testimonials.map((testimonial, index) => (
                 <div className="stat-item relative" key={index}>
                   <div className="absolute w-full">
-                    <img src={testimonial.videoSrc} alt="360 home decor" className="w-full object-cover z-0" />
-                  </div>
+  {testimonial.imageSrc ? (
+    <img
+      src={testimonial.imageSrc}
+      alt="360 home decor"
+      className="w-full object-cover z-0"
+    />
+  ) : (
+    <video
+      autoPlay
+      muted
+      loop
+      src={testimonial.videoSrc}
+      className="w-full object-cover z-0"
+    />
+  )}
+</div>
+
                   <div className="relative z-10 p-14 bg-opacity-75 bg-black h-full">
                     <div className="flex flex-col md:flex-row items-start h-full">
                       <div className="md:w-2/3 flex flex-col justify-end space-y-2 h-full">

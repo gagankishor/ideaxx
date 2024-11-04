@@ -16,7 +16,7 @@ export const MainNavBar = () => {
   const showMenu = () => {
     setToggle(!toggle); // Simplified toggle logic
   };
-
+  
   return (
     <>
       <nav>
@@ -34,14 +34,12 @@ export const MainNavBar = () => {
               <RxHamburgerMenu onClick={showMenu} color="var(--main-color)" />
             )}
           </div>
-
           <div className={`right-side ${toggle ? "show" : "hide"}`}>
-            <ul className="logo-menu">
-              <li><Link href="#">Home</Link></li>
-              <li><Link href="#about">About</Link></li>
-              <li><Link href="#features">Features</Link></li>
-              <li><Link href="#services">Services</Link></li>
-            </ul>
+          <ul className="logo-menu">
+            <li><Link href="#home">Home</Link></li>
+            <li><Link href="#services">Services</Link></li>
+            <li><Link href="#features">Features</Link></li>
+          </ul>
 
             <ul className="main-menu">
               {isAuthenticated ? (

@@ -325,7 +325,7 @@ const WizardResult = () => {
             Your Idea Overview{" "}
             <FaRobot size={28} style={{ color: "var(--main-color)" }} />
           </h3>
-          <div className="business-score-circle">
+          <div className="business-score-circle flex justify-center items-center">
               <Doughnut data={bardata} options={options} />
               <div className="doughnut-center">
                 <p className="circle-text">{data?.success_percentage}%</p>

@@ -142,7 +142,7 @@ const CardSlider = () => {
     },
   ];
   return (
-    <div className="card-slider-improved">
+    <section id="services" className="card-slider-improved">
       <div
         style={{
           display: "flex",
@@ -220,7 +220,7 @@ const CardSlider = () => {
         </Slider>
         <div className="right-sedow"></div>
       </div>
-    </div>
+    </section>
   );
 };
 

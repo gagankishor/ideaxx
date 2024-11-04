@@ -213,7 +213,7 @@ const CoreSolutionsSection = () => {
     ],
   };
   return (
-    <div style={{ padding: "0px 0px", color: "white" }}>
+    <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>
         <div style={{ margin: "auto", maxWidth: "1200px" }}>
           <div>
@@ -316,7 +316,7 @@ const CoreSolutionsSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default CoreSolutionsSection;

@@ -16,8 +16,6 @@ const ProductLineupSection = () => {
     padding: "50px 30px",
     color: "white",
   };
- 
- 
   return (
     <div style={{ padding: "0px 0px" }}>
       <div style={{ backgroundColor: "black", zIndex: "0" }}>
@@ -36,30 +34,41 @@ const ProductLineupSection = () => {
           <div className="product-container">
             <div className="product-box">
               <img
-                src="/darksection1/Integrity.webp"
+                // src="/darksection1/Integrity.webp"
+                src="/darksection1/Integrity1.jpg"
                 alt="Product"
                 className="product-image"
               />
+              <p className="p-4 text-white">
+              We prioritize transparency and trust in all our interactions.
+              </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
             </div>
 
             <div className="product-box black-background">
               <img
-                src="/darksection1/innovation.webp"
+                // src="/darksection1/innovation.webp"
+                src="/darksection1/innovation1.jpg"
                 alt="Product"
                 className="product-image"
               />
+              <p className="p-4 text-white">
+              Harnessing cutting-edge AI technology to ensure your ideas are viable.
+              </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
             </div>
-
             <div className="product-box">
               <img
-                src="/darksection1/collaboration.webp"
+                // src="/darksection1/collaboration.webp"
+                src="/darksection1/collaboration1.jpg"
                 alt="Product"
                 className="product-image"
               />
+              <p className=" p-4 text-white">
+              A dedicated online team that works together to bring your vision to life.
+              </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
             </div>
@@ -76,7 +85,7 @@ const ProductLineupSection = () => {
       >
         <h2 className="client-heading">
           <span className="client-heading-text">
-            What our Client’s have to say about us.
+          Wide range of AI Based Tools, for All your Business needs.
           </span>
         </h2>
         <p className="client-description">
@@ -174,7 +183,7 @@ const ProductLineupSection = () => {
       </div>
       <div style={containerStyle}>
         <div className="top-section">
-          <h2>How It Works</h2>
+          <h2 className="text-4xl">How It Works</h2>
           <div className="btns-container">
             <Link
               className="btn"
@@ -191,7 +200,7 @@ const ProductLineupSection = () => {
           </div>
         </div>
         <div className="card-section">
-          <div className="card1">
+          <div className="card1 items-center">
             <div className="icon">
               <RiPassValidFill />
             </div>
@@ -205,7 +214,7 @@ const ProductLineupSection = () => {
               </p>
             </div>
           </div>
-          <div className="card1">
+          <div className="card1 items-center">
             <div className="icon">
               <PiPlugsConnectedFill />
             </div>
@@ -220,7 +229,7 @@ const ProductLineupSection = () => {
               </p>
             </div>
           </div>
-          <div className="card1">
+          <div className="card1 items-center">
             <div className="icon">
               <HiRocketLaunch />
             </div>
@@ -305,5 +314,4 @@ const ProductLineupSection = () => {
     </div>
   );
 };
-
 export default ProductLineupSection;

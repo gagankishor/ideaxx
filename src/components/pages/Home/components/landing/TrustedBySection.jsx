@@ -73,7 +73,7 @@ const TrustedBySection = () => {
 
               <p className="col col-right" style={{textAlign:'left',color:"white",fontSize:'16px'}}>
                 Welcome to ideax, the ultimate platform for entrepreneurs! 
-                <span className="highlight-text">
+                <span className="highlight-text ml-1">
                  Whether you’re brainstorming 
                 your next big idea or looking for a dedicated online team to bring it to life, we offer the tools 
                 and expertise you need to succeed.

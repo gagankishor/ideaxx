@@ -68,12 +68,7 @@ const CardSlider = () => {
     },
     {
       pointers: [
-        "Location",
-        "Contact",
-        "Registration Certificate",
-        "Bank account",
-        "Brand registration",
-        "Partners",
+        "Contact details" ,"official location", "Letterhead" , "Registration Certificate", "Brand Registration" , "Additional Certificates" , "Legal Consultation"
       ],
       icon: "/main-icon/Legal.png",
       id: 5,
@@ -82,7 +77,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/5.webp",
     },
     {
-      pointers: ["Employees"],
+      pointers: ["My Team dashboard" , "Team Meetings" , "Management Platforms" ,"Legal"],
       icon: "/main-icon/team.png",
       id: 15,
       title: "Team",
@@ -90,7 +85,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/15.webp",
     },
     {
-      pointers: ["Equipment", "Templates", "Platform"],
+      pointers: [ "Website", "App", "CRM", "Equipment", "Templates",  "Management Platforms"],
       icon: "/main-icon/BusinessTools.png",
       id: 13,
       title: "Business Tools",
@@ -98,7 +93,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/13.webp",
     },
     {
-      pointers: ["Funds", "Expenses", "Income", "Reports"],
+      pointers: ["Funds", "Expenses", "Income", "Reports", "Vault", "Platforms"],
       icon: "/main-icon/CashFlow.png",
       id: 11,
       title: "Cash Flow",
@@ -106,7 +101,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/11.webp",
     },
     {
-      pointers: ["Book an appointment", "AI consulting"],
+      pointers: ["Request Consultation", "Summary", "Resell Service"],
       icon: "/main-icon/Consulting.png",
       id: 3,
       title: "Consulting",
@@ -114,7 +109,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/3.webp",
     },
     {
-      pointers: ["Ideas", "Books", "Courses", "Entertainment"],
+      pointers: ["Ideas", "Library", "Courses", "Entertainment"],
       icon: "/main-icon/Entrepreneur.png",
       id: 9,
       title: "Entrepreneur",
@@ -122,7 +117,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/9.webp",
     },
     {
-      pointers: ["Marketing Strategies", "Investors"],
+      pointers: ["Marketing Strategies","Investors", "Investors"],
       icon: "/main-icon/Strategies.png",
       id: 2,
       title: "Strategies",
@@ -130,7 +125,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/2.webp",
     },
     {
-      pointers: ["Clients", "Suppliers", "logistics"],
+      pointers: ["Networking", "Events", "Resource"],
       icon: "/main-icon/Community.png",
       id: 1,
       title: "Community",
@@ -138,7 +133,7 @@ const CardSlider = () => {
       bgImage: "/sliderLandigPage/1.webp",
     },
     {
-      pointers: [""],
+      pointers: ["Marketplace", "Evaluation", "Listings"],
       icon: "/main-icon/Buy-Sell.png",
       id: 12,
       title: "Buy-Sell",

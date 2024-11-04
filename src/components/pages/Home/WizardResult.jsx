@@ -306,9 +306,9 @@ const WizardResult = () => {
           <div className="overview-right">
                         
             <div className="business-score-circle">
-              <Doughnut data={bardata} options={options} />
+            <Doughnut data={bardata2} options={options} />
               <div className="doughnut-center">
-                <p className="circle-text">{data?.success_percentage}%</p>
+                <p className="circle-text">{totalMarketScrore}%</p>
                 <p>Market Score</p>
               </div>
             </div>
@@ -345,9 +345,9 @@ const WizardResult = () => {
             <FaRobot size={28} style={{ color: "var(--main-color)" }} />
           </h3>
           <div className="business-score-circle1 w-full pt-5 pb-5 flex justify-center items-center">
-              <Doughnut data={bardata2} options={options} />
+          <Doughnut data={bardata} options={options} />
               <div className="doughnut-center">
-                <p className="circle-text">{totalMarketScrore}%</p>
+                <p className="circle-text">{data?.success_percentage}%</p>
                 <p>Idea Score</p>
               </div>
             </div>

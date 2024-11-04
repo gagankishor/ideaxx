@@ -145,7 +145,26 @@ const WizardResult = () => {
       },
     },
   };
-
+  const totalMarketScrore = (parseFloat(data?.marketPotential) + parseFloat(
+    uniqueValueProposition?.finalScore?.replace("%", "")
+  ) +parseFloat(
+    RevenueModelData?.finalScore?.replace("%", "")
+  ) +parseFloat(
+    CompetitiveLandscapeData?.finalScore?.replace("%", "")
+  ) + parseFloat(
+    TeamAndResourcesData
+  ))/5
+  const bardata2 = {
+    labels: ["Score", "Remaining"],
+    datasets: [
+      {
+        data: [data?.success_percentage, 100 - data?.success_percentage],
+        backgroundColor: [`${getBarColor2(parseFloat(totalMarketScrore))}`, "#e0e0e0"],
+        hoverBackgroundColor: ["#4caf50", "#e0e0e0"],
+        borderWidth: 1,
+      },
+    ],
+  };
   return (
     <>
       <div className="business-check-container">
@@ -290,7 +309,7 @@ const WizardResult = () => {
               <Doughnut data={bardata} options={options} />
               <div className="doughnut-center">
                 <p className="circle-text">{data?.success_percentage}%</p>
-                <p>Idea Score</p>
+                <p>Market Score</p>
               </div>
             </div>
             
@@ -325,10 +344,10 @@ const WizardResult = () => {
             Your Idea Overview{" "}
             <FaRobot size={28} style={{ color: "var(--main-color)" }} />
           </h3>
-          <div className="business-score-circle flex justify-center items-center">
-              <Doughnut data={bardata} options={options} />
+          <div className="business-score-circle1 w-full pt-5 pb-5 flex justify-center items-center">
+              <Doughnut data={bardata2} options={options} />
               <div className="doughnut-center">
-                <p className="circle-text">{data?.success_percentage}%</p>
+                <p className="circle-text">{totalMarketScrore}%</p>
                 <p>Idea Score</p>
               </div>
             </div>

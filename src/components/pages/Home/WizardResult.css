@@ -79,6 +79,13 @@ h2 {
   width: 200px;
   height: 200px;
 }
+.business-score-circle1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
 .doughnut-center {
   position: absolute;
   display: flex;

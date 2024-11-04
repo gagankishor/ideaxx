@@ -18,20 +18,19 @@ const AwardsSection = () => {
         <div className="info-cards">
           <div className="info-cards2" style={{ display: "flex", justifyContent: "center", gap: "20px" ,paddingTop:"40px" }}>
             <div className="card gartner" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px" ,height:'50%' }}>
-              <h3>Gartner</h3>
+              <h3>Industry Recognition
+              </h3>
               <p className=" w-5/6 m-auto">
-                monday.com named a Leader in the 2023 Gartner® Magic Quadrant™
-                for Collaborative Work Management.
+              Our platform is recognized as a leader in business management solutions powered by AI, offering innovative tools that transform how businesses operate. 
               </p>
               <a href="#" className="read-more flex justify-center items-center">
                 <FaBookOpen /> Read the report →
               </a>
             </div>
             <div className="card forrester" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px",height:'50%'}}>
-              <h3>Forrester</h3>
+              <h3>Trusted by Entrepreneurs</h3>
               <p className=" w-5/6 m-auto">
-                Forrester Total Economic Impact™ research: Motorola sees 346%
-                ROI with monday.com.
+              Trusted by Entrepreneurs: IDEAX is the go-to choice for entrepreneurs and startups looking for efficient solutions to drive growth and success.
               </p>
               <a href="#" className="read-more flex justify-center items-center">
                 <FaBookOpen /> Read the report →

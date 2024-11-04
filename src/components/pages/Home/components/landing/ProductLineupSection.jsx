@@ -88,7 +88,7 @@ const ProductLineupSection = () => {
           Wide range of AI Based Tools, for All your Business needs.
           </span>
         </h2>
-        <p className="client-description">
+        <p className="client-description max-w-[60%]">
           Ideax AI empowers entrepreneurs by providing innovative tools for idea
           validation and a fully integrated online team that executes their
           vision.
@@ -176,7 +176,7 @@ const ProductLineupSection = () => {
           />
         </div>
         <h2 className="client-heading-text">Work together</h2>
-        <p className="client-description">
+        <p className="client-description max-w-[60%]">
           Now any team can streamline work, collaborate, and solve their most
           complex problems together with our suite of products.
         </p>
@@ -310,6 +310,48 @@ const ProductLineupSection = () => {
             </div>
           </div>
         </div>
+        <div className="mt-10">
+        <div className="mt-10">
+  <h3 className="text-3xl font-semibold text-center mb-8 text-white">
+    What Our Clients Say About Us
+  </h3>
+  <ul className="space-y-6">
+    {[
+      {
+        quote: "IDEAX has transformed the way we manage our business!",
+        author: "Sarah L., Small Business Owner",
+      },
+      {
+        quote: "The AI features have significantly improved our decision-making process.",
+        author: "Mike R., Startup Founder",
+      },
+      {
+        quote: "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
+        author: "Emily T., Entrepreneur",
+      },
+      {
+        quote: "The community support and resources have been invaluable for my growth.",
+        author: "David K., Freelance Consultant",
+      },
+      {
+        quote: "I love the tools for managing cash flow; they make financial planning so much easier!",
+        author: "Jessica P., E-commerce Manager",
+      },
+    ].map((testimonial, index) => (
+      <li
+        key={index}
+        className="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+      >
+        <p className="text-lg text-white text-left mb-2">🌟 "{testimonial.quote}"</p>
+        <span className="block font-semibold text-right text-white">
+          — {testimonial.author}
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+    </div>
       </div>
     </div>
   );

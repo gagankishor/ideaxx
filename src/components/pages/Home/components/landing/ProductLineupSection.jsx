@@ -342,7 +342,7 @@ const ProductLineupSection = () => {
         key={index}
         className="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
       >
-        <p className="text-lg text-white text-left mb-2">🌟 "{testimonial.quote}"</p>
+        <p className="text-lg text-white text-left mb-2">🌟 &quot;{testimonial.quote}&quot;</p>
         <span className="block font-semibold text-right text-white">
           — {testimonial.author}
         </span>

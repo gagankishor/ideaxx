@@ -1021,7 +1021,7 @@ export default function Wizard() {
             /> */}
             <img
               src={`wizard4/${step + 1}.jpg`}
-              alt=""
+              alt="wizard 4"
               style={{
                 width:  "100%",
                 position: "absolute",

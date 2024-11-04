@@ -22,7 +22,7 @@ const Plans = () => {
         <div style={{ width: '55%', position: 'relative' }}>
           <img
             src="plan1.jpeg"
-            alt=""
+            alt="plan"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
           <div

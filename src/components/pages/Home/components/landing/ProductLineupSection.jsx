@@ -87,7 +87,7 @@ const ProductLineupSection = () => {
         <div>
           <img
             src="landing/ideas.png"
-            alt=""
+            alt="Ideax AI"
             style={{ width: "40%", margin: "auto" }}
           />
         </div>
@@ -157,12 +157,12 @@ const ProductLineupSection = () => {
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
             style={{ marginRight: "10px" }}
-            alt=""
+            alt="icon 3"
             width={50}
           />
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
-            alt=""
+            alt="icon 4"
             width={50}
           />
         </div>
@@ -296,7 +296,7 @@ const ProductLineupSection = () => {
               <img
                 src="darksection1/ideax-bottom.png"
                 style={{ width: "100%", maxWidth: "300px", height: "auto" }}
-                alt=""
+                alt="ideax bottom"
               />
             </div>
           </div>

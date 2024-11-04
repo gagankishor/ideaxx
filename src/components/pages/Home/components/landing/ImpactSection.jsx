@@ -148,7 +148,7 @@ const ImpactSection = () => {
   )}
 </div>
 
-                  <div className="relative z-10 p-14 bg-opacity-75 bg-black h-full">
+                  <div className="relative z-10 p-14 bg-opacity-35 bg-black h-full">
                     <div className="flex flex-col md:flex-row items-start h-full">
                       <div className="md:w-2/3 flex flex-col justify-end space-y-2 h-full">
                         <p className="text-sm font-medium text-left">{testimonial.quote}</p>

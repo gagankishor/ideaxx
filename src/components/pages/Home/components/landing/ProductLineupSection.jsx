@@ -100,8 +100,8 @@ const ProductLineupSection = () => {
             style={{ width: "40%", margin: "auto" }}
           />
         </div>
-        <div className="video-section">
-          <iframe
+        <div className="video-section justify-center">
+          {/* <iframe
             className="video-frame"
             src="https://www.youtube.com/embed/sTH7riysqcs?si=DQ7jIjQbCzqQJMwh&loop=1&rel=0&playlist=sTH7riysqcs&mute=1"
             title="YouTube video player"
@@ -133,7 +133,11 @@ const ProductLineupSection = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-          ></iframe>
+          ></iframe> */}
+          <img src="home-platform/1.png" className="w-[48%]" alt="" />
+          <img src="home-platform/2.png" className="w-[48%]" alt="" />
+          <img src="home-platform/3.png" className="w-[48%]" alt="" />
+          <img src="home-platform/4.png" className="w-[48%]" alt="" />
         </div>
       </div>
       <div

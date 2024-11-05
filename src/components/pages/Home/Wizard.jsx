@@ -65,7 +65,7 @@ export default function Wizard() {
     {
       title: "It all starts with an idea",
       description:
-        "We'd love to hear about your idea! Have you already started working on it, or are you still in the planning phase?",
+        "We’d like to hear about your idea! Have you already started working on it, or are you still in the planning phase?",
       choices: [
         { id: "i1a", label: "It is still an idea", value: "1" },
         { id: "i1b", label: "I made a plan for it", value: "3" },

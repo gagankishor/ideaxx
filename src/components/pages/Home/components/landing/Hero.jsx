@@ -31,12 +31,12 @@ export const Hero = () => {
       </div>
       <div className="container hero-container2">
         <div className="hero-block2" >
-          <img src="/roadmap.jpeg" alt="Business Idea Checker" className="hero-roadmap-img" />
+          <img src="/roadmap.webp" alt="Business Idea Checker" className="hero-roadmap-img" />
           <div className="roadmap-card">
-            <img src="/ideaX_aa.jpg" alt="Roadmap" className="roadmap-card-img" />
+            <img src="/ideaX_aa.webp" alt="Roadmap" className="roadmap-card-img" />
           </div>
           <motion.img
-            src="/Startup-Business-Idea-Checker-Online-Ideax.png"
+            src="/Startup-Business-Idea-Checker-Online-Ideax.webp"
             alt="Startup Idea Checker"
             className="motion-img1"
             initial={{ x: 0, y: 0, opacity: 1 }}
@@ -48,7 +48,7 @@ export const Hero = () => {
             }}
           />
           <motion.img
-            src="/Startup-Business-Idea-Checker-Online-Ideax-2.png"
+            src="/Startup-Business-Idea-Checker-Online-Ideax-2.webp"
             alt="Business idea checker online"
             className="motion-img2"
             initial={{ x: 0, y: 0, opacity: 1 }}

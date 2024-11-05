@@ -74,8 +74,30 @@ const ImpactSection = () => {
         },
       ],
     },
+    {
+      videoSrc: "MercedesMaybachSL.mp4",
+      quote: "The insights and tools provided helped us achieve milestones we didn't think were possible.",
+      name: "Michael Smith",
+      title: "CTO, Innovate Corp",
+      stats: [
+        {
+          amount: "$200K",
+          description: "Gains from improved client satisfaction",
+          color: 'bg-blue-400'
+        },
+        {
+          amount: "$120K",
+          description: "Saved on operational expenses",
+          color: 'bg-yellow-400'
+        },
+        {
+          amount: "30%",
+          description: "Increase in task efficiency",
+          color: 'bg-red-400'
+        },
+      ],
+    },
   ];
-
   const settings = {
     dots: false,
     infinite: true,

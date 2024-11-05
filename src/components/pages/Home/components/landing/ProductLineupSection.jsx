@@ -35,7 +35,7 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/Integrity.webp"
-                src="/darksection1/Integrity1.jpg"
+                src="/darksection1/Integrity1.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -49,7 +49,7 @@ const ProductLineupSection = () => {
             <div className="product-box black-background">
               <img
                 // src="/darksection1/innovation.webp"
-                src="/darksection1/innovation1.jpg"
+                src="/darksection1/innovation1.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -62,7 +62,7 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/collaboration.webp"
-                src="/darksection1/collaboration1.jpg"
+                src="/darksection1/collaboration1.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -95,7 +95,7 @@ const ProductLineupSection = () => {
         </p>
         <div>
           <img
-            src="landing/ideas.png"
+            src="landing/ideas.webp"
             alt="Ideax AI"
             style={{ width: "40%", margin: "auto" }}
           />
@@ -303,7 +303,7 @@ const ProductLineupSection = () => {
               }}
             >
               <img
-                src="darksection1/ideax-bottom.png"
+                src="darksection1/ideax-bottom.webp"
                 style={{ width: "100%", maxWidth: "300px", height: "auto" }}
                 alt="ideax bottom"
               />

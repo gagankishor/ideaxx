@@ -6,28 +6,51 @@ const ImpactSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
     {
-      imageSrc: "360img.jpg",
-      quote: "This platform revolutionized our workflow and boosted our overall team efficiency.",
-      name: "Alice Johnson",
-      title: "Founder & CEO, TechNova",
+      videoSrc: "BelloAnimationsVideo.mp4",
+      quote: "The insights and tools provided helped us achieve milestones we didn't think were possible.",
+      name: "Michael Smith",
+      title: "CTO, Innovate Corp",
       stats: [
         {
-          amount: "$150K",
-          description: "Saved annually through process automation",
-          color: 'bg-green-400'
-        },
-        {
-          amount: "$98K",
-          description: "Revenue increase due to faster project completion",
+          amount: "$200K",
+          description: "Gains from improved client satisfaction",
           color: 'bg-blue-400'
         },
         {
-          amount: "25%",
-          description: "Growth in team productivity",
+          amount: "$120K",
+          description: "Saved on operational expenses",
+          color: 'bg-yellow-400'
+        },
+        {
+          amount: "30%",
+          description: "Increase in task efficiency",
           color: 'bg-red-400'
         },
       ],
     },
+    // {
+    //   imageSrc: "360img.jpg",
+    //   quote: "This platform revolutionized our workflow and boosted our overall team efficiency.",
+    //   name: "Alice Johnson",
+    //   title: "Founder & CEO, TechNova",
+    //   stats: [
+    //     {
+    //       amount: "$150K",
+    //       description: "Saved annually through process automation",
+    //       color: 'bg-green-400'
+    //     },
+    //     {
+    //       amount: "$98K",
+    //       description: "Revenue increase due to faster project completion",
+    //       color: 'bg-blue-400'
+    //     },
+    //     {
+    //       amount: "25%",
+    //       description: "Growth in team productivity",
+    //       color: 'bg-red-400'
+    //     },
+    //   ],
+    // },
     {
       videoSrc: "Vantom_Solar_Batteries.mp4",
       quote: "The insights and tools provided helped us achieve milestones we didn't think were possible.",
@@ -51,29 +74,29 @@ const ImpactSection = () => {
         },
       ],
     },
-    {
-      imageSrc: "carsa.jpg",
-      quote: "Utilizing this service transformed our marketing strategy and strengthened our customer base.",
-      name: "Sophia Williams",
-      title: "CMO, Bright Ventures",
-      stats: [
-        {
-          amount: "$180K",
-          description: "Increased annual revenue from new clients",
-          color: 'bg-green-400'
-        },
-        {
-          amount: "40%",
-          description: "Growth in customer engagement",
-          color: 'bg-blue-400'
-        },
-        {
-          amount: "$75K",
-          description: "Saved from reduced marketing expenses",
-          color: 'bg-purple-400'
-        },
-      ],
-    },
+    // {
+    //   imageSrc: "carsa.jpg",
+    //   quote: "Utilizing this service transformed our marketing strategy and strengthened our customer base.",
+    //   name: "Sophia Williams",
+    //   title: "CMO, Bright Ventures",
+    //   stats: [
+    //     {
+    //       amount: "$180K",
+    //       description: "Increased annual revenue from new clients",
+    //       color: 'bg-green-400'
+    //     },
+    //     {
+    //       amount: "40%",
+    //       description: "Growth in customer engagement",
+    //       color: 'bg-blue-400'
+    //     },
+    //     {
+    //       amount: "$75K",
+    //       description: "Saved from reduced marketing expenses",
+    //       color: 'bg-purple-400'
+    //     },
+    //   ],
+    // },
     {
       videoSrc: "MercedesMaybachSL.mp4",
       quote: "The insights and tools provided helped us achieve milestones we didn't think were possible.",
@@ -105,7 +128,7 @@ const ImpactSection = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // Controls the speed of slide change
+    autoplaySpeed: 6000, // Controls the speed of slide change
     arrows: false,
     beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
     customPaging: (i) => (

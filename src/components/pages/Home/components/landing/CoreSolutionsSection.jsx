@@ -271,7 +271,7 @@ const CoreSolutionsSection = () => {
                       {item.icon}
                     </div>
                     <div
-                      className="icon-title"
+                      className="icon-title w-28"
                       style={{
                         color:
                           selectedIcon === item.label ? "white" : "#b8b4b4",

@@ -183,7 +183,6 @@ const CoreSolutionsSection = () => {
       <button
         className="prev-arrow"
         style={{display:'none'}}
-        
       >
         {/* <MdArrowBackIosNew color="white" size={30} /> */}
       </button>

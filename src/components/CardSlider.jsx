@@ -8,12 +8,12 @@ const CardSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 4.2,
     slidesToScroll: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
-      { breakpoint: 1400, settings: { slidesToShow: 4.8, slidesToScroll: 2 } },
+      { breakpoint: 1400, settings: { slidesToShow: 4.2, slidesToScroll: 2 } },
       { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
       {

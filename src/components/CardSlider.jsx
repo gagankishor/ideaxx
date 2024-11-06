@@ -14,8 +14,15 @@ const CardSlider = () => {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       { breakpoint: 1400, settings: { slidesToShow: 4.2, slidesToScroll: 2 } },
-      { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 1300, settings: { slidesToShow: 4.0, slidesToScroll: 2 } },
+      { breakpoint: 1200, settings: { slidesToShow: 3.8, slidesToScroll: 2 } },
+      { breakpoint: 1100, settings: { slidesToShow: 3.2, slidesToScroll: 2 } },
+      { breakpoint: 1000, settings: { slidesToShow: 3.1, slidesToScroll: 2 } },
+      { breakpoint: 900, settings: { slidesToShow: 3, slidesToScroll: 2 } },
+      { breakpoint: 820, settings: { slidesToShow: 2.6, slidesToScroll: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 2.2, slidesToScroll: 1 } },
+      { breakpoint: 668, settings: { slidesToShow: 2.0, slidesToScroll: 1 } },
+      { breakpoint: 568, settings: { slidesToShow: 1.8, slidesToScroll: 1 } },
       {
         breakpoint: 480,
         settings: {
@@ -74,7 +81,7 @@ const CardSlider = () => {
       id: 5,
       title: "Legal",
       description: "",
-      bgImage: "/sliderLandigPage/5.webp",
+      bgImage: "/sliderLandigPage/legal.jpg",
     },
     {
       pointers: ["My Team dashboard" , "Team Meetings" , "Management Platforms" ,"Legal"],

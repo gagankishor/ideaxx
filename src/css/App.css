@@ -3926,13 +3926,13 @@ nav .container .burger {
 }
 @media (max-width: 1090px) {
   .impact-section {
-    display: none;
+    /* display: none; */
   }
   .product-box {
     margin: 20px;
   }
   .impact-details {
-    display: none;
+    /* display: none; */
     justify-content: center;
     align-items: flex-start;
     gap: 4rem;

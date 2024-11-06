@@ -34,7 +34,7 @@ const AwardsSection = () => {
             <div
               className="card gartner"
               style={{
-                backgroundColor: "#fff",
+                backgroundColor: "#fff", 
                 padding: "20px",
                 borderRadius: "10px",
                 height: "50%",
@@ -96,7 +96,7 @@ const AwardsSection = () => {
                       landscape and what to expect in the years to come.
                     </p>
                     <a
-                      href="#"
+                      href={`/blogs/1`}
                       className="text-blue-400 hover:underline"
                     >
                       Read more
@@ -125,7 +125,7 @@ const AwardsSection = () => {
                       and improve sales with CRM tools in 2024.
                     </p>
                     <a
-                      href="#"
+                      href={`/blogs/1`}
                       className="text-blue-400 hover:underline"
                     >
                       Read more
@@ -153,11 +153,11 @@ const AwardsSection = () => {
                       and how to stay ahead of the competition.
                     </p>
                     <a
-                      href="#"
-                      className="text-blue-400 hover:underline"
-                    >
-                      Read more
-                    </a>
+  href={`/blogs/1`} // Replace `blog.id` with the actual ID or slug of the blog post
+  className="text-blue-400 hover:underline"
+>
+  Read more
+</a>
                   </div>
                 </div>
               </div>
@@ -168,5 +168,4 @@ const AwardsSection = () => {
     </div>
   );
 };
-
 export default AwardsSection;

@@ -179,7 +179,7 @@ h2 {
 
 .tooltip .tooltip-text {
   visibility: hidden;
-  width: 240px;
+  width: 200px;
   background-color: rgb(255, 255, 255);
   color: #000000;
   text-align: center;
@@ -195,7 +195,7 @@ h2 {
   opacity: 0;
   transition: opacity 0.3s ease;
   font-weight:300;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .tooltip:hover .tooltip-text {

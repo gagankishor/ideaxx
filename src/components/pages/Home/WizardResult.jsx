@@ -192,7 +192,7 @@ const WizardResult = () => {
               <span>{data?.marketPotential} %</span>
               <div className="tooltip" style={{ color: "gray" }}>
                 {/* <BsFillQuestionCircleFill size={20} /> */}
-                <PiQuestion size={20} />
+                <PiQuestion size={18} />
 
                 <span className="tooltip-text">
                   Total demand for a product or service within a target market,
@@ -219,7 +219,7 @@ const WizardResult = () => {
               <span>{uniqueValueProposition?.finalScore}</span>
               <div className="tooltip" style={{ color: "gray" }}>
                 {/* <FcQuestions size={20} /> */}
-                <PiQuestion size={20} />
+                <PiQuestion size={18} />
 
                 <span className="tooltip-text">
                   Distinct benefit offered to customers, differentiating the
@@ -247,7 +247,7 @@ const WizardResult = () => {
               </div>
               <span>{RevenueModelData?.finalScore}</span>
               <div className="tooltip" style={{ color: "gray" }}>
-                <PiQuestion size={20} />
+                <PiQuestion size={18} />
                 <span className="tooltip-text">
                   Strategy for generating income, detailing pricing structure,
                   sales approaches, and various revenue streams for
@@ -273,7 +273,7 @@ const WizardResult = () => {
               <span>{CompetitiveLandscapeData?.finalScore}</span>
               <div className="tooltip" style={{ color: "gray" }}>
                 {/* <BsQuestionDiamondFill size={20} /> */}
-                <PiQuestion size={20} />
+                <PiQuestion size={18} />
                 <span className="tooltip-text">
                   Analysis of competitors, market share, strengths, and
                   weaknesses, identifying opportunities and challenges for
@@ -295,7 +295,7 @@ const WizardResult = () => {
               </div>
               <span>{TeamAndResourcesData}%</span>
               <div className="tooltip" style={{ color: "gray" }}>
-                <PiQuestion size={20} />
+                <PiQuestion size={18} />
                 <span className="tooltip-text">
                   Key personnel and assets required for successful execution,
                   essential for achieving business goals and long-term growth.

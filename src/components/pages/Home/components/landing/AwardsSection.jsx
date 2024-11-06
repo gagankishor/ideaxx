@@ -10,135 +10,156 @@ const AwardsSection = () => {
         padding: "20px 0",
       }}
     >
-      <div className="awards-section" style={{ maxWidth: "1000px", margin: "auto" }}>
+      <div
+        className="awards-section"
+        style={{ maxWidth: "1000px", margin: "auto" }}
+      >
         <div className="title-section">
-          <h3 style={{ color: "white" }}>Recognized by leaders. Loved by customers.</h3>
+          <h3 style={{ color: "white" }}>
+            Recognized by leaders. Loved by customers.
+          </h3>
           <button className="cta-button">Test Yeor Idea →</button>
         </div>
         <div className="info-cards">
-          <div className="info-cards2" style={{ display: "flex", justifyContent: "center", gap: "20px" ,paddingTop:"40px" }}>
-            <div className="card gartner" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px" ,height:'50%' }}>
-              <h3>Industry Recognition
-              </h3>
-              <p className=" w-5/6 m-auto">
-              Our platform is recognized as a leader in business management solutions powered by AI, offering innovative tools that transform how businesses operate. 
+          <div
+            className="info-cards2"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "20px",
+              paddingTop: "40px",
+              width:'75%'
+            }}
+          >
+            <div
+              className="card gartner"
+              style={{
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "10px",
+                height: "50%",
+              }}
+            >
+              <h3>Industry Recognition</h3>
+              <p className=" w-5/6 m-auto mb-10">
+                Our platform is recognized as a leader in business management
+                solutions powered by AI, offering innovative tools that
+                transform how businesses operate.
               </p>
-              <a href="#" className="read-more flex justify-center items-center">
+              <a
+                href="#"
+                className="read-more flex justify-center items-center"
+              >
                 <FaBookOpen /> Read the report →
               </a>
             </div>
-            <div className="card forrester" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "10px",height:'50%'}}>
+            <div
+              className="card forrester"
+              style={{
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "10px",
+                height: "50%",
+              }}
+            >
               <h3>Trusted by Entrepreneurs</h3>
-              <p className=" w-5/6 m-auto">
-              Trusted by Entrepreneurs: IDEAX is the go-to choice for entrepreneurs and startups looking for efficient solutions to drive growth and success.
+              <p className=" w-5/6 m-auto mb-10">
+                Trusted by Entrepreneurs: IDEAX is the go-to choice for
+                entrepreneurs and startups looking for efficient solutions to
+                drive growth and success.
               </p>
-              <a href="#" className="read-more flex justify-center items-center">
+              <a
+                href="#"
+                className="read-more flex justify-center items-center"
+              >
                 <FaBookOpen /> Read the report →
               </a>
             </div>
           </div>
           <div className="badge-section" style={{ marginTop: "40px" }}>
-            <div className="badge-category">
-              <div className="row" style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
+            <div className="blog-section mt-10">
+              <div className="blog-post mb-10">
+                <div className="flex items-center mb-5">
                 <div>
-                  <img
-                    src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
-                    width={50}
-                    alt="monday work management"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ color: "white" }}>monday work management</h4>
-                  <p style={{ color: "#ddd" }}>Leader in 21 Project Management categories</p>
-                </div>
-              </div>
-              <div className="badges" style={{ display: "flex", gap: "10px" }}>
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 1"
-                  width={70}
-                />
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 2"
-                  width={70}
-                />
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 3"
-                  width={70}
-                />
-              </div>
-            </div>
-            <div style={{ width: "100%", height: "1px", backgroundColor: "#545454", margin: "10px 0" }}></div>
-            <div className="badge-category">
-              <div className="row" style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
-                <div>
-                  <img
-                    src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
-                    width={50}
-                    alt="monday CRM"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ color: "white" }}>monday CRM</h4>
-                  <p style={{ color: "#ddd" }}>
-                    Leader in 4 Customer Relationship Management categories
-                  </p>
+                    <img
+                      src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
+                      className="w-60 rounded-md"
+                      alt="Blog 3"
+                    />
+                  </div>
+                  <div className="ml-5">
+                    <h4 className="text-white text-xl">
+                      The Future of Project Management
+                    </h4>
+                    <p className="text-gray-200">
+                      Explore how technology is reshaping the project management
+                      landscape and what to expect in the years to come.
+                    </p>
+                    <a
+                      href="#"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Read more
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <div className="badges" style={{ display: "flex", gap: "10px" }}>
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 1"
-                  width={70}
-                />
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 2"
-                  width={70}
-                />
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 3"
-                  width={70}
-                />
-              </div>
-            </div>
+              <div className="w-full h-px bg-gray-600 my-4"></div>
 
-            <div style={{ width: "100%", height: "1px", backgroundColor: "#545454", margin: "10px 0" }}></div>
-            <div className="badge-category">
-              <div className="row" style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
+              <div className="blog-post mb-10">
+                <div className="flex items-center mb-5">
                 <div>
-                  <img
-                    src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
-                    width={50}
-                    alt="monday dev"
-                  />
-                </div>
-                <div>
-                  <h4 style={{ color: "white" }}>monday dev</h4>
-                  <p style={{ color: "#ddd" }}>Leader in 3 Product Development categories</p>
+                    <img
+                      src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
+                      className="w-60  rounded-md"
+                      alt="Blog 3"
+                    />
+                  </div>
+                  <div className="ml-5">
+                    <h4 className="text-white text-xl">
+                      CRM Strategies for 2024
+                    </h4>
+                    <p className="text-gray-200">
+                      Learn the top strategies to enhance customer relationships
+                      and improve sales with CRM tools in 2024.
+                    </p>
+                    <a
+                      href="#"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Read more
+                    </a>
+                  </div>
                 </div>
               </div>
+              <div className="w-full h-px bg-gray-600 my-4"></div>
 
-              <div className="badges" style={{ display: "flex", gap: "10px" }}>
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 1"
-                  width={70}
-                />
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 2"
-                  width={70}
-                />
-                <img
-                  src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/enterprise/G2wm1.png"
-                  alt="Badge 3"
-                  width={70}
-                />
+              <div className="blog-post mb-10">
+                <div className="flex items-center mb-5">
+                  <div>
+                    <img
+                      src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
+                      className="w-60 rounded-md"
+                      alt="Blog 3"
+                    />
+                  </div>
+                  <div className="ml-5">
+                    <h4 className="text-white text-xl">
+                      Product Development Trends
+                    </h4>
+                    <p className="text-gray-200">
+                      A deep dive into the latest trends in product development
+                      and how to stay ahead of the competition.
+                    </p>
+                    <a
+                      href="#"
+                      className="text-blue-400 hover:underline"
+                    >
+                      Read more
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

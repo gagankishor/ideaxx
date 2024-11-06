@@ -4175,7 +4175,7 @@ nav .container .burger {
 .video-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* Space between videos */
+  gap: 10px; /* Space between videos */
   max-width: 1400px;
   margin: auto; /* Center the video section */
   margin-top: 40px;

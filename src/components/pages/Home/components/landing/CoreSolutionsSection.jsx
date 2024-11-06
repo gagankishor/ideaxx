@@ -250,7 +250,7 @@ const CoreSolutionsSection = () => {
                     style={{
                       textAlign: "center",
                       padding: "110px",
-                      width: "40%",
+                      width: "20%",
 
                     }}
                     className="icon-item"

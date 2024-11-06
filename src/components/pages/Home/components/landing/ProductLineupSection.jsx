@@ -72,6 +72,19 @@ const ProductLineupSection = () => {
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
             </div>
+            <div className="product-box">
+              <img
+                // src="/darksection1/collaboration.webp"
+                src="/darksection1/collaboration1.webp"
+                alt="Product"
+                className="product-image"
+              />
+              <p className=" p-4 text-white">
+              A dedicated online team that works together to bring your vision to life.
+              </p>
+              <div className="ripple-border"></div>
+              <div className="ripple-border-2"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -100,45 +113,59 @@ const ProductLineupSection = () => {
             style={{ width: "40%", margin: "auto" }}
           />
         </div>
-        <div className="video-section justify-center">
-          {/* <iframe
-            className="video-frame"
-            src="https://www.youtube.com/embed/sTH7riysqcs?si=DQ7jIjQbCzqQJMwh&loop=1&rel=0&playlist=sTH7riysqcs&mute=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-
-          <iframe
-            className="video-frame"
-            src="https://www.youtube.com/embed/sTH7riysqcs?si=DQ7jIjQbCzqQJMwh&loop=1&rel=0&playlist=sTH7riysqcs&controls=0&mute=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            className="video-frame"
-            src="https://www.youtube.com/embed/sTH7riysqcs?si=DQ7jIjQbCzqQJMwh&loop=1&rel=0&playlist=sTH7riysqcs&mute=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            className="video-frame"
-            src="https://www.youtube.com/embed/sTH7riysqcs?si=DQ7jIjQbCzqQJMwh&loop=1&rel=0&playlist=sTH7riysqcs&mute=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe> */}
-          <img src="home-platform/1.png" className="w-[48%]" alt="" />
-          <img src="home-platform/2.png" className="w-[48%]" alt="" />
-          <img src="home-platform/3.png" className="w-[48%]" alt="" />
-          <img src="home-platform/4.png" className="w-[48%]" alt="" />
+        <div className="video-section flex flex-wrap justify-center gap-4">
+  <div className="relative w-[48%]">
+    <img src="home-platform/blank1.jpg" className="w-full" alt="Image 1" />
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+      <div className="flex flex-col items-center mt-6">
+        <div className="mb-2 flex flex-row gap-3">
+          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
+        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
         </div>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+      </div>
+    </div>
+  </div>
+  <div className="relative w-[48%]">
+    <img src="home-platform/blank2.jpg" className="w-full" alt="Image 2" />
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+    <div className="flex flex-col items-center mt-6">
+        <div className="mb-2 flex flex-row gap-3">
+          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
+        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
+        </div>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+      </div>
+    </div>
+  </div>
+  <div className="relative w-[48%]">
+    <img src="home-platform/blank3.jpg" className="w-full" alt="Image 3" />
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+    <div className="flex flex-col items-center mt-6">
+        <div className="mb-2 flex flex-row gap-3">
+          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
+        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
+        </div>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+      </div>
+    </div>
+  </div>
+  <div className="relative w-[48%]">
+    <img src="home-platform/blank4.jpg" className="w-full" alt="Image 4" />
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+    <div className="flex flex-col items-center mt-6">
+        <div className="mb-2 flex flex-row gap-3">
+          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
+        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
+        </div>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
       </div>
       <div
         style={{

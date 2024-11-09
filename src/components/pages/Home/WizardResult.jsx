@@ -220,71 +220,156 @@ const WizardResult = () => {
       [index]: !prev[index],
     }));
   };
+  const radius = 40; // Radius of the circle
+  const circumference = 2 * Math.PI * radius; // Circumference of the circle
+  const offset = circumference - (48 / 100) * circumference;
   return (
     <div className="max-w-[1400px] m-auto ">
-      
-      <div className="flex flex-row gap-5 mt-5 border-gray-300 shadow-md   w-[94%] mx-auto ">
-        {[
-          {
-            href: "#idea",
-            data: bardata2,
-            score: totalMarketScrore,
-            label: "Idea Score",
-          },
-          {
-            href: "#market",
-            data: bardata,
-            score: data?.success_percentage,
-            label: "Market Score",
-          },
+      <div className=" mt-5 border-gray-300 border rounded-lg w-[94%] mx-auto p-5 ">
+        <div>
+        <h2 className=" mb-0 text-center">Your idea outloock
+          </h2>
+          <p className="">
+            Slight changes may occur in the results depending on market trends.
+          </p>
+        </div>
+        <div className="flex flex-row gap-5">
+          {/* {[
+  {
+    href: "#idea",
+    data: bardata2,
+    score: totalMarketScrore,
+    label: "Idea Score",
+  },
+  {
+    href: "#market",
+    data: bardata,
+    score: data?.success_percentage,
+    label: "Market Score",
+  },
+  {
+    href: "#ideax",
+    data: bardata3,
+    score: totalMarketScrore2,
+    label: "Score with Ideax",
+  },
+].map((item, index) => (
+  <a
+    key={index}
+    href={item.href}
+    className="overview-right1 w-1/3 flex flex-col items-center justify-center p-5 transition-transform transform hover:scale-105"
+  >
+    <div className="business-score-circle relative flex items-center justify-center bg-gradient-to-r from-main-highlight to-bg-second rounded-full p-2">
+      <Doughnut data={item.data} options={options} />
+      <div className="doughnut-center absolute flex flex-col items-center justify-center">
+        <p className="circle-text font-semibold text-lg">
+          {item.score}%
+        </p>
+        <p className="text-sm text-gray-500">{item.label}</p>
+      </div>
+    </div>
+  </a>
+))} */}
+          <div className="flex flex-row justify-between w-full mx-16 my-12 ">
+          {[
+  {
+    href: "#idea",
+    data: bardata2,
+    score: totalMarketScrore,
+    label: "Idea Score",
+  },
+  {
+    href: "#market",
+    data: bardata,
+    score: data?.success_percentage,
+    label: "Market Score",
+  },
+  {
+    href: "#ideax",
+    data: bardata3,
+    score: totalMarketScrore2,
+    label: "Score with Ideax",
+  },
+].map((item, index) => {
+  // Determine radius and color based on the score
+  const radius = 40
+  const color = item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
+
+  // Calculate circle properties
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (item.score / 100) * circumference;
+
+  return (
+    <div
+      key={index}
+      className="circular-progress"
+      style={{ textAlign: "center" }}
+    >
+      <svg width="200" height="200" viewBox="0 0 100 100">
+        {/* Background Circle */}
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          fill="none"
+          stroke="#fde8e8"
+          strokeWidth="8"
+        />
+        {/* Progress Circle */}
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          fill="none"
+          stroke={color}
+          strokeWidth="8"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          transform="rotate(-90 50 50)"
+        />
+        {/* Percentage Text */}
+        <text
+          x="50"
+          y="55"
+          textAnchor="middle"
+          fontSize="20"
           
-          {
-            href: "#ideax",
-            data: bardata3,
-            score: totalMarketScrore2,
-            label: "Score with Ideax",
-          },
-        ].map((item, index) => (
-          <a
-            key={index}
-            href={item.href}
-            className="overview-right w-1/3 flex flex-col items-center justify-center p-5    transition-transform transform hover:scale-105 "
-          >
-            <div className="business-score-circle relative flex items-center justify-center bg-gradient-to-r from-main-highlight to-bg-second rounded-full p-2">
-              <Doughnut data={item.data} options={options} />
-              <div className="doughnut-center absolute flex flex-col items-center justify-center">
-                <p className="circle-text font-semibold text-lg">
-                  {item.score}%
-                </p>
-                <p className="text-sm text-gray-500">{item.label}</p>
-              </div>
-            </div>
-          </a>
-        ))}
+          fill={color}
+        >
+          {item.score}%
+        </text>
+      </svg>
+      <p style={{ marginTop: "10px", color: "#000" }} className=" text-2xl">
+        {item.label}
+      </p>
+    </div>
+  );
+})}
+          </div>
+        </div>
       </div>
 
       <section
         id="idea"
-        className="business-check-container m-10 flex flex-col-reverse lg:flex-row items-center justify-around p-5"
+        className="business-check-container border-gray-300 border  m-10 flex flex-col-reverse lg:flex-row items-center justify-around p-5"
       >
-        <div className=" w-[60%]">
+        <div className=" w-[75%]">
           <div className="ai-generated-content">
-            <h3
-              style={{
+          <h2 style={{
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
                 gap: "10px",
-              }}
-            >
-              Your Idea Overview{" "}
-              <FaRobot size={28} style={{ color: "var(--main-color)" }} />
-            </h3>
-            <div className="w-full pt-5 pb-5 flex justify-center items-center"></div>
+              }} className=" mb-0">Your Idea Overview{" "}
+          <FaRobot size={28} style={{ color: "var(--main-color)" }} /></h2>
+          <p className=" text-left">
+            Slight changes may occur in the results depending on market trends.
+          </p>
+          
+            <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div>
             {loading ? (
               <p>Loading AI-generated insights...</p>
             ) : (
-              <p>{displayedText}</p>
+              <p className="text-left">{displayedText}</p>
             )}
           </div>
         </div>
@@ -298,8 +383,11 @@ const WizardResult = () => {
           </div>
         </div>
       </section>
-      <section id="market" className="business-check-container m-10 flex flex-col-reverse lg:flex-row p-5">
-        <div  className=" w-[60%]">
+      <section
+        id="market"
+        className="business-check-container border-gray-300 border  m-10 flex flex-col-reverse lg:flex-row p-5"
+      >
+        <div className=" w-[100%]">
           <h2 className=" mb-0">Overview of Market Research for the Idea</h2>
           <p className=" text-left">
             Slight changes may occur in the results depending on market trends.
@@ -434,6 +522,15 @@ const WizardResult = () => {
                 </div>
               </div>
             </div>
+            <div className="overview-right">
+          <div className="business-score-circle">
+            <Doughnut data={bardata} options={options} />
+            <div className="doughnut-center">
+              <p className="circle-text">{data?.success_percentage}%</p>
+              <p>Market Score</p>
+            </div>
+          </div>
+        </div>
           </div>
           <div className="business-additional-info">
             <div className="info-item">
@@ -464,20 +561,23 @@ const WizardResult = () => {
             </div>
           </div>
         </div>
-        <div className="overview-right">
-          <div className="business-score-circle">
-            <Doughnut data={bardata} options={options} />
-            <div className="doughnut-center">
-              <p className="circle-text">{data?.success_percentage}%</p>
-              <p>Market Score</p>
-            </div>
-          </div>
-        </div>
+        
       </section>
-      <section id="ideax" className="business-check-container m-10 flex flex-col-reverse lg:flex-row p-5">
-        <div className=" w-[60%]">
+      <section
+        id="ideax"
+        className="business-check-container border-gray-300 border  m-10 flex flex-col-reverse  lg:flex-row justify-between p-5"
+      >
+        <div className=" w-[75%]">
           <div className="business-improvements">
-            <h3>How you can improve your idea</h3>
+          <h2 style={{
+                display: "flex",
+                gap: "10px",
+              }} className=" mb-0">How you can improve your idea
+          </h2>
+          <p className=" text-left">
+            Slight changes may occur in the results depending on market trends.
+          </p>
+            
             <ul>
               {[
                 {
@@ -506,7 +606,7 @@ const WizardResult = () => {
               ].map((item, index) => (
                 <li
                   key={index}
-                  className={`p-4 border-b flex flex-col ${
+                  className={`p-4 border-b flex flex-col rounded-md ${
                     item.label === "Important!" ? "bg-yellow-50" : "bg-gray-50"
                   } hover:bg-gray-100 cursor-pointer`}
                   onClick={() => handleToggle(index)}
@@ -533,7 +633,7 @@ const WizardResult = () => {
             </ul>
           </div>
         </div>
-        <div className="overview-right">
+        <div className="overview-right ">
           <div className="business-score-circle">
             <Doughnut data={bardata3} options={options} />
             <div className="doughnut-center">

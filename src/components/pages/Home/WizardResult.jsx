@@ -2,8 +2,8 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaArrowLeft, FaRobot } from "react-icons/fa";
-import { Doughnut } from "react-chartjs-2";
+import { FaRobot } from "react-icons/fa";
+// import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa6";
@@ -158,18 +158,18 @@ const WizardResult = () => {
       },
     ],
   };
-  const options = {
-    cutout: "70%",
-    responsive: true,
-    plugins: {
-      tooltip: {
-        enabled: true,
-      },
-      legend: {
-        display: false,
-      },
-    },
-  };
+  // const options = {
+  //   cutout: "70%",
+  //   responsive: true,
+  //   plugins: {
+  //     tooltip: {
+  //       enabled: true,
+  //     },
+  //     legend: {
+  //       display: false,
+  //     },
+  //   },
+  // };
   const totalMarketScrore =
     (parseFloat(data?.marketPotential) +
       parseFloat(uniqueValueProposition?.finalScore?.replace("%", "")) +
@@ -291,12 +291,9 @@ const WizardResult = () => {
                 label: "Score with Ideax",
               },
             ].map((item, index) => {
-              // Determine radius and color based on the score
               const radius = 40;
               const color =
-                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
-
-              // Calculate circle properties
+                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; 
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
 
@@ -308,7 +305,7 @@ const WizardResult = () => {
                   style={{ textAlign: "center" }}
                 >
                   <svg width="200" height="200" viewBox="0 0 100 100">
-                    {/* Background Circle */}
+                    
                     <circle
                       cx="50"
                       cy="50"
@@ -317,7 +314,6 @@ const WizardResult = () => {
                       stroke="#fde8e8"
                       strokeWidth="8"
                     />
-                    {/* Progress Circle */}
                     <circle
                       cx="50"
                       cy="50"

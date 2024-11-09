@@ -1,5 +1,4 @@
 import { FaBookOpen } from "react-icons/fa";
-
 const AwardsSection = () => {
   return (
     <div
@@ -28,16 +27,18 @@ const AwardsSection = () => {
               justifyContent: "center",
               gap: "20px",
               paddingTop: "40px",
-              width:'75%'
+              // width: "75%",
             }}
           >
             <div
               className="card gartner"
               style={{
-                backgroundColor: "#fff", 
+                backgroundColor: "#fff",
                 padding: "20px",
                 borderRadius: "10px",
                 height: "50%",
+                margin:'auto',
+                transform: 'translateX(0%)'
               }}
             >
               <h3>Industry Recognition</h3>
@@ -60,6 +61,7 @@ const AwardsSection = () => {
                 padding: "20px",
                 borderRadius: "10px",
                 height: "50%",
+                transform: 'translateX(0%)'
               }}
             >
               <h3>Trusted by Entrepreneurs</h3>
@@ -80,7 +82,7 @@ const AwardsSection = () => {
             <div className="blog-section mt-10">
               <div className="blog-post mb-10">
                 <div className="flex items-center mb-5">
-                <div>
+                  <div>
                     <img
                       src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
                       className="w-60 rounded-md"
@@ -109,7 +111,7 @@ const AwardsSection = () => {
 
               <div className="blog-post mb-10">
                 <div className="flex items-center mb-5">
-                <div>
+                  <div>
                     <img
                       src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
                       className="w-60  rounded-md"
@@ -153,11 +155,11 @@ const AwardsSection = () => {
                       and how to stay ahead of the competition.
                     </p>
                     <a
-  href={`/blogs/1`} // Replace `blog.id` with the actual ID or slug of the blog post
-  className="text-blue-400 hover:underline"
->
-  Read more
-</a>
+                      href={`/blogs/1`} // Replace `blog.id` with the actual ID or slug of the blog post
+                      className="text-blue-400 hover:underline"
+                    >
+                      Read more
+                    </a>
                   </div>
                 </div>
               </div>

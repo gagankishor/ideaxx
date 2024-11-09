@@ -11,7 +11,7 @@ import { TiCloudStorage } from "react-icons/ti";
 import {
   MdOutlineSell,
 } from "react-icons/md";
-import Link from "next/link"; // Correct import for Link
+import Link from "next/link";
 import { RiCommunityFill } from "react-icons/ri";
 
 const icons = [
@@ -166,14 +166,14 @@ const contentData = {
 const CoreSolutionsSection = () => {
   const [selectedIcon, setSelectedIcon] = useState("Community");
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1, // Scroll one slide at a time
     nextArrow: (
       <button
-        className="next-arrow"
+        className="next-arrow "
         style={{display:'none',backgroundColor:'#47333300'}}
       >
         {/* <MdOutlineArrowForwardIos color="white" size={30} /> */}
@@ -303,7 +303,7 @@ const CoreSolutionsSection = () => {
                         <p style={{ color: "white" }}>{content.description}</p>
                       </div>
                     </div>
-                  ))}
+                ))}
               </div>
             </div>
             <div style={{ position: "absolute", zIndex: 1000 }}></div>

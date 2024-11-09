@@ -3563,9 +3563,9 @@ nav .container .burger {
     display: flex;
     flex-direction: row;
   }
-  .hero .container .hero-block h1 {
+  /* .hero .container .hero-block h1 {
     width: 100%;
-  }
+  } */
   .hero .container .hero-block {
     width: 100vw;
     overflow: hidden;
@@ -3739,12 +3739,13 @@ nav .container .burger {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width:75%
 
 }
 
 .info-cards2 .card {
   background: linear-gradient(rgba(66,66,66,1) 0%,rgba(0,0,0,1) 100%);
-  border: 1px solid #545454;
+  border: 0.5px solid #545454;
   padding: 40px;
   border-radius: 10px;
   width: 100%;
@@ -3832,61 +3833,6 @@ nav .container .burger {
   }
 }
 
-@media (max-width: 768px) {
-  .title-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .cta-button {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  .info-cards {
-    gap: 15px;
-    padding: 0;
-  }
-
-  .info-cards2 .card h3 {
-    font-size: 1.3rem;
-    text-align: left;
-  }
-
-  .info-cards2 .card p {
-    font-size: 0.9rem;
-    text-align: left;
-
-  }
-
-  .badges img {
-    height: 60px;
-    margin-right: 5px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title-section h1 {
-    font-size: 1.5rem;
-  }
-
-  .cta-button {
-    font-size: 0.7rem;
-    padding: 5px 10px;
-  }
-
-  .info-cards {
-    padding: 0;
-  }
-
-  .info-cards2 .card {
-    padding: 15px;
-  }
-
-  .badges img {
-    height: 50px;
-    margin-right: 5px;
-  }
-}
 
 .impact-section {
   
@@ -4122,7 +4068,15 @@ nav .container .burger {
   color: white;
   text-align: center;
 }
+@media (max-width: 918px) {
+  
 
+  .card1 {
+    width: 47%;
+    margin: 10px 0;
+  }
+  
+}
 @media (max-width: 768px) {
   .top-section {
     flex-direction: column; 
@@ -4171,6 +4125,10 @@ nav .container .burger {
     font-size: 30px;
     text-align: center;
   }
+  .awards-section {
+    padding: 10px;
+    
+  }
 }
 .video-section {
   display: flex;
@@ -4196,7 +4154,7 @@ nav .container .burger {
 }
 @media (max-width: 768px) {
   .video-section {
-    gap: 50px;
+    /* gap: 50px; */
   }
   .video-frame {
     width: 80%; /* Full width on smaller screens */

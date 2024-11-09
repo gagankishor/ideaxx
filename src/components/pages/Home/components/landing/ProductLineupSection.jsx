@@ -101,7 +101,7 @@ const ProductLineupSection = () => {
           Wide range of AI Based Tools, for All your Business needs.
           </span>
         </h2>
-        <p className="client-description max-w-[60%]">
+        <p className="client-description md:max-w-[60%]">
           Ideax AI empowers entrepreneurs by providing innovative tools for idea
           validation and a fully integrated online team that executes their
           vision.
@@ -113,8 +113,8 @@ const ProductLineupSection = () => {
             style={{ width: "40%", margin: "auto" }}
           />
         </div>
-        <div className="video-section flex flex-wrap justify-center gap-4">
-  <div className="relative w-[48%]">
+        <div className="video-section flex flex-wrap justify-center gap-1 md:gap-4">
+  <div className="relative p-[10px] md:w-[48%]">
     <img src="home-platform/blank1.jpg" className="w-full" alt="Image 1" />
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
       <div className="flex flex-col items-center mt-6">
@@ -122,11 +122,11 @@ const ProductLineupSection = () => {
           <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
         <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
         </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image.  </p>
       </div>
     </div>
   </div>
-  <div className="relative w-[48%]">
+  <div className="relative p-[10px] md:w-[48%]">
     <img src="home-platform/blank2.jpg" className="w-full" alt="Image 2" />
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
     <div className="flex flex-col items-center mt-6">
@@ -134,11 +134,11 @@ const ProductLineupSection = () => {
           <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
         <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
         </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. </p>
       </div>
     </div>
   </div>
-  <div className="relative w-[48%]">
+  <div className="relative p-[10px] md:w-[48%]">
     <img src="home-platform/blank3.jpg" className="w-full" alt="Image 3" />
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
     <div className="flex flex-col items-center mt-6">
@@ -146,11 +146,11 @@ const ProductLineupSection = () => {
           <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
         <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
         </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. </p>
       </div>
     </div>
   </div>
-  <div className="relative w-[48%]">
+  <div className="relative p-[10px] md:w-[48%]">
     <img src="home-platform/blank4.jpg" className="w-full" alt="Image 4" />
     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
     <div className="flex flex-col items-center mt-6">
@@ -158,7 +158,7 @@ const ProductLineupSection = () => {
           <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
         <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
         </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. This is a description for Image  It gives more </p>
+        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. </p>
       </div>
     </div>
   </div>
@@ -207,7 +207,7 @@ const ProductLineupSection = () => {
           />
         </div>
         <h2 className="client-heading-text">Work together</h2>
-        <p className="client-description max-w-[60%]">
+        <p className="client-description md:max-w-[60%]">
           Now any team can streamline work, collaborate, and solve their most
           complex problems together with our suite of products.
         </p>

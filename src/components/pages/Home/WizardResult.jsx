@@ -220,9 +220,9 @@ const WizardResult = () => {
       [index]: !prev[index],
     }));
   };
-  const radius = 40; // Radius of the circle
-  const circumference = 2 * Math.PI * radius; // Circumference of the circle
-  const offset = circumference - (48 / 100) * circumference;
+  // const radius = 40; // Radius of the circle
+  // const circumference = 2 * Math.PI * radius; // Circumference of the circle
+  // const offset = circumference - (48 / 100) * circumference;
   return (
     <div className="max-w-[1400px] m-auto ">
       <div className=" mt-5 border-gray-300 border rounded-lg w-[94%] mx-auto p-5 ">

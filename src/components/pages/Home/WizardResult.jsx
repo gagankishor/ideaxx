@@ -2,10 +2,11 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaRobot } from "react-icons/fa";
+import { FaArrowLeft, FaRobot } from "react-icons/fa";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
+import { FaArrowRight } from "react-icons/fa6";
 Chart.register(ArcElement, Tooltip, Legend);
 const WizardResult = () => {
   const [aiContent, setAiContent] = useState("");
@@ -227,160 +228,266 @@ const WizardResult = () => {
     <div className="max-w-[1400px] m-auto ">
       <div className=" mt-5 border-gray-300 border rounded-lg w-[94%] mx-auto p-5 ">
         <div>
-        <h2 className=" mb-0 text-center">Your idea outloock
-          </h2>
+          <h2 className=" mb-0 text-center">Your Idea Outlook</h2>
           <p className="">
             Slight changes may occur in the results depending on market trends.
           </p>
         </div>
         <div className="flex flex-row gap-5">
           {/* {[
-  {
-    href: "#idea",
-    data: bardata2,
-    score: totalMarketScrore,
-    label: "Idea Score",
-  },
-  {
-    href: "#market",
-    data: bardata,
-    score: data?.success_percentage,
-    label: "Market Score",
-  },
-  {
-    href: "#ideax",
-    data: bardata3,
-    score: totalMarketScrore2,
-    label: "Score with Ideax",
-  },
-].map((item, index) => (
-  <a
-    key={index}
-    href={item.href}
-    className="overview-right1 w-1/3 flex flex-col items-center justify-center p-5 transition-transform transform hover:scale-105"
-  >
-    <div className="business-score-circle relative flex items-center justify-center bg-gradient-to-r from-main-highlight to-bg-second rounded-full p-2">
-      <Doughnut data={item.data} options={options} />
-      <div className="doughnut-center absolute flex flex-col items-center justify-center">
-        <p className="circle-text font-semibold text-lg">
-          {item.score}%
-        </p>
-        <p className="text-sm text-gray-500">{item.label}</p>
-      </div>
-    </div>
-  </a>
-))} */}
-          <div className="flex flex-row justify-between w-full mx-16 my-12 ">
-          {[
-  {
-    href: "#idea",
-    data: bardata2,
-    score: totalMarketScrore,
-    label: "Idea Score",
-  },
-  {
-    href: "#market",
-    data: bardata,
-    score: data?.success_percentage,
-    label: "Market Score",
-  },
-  {
-    href: "#ideax",
-    data: bardata3,
-    score: totalMarketScrore2,
-    label: "Score with Ideax",
-  },
-].map((item, index) => {
-  // Determine radius and color based on the score
-  const radius = 40
-  const color = item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
+              {
+                href: "#idea",
+                data: bardata2,
+                score: totalMarketScrore,
+                label: "Idea Score",
+              },
+              {
+                href: "#market",
+                data: bardata,
+                score: data?.success_percentage,
+                label: "Market Score",
+              },
+              {
+                href: "#ideax",
+                data: bardata3,
+                score: totalMarketScrore2,
+                label: "Score with Ideax",
+              },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="overview-right1 w-1/3 flex flex-col items-center justify-center p-5 transition-transform transform hover:scale-105"
+              >
+                <div className="business-score-circle relative flex items-center justify-center bg-gradient-to-r from-main-highlight to-bg-second rounded-full p-2">
+                  <Doughnut data={item.data} options={options} />
+                  <div className="doughnut-center absolute flex flex-col items-center justify-center">
+                    <p className="circle-text font-semibold text-lg">
+                      {item.score}%
+                    </p>
+                    <p className="text-sm text-gray-500">{item.label}</p>
+                  </div>
+                </div>
+              </a>
+                ))} */}
+          <div className="flex flex-row justify-between w-full mx-16 my-5 px-[97px] ">
+            {[
+              {
+                href: "#idea",
+                data: bardata2,
+                score: totalMarketScrore,
+                label: "Idea Score",
+              },
+              {
+                href: "#market",
+                data: bardata,
+                score: data?.success_percentage,
+                label: "Market Score",
+              },
+              {
+                href: "#ideax",
+                data: bardata3,
+                score: totalMarketScrore2,
+                label: "Score with Ideax",
+              },
+            ].map((item, index) => {
+              // Determine radius and color based on the score
+              const radius = 40;
+              const color =
+                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
 
-  // Calculate circle properties
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (item.score / 100) * circumference;
+              // Calculate circle properties
+              const circumference = 2 * Math.PI * radius;
+              const offset = circumference - (item.score / 100) * circumference;
 
-  return (
-    <div
-      key={index}
-      className="circular-progress"
-      style={{ textAlign: "center" }}
-    >
-      <svg width="200" height="200" viewBox="0 0 100 100">
-        {/* Background Circle */}
-        <circle
-          cx="50"
-          cy="50"
-          r={radius}
-          fill="none"
-          stroke="#fde8e8"
-          strokeWidth="8"
-        />
-        {/* Progress Circle */}
-        <circle
-          cx="50"
-          cy="50"
-          r={radius}
-          fill="none"
-          stroke={color}
-          strokeWidth="8"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          transform="rotate(-90 50 50)"
-        />
-        {/* Percentage Text */}
-        <text
-          x="50"
-          y="55"
-          textAnchor="middle"
-          fontSize="20"
-          
-          fill={color}
-        >
-          {item.score}%
-        </text>
-      </svg>
-      <p style={{ marginTop: "10px", color: "#000" }} className=" text-2xl">
-        {item.label}
-      </p>
-    </div>
-  );
-})}
+              return (
+                <a
+                  href={item.href}
+                  key={index}
+                  className="circular-progress"
+                  style={{ textAlign: "center" }}
+                >
+                  <svg width="200" height="200" viewBox="0 0 100 100">
+                    {/* Background Circle */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r={radius}
+                      fill="none"
+                      stroke="#fde8e8"
+                      strokeWidth="8"
+                    />
+                    {/* Progress Circle */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r={radius}
+                      fill="none"
+                      stroke={color}
+                      strokeWidth="8"
+                      strokeDasharray={circumference}
+                      strokeDashoffset={offset}
+                      strokeLinecap="round"
+                      transform="rotate(-90 50 50)"
+                    />
+                    {/* Percentage Text */}
+                    <text
+                      x="50"
+                      y="55"
+                      textAnchor="middle"
+                      fontSize="15"
+                      fill={color}
+                    >
+                      {item.score}%
+                    </text>
+                  </svg>
+                  <p
+                    style={{
+                      marginTop: "10px",
+                      color: "#000",
+                      fontSize: "1.4rem",
+                    }}
+                    className=" text-2xl"
+                  >
+                    {item.label}
+                  </p>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
+      <section>
+        <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white shadow-lg flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0">
+          {/* Left Text Section */}
+          <div>
+            <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
+              Take the first step <span className="font-semibold">toward</span>{" "}
+              making your idea a reality, or{" "}
+              <span className="font-semibold">launch</span> your idea now.
+            </h3>
+          </div>
+
+          {/* Button Section */}
+          <div className="btns-container">
+            <button className="btn">Launch Your Idea</button>
+          </div>
+        </div>
+      </section>
 
       <section
         id="idea"
-        className="business-check-container border-gray-300 border  m-10 flex flex-col-reverse lg:flex-row items-center justify-around p-5"
+        className="business-check-container border-gray-300 border  m-10 p-10"
       >
-        <div className=" w-[75%]">
-          <div className="ai-generated-content">
-          <h2 style={{
+        <div>
+        <h2
+              style={{
                 display: "flex",
                 gap: "10px",
-              }} className=" mb-0">Your Idea Overview{" "}
-          <FaRobot size={28} style={{ color: "var(--main-color)" }} /></h2>
-          <p className=" text-left">
-            Slight changes may occur in the results depending on market trends.
-          </p>
-          
-            <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div>
+              }}
+              className=" mb-0 justify-center"
+            >
+              Your Idea Overview{" "}
+              <FaRobot size={28} style={{ color: "var(--main-color)" }} />
+            </h2>
+            <p className=" ">
+              Slight changes may occur in the results depending on market
+              trends.
+            </p>
+        </div>
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-around">
+
+        <div className=" w-[75%]">
+          <div className="ai-generated-content">
+            
+
+            {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
             {loading ? (
               <p>Loading AI-generated insights...</p>
             ) : (
-              <p className="text-left">{displayedText}</p>
+              <p className="text-justify">{displayedText}</p>
             )}
           </div>
         </div>
         <div className="overview-right">
-          <div className="business-score-circle">
+          {/* <div className="business-score-circle">
             <Doughnut data={bardata2} options={options} />
             <div className="doughnut-center">
               <p className="circle-text">{totalMarketScrore}%</p>
               <p>Idea Score</p>
             </div>
-          </div>
+          </div> */}
+          {[
+            {
+              href: "#idea",
+              data: bardata2,
+              score: totalMarketScrore,
+              label: "Idea Score",
+            },
+          ].map((item, index) => {
+            // Determine radius and color based on the score
+            const radius = 40;
+            const color =
+              item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
+
+            // Calculate circle properties
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (item.score / 100) * circumference;
+
+            return (
+              <div
+                key={index}
+                className="circular-progress"
+                style={{ textAlign: "center" }}
+              >
+                <svg width="200" height="200" viewBox="0 0 100 100">
+                  {/* Background Circle */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r={radius}
+                    fill="none"
+                    stroke="#fde8e8"
+                    strokeWidth="8"
+                  />
+                  {/* Progress Circle */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r={radius}
+                    fill="none"
+                    stroke={color}
+                    strokeWidth="8"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={offset}
+                    strokeLinecap="round"
+                    transform="rotate(-90 50 50)"
+                  />
+                  {/* Percentage Text */}
+                  <text
+                    x="50"
+                    y="55"
+                    textAnchor="middle"
+                    fontSize="15"
+                    fill={color}
+                  >
+                    {item.score}%
+                  </text>
+                </svg>
+                <p
+                  style={{
+                    marginTop: "10px",
+                    color: "#000",
+                    fontSize: "1.4rem",
+                  }}
+                  className=" text-2xl"
+                >
+                  {item.label}
+                </p>
+              </div>
+            );
+          })}
+        </div>
         </div>
       </section>
       <section
@@ -388,15 +495,15 @@ const WizardResult = () => {
         className="business-check-container border-gray-300 border  m-10 flex flex-col-reverse lg:flex-row p-5"
       >
         <div className=" w-[100%]">
-          <h2 className=" mb-0">Overview of Market Research for the Idea</h2>
-          <p className=" text-left">
+          <h2 className=" mb-0 text-center">Overview of Market Research for the Idea</h2>
+          <p className="">
             Slight changes may occur in the results depending on market trends.
           </p>
-          <div className="business-overview">
-            <div className="overview-left">
+          <div className="business-overview items-center">
+            <div className="overview-left pr-10">
               <div
                 className="overview-item"
-                style={{ marginTop: "50px", position: "relative" }}
+                style={{ marginTop: "20px", position: "relative" }}
               >
                 <p>Market Potential </p>
                 <div className="progress-bar">
@@ -522,15 +629,83 @@ const WizardResult = () => {
                 </div>
               </div>
             </div>
-            <div className="overview-right">
-          <div className="business-score-circle">
-            <Doughnut data={bardata} options={options} />
-            <div className="doughnut-center">
-              <p className="circle-text">{data?.success_percentage}%</p>
-              <p>Market Score</p>
+            <div className="overview-right " style={{margin:'0px'}}>
+              {[
+                {
+                  href: "#market",
+                  data: bardata,
+                  score: data?.success_percentage,
+                  label: "Market Score",
+                },
+              ].map((item, index) => {
+                // Determine radius and color based on the score
+                const radius = 40;
+                const color =
+                  item.score > 80
+                    ? "green"
+                    : item.score > 50
+                    ? "orange"
+                    : "red"; // Example color logic
+
+                // Calculate circle properties
+                const circumference = 2 * Math.PI * radius;
+                const offset =
+                  circumference - (item.score / 100) * circumference;
+
+                return (
+                  <div
+                    key={index}
+                    className="circular-progress"
+                    style={{ textAlign: "center" }}
+                  >
+                    <svg width="200" height="200" viewBox="0 0 100 100">
+                      {/* Background Circle */}
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r={radius}
+                        fill="none"
+                        stroke="#fde8e8"
+                        strokeWidth="8"
+                      />
+                      {/* Progress Circle */}
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r={radius}
+                        fill="none"
+                        stroke={color}
+                        strokeWidth="8"
+                        strokeDasharray={circumference}
+                        strokeDashoffset={offset}
+                        strokeLinecap="round"
+                        transform="rotate(-90 50 50)"
+                      />
+                      {/* Percentage Text */}
+                      <text
+                        x="50"
+                        y="55"
+                        textAnchor="middle"
+                        fontSize="15"
+                        fill={color}
+                      >
+                        {item.score}%
+                      </text>
+                    </svg>
+                    <p
+                      style={{
+                        marginTop: "10px",
+                        color: "#000",
+                        fontSize: "1.4rem",
+                      }}
+                      className=" text-2xl"
+                    >
+                      {item.label}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
-          </div>
-        </div>
           </div>
           <div className="business-additional-info">
             <div className="info-item">
@@ -561,23 +736,30 @@ const WizardResult = () => {
             </div>
           </div>
         </div>
-        
       </section>
       <section
         id="ideax"
-        className="business-check-container border-gray-300 border  m-10 flex flex-col-reverse  lg:flex-row justify-between p-5"
+        className="business-check-container border-gray-300 border  m-10 "
       >
+        <div>
+
+        <h2
+              
+              className=" mb-0 text-center"
+              >
+              How you can improve your idea
+            </h2>
+            <p className="">
+              Slight changes may occur in the results depending on market
+              trends.
+            </p>
+                </div>
+              <div className="flex flex-col-reverse  lg:flex-row justify-between ">
+
         <div className=" w-[75%]">
           <div className="business-improvements">
-          <h2 style={{
-                display: "flex",
-                gap: "10px",
-              }} className=" mb-0">How you can improve your idea
-          </h2>
-          <p className=" text-left">
-            Slight changes may occur in the results depending on market trends.
-          </p>
             
+
             <ul>
               {[
                 {
@@ -618,9 +800,10 @@ const WizardResult = () => {
                         item.label === "Important!"
                           ? "text-orange-500"
                           : "text-gray-500"
-                      } ml-4`}
+                      } ml-4 flex flex-row justify-center items-center gap-2`}
                     >
                       {item.label}
+                      <FaArrowRight />
                     </span>
                   </div>
                   {expandedItems[index] && (
@@ -634,14 +817,78 @@ const WizardResult = () => {
           </div>
         </div>
         <div className="overview-right ">
-          <div className="business-score-circle">
-            <Doughnut data={bardata3} options={options} />
-            <div className="doughnut-center">
-              <p className="circle-text">{totalMarketScrore2}%</p>
-              <p>Score with Ideax</p>
-            </div>
-          </div>
-        </div>
+          {[
+            {
+              href: "#ideax",
+              data: bardata3,
+              score: totalMarketScrore2,
+              label: "Score with Ideax",
+            },
+          ].map((item, index) => {
+            // Determine radius and color based on the score
+            const radius = 40;
+            const color =
+              item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
+
+            // Calculate circle properties
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (item.score / 100) * circumference;
+
+            return (
+              <div
+                key={index}
+                className="circular-progress"
+                style={{ textAlign: "center" }}
+              >
+                <svg width="200" height="200" viewBox="0 0 100 100">
+                  {/* Background Circle */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r={radius}
+                    fill="none"
+                    stroke="#fde8e8"
+                    strokeWidth="8"
+                  />
+                  {/* Progress Circle */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r={radius}
+                    fill="none"
+                    stroke={color}
+                    strokeWidth="8"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={offset}
+                    strokeLinecap="round"
+                    transform="rotate(-90 50 50)"
+                  />
+                  {/* Percentage Text */}
+                  <text
+                    x="50"
+                    y="55"
+                    textAnchor="middle"
+                    fontSize="15"
+                    fill={color}
+                  >
+                    {item.score}%
+                  </text>
+                </svg>
+                <p
+                  style={{
+                    marginTop: "10px",
+                    color: "#000",
+                    fontSize: "1.4rem",
+                  }}
+                  className=" text-2xl"
+                >
+                  {item.label}
+                </p>
+              </div>
+            );
+          })}
+              </div>
+              </div>
       </section>
     </div>
   );

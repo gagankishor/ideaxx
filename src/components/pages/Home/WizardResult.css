@@ -3,7 +3,7 @@
   /* max-width: 80%; */
   /* margin: 20px auto; */
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 8px;
   /* border: 1px solid gray; */
@@ -17,7 +17,7 @@ h2 {
 .business-overview {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .overview-left {
@@ -69,8 +69,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 35%;
-  margin: 50px 0px;
+  /* width: 35%; */
+  margin: 50px 20px;
 }
 .business-score-circle {
   position: relative;

@@ -3,12 +3,9 @@ import { FaArrowAltCircleRight, FaCircle } from "react-icons/fa";
 import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
-import Link from "next/link"; // Correct import for Link
+import Link from "next/link"; 
 import ImpactSection from "./ImpactSection";
 import AwardsSection from "./AwardsSection";
-import Image from "next/image";
-import TestimonialCarousel from "./TestimonialCarousel";
-// import ImpactSection from "./ImpactSection";
 const ProductLineupSection = () => {
   const containerStyle = {
     display: "flex",

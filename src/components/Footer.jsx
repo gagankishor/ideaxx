@@ -43,7 +43,7 @@
 // export default Footer;
 
 import Link from 'next/link';
-import { FaFacebook, FaFacebookF } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
 import { FaInstagram, FaLinkedin, FaPinterest, FaTiktok, FaYoutube } from 'react-icons/fa6';
 
 export default function Footer() {

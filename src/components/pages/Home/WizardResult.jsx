@@ -468,7 +468,7 @@ const WizardResult = () => {
                   </p>
                   <p className=" lg:max-w-[200px] text-justify">
                     An online store offering a diverse range of toys suitable
-                    for all age groups."' holds great potential. Now that you've
+                    for all age groups.&quot; holds great potential. Now that you&quot;ve
                     started planning and preparation also Balancing a job and an
                     idea can be tough. Try dedicating specific time slots, even
                     short ones

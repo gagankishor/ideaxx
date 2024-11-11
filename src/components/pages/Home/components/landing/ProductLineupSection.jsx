@@ -1,5 +1,5 @@
 "use client";
-import { FaArrowAltCircleRight, FaCircle } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";

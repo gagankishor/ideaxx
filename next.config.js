@@ -1,4 +1,5 @@
 // next.config.js
+
 export default {
   reactStrictMode: true,
   async redirects() {
@@ -15,5 +16,14 @@ export default {
         permanent: true,
       },
     ];
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        pathname: '/**', // This allows any image path under 'via.placeholder.com'
+      },
+    ],
   },
 };

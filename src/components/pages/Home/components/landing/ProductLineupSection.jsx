@@ -1,11 +1,13 @@
 "use client";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaCircle } from "react-icons/fa";
 import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import Link from "next/link"; // Correct import for Link
 import ImpactSection from "./ImpactSection";
 import AwardsSection from "./AwardsSection";
+import Image from "next/image";
+import TestimonialCarousel from "./TestimonialCarousel";
 // import ImpactSection from "./ImpactSection";
 const ProductLineupSection = () => {
   const containerStyle = {
@@ -40,7 +42,7 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className="p-4 text-white">
-              We prioritize transparency and trust in all our interactions.
+                We prioritize transparency and trust in all our interactions.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -54,7 +56,8 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className="p-4 text-white">
-              Harnessing cutting-edge AI technology to ensure your ideas are viable.
+                Harnessing cutting-edge AI technology to ensure your ideas are
+                viable.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -67,7 +70,8 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className=" p-4 text-white">
-              A dedicated online team that works together to bring your vision to life.
+                A dedicated online team that works together to bring your vision
+                to life.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -80,7 +84,8 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className=" p-4 text-white">
-              A dedicated online team that works together to bring your vision to life.
+                A dedicated online team that works together to bring your vision
+                to life.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -98,7 +103,7 @@ const ProductLineupSection = () => {
       >
         <h2 className="client-heading">
           <span className="client-heading-text">
-          Wide range of AI Based Tools, for All your Business needs.
+            Wide range of AI Based Tools, for All your Business needs.
           </span>
         </h2>
         <p className="client-description md:max-w-[60%]">
@@ -114,58 +119,111 @@ const ProductLineupSection = () => {
           />
         </div>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-4">
-  <div className="relative p-[10px] md:w-[48%]">
-    <img src="home-platform/blank1.jpg" className="w-full" alt="Image 1" />
-    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
-      <div className="flex flex-col items-center mt-6">
-        <div className="mb-2 flex flex-row gap-3">
-          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
-        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
+          <div className="relative p-[10px] md:w-[48%]">
+            <img
+              src="home-platform/blank1.jpg"
+              className="w-full"
+              alt="Image 1"
+            />
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+              <div className="flex flex-col items-center mt-6">
+                <div className="mb-2 flex flex-row gap-3">
+                  <img
+                    src="/main-icon/Businessidentity.png"
+                    alt=""
+                    width={40}
+                    className=" bg-white rounded-md p-1"
+                  />
+                  <h3 className="text-white text-xl font-bold mb-1">
+                    Brand Name
+                  </h3>
+                </div>
+                <p className="text-white text-sm text-center max-w-[70%]">
+                  This is a description for Image It gives more context about
+                  the image.{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative p-[10px] md:w-[48%]">
+            <img
+              src="home-platform/blank2.jpg"
+              className="w-full"
+              alt="Image 2"
+            />
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+              <div className="flex flex-col items-center mt-6">
+                <div className="mb-2 flex flex-row gap-3">
+                  <img
+                    src="/main-icon/Businessidentity.png"
+                    alt=""
+                    width={40}
+                    className=" bg-white rounded-md p-1"
+                  />
+                  <h3 className="text-white text-xl font-bold mb-1">
+                    Brand Name
+                  </h3>
+                </div>
+                <p className="text-white text-sm text-center max-w-[70%]">
+                  This is a description for Image It gives more context about
+                  the image.{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative p-[10px] md:w-[48%]">
+            <img
+              src="home-platform/blank3.jpg"
+              className="w-full"
+              alt="Image 3"
+            />
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+              <div className="flex flex-col items-center mt-6">
+                <div className="mb-2 flex flex-row gap-3">
+                  <img
+                    src="/main-icon/Businessidentity.png"
+                    alt=""
+                    width={40}
+                    className=" bg-white rounded-md p-1"
+                  />
+                  <h3 className="text-white text-xl font-bold mb-1">
+                    Brand Name
+                  </h3>
+                </div>
+                <p className="text-white text-sm text-center max-w-[70%]">
+                  This is a description for Image It gives more context about
+                  the image.{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative p-[10px] md:w-[48%]">
+            <img
+              src="home-platform/blank4.jpg"
+              className="w-full"
+              alt="Image 4"
+            />
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+              <div className="flex flex-col items-center mt-6">
+                <div className="mb-2 flex flex-row gap-3">
+                  <img
+                    src="/main-icon/Businessidentity.png"
+                    alt=""
+                    width={40}
+                    className=" bg-white rounded-md p-1"
+                  />
+                  <h3 className="text-white text-xl font-bold mb-1">
+                    Brand Name
+                  </h3>
+                </div>
+                <p className="text-white text-sm text-center max-w-[70%]">
+                  This is a description for Image It gives more context about
+                  the image.{" "}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image.  </p>
-      </div>
-    </div>
-  </div>
-  <div className="relative p-[10px] md:w-[48%]">
-    <img src="home-platform/blank2.jpg" className="w-full" alt="Image 2" />
-    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
-    <div className="flex flex-col items-center mt-6">
-        <div className="mb-2 flex flex-row gap-3">
-          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
-        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
-        </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. </p>
-      </div>
-    </div>
-  </div>
-  <div className="relative p-[10px] md:w-[48%]">
-    <img src="home-platform/blank3.jpg" className="w-full" alt="Image 3" />
-    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
-    <div className="flex flex-col items-center mt-6">
-        <div className="mb-2 flex flex-row gap-3">
-          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
-        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
-        </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. </p>
-      </div>
-    </div>
-  </div>
-  <div className="relative p-[10px] md:w-[48%]">
-    <img src="home-platform/blank4.jpg" className="w-full" alt="Image 4" />
-    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
-    <div className="flex flex-col items-center mt-6">
-        <div className="mb-2 flex flex-row gap-3">
-          <img src="/main-icon/Businessidentity.png" alt="" width={40} className=" bg-white rounded-md p-1"/>
-        <h3 className="text-white text-xl font-bold mb-1">Brand Name</h3>
-        </div>
-        <p className="text-white text-sm text-center max-w-[70%]">This is a description for Image  It gives more context about the image. </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
       </div>
       <div
         style={{
@@ -276,8 +334,8 @@ const ProductLineupSection = () => {
           </div>
         </div>
       </div>
-      <ImpactSection/>
-      <AwardsSection/>
+      <ImpactSection />
+      <AwardsSection />
       {/* <ImpactSection/> */}
       <div
         style={{
@@ -342,47 +400,72 @@ const ProductLineupSection = () => {
           </div>
         </div>
         <div className="mt-10">
-        <div className="mt-10">
   <h3 className="text-3xl font-semibold text-center mb-8 text-white">
     What Our Clients Say About Us
   </h3>
-  <ul className="space-y-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-5">
     {[
       {
         quote: "IDEAX has transformed the way we manage our business!",
-        author: "Sarah L., Small Business Owner",
+        author: "Sarah L.",
+        role: "Small Business Owner",
+        image: "https://via.placeholder.com/150", // Replace with actual image URLs
+        company: "BizCorp",
       },
       {
-        quote: "The AI features have significantly improved our decision-making process.",
-        author: "Mike R., Startup Founder",
+        quote:
+          "The AI features have significantly improved our decision-making process.",
+        author: "Mike R.",
+        role: "Startup Founder",
+        image: "https://via.placeholder.com/150",
+        company: "TechStart",
       },
       {
-        quote: "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
-        author: "Emily T., Entrepreneur",
+        quote:
+          "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
+        author: "Emily T.",
+        role: "Entrepreneur",
+        image: "https://via.placeholder.com/150",
+        company: "Visionary Inc.",
       },
       {
-        quote: "The community support and resources have been invaluable for my growth.",
-        author: "David K., Freelance Consultant",
+        quote:
+          "The community support and resources have been invaluable for my growth.",
+        author: "David K.",
+        role: "Freelance Consultant",
+        image: "https://via.placeholder.com/150",
+        company: "Independent",
       },
       {
-        quote: "I love the tools for managing cash flow; they make financial planning so much easier!",
-        author: "Jessica P., E-commerce Manager",
+        quote:
+          "I love the tools for managing cash flow; they make financial planning so much easier!",
+        author: "Jessica P.",
+        role: "E-commerce Manager",
+        image: "https://via.placeholder.com/150",
+        company: "ShopEase",
       },
     ].map((testimonial, index) => (
-      <li
+      <div
         key={index}
-        className="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+        className="max-w-sm mx-auto bg-white text-black p-8 rounded-xl flex flex-col items-center shadow-lg relative mt-10"
       >
-        <p className="text-lg text-white text-left mb-2">🌟 &quot;{testimonial.quote}&quot;</p>
-        <span className="block font-semibold text-right text-white">
-          — {testimonial.author}
-        </span>
-      </li>
-    ))}
-  </ul>
-</div>
+        <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
+          <img
+            src='https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png'
+            alt={`${testimonial.author}'s photo`}
+            className="w-full h-full object-cover "
+          />
+        </div>
 
-    </div>
+        <div className="text-center mt-5">
+          <h4 className="font-semibold text-lg">{testimonial.author}</h4>
+          <p className="text-sm mb-4">{testimonial.role}</p>
+          <p className="text-sm italic">“{testimonial.quote}”</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </div>
   );

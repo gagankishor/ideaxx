@@ -134,7 +134,7 @@
 
 .slick-prev {
   left: -50px;
-  display: none;
+  /* display: none; */
 }
 
 .slick-next {
@@ -144,7 +144,7 @@
   color: #000;
   height: 100px;
   margin-right: 60px;
-  display: none;
+  /* display: none; */
 }
 
 .slick-next:before, .slick-prev:before {
@@ -152,7 +152,7 @@
 }
 
 .slick-arrow:hover {
-  background-color: #333;
+  background-color: #fffefe;
   opacity: 1;
 }
 

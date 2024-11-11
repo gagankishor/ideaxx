@@ -9,6 +9,8 @@ import { GiTeamIdea } from "react-icons/gi";
 import { TiCloudStorage } from "react-icons/ti";
 
 import {
+  MdArrowBackIosNew,
+  MdOutlineArrowForwardIos,
   MdOutlineSell,
 } from "react-icons/md";
 import Link from "next/link";
@@ -173,18 +175,16 @@ const CoreSolutionsSection = () => {
     slidesToScroll: 1, // Scroll one slide at a time
     nextArrow: (
       <button
-        className="next-arrow "
-        style={{display:'none',backgroundColor:'#47333300'}}
+        className="next-arrow ml-[-20px]"
       >
-        {/* <MdOutlineArrowForwardIos color="white" size={30} /> */}
+        <MdOutlineArrowForwardIos color="white" size={30} />
       </button>
     ),
     prevArrow: (
       <button
         className="prev-arrow"
-        style={{display:'none'}}
       >
-        {/* <MdArrowBackIosNew color="white" size={30} /> */}
+        <MdArrowBackIosNew color="white" size={30} />
       </button>
     ),
     responsive: [

@@ -126,20 +126,20 @@
 
 .slick-prev:hover,
 .slick-next:hover {
-  background-color: rgba(128, 128, 128, 0);
+  background-color: rgba(221, 218, 218, 0);
 }
 
 .slick-prev {
-  left: 10px; 
-  display: none;
-  background: #00000000;
+  left: -40px; 
+  /* display: none; */
+  background: #fffcfc00;
 
 }
 
 .slick-next {
-  right: 10px;
-  display: none;
-  background: #00000000;
+  right: -40px;
+  /* display: none; */
+  background: #ffffff00;
 
 }
 

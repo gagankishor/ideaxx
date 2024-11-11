@@ -48,64 +48,60 @@ import { FaInstagram, FaLinkedin, FaPinterest, FaTiktok, FaYoutube } from 'react
 
 export default function Footer() {
   return (
-    <footer className="bg-white  py-8">
+    <footer className="bg-white border-t-2 mt-5  py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600">
         {/* Product Column */}
         <div>
-          <h4 className="font-semibold mb-4 text-left">Product</h4>
-          <ul className="space-y-2 text-left">
-            <li><Link href="#">Website Templates</Link></li>
-            <li><Link href="#">Website Builder</Link></li>
-            <li><Link href="#">Website Design</Link></li>
-            <li><Link href="#">Ideax Features</Link></li>
-            <li><Link href="#">App Market</Link></li>
-            <li><Link href="#">Web Hosting</Link></li>
-            <li><Link href="#">Domain Names</Link></li>
-            <li><Link href="#">Website Accessibility</Link></li>
-            <li><Link href="#">Mobile App Builder</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold mb-4 text-left">Product</h4>
-          <ul className="space-y-2 text-left">
-            <li><Link href="#">Website Templates</Link></li>
-            <li><Link href="#">Website Builder</Link></li>
-            <li><Link href="#">Website Design</Link></li>
-            <li><Link href="#">Ideax Features</Link></li>
-            <li><Link href="#">App Market</Link></li>
-            <li><Link href="#">Web Hosting</Link></li>
-            <li><Link href="#">Domain Names</Link></li>
-            <li><Link href="#">Website Accessibility</Link></li>
-            <li><Link href="#">Mobile App Builder</Link></li>
-          </ul>
-        </div>
+    <h4 className="font-semibold mb-4 text-left">AI Tools</h4>
+    <ul className="space-y-2 text-left">
+      <li><Link href="#">Business Idea Checker</Link></li>
+      <li><Link href="#">Market Analysis</Link></li>
+      <li><Link href="#">Competitor Research</Link></li>
+      <li><Link href="#">Profitability Assessment</Link></li>
+      <li><Link href="#">Growth Potential Insights</Link></li>
+      <li><Link href="#">Investor Matchmaking</Link></li>
+      <li><Link href="#">Startup Roadmap</Link></li>
+    </ul>
+  </div>
 
-        {/* Solutions Column */}
-        <div>
-          <h4 className="font-semibold mb-4 text-left">Solutions</h4>
-          <ul className="space-y-2 text-left">
-            <li><Link href="#">Online Store</Link></li>
-            <li><Link href="#">Online Booking</Link></li>
-            <li><Link href="#">Restaurant Website</Link></li>
-            <li><Link href="#">Blog Website</Link></li>
-            <li><Link href="#">Portfolio Website</Link></li>
-            <li><Link href="#">eCommerce Website</Link></li>
-            <li><Link href="#">Ideax Studio</Link></li>
-            <li><Link href="#">Enterprise Solutions</Link></li>
-            <li><Link href="#">Student Website</Link></li>
-          </ul>
-        </div>
+  {/* Services Column */}
+  <div>
+    <h4 className="font-semibold mb-4 text-left">Services</h4>
+    <ul className="space-y-2 text-left">
+      <li><Link href="#">Idea Validation</Link></li>
+      <li><Link href="#">Dedicated Online Team</Link></li>
+      <li><Link href="#">Strategy Consultation</Link></li>
+      <li><Link href="#">Execution Support</Link></li>
+      <li><Link href="#">Networking Opportunities</Link></li>
+      <li><Link href="#">Feedback Exchange</Link></li>
+      <li><Link href="#">Funding Access</Link></li>
+    </ul>
+  </div>
 
-        {/* Learn Column */}
-        <div>
-          <h4 className="font-semibold mb-4 text-left">Learn</h4>
-          <ul className="space-y-2 text-left">
-            <li><Link href="#">Ideax Blog</Link></li>
-            <li><Link href="#">Privacy and Security Hub</Link></li>
-            <li><Link href="#">SEO Learning Hub</Link></li>
-            <li><Link href="#">Ideax Encyclopedia</Link></li>
-          </ul>
-        </div>
+  {/* Solutions Column */}
+  <div>
+    <h4 className="font-semibold mb-4 text-left">Solutions</h4>
+    <ul className="space-y-2 text-left">
+      <li><Link href="#">Entrepreneur Community</Link></li>
+      <li><Link href="#">Collaborative Workspace</Link></li>
+      <li><Link href="#">Industry-Specific Insights</Link></li>
+      <li><Link href="#">AI-Powered Reports</Link></li>
+      <li><Link href="#">Financial Planning Tools</Link></li>
+      <li><Link href="#">Business Strategy</Link></li>
+      <li><Link href="#">Global Market Reach</Link></li>
+    </ul>
+  </div>
+
+  {/* Resources Column */}
+  <div>
+    <h4 className="font-semibold mb-4 text-left">Resources</h4>
+    <ul className="space-y-2 text-left">
+      <li><Link href="#">Ideax Blog</Link></li>
+      <li><Link href="#">Privacy & Security Hub</Link></li>
+      <li><Link href="#">Entrepreneur Guide</Link></li>
+      <li><Link href="#">AI Trends in Business</Link></li>
+    </ul>
+  </div>
 
         {/* Support Column */}
         <div>
@@ -120,8 +116,8 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4 text-left text-4xl">IdeaX</h4>
           <ul className="space-y-2 text-left">
-            <li>The Ideax  offers a complete solution from enterprise-grade infrastructure and business features to advanced SEO and marketing tools–enabling anyone to create and grow online.</li>
-            <li><Link href="#">About</Link></li>
+          <li>Ideax empowers entrepreneurs with AI-driven tools, market insights, and a supportive community, transforming ideas into successful ventures.</li>
+            <li><Link href="#">About Us</Link></li>
             <li><Link href="#">Contact Us</Link></li>
           </ul>
         </div>

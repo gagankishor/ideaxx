@@ -260,6 +260,12 @@ const WizardResult = () => {
               const radius = 40;
               const color =
                 item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
+              const backgroundColor =
+                item.score > 80
+                  ? "#d4edda"
+                  : item.score > 50
+                  ? "#fff3cd"
+                  : "#f8d7da";
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
 
@@ -276,6 +282,12 @@ const WizardResult = () => {
                     viewBox="0 0 100 100"
                     className="w-3/4 sm:w-2/3 md:w-3/4 lg:w-full"
                   >
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r={radius} // Slightly larger than the main circle radius
+                      fill={backgroundColor} // Light background color
+                    />
                     <circle
                       cx="50"
                       cy="50"
@@ -310,6 +322,12 @@ const WizardResult = () => {
                   <p className="mt-2 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
                     {item.label}
                   </p>
+                  <a
+                    href={item.href}
+                    className="mt-1 inline-block text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 ease-in-out"
+                  >
+                    More Details &rarr;
+                  </a>
                 </a>
               );
             })}
@@ -318,12 +336,12 @@ const WizardResult = () => {
       </div>
 
       <section>
-        <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white shadow-lg flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0">
+        <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white shadow-lg flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
           {/* Left Text Section */}
           <div>
             <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
-              Take the first step <span className="font-semibold">toward</span>{" "}
-              making your idea a reality, or{" "}
+              Take the first step <span className="font-semibold">towards</span>{" "}
+              making your idea to a reality,{" "}
               <span className="font-semibold">launch</span> your idea now.
             </h3>
           </div>
@@ -337,7 +355,7 @@ const WizardResult = () => {
 
       <section
         id="idea"
-        className="business-check-container border-gray-300 border  m-auto p-10"
+        className="business-check-container border-gray-300 border  m-auto mt-10 p-10 lg:mx-10"
       >
         <div>
           <h2
@@ -385,7 +403,12 @@ const WizardResult = () => {
               const radius = 40;
               const color =
                 item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
-
+              const backgroundColor =
+                item.score > 80
+                  ? "#d4edda"
+                  : item.score > 50
+                  ? "#fff3cd"
+                  : "#f8d7da";
               // Calculate circle properties
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
@@ -393,11 +416,16 @@ const WizardResult = () => {
               return (
                 <div
                   key={index}
-                  className="circular-progress"
+                  className="circular-progress flex flex-col justify-center items-center"
                   style={{ textAlign: "center" }}
                 >
                   <svg width="200" height="200" viewBox="0 0 100 100">
-                    {/* Background Circle */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r={radius} 
+                      fill={backgroundColor} 
+                    />
                     <circle
                       cx="50"
                       cy="50"
@@ -406,7 +434,6 @@ const WizardResult = () => {
                       stroke="#fde8e8"
                       strokeWidth="8"
                     />
-                    {/* Progress Circle */}
                     <circle
                       cx="50"
                       cy="50"
@@ -419,7 +446,6 @@ const WizardResult = () => {
                       strokeLinecap="round"
                       transform="rotate(-90 50 50)"
                     />
-                    {/* Percentage Text */}
                     <text
                       x="50"
                       y="55"
@@ -439,10 +465,14 @@ const WizardResult = () => {
                     className=" text-2xl"
                   >
                     {item.label}
-                    
-
                   </p>
-                  <p className="max-w-[200px] text-justify">An online store offering a diverse range of toys suitable for all age groups."' holds great potential. Now that you've started planning and preparation also Balancing a job and an idea can be tough. Try dedicating specific time slots, even short ones</p>
+                  <p className=" lg:max-w-[200px] text-justify">
+                    An online store offering a diverse range of toys suitable
+                    for all age groups."' holds great potential. Now that you've
+                    started planning and preparation also Balancing a job and an
+                    idea can be tough. Try dedicating specific time slots, even
+                    short ones
+                  </p>
                 </div>
               );
             })}
@@ -451,7 +481,7 @@ const WizardResult = () => {
       </section>
       <section
         id="market"
-        className="business-check-container border-gray-300 border  m-auto flex flex-col-reverse lg:flex-row p-5"
+        className="business-check-container border-gray-300 border  m-auto mt-10 flex flex-col-reverse lg:flex-row lg:mx-10 p-5"
       >
         <div className=" w-[100%]">
           <h2 className=" mb-0 text-center">
@@ -607,7 +637,12 @@ const WizardResult = () => {
                     : item.score > 50
                     ? "orange"
                     : "red"; // Example color logic
-
+                const backgroundColor =
+                  item.score > 80
+                    ? "#d4edda"
+                    : item.score > 50
+                    ? "#fff3cd"
+                    : "#f8d7da";
                 // Calculate circle properties
                 const circumference = 2 * Math.PI * radius;
                 const offset =
@@ -620,6 +655,12 @@ const WizardResult = () => {
                     style={{ textAlign: "center" }}
                   >
                     <svg width="200" height="200" viewBox="0 0 100 100">
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r={radius}
+                        fill={backgroundColor}
+                      />
                       {/* Background Circle */}
                       <circle
                         cx="50"
@@ -700,7 +741,7 @@ const WizardResult = () => {
       </section>
       <section
         id="ideax"
-        className="business-check-container border-gray-300 border  m-auto "
+        className="business-check-container border-gray-300 border  m-auto mt-10 lg:mx-10 "
       >
         <div>
           <h2 className=" mb-0 text-center">How you can improve your idea</h2>
@@ -709,7 +750,7 @@ const WizardResult = () => {
           </p>
         </div>
         <div className="flex flex-col-reverse  lg:flex-row justify-between ">
-          <div className=" w-full lg:w-[75%]">
+          <div className=" w-full ">
             <div className="business-improvements">
               <ul>
                 {[
@@ -781,6 +822,12 @@ const WizardResult = () => {
               const radius = 40;
               const color =
                 item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
+              const backgroundColor =
+                item.score > 80
+                  ? "#d4edda"
+                  : item.score > 50
+                  ? "#fff3cd"
+                  : "#f8d7da";
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
               return (
@@ -790,6 +837,12 @@ const WizardResult = () => {
                   style={{ textAlign: "center" }}
                 >
                   <svg width="200" height="200" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r={radius} // Slightly larger than the main circle radius
+                      fill={backgroundColor} // Light background color
+                    />
                     <circle
                       cx="50"
                       cy="50"

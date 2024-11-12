@@ -45,7 +45,6 @@ import {
   FaInstagram,
   FaLinkedin,
   FaPinterest,
-  FaTiktok,
   FaYoutube,
 } from "react-icons/fa6";
 export default function Footer() {

@@ -2,11 +2,12 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaRobot } from "react-icons/fa";
+import { FaMusic, FaRobot, FaStar } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaMapLocation } from "react-icons/fa6";
+import Link from "next/link";
 Chart.register(ArcElement, Tooltip, Legend);
 const WizardResult = () => {
   const [aiContent, setAiContent] = useState("");
@@ -236,7 +237,7 @@ const WizardResult = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-5 items-center justify-center">
-          <div className="flex flex-col md:flex-row justify-between w-full md:w-11/12 lg:w-10/12 mx-auto my-5 md:my-8">
+          <div className="flex flex-col md:flex-row justify-between w-full md:w-11/12 lg:w-full mx-auto  my-5 md:my-8">
             {[
               {
                 href: "#idea",
@@ -258,67 +259,161 @@ const WizardResult = () => {
               },
             ].map((item, index) => {
               const radius = 40;
-              const color =
-                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
-              const backgroundColor =
-                item.score > 80
-                  ? "#d4edda"
-                  : item.score > 50
-                  ? "#fff3cd"
-                  : "#f8d7da";
+              // const color =
+              //   item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
+              // const backgroundColor =
+              //   item.score > 80
+              //     ? "#d4edda"
+              //     : item.score > 50
+              //     ? "#fff3cd"
+              //     : "#f8d7da";
+              // const strokeColor =
+              //   item.score > 80
+              //     ? "#e6f7e9" 
+              //     : item.score > 50
+              //     ? "#fff9e6"
+              //     : "#fdecea"; 
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
+              
 
+              const points = [
+                {
+                  id: 1,
+                  label: "Point One",
+                  position: "-top-6 left-8",
+                  bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)", 
+                  icon: <FaMapLocation />
+                },
+                {
+                  id: 2,
+                  label: "Point Two",
+                  position: "-top-6 right-8",
+                  bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                  icon: <FaStar />
+                },
+                // { 
+                //   id: 3,
+                //   label: "Point Three",
+                //   position: "-bottom-6 left-8",
+                //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
+                //   icon: <FaHeart /> // Heart icon
+                // },
+                // {
+                //   id: 4,
+                //   label: "Point Four",
+                //   position: "-bottom-6 right-8",
+                //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
+                //   icon: <FaCogs /> // Gear icon
+                // },
+                {
+                  id: 5,
+                  label: "Point Five",
+                  position: "top-1/2 -translate-y-1/2 left-2",
+                  bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)", // Light blue to teal gradient
+                  icon: <FaMusic /> // Music note icon
+                },
+                // {
+                //   id: 6,
+                //   label: "Point Six",
+                //   position: "top-1/2 -translate-y-1/2 right-2",
+                //   bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Purple to blue gradient
+                //   icon: <FaRocket /> // Rocket icon
+                // },
+              ];
+
+              
+              
               return (
-                <a
+                <div
                   href={item.href}
                   key={index}
-                  className="circular-progress flex flex-col items-center w-full md:w-1/3"
+                  className={`relative circular-progress flex flex-col items-center w-full md:w-1/3 p-5 ${index !== 0 ? 'border-l-2 border-gray-300' : ''}`}
                   style={{ textAlign: "center" }}
                 >
+                  <div>
+                    {points.map((point) => (
+                      <div
+                        key={point.id}
+                        className={`absolute ${point.position} text-center flex flex-col justify-center items-center `}
+                      >
+                        <div
+                          className={`w-8 h-8 ${point.bgColor} text-white rounded-full flex items-center justify-center shadow-lg`}
+                          style={{
+                            background:point.bgColor,
+                          }}
+                        >
+                          {point.icon}
+                          {/* {point.id} */}
+                        </div>
+                        <h4 className="text-sm text-center mt-2 text-gray-600">
+                          {point.label}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
                   <svg
-                    width="150"
-                    height="150"
-                    viewBox="0 0 100 100"
-                    className="w-3/4 sm:w-2/3 md:w-3/4 lg:w-full"
-                  >
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r={radius} // Slightly larger than the main circle radius
-                      fill={backgroundColor} // Light background color
-                    />
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r={radius}
-                      fill="none"
-                      stroke="#fde8e8"
-                      strokeWidth="8"
-                    />
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r={radius}
-                      fill="none"
-                      stroke={color}
-                      strokeWidth="8"
-                      strokeDasharray={circumference}
-                      strokeDashoffset={offset}
-                      strokeLinecap="round"
-                      transform="rotate(-90 50 50)"
-                    />
-                    {/* Percentage Text */}
-                    <text
-                      x="50"
-                      y="55"
-                      textAnchor="middle"
-                      fontSize="15"
-                      fill="black"
-                    >
-                      {item.score}%
-                    </text>
-                  </svg>
+  width="150"
+  height="150"
+  viewBox="0 0 120 120" // Increased the viewBox size
+  className="w-3/4 sm:w-2/3 md:w-3/4 lg:w-full"
+>
+  <circle
+    cx="60" // Adjusted center for better alignment
+    cy="60" // Adjusted center for better alignment
+    r={radius} // Slightly larger than the main circle radius
+    fill="white" // Light background color
+  />
+  <circle
+    cx="60" // Adjusted center for better alignment
+    cy="60" // Adjusted center for better alignment
+    r={radius}
+    fill="none"
+    stroke="#cac8fa"
+    strokeWidth="8"
+  />
+  <circle
+    cx="60" // Adjusted center for better alignment
+    cy="60" // Adjusted center for better alignment
+    r="60"
+    fill="none"
+    stroke="#DBDBDD"
+    strokeWidth="2"
+    strokeDasharray="2 4"
+  />
+
+<defs>
+    <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style={{ stopColor: "#BD42CE", stopOpacity: 1 }} />
+      <stop offset="50%" style={{ stopColor: "#8749EC", stopOpacity: 1 }} />
+      <stop offset="100%" style={{ stopColor: "#616BFC", stopOpacity: 1 }} />
+    </linearGradient>
+  </defs>
+  
+  <circle
+    cx="60" // Adjusted center for better alignment
+    cy="60" // Adjusted center for better alignment
+    r={radius}
+    fill="none"
+    stroke="url(#gradientStroke)" // Reference the gradient here
+    strokeWidth="8"
+    strokeDasharray={circumference}
+    strokeDashoffset={offset}
+    strokeLinecap="round"
+    transform="rotate(-90 60 60)" // Adjusted rotation origin
+  />
+  {/* Percentage Text */}
+  <text
+    x="60" // Adjusted to match the new center position
+    y="65" // Adjusted to match the new center position
+    textAnchor="middle"
+    fontSize="15"
+    fill="black"
+  >
+    {item.score}%
+  </text>
+</svg>
+
                   <p className="mt-2 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
                     {item.label}
                   </p>
@@ -328,15 +423,15 @@ const WizardResult = () => {
                   >
                     More Details &rarr;
                   </a>
-                </a>
+                </div>
               );
             })}
           </div>
         </div>
       </div>
-
+            
       <section>
-        <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white shadow-lg flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
+        <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
           {/* Left Text Section */}
           <div>
             <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
@@ -348,7 +443,9 @@ const WizardResult = () => {
 
           {/* Button Section */}
           <div className="btns-container">
+          <Link href="/plan-details" passHref>
             <button className="btn">Launch Your Idea</button>
+          </Link>
           </div>
         </div>
       </section>
@@ -373,7 +470,7 @@ const WizardResult = () => {
           </p>
         </div>
         <div className="flex flex-col-reverse lg:flex-row items-center justify-around">
-          <div className=" ">
+          <div className=" lg:mr-[10px] ">
             <div className="ai-generated-content">
               {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
               {loading ? (
@@ -410,28 +507,29 @@ const WizardResult = () => {
                   ? "#fff3cd"
                   : "#f8d7da";
               // Calculate circle properties
+              const strokeColor =
+                item.score > 80
+                  ? "#e6f7e9" // Light green
+                  : item.score > 50
+                  ? "#fff9e6" // Light yellow
+                  : "#fdecea"; // Light red
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
 
               return (
                 <div
                   key={index}
-                  className="circular-progress flex flex-col justify-center items-center"
+                  className="circular-progress flex flex-col justify-start mt-0 items-center"
                   style={{ textAlign: "center" }}
                 >
                   <svg width="200" height="200" viewBox="0 0 100 100">
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r={radius} 
-                      fill={backgroundColor} 
-                    />
+                    <circle cx="50" cy="50" r={radius} fill={backgroundColor} />
                     <circle
                       cx="50"
                       cy="50"
                       r={radius}
                       fill="none"
-                      stroke="#fde8e8"
+                      stroke={strokeColor}
                       strokeWidth="8"
                     />
                     <circle
@@ -466,13 +564,15 @@ const WizardResult = () => {
                   >
                     {item.label}
                   </p>
-                  <p className=" lg:max-w-[200px] text-justify">
-                    An online store offering a diverse range of toys suitable
-                    for all age groups.&quot; holds great potential. Now that you&quot;ve
-                    started planning and preparation also Balancing a job and an
-                    idea can be tough. Try dedicating specific time slots, even
-                    short ones
-                  </p>
+
+                  <ul className=" lg:max-w-[200px] text-justify">
+                    <li>pointer pointer1</li>
+                    <li>pointer pointer1</li>
+                    <li>pointer pointer1</li>
+                    <li>pointer pointer1</li>
+                    <li>pointer pointer1</li>
+                    <li>pointer pointer1</li>
+                  </ul>
                 </div>
               );
             })}
@@ -643,6 +743,12 @@ const WizardResult = () => {
                     : item.score > 50
                     ? "#fff3cd"
                     : "#f8d7da";
+                const strokeColor =
+                  item.score > 80
+                    ? "#e6f7e9" // Light green
+                    : item.score > 50
+                    ? "#fff9e6" // Light yellow
+                    : "#fdecea"; // Light red
                 // Calculate circle properties
                 const circumference = 2 * Math.PI * radius;
                 const offset =
@@ -667,7 +773,7 @@ const WizardResult = () => {
                         cy="50"
                         r={radius}
                         fill="none"
-                        stroke="#fde8e8"
+                        stroke={strokeColor}
                         strokeWidth="8"
                       />
                       {/* Progress Circle */}
@@ -750,7 +856,7 @@ const WizardResult = () => {
           </p>
         </div>
         <div className="flex flex-col-reverse  lg:flex-row justify-between ">
-          <div className=" w-full ">
+          <div className=" w-full lg:mr-[10px]">
             <div className="business-improvements">
               <ul>
                 {[
@@ -828,6 +934,12 @@ const WizardResult = () => {
                   : item.score > 50
                   ? "#fff3cd"
                   : "#f8d7da";
+              const strokeColor =
+                item.score > 80
+                  ? "#e6f7e9" // Light green
+                  : item.score > 50
+                  ? "#fff9e6" // Light yellow
+                  : "#fdecea"; // Light red
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
               return (
@@ -848,7 +960,7 @@ const WizardResult = () => {
                       cy="50"
                       r={radius}
                       fill="none"
-                      stroke="#fde8e8"
+                      stroke={strokeColor}
                       strokeWidth="8"
                     />
                     <circle

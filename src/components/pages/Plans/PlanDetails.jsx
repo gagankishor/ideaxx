@@ -123,7 +123,8 @@ const Plans = () => {
               transform: "rotate(180deg)", // Rotated downward
               fontSize: "24px",
               color: "#6161FF",
-              animation: "slideDown 2s infinite"
+              animation: "slideDown 2s infinite",
+              margin:"auto"
             }}
           />
           <style>
@@ -189,7 +190,7 @@ const Plans = () => {
 };
 export default Plans;
  
-// import React from "react";
+//  
 // import "./PlanDetails.css";
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 // import { RiArrowUpDoubleFill } from "react-icons/ri";

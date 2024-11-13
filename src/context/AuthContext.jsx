@@ -1,35 +1,48 @@
-"use client"
-// src/context/AuthContext.js
-import { createContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+"use client";
+import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useRouter } from "next/navigation";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
 
+  // Check authentication status
   const checkAuthStatus = () => {
-    const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token); 
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      setIsAuthenticated(!!token);
+    }
   };
 
   useEffect(() => {
-    checkAuthStatus(); 
+    checkAuthStatus();
   }, []);
 
+  // Login function
   const login = async (token, email) => {
-    localStorage.setItem('token', token);
-    localStorage.setItem('email', email);
-    setIsAuthenticated(true);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("token", token);
+      localStorage.setItem("email", email);
+      setIsAuthenticated(true);
+      router.push("/dashboard"); // Redirect after login
+    }
   };
 
+  // Logout function
   const logout = () => {
-    localStorage.removeItem('token');
-    setIsAuthenticated(false);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("token");
+      localStorage.removeItem("email");
+      setIsAuthenticated(false);
+      router.push("/login"); // Redirect after logout
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout, setIsAuthenticated }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

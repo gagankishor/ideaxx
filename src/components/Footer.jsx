@@ -1,44 +1,4 @@
 "use client";
-
-// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-gray-800 text-white h-16 flex items-center justify-center">
-//       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-xs space-y-2 md:space-y-0 md:space-x-6 px-4">
-
-//         {/* Footer Text */}
-
-//         {/* Footer Links */}
-//         <div className="flex space-x-3">
-//           <a href="/termsOfService" className="text-white hover:text-gray-400 transition duration-200">
-//             Terms and Conditions
-//           </a>
-//           <a href="/privacyPolicy" className="text-white hover:text-gray-400 transition duration-200">
-//             Privacy Policy
-//           </a>
-//         </div>
-// <p className=" text-white font-light">All rights reserved &copy; 2024 - ideax</p>
-//         {/* Social Media Links */}
-//         <div className="flex space-x-3">
-//           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
-//             <FaFacebookF size={12} />
-//           </a>
-//           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className=" text-white hover:text-blue-400">
-//             <FaTwitter size={12} />
-//           </a>
-//           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-500">
-//             <FaInstagram size={12} />
-//           </a>
-//           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className=" text-white hover:text-blue-600">
-//             <FaLinkedinIn size={12} />
-//           </a>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-// export default Footer;
 import Link from "next/link";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
 import {
@@ -195,7 +155,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px]">
         {/* Social Icons */}
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
@@ -231,3 +190,43 @@ export default function Footer() {
     </footer>
   );
 }
+
+// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+// const Footer = () => {
+//   return (
+//     <footer className="bg-gray-800 text-white h-16 flex items-center justify-center">
+//       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-xs space-y-2 md:space-y-0 md:space-x-6 px-4">
+
+//         {/* Footer Text */}
+
+//         {/* Footer Links */}
+//         <div className="flex space-x-3">
+//           <a href="/termsOfService" className="text-white hover:text-gray-400 transition duration-200">
+//             Terms and Conditions
+//           </a>
+//           <a href="/privacyPolicy" className="text-white hover:text-gray-400 transition duration-200">
+//             Privacy Policy
+//           </a>
+//         </div>
+// <p className=" text-white font-light">All rights reserved &copy; 2024 - ideax</p>
+//         {/* Social Media Links */}
+//         <div className="flex space-x-3">
+//           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
+//             <FaFacebookF size={12} />
+//           </a>
+//           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className=" text-white hover:text-blue-400">
+//             <FaTwitter size={12} />
+//           </a>
+//           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-500">
+//             <FaInstagram size={12} />
+//           </a>
+//           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className=" text-white hover:text-blue-600">
+//             <FaLinkedinIn size={12} />
+//           </a>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// };
+// export default Footer;

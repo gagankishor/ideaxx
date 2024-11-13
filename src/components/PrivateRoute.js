@@ -1,5 +1,6 @@
 "use client";
 import { useContext, useEffect } from "react";
+import PropTypes from "prop-types";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
 
@@ -15,6 +16,11 @@ const PrivateRoute = ({ children }) => {
 
   // Render children if authenticated
   return isAuthenticated ? children : null;
+};
+
+// PropTypes validation
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default PrivateRoute;

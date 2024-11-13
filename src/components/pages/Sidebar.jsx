@@ -60,7 +60,7 @@ export default function SideBar () {
   const isIdeaRoute = pathname.includes("/idea");
   const isBusinessRoute = pathname.includes("/business-identity");
   const isMarketingRoute = pathname.includes("/marketing");
-  // const isMarketingSocialMediaRoute = pathname.includes("/marketing/social-media");
+  const isMarketingSocialMediaRoute = pathname.includes("/marketing/social-media");
   const isMarketingBlogsRoute = pathname.includes("/marketing/blogs");
   const isMarketingMaterialRoute = pathname.includes("/marketing/marketing-material");
   const isMarketingEventsRoute = pathname.includes("/marketing/events");
@@ -852,5 +852,5 @@ Contact
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}

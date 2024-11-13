@@ -2,7 +2,7 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaMusic, FaRobot, FaStar } from "react-icons/fa";
+import { FaCogs, FaHeart, FaMusic, FaRobot, FaRocket, FaStar } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
@@ -237,7 +237,7 @@ const WizardResult = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-5 items-center justify-center">
-          <div className="flex flex-col md:flex-row justify-between w-full md:w-11/12 lg:w-full mx-auto  my-5 md:my-8">
+          <div className="flex justify-around w-full md:w-11/12 lg:w-full mx-auto  my-5 md:my-8 flex-wrap">
             {[
               {
                 href: "#idea",
@@ -269,151 +269,184 @@ const WizardResult = () => {
               //     : "#f8d7da";
               // const strokeColor =
               //   item.score > 80
-              //     ? "#e6f7e9" 
+              //     ? "#e6f7e9"
               //     : item.score > 50
               //     ? "#fff9e6"
-              //     : "#fdecea"; 
+              //     : "#fdecea";
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
-              
-
               const points = [
                 {
                   id: 1,
-                  label: "Point One",
-                  position: "-top-6 left-8",
-                  bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)", 
-                  icon: <FaMapLocation />
+                  label: "ONE",
+                  position: "-top-4 -left-16",
+                  bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                  icon: <FaMapLocation />,
+                  rowDir: "flex-row-reverse",
+                  textDir: "text-right",
                 },
                 {
                   id: 2,
-                  label: "Point Two",
-                  position: "-top-6 right-8",
+                  label: "TWO",
+                  position: "-top-4 -right-16",
                   bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                  icon: <FaStar />
+                  icon: <FaStar />,
+                  rowDir: "flex-row", 
+                  textDir: "text-left",
                 },
-                // { 
+                // {
                 //   id: 3,
                 //   label: "Point Three",
-                //   position: "-bottom-6 left-8",
+                //   position: "-bottom-4 -left-20",
                 //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
-                //   icon: <FaHeart /> // Heart icon
+                //   icon: <FaHeart />, // Heart icon
+                //   rowDir: "flex-row-reverse",
+                //   textDir: "text-right",
                 // },
                 // {
                 //   id: 4,
                 //   label: "Point Four",
-                //   position: "-bottom-6 right-8",
+                //   position: "-bottom-4 -right-20",
                 //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
-                //   icon: <FaCogs /> // Gear icon
+                //   icon: <FaCogs /> ,// Gear icon
+                //   rowDir: "flex-row",
+                //   textDir: "text-left",
                 // },
                 {
                   id: 5,
-                  label: "Point Five",
-                  position: "top-1/2 -translate-y-1/2 left-2",
+                  label: "FIVE",
+                  position: "top-1/2 -translate-y-1/2 -left-24",
                   bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)", // Light blue to teal gradient
-                  icon: <FaMusic /> // Music note icon
+                  icon: <FaMusic />, // Music note icon
+                  rowDir: "flex-row-reverse",
+                  textDir: "text-right",
                 },
-                // {
-                //   id: 6,
-                //   label: "Point Six",
-                //   position: "top-1/2 -translate-y-1/2 right-2",
-                //   bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Purple to blue gradient
-                //   icon: <FaRocket /> // Rocket icon
-                // },
+                {
+                  id: 6,
+                  label: "SIX",
+                  position: "top-1/2 -translate-y-1/2 -right-24 ",
+                  bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Purple to blue gradient
+                  icon: <FaRocket />, // Rocket icon
+                  rowDir: "flex-row",
+                  textDir: "text-left",
+                },
               ];
-
-              
-              
               return (
                 <div
                   href={item.href}
                   key={index}
-                  className={`relative circular-progress flex flex-col items-center w-full md:w-1/3 p-5 ${index !== 0 ? 'border-l-2 border-gray-300' : ''}`}
+                  className={`circular-progress flex flex-col items-center w-full md:w-1/3 p-5 min-w-[380px] ${
+                    index !== 0 ? "xl-custom:border-l-2 xl-custom:border-gray-300" : ""
+                  }`}                  
                   style={{ textAlign: "center" }}
                 >
-                  <div>
-                    {points.map((point) => (
-                      <div
-                        key={point.id}
-                        className={`absolute ${point.position} text-center flex flex-col justify-center items-center `}
-                      >
+                  <div className="relative flex justify-center items-center">
+                    <div>
+                      {points.map((point) => (
                         <div
-                          className={`w-8 h-8 ${point.bgColor} text-white rounded-full flex items-center justify-center shadow-lg`}
-                          style={{
-                            background:point.bgColor,
-                          }}
+                          key={point.id}
+                          className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 `}
                         >
-                          {point.icon}
-                          {/* {point.id} */}
+                          <div
+                            className={`w-6 h-6 ${point.bgColor} text-white rounded-full flex items-center justify-center shadow-lg`}
+                            style={{
+                              background: point.bgColor,
+                            }}
+                          >
+                            {point.icon}
+                          </div>
+                          <div>
+                            <h4
+                              className={`text-xs ${point.textDir} font-black text-gray-600`}
+                            >
+                              {point.label}
+                            </h4>
+                            <p
+                              className={`text-[8px] ${point.textDir} text-justify m-0 max-w-[60px]`}
+                            >
+                              Lorem ipsum ka dolor sit se Lorem
+                            </p>
+                          </div>
                         </div>
-                        <h4 className="text-sm text-center mt-2 text-gray-600">
-                          {point.label}
-                        </h4>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    <svg
+                      width="150"
+                      height="150"
+                      viewBox="0 0 120 120" // Increased the viewBox size
+                      className="w-3/4 sm:w-2/3 md:w-3/4 lg:w-full"
+                    >
+                      <circle
+                        cx="60" // Adjusted center for better alignment
+                        cy="60" // Adjusted center for better alignment
+                        r={radius} // Slightly larger than the main circle radius
+                        fill="white" // Light background color
+                      />
+                      <circle
+                        cx="60" // Adjusted center for better alignment
+                        cy="60" // Adjusted center for better alignment
+                        r={radius}
+                        fill="none"
+                        stroke="#cac8fa"
+                        strokeWidth="8"
+                      />
+                      <circle
+                        cx="60" // Adjusted center for better alignment
+                        cy="60" // Adjusted center for better alignment
+                        r="60"
+                        fill="none"
+                        stroke="#DBDBDD"
+                        strokeWidth="2"
+                        strokeDasharray="2 4"
+                      />
+
+                      <defs>
+                        <linearGradient
+                          id="gradientStroke"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
+                          />
+                          <stop
+                            offset="50%"
+                            style={{ stopColor: "#8749EC", stopOpacity: 1 }}
+                          />
+                          <stop
+                            offset="100%"
+                            style={{ stopColor: "#616BFC", stopOpacity: 1 }}
+                          />
+                        </linearGradient>
+                      </defs>
+
+                      <circle
+                        cx="60" // Adjusted center for better alignment
+                        cy="60" // Adjusted center for better alignment
+                        r={radius}
+                        fill="none"
+                        stroke="url(#gradientStroke)" // Reference the gradient here
+                        strokeWidth="8"
+                        strokeDasharray={circumference}
+                        strokeDashoffset={offset}
+                        strokeLinecap="round"
+                        transform="rotate(-90 60 60)" // Adjusted rotation origin
+                      />
+                      {/* Percentage Text */}
+                      <text
+                        x="60" // Adjusted to match the new center position
+                        y="65" // Adjusted to match the new center position
+                        textAnchor="middle"
+                        fontSize="15"
+                        fill="black"
+                      >
+                        {item.score}%
+                      </text>
+                    </svg>
                   </div>
-                  <svg
-  width="150"
-  height="150"
-  viewBox="0 0 120 120" // Increased the viewBox size
-  className="w-3/4 sm:w-2/3 md:w-3/4 lg:w-full"
->
-  <circle
-    cx="60" // Adjusted center for better alignment
-    cy="60" // Adjusted center for better alignment
-    r={radius} // Slightly larger than the main circle radius
-    fill="white" // Light background color
-  />
-  <circle
-    cx="60" // Adjusted center for better alignment
-    cy="60" // Adjusted center for better alignment
-    r={radius}
-    fill="none"
-    stroke="#cac8fa"
-    strokeWidth="8"
-  />
-  <circle
-    cx="60" // Adjusted center for better alignment
-    cy="60" // Adjusted center for better alignment
-    r="60"
-    fill="none"
-    stroke="#DBDBDD"
-    strokeWidth="2"
-    strokeDasharray="2 4"
-  />
-
-<defs>
-    <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style={{ stopColor: "#BD42CE", stopOpacity: 1 }} />
-      <stop offset="50%" style={{ stopColor: "#8749EC", stopOpacity: 1 }} />
-      <stop offset="100%" style={{ stopColor: "#616BFC", stopOpacity: 1 }} />
-    </linearGradient>
-  </defs>
-  
-  <circle
-    cx="60" // Adjusted center for better alignment
-    cy="60" // Adjusted center for better alignment
-    r={radius}
-    fill="none"
-    stroke="url(#gradientStroke)" // Reference the gradient here
-    strokeWidth="8"
-    strokeDasharray={circumference}
-    strokeDashoffset={offset}
-    strokeLinecap="round"
-    transform="rotate(-90 60 60)" // Adjusted rotation origin
-  />
-  {/* Percentage Text */}
-  <text
-    x="60" // Adjusted to match the new center position
-    y="65" // Adjusted to match the new center position
-    textAnchor="middle"
-    fontSize="15"
-    fill="black"
-  >
-    {item.score}%
-  </text>
-</svg>
-
                   <p className="mt-2 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
                     {item.label}
                   </p>
@@ -429,7 +462,7 @@ const WizardResult = () => {
           </div>
         </div>
       </div>
-            
+
       <section>
         <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
           {/* Left Text Section */}
@@ -443,9 +476,9 @@ const WizardResult = () => {
 
           {/* Button Section */}
           <div className="btns-container">
-          <Link href="/plan-details" passHref>
-            <button className="btn">Launch Your Idea</button>
-          </Link>
+            <Link href="/plan-details" passHref>
+              <button className="btn">Launch Your Idea</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -496,23 +529,21 @@ const WizardResult = () => {
                 label: "Idea Score",
               },
             ].map((item, index) => {
-              // Determine radius and color based on the score
               const radius = 40;
               const color =
-                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red"; // Example color logic
+                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
               const backgroundColor =
                 item.score > 80
                   ? "#d4edda"
                   : item.score > 50
                   ? "#fff3cd"
                   : "#f8d7da";
-              // Calculate circle properties
               const strokeColor =
                 item.score > 80
-                  ? "#e6f7e9" // Light green
+                  ? "#e6f7e9"
                   : item.score > 50
-                  ? "#fff9e6" // Light yellow
-                  : "#fdecea"; // Light red
+                  ? "#fff9e6"
+                  : "#fdecea";
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
 

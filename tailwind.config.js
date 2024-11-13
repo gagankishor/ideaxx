@@ -7,7 +7,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"  // Add this if you have src folder
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xl-custom': '1258px', // Custom breakpoint
+      },
+    },
   },
   plugins: [],
 }

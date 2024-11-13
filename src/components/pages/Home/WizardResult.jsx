@@ -2,7 +2,7 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaCogs, FaHeart, FaMusic, FaRobot, FaRocket, FaStar } from "react-icons/fa";
+import { FaMusic, FaRobot, FaRocket, FaStar } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";

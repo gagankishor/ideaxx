@@ -406,7 +406,7 @@ const ProductLineupSection = () => {
         quote: "IDEAX has transformed the way we manage our business!",
         author: "Sarah L.",
         role: "Small Business Owner",
-        image: "https://via.placeholder.com/150", // Replace with actual image URLs
+        image: "https://media.istockphoto.com/id/184373351/photo/charming-executive-smiling.jpg?s=612x612&w=0&k=20&c=UXPyrGCiHHXXxX8RtHiUr-1m2lTFm_n79uExvOXcqGs=", // Replace with actual image URLs
         company: "BizCorp",
       },
       {
@@ -414,7 +414,7 @@ const ProductLineupSection = () => {
           "The AI features have significantly improved our decision-making process.",
         author: "Mike R.",
         role: "Startup Founder",
-        image: "https://via.placeholder.com/150",
+        image: "https://media.istockphoto.com/id/854479222/photo/find-a-place-you-can-lose-your-mind.jpg?s=612x612&w=0&k=20&c=ehl3heNw6siSlpRHVFqkyx0fSktPFo8IZyfAkx1PHyU=",
         company: "TechStart",
       },
       {
@@ -422,7 +422,7 @@ const ProductLineupSection = () => {
           "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
         author: "Emily T.",
         role: "Entrepreneur",
-        image: "https://via.placeholder.com/150",
+        image: "https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=1024x1024&w=is&k=20&c=LZ6ghZW51g5FxD7YdxiuTk3uIKgH6D_p-HX-lap0kL4=",
         company: "Visionary Inc.",
       },
       {
@@ -430,7 +430,7 @@ const ProductLineupSection = () => {
           "The community support and resources have been invaluable for my growth.",
         author: "David K.",
         role: "Freelance Consultant",
-        image: "https://via.placeholder.com/150",
+        image: "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png",
         company: "Independent",
       },
       {
@@ -438,7 +438,7 @@ const ProductLineupSection = () => {
           "I love the tools for managing cash flow; they make financial planning so much easier!",
         author: "Jessica P.",
         role: "E-commerce Manager",
-        image: "https://via.placeholder.com/150",
+        image: "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=1024x1024&w=is&k=20&c=iGtRKCTRSvPVl3eOIpzzse5SvQFfImkV0TZuFh-74ps=",
         company: "ShopEase",
       },
     ].map((testimonial, index) => (
@@ -448,7 +448,8 @@ const ProductLineupSection = () => {
       >
         <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
           <img
-            src='https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png'
+            src={testimonial.image}
+            // src='https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png'
             alt={`${testimonial.author}'s photo`}
             className="w-full h-full object-cover "
           />

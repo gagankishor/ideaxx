@@ -44,7 +44,7 @@ export default function Footer() {
           <h4 className="font-semibold mb-4 text-left">Services</h4>
           <ul className="space-y-2 text-left">
             <li>
-              <Link href="#">Idea</Link>
+              <Link href="#">Check And Save Your Idea</Link>
             </li>
             <li>
               <Link href="#">Business identity</Link>
@@ -53,35 +53,34 @@ export default function Footer() {
               <Link href="#">Marketing</Link>
             </li>
             <li>
-              <Link href="#">Legal</Link>
+              <Link href="#">Legal Documentation</Link>
             </li>
             <li>
-              <Link href="#">Team</Link>
+              <Link href="#">Virtual Team</Link>
             </li>
             <li>
               <Link href="#">Business Tools</Link>
             </li>
             <li>
-              <Link href="#">Cash Flow</Link>
+              <Link href="#">Cash Flow Managment</Link>
             </li>
             <li>
-              <Link href="#">community</Link>
+              <Link href="#">Consulting</Link>
             </li>
             <li>
               <Link href="#">Entrepreneur</Link>
             </li>
             <li>
-              <Link href="#">Strategies</Link>
+              <Link href="#">Strategies Planing</Link>
             </li>
             <li>
               <Link href="#">Community</Link>
             </li>
             <li>
-              <Link href="#">Buy-Sell</Link>
+              <Link href="#">Buy-Sell Your Idea</Link>
             </li>
           </ul>
         </div>
-
         {/* Solutions Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">Solutions</h4>
@@ -109,7 +108,6 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-
         {/* Resources Column */}
         {/* <div>
           <h4 className="font-semibold mb-4 text-left">Resources</h4>
@@ -120,7 +118,6 @@ export default function Footer() {
             <li><Link href="#">AI Trends in Business</Link></li>
           </ul>
         </div> */}
-
         {/* Support Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">Support</h4>

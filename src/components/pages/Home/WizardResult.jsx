@@ -315,27 +315,83 @@ const WizardResult = () => {
                 {
                   id: 5,
                   label: "FIVE",
-                  position: "top-1/2 -translate-y-1/2 -left-24",
-                  bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)", // Light blue to teal gradient
-                  icon: <FaMusic />, // Music note icon
+                  position: "top-1/2 -translate-y-1/2 -left-20 md:-left-24",
+                  bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                  icon: <FaMusic />,
                   rowDir: "flex-row-reverse",
                   textDir: "text-right",
                 },
                 {
                   id: 6,
                   label: "SIX",
-                  position: "top-1/2 -translate-y-1/2 -right-24 ",
-                  bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Purple to blue gradient
-                  icon: <FaRocket />, // Rocket icon
+                  position: "top-1/2 -translate-y-1/2  -right-20 md:-right-24 ",
+                  bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                  icon: <FaRocket />,
                   rowDir: "flex-row",
                   textDir: "text-left",
                 },
               ];
+              // const points = [
+              //   {
+              //     id: 1,
+              //     label: "ONE",
+              //     position: "top-5 -left-24 md:-top-4 md:-left-16",
+              //     bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+              //     icon: <FaMapLocation />,
+              //     rowDir: "flex-row md:flex-row-reverse",
+              //     textDir: "text-left md:text-right",
+              //   },
+              //   {
+              //     id: 2,
+              //     label: "TWO",
+              //     position: "top-15 -left-24 md:-top-4 md:-right-16",
+              //     bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+              //     icon: <FaStar />,
+              //     rowDir: "flex-row", 
+              //     textDir: "text-left",
+              //   },
+              //   // {
+              //   //   id: 3,
+              //   //   label: "Point Three",
+              //   //   position: "-bottom-4 -left-20",
+              //   //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
+              //   //   icon: <FaHeart />, // Heart icon
+              //   //   rowDir: "flex-row-reverse",
+              //   //   textDir: "text-right",
+              //   // },
+              //   // {
+              //   //   id: 4,
+              //   //   label: "Point Four",
+              //   //   position: "-bottom-4 -right-20",
+              //   //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
+              //   //   icon: <FaCogs /> ,// Gear icon
+              //   //   rowDir: "flex-row",
+              //   //   textDir: "text-left",
+              //   // },
+              //   {
+              //     id: 5,
+              //     label: "FIVE",
+              //     position: "top-32  -left-24",
+              //     bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)", 
+              //     icon: <FaMusic />, 
+              //     rowDir: "flex-row md:flex-row-reverse",
+              //     textDir: " text-left md:text-right",
+              //   },
+              //   {
+              //     id: 6,
+              //     label: "SIX",
+              //     position: "top-44  -left-24 md:-right-24 ",
+              //     bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+              //     icon: <FaRocket />,
+              //     rowDir: "flex-row",
+              //     textDir: "text-left",
+              //   },
+              // ];
               return (
                 <div
                   href={item.href}
                   key={index}
-                  className={`circular-progress flex flex-col items-center w-full md:w-1/3 p-5 min-w-[380px] ${
+                  className={`circular-progress flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
                     index !== 0 ? "xl-custom:border-l-2 xl-custom:border-gray-300" : ""
                   }`}                  
                   style={{ textAlign: "center" }}
@@ -502,7 +558,7 @@ const WizardResult = () => {
             Slight changes may occur in the results depending on market trends.
           </p>
         </div>
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-around">
+        <div className="flex flex-col-reverse lg:flex-row items-start h-full justify-around">
           <div className=" lg:mr-[10px] ">
             <div className="ai-generated-content">
               {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
@@ -513,7 +569,7 @@ const WizardResult = () => {
               )}
             </div>
           </div>
-          <div className="overview-right">
+          <div className="overview-right h-full">
             {/* <div className="business-score-circle">
             <Doughnut data={bardata2} options={options} />
             <div className="doughnut-center">
@@ -947,9 +1003,9 @@ const WizardResult = () => {
               </ul>
             </div>
           </div>
-          <div className="overview-right ">
+          <div className="overview-right h-full">
             {[
-              {
+              { 
                 href: "#ideax",
                 data: bardata3,
                 score: totalMarketScrore2,

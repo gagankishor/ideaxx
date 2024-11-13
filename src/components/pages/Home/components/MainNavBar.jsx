@@ -40,22 +40,21 @@ export const MainNavBar = () => {
             <li><Link href="#services">Services</Link></li>
             <li><Link href="#features">Features</Link></li>
           </ul>
-
             <ul className="main-menu">
               {isAuthenticated ? (
                 <li className="nav-login-btn" onClick={logout}>
-                  <span style={{ cursor: "pointer", marginRight: '20px' ,color:'black'}}>Sign Out</span>
+                  <span
+                   className="font-bold pl-3 lg:mr-3"
+                   style={{ cursor: "pointer", marginRight: '20px' ,color:'black'}}>Sign Out</span>
                 </li>
               ) : (
                 <li style={{ cursor: "pointer", marginRight: '20px', fontWeight: '700',color:'black' }}>
                   <Link href="/login" style={{ color: "black" }}>Sign Up</Link>
                 </li>
               )}
-              
               <div className="btns-container">
                 <Link className="btn2" style={{ fontSize: "14px" }} href="/contectUs">Learning Guide</Link>
               </div>
-
               {/* Conditionally render the button based on the current pathname */}
               {pathname !== "/mainWizard" && (
                 <div className="btns-container">

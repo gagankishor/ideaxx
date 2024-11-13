@@ -7,9 +7,11 @@ import { AuthContext } from "@/context/AuthContext";
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
   const router = useRouter();
-
+  // alert(isAuthenticated)
+  console.log(isAuthenticated,"isAuthenticated")
   useEffect(() => {
     if (!isAuthenticated) {
+      alert("isAuthenticated",isAuthenticated)
       router.push("/login"); // Redirect to login if not authenticated
     }
   }, [isAuthenticated, router]);

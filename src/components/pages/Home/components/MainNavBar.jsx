@@ -19,8 +19,8 @@ export const MainNavBar = () => {
   
   return (
     <>
-      <nav>
-        <div className="container">
+      <nav className="border-b-[1px] border-gray-100">
+        <div className="container border-b-[1px] border-gray-100">
           <div className="logo-side">
             <Link href="/"> {/* Use href instead of to */}
               <img src="/logo.png" alt="Ideax Logo" />
@@ -53,7 +53,7 @@ export const MainNavBar = () => {
                 </li>
               )}
               <div className="btns-container">
-                <Link className="btn2" style={{ fontSize: "14px" }} href="/contectUs">Learning Guide</Link>
+                <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Learning Guide</Link>
               </div>
               {/* Conditionally render the button based on the current pathname */}
               {pathname !== "/mainWizard" && (

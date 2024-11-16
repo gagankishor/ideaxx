@@ -1,0 +1,27 @@
+{
+    "1": {
+      "title": "The Future of Project Management",
+      "date": "October 5, 2023",
+      "content": "In today's rapidly evolving landscape, project management has become more critical than ever...",
+      "author": "Jane Doe",
+      "authorBio": "Jane is an experienced project manager with a passion for innovation...",
+      "imageUrl": "https://images.unsplash.com/photo-1593642634367-d91a135587b5",
+      "relatedPosts": [
+        { "id": 2, "title": "Top CRM Strategies for 2024" },
+        { "id": 3, "title": "Agile Project Management: Best Practices" }
+      ]
+    },
+    "2": {
+      "title": "Top CRM Strategies for 2024",
+      "date": "November 1, 2023",
+      "content": "Customer Relationship Management (CRM) has seen a surge in technological advancements...",
+      "author": "John Smith",
+      "authorBio": "John is a CRM expert with over 10 years of experience...",
+      "imageUrl": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+      "relatedPosts": [
+        { "id": 1, "title": "The Future of Project Management" },
+        { "id": 4, "title": "Optimizing Customer Service with AI" }
+      ]
+    }
+  }
+  

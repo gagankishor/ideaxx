@@ -279,20 +279,20 @@ const WizardResult = () => {
                 {
                   id: 1,
                   label: "ONE",
-                  position: "-top-4 -left-16",
+                  position: " top-60 -left-10 md:-top-4 md:-left-16",
                   bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                   icon: <FaMapLocation />,
-                  rowDir: "flex-row-reverse",
-                  textDir: "text-right",
+                  rowDir: "md:flex-row-reverse",
+                  textDir: "md:text-right",
                 },
                 {
                   id: 2,
                   label: "TWO",
-                  position: "-top-4 -right-16",
+                  position: " top-60 -right-10 md:-top-4 md:-right-16",
                   bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                   icon: <FaStar />,
-                  rowDir: "flex-row", 
-                  textDir: "text-left",
+                  rowDir: "md:flex-row", 
+                  textDir: "md:text-left",
                 },
                 // {
                 //   id: 3,
@@ -315,20 +315,20 @@ const WizardResult = () => {
                 {
                   id: 5,
                   label: "FIVE",
-                  position: "top-1/2 -translate-y-1/2 -left-20 md:-left-24",
+                  position: "top-80 -left-10  md:top-1/2 md:-translate-y-1/2  md:-left-24",
                   bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
                   icon: <FaMusic />,
-                  rowDir: "flex-row-reverse",
-                  textDir: "text-right",
+                  rowDir: "md:flex-row-reverse",
+                  textDir: "md:text-right",
                 },
                 {
                   id: 6,
                   label: "SIX",
-                  position: "top-1/2 -translate-y-1/2  -right-20 md:-right-24 ",
+                  position: "top-80 -right-10  md:top-1/2 md:-translate-y-1/2   md:-right-24 ",
                   bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
                   icon: <FaRocket />,
-                  rowDir: "flex-row",
-                  textDir: "text-left",
+                  rowDir: "md:flex-row",
+                  textDir: "md:text-left",
                 },
               ];
               // const points = [
@@ -391,7 +391,7 @@ const WizardResult = () => {
                 <div
                   href={item.href}
                   key={index}
-                  className={`circular-progress flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
+                  className={`circular-progress  flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
                     index !== 0 ? "xl-custom:border-l-2 xl-custom:border-gray-300" : ""
                   }`}                  
                   style={{ textAlign: "center" }}
@@ -401,7 +401,7 @@ const WizardResult = () => {
                       {points.map((point) => (
                         <div
                           key={point.id}
-                          className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 `}
+                          className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 mx-6`}
                         >
                           <div
                             className={`w-6 h-6 ${point.bgColor} text-white rounded-full flex items-center justify-center shadow-lg`}
@@ -427,28 +427,28 @@ const WizardResult = () => {
                       ))}
                     </div>
                     <svg
-                      width="150"
-                      height="150"
+                      // width="150"
+                      // height="150"
                       viewBox="0 0 120 120" // Increased the viewBox size
-                      className="w-3/4 sm:w-2/3 md:w-3/4 lg:w-full"
+                      className="w-5/6  md:w-40 lg:w-40 mb-32 md:mb-4"
                     >
                       <circle
-                        cx="60" // Adjusted center for better alignment
-                        cy="60" // Adjusted center for better alignment
-                        r={radius} // Slightly larger than the main circle radius
-                        fill="white" // Light background color
+                        cx="60" 
+                        cy="60"
+                        r={radius} 
+                        fill="white"
                       />
                       <circle
-                        cx="60" // Adjusted center for better alignment
-                        cy="60" // Adjusted center for better alignment
+                        cx="60" 
+                        cy="60"
                         r={radius}
                         fill="none"
                         stroke="#cac8fa"
                         strokeWidth="8"
                       />
                       <circle
-                        cx="60" // Adjusted center for better alignment
-                        cy="60" // Adjusted center for better alignment
+                        cx="60"
+                        cy="60"
                         r="60"
                         fill="none"
                         stroke="#DBDBDD"
@@ -508,7 +508,7 @@ const WizardResult = () => {
                   </p>
                   <a
                     href={item.href}
-                    className="mt-1 inline-block text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 ease-in-out"
+                    className="mt-1 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300 ease-in-out"
                   >
                     More Details &rarr;
                   </a>
@@ -565,7 +565,7 @@ const WizardResult = () => {
               {loading ? (
                 <p>Loading AI-generated insights...</p>
               ) : (
-                <p className="text-justify">{displayedText}</p>
+                <p className="text-justify p-2">{displayedText}</p>
               )}
             </div>
           </div>
@@ -586,20 +586,22 @@ const WizardResult = () => {
               },
             ].map((item, index) => {
               const radius = 40;
-              const color =
-                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
-              const backgroundColor =
-                item.score > 80
-                  ? "#d4edda"
-                  : item.score > 50
-                  ? "#fff3cd"
-                  : "#f8d7da";
-              const strokeColor =
-                item.score > 80
-                  ? "#e6f7e9"
-                  : item.score > 50
-                  ? "#fff9e6"
-                  : "#fdecea";
+              // const color =
+              //   item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
+              // const backgroundColor =
+              //   item.score > 80
+              //     ? "#d4edda"
+              //     : item.score > 50
+              //     ? "#fff3cd"
+              //     : "#f8d7da";
+              const backgroundColor = 'white'
+
+              // const strokeColor =
+              //   item.score > 80
+              //     ? "#e6f7e9"
+              //     : item.score > 50
+              //     ? "#fff9e6"
+              //     : "#fdecea";
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
 
@@ -616,15 +618,40 @@ const WizardResult = () => {
                       cy="50"
                       r={radius}
                       fill="none"
-                      stroke={strokeColor}
+                      // stroke={strokeColor}
+                      stroke="#cac8fa"
+
                       strokeWidth="8"
                     />
+                    <defs>
+                        <linearGradient
+                          id="gradientStroke"
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="100%"
+                        >
+                          <stop
+                            offset="0%"
+                            style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
+                          />
+                          <stop
+                            offset="50%"
+                            style={{ stopColor: "#8749EC", stopOpacity: 1 }}
+                          />
+                          <stop
+                            offset="100%"
+                            style={{ stopColor: "#616BFC", stopOpacity: 1 }}
+                          />
+                        </linearGradient>
+                      </defs>
                     <circle
                       cx="50"
                       cy="50"
                       r={radius}
                       fill="none"
-                      stroke={color}
+                      // stroke={color}
+                      stroke="url(#gradientStroke)"
                       strokeWidth="8"
                       strokeDasharray={circumference}
                       strokeDashoffset={offset}
@@ -652,13 +679,13 @@ const WizardResult = () => {
                     {item.label}
                   </p>
 
-                  <ul className=" lg:max-w-[200px] text-justify">
-                    <li>pointer pointer1</li>
-                    <li>pointer pointer1</li>
-                    <li>pointer pointer1</li>
-                    <li>pointer pointer1</li>
-                    <li>pointer pointer1</li>
-                    <li>pointer pointer1</li>
+                  <ul className="list-disc pl-6 font-semibold lg:max-w-[200px] text-justify">
+                    <li>Lorem ipsum dolor sit </li>
+                    <li>amet consectetur  </li>
+                    <li>elit. Optio odit iusto  </li>
+                    <li>nemo. Laboriosam  </li>
+                    <li>fugit error blanditiis </li>
+                    <li> id quos accusamus  </li>
                   </ul>
                 </div>
               );
@@ -818,24 +845,26 @@ const WizardResult = () => {
               ].map((item, index) => {
                 // Determine radius and color based on the score
                 const radius = 40;
-                const color =
-                  item.score > 80
-                    ? "green"
-                    : item.score > 50
-                    ? "orange"
-                    : "red"; // Example color logic
-                const backgroundColor =
-                  item.score > 80
-                    ? "#d4edda"
-                    : item.score > 50
-                    ? "#fff3cd"
-                    : "#f8d7da";
-                const strokeColor =
-                  item.score > 80
-                    ? "#e6f7e9" // Light green
-                    : item.score > 50
-                    ? "#fff9e6" // Light yellow
-                    : "#fdecea"; // Light red
+                // const color =
+                //   item.score > 80
+                //     ? "green"
+                //     : item.score > 50
+                //     ? "orange"
+                //     : "red"; // Example color logic
+                // const backgroundColor =
+                //   item.score > 80
+                //     ? "#d4edda"
+                //     : item.score > 50
+                //     ? "#fff3cd"
+                //     : "#f8d7da";
+              const backgroundColor = 'white'
+
+                // const strokeColor =
+                //   item.score > 80
+                //     ? "#e6f7e9" // Light green
+                //     : item.score > 50
+                //     ? "#fff9e6" // Light yellow
+                //     : "#fdecea"; // Light red
                 // Calculate circle properties
                 const circumference = 2 * Math.PI * radius;
                 const offset =
@@ -860,7 +889,9 @@ const WizardResult = () => {
                         cy="50"
                         r={radius}
                         fill="none"
-                        stroke={strokeColor}
+                        // stroke={strokeColor}
+                        stroke="#cac8fa"
+
                         strokeWidth="8"
                       />
                       {/* Progress Circle */}
@@ -869,7 +900,8 @@ const WizardResult = () => {
                         cy="50"
                         r={radius}
                         fill="none"
-                        stroke={color}
+                        // stroke={color}
+                        stroke="url(#gradientStroke)"
                         strokeWidth="8"
                         strokeDasharray={circumference}
                         strokeDashoffset={offset}
@@ -882,7 +914,9 @@ const WizardResult = () => {
                         y="55"
                         textAnchor="middle"
                         fontSize="15"
-                        fill={color}
+                        // fill={color}
+                        fill="black"
+
                       >
                         {item.score}%
                       </text>
@@ -1013,20 +1047,22 @@ const WizardResult = () => {
               },
             ].map((item, index) => {
               const radius = 40;
-              const color =
-                item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
-              const backgroundColor =
-                item.score > 80
-                  ? "#d4edda"
-                  : item.score > 50
-                  ? "#fff3cd"
-                  : "#f8d7da";
-              const strokeColor =
-                item.score > 80
-                  ? "#e6f7e9" // Light green
-                  : item.score > 50
-                  ? "#fff9e6" // Light yellow
-                  : "#fdecea"; // Light red
+              // const color =
+              //   item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
+              // const backgroundColor =
+              //   item.score > 80
+              //     ? "#d4edda"
+              //     : item.score > 50
+              //     ? "#fff3cd"
+              //     : "#f8d7da";
+              const backgroundColor = 'white'
+
+              // const strokeColor =
+              //   item.score > 80
+              //     ? "#e6f7e9" // Light green
+              //     : item.score > 50
+              //     ? "#fff9e6" // Light yellow
+              //     : "#fdecea"; // Light red
               const circumference = 2 * Math.PI * radius;
               const offset = circumference - (item.score / 100) * circumference;
               return (
@@ -1047,7 +1083,9 @@ const WizardResult = () => {
                       cy="50"
                       r={radius}
                       fill="none"
-                      stroke={strokeColor}
+                      // stroke={strokeColor}
+                      stroke="#cac8fa"
+
                       strokeWidth="8"
                     />
                     <circle
@@ -1055,7 +1093,8 @@ const WizardResult = () => {
                       cy="50"
                       r={radius}
                       fill="none"
-                      stroke={color}
+                      // stroke={color}
+                      stroke="url(#gradientStroke)"
                       strokeWidth="8"
                       strokeDasharray={circumference}
                       strokeDashoffset={offset}
@@ -1068,7 +1107,9 @@ const WizardResult = () => {
                       y="55"
                       textAnchor="middle"
                       fontSize="15"
-                      fill={color}
+                      // fill={color}
+                      fill="black"
+
                     >
                       {item.score}%
                     </text>

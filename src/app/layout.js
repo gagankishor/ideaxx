@@ -43,7 +43,6 @@ export default function Layout({ children }) {
   );
 }
 
-// Add prop types validation
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };

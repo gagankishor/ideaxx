@@ -1,8 +1,9 @@
+"use client"
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SideBar } from "../../components/Sidebar";
+// import { SideBar } from "../../components/Sidebar";
 import { FaPlus, FaRobot } from "react-icons/fa";
-import { HoverNote } from "../../components/HoverNote";
+// import { HoverNote } from "../../components/HoverNote";
 import { CustomCheckbox } from "../../components/Checkbox";
 import { userToken } from "../../config/Auth";
 import SuggestionInput from "./components/Suggestion";
@@ -12,6 +13,7 @@ import SuggestionInvestment from "./components/SuggestionInvestment";
 import FinancialProjection from "./components/Finance";
 import { Helmet } from "react-helmet";
 import useAxiosWithAuth from "../../config/useAxiosWithAuth";
+import SideBar from "../Sidebar";
 
 export default function IdeaNew() {
   // useState
@@ -447,12 +449,12 @@ export default function IdeaNew() {
                       <label htmlFor="sector_id">
                         <div className="left-label">
                           Choose your sector
-                          <HoverNote
+                          {/* <HoverNote
                             text="Choose a business sector aligned with your passion and skills, ensuring
                             scalability and addressing current market trends. Conduct thorough
                             research and consider the financial viability, legal aspects, and
                             adaptability for longterm success"
-                          />
+                          /> */}
                         </div>
                       </label>
                       <select
@@ -478,7 +480,7 @@ export default function IdeaNew() {
                       <div className="label-flex">
                         <div className="left-label">
                           Describe your idea
-                          <HoverNote text="Capture the essence of your idea concept concisely, focusing on its innovation and benefit in a brief, compelling phrase" />
+                          {/* <HoverNote text="Capture the essence of your idea concept concisely, focusing on its innovation and benefit in a brief, compelling phrase" /> */}
                         </div>
                         <div className="right-label">
                           {isEditing ? (
@@ -557,7 +559,7 @@ export default function IdeaNew() {
                       <label>
                         <div className="left-label">
                           Your&rsquo;e business name
-                          <HoverNote text="Choose a clear, memorable, and unique business name that aligns with your brand, ensuring availability online and legally, while also considering scalability and emotional appeal" />
+                          {/* <HoverNote text="Choose a clear, memorable, and unique business name that aligns with your brand, ensuring availability online and legally, while also considering scalability and emotional appeal" /> */}
                         </div>
                       </label>
                       <input
@@ -577,7 +579,7 @@ export default function IdeaNew() {
                       <label>
                         <div className="left-label">
                           Number of employees
-                          <HoverNote text="Selecting the Ideax team guarantees not only expertise but also a strategic partnership that nurtures your business growth. Our collaborative approach, tailored solutions, and commitment to excellence empower your venture to thrive in a dynamic market. With a dedicated team, you gain not just services, but a reliable ally invested in propelling your success story" />
+                          {/* <HoverNote text="Selecting the Ideax team guarantees not only expertise but also a strategic partnership that nurtures your business growth. Our collaborative approach, tailored solutions, and commitment to excellence empower your venture to thrive in a dynamic market. With a dedicated team, you gain not just services, but a reliable ally invested in propelling your success story" /> */}
                         </div>
                       </label>
                       <select
@@ -618,7 +620,7 @@ export default function IdeaNew() {
                         <label>
                           <div className="left-label">
                             Do you offer a product or service?
-                            <HoverNote text="Consider your strengths, market demand, and business goals. If you possess specialized skills, opt for services; if scalability is crucial, go for products. Striking a balance or offering both can also provide a comprehensive solution" />
+                            {/* <HoverNote text="Consider your strengths, market demand, and business goals. If you possess specialized skills, opt for services; if scalability is crucial, go for products. Striking a balance or offering both can also provide a comprehensive solution" /> */}
                           </div>
                         </label>
                       </div>
@@ -647,7 +649,7 @@ export default function IdeaNew() {
                         <label>
                           <div className="left-label">
                             How can customers get your product or service?
-                            <HoverNote text="Offering your product or service through both online and offline channels provides customers with flexibility and convenience. Online platforms enable easy accessibility and quick transactions, while offline options, such as physical stores or offices, cater to those who prefer in-person interactions. This dual approach enhances your reach, ensuring a broader customer base and a more inclusive experience for all." />
+                            {/* <HoverNote text="Offering your product or service through both online and offline channels provides customers with flexibility and convenience. Online platforms enable easy accessibility and quick transactions, while offline options, such as physical stores or offices, cater to those who prefer in-person interactions. This dual approach enhances your reach, ensuring a broader customer base and a more inclusive experience for all." /> */}
                           </div>
                         </label>
                       </div>

@@ -63,8 +63,8 @@
     margin-bottom: 15px;
   }
   
-  .otp-input {
-    /* width: 60px; */
+  .otp-input1 {
+    width: 60px;
     height: 40px;
     text-align: center;
     font-size: 1.2rem;

@@ -1,13 +1,13 @@
 "use client";
 import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
   // Check authentication status
   const checkAuthStatus = () => {

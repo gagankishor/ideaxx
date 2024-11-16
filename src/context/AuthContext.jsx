@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("token", token);
       localStorage.setItem("email", email);
       setIsAuthenticated(true);
-      router.push("/dashboard"); // Redirect after login
+      // router.push("/dashboard"); // Redirect after login
     }
   };
 
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.removeItem("token");
       localStorage.removeItem("email");
       setIsAuthenticated(false);
-      router.push("/login"); // Redirect after logout
+      // router.push("/login"); // Redirect after logout
     }
   };
 

@@ -39,10 +39,7 @@ export default function CoursePage() {
           ></iframe>
           {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/KLuTLF3x9sA?si=6HM4jQ9i9xTK8Z79" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
         </div>
-
-        
       </div>
-
       {/* Tabs */}
       <div className="mt-6 px-5 md:px-20 bg-gray-50 ">
         <div className="flex border-b overflow-y-scroll">
@@ -68,7 +65,7 @@ export default function CoursePage() {
             href="#"
             className="text-gray-700 underline font-thin lg:text-3xl  hover:text-gray-900"
           >
-            See more tutorials &rarr;
+            {/* See more tutorials &rarr; */}
           </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">

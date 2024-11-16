@@ -29,7 +29,7 @@ const WizardResult = () => {
   if (!data) {
     console.warn("No wizard result data found in localStorage.");
   }
-  console.log("_______________", data);
+  // console.log("_______________", data);
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString
@@ -112,6 +112,8 @@ const WizardResult = () => {
   const InvestmentLevelData = parseJSON(data?.InvestmentLevelData);
   const ExpectedROIData = parseJSON(data?.ExpectedROIData);
   // console.log("MarketShareData",MarketShareData)
+  const textForTipData = parseJSON(data?.textForTipData)
+  console.log(textForTipData)
   const fullAiContent = `
   ${data?.resultText} 
   `;
@@ -279,7 +281,7 @@ const WizardResult = () => {
                 {
                   id: 1,
                   label: "ONE",
-                  position: " top-60 -left-10 md:-top-4 md:-left-16",
+                  position: " top-60 -left-10 md:-top-4 md:-left-24",
                   bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                   icon: <FaMapLocation />,
                   rowDir: "md:flex-row-reverse",
@@ -288,7 +290,7 @@ const WizardResult = () => {
                 {
                   id: 2,
                   label: "TWO",
-                  position: " top-60 -right-10 md:-top-4 md:-right-16",
+                  position: " top-60 -right-10 md:-top-4 md:-right-24",
                   bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                   icon: <FaStar />,
                   rowDir: "md:flex-row", 
@@ -315,7 +317,7 @@ const WizardResult = () => {
                 {
                   id: 5,
                   label: "FIVE",
-                  position: "top-80 -left-10  md:top-1/2 md:-translate-y-1/2  md:-left-24",
+                  position: "top-80 -left-10  md:top-1/2 md:-translate-y-1/2  md:-left-32",
                   bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
                   icon: <FaMusic />,
                   rowDir: "md:flex-row-reverse",
@@ -324,7 +326,7 @@ const WizardResult = () => {
                 {
                   id: 6,
                   label: "SIX",
-                  position: "top-80 -right-10  md:top-1/2 md:-translate-y-1/2   md:-right-24 ",
+                  position: "top-80 -right-10  md:top-1/2 md:-translate-y-1/2   md:-right-32 ",
                   bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
                   icon: <FaRocket />,
                   rowDir: "md:flex-row",
@@ -980,31 +982,7 @@ const WizardResult = () => {
           <div className=" w-full lg:mr-[10px]">
             <div className="business-improvements">
               <ul>
-                {[
-                  {
-                    text: "Clarify the Unique Value Proposition (UVP).",
-                    label: "Important!",
-                    detail:
-                      "Describe your unique benefit more clearly.Consider aspects that allow growth without adding proportional resources.Consider aspects that allow growth without adding proportional resources.Consider aspects that allow growth without adding proportional resources.Consider aspects that allow growth without adding proportional resources.Consider aspects that allow growth without adding proportional resources.",
-                  },
-                  {
-                    text: "Improve the scalability of the business model.",
-                    label: "Tip!",
-                    detail:
-                      "Consider aspects that allow growth without adding proportional resources.",
-                  },
-                  {
-                    text: "Analyze the competitive landscape further.",
-                    label: "Tip!",
-                    detail: "Research competitors to refine your positioning.",
-                  },
-                  {
-                    text: "Identify additional potential partnerships.",
-                    label: "Tip!",
-                    detail:
-                      "Think about partners who can enhance your offerings or market reach.",
-                  },
-                ].map((item, index) => (
+              {textForTipData?.map((item, index) => (
                   <li
                     key={index}
                     className={`p-4 border-b flex flex-col rounded-md ${
@@ -1015,26 +993,26 @@ const WizardResult = () => {
                     onClick={() => handleToggle(index)}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-medium">{item.text}</span>
+                      <span className="font-medium">{item?.title}</span>
                       <span
                         className={`${
                           item.label === "Important!"
                             ? "text-orange-500"
                             : "text-gray-500"
                         } ml-4 flex flex-row justify-center items-center gap-2`}
-                      >
-                        {item.label}
+                      > Tip
                         <FaArrowRight />
                       </span>
                     </div>
                     {expandedItems[index] && (
                       <div className="mt-2 text-sm text-gray-600 pl-5">
-                        {item.detail}
+                        {item?.description}
                       </div>
                     )}
                   </li>
                 ))}
               </ul>
+              {/* <div>{textForTipData}</div> */}
             </div>
           </div>
           <div className="overview-right h-full">

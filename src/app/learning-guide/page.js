@@ -99,7 +99,7 @@ const learningGuidePage = () => {
               href="#"
               className="w-[40%] text-right align-text-bottom underline font-normal"
             >
-              Save your spot &rarr;
+              {/* Save your spot &rarr; */}
             </a>
           </div>
           <div className="relative">
@@ -179,7 +179,7 @@ const learningGuidePage = () => {
             href="#"
             className="text-gray-700 underline font-medium hover:text-gray-900"
           >
-            See more tutorials &rarr;
+            {/* See more tutorials &rarr; */}
           </a>
         </div>
 
@@ -242,7 +242,7 @@ const learningGuidePage = () => {
             href="#"
             className="underline font-light hover:text-gray-900 md:mr-20"
           >
-            Explore the collection &rarr;
+            {/* Explore the collection &rarr; */}
           </a>
         </div>
 

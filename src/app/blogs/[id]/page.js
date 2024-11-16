@@ -101,8 +101,8 @@ const BlogDetails = () => {
               </p>
             </div>
             <button className="text-sm text-blue-600 hover:underline flex items-center">
-              Share this article
-              <span className="ml-1">↗</span>
+              {/* Share this article */}
+              {/* <span className="ml-1">↗</span> */}
             </button>
           </div>
         </div>

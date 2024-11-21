@@ -400,7 +400,7 @@ const ProductLineupSection = () => {
   <h3 className="text-3xl font-semibold text-center mb-8 text-white">
     What Our Clients Say About Us
   </h3>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-5">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
     {[
       {
         quote: "IDEAX has transformed the way we manage our business!",
@@ -424,14 +424,6 @@ const ProductLineupSection = () => {
         role: "Entrepreneur",
         image: "https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=1024x1024&w=is&k=20&c=LZ6ghZW51g5FxD7YdxiuTk3uIKgH6D_p-HX-lap0kL4=",
         company: "Visionary Inc.",
-      },
-      {
-        quote:
-          "The community support and resources have been invaluable for my growth.",
-        author: "David K.",
-        role: "Freelance Consultant",
-        image: "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png",
-        company: "Independent",
       },
       {
         quote:

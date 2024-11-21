@@ -19,10 +19,10 @@ const Login = () => {
   const [canResend, setCanResend] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(300);
   const { isAuthenticated, login } = useContext(AuthContext);
-  if (isAuthenticated) {
-    // window.location.href = "/";
-    console.log(isAuthenticated);
-  }
+  // if (isAuthenticated) {
+  //   // window.location.href = "/";
+  //   // console.log(isAuthenticated);
+  // }
   const handleOtpChange = (e, index) => {
     const newOtp = [...otp];
     newOtp[index] = e.target.value;
@@ -88,12 +88,15 @@ const Login = () => {
     }
   };
   const handleGoogleLogin = async (status) => {
-    console.log(status);
-    if (status) {
-      console.log(status);
-      // window.location.href = "/";
-    }
+    // console.log(status);
+    // if (status) {
+    //   console.log(status);
+    //   // window.location.href = "/";
+    // }
   };
+  const handleLinkedInLogin = async (status)=>{
+    console.log(status)
+  }
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -240,7 +243,7 @@ const Login = () => {
                       Send OTP
                     </button>
                     <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
-                    <LinkedInLogin />
+                    <LinkedInLogin handleLogin={handleLinkedInLogin}/>
                   </div>
                 )}
               </div>

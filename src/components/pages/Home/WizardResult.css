@@ -160,11 +160,9 @@ h2 {
   margin: auto;
 
 }
-.ai-generated-content p{
-  font-size: 18px;
-
- 
-}
+/* .ai-generated-content p{
+  font-size: 14px;
+} */
 
 .tooltip {
   display: inline-block;

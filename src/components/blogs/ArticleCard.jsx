@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function ArticleCard({ title, category, imageUrl }) {
+export default function ArticleCard({ title, category, imageUrl,hrefUrl }) {
     return (
       <div className="group bg-gray-50   overflow-hidden ">
         <div className="relative h-72 w-full">
@@ -18,7 +18,7 @@ export default function ArticleCard({ title, category, imageUrl }) {
           <p className="text-sm text-left text-gray-500 font-medium uppercase">
             {category}
           </p>
-          <a href="/blogs/2" className="text-lg text-left font-thin underline text-gray-800 group-hover:text-gray-950 transition-colors">
+          <a href={hrefUrl?hrefUrl:"/blog/2"} className="text-lg text-left font-thin underline text-gray-800 group-hover:text-gray-950 transition-colors">
             {title}
           </a>
         </div>

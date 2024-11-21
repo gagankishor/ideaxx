@@ -85,44 +85,46 @@ import ArticleCard from "@/components/blogs/ArticleCard";
 //     imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
 //   },
 // };
-
 const articles = [
   {
-    title: "How to start a blog in 10 steps: a beginners guide",
-    category: "Website Essentials",
+    title: "Unlock Integrity in Every Task with One Core Platform, Powered by AI In a world that ...",
+    category: "Integrity",
     imageUrl: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c", // Unsplash image
+    hrefUrl:"blog/2"
   },
   {
-    title: "What is a domain name and why it matters",
-    category: "Website Essentials",
+    title: "One Core Platform, Powered by AI, for All Your Work in Innovation, Unlock the future of ...",
+    category: "Innovation",
     imageUrl: "https://images.unsplash.com/photo-1506765515384-028b60a970df", // Unsplash image
+    hrefUrl:"blog/3"
+
   },
   {
     title: "How to create a powerful landing page in 8 easy steps",
     category: "Marketing Insights",
-    imageUrl: "https://images.unsplash.com/photo-1485217988980-11786ced9454", // Unsplash image
+    imageUrl: "https://images.unsplash.com/photo-1485217988980-11786ced9454",
   },
   {
     title: "What is web design? A comprehensive guide",
     category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1504805572947-34fad45aed93", // Unsplash image
+    imageUrl: "https://images.unsplash.com/photo-1504805572947-34fad45aed93", 
   },
   {
     title: "18 outstanding website examples that will inspire you",
     category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", // Unsplash image
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", 
   },
   {
     title: "How to design a website with AI in 2024",
     category: "AI Knowledge Hub",
-    imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d", // Unsplash image
+    imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
   },
 ];
 const editorsPick = [
   {
     title: "Mastering Data Analysis: A Guide for Beginners",
     category: "Data Science",
-    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee", // Data analysis image
+    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee",
   },
   {
     title: "Top Tools for Data Visualization in 2024",
@@ -178,17 +180,16 @@ const Blogs = () => {
     {/* Left Section */}
     <div>
       <p className="text-sm text-left font-light uppercase mb-2">
-        Website Essentials
+      Collaboration
       </p>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        How to Test a AI Business Idea in 11 Steps (for Beginners)
+      Why Choose an AI-Powered Platform for Collaboration?
       </h1>
       <p className="text-gray-700 font-semibold text-base sm:text-lg md:text-xl text-left mb-6">
-        A strong online presence is essential for any business. Here’s how to
-        build a website from scratch.
+      Our platform is more than just a set of tools it's a core solution that unites teams, simplifies processes, and maximizes productivity. With advanced AI capabilities, 
       </p>
       <a
-        href="#"
+        href="/blog/1"
         className="font-semibold hover:underline leading-9 flex items-center underline"
       >
         Read more <span className="ml-2 text-xl">&rarr;</span>
@@ -219,6 +220,7 @@ const Blogs = () => {
                 title={article.title}
                 category={article.category}
                 imageUrl={article.imageUrl}
+                hrefUrl={article?.hrefUrl}
               />
             ))}
           </div>

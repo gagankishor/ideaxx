@@ -5,40 +5,37 @@ import { RiArrowUpDoubleFill } from "react-icons/ri";
 const Plans = () => {
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'row', backgroundColor: '#19229A', position: 'relative' }}> 
-        <div style={{ width: '45%', backgroundColor: '#161D78', padding: '80px 100px', color: 'white' }}>
-          <h2>How to Build a Startup</h2>
-          <div style={{marginTop:'50px'}}>Learn what it takes to build a successful startup using the Customer Development process, where entrepreneurs &quot;get out of the building&quot; to gather and iterate on feedback.</div>
-          <div className="btns-container" style={{marginTop:"50px",width:'150px'}}>
+      <div className="flex flex-wrap bg-[#19229A] relative">
+        {/* Left Section */}
+        <div className="w-full lg:w-2/5 bg-[#161D78] text-white p-10 lg:p-20 box-border">
+          <h2 className="text-2xl lg:text-3xl font-semibold">
+            How to Build a Startup
+          </h2>
+          <p className="mt-8 text-base lg:text-lg text-left text-white leading-relaxed">
+            Learn what it takes to build a successful startup using the Customer
+            Development process, where entrepreneurs "get out of the building"
+            to gather and iterate on feedback.
+          </p>
+          <div className="mt-8">
             <a
-              className="btn2"
-              style={{ fontSize: "14px",cursor:'pointer' }}
-              to="/mainWizard"
+              className="btn2 text-sm text-white lg:text-base cursor-pointer flex items-center space-x-2"
+              href="/mainWizard"
             >
-              Start Now <FaArrowAltCircleRight/>
+              <span>Start Now</span>
+              <FaArrowAltCircleRight />
             </a>
           </div>
         </div>
-        <div style={{ width: '55%', position: 'relative' }}>
+        {/* Right Section */}
+        <div className="w-full lg:w-3/5 relative">
           <img
             src="plan1.jpeg"
             alt="plan"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            className="w-full h-full object-cover"
           />
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: '#191C59',
-              opacity: 0.5, // Adjust the opacity as per your preference
-            }}
-          />
+          <div className="absolute top-0 left-0 w-full h-full bg-[#191C59] opacity-50"></div>
         </div>
       </div>
-
       <div className="main-plan-container">
         <div className="selling-points-section">
           <h2 className="selling-points-heading">Why Choose Us?</h2>
@@ -54,22 +51,23 @@ const Plans = () => {
               <h3>Comprehensive Tools</h3>
               <p>
                 Get access to a wide range of tools and resources to assist in
-                every stage of your business development, from idea validation to
-                market launch.
+                every stage of your business development, from idea validation
+                to market launch.
               </p>
             </div>
             <div className="selling-point">
               <h3>AI-Driven Analytics</h3>
               <p>
                 Leverage AI-powered analytics to test ideas, track progress, and
-                make data-driven decisions that maximize your chances of success.
+                make data-driven decisions that maximize your chances of
+                success.
               </p>
             </div>
             <div className="selling-point">
               <h3>Global Network</h3>
               <p>
-                Join a community of like-minded entrepreneurs and gain access to a
-                global network of potential partners, mentors, and investors.
+                Join a community of like-minded entrepreneurs and gain access to
+                a global network of potential partners, mentors, and investors.
               </p>
             </div>
           </div>
@@ -81,50 +79,45 @@ const Plans = () => {
           <div className="testimonials-container">
             <div className="testimonial-card">
               <p className="testimonial-text">
-                &quot;This platform has completely transformed the way we develop
-                ideas. The AI assistance and market analytics have been invaluable
-                to our business.&quot;
+                &quot;This platform has completely transformed the way we
+                develop ideas. The AI assistance and market analytics have been
+                invaluable to our business.&quot;
               </p>
               <h4 className="client-name">- John Doe, CEO of Startup Inc.</h4>
             </div>
             <div className="testimonial-card">
               <p className="testimonial-text">
-                &quot;The lifetime plan is a game-changer. The resources and community
-                have helped me bring my project to life.&quot;
+                &quot;The lifetime plan is a game-changer. The resources and
+                community have helped me bring my project to life.&quot;
               </p>
-              <h4 className="client-name">- Jane Smith, Founder of Innovate Labs</h4>
+              <h4 className="client-name">
+                - Jane Smith, Founder of Innovate Labs
+              </h4>
             </div>
             <div className="testimonial-card">
               <p className="testimonial-text">
-                &quot;The Enterprise Launch plan gave us the edge we needed to grow
-                quickly. Highly recommend it!&quot;
+                &quot;The Enterprise Launch plan gave us the edge we needed to
+                grow quickly. Highly recommend it!&quot;
               </p>
-              <h4 className="client-name">- Mike Johnson, Director at Tech Solutions</h4>
+              <h4 className="client-name">
+                - Mike Johnson, Director at Tech Solutions
+              </h4>
             </div>
           </div>
         </div>
-        <div style={{ alignItems: "center", textAlign: "center" }}>
-          <h2
-            style={{
-              marginBottom: "60px",
-              fontWeight: "400",
-              padding: "10px",
-              width: "60%",
-              margin: "auto",
-              textAlign: "center",
-            }}
-          >
-            You have reached your limit to test ideas; you can choose from the
-            below mentioned plans to proceed.
-          </h2>
-          <RiArrowUpDoubleFill 
+        <div className="flex flex-col items-center text-center">
+        <h2 className="mb-10 font-normal px-2 w-4/5 lg:w-3/5 mx-auto">
+    You have reached your limit to test ideas; you can choose from the below-mentioned plans to proceed.
+  </h2>
+          <RiArrowUpDoubleFill
+            className="text-[24px] text-[#6161FF] mx-auto animate-bounce"
             size={100}
             style={{
-              transform: "rotate(180deg)", // Rotated downward
-              fontSize: "24px",
-              color: "#6161FF",
+              // transform: "rotate(180deg)", // Rotated downward
+              // fontSize: "24px",
+              // color: "#6161FF",
               animation: "slideDown 2s infinite",
-              margin:"auto"
+              // margin: "auto",
             }}
           />
           <style>
@@ -142,7 +135,7 @@ const Plans = () => {
               }
             `}
           </style>
-          <h2 className="heading">Our Plans</h2>
+          <h2 className="heading mt-6 text-xl lg:text-2xl font-semibold">Our Plans</h2>
         </div>
         <div className="plans-container">
           {/* One Life-Time Plan - Start-Up */}
@@ -151,8 +144,8 @@ const Plans = () => {
               <h2 className="plan-title">One Life-Time Plan START-UP</h2>
               <ul className="plan-features">
                 <li>
-                  <span>✔</span> Track your work anywhere with our iOS and Android
-                  apps
+                  <span>✔</span> Track your work anywhere with our iOS and
+                  Android apps
                 </li>
                 <li>
                   <span>✔</span> AI assistant to track your idea&apos;s progress
@@ -189,15 +182,15 @@ const Plans = () => {
   );
 };
 export default Plans;
- 
-//  
+
+//
 // import "./PlanDetails.css";
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 // import { RiArrowUpDoubleFill } from "react-icons/ri";
 // const Plans = () => {
 //   return (<>
-  
-//   <div style={{ display: 'flex', flexDirection: 'row', backgroundColor: '#19229A', position: 'relative' }}> 
+
+//   <div style={{ display: 'flex', flexDirection: 'row', backgroundColor: '#19229A', position: 'relative' }}>
 //   <div style={{ width: '45%', backgroundColor: '#161D78', padding: '80px 100px', color: 'white' }}>
 //     <h2>How to Build a Startup</h2>
 //     <div style={{marginTop:'50px'}}>Learn what it takes to build a successful startup using the Customer Development process, where entrepreneurs "get out of the building" to gather and iterate on feedback.</div>
@@ -232,7 +225,7 @@ export default Plans;
 // </div>
 
 //     <div className="main-plan-container">
-      
+
 //       <div className="selling-points-section">
 //         <h2 className="selling-points-heading">Why Choose Us?</h2>
 //         <div className="selling-points-container">
@@ -310,7 +303,7 @@ export default Plans;
 //           You have reached your limit to test ideas, you can choose from the
 //           below mentioned plans to proceed
 //         </h2>
-//         <RiArrowUpDoubleFill 
+//         <RiArrowUpDoubleFill
 //   size={100}
 //   style={{
 //     transform: "rotate(180deg)", // Rotated downward
@@ -336,9 +329,8 @@ export default Plans;
 // `}
 // </style>
 
-
 //         <h1 className="heading">Our Plans</h1>
-//       </div>  
+//       </div>
 //       <div className="plans-container">
 //         {/* One Life-Time Plan - Start-Up */}
 //         <div className="plan-card">

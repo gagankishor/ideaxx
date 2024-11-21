@@ -177,13 +177,13 @@ const websiteEssentials = [
 const Blogs = () => {
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
-    if (!id) return;
+    
     fetch("/blogs.json")
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data);
       });
-  }, [id]);
+  });
   return (
     <div className=" max-w-full bg-gray-50 ">
       <div className="bg-gray-50 pt-10 md:min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20">
@@ -194,12 +194,14 @@ const Blogs = () => {
             {/* {blogs[1].} */}
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose an AI-Powered Platform for Collaboration?
+              {/* Why Choose an AI-Powered Platform for Collaboration? */}
+              {blogs[1]?.title}
             </h1>
             <p className="text-gray-700 font-semibold text-base sm:text-lg md:text-xl text-left mb-6">
-              Our platform is more than just a set of tools it s a core solution
+              {/* Our platform is more than just a set of tools it s a core solution
               that unites teams, simplifies processes, and maximizes
-              productivity. With advanced AI capabilities,
+              productivity. With advanced AI capabilities, */}
+              {blogs[1]?.para}
             </p>
             <a
               href="/blog/1"

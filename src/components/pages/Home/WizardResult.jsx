@@ -183,7 +183,11 @@ const WizardResult = () => {
   // const totalMarketScrore = 35.24;
 
   const successPercentage = parseFloat(data?.success_percentage || 0);
-  const totalMarketScrore2 = totalMarketScrore + (totalMarketScrore * 60) / 100;
+  const totalMarketScrore2 = (
+    successPercentage +
+    ((100 - successPercentage) * 60) / 100
+  ).toFixed(2);  
+  
   console.log(
     "this is score",
     successPercentage,
@@ -241,8 +245,8 @@ const WizardResult = () => {
     <>
       <div className="max-w-[1400px] m-auto ">
         <div className="fixed bottom-3 w-full z-50 sm:hidden flex justify-center items-center">
-          <div className="mx-10 text-center w-[96%] text-3xl rounded-lg h-16 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-medium flex items-center justify-center">
-            Launch Your Idea
+          <div className="mx-10 text-center w-[96%] text-xl rounded-lg h-16 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-medium flex items-center justify-center">
+            Launch Your Idea Free
           </div>
         </div>
         <div className="mt-5 border-gray-300 border rounded-lg w-[94%] mx-auto p-5">
@@ -260,14 +264,14 @@ const WizardResult = () => {
               {[
                 {
                   href: "#idea",
-                  data: bardata2,
-                  score: totalMarketScrore,
+                  data: bardata,
+                  score: data?.success_percentage,
                   label: "Idea Score",
                 },
                 {
                   href: "#market",
-                  data: bardata,
-                  score: data?.success_percentage,
+                  data: bardata2,
+                  score: totalMarketScrore,
                   label: "Market Score",
                 },
                 {
@@ -603,8 +607,8 @@ const WizardResult = () => {
               {[
                 {
                   href: "#idea",
-                  data: bardata2,
-                  score: totalMarketScrore,
+                  data: bardata,
+                  score: data?.success_percentage,
                   label: "Idea Score",
                 },
               ].map((item, index) => {
@@ -870,8 +874,8 @@ const WizardResult = () => {
                 {[
                   {
                     href: "#market",
-                    data: bardata,
-                    score: data?.success_percentage,
+                    data: bardata2,
+                    score: totalMarketScrore,
                     label: "Market Score",
                   },
                 ].map((item, index) => {

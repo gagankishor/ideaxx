@@ -4,38 +4,33 @@ import { useEffect, useState } from "react";
 const articles = [
   {
     title:
-      "Unlock Integrity in Every Task with One Core Platform, Powered by AI In a world that ...",
-    category: "Integrity",
-    imageUrl: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c", // Unsplash image
+      "The Mindset of a Successful Entrepreneur ...",
+    category: "Entrepreneurship",
+    imageUrl: "/blog/2/image.webp", // Unsplash image
     hrefUrl: "blog/2",
   },
   {
     title:
-      "One Core Platform, Powered by AI, for All Your Work in Innovation, Unlock the future of ...",
-    category: "Innovation",
-    imageUrl: "https://images.unsplash.com/photo-1506765515384-028b60a970df", // Unsplash image
+      "Top Business Trends to Watch in 2024 ...",
+    category: "Business Trends",
+    imageUrl: "/blog/3/image2.webp", // Unsplash image
     hrefUrl: "blog/3",
   },
   {
-    title: "How to create a powerful landing page in 8 easy steps",
-    category: "Marketing Insights",
-    imageUrl: "https://images.unsplash.com/photo-1485217988980-11786ced9454",
+    title: "How AI is Shaping the Future of Entrepreneurship",
+    category: "Entrepreneurship",
+    imageUrl: "/blog/4/image1.webp",
+    hrefUrl: "blog/4",
+
   },
   {
-    title: "What is web design? A comprehensive guide",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1504805572947-34fad45aed93",
-  },
-  {
-    title: "18 outstanding website examples that will inspire you",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-  },
-  {
-    title: "How to design a website with AI in 2024",
-    category: "AI Knowledge Hub",
-    imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-  },
+    title: "The Rise of Online Businesses: Opportunities and Challenges",
+    category: "Opportunities and Challenges",
+    imageUrl: "/blog/5/image.webp",
+    hrefUrl: "blog/5",
+
+  }
+  
 ];
 const editorsPick = [
   {
@@ -91,17 +86,11 @@ const websiteEssentials = [
 ];
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-
   useEffect(() => {
     fetch("/blogs.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch blogs");
-        return response.json();
-      })
-      .then((data) => setBlogs(data))
-      .catch((error) => {
-        console.error("Error fetching blogs:", error);
-        setBlogs([]); // Fallback to empty
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogs(data);
       });
   }, []);
   return (
@@ -109,7 +98,7 @@ const Blogs = () => {
       <div className="bg-gray-50 pt-10 md:min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl items-center">
           {/* Left Section */}
-          {blogs.length > 0 ? (
+          
             <div>
               <p className="text-sm text-left font-light uppercase mb-2">
                 {/* {blogs[1]?.category || "Category"} */}
@@ -117,7 +106,7 @@ const Blogs = () => {
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {blogs[1]?.title || "Default Title"}
               </h1>
-              <p className="text-gray-700 font-semibold text-base sm:text-lg md:text-xl text-left mb-6">
+              <p className="text-gray-700 font-medium text-base sm:text-lg md:text-xl text-left mb-6">
                 {blogs[1]?.para || "Default description text."}
               </p>
               <a
@@ -127,14 +116,12 @@ const Blogs = () => {
                 Read more <span className="ml-2 text-xl">&rarr;</span>
               </a>
             </div>
-          ) : (
-            <p>Loading blogs...</p>
-          )}
+          
 
           {/* Right Section */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d" // Replace with your actual image path
+              src="/blog/1/image.png" // Replace with your actual image path
               alt="AI Knowledge Hub"
               className="w-full h-auto object-cover rounded-lg"
             />

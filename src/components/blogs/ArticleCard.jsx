@@ -4,7 +4,7 @@ export default function ArticleCard({ title, category, imageUrl,hrefUrl }) {
     return (
       <div className="group bg-gray-50   overflow-hidden ">
         <div className="relative h-72 w-full">
-          <a href="blogs/1" className=" cursor-pointer">
+          <a href={hrefUrl?hrefUrl:"/blog/2"} className=" cursor-pointer">
           <img
             src={imageUrl}
             // src="https://static.wixstatic.com/media/a77aa0_93b94d3603104f23955bf641a28bccbc~mv2.png"

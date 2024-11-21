@@ -57,7 +57,7 @@ const BlogDetails = () => {
           </div>
         </div>
         <div className="max-w-3xl mx-auto mb-6">
-          <img src={blog?.imageUrl} alt="Technical Learning" className="" />
+          {blog?.imageUrl?<img src={blog?.imageUrl} alt="Technical Learning" className="" />:''}
           {blog.para && <p className="text-gray-700 text-left">{blog.para}</p>}
         </div>
         <div className="max-w-3xl mx-auto space-y-6">
@@ -79,11 +79,11 @@ const BlogDetails = () => {
                 <p className="text-gray-700 text-left">{section.text}</p>
               )}
 
-              {section?.features?.map((feature, featureIndex) => (
+              {section?.subContent?.map((feature, featureIndex) => (
                 <div key={featureIndex} className="space-y-4">
-                  {feature?.title && (
+                  {feature?.header && (
                     <p className="text-gray-700 text-left font-semibold">
-                      {feature.title}
+                      {feature.header}
                     </p>
                   )}
                   {feature?.image && (
@@ -93,9 +93,9 @@ const BlogDetails = () => {
                       className="rounded-md max-w-xl"
                     />
                   )}
-                  {feature?.description && (
+                  {feature?.text && (
                     <p className="text-gray-700 text-left">
-                      {feature.description}
+                      {feature.text}
                     </p>
                   )}
                 </div>

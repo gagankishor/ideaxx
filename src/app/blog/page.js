@@ -1,5 +1,6 @@
 "use client"; // Ensure the component runs on the client side
 import ArticleCard from "@/components/blogs/ArticleCard";
+import { useEffect, useState } from "react";
 // import Link from "next/link";
 
 // Sample blog data
@@ -87,17 +88,18 @@ import ArticleCard from "@/components/blogs/ArticleCard";
 // };
 const articles = [
   {
-    title: "Unlock Integrity in Every Task with One Core Platform, Powered by AI In a world that ...",
+    title:
+      "Unlock Integrity in Every Task with One Core Platform, Powered by AI In a world that ...",
     category: "Integrity",
     imageUrl: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c", // Unsplash image
-    hrefUrl:"blog/2"
+    hrefUrl: "blog/2",
   },
   {
-    title: "One Core Platform, Powered by AI, for All Your Work in Innovation, Unlock the future of ...",
+    title:
+      "One Core Platform, Powered by AI, for All Your Work in Innovation, Unlock the future of ...",
     category: "Innovation",
     imageUrl: "https://images.unsplash.com/photo-1506765515384-028b60a970df", // Unsplash image
-    hrefUrl:"blog/3"
-
+    hrefUrl: "blog/3",
   },
   {
     title: "How to create a powerful landing page in 8 easy steps",
@@ -107,12 +109,12 @@ const articles = [
   {
     title: "What is web design? A comprehensive guide",
     category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1504805572947-34fad45aed93", 
+    imageUrl: "https://images.unsplash.com/photo-1504805572947-34fad45aed93",
   },
   {
     title: "18 outstanding website examples that will inspire you",
     category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", 
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
   },
   {
     title: "How to design a website with AI in 2024",
@@ -173,39 +175,50 @@ const websiteEssentials = [
   },
 ];
 const Blogs = () => {
+  const [blogs, setBlogs] = useState(null);
+  useEffect(() => {
+    if (!id) return;
+    fetch("/blogs.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogs(data);
+      });
+  }, [id]);
   return (
     <div className=" max-w-full bg-gray-50 ">
       <div className="bg-gray-50 pt-10 md:min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl items-center">
-    {/* Left Section */}
-    <div>
-      <p className="text-sm text-left font-light uppercase mb-2">
-      Collaboration
-      </p>
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-      Why Choose an AI-Powered Platform for Collaboration?
-      </h1>
-      <p className="text-gray-700 font-semibold text-base sm:text-lg md:text-xl text-left mb-6">
-      Our platform is more than just a set of tools it s a core solution that unites teams, simplifies processes, and maximizes productivity. With advanced AI capabilities, 
-      </p>
-      <a
-        href="/blog/1"
-        className="font-semibold hover:underline leading-9 flex items-center underline"
-      >
-        Read more <span className="ml-2 text-xl">&rarr;</span>
-      </a>
-    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl items-center">
+          {/* Left Section */}
+          <div>
+            <p className="text-sm text-left font-light uppercase mb-2">
+            {/* {blogs[1].} */}
+            </p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose an AI-Powered Platform for Collaboration?
+            </h1>
+            <p className="text-gray-700 font-semibold text-base sm:text-lg md:text-xl text-left mb-6">
+              Our platform is more than just a set of tools it s a core solution
+              that unites teams, simplifies processes, and maximizes
+              productivity. With advanced AI capabilities,
+            </p>
+            <a
+              href="/blog/1"
+              className="font-semibold hover:underline leading-9 flex items-center underline"
+            >
+              Read more <span className="ml-2 text-xl">&rarr;</span>
+            </a>
+          </div>
 
-    {/* Right Section */}
-    <div className="relative">
-      <img
-        src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d" // Replace with your actual image path
-        alt="AI Knowledge Hub"
-        className="w-full h-auto object-cover rounded-lg"
-      />
-    </div>
-  </div>
-</div>
+          {/* Right Section */}
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d" // Replace with your actual image path
+              alt="AI Knowledge Hub"
+              className="w-full h-auto object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      </div>
 
       <div className=" bg-black max-w-full mx-5 md:mx-20 h-[1px]"></div>
       <div className="bg-gray-50 mx-5 md:mx-20 py-12">

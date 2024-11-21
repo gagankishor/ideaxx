@@ -13,7 +13,7 @@ const Plans = () => {
           </h2>
           <p className="mt-8 text-base lg:text-lg text-left text-white leading-relaxed">
             Learn what it takes to build a successful startup using the Customer
-            Development process, where entrepreneurs "get out of the building"
+            Development process, where entrepreneurs get out of the building
             to gather and iterate on feedback.
           </p>
           <div className="mt-8">

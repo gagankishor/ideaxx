@@ -186,7 +186,7 @@ const Blogs = () => {
       Why Choose an AI-Powered Platform for Collaboration?
       </h1>
       <p className="text-gray-700 font-semibold text-base sm:text-lg md:text-xl text-left mb-6">
-      Our platform is more than just a set of tools it's a core solution that unites teams, simplifies processes, and maximizes productivity. With advanced AI capabilities, 
+      Our platform is more than just a set of tools it s a core solution that unites teams, simplifies processes, and maximizes productivity. With advanced AI capabilities, 
       </p>
       <a
         href="/blog/1"

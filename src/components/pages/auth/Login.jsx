@@ -18,7 +18,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [canResend, setCanResend] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(300);
-  const { isAuthenticated, login } = useContext(AuthContext);
+  const {  login } = useContext(AuthContext);
   // if (isAuthenticated) {
   //   // window.location.href = "/";
   //   // console.log(isAuthenticated);
@@ -88,7 +88,7 @@ const Login = () => {
     }
   };
   const handleGoogleLogin = async (status) => {
-    // console.log(status);
+    console.log(status);
     // if (status) {
     //   console.log(status);
     //   // window.location.href = "/";

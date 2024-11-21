@@ -7,7 +7,7 @@ import { useLinkedIn } from 'react-linkedin-login-oauth2';
 import Swal from 'sweetalert2';
 
 const LinkedInLogin = () => {
-  const { isAuthenticated, login } = useContext(AuthContext);
+  const {  login } = useContext(AuthContext);
 
   const { linkedInLogin } = useLinkedIn({
     redirectUri: 'http://localhost:3000/linkedin', // Ensure this matches your LinkedIn app settings

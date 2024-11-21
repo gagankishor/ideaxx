@@ -29,4 +29,5 @@ export default function ArticleCard({ title, category, imageUrl,hrefUrl }) {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
+    hrefUrl:PropTypes.string.isRequired,
   };

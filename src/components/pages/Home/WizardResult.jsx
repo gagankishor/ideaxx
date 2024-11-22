@@ -2,7 +2,7 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaAward, FaBalanceScale, FaChartLine, FaGlobe, FaMusic, FaRobot, FaRocket, FaStar, FaUsers, FaUserTie } from "react-icons/fa";
+import { FaAward, FaBalanceScale, FaChartLine, FaGlobe, FaRobot, FaUsers } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
@@ -409,40 +409,40 @@ const WizardResult = () => {
                   points : [
                     {
                       id: 1,
-                      label: "21%",
+                      label: "21.2%",
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaChartLine />,
                       rowDir: "md:flex-row-reverse",
                       textDir: "md:text-right",
-                      text:" Opportunities in Growing Market"
-  
+                      text:"IDEA"
                     },
                     {
                       id: 2,
-                      label: "19.91%",
+                      label: "22.91%",
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                       icon: <FaBalanceScale />,
                       rowDir: "md:flex-row",
                       textDir: "md:text-left",
-                      text:"Highlighting Your Competitive Edge"
+                      text:"Investment"
                     },
                     {
                       id: 5,
-                      label: "15.91%",
+                      label: "18.91%",
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
                       mgIcon:'md:-mr-20',
+
                       icon: <FaUsers />,
                       rowDir: "md:flex-col",
                       textDir: "md:text-right",
-                      text:"Building Strong  Teams "
+                      text:"Current Job related"
                     },
                     {
                       id: 6,
-                      label: "17.91%",
+                      label: "21.91%",
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -451,17 +451,17 @@ const WizardResult = () => {
                       icon: <FaAward />,
                       rowDir: "md:flex-col",
                       textDir: "md:text-left",
-                      text:"Analyzing Market Competition"
+                      text:"Experience"
                     },
                     {
                       id: 4,
-                      label: "17.91%",
+                      label: "19.1%",
                       position: "-top-14 left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
                       textDir: "md:text-center",
-                      text: "Analyzing Market"
+                      text: "Country"
                     }
                   ]
                 },
@@ -484,71 +484,71 @@ const WizardResult = () => {
                 const circumference = 2 * Math.PI * radius;
                 const offset =
                   circumference - (item.score / 100) * circumference;
-                const points = [
-                  {
-                    id: 1,
-                    label: "ONE",
-                    position: " top-60 -left-10 md:-top-4 md:-left-28",
-                    bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                    icon: <FaMapLocation />,
-                    rowDir: "md:flex-row-reverse",
-                    textDir: "md:text-right",
-                    text:" Opportunities in Growing Market"
+                // const points = [
+                //   {
+                //     id: 1,
+                //     label: "ONE",
+                //     position: " top-60 -left-10 md:-top-4 md:-left-28",
+                //     bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                //     icon: <FaMapLocation />,
+                //     rowDir: "md:flex-row-reverse",
+                //     textDir: "md:text-right",
+                //     text:" Opportunities in Growing Market"
 
-                  },
-                  {
-                    id: 2,
-                    label: "TWO",
-                    position: " top-60 -right-10 md:-top-4 md:-right-28",
-                    bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                    icon: <FaStar />,
-                    rowDir: "md:flex-row",
-                    textDir: "md:text-left",
-                    text:"Highlighting Your Competitive Edge"
+                //   },
+                //   {
+                //     id: 2,
+                //     label: "TWO",
+                //     position: " top-60 -right-10 md:-top-4 md:-right-28",
+                //     bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                //     icon: <FaStar />,
+                //     rowDir: "md:flex-row",
+                //     textDir: "md:text-left",
+                //     text:"Highlighting Your Competitive Edge"
 
-                  },
-                  // {
-                  //   id: 3,
-                  //   label: "Point Three",
-                  //   position: "-bottom-4 -left-20",
-                  //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
-                  //   icon: <FaHeart />, // Heart icon
-                  //   rowDir: "flex-row-reverse",
-                  //   textDir: "text-right",
-                  // },
-                  // {
-                  //   id: 4,
-                  //   label: "Point Four",
-                  //   position: "-bottom-4 -right-20",
-                  //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
-                  //   icon: <FaCogs /> ,// Gear icon
-                  //   rowDir: "flex-row",
-                  //   textDir: "text-left",
-                  // },
-                  {
-                    id: 5,
-                    label: "Three",
-                    position:
-                      "top-72 mt-3 -left-10  md:top-1/2 md:-translate-y-1/2  md:-left-36",
-                    bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
-                    icon: <FaMusic />,
-                    rowDir: "md:flex-row-reverse",
-                    textDir: "md:text-right",
-                    text:"Building Strong  Teams and Resources"
+                //   },
+                //   // {
+                //   //   id: 3,
+                //   //   label: "Point Three",
+                //   //   position: "-bottom-4 -left-20",
+                //   //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
+                //   //   icon: <FaHeart />, // Heart icon
+                //   //   rowDir: "flex-row-reverse",
+                //   //   textDir: "text-right",
+                //   // },
+                //   // {
+                //   //   id: 4,
+                //   //   label: "Point Four",
+                //   //   position: "-bottom-4 -right-20",
+                //   //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
+                //   //   icon: <FaCogs /> ,// Gear icon
+                //   //   rowDir: "flex-row",
+                //   //   textDir: "text-left",
+                //   // },
+                //   {
+                //     id: 5,
+                //     label: "Three",
+                //     position:
+                //       "top-72 mt-3 -left-10  md:top-1/2 md:-translate-y-1/2  md:-left-36",
+                //     bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                //     icon: <FaMusic />,
+                //     rowDir: "md:flex-row-reverse",
+                //     textDir: "md:text-right",
+                //     text:"Building Strong  Teams and Resources"
 
-                  },
-                  {
-                    id: 6,
-                    label: "Four",
-                    position:
-                      "top-72 mt-3 -right-10  md:top-1/2 md:-translate-y-1/2   md:-right-36 ",
-                    bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
-                    icon: <FaRocket />,
-                    rowDir: "md:flex-row",
-                    textDir: "md:text-left",
-                    text:"Analyzing Market Competition Effectively"
-                  },
-                ];
+                //   },
+                //   {
+                //     id: 6,
+                //     label: "Four",
+                //     position:
+                //       "top-72 mt-3 -right-10  md:top-1/2 md:-translate-y-1/2   md:-right-36 ",
+                //     bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                //     icon: <FaRocket />,
+                //     rowDir: "md:flex-row",
+                //     textDir: "md:text-left",
+                //     text:"Analyzing Market Competition Effectively"
+                //   },
+                // ];
                 
                 return (
                   <div

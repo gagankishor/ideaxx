@@ -83,23 +83,23 @@ const businessStrategies = [
   },
 ];
 
-const websiteEssentials = [
-  {
-    title: "The Ultimate Guide to Building a Personal Portfolio Website",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee", 
-  },
-  {
-    title: "10 Tips for Optimizing Website Performance",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1533750349088-cd871a92f312", // Website performance optimization image
-  },
-  {
-    title: "Essential SEO Techniques to Improve Your Site’s Ranking",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b", // SEO techniques image
-  },
-];
+// const websiteEssentials = [
+//   {
+//     title: "The Ultimate Guide to Building a Personal Portfolio Website",
+//     category: "Website Essentials",
+//     imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee", 
+//   },
+//   {
+//     title: "10 Tips for Optimizing Website Performance",
+//     category: "Website Essentials",
+//     imageUrl: "https://images.unsplash.com/photo-1533750349088-cd871a92f312", // Website performance optimization image
+//   },
+//   {
+//     title: "Essential SEO Techniques to Improve Your Site’s Ranking",
+//     category: "Website Essentials",
+//     imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b", // SEO techniques image
+//   },
+// ];
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {

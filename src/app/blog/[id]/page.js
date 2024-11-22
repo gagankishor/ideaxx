@@ -4,19 +4,22 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 const websiteEssentials = [
   {
-    title: "The Ultimate Guide to Building a Personal Portfolio Website",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee",
+    title: "The Mindset of a Successful Entrepreneur ...",
+    category: "Entrepreneurship",
+    imageUrl: "/blog/3/image3.webp",
+    hrefUrl: "blog/1",
   },
   {
-    title: "10 Tips for Optimizing Website Performance",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1533750349088-cd871a92f312",
+    title: "Top Business Trends to Watch in 2024 ...",
+    category: "Business Trends",
+    imageUrl: "/blog/2/image3.webp", // Data visualization image
+    hrefUrl: "blog/2",
   },
   {
-    title: "Essential SEO Techniques to Improve Your Site’s Ranking",
-    category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+    title: "How AI is Shaping the Future of Entrepreneurship",
+    category: "Entrepreneurship",
+    imageUrl: "/blog/4/image3.webp", // AI and data science image
+    hrefUrl: "blog/3",
   },
 ];
 const BlogDetails = () => {
@@ -117,6 +120,8 @@ const BlogDetails = () => {
                   title={article.title}
                   category={article.category}
                   imageUrl={article.imageUrl}
+                  hrefUrl={article?.hrefUrl}
+
                 />
               ))}
             </div>

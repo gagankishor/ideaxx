@@ -12,11 +12,17 @@
     margin: 0 20px; 
     flex-wrap: wrap;
   }
-  .company-logo {
+  /* .company-logo {
     margin: 0 20px;
     height: 75px;
     padding: 0px;
     border-radius: 5px;
+  } */
+  .logos-carousel-container {
+    @apply w-full mx-auto;
+  }
+  .company-logo {
+    @apply max-h-24 mx-auto transition-transform duration-200 hover:scale-110;
   }
   .logos {
     padding: 100px 40px;

@@ -136,7 +136,7 @@ export default function Footer() {
         </div>
         <div className="md:col-span-2 ">
           {/* <h4 className="font-semibold mb-4 text-left text-4xl">IdeaX</h4> */}
-          <img src="logo.png" alt="ideax logo" width={200}/>
+          <img src="/logo.png" alt="ideax logo" width={200}/>
           <ul className="space-y-2 text-left p-2">
             <li>
               Ideax empowers entrepreneurs with AI-driven tools, market

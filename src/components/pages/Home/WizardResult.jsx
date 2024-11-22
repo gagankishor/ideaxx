@@ -2,7 +2,7 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaMusic, FaRobot, FaRocket, FaStar } from "react-icons/fa";
+import { FaAward, FaBalanceScale, FaChartLine, FaGlobe, FaMusic, FaRobot, FaRocket, FaStar, FaUsers, FaUserTie } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
@@ -267,18 +267,203 @@ const WizardResult = () => {
                   data: bardata,
                   score: data?.success_percentage,
                   label: "Idea Score",
+                  points : [
+                    {
+                      id: 1,
+                      label: "21%",
+                      position: " top-60 -left-10 md:top-7 md:-left-36",
+                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                      icon: <FaChartLine />,
+                      rowDir: "md:flex-row-reverse",
+                      textDir: "md:text-right",
+                      text:"IDEA"
+  
+                    },
+                    {
+                      id: 2,
+                      label: "19.91%",
+                      position: " top-60 -right-10 md:top-7 md:-right-36",
+                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                      icon: <FaBalanceScale />,
+                      rowDir: "md:flex-row",
+                      textDir: "md:text-left",
+                      text:"Investment"
+                    },
+                    {
+                      id: 5,
+                      label: "15.91%",
+                      position:
+                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
+                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                      mgIcon:'md:-mr-20',
+
+                      icon: <FaUsers />,
+                      rowDir: "md:flex-col",
+                      textDir: "md:text-right",
+                      text:"Current Job related"
+                    },
+                    {
+                      id: 6,
+                      label: "17.91%",
+                      position:
+                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      mgIcon:'md:-ml-20',
+
+                      icon: <FaAward />,
+                      rowDir: "md:flex-col",
+                      textDir: "md:text-left",
+                      text:"Experience"
+                    },
+                    {
+                      id: 4,
+                      label: "17.91%",
+                      position: "-top-14 left-3 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
+                      icon: <FaGlobe />,
+                      rowDir: "md:flex-col-reverse",
+                      textDir: "md:text-center",
+                      text: "Country"
+                    }
+                  ]
                 },
                 {
                   href: "#market",
                   data: bardata2,
                   score: totalMarketScrore,
                   label: "Market Score",
+                  points : [
+                    {
+                      id: 1,
+                      label: `${parseFloat(TeamAndResourcesData)/5}%`,
+                      position: " top-60 -left-10 md:top-7 md:-left-36",
+                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                      icon: <FaChartLine />,
+                      rowDir: "md:flex-row-reverse",
+                      textDir: "md:text-right",
+                      text:"Team & Resources"
+  
+                    },
+                    {
+                      id: 2,
+                      label: `${parseFloat(
+                        uniqueValueProposition?.finalScore?.replace("%", "")
+                      )/5}%`,
+                      position: " top-60 -right-10 md:top-7 md:-right-36",
+                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                      icon: <FaBalanceScale />,
+                      rowDir: "md:flex-row",
+                      textDir: "md:text-left",
+                      text:"Unique Value Proposition"
+                    },
+                    {
+                      id: 5,
+                      label: `${parseFloat(
+                        RevenueModelData?.finalScore?.replace("%", "")
+                      )/5}%`,
+                      position:
+                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
+                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                      mgIcon:'md:-mr-20',
+
+                      icon: <FaUsers />,
+                      rowDir: "md:flex-col",
+                      textDir: "md:text-right",
+                      text:"Revenue Model"
+                    },
+                    {
+                      id: 6,
+                      label: `${parseFloat(
+                        CompetitiveLandscapeData?.finalScore?.replace(
+                          "%",
+                          ""
+                        )
+                      )/5}%`,
+                      position:
+                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      mgIcon:'md:-ml-20',
+
+                      icon: <FaAward />,
+                      rowDir: "md:flex-col",
+                      textDir: "md:text-left",
+                      text:"Competitive Landscape"
+                    },
+                    {
+                      id: 4,
+                      label: `${parseFloat(data?.marketPotential)/5}%`,
+                      position: "-top-14 left-3 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
+                      icon: <FaGlobe />,
+                      rowDir: "md:flex-col-reverse",
+                      textDir: "md:text-center",
+                      text: "Market Potential"
+                    }
+                  ]
                 },
                 {
                   href: "#ideax",
                   data: bardata3,
                   score: totalMarketScrore2,
                   label: "Score with Ideax",
+                  points : [
+                    {
+                      id: 1,
+                      label: "21%",
+                      position: " top-60 -left-10 md:top-7 md:-left-36",
+                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                      icon: <FaChartLine />,
+                      rowDir: "md:flex-row-reverse",
+                      textDir: "md:text-right",
+                      text:" Opportunities in Growing Market"
+  
+                    },
+                    {
+                      id: 2,
+                      label: "19.91%",
+                      position: " top-60 -right-10 md:top-7 md:-right-36",
+                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                      icon: <FaBalanceScale />,
+                      rowDir: "md:flex-row",
+                      textDir: "md:text-left",
+                      text:"Highlighting Your Competitive Edge"
+                    },
+                    {
+                      id: 5,
+                      label: "15.91%",
+                      position:
+                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
+                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                      mgIcon:'md:-mr-20',
+                      icon: <FaUsers />,
+                      rowDir: "md:flex-col",
+                      textDir: "md:text-right",
+                      text:"Building Strong  Teams "
+                    },
+                    {
+                      id: 6,
+                      label: "17.91%",
+                      position:
+                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      mgIcon:'md:-ml-20',
+
+                      icon: <FaAward />,
+                      rowDir: "md:flex-col",
+                      textDir: "md:text-left",
+                      text:"Analyzing Market Competition"
+                    },
+                    {
+                      id: 4,
+                      label: "17.91%",
+                      position: "-top-14 left-3 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
+                      icon: <FaGlobe />,
+                      rowDir: "md:flex-col-reverse",
+                      textDir: "md:text-center",
+                      text: "Analyzing Market"
+                    }
+                  ]
                 },
               ].map((item, index) => {
                 const radius = 40;
@@ -308,6 +493,8 @@ const WizardResult = () => {
                     icon: <FaMapLocation />,
                     rowDir: "md:flex-row-reverse",
                     textDir: "md:text-right",
+                    text:" Opportunities in Growing Market"
+
                   },
                   {
                     id: 2,
@@ -317,6 +504,8 @@ const WizardResult = () => {
                     icon: <FaStar />,
                     rowDir: "md:flex-row",
                     textDir: "md:text-left",
+                    text:"Highlighting Your Competitive Edge"
+
                   },
                   // {
                   //   id: 3,
@@ -345,6 +534,8 @@ const WizardResult = () => {
                     icon: <FaMusic />,
                     rowDir: "md:flex-row-reverse",
                     textDir: "md:text-right",
+                    text:"Building Strong  Teams and Resources"
+
                   },
                   {
                     id: 6,
@@ -355,64 +546,10 @@ const WizardResult = () => {
                     icon: <FaRocket />,
                     rowDir: "md:flex-row",
                     textDir: "md:text-left",
+                    text:"Analyzing Market Competition Effectively"
                   },
                 ];
-                // const points = [
-                //   {
-                //     id: 1,
-                //     label: "ONE",
-                //     position: "top-5 -left-24 md:-top-4 md:-left-16",
-                //     bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                //     icon: <FaMapLocation />,
-                //     rowDir: "flex-row md:flex-row-reverse",
-                //     textDir: "text-left md:text-right",
-                //   },
-                //   {
-                //     id: 2,
-                //     label: "TWO",
-                //     position: "top-15 -left-24 md:-top-4 md:-right-16",
-                //     bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                //     icon: <FaStar />,
-                //     rowDir: "flex-row",
-                //     textDir: "text-left",
-                //   },
-                //   // {
-                //   //   id: 3,
-                //   //   label: "Point Three",
-                //   //   position: "-bottom-4 -left-20",
-                //   //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
-                //   //   icon: <FaHeart />, // Heart icon
-                //   //   rowDir: "flex-row-reverse",
-                //   //   textDir: "text-right",
-                //   // },
-                //   // {
-                //   //   id: 4,
-                //   //   label: "Point Four",
-                //   //   position: "-bottom-4 -right-20",
-                //   //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
-                //   //   icon: <FaCogs /> ,// Gear icon
-                //   //   rowDir: "flex-row",
-                //   //   textDir: "text-left",
-                //   // },
-                //   {
-                //     id: 5,
-                //     label: "FIVE",
-                //     position: "top-32  -left-24",
-                //     bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
-                //     icon: <FaMusic />,
-                //     rowDir: "flex-row md:flex-row-reverse",
-                //     textDir: " text-left md:text-right",
-                //   },
-                //   {
-                //     id: 6,
-                //     label: "SIX",
-                //     position: "top-44  -left-24 md:-right-24 ",
-                //     bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
-                //     icon: <FaRocket />,
-                //     rowDir: "flex-row",
-                //     textDir: "text-left",
-                //   },
-                // ];
+                
                 return (
                   <div
                     href={item.href}
@@ -426,29 +563,29 @@ const WizardResult = () => {
                   >
                     <div className="relative  flex justify-center items-center">
                       <div>
-                        {points.map((point) => (
+                        {item?.points.map((point) => (
                           <div
                             key={point.id}
                             className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 mx-6`}
                           >
                             <div
-                              className={`w-6 h-6 ${point.bgColor} text-white rounded-full flex items-center justify-center shadow-lg`}
+                              className={`w-6 h-6 ${point.bgColor} ${point.mgIcon} text-white   rounded-full flex items-center  justify-center shadow-lg`}
                               style={{
                                 background: point.bgColor,
                               }}
                             >
                               {point.icon}
                             </div>
-                            <div>
+                            <div className="">
                               <h4
                                 className={`text-xs ${point.textDir} font-black text-gray-600`}
                               >
                                 {point.label}
                               </h4>
                               <p
-                                className={`text-[12px] ${point.textDir} text-justify m-0 max-w-[100px]`}
+                                className={`text-[12px] ${point.textDir} text-justify m-0 w-[100px]`}
                               >
-                                Lorem ipsum ka dolor sit Lorem
+                               {point.text}
                               </p>
                             </div>
                           </div>
@@ -526,7 +663,7 @@ const WizardResult = () => {
                         </text>
                       </svg>
                     </div>
-                    <p className="mt-6 mb-0 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
+                    <p className="mt-16 mb-0 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
                       {item.label}
                     </p>
                     <a

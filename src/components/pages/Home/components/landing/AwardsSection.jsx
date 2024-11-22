@@ -91,14 +91,13 @@ const AwardsSection = () => {
                   </div>
                   <div className="ml-5">
                     <h4 className="text-white text-xl">
-                      The Future of Project Management
+                    10 Questions to Ask Yourself Before Starting Your Business
                     </h4>
                     <p className="text-gray-200">
-                      Explore how technology is reshaping the project management
-                      landscape and what to expect in the years to come.
+                    Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requ...
                     </p>
                     <a
-                      href={`/blogs/1`}
+                      href={`/blog/1`}
                       className="text-blue-400 hover:underline"
                     >
                       Read more
@@ -120,14 +119,13 @@ const AwardsSection = () => {
                   </div>
                   <div className="ml-5">
                     <h4 className="text-white text-xl">
-                      CRM Strategies for 2024
+                    The Mindset of a Successful Entrepreneur
                     </h4>
                     <p className="text-gray-200">
-                      Learn the top strategies to enhance customer relationships
-                      and improve sales with CRM tools in 2024.
+                    Embarking on an entrepreneurial journey requires more than just a solid business plan and financial...
                     </p>
                     <a
-                      href={`/blogs/1`}
+                      href={`/blog/2`}
                       className="text-blue-400 hover:underline"
                     >
                       Read more
@@ -148,11 +146,10 @@ const AwardsSection = () => {
                   </div>
                   <div className="ml-5">
                     <h4 className="text-white text-xl">
-                      Product Development Trends
+                    Top Business Trends to Watch in 2024
                     </h4>
                     <p className="text-gray-200">
-                      A deep dive into the latest trends in product development
-                      and how to stay ahead of the competition.
+                    As we approach 2024, the business landscape continues to evolve rapidly, influenced by...
                     </p>
                     <a
                       href={`/blogs/1`} // Replace `blog.id` with the actual ID or slug of the blog post

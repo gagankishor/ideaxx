@@ -29,41 +29,57 @@ const articles = [
     imageUrl: "/blog/5/image.webp",
     hrefUrl: "blog/5",
 
-  }
+  },
+  // {
+  //   title: "Transforming Businesses with Virtual Business Management",
+  //   category: "Virtual Business Management",
+  //   imageUrl: "/blog/image2.jpg", // Startup scaling image
+  //   hrefUrl: "blog/6",
+
+  // },
   
 ];
 const editorsPick = [
   {
-    title: "Mastering Data Analysis: A Guide for Beginners",
-    category: "Data Science",
-    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee",
+    title: "The Mindset of a Successful Entrepreneur ...",
+    category: "Entrepreneurship",
+    imageUrl: "/blog/3/image3.webp",
+    hrefUrl: "blog/1",
   },
   {
-    title: "Top Tools for Data Visualization in 2024",
-    category: "Data Science",
-    imageUrl: "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c", // Data visualization image
+    title: "Top Business Trends to Watch in 2024 ...",
+    category: "Business Trends",
+    imageUrl: "/blog/2/image3.webp", // Data visualization image
+    hrefUrl: "blog/2",
   },
   {
-    title: "The Role of AI in Data Science: What You Need to Know",
-    category: "AI & Data Science",
-    imageUrl: "https://images.unsplash.com/photo-1504805572947-34fad45aed93", // AI and data science image
+    title: "How AI is Shaping the Future of Entrepreneurship",
+    category: "Entrepreneurship",
+    imageUrl: "/blog/4/image3.webp", // AI and data science image
+    hrefUrl: "blog/3",
   },
 ];
 const businessStrategies = [
   {
-    title: "5 Proven Strategies for Scaling Your Startup",
-    category: "Business Strategies",
-    imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4", // Startup scaling image
+    title: "Transforming Businesses with Virtual Business Management",
+    category: "Virtual Business Management",
+    imageUrl: "/blog/image2.jpg", // Startup scaling image
+    hrefUrl: "blog/6",
+
   },
   {
-    title: "How to Create a Business Plan That Attracts Investors",
-    category: "Business Strategies",
-    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0", // Business planning image
+    title: "The Rise of Online Businesses: Opportunities and Challenges",
+    category: "Opportunities and Challenges",
+    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
+    hrefUrl: "blog/4",
+
   },
   {
-    title: "Top Marketing Tactics to Boost Your Brand’s Visibility",
-    category: "Business Strategies",
-    imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2", // Marketing strategy image
+    title: "The Mindset of a Successful Entrepreneur ...",
+    category: "Entrepreneurship",
+    imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2", 
+    hrefUrl: "blog/1",
+
   },
 ];
 
@@ -71,7 +87,7 @@ const websiteEssentials = [
   {
     title: "The Ultimate Guide to Building a Personal Portfolio Website",
     category: "Website Essentials",
-    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee", // Portfolio website image
+    imageUrl: "https://images.unsplash.com/photo-1518085250887-2f903c200fee", 
   },
   {
     title: "10 Tips for Optimizing Website Performance",
@@ -148,12 +164,12 @@ const Blogs = () => {
           </div>
         </div>
       </div>
-      <div className="bg-black text-white min-h-screen py-24 flex items-center justify-center ">
+      <div className="bg-[#010407] text-white min-h-screen  flex items-center justify-center ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0  items-center">
           {/* Left Section (Image) */}
           <div className="">
             <img
-              src="https://static.wixstatic.com/media/a77aa0_ecf711f8f32f441fbeeab5c2af48a580~mv2.png/v1/fill/w_550,h_608,al_c,q_85,enc_auto/a77aa0_ecf711f8f32f441fbeeab5c2af48a580~mv2.png" // Replace with your actual image path
+              src="/blog/image.webp" // Replace with your actual image path
               alt="AI Knowledge Hub"
               className="w-full h-full object-cover"
             />
@@ -162,14 +178,13 @@ const Blogs = () => {
           {/* Right Section (Text) */}
           <div className="px-12 flex flex-col justify-center ">
             <p className="uppercase   text-gray-50 font-thin text-xl mt-10 md:mt-0 mb-5">
-              AI Knowledge Hub
+             AI Business Idea Checker
             </p>
             <h1 className="text-3xl lg:text-3xl text-center  font-normal mb-4">
-              Your always up-to-date guide to Wix’s AI tools
+            Your ultimate assistant for evaluating and refining business ideas.
             </h1>
             <p className="text-lg text-white text-center mb-6">
-              View the full menu of Wix’s AI tools for web design, site
-              creation, marketing, and more.
+            Discover the potential of your business concepts with AI-powered analysis, suggestions, and insights tailored to your needs.
             </p>
             <button className="inline-flex mx-auto items-center px-6 py-3 border border-white text-white rounded-full  hover:bg-white hover:text-black transition">
               Read more
@@ -190,6 +205,8 @@ const Blogs = () => {
                 title={article.title}
                 category={article.category}
                 imageUrl={article.imageUrl}
+                hrefUrl={article?.hrefUrl}
+
               />
             ))}
           </div>
@@ -198,10 +215,10 @@ const Blogs = () => {
       <div className="bg-[#262CBE] py-20 md:py-48">
         <div className=" flex justify-center flex-col  items-center">
           <h3 className="text-white text-4xl md:text-7xl md:w-[50%]">
-            Create a website that can do it all
+            Create a business plan and start now 
           </h3>
           <button className="inline-flex font-medium mt-10 bg-white mx-auto items-center px-6 py-3 border border-white text-[#262CBE] rounded-full  hover:bg-white hover:text-black transition">
-            Start Now
+            Test Your Idea  
           </button>
         </div>
       </div>
@@ -218,13 +235,15 @@ const Blogs = () => {
                 title={article.title}
                 category={article.category}
                 imageUrl={article.imageUrl}
+                hrefUrl={article?.hrefUrl}
+
               />
             ))}
           </div>
         </div>
       </div>
-      <div className=" bg-black max-w-full  mx-5 md:mx-20 h-[1px]"></div>
-      <div className="bg-gray-50 mx-5 md:mx-20 py-12">
+      {/* <div className=" bg-black max-w-full  mx-5 md:mx-20 h-[1px]"></div> */}
+      {/* <div className="bg-gray-50 mx-5 md:mx-20 py-12">
         <div className="max-w-full  mx-auto">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">
             Website Essentials
@@ -240,7 +259,7 @@ const Blogs = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

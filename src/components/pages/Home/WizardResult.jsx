@@ -6,7 +6,7 @@ import { FaAward, FaBalanceScale, FaChartLine, FaGlobe, FaRobot, FaUsers } from 
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
-import { FaArrowRight, FaMapLocation } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 Chart.register(ArcElement, Tooltip, Legend);
 const WizardResult = () => {

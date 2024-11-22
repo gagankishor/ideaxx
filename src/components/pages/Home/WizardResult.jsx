@@ -308,7 +308,7 @@ const WizardResult = () => {
                     {
                       id: 4,
                       label: `${parseInt(data?.phase7)*3.17}`,
-                      position: "top-80 mt-14 -left-10 md:-top-14 md:left-3 ",
+                      position: "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
@@ -382,7 +382,7 @@ const WizardResult = () => {
                     {
                       id: 4,
                       label: `${parseFloat(data?.marketPotential)/5}%`,
-                      position: "top-80 mt-12 -left-10 md:-top-14 md:left-3 ",
+                      position: "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
@@ -446,7 +446,7 @@ const WizardResult = () => {
                     {
                       id: 4,
                       label: `${((parseInt(data?.phase7)*3.17)+(((20-(parseInt(data?.phase7)*3.17))*60)/100)).toFixed(1)}`,
-                      position: "top-80 mt-12 -left-10  md:-top-14 md:left-3 ",
+                      position: "top-80 mt-12 -left-10 md:mt-0  md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",

@@ -102,7 +102,6 @@ const WizardResult = () => {
       return "linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)";
     return "linear-gradient(to right, #FE0000, #FF8E11, #FFC21C, #01CC3D, #1CC7FF)";
   };
-
   const uniqueValueProposition = parseJSON(data?.UniqueValuePropositionData);
   const TeamAndResourcesData = parseJSON(data?.TeamAndResourcesData);
   const RevenueModelData = parseJSON(data?.RevenueModelData);
@@ -117,33 +116,27 @@ const WizardResult = () => {
   const fullAiContent = `
   ${data?.resultText} 
   `;
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000); // Simulate AI "thinking" for 2 seconds
   }, []);
-
   useEffect(() => {
     if (!loading && aiContent === "") {
       setAiContent(fullAiContent);
     }
   }, [loading]);
-
   useEffect(() => {
     let currentIndex = 0;
-
     if (aiContent && !isTypingComplete) {
       const typingInterval = setInterval(() => {
         setDisplayedText((prevText) => prevText + aiContent[currentIndex]);
         currentIndex++;
-
         if (currentIndex >= aiContent.length - 1) {
           clearInterval(typingInterval);
           setIsTypingComplete(true);
         }
       }, 20);
-
       return () => clearInterval(typingInterval);
     }
   }, [aiContent, isTypingComplete]);
@@ -181,13 +174,11 @@ const WizardResult = () => {
       parseFloat(TeamAndResourcesData)) /
     5;
   // const totalMarketScrore = 35.24;
-
   const successPercentage = parseFloat(data?.success_percentage || 0);
   const totalMarketScrore2 = (
     successPercentage +
     ((100 - successPercentage) * 60) / 100
   ).toFixed(2);  
-  
   console.log(
     "this is score",
     successPercentage,
@@ -231,7 +222,6 @@ const WizardResult = () => {
     ],
   };
   const [expandedItems, setExpandedItems] = useState({});
-
   const handleToggle = (index) => {
     setExpandedItems((prev) => ({
       ...prev,
@@ -270,28 +260,28 @@ const WizardResult = () => {
                   points : [
                     {
                       id: 1,
-                      label: "21%",
+                      label: `${parseInt(data?.phase1)*3.17}`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaChartLine />,
                       rowDir: "md:flex-row-reverse",
-                      textDir: "md:text-right",
+                      textDir: "text-left md:text-right",
                       text:"IDEA"
   
                     },
                     {
                       id: 2,
-                      label: "19.91%",
+                      label: `${parseInt(data?.phase2)*3.17}`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                       icon: <FaBalanceScale />,
                       rowDir: "md:flex-row",
-                      textDir: "md:text-left",
+                      textDir: "text-left md:text-left",
                       text:"Investment"
                     },
                     {
                       id: 5,
-                      label: "15.91%",
+                      label: `${parseInt(data?.phase5)*3.17}`,
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
@@ -299,12 +289,12 @@ const WizardResult = () => {
 
                       icon: <FaUsers />,
                       rowDir: "md:flex-col",
-                      textDir: "md:text-right",
-                      text:"Current Job related"
+                      textDir: "text-left md:text-right",
+                      text:"Current-Job related"
                     },
                     {
                       id: 6,
-                      label: "17.91%",
+                      label: `${parseInt(data?.phase6)*3.17}`,
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -312,17 +302,17 @@ const WizardResult = () => {
 
                       icon: <FaAward />,
                       rowDir: "md:flex-col",
-                      textDir: "md:text-left",
+                      textDir: "text-left md:text-left",
                       text:"Experience"
                     },
                     {
                       id: 4,
-                      label: "17.91%",
-                      position: "-top-14 left-3 ",
+                      label: `${parseInt(data?.phase7)*3.17}`,
+                      position: "top-80 mt-14 -left-10 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
-                      textDir: "md:text-center",
+                      textDir: "text-left md:text-center",
                       text: "Country"
                     }
                   ]
@@ -340,7 +330,7 @@ const WizardResult = () => {
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaChartLine />,
                       rowDir: "md:flex-row-reverse",
-                      textDir: "md:text-right",
+                      textDir: "text-left md:text-right",
                       text:"Team & Resources"
   
                     },
@@ -353,7 +343,7 @@ const WizardResult = () => {
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                       icon: <FaBalanceScale />,
                       rowDir: "md:flex-row",
-                      textDir: "md:text-left",
+                      textDir: "text-left md:text-left",
                       text:"Unique Value Proposition"
                     },
                     {
@@ -368,7 +358,7 @@ const WizardResult = () => {
 
                       icon: <FaUsers />,
                       rowDir: "md:flex-col",
-                      textDir: "md:text-right",
+                      textDir: "text-left  md:text-right",
                       text:"Revenue Model"
                     },
                     {
@@ -386,17 +376,17 @@ const WizardResult = () => {
 
                       icon: <FaAward />,
                       rowDir: "md:flex-col",
-                      textDir: "md:text-left",
+                      textDir: "text-left  md:text-left",
                       text:"Competitive Landscape"
                     },
                     {
                       id: 4,
                       label: `${parseFloat(data?.marketPotential)/5}%`,
-                      position: "-top-14 left-3 ",
+                      position: "top-80 mt-12 -left-10 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
-                      textDir: "md:text-center",
+                      textDir: "text-left  md:text-center",
                       text: "Market Potential"
                     }
                   ]
@@ -409,27 +399,27 @@ const WizardResult = () => {
                   points : [
                     {
                       id: 1,
-                      label: "21.2%",
+                      label: `${((parseInt(data?.phase1)*3.17)+(((20-(parseInt(data?.phase1)*3.17))*60)/100)).toFixed(1)}`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaChartLine />,
                       rowDir: "md:flex-row-reverse",
-                      textDir: "md:text-right",
+                      textDir: "text-left md:text-right",
                       text:"IDEA"
                     },
                     {
                       id: 2,
-                      label: "22.91%",
+                      label: `${((parseInt(data?.phase2)*3.17)+(((20-(parseInt(data?.phase2)*3.17))*60)/100)).toFixed(1)}`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                       icon: <FaBalanceScale />,
                       rowDir: "md:flex-row",
-                      textDir: "md:text-left",
+                      textDir: "text-left md:text-left",
                       text:"Investment"
                     },
                     {
                       id: 5,
-                      label: "18.91%",
+                      label: `${((parseInt(data?.phase5)*3.17)+(((20-(parseInt(data?.phase5)*3.17))*60)/100)).toFixed(1)}`,
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
@@ -437,12 +427,12 @@ const WizardResult = () => {
 
                       icon: <FaUsers />,
                       rowDir: "md:flex-col",
-                      textDir: "md:text-right",
+                      textDir: "text-left md:text-right",
                       text:"Current Job related"
                     },
                     {
                       id: 6,
-                      label: "21.91%",
+                      label: `${((parseInt(data?.phase6)*3.17)+(((20-(parseInt(data?.phase6)*3.17))*60)/100)).toFixed(1)}`,
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -450,17 +440,17 @@ const WizardResult = () => {
 
                       icon: <FaAward />,
                       rowDir: "md:flex-col",
-                      textDir: "md:text-left",
+                      textDir: "text-left md:text-left",
                       text:"Experience"
                     },
                     {
                       id: 4,
-                      label: "19.1%",
-                      position: "-top-14 left-3 ",
+                      label: `${((parseInt(data?.phase7)*3.17)+(((20-(parseInt(data?.phase7)*3.17))*60)/100)).toFixed(1)}`,
+                      position: "top-80 mt-12 -left-10  md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
-                      textDir: "md:text-center",
+                      textDir: "text-left md:text-center",
                       text: "Country"
                     }
                   ]
@@ -554,7 +544,7 @@ const WizardResult = () => {
                   <div
                     href={item.href}
                     key={index}
-                    className={`circular-progress  flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
+                    className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
                       index !== 0
                         ? "xl-custom:border-l-2 xl-custom:border-gray-300"
                         : ""
@@ -583,7 +573,7 @@ const WizardResult = () => {
                                 {point.label}
                               </h4>
                               <p
-                                className={`text-[12px] ${point.textDir} text-justify m-0 w-[100px]`}
+                                className={`text-[12px] ${point.textDir} text-left m-0 w-[100px]`}
                               >
                                {point.text}
                               </p>

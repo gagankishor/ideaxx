@@ -2,7 +2,7 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaAward, FaBalanceScale, FaChartLine, FaCoins, FaGlobe, FaLightbulb, FaMoneyBill, FaRobot, FaUsers } from "react-icons/fa";
+import { FaAward, FaBalanceScale, FaChartLine, FaCoins, FaGlobe, FaLightbulb, FaRobot, FaUsers } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";

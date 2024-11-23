@@ -53,7 +53,7 @@ const LoginWithGoogle = ({ handleLogin }) => {
       ) : !loginStatus ? (
         <div style={{ maxWidth: '180px' }}>
           <Suspense fallback={<div className="spinner"></div>}>
-            <GoogleOAuthProvider clientId="852076800262-vr2pscp25e4vmddb054istrou9dbp4me.apps.googleusercontent.com">
+            <GoogleOAuthProvider clientId="247324430690-su30irnnm41cuahimdjllo6foo0rqoq0.apps.googleusercontent.com">
               <GoogleLogin onSuccess={handleSuccess} onError={handleFailure} />
             </GoogleOAuthProvider>
           </Suspense>

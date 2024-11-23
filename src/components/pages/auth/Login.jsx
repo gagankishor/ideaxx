@@ -10,6 +10,7 @@ import LoginWithGoogle from "../Home/components/LoginWithGoogle";
 import LinkedInLogin from "../Home/components/LinkedInLogin";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,16 +19,17 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [canResend, setCanResend] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(300);
-  const {  login } = useContext(AuthContext);
-  // if (isAuthenticated) {
-  //   // window.location.href = "/";
-  //   // console.log(isAuthenticated);
-  // }
+  const { isAuthenticated, login } = useContext(AuthContext);
+  const router = useRouter();
+  if (isAuthenticated) {
+    router.push('/')
+  }
   const handleOtpChange = (e, index) => {
     const newOtp = [...otp];
     newOtp[index] = e.target.value;
     setOtp(newOtp);
   };
+
   useEffect(() => {
     if (secondsLeft > 0) {
       const timer = setInterval(() => setSecondsLeft((prev) => prev - 1), 1000);
@@ -93,9 +95,12 @@ const Login = () => {
     //   console.log(status);
     //   // window.location.href = "/";
     // }
+    router.push('/')
   };
   const handleLinkedInLogin = async (status)=>{
     console.log(status)
+    router.push('/')
+
   }
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);

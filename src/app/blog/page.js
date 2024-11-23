@@ -217,7 +217,7 @@ const Blogs = () => {
           <h3 className="text-white text-4xl md:text-7xl md:w-[50%]">
             Create a business plan and start now 
           </h3>
-          <button className="inline-flex font-medium mt-10 bg-white mx-auto items-center px-6 py-3 border border-white text-[#262CBE] rounded-full  hover:bg-white hover:text-black transition">
+          <button className="inline-flex  mt-10 bg-white mx-auto items-center px-6 py-3 border border-white text-[#262CBE] font-bold rounded-full  hover:bg-white hover:text-black transition">
             Test Your Idea  
           </button>
         </div>

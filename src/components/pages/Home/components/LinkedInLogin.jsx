@@ -10,7 +10,9 @@ const LinkedInLogin = () => {
   const {  login } = useContext(AuthContext);
 
   const { linkedInLogin } = useLinkedIn({
-    redirectUri: 'http://localhost:3000/linkedin', // Ensure this matches your LinkedIn app settings
+    // redirectUri: 'http://localhost:3000/linkedin',
+    redirectUri: 'https://ideax.in/linkedin',
+    
     clientId: '86exe2qff6nxy9', // Replace with your actual LinkedIn Client ID
     scope: 'openid profile email', // Requested scopes for authorization
     onSuccess: async (code) => {
@@ -32,7 +34,7 @@ const LinkedInLogin = () => {
           icon: 'error',
           confirmButtonText: 'OK',
         });
-        // setLoading(false);               /
+        // setLoading(false);               
       }
     },
     onError: (error) => {

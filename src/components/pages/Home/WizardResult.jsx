@@ -2,12 +2,13 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaAward, FaBalanceScale, FaChartLine, FaGlobe, FaRobot, FaUsers } from "react-icons/fa";
+import { FaAward, FaBalanceScale, FaChartLine, FaCoins, FaGlobe, FaLightbulb, FaMoneyBill, FaRobot, FaUsers } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
+import { HiBuildingOffice } from "react-icons/hi2";
 Chart.register(ArcElement, Tooltip, Legend);
 const WizardResult = () => {
   const [aiContent, setAiContent] = useState("");
@@ -110,7 +111,6 @@ const WizardResult = () => {
   const MarketShareData = parseJSON(data?.MarketShareData);
   const InvestmentLevelData = parseJSON(data?.InvestmentLevelData);
   const ExpectedROIData = parseJSON(data?.ExpectedROIData);
-  // console.log("MarketShareData",MarketShareData)
   const textForTipData = parseJSON(data?.textForTipData);
   console.log(textForTipData);
   const fullAiContent = `
@@ -119,7 +119,7 @@ const WizardResult = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Simulate AI "thinking" for 2 seconds
+    }, 2000); 
   }, []);
   useEffect(() => {
     if (!loading && aiContent === "") {
@@ -154,18 +154,6 @@ const WizardResult = () => {
       },
     ],
   };
-  // const options = {
-  //   cutout: "70%",
-  //   responsive: true,
-  //   plugins: {
-  //     tooltip: {
-  //       enabled: true,
-  //     },
-  //     legend: {
-  //       display: false,
-  //     },
-  //   },
-  // };
   const totalMarketScrore =
     (parseFloat(data?.marketPotential) +
       parseFloat(uniqueValueProposition?.finalScore?.replace("%", "")) +
@@ -173,20 +161,35 @@ const WizardResult = () => {
       parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", "")) +
       parseFloat(TeamAndResourcesData)) /
     5;
-  // const totalMarketScrore = 35.24;
-  const successPercentage = parseFloat(data?.success_percentage || 0);
+  // const successPercentage = parseFloat(data?.success_percentage || 0);
+  // const totalMarketScrore2 = (
+  //   totalMarketScrore +
+  //   ((100 - (
+  //     parseFloat(data?.marketPotential || 0) +
+  //     parseFloat(RevenueModelData?.finalScore?.replace("%", "") || 0) +
+  //     parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", "") || 0) +
+  //     parseFloat(TeamAndResourcesData || 0)
+  //   ) / 4) * 60) / 100
+  // ).toFixed(2);
   const totalMarketScrore2 = (
-    successPercentage +
-    ((100 - successPercentage) * 60) / 100
-  ).toFixed(2);  
-  console.log(
-    "this is score",
-    successPercentage,
-    totalMarketScrore,
-    totalMarketScrore2
+    parseFloat(totalMarketScrore) +parseFloat(
+      parseFloat((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)) +
+      parseFloat(((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100)+
+      parseFloat(((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100)+
+      parseFloat(((20-(parseFloat(data?.marketPotential)/5))*60)/100))
   );
-  // const totalMarketScrore2 = parseFloat(data?.success_percentage) + ((parseFloat(data?.success_percentage || 0) * 60) / 100);
-  // const totalMarketScrore2 = 89.9
+  // console.log( 
+  //   "this is score",
+  //   parseFloat(totalMarketScrore) ,
+  //     ((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)).toFixed(1) ,
+  //     (((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100).toFixed(1),
+  //     (((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100).toFixed(1),
+  //     (((20-(parseFloat(data?.marketPotential)/5))*60)/100).toFixed(1),
+  //     (parseFloat((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)) +
+  //     parseFloat(((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100)+
+  //     parseFloat(((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100)+
+  //     parseFloat(((20-(parseFloat(data?.marketPotential)/5))*60)/100))
+  // );
   const bardata2 = {
     labels: ["Score", "Remaining"],
     datasets: [
@@ -244,7 +247,7 @@ const WizardResult = () => {
             <h2 className="mb-0 text-center text-lg md:text-xl lg:text-2xl">
               Your Idea Outlook
             </h2>
-            <p className="text-sm md:text-base text-center">
+            <p className="text-sm md:mb-5 md:text-base text-center">
               Slight changes may occur in the results depending on market
               trends.
             </p>
@@ -260,10 +263,10 @@ const WizardResult = () => {
                   points : [
                     {
                       id: 1,
-                      label: `${parseInt(data?.phase1)*3.17}`,
+                      label: `${parseInt(data?.phase1)*3.17}%`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                      icon: <FaChartLine />,
+                      icon: <FaLightbulb />,
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
                       text:"IDEA"
@@ -271,30 +274,30 @@ const WizardResult = () => {
                     },
                     {
                       id: 2,
-                      label: `${parseInt(data?.phase2)*3.17}`,
+                      label: `${parseInt(data?.phase2)*3.17}%`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                      icon: <FaBalanceScale />,
+                      icon: <FaCoins />,
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
                       text:"Investment"
                     },
                     {
                       id: 5,
-                      label: `${parseInt(data?.phase5)*3.17}`,
+                      label: `${parseInt(data?.phase5)*3.17}%`,
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
                       mgIcon:'md:-mr-20',
 
-                      icon: <FaUsers />,
+                      icon: <HiBuildingOffice />                      ,
                       rowDir: "md:flex-col",
                       textDir: "text-left md:text-right",
-                      text:"Current-Job related"
+                      text:"Current Job related"
                     },
                     {
                       id: 6,
-                      label: `${parseInt(data?.phase6)*3.17}`,
+                      label: `${parseInt(data?.phase6)*3.17}%`,
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -307,7 +310,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 4,
-                      label: `${parseInt(data?.phase7)*3.17}`,
+                      label: `${parseInt(data?.phase7)*3.17}%`,
                       position: "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
@@ -328,7 +331,7 @@ const WizardResult = () => {
                       label: `${parseFloat(TeamAndResourcesData)/5}%`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                      icon: <FaChartLine />,
+                      icon: <FaUsers />,
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
                       text:"Team & Resources"
@@ -341,7 +344,7 @@ const WizardResult = () => {
                       )/5}%`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                      icon: <FaBalanceScale />,
+                      icon: <FaAward />,
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
                       text:"Unique Value Proposition"
@@ -356,7 +359,7 @@ const WizardResult = () => {
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
                       mgIcon:'md:-mr-20',
 
-                      icon: <FaUsers />,
+                      icon:<FaChartLine /> ,
                       rowDir: "md:flex-col",
                       textDir: "text-left  md:text-right",
                       text:"Revenue Model"
@@ -374,7 +377,7 @@ const WizardResult = () => {
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
                       mgIcon:'md:-ml-20',
 
-                      icon: <FaAward />,
+                      icon:<FaBalanceScale /> ,
                       rowDir: "md:flex-col",
                       textDir: "text-left  md:text-left",
                       text:"Competitive Landscape"
@@ -399,59 +402,65 @@ const WizardResult = () => {
                   points : [
                     {
                       id: 1,
-                      label: `${((parseInt(data?.phase1)*3.17)+(((20-(parseInt(data?.phase1)*3.17))*60)/100)).toFixed(1)}`,
+                      label: `${((parseFloat(TeamAndResourcesData)/5)+(((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)).toFixed(1)}%`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaChartLine />,
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
-                      text:"IDEA"
+                      text:"Team & Resources"
                     },
                     {
                       id: 2,
-                      label: `${((parseInt(data?.phase2)*3.17)+(((20-(parseInt(data?.phase2)*3.17))*60)/100)).toFixed(1)}`,
+                      label: `${parseFloat(
+                        uniqueValueProposition?.finalScore?.replace("%", "")
+                      )/5}%`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                      icon: <FaBalanceScale />,
+                      icon: <FaAward />,
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
-                      text:"Investment"
+                      text:"Unique Value Proposition"
                     },
                     {
                       id: 5,
-                      label: `${((parseInt(data?.phase5)*3.17)+(((20-(parseInt(data?.phase5)*3.17))*60)/100)).toFixed(1)}`,
+                      label: `${((parseFloat(
+                        RevenueModelData?.finalScore?.replace("%", "")
+                      )/5)+(((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100)).toFixed(1)}%`,
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
                       mgIcon:'md:-mr-20',
-
                       icon: <FaUsers />,
                       rowDir: "md:flex-col",
-                      textDir: "text-left md:text-right",
-                      text:"Current Job related"
+                      textDir: "text-left  md:text-right",
+                      text:"Revenue Model"
                     },
                     {
-                      id: 6,
-                      label: `${((parseInt(data?.phase6)*3.17)+(((20-(parseInt(data?.phase6)*3.17))*60)/100)).toFixed(1)}`,
+                      id: 6, 
+                      label: `${((parseFloat(
+                        CompetitiveLandscapeData?.finalScore?.replace("%", "")
+                      )/5)+(((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100)).toFixed(1)}%`,
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
                       mgIcon:'md:-ml-20',
-
-                      icon: <FaAward />,
+                      icon: <FaBalanceScale />,
                       rowDir: "md:flex-col",
-                      textDir: "text-left md:text-left",
-                      text:"Experience"
+                      textDir: "text-left  md:text-left",
+                      text:"Competitive Landscape"
                     },
                     {
                       id: 4,
-                      label: `${((parseInt(data?.phase7)*3.17)+(((20-(parseInt(data?.phase7)*3.17))*60)/100)).toFixed(1)}`,
-                      position: "top-80 mt-12 -left-10 md:mt-0  md:-top-14 md:left-3 ",
+                      label: `${((parseFloat(
+                        data?.marketPotential
+                      )/5)+(((20-(parseFloat(data?.marketPotential)/5))*60)/100)).toFixed(1)}%`,
+                      position: "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
                       icon: <FaGlobe />,
                       rowDir: "md:flex-col-reverse",
-                      textDir: "text-left md:text-center",
-                      text: "Country"
+                      textDir: "text-left  md:text-center",
+                      text: "Market Potential"
                     }
                   ]
                 },
@@ -472,7 +481,7 @@ const WizardResult = () => {
                 //     ? "#fff9e6"
                 //     : "#fdecea";
                 const circumference = 2 * Math.PI * radius;
-                const offset =
+                const offset = 
                   circumference - (item.score / 100) * circumference;
                 // const points = [
                 //   {
@@ -605,7 +614,6 @@ const WizardResult = () => {
                           strokeWidth="2"
                           strokeDasharray="2 4"
                         />
-
                         <defs>
                           <linearGradient
                             id="gradientStroke"
@@ -628,7 +636,6 @@ const WizardResult = () => {
                             />
                           </linearGradient>
                         </defs>
-
                         <circle
                           cx="60" // Adjusted center for better alignment
                           cy="60" // Adjusted center for better alignment
@@ -668,7 +675,6 @@ const WizardResult = () => {
             </div>
           </div>
         </div>
-
         <section>
           <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
             {/* Left Text Section */}
@@ -680,7 +686,6 @@ const WizardResult = () => {
                 idea now.
               </h3>
             </div>
-
             {/* Button Section */}
             <div className="btns-container">
               <Link href="/plan-details" passHref>
@@ -689,7 +694,6 @@ const WizardResult = () => {
             </div>
           </div>
         </section>
-
         <section
           id="idea"
           className="business-check-container border-gray-300 border  m-auto mt-10 p-10 lg:mx-10"
@@ -740,26 +744,10 @@ const WizardResult = () => {
                 },
               ].map((item, index) => {
                 const radius = 40;
-                // const color =
-                //   item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
-                // const backgroundColor =
-                //   item.score > 80
-                //     ? "#d4edda"
-                //     : item.score > 50
-                //     ? "#fff3cd"
-                //     : "#f8d7da";
                 const backgroundColor = "white";
-
-                // const strokeColor =
-                //   item.score > 80
-                //     ? "#e6f7e9"
-                //     : item.score > 50
-                //     ? "#fff9e6"
-                //     : "#fdecea";
                 const circumference = 2 * Math.PI * radius;
                 const offset =
                   circumference - (item.score / 100) * circumference;
-
                 return (
                   <div
                     key={index}
@@ -778,7 +766,6 @@ const WizardResult = () => {
                         cy="50"
                         r={radius}
                         fill="none"
-                        // stroke={strokeColor}
                         stroke="#cac8fa"
                         strokeWidth="8"
                       />
@@ -838,12 +825,11 @@ const WizardResult = () => {
                       {item.label}
                     </p>
                     <ul className="list-disc pl-6 font-extralight text-[14px] lg:max-w-[200px] text-justify">
-                      <li>Lorem ipsum dolor sit </li>
-                      <li>amet consectetur </li>
-                      <li>elit. Optio odit iusto </li>
-                      <li>nemo. Laboriosam </li>
-                      <li>fugit error blanditiis </li>
-                      <li> id quos accusamus </li>
+                      <li>Idea Status</li>
+                      <li>Investment Required for Your Idea</li>
+                      <li>Current Job Related to Your Idea</li>
+                      <li>Experience in the Field of Your Idea </li>
+                      <li>CSelected Country</li>
                     </ul>
                   </div>
                 );

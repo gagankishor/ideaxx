@@ -1,4 +1,3 @@
-// import React from 'react';
 import { RestAPI } from '@/config/Api';
 import { AuthContext } from '@/context/AuthContext';
 import axios from 'axios';
@@ -10,42 +9,42 @@ const LinkedInLogin = () => {
   const {  login } = useContext(AuthContext);
 
   const { linkedInLogin } = useLinkedIn({
-    // redirectUri: 'http://localhost:3000/linkedin',
     redirectUri: 'https://ideax.in/linkedin',
-    
-    clientId: '86exe2qff6nxy9', // Replace with your actual LinkedIn Client ID
-    scope: 'openid profile email', // Requested scopes for authorization
+    clientId: '86exe2qff6nxy9',
+    scope: 'openid profile email w_member_social',
     onSuccess: async (code) => {
+      console.log('Received LinkedIn authorization code:', code);
       try {
-        // setLoading(true);
         const res = await axios.post(`${RestAPI}/auth/login-with-linkedin`, { code });
-        // const responseStatus = true;
-        // handleLogin(responseStatus); // Call the prop function with status
         const { token, userName, email } = res.data;
-        // setLoginStatus(true);
         login(token, email);
         localStorage.setItem('userName', userName);
-        // setLoading(false);
       } catch (error) {
-        console.error('LinkedIn login failed:', error);
+        console.log('LinkedIn API Call Failed:', error.response?.data || error.message);
         Swal.fire({
           title: 'Error',
-          text: 'LinkedIn login failed',
+          text: 'LinkedIn login failed. Please try again.',
           icon: 'error',
           confirmButtonText: 'OK',
         });
-        // setLoading(false);               
       }
     },
     onError: (error) => {
-      console.error('LinkedIn Login Error:', error?.errorMessage || 'Login failed');
+      console.log('LinkedIn Login Error Details:', error);
+      // Swal.fire({
+      //   title: 'Error',
+      //   text: error.errorMessage || 'An unknown error occurred.',
+      //   icon: 'error',
+      //   confirmButtonText: 'OK',
+      // });
     },
   });
-
+  
+  
+  
   const handleLogin = () => {
-    linkedInLogin(); // Initiates LinkedIn login process
+    linkedInLogin();
   };
-
   return (
     <div onClick={handleLogin} style={{ cursor: 'pointer' }}>
       <img

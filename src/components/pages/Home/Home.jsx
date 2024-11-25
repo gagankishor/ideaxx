@@ -1,5 +1,5 @@
 "use client"
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 import { Hero } from "./components/landing/Hero";
 import TrustedBySection from "./components/landing/TrustedBySection";
@@ -10,11 +10,11 @@ import CardSlider from "@/components/CardSlider";
 export default function Home() {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Startup Business Idea Checker Online - Ideax</title>
         <meta name="description" content="Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now." />
         <meta name="keywords" content="Business Idea Checker, Startup Idea Checker, Business idea checker online, Startup business idea checker, Business idea checker free, Seo data for home page" />
-      </Helmet>
+      </Helmet> */}
 
       <Hero />
       <h2
@@ -29,7 +29,6 @@ export default function Home() {
       {/* <IconSlider/> */}
       <TrustedBySection />
       <CoreSolutionsSection /> 
-
       <ProductLineupSection />
       {/* <div className="home-main-contaner">
         <Validation />

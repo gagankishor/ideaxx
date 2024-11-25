@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { RestAPI } from "../../../config/Api";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 import "./Login.css";
 import { FaEdit } from "react-icons/fa";
 import LoginWithGoogle from "../Home/components/LoginWithGoogle";
@@ -109,9 +109,6 @@ const Login = () => {
   };
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Helmet>
-        <title>ideax | Log in</title>
-      </Helmet>
       <div className="login-overlay">
         <div className="login-container">
           {loading && (

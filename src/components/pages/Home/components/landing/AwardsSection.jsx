@@ -42,7 +42,7 @@ const AwardsSection = () => {
               }}
             >
               <h3>Industry Recognition</h3>
-              <p className=" w-5/6 m-auto mb-10">
+              <p className=" w-5/6 m-auto mb-10 text-justify">
                 Our platform is recognized as a leader in business management
                 solutions powered by AI, offering innovative tools that
                 transform how businesses operate.
@@ -65,7 +65,7 @@ const AwardsSection = () => {
               }}
             >
               <h3>Trusted by Entrepreneurs</h3>
-              <p className=" w-5/6 m-auto mb-10">
+              <p className=" w-5/6 m-auto mb-10 text-justify">
                 Trusted by Entrepreneurs: IDEAX is the go-to choice for
                 entrepreneurs and startups looking for efficient solutions to
                 drive growth and success.
@@ -90,10 +90,10 @@ const AwardsSection = () => {
                     />
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-white text-xl">
+                    <h4 className="text-white text-xl  text-justify">
                     10 Questions to Ask Yourself Before Starting Your Business
                     </h4>
-                    <p className="text-gray-200">
+                    <p className="text-gray-200  text-justify">
                     Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requ...
                     </p>
                     <a
@@ -118,10 +118,10 @@ const AwardsSection = () => {
                     />
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-white text-xl">
+                    <h4 className="text-white text-xl  text-justify">
                     The Mindset of a Successful Entrepreneur
                     </h4>
-                    <p className="text-gray-200">
+                    <p className="text-gray-200  text-justify">
                     Embarking on an entrepreneurial journey requires more than just a solid business plan and financial...
                     </p>
                     <a
@@ -145,10 +145,10 @@ const AwardsSection = () => {
                     />
                   </div>
                   <div className="ml-5">
-                    <h4 className="text-white text-xl">
+                    <h4 className="text-white text-xl  text-justify">
                     Top Business Trends to Watch in 2024
                     </h4>
-                    <p className="text-gray-200">
+                    <p className="text-gray-200  text-justify">
                     As we approach 2024, the business landscape continues to evolve rapidly, influenced by...
                     </p>
                     <a

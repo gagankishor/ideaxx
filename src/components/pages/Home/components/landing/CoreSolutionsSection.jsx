@@ -289,7 +289,9 @@ const CoreSolutionsSection = () => {
         </p>
       </div>
           <div className="slider-container" style={{ marginTop: "50px" }}>
-            <div className="left-sedow2"></div>
+          <div
+  className="left-sedow2 hover:opacity-0 pointer-events-none transition-opacity duration-300"
+></div>
             <div
               className="carousel-container"
               style={{
@@ -338,7 +340,7 @@ const CoreSolutionsSection = () => {
                 ))}
               </Slider>
             </div>
-            <div className="right-sedow2"></div>
+            <div className="right-sedow2 hover:opacity-0 pointer-events-none transition-opacity duration-300"></div>
           </div>
           <div style={{ overflow: "hidden" }}>
             {/* <img

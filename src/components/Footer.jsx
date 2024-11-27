@@ -195,7 +195,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
         {/* Social Icons */}
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
           {/* Social Icons */}
@@ -244,13 +244,14 @@ export default function Footer() {
             </a>
           </div>
           {/* Footer Links */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 ">
             <Link href="/termsOfService">Terms of Use</Link>
             <Link href="/privacyPolicy">Privacy Policy</Link>
             <span>&copy; 20024-2025 Ideax, Inc</span>
           </div>
         </div>
       </div>
+      <div className=" h-1"></div>
     </footer>
   );
 }

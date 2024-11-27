@@ -198,14 +198,14 @@ const CoreSolutionsSection = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -215,7 +215,7 @@ const CoreSolutionsSection = () => {
     <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>
         <div style={{ margin: "auto", maxWidth: "1200px" }}>
-          <div>
+          {/* <div>
             <h2
               className=""
               style={{
@@ -232,13 +232,68 @@ const CoreSolutionsSection = () => {
             >
               Ideax provide
             </h2>
-          </div>
+          </div> */}
+           <div
+        style={{
+          backgroundColor: "black",
+          zIndex: "0",
+          textAlign: "center",
+          padding: "40px 0 0px",
+        }}
+      >
+        <div style={{ display: "flex", margin: "auto", width: "fit-content" }}>
+          {/* <img
+            src="main-icon/Idea.png"
+            style={{ marginRight: "10px",color:'white' ,backgroundColor:"#6161FF",padding:"7px",borderRadius:'5px'}}
+            alt=""
+            width={50}
+          /> */}
+          
+          
+          
+          <img
+            src="/main-icon/ConsultingW.png"
+            style={{ marginRight: "10px" }}
+            alt="icon 3"
+            width={50}
+            className=" bg-[#6C6CFF] rounded-lg p-2"
+
+          />
+          <img
+            src="/main-icon/EntrepreneurW.png"
+            style={{ marginRight: "10px" }}
+            alt="Startup business idea checker"
+            width={50}
+            className=" bg-[#6C6CFF] rounded-lg p-2"
+
+          />
+          <img
+            src="/main-icon/CommunityW.png"
+            style={{ marginRight: "10px" }}
+            alt="Business idea checker free"
+            width={50}
+            className=" bg-[#6C6CFF] rounded-lg p-2"
+
+          />
+          <img
+            src="/main-icon/CashFlowW.png"
+            alt="icon 4"
+            width={50}
+            className=" bg-[#6C6CFF] rounded-lg p-2"
+          />
+        </div>
+        <h2 className="client-heading-text mb-0 p-0">Work together</h2>
+        <p className="client-description md:max-w-[60%]" style={{padding:"10px"}}>
+          Now any team can streamline work, collaborate, and solve their most
+          complex problems together with our suite of products.
+        </p>
+      </div>
           <div className="slider-container" style={{ marginTop: "50px" }}>
             <div className="left-sedow2"></div>
             <div
               className="carousel-container"
               style={{
-                padding: "20px",
+                padding: "0px ",
                 backgroundColor: "#000",
                 color: "#fff",
               }}

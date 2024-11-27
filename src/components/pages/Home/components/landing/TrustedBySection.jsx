@@ -13,29 +13,31 @@ const TrustedBySection = () => {
           {/* Title */}
           <div style={{marginTop:'100px'}}>
             <div className="logosTitleWrapper">
-              <h2 className="main-haedding-h2" >
-                Trusted by 500+ customers, from startups to enterprises
-              </h2>
+            <h2 className="main-heading-h2">
+  Trusted by 200+ companies and over 1,000 customers, from innovative startups to leading enterprises
+</h2>
             </div>
             <div className="logos-carousel-container py-8 ">
-      <Swiper
-        modules={[Navigation, Autoplay]}
-        slidesPerView={3}
-        spaceBetween={20}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop={true}
-        navigation
-        pagination={false} // Disable dots
-        
-        breakpoints={{
-          640: { slidesPerView: 3 },
-          768: { slidesPerView: 5 },
-          1024: { slidesPerView: 6 },
-        }}
-      >
+            <Swiper
+  modules={[Navigation, Autoplay]}
+  slidesPerView={3}
+  spaceBetween={20}
+  autoplay={{
+    delay: 0, // Remove delay to make it continuous
+    disableOnInteraction: false, // Keep autoplay even if interacting with the Swiper
+  }}
+  loop={true}
+  speed={5000} // Adjust speed for smooth, continuous scrolling
+  breakpoints={{
+    640: { slidesPerView: 3 },
+    768: { slidesPerView: 5 },
+    1024: { slidesPerView: 6 },
+  }}
+  className=""
+>
         {/* SwiperSlide for each logo */}
         <SwiperSlide>
-          <a href="https://www.vantompower.com/" className="image-contener">
+          <a href="https://www.vantompower.com/"  target="_blank">
             <img
               src="TrustedBySection/Layer.jpg"
               alt="Company logo"
@@ -45,7 +47,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://pickitup.ae/">
+          <a href="https://pickitup.ae/" target="_blank">
             <img
               src="TrustedBySection/up@300_rec.jpg"
               alt="Company logo"
@@ -54,7 +56,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="">
+          <a href="https://www.basha-impex.com/" target="_blank">
             <img
               src="TrustedBySection/BashaExportlogos.jpg"
               alt="Company logo"
@@ -63,7 +65,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://360homedecor.uk/">
+          <a href="https://360homedecor.uk/" target="_blank">
             <img
               src="TrustedBySection/360HOMEDECORLOGO.jpg"
               alt="Company logo"
@@ -73,7 +75,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://tecmicra.co.in/">
+          <a href="https://tecmicra.co.in/" target="_blank">
             <img
               src="TrustedBySection/T.jpg"
               alt="Company logo"
@@ -83,7 +85,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://ameliyasafaris.com/">
+          <a href="https://ameliyasafaris.com/" target="_blank">
             <img
               src="TrustedBySection/ameliyasafaris.jpg"
               alt="Company logo"
@@ -93,7 +95,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://apsleyandheron.com">
+          <a href="https://apsleyandheron.com" target="_blank">
             <img
               src="TrustedBySection/apsleyandheron.jpg"
               alt="Company logo"
@@ -103,7 +105,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://ocsmedecin.mu">
+          <a href="https://ocsmedecin.mu" target="_blank">
             <img
               src="TrustedBySection/ocsmedecin.jpg"
               alt="Company logo"
@@ -113,7 +115,7 @@ const TrustedBySection = () => {
           </a>
         </SwiperSlide>
         <SwiperSlide>
-          <a href="https://unityhealth.mu/">
+          <a href="https://unityhealth.mu/" target="_blank">
             <img
               src="TrustedBySection/unityhealth.jpg"
               alt="Company logo"
@@ -124,80 +126,7 @@ const TrustedBySection = () => {
         </SwiperSlide>
       </Swiper>
     </div>
-            {/* <div className="logos-container">
-              <a href="https://www.vantompower.com/" className="image-contener">
-                <img
-                  src="trustedby/Layer.jpg"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "white" }}
-                />
-              </a>
-              <a href="https://pickitup.ae/">
-                <img
-                  src="trustedby/up@300_rec.jpg"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "" }}
-                />
-              </a>
-              <a href="">
-                <img
-                  src="trustedby/BashaExportlogos.jpg"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "" }}
-                />
-              </a>
-              <a href="https://360homedecor.uk/">
-                <img
-                  src="trustedby/360HOMEDECORLOGO.jpg"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "white" }}
-                />
-              </a>
-              <a href="https://tecmicra.co.in/">
-                <img
-                  src="trustedby/T.jpg"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "white" }}
-                />
-              </a>
-              <a href="https://ameliyasafaris.com/">
-                <img
-                  src="https://ameliyasafaris.com/wp-content/uploads/2023/03/logo-ameliya-safaris-t-255x55.png"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "black" }}
-                />
-              </a>
-              <a href="https://apsleyandheron.com">
-                <img
-                  src="https://apsleyandheron.com/cdn/shop/files/logo.png?v=1705863364&width=100"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "black" }}
-                />
-              </a>
-              <a href="https://ocsmedecin.mu">
-                <img
-                  src="https://ocsmedecin.mu/wp-content/uploads/2024/03/OCS-Medecin_SVG-1.png"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "white" }}
-                />
-              </a>
-              <a href="https://unityhealth.mu/">
-                <img
-                  src="https://unityhealth.mu/wp-content/uploads/2024/09/Copy-of-Unity-Health_Branding-kit.ai_3.png"
-                  alt="Company logo"
-                  className="company-logo"
-                  style={{ backgroundColor: "white" }}
-                />
-              </a>
-            </div> */}
+            
           </div>
           {/* Highlight Section */}
           <div className="logos">

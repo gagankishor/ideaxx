@@ -11,7 +11,7 @@ export const Hero = () => {
         <div className="hero-block">
 
           <h1 className="idea-checker-heading">
-            AI Startup/ Business Idea Checker
+            AI Startup/ Business Idea Validator 
           </h1>
             <span className="idea-checker-subheading">
               <p className="idea-checker-description" style={{ fontSize: "1.2rem" }}>
@@ -25,7 +25,7 @@ export const Hero = () => {
             <Link className="btn" href="/mainWizard">
               Test Your Idea <FaArrowAltCircleRight />
             </Link>
-            <span>No Credit Card Needed.</span>
+            <span>It's Totally Free</span>
           </div>
         </div>
       </div>

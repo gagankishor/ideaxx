@@ -3,7 +3,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
-import Link from "next/link"; 
+import Link from "next/link";
 import ImpactSection from "./ImpactSection";
 import AwardsSection from "./AwardsSection";
 const ProductLineupSection = () => {
@@ -38,8 +38,10 @@ const ProductLineupSection = () => {
                 alt="Product"
                 className="product-image"
               />
-              <p className="p-4 text-white">
-                We prioritize transparency and trust in all our interactions.
+              <p className="p-4 text-white text-justify">
+                AI-powered platform ensuring integrity at every level—streamline
+                operations, uphold compliance, and foster trust with
+                intelligent, transparent solutions for modern organizations.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -52,9 +54,10 @@ const ProductLineupSection = () => {
                 alt="Product"
                 className="product-image"
               />
-              <p className="p-4 text-white">
-                Harnessing cutting-edge AI technology to ensure your ideas are
-                viable.
+              <p className="p-4 text-white text-justify">
+                Driving innovation—accelerate insights, streamline workflows,
+                and empower your team to turn bold ideas into impactful
+                solutions.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -66,9 +69,10 @@ const ProductLineupSection = () => {
                 alt="Product"
                 className="product-image"
               />
-              <p className=" p-4 text-white">
-                A dedicated online team that works together to bring your vision
-                to life.
+              <p className=" p-4 text-white text-justify">
+                Discover how our platform enhances operational efficiency by
+                streamlining workflows, minimizing manual processes, and
+                maximizing productivity across all levels of your business.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -80,9 +84,10 @@ const ProductLineupSection = () => {
                 alt="Product"
                 className="product-image"
               />
-              <p className=" p-4 text-white">
-                A dedicated online team that works together to bring your vision
-                to life.
+              <p className=" p-4 text-white text-justify">
+                Explore the robust security measures embedded within our
+                platform, designed to safeguard your data and ensure full
+                compliance with the highest industry standards.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -108,14 +113,19 @@ const ProductLineupSection = () => {
           validation and a fully integrated online team that executes their
           vision.
         </p>
-        <div>
+        <div className=" flex flex-row items-center justify-center">
+          <img
+            src="landing/validetionImage.png"
+            alt="Ideax AI"
+            style={{ width: "25%", margin: "" }}
+          />
           <img
             src="landing/ideas.webp"
             alt="Ideax AI"
-            style={{ width: "40%", margin: "auto" }}
+            style={{ width: "40%", margin: "" }}
           />
         </div>
-        <div className="video-section flex flex-wrap justify-center gap-1 md:gap-4">
+        <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[10px] md:w-[48%]">
             <img
               src="home-platform/blank1.jpg"
@@ -222,7 +232,7 @@ const ProductLineupSection = () => {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         style={{
           backgroundColor: "black",
           zIndex: "0",
@@ -231,12 +241,7 @@ const ProductLineupSection = () => {
         }}
       >
         <div style={{ display: "flex", margin: "auto", width: "fit-content" }}>
-          {/* <img
-            src="main-icon/Idea.png"
-            style={{ marginRight: "10px",color:'white' ,backgroundColor:"#6161FF",padding:"7px",borderRadius:'5px'}}
-            alt=""
-            width={50}
-          /> */}
+         
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
             style={{ marginRight: "10px" }}
@@ -266,20 +271,15 @@ const ProductLineupSection = () => {
           Now any team can streamline work, collaborate, and solve their most
           complex problems together with our suite of products.
         </p>
-      </div>
+      </div> */}
       <div style={containerStyle}>
         <div className="top-section">
           <h2 className="text-4xl">How It Works</h2>
           <div className="btns-container">
             <Link
-              className="btn"
+              className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              style={{ fontSize: "14px" }}
               href="/mainWizard"
-              style={{
-                margin: "auto",
-                backgroundColor: "white",
-                color: "black",
-                border: "none",
-              }}
             >
               Test Your Idea <FaArrowAltCircleRight />
             </Link>
@@ -292,11 +292,9 @@ const ProductLineupSection = () => {
             </div>
             <div>
               <h3 className="card-title">Validate Your Idea</h3>
-              <p className="card-text">
-                Sign up and submit your business idea.
-              </p>
-              <p className="card-text">
-                Receive an instant report with AI-driven insights.
+              <p className="card-text text-justify">
+                Sign up and submit your business idea. Receive an instant report
+                with AI-driven insights.
               </p>
             </div>
           </div>
@@ -305,13 +303,11 @@ const ProductLineupSection = () => {
               <PiPlugsConnectedFill />
             </div>
             <div>
-              <h3 className="card-title">Connect with Your Team</h3>
-              <p className="card-text">
-                Choose from our pool of experts in various fields to join your
-                idea.
-              </p>
-              <p className="card-text">
-                Collaborate seamlessly through our platform.
+              <h3 className="card-title">Improve Your Idea</h3>
+              <p className="card-text text-justify">
+                Enhance your idea with relevant content and expert
+                recommendations. Get personalized feedback to refine your
+                concept.
               </p>
             </div>
           </div>
@@ -320,12 +316,10 @@ const ProductLineupSection = () => {
               <HiRocketLaunch />
             </div>
             <div>
-              <h3 className="card-title">Launch & Grow</h3>
-              <p className="card-text">
+              <h3 className="card-title ">Launch & Grow</h3>
+              <p className="card-text text-justify">
                 Execute your strategy with ongoing support and optimization.
-              </p>
-              <p className="card-text">
-                Monitor progress and make data-driven decisions
+                Monitor progress and make data-driven decisions.
               </p>
             </div>
           </div>
@@ -397,65 +391,71 @@ const ProductLineupSection = () => {
           </div>
         </div>
         <div className="mt-10">
-  <h3 className="text-3xl font-semibold text-center mb-8 text-white">
-    What Our Clients Say About Us
-  </h3>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
-    {[
-      {
-        quote: "IDEAX has transformed the way we manage our business!",
-        author: "Sarah L.",
-        role: "Small Business Owner",
-        image: "https://media.istockphoto.com/id/184373351/photo/charming-executive-smiling.jpg?s=612x612&w=0&k=20&c=UXPyrGCiHHXXxX8RtHiUr-1m2lTFm_n79uExvOXcqGs=", // Replace with actual image URLs
-        company: "BizCorp",
-      },
-      {
-        quote:
-          "The AI features have significantly improved our decision-making process.",
-        author: "Mike R.",
-        role: "Startup Founder",
-        image: "https://media.istockphoto.com/id/854479222/photo/find-a-place-you-can-lose-your-mind.jpg?s=612x612&w=0&k=20&c=ehl3heNw6siSlpRHVFqkyx0fSktPFo8IZyfAkx1PHyU=",
-        company: "TechStart",
-      },
-      {
-        quote:
-          "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
-        author: "Emily T.",
-        role: "Entrepreneur",
-        image: "https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=1024x1024&w=is&k=20&c=LZ6ghZW51g5FxD7YdxiuTk3uIKgH6D_p-HX-lap0kL4=",
-        company: "Visionary Inc.",
-      },
-      {
-        quote:
-          "I love the tools for managing cash flow; they make financial planning so much easier!",
-        author: "Jessica P.",
-        role: "E-commerce Manager",
-        image: "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=1024x1024&w=is&k=20&c=iGtRKCTRSvPVl3eOIpzzse5SvQFfImkV0TZuFh-74ps=",
-        company: "ShopEase",
-      },
-    ].map((testimonial, index) => (
-      <div
-        key={index}
-        className="max-w-sm mx-auto bg-white text-black p-8 rounded-xl flex flex-col items-center shadow-lg relative mt-10"
-      >
-        <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
-          <img
-            src={testimonial.image}
-            // src='https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png'
-            alt={`${testimonial.author}'s photo`}
-            className="w-full h-full object-cover "
-          />
-        </div>
+          <h3 className="text-3xl font-semibold text-center mb-8 text-white">
+            What Our Clients Say About Us
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
+            {[
+              {
+                quote: "IDEAX has transformed the way we manage our business!",
+                author: "Mr. Ashish Maan",
+                role: "Startup Founder",
+                image: "/landing/1711453307385.jpg", // Replace with actual image URLs
+                company: "BizCorp",
+              },
+              {
+                quote:
+                  "The AI features have significantly improved our decision-making process.",
+                author: "Mr Vikas Puri",
+                role: "JMD EXPORTS Managing Director",
 
-        <div className="text-center mt-5">
-          <h4 className="font-semibold text-lg">{testimonial.author}</h4>
-          <p className="text-sm mb-4">{testimonial.role}</p>
-          <p className="text-sm italic">“{testimonial.quote}”</p>
+                image:
+                  "/landing/efacd3a2-633e-4ea0-8813-21e574eb1291.jpg",
+                company: "TechStart",
+              },
+              {
+                quote:
+                  "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
+                author: "Mr. Taki Kedo",
+                role: "CEO of 360 home decor",
+                image:
+                  "/landing/33bc43ad-e037-4b6b-8b23-2b23eabab5b2.jpg",
+                company: "Visionary Inc.",
+              },
+              {
+                quote:
+                  "I love the tools for managing cash flow; they make financial planning so much easier!",
+                author: "Mr. Ayman Basha",
+                role: "GM of BASHA IMPEX",
+                image:
+                  "/landing/AymanBasha.jpeg",
+                company: "ShopEase",
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="max-w-sm mx-auto bg-white text-black p-8 rounded-xl flex flex-col items-center shadow-lg relative mt-10"
+              >
+                <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
+                  <img
+                    src={testimonial.image}
+                    // src='https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png'
+                    alt={`${testimonial.author}'s photo`}
+                    className="w-full h-full object-cover "
+                  />
+                </div>
+
+                <div className="text-center mt-5">
+                  <h4 className="font-semibold text-lg">
+                    {testimonial.author}
+                  </h4>
+                  <p className="text-sm mb-4">{testimonial.role}</p>
+                  <p className="text-sm italic">“{testimonial.quote}”</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { RestAPI } from "../../../config/Api";
 import "./Login.css";
 import { FaEdit } from "react-icons/fa";
 import LoginWithGoogle from "../Home/components/LoginWithGoogle";
-import LinkedInLogin from "../Home/components/LinkedInLogin";
+import LinkedInLoginmain from "../Home/components/LinkedInLogin";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
@@ -245,7 +245,7 @@ const Login = () => {
                       Send OTP
                     </button>
                     <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
-                    <LinkedInLogin handleLogin={handleLinkedInLogin}/>
+                    <LinkedInLoginmain handleLogin={handleLinkedInLogin}/>
                   </div>
                 )}
               </div>

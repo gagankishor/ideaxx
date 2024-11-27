@@ -2,13 +2,23 @@
 // import { useLocation } from "next/link";
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
-import { FaAward, FaBalanceScale, FaChartLine, FaCoins, FaGlobe, FaLightbulb, FaRobot, FaUsers } from "react-icons/fa";
+import {
+  FaAward,
+  FaBalanceScale,
+  FaChartLine,
+  FaCoins,
+  FaGlobe,
+  FaLightbulb,
+  FaRobot,
+  FaUsers,
+} from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { HiBuildingOffice } from "react-icons/hi2";
+import { IoBusiness } from "react-icons/io5";
 Chart.register(ArcElement, Tooltip, Legend);
 const WizardResult = () => {
   const [aiContent, setAiContent] = useState("");
@@ -119,7 +129,7 @@ const WizardResult = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
   }, []);
   useEffect(() => {
     if (!loading && aiContent === "") {
@@ -171,14 +181,33 @@ const WizardResult = () => {
   //     parseFloat(TeamAndResourcesData || 0)
   //   ) / 4) * 60) / 100
   // ).toFixed(2);
-  const totalMarketScrore2 = (
-    parseFloat(totalMarketScrore) +parseFloat(
-      parseFloat((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)) +
-      parseFloat(((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100)+
-      parseFloat(((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100)+
-      parseFloat(((20-(parseFloat(data?.marketPotential)/5))*60)/100))
-  );
-  // console.log( 
+  const totalMarketScrore2 =
+    parseFloat(totalMarketScrore) +
+    parseFloat(
+      parseFloat(((20 - parseFloat(TeamAndResourcesData) / 5) * 60) / 100) +
+        parseFloat(
+          ((20 -
+            parseFloat(uniqueValueProposition?.finalScore?.replace("%", "")) /
+              5) *
+            60) /
+            100
+        ) +
+        parseFloat(
+          ((20 -
+            parseFloat(RevenueModelData?.finalScore?.replace("%", "")) / 5) *
+            60) /
+            100
+        ) +
+        parseFloat(
+          ((20 -
+            parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", "")) /
+              5) *
+            60) /
+            100
+        ) +
+        parseFloat(((20 - parseFloat(data?.marketPotential) / 5) * 60) / 100)
+    );
+  // console.log(
   //   "this is score",
   //   parseFloat(totalMarketScrore) ,
   //     ((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)).toFixed(1) ,
@@ -231,18 +260,91 @@ const WizardResult = () => {
       [index]: !prev[index],
     }));
   };
+  const colors = {
+    blue: {
+      outer: "#56BEEE",
+      inner: "#0055BB", 
+      innermost: "#003388", 
+      text: "#00C2FF", 
+    },
+    orange: {
+      outer: "#FF9500", 
+      inner: "#FF7B00",
+      innermost: "#CC5500",
+      text: "#FFB340", 
+    },
+    green: {
+      outer: "#AED442", 
+      inner: "#28B14A", 
+      innermost: "#1F8A3A",
+      text: "#4DE17A",
+    },
+    red: {
+      outer: "#FF453A", 
+      inner: "#D93A31", 
+      innermost: "#B32E27", 
+    },
+    background: "#1C1C1E",
+    centerCircle: "#2C2C2E", 
+  };
+
+  const renderCircleSegment = (startAngle, endAngle, radius, color) => {
+    const centerX = 200;
+    const centerY = 200;
+
+    const x1 = centerX + radius * Math.cos((startAngle * Math.PI) / 180);
+    const y1 = centerY + radius * Math.sin((startAngle * Math.PI) / 180);
+    const x2 = centerX + radius * Math.cos((endAngle * Math.PI) / 180);
+    const y2 = centerY + radius * Math.sin((endAngle * Math.PI) / 180);
+
+    const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+
+    return (
+      <path
+        d={`M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`}
+        fill={color}
+        style={{ opacity: 0.9 }}
+      />
+    );
+  };
+
+  const renderText = (text, angle, radius, color, size = "14px") => {
+    const centerX = 200;
+    const centerY = 200;
+    const textAngle = (angle * Math.PI) / 180;
+    const x = centerX + radius * Math.cos(textAngle);
+    const y = centerY + radius * Math.sin(textAngle);
+
+    return (
+      <text
+        x={x}
+        y={y}
+        fill={color}
+        style={{
+          fontSize: size,
+          fontWeight: "bold",
+          fontFamily: "Arial, sans-serif",
+        }}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        transform={`rotate(${angle + 90}, ${x}, ${y})`}
+      >
+        {text}
+      </text>
+    );
+  };
   // const radius = 40; // Radius of the circle
   // const circumference = 2 * Math.PI * radius; // Circumference of the circle
   // const offset = circumference - (48 / 100) * circumference;
   return (
     <>
       <div className="max-w-[1400px] m-auto ">
-        <div className="fixed bottom-3 w-full z-50 sm:hidden flex justify-center items-center">
+        {/* <div className="fixed bottom-3 w-full z-50 sm:hidden flex justify-center items-center">
           <div className="mx-10 text-center w-[96%] text-xl rounded-lg h-16 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-medium flex items-center justify-center">
             Launch Your Idea Free
           </div>
-        </div>
-        <div className="mt-5 border-gray-300 border rounded-lg w-[94%] mx-auto p-5">
+        </div> */}
+        <div className="mt-5 border-gray-300 border  rounded-lg w-[94%] mx-auto p-5">
           <div>
             <h2 className="mb-0 text-center text-lg md:text-xl lg:text-2xl">
               Your Idea Outlook
@@ -252,591 +354,95 @@ const WizardResult = () => {
               trends.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row gap-5 items-center justify-center">
-            <div className="flex justify-around w-full md:w-11/12 lg:w-full mx-auto  my-5 md:my-8 flex-wrap">
-              {[
-                {
-                  href: "#idea",
-                  data: bardata,
-                  score: data?.success_percentage,
-                  label: "Idea Score",
-                  points : [
-                    {
-                      id: 1,
-                      label: `${parseInt(data?.phase1)*3.17}%`,
-                      position: " top-60 -left-10 md:top-7 md:-left-36",
-                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                      icon: <FaLightbulb />,
-                      rowDir: "md:flex-row-reverse",
-                      textDir: "text-left md:text-right",
-                      text:"IDEA"
-  
-                    },
-                    {
-                      id: 2,
-                      label: `${parseInt(data?.phase2)*3.17}%`,
-                      position: " top-60 -right-10 md:top-7 md:-right-36",
-                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                      icon: <FaCoins />,
-                      rowDir: "md:flex-row",
-                      textDir: "text-left md:text-left",
-                      text:"Investment"
-                    },
-                    {
-                      id: 5,
-                      label: `${parseInt(data?.phase5)*3.17}%`,
-                      position:
-                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
-                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
-                      mgIcon:'md:-mr-20',
+          <div
+            className="w-full max-w-2xl mx-auto p-8 rounded-lg"
+            // style={{ background: colors.background }}
+          >
+            <div className="relative">
+              <svg viewBox="0 0 400 400" className="w-full">
+              <defs>
+    <linearGradient id="gradientColor" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style={{ stopColor: 'blue', stopOpacity: 1 }} />
+      <stop offset="100%" style={{ stopColor: '#6AB7E3', stopOpacity: 1 }} />
+    </linearGradient>
+  </defs>
+                {/* Outer segments */}
+                {renderCircleSegment(30, 149, 110, "url(#gradientColor)")}
+                {renderCircleSegment(150, 269, 110, colors.orange.outer)}
+                {renderCircleSegment(270, 29, 110, colors.green.outer)}
 
-                      icon: <HiBuildingOffice />                      ,
-                      rowDir: "md:flex-col",
-                      textDir: "text-left md:text-right",
-                      text:"Current Job related"
-                    },
-                    {
-                      id: 6,
-                      label: `${parseInt(data?.phase6)*3.17}%`,
-                      position:
-                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
-                      mgIcon:'md:-ml-20',
+                {/* Inner circle 1 */}
+                {renderCircleSegment(0, 180, 100, colors.centerCircle)}
+                {renderCircleSegment(180, 360, 100, colors.centerCircle)}
 
-                      icon: <FaAward />,
-                      rowDir: "md:flex-col",
-                      textDir: "text-left md:text-left",
-                      text:"Experience"
-                    },
-                    {
-                      id: 4,
-                      label: `${parseInt(data?.phase7)*3.17}%`,
-                      position: "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
-                      icon: <FaGlobe />,
-                      rowDir: "md:flex-col-reverse",
-                      textDir: "text-left md:text-center",
-                      text: "Country"
-                    }
-                  ]
-                },
-                {
-                  href: "#market",
-                  data: bardata2,
-                  score: totalMarketScrore,
-                  label: "Market Score",
-                  points : [
-                    {
-                      id: 1,
-                      label: `${parseFloat(TeamAndResourcesData)/5}%`,
-                      position: " top-60 -left-10 md:top-7 md:-left-36",
-                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                      icon: <FaUsers />,
-                      rowDir: "md:flex-row-reverse",
-                      textDir: "text-left md:text-right",
-                      text:"Team & Resources"
-  
-                    },
-                    {
-                      id: 2,
-                      label: `${parseFloat(
-                        uniqueValueProposition?.finalScore?.replace("%", "")
-                      )/5}%`,
-                      position: " top-60 -right-10 md:top-7 md:-right-36",
-                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                      icon: <FaAward />,
-                      rowDir: "md:flex-row",
-                      textDir: "text-left md:text-left",
-                      text:"Unique Value Proposition"
-                    },
-                    {
-                      id: 5,
-                      label: `${parseFloat(
-                        RevenueModelData?.finalScore?.replace("%", "")
-                      )/5}%`,
-                      position:
-                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
-                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
-                      mgIcon:'md:-mr-20',
+                {/* Inner circle 2 */}
+                {renderCircleSegment(30, 148, 90, colors.blue.inner)}
+                {renderCircleSegment(150, 268, 90, colors.orange.inner)}
+                {renderCircleSegment(270, 28, 90, colors.green.inner)}
 
-                      icon:<FaChartLine /> ,
-                      rowDir: "md:flex-col",
-                      textDir: "text-left  md:text-right",
-                      text:"Revenue Model"
-                    },
-                    {
-                      id: 6,
-                      label: `${parseFloat(
-                        CompetitiveLandscapeData?.finalScore?.replace(
-                          "%",
-                          ""
-                        )
-                      )/5}%`,
-                      position:
-                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
-                      mgIcon:'md:-ml-20',
+                {/* Inner circle 3 */}
+                {renderCircleSegment(0, 180, 60, colors.centerCircle)}
+                {renderCircleSegment(180, 360, 60, colors.centerCircle)}
+                {renderCircleSegment(0, 180, 52, "#D6F0F8")}
+                {renderCircleSegment(180, 360, 52, "#D6F0F8")}
+                {/* Innermost circle 4 */}
+                {renderCircleSegment(30, 150, 50, colors.blue.innermost)}
+                {renderCircleSegment(150, 270, 50, colors.orange.innermost)}
+                {renderCircleSegment(270, 30, 50, colors.green.innermost)}
+                {renderCircleSegment(0, 180, 37, "#D6F0F8")}
+                {renderCircleSegment(180, 360, 37, "#D6F0F8")}
+                {/* Center black circles */}
+                {renderCircleSegment(0, 180, 35, colors.centerCircle)}
+                {renderCircleSegment(180, 360, 35, colors.centerCircle)}
+                {renderCircleSegment(0, 180, 12, "url(#gradientColor)")}
+                {renderCircleSegment(180, 360, 13, "#D6F0F8")}
+                {renderCircleSegment(0, 180, 10, "#0C233B")}
+                {renderCircleSegment(180, 360, 10, "#0C233B")}
+                {/* Main text labels */}
+                {renderText("CLARITY", 90, 140, colors.blue.text)}
+                {renderText("RELEVANCE", 210, 140, colors.orange.text)}
+                {renderText("MOTION", 330, 140, colors.green.text)}
 
-                      icon:<FaBalanceScale /> ,
-                      rowDir: "md:flex-col",
-                      textDir: "text-left  md:text-left",
-                      text:"Competitive Landscape"
-                    },
-                    {
-                      id: 4,
-                      label: `${parseFloat(data?.marketPotential)/5}%`,
-                      position: "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
-                      icon: <FaGlobe />,
-                      rowDir: "md:flex-col-reverse",
-                      textDir: "text-left  md:text-center",
-                      text: "Market Potential"
-                    }
-                  ]
-                },
-                {
-                  href: "#ideax",
-                  data: bardata3,
-                  score: totalMarketScrore2,
-                  label: "Score with Ideax",
-                  points : [
-                    {
-                      id: 1,
-                      label: `${((parseFloat(TeamAndResourcesData)/5)+(((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)).toFixed(1)}%`,
-                      position: " top-60 -left-10 md:top-7 md:-left-36",
-                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                      icon: <FaChartLine />,
-                      rowDir: "md:flex-row-reverse",
-                      textDir: "text-left md:text-right",
-                      text:"Team & Resources"
-                    },
-                    {
-                      id: 2,
-                      label: `${parseFloat(
-                        uniqueValueProposition?.finalScore?.replace("%", "")
-                      )/5}%`,
-                      position: " top-60 -right-10 md:top-7 md:-right-36",
-                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                      icon: <FaAward />,
-                      rowDir: "md:flex-row",
-                      textDir: "text-left md:text-left",
-                      text:"Unique Value Proposition"
-                    },
-                    {
-                      id: 5,
-                      label: `${((parseFloat(
-                        RevenueModelData?.finalScore?.replace("%", "")
-                      )/5)+(((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100)).toFixed(1)}%`,
-                      position:
-                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
-                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
-                      mgIcon:'md:-mr-20',
-                      icon: <FaUsers />,
-                      rowDir: "md:flex-col",
-                      textDir: "text-left  md:text-right",
-                      text:"Revenue Model"
-                    },
-                    {
-                      id: 6, 
-                      label: `${((parseFloat(
-                        CompetitiveLandscapeData?.finalScore?.replace("%", "")
-                      )/5)+(((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100)).toFixed(1)}%`,
-                      position:
-                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
-                      mgIcon:'md:-ml-20',
-                      icon: <FaBalanceScale />,
-                      rowDir: "md:flex-col",
-                      textDir: "text-left  md:text-left",
-                      text:"Competitive Landscape"
-                    },
-                    {
-                      id: 4,
-                      label: `${((parseFloat(
-                        data?.marketPotential
-                      )/5)+(((20-(parseFloat(data?.marketPotential)/5))*60)/100)).toFixed(1)}%`,
-                      position: "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
-                      icon: <FaGlobe />,
-                      rowDir: "md:flex-col-reverse",
-                      textDir: "text-left  md:text-center",
-                      text: "Market Potential"
-                    }
-                  ]
-                },
-              ].map((item, index) => {
-                const radius = 40;
-                // const color =
-                //   item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
-                // const backgroundColor =
-                //   item.score > 80
-                //     ? "#d4edda"
-                //     : item.score > 50
-                //     ? "#fff3cd"
-                //     : "#f8d7da";
-                // const strokeColor =
-                //   item.score > 80
-                //     ? "#e6f7e9"
-                //     : item.score > 50
-                //     ? "#fff9e6"
-                //     : "#fdecea";
-                const circumference = 2 * Math.PI * radius;
-                const offset = 
-                  circumference - (item.score / 100) * circumference;
-                // const points = [
-                //   {
-                //     id: 1,
-                //     label: "ONE",
-                //     position: " top-60 -left-10 md:-top-4 md:-left-28",
-                //     bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
-                //     icon: <FaMapLocation />,
-                //     rowDir: "md:flex-row-reverse",
-                //     textDir: "md:text-right",
-                //     text:" Opportunities in Growing Market"
+                {/* Percentage labels */}
+                {/* {renderText("Idea", 90, 105, "#FFFFFF", "16px")}
+                {renderText("Market", 210, 105, "#FFFFFF", "16px")}
+                {renderText("with ideax%", 330, 105, "#FFFFFF", "16px")} */}
 
-                //   },
-                //   {
-                //     id: 2,
-                //     label: "TWO",
-                //     position: " top-60 -right-10 md:-top-4 md:-right-28",
-                //     bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
-                //     icon: <FaStar />,
-                //     rowDir: "md:flex-row",
-                //     textDir: "md:text-left",
-                //     text:"Highlighting Your Competitive Edge"
+                {/* Secondary percentage labels */}
+                {renderText("Idea", 90, 70, colors.blue.text)}
+                {renderText("Market", 210, 70, colors.orange.text)}
+                {renderText("With Ideax", 330, 70, colors.green.text)}
 
-                //   },
-                //   // {
-                //   //   id: 3,
-                //   //   label: "Point Three",
-                //   //   position: "-bottom-4 -left-20",
-                //   //   bgColor: "linear-gradient(135deg, #00c6ff, #0072ff)", // Blue gradient
-                //   //   icon: <FaHeart />, // Heart icon
-                //   //   rowDir: "flex-row-reverse",
-                //   //   textDir: "text-right",
-                //   // },
-                //   // {
-                //   //   id: 4,
-                //   //   label: "Point Four",
-                //   //   position: "-bottom-4 -right-20",
-                //   //   bgColor: "linear-gradient(135deg, #ff6a00, #ee0979)", // Red to orange gradient
-                //   //   icon: <FaCogs /> ,// Gear icon
-                //   //   rowDir: "flex-row",
-                //   //   textDir: "text-left",
-                //   // },
-                //   {
-                //     id: 5,
-                //     label: "Three",
-                //     position:
-                //       "top-72 mt-3 -left-10  md:top-1/2 md:-translate-y-1/2  md:-left-36",
-                //     bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
-                //     icon: <FaMusic />,
-                //     rowDir: "md:flex-row-reverse",
-                //     textDir: "md:text-right",
-                //     text:"Building Strong  Teams and Resources"
+                {/* Center elements */}
+                <circle cx="200" cy="200" r="5" fill={colors.blue.text} />
+                <line
+                  x1="200"
+                  y1="160"
+                  x2="200"
+                  y2="200"
+                  stroke={colors.blue.text}
+                  strokeWidth="2"
+                />
 
-                //   },
-                //   {
-                //     id: 6,
-                //     label: "Four",
-                //     position:
-                //       "top-72 mt-3 -right-10  md:top-1/2 md:-translate-y-1/2   md:-right-36 ",
-                //     bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
-                //     icon: <FaRocket />,
-                //     rowDir: "md:flex-row",
-                //     textDir: "md:text-left",
-                //     text:"Analyzing Market Competition Effectively"
-                //   },
-                // ];
-                
-                return (
-                  <div
-                    href={item.href}
-                    key={index}
-                    className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
-                      index !== 0
-                        ? "xl-custom:border-l-2 xl-custom:border-gray-300"
-                        : ""
-                    }`}
-                    style={{ textAlign: "center" }}
-                  >
-                    <div className="relative  flex justify-center items-center">
-                      <div>
-                        {item?.points.map((point) => (
-                          <div
-                            key={point.id}
-                            className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 mx-6`}
-                          >
-                            <div
-                              className={`w-6 h-6 ${point.bgColor} ${point.mgIcon} text-white   rounded-full flex items-center  justify-center shadow-lg`}
-                              style={{
-                                background: point.bgColor,
-                              }}
-                            >
-                              {point.icon}
-                            </div>
-                            <div className="">
-                              <h4
-                                className={`text-xs ${point.textDir} font-black text-gray-600`}
-                              >
-                                {point.label}
-                              </h4>
-                              <p
-                                className={`text-[12px] ${point.textDir} text-left m-0 w-[100px]`}
-                              >
-                               {point.text}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      <svg
-                        // width="150"
-                        // height="150"
-                        viewBox="0 0 120 120" // Increased the viewBox size
-                        className="w-5/6  md:w-40 lg:w-40 mb-32 md:mb-4"
-                      >
-                        <circle cx="60" cy="60" r={radius} fill="white" />
-                        <circle
-                          cx="60"
-                          cy="60"
-                          r={radius}
-                          fill="none"
-                          stroke="#cac8fa"
-                          strokeWidth="8"
-                        />
-                        <circle
-                          cx="60"
-                          cy="60"
-                          r="60"
-                          fill="none"
-                          stroke="#DBDBDD"
-                          strokeWidth="2"
-                          strokeDasharray="2 4"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="gradientStroke"
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="100%"
-                          >
-                            <stop
-                              offset="0%"
-                              style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
-                            />
-                            <stop
-                              offset="50%"
-                              style={{ stopColor: "#8749EC", stopOpacity: 1 }}
-                            />
-                            <stop
-                              offset="100%"
-                              style={{ stopColor: "#616BFC", stopOpacity: 1 }}
-                            />
-                          </linearGradient>
-                        </defs>
-                        <circle
-                          cx="60" // Adjusted center for better alignment
-                          cy="60" // Adjusted center for better alignment
-                          r={radius}
-                          fill="none"
-                          stroke="url(#gradientStroke)" // Reference the gradient here
-                          strokeWidth="8"
-                          strokeDasharray={circumference}
-                          strokeDashoffset={offset}
-                          strokeLinecap="round"
-                          transform="rotate(-90 60 60)" // Adjusted rotation origin
-                        />
-                        {/* Percentage Text */}
-                        <text
-                          x="60" // Adjusted to match the new center position
-                          y="65" // Adjusted to match the new center position
-                          textAnchor="middle"
-                          fontSize="15"
-                          fill="black"
-                        >
-                          {item.score}%
-                        </text>
-                      </svg>
-                    </div>
-                    <p className="mt-16 mb-0 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
-                      {item.label}
-                    </p>
-                    <a
-                      href={item.href}
-                      className="md:mt-1 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-300 ease-in-out"
-                    >
-                      More Details &rarr;
-                    </a>
-                  </div>
-                );
-              })}
+                {/* Central text */}
+                <text
+                  x="200"
+                  y="200"
+                  fill="#FFFFFF"
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: "bold",
+                    fontFamily: "Arial, sans-serif",
+                  }}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                >
+                  
+                </text>
+              </svg>
             </div>
           </div>
         </div>
-        <section>
-          <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
-            {/* Left Text Section */}
-            <div>
-              <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
-                Take the first step{" "}
-                <span className="font-semibold">towards</span> making your idea
-                to a reality, <span className="font-semibold">launch</span> your
-                idea now.
-              </h3>
-            </div>
-            {/* Button Section */}
-            <div className="btns-container">
-              <Link href="/plan-details" passHref>
-                <button className="btn min-w-[170px]">Launch Your Idea</button>
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section
-          id="idea"
-          className="business-check-container border-gray-300 border  m-auto mt-10 p-10 lg:mx-10"
-        >
-          <div>
-            <h2
-              style={{
-                display: "flex",
-                gap: "10px",
-              }}
-              className=" mb-0 justify-center"
-            >
-              Your Idea Overview{" "}
-              <FaRobot size={28} style={{ color: "var(--main-color)" }} />
-            </h2>
-            <p className=" ">
-              Slight changes may occur in the results depending on market
-              trends.
-            </p>
-          </div>
-          <div className="flex flex-col-reverse lg:flex-row items-start h-full justify-around">
-            <div className=" lg:mr-[10px] ">
-              <div className="m-auto">
-                {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
-                {loading ? (
-                  <p>Loading AI-generated insights...</p>
-                ) : (
-                  <p className="text-justify p-2 text-[14px] md:text-[14px]">
-                    {displayedText}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="overview-right h-full">
-              {/* <div className="business-score-circle">
-            <Doughnut data={bardata2} options={options} />
-            <div className="doughnut-center">
-              <p className="circle-text">{totalMarketScrore}%</p>
-              <p>Idea Score</p>
-            </div>
-          </div> */}
-              {[
-                {
-                  href: "#idea",
-                  data: bardata,
-                  score: data?.success_percentage,
-                  label: "Idea Score",
-                },
-              ].map((item, index) => {
-                const radius = 40;
-                const backgroundColor = "white";
-                const circumference = 2 * Math.PI * radius;
-                const offset =
-                  circumference - (item.score / 100) * circumference;
-                return (
-                  <div
-                    key={index}
-                    className="circular-progress flex flex-col justify-start mt-0 items-center"
-                    style={{ textAlign: "center" }}
-                  >
-                    <svg width="200" height="200" viewBox="0 0 100 100">
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r={radius}
-                        fill={backgroundColor}
-                      />
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r={radius}
-                        fill="none"
-                        stroke="#cac8fa"
-                        strokeWidth="8"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="gradientStroke"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop
-                            offset="0%"
-                            style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
-                          />
-                          <stop
-                            offset="50%"
-                            style={{ stopColor: "#8749EC", stopOpacity: 1 }}
-                          />
-                          <stop
-                            offset="100%"
-                            style={{ stopColor: "#616BFC", stopOpacity: 1 }}
-                          />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r={radius}
-                        fill="none"
-                        // stroke={color}
-                        stroke="url(#gradientStroke)"
-                        strokeWidth="8"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={offset}
-                        strokeLinecap="round"
-                        transform="rotate(-90 50 50)"
-                      />
-                      <text
-                        x="50"
-                        y="55"
-                        textAnchor="middle"
-                        fontSize="15"
-                        fill="black"
-                      >
-                        {item.score}%
-                      </text>
-                    </svg>
-                    <p
-                      style={{
-                        marginTop: "10px",
-                        color: "#000",
-                        fontSize: "1.4rem",
-                      }}
-                      className=" text-2xl"
-                    >
-                      {item.label}
-                    </p>
-                    <ul className="list-disc pl-6 font-extralight text-[14px] lg:max-w-[200px] text-justify">
-                      <li>Idea Status</li>
-                      <li>Investment Required for Your Idea</li>
-                      <li>Current Job Related to Your Idea</li>
-                      <li>Experience in the Field of Your Idea </li>
-                      <li>CSelected Country</li>
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
         <section
           id="market"
           className="business-check-container border-gray-300 border  m-auto mt-10 flex flex-col-reverse lg:flex-row lg:mx-10 p-5"
@@ -990,93 +596,199 @@ const WizardResult = () => {
                     data: bardata2,
                     score: totalMarketScrore,
                     label: "Market Score",
+                    points: [
+                      {
+                        id: 1,
+                        label: `${parseFloat(TeamAndResourcesData) / 5}%`,
+                        position: " top-60 -left-10 md:top-7 md:-left-36",
+                        bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                        icon: <FaUsers />,
+                        rowDir: "md:flex-row-reverse",
+                        textDir: "text-left md:text-right",
+                        text: "Team & Resources",
+                      },
+                      {
+                        id: 2,
+                        label: `${
+                          parseFloat(
+                            uniqueValueProposition?.finalScore?.replace("%", "")
+                          ) / 5
+                        }%`,
+                        position: " top-60 -right-10 md:top-7 md:-right-36",
+                        bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                        icon: <FaAward />,
+                        rowDir: "md:flex-row",
+                        textDir: "text-left md:text-left",
+                        text: "Unique Value Proposition",
+                      },
+                      {
+                        id: 5,
+                        label: `${
+                          parseFloat(
+                            RevenueModelData?.finalScore?.replace("%", "")
+                          ) / 5
+                        }%`,
+                        position:
+                          "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
+                        bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                        mgIcon: "md:-mr-20",
+
+                        icon: <FaChartLine />,
+                        rowDir: "md:flex-col",
+                        textDir: "text-left  md:text-right",
+                        text: "Revenue Model",
+                      },
+                      {
+                        id: 6,
+                        label: `${
+                          parseFloat(
+                            CompetitiveLandscapeData?.finalScore?.replace(
+                              "%",
+                              ""
+                            )
+                          ) / 5
+                        }%`,
+                        position:
+                          "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                        bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                        mgIcon: "md:-ml-20",
+                        icon: <FaBalanceScale />,
+                        rowDir: "md:flex-col",
+                        textDir: "text-left  md:text-left",
+                        text: "Competitive Landscape",
+                      },
+                      {
+                        id: 4,
+                        label: `${parseFloat(data?.marketPotential) / 5}%`,
+                        position:
+                          "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
+                        bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
+                        icon: <IoBusiness />,
+                        rowDir: "md:flex-col-reverse",
+                        textDir: "text-left  md:text-center",
+                        text: "Market Potential",
+                      },
+                    ],
                   },
                 ].map((item, index) => {
-                  // Determine radius and color based on the score
                   const radius = 40;
-                  // const color =
-                  //   item.score > 80
-                  //     ? "green"
-                  //     : item.score > 50
-                  //     ? "orange"
-                  //     : "red"; // Example color logic
-                  // const backgroundColor =
-                  //   item.score > 80
-                  //     ? "#d4edda"
-                  //     : item.score > 50
-                  //     ? "#fff3cd"
-                  //     : "#f8d7da";
-                  const backgroundColor = "white";
-
-                  // const strokeColor =
-                  //   item.score > 80
-                  //     ? "#e6f7e9" // Light green
-                  //     : item.score > 50
-                  //     ? "#fff9e6" // Light yellow
-                  //     : "#fdecea"; // Light red
-                  // Calculate circle properties
                   const circumference = 2 * Math.PI * radius;
                   const offset =
                     circumference - (item.score / 100) * circumference;
 
                   return (
                     <div
+                      href={item.href}
                       key={index}
-                      className="circular-progress"
+                      className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
+                        index !== 0
+                          ? "xl-custom:border-l-2 xl-custom:border-gray-300"
+                          : ""
+                      }`}
                       style={{ textAlign: "center" }}
                     >
-                      <svg width="200" height="200" viewBox="0 0 100 100">
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r={radius}
-                          fill={backgroundColor}
-                        />
-                        {/* Background Circle */}
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r={radius}
-                          fill="none"
-                          // stroke={strokeColor}
-                          stroke="#cac8fa"
-                          strokeWidth="8"
-                        />
-                        {/* Progress Circle */}
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r={radius}
-                          fill="none"
-                          // stroke={color}
-                          stroke="url(#gradientStroke)"
-                          strokeWidth="8"
-                          strokeDasharray={circumference}
-                          strokeDashoffset={offset}
-                          strokeLinecap="round"
-                          transform="rotate(-90 50 50)"
-                        />
-                        {/* Percentage Text */}
-                        <text
-                          x="50"
-                          y="55"
-                          textAnchor="middle"
-                          fontSize="15"
-                          // fill={color}
-                          fill="black"
+                      <div className="relative  flex justify-center items-center">
+                        <div>
+                          {item?.points.map((point) => (
+                            <div
+                              key={point.id}
+                              className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 mx-6`}
+                            >
+                              <div
+                                className={`w-6 h-6 ${point.bgColor} ${point.mgIcon} text-white   rounded-full flex items-center  justify-center shadow-lg`}
+                                style={{
+                                  background: point.bgColor,
+                                }}
+                              >
+                                {point.icon}
+                              </div>
+                              <div className="">
+                                <h4
+                                  className={`text-xs ${point.textDir} font-black text-gray-600`}
+                                >
+                                  {point.label}
+                                </h4>
+                                <p
+                                  className={`text-[12px] ${point.textDir} text-left m-0 w-[100px]`}
+                                >
+                                  {point.text}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <svg
+                          // width="150"
+                          // height="150"
+                          viewBox="0 0 120 120" // Increased the viewBox size
+                          className="w-5/6  md:w-40 lg:w-40 mb-32 md:mb-4"
                         >
-                          {item.score}%
-                        </text>
-                      </svg>
-                      <p
-                        style={{
-                          marginTop: "10px",
-                          color: "#000",
-                          fontSize: "1.4rem",
-                        }}
-                        className=" text-2xl"
-                      >
-                        {item.label}
+                          <circle cx="60" cy="60" r={radius} fill="white" />
+                          <circle
+                            cx="60"
+                            cy="60"
+                            r={radius}
+                            fill="none"
+                            stroke="#cac8fa"
+                            strokeWidth="8"
+                          />
+                          <circle
+                            cx="60"
+                            cy="60"
+                            r="60"
+                            fill="none"
+                            stroke="#DBDBDD"
+                            strokeWidth="2"
+                            strokeDasharray="2 4"
+                          />
+                          <defs>
+                            <linearGradient
+                              id="gradientStroke"
+                              x1="0%"
+                              y1="0%"
+                              x2="100%"
+                              y2="100%"
+                            >
+                              <stop
+                                offset="0%"
+                                style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
+                              />
+                              <stop
+                                offset="50%"
+                                style={{ stopColor: "#8749EC", stopOpacity: 1 }}
+                              />
+                              <stop
+                                offset="100%"
+                                style={{ stopColor: "#616BFC", stopOpacity: 1 }}
+                              />
+                            </linearGradient>
+                          </defs>
+                          <circle
+                            cx="60" // Adjusted center for better alignment
+                            cy="60" // Adjusted center for better alignment
+                            r={radius}
+                            fill="none"
+                            stroke="url(#gradientStroke)" // Reference the gradient here
+                            strokeWidth="8"
+                            strokeDasharray={circumference}
+                            strokeDashoffset={offset}
+                            strokeLinecap="round"
+                            transform="rotate(-90 60 60)" // Adjusted rotation origin
+                          />
+                          {/* Percentage Text */}
+                          <text
+                            x="60" // Adjusted to match the new center position
+                            y="65" // Adjusted to match the new center position
+                            textAnchor="middle"
+                            fontSize="15"
+                            fill="black"
+                          >
+                            {item.score}%
+                          </text>
+                        </svg>
+                      </div>
+                      <p className="mt-10 mb-0 text-base md:text-lg lg:text-xl font-semibold text-gray-800">
+                        {/* {item.label} */}
                       </p>
                     </div>
                   );
@@ -1113,6 +825,240 @@ const WizardResult = () => {
             </div>
           </div>
         </section>
+        <section
+          id="idea"
+          className="business-check-container border-gray-300 border  m-auto mt-10 p-10 lg:mx-10"
+        >
+          <div>
+            <h2
+              style={{
+                display: "flex",
+                gap: "10px",
+              }}
+              className=" mb-0 justify-center"
+            >
+              Your Idea Overview{" "}
+              <FaRobot size={28} style={{ color: "var(--main-color)" }} />
+            </h2>
+            <p className=" ">
+              Slight changes may occur in the results depending on market
+              trends.
+            </p>
+          </div>
+          <div className="flex flex-col-reverse lg:flex-row items-start h-full justify-around">
+            <div className=" lg:mr-[10px] ">
+              <div className="m-auto">
+                {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
+                {loading ? (
+                  <p>Loading AI-generated insights...</p>
+                ) : (
+                  <p className="text-justify p-2 text-[14px] md:text-[14px]">
+                    {displayedText}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="overview-right h-full">
+              {/* <div className="business-score-circle">
+            <Doughnut data={bardata2} options={options} />
+            <div className="doughnut-center">
+              <p className="circle-text">{totalMarketScrore}%</p>
+              <p>Idea Score</p>
+            </div>
+          </div> */}
+              {[
+                {
+                  href: "#idea",
+                  data: bardata,
+                  score: data?.success_percentage,
+                  label: "Idea Score",
+                  points: [
+                    {
+                      id: 1,
+                      label: `${parseInt(data?.phase1) * 3.17}%`,
+                      position: " top-60 -left-10 md:top-7 md:-left-36",
+                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                      icon: <FaLightbulb />,
+                      rowDir: "md:flex-row-reverse",
+                      textDir: "text-left md:text-right",
+                      text: "IDEA",
+                    },
+                    {
+                      id: 2,
+                      label: `${parseInt(data?.phase2) * 3.17}%`,
+                      position: " top-60 -right-10 md:top-7 md:-right-36",
+                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                      icon: <FaCoins />,
+                      rowDir: "md:flex-row",
+                      textDir: "text-left md:text-left",
+                      text: "Investment",
+                    },
+                    {
+                      id: 5,
+                      label: `${parseInt(data?.phase5) * 3.17}%`,
+                      position:
+                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
+                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                      mgIcon: "md:-mr-20",
+                      icon: <HiBuildingOffice />,
+                      rowDir: "md:flex-col",
+                      textDir: "text-left md:text-right",
+                      text: "Current Job related",
+                    },
+                    {
+                      id: 6,
+                      label: `${parseInt(data?.phase6) * 3.17}%`,
+                      position:
+                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      mgIcon: "md:-ml-20",
+                      icon: <FaAward />,
+                      rowDir: "md:flex-col",
+                      textDir: "text-left md:text-left",
+                      text: "Experience",
+                    },
+                    {
+                      id: 4,
+                      label: `${parseInt(data?.phase7) * 3.17}%`,
+                      position:
+                        "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
+                      icon: <FaGlobe />,
+                      rowDir: "md:flex-col-reverse",
+                      textDir: "text-left md:text-center",
+                      text: "Country",
+                    },
+                  ],
+                },
+              ].map((item, index) => {
+                const radius = 40;
+                const circumference = 2 * Math.PI * radius;
+                const offset =
+                  circumference - (item.score / 100) * circumference;
+
+                return (
+                  <div
+                    href={item.href}
+                    key={index}
+                    className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
+                      index !== 0
+                        ? "xl-custom:border-l-2 xl-custom:border-gray-300"
+                        : ""
+                    }`}
+                    style={{ textAlign: "center" }}
+                  >
+                    <div className="relative  flex justify-center items-center">
+                      <div>
+                        {item?.points.map((point) => (
+                          <div
+                            key={point.id}
+                            className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 mx-6`}
+                          >
+                            <div
+                              className={`w-6 h-6 ${point.bgColor} ${point.mgIcon} text-white   rounded-full flex items-center  justify-center shadow-lg`}
+                              style={{
+                                background: point.bgColor,
+                              }}
+                            >
+                              {point.icon}
+                            </div>
+                            <div className="">
+                              <h4
+                                className={`text-xs ${point.textDir} font-black text-gray-600`}
+                              >
+                                {point.label}
+                              </h4>
+                              <p
+                                className={`text-[12px] ${point.textDir} text-left m-0 w-[100px]`}
+                              >
+                                {point.text}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <svg
+                        // width="150"
+                        // height="150"
+                        viewBox="0 0 120 120" // Increased the viewBox size
+                        className="w-5/6  md:w-40 lg:w-40 mb-32 md:mb-4"
+                      >
+                        <circle cx="60" cy="60" r={radius} fill="white" />
+                        <circle
+                          cx="60"
+                          cy="60"
+                          r={radius}
+                          fill="none"
+                          stroke="#cac8fa"
+                          strokeWidth="8"
+                        />
+                        <circle
+                          cx="60"
+                          cy="60"
+                          r="60"
+                          fill="none"
+                          stroke="#DBDBDD"
+                          strokeWidth="2"
+                          strokeDasharray="2 4"
+                        />
+                        <defs>
+                          <linearGradient
+                            id="gradientStroke"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop
+                              offset="0%"
+                              style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
+                            />
+                            <stop
+                              offset="50%"
+                              style={{ stopColor: "#8749EC", stopOpacity: 1 }}
+                            />
+                            <stop
+                              offset="100%"
+                              style={{ stopColor: "#616BFC", stopOpacity: 1 }}
+                            />
+                          </linearGradient>
+                        </defs>
+                        <circle
+                          cx="60" // Adjusted center for better alignment
+                          cy="60" // Adjusted center for better alignment
+                          r={radius}
+                          fill="none"
+                          stroke="url(#gradientStroke)" // Reference the gradient here
+                          strokeWidth="8"
+                          strokeDasharray={circumference}
+                          strokeDashoffset={offset}
+                          strokeLinecap="round"
+                          transform="rotate(-90 60 60)" // Adjusted rotation origin
+                        />
+                        {/* Percentage Text */}
+                        <text
+                          x="60" // Adjusted to match the new center position
+                          y="65" // Adjusted to match the new center position
+                          textAnchor="middle"
+                          fontSize="15"
+                          fill="black"
+                        >
+                          {item.score}%
+                        </text>
+                      </svg>
+                    </div>
+                    <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-sm lg:text-sm font-thin text-gray-800">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Animi reiciendis, obcaecati consequatur recusandae
+                      cupiditate illum.
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <section
           id="ideax"
           className="business-check-container border-gray-300 border  m-auto mt-10 lg:mx-10 "
@@ -1170,88 +1116,254 @@ const WizardResult = () => {
                   data: bardata3,
                   score: totalMarketScrore2,
                   label: "Score with Ideax",
+                  points: [
+                    {
+                      id: 1,
+                      label: `${(
+                        parseFloat(TeamAndResourcesData) / 5 +
+                        ((20 - parseFloat(TeamAndResourcesData) / 5) * 60) / 100
+                      ).toFixed(1)}%`,
+                      position: " top-60 -left-10 md:top-7 md:-left-36",
+                      bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
+                      icon: <FaChartLine />,
+                      rowDir: "md:flex-row-reverse",
+                      textDir: "text-left md:text-right",
+                      text: "Team & Resources",
+                    },
+                    {
+                      id: 2,
+                      label: `${(
+                        parseFloat(
+                          uniqueValueProposition?.finalScore?.replace("%", "")
+                        ) /
+                          5 +
+                        ((20 -
+                          parseFloat(
+                            uniqueValueProposition?.finalScore?.replace("%", "")
+                          ) /
+                            5) *
+                          60) /
+                          100
+                      ).toFixed(1)}%`,
+                      position: " top-60 -right-10 md:top-7 md:-right-36",
+                      bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
+                      icon: <FaAward />,
+                      rowDir: "md:flex-row",
+                      textDir: "text-left md:text-left",
+                      text: "Unique Value Proposition",
+                    },
+                    {
+                      id: 5,
+                      label: `${(
+                        parseFloat(
+                          RevenueModelData?.finalScore?.replace("%", "")
+                        ) /
+                          5 +
+                        ((20 -
+                          parseFloat(
+                            RevenueModelData?.finalScore?.replace("%", "")
+                          ) /
+                            5) *
+                          60) /
+                          100
+                      ).toFixed(1)}%`,
+                      position:
+                        "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
+                      bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
+                      mgIcon: "md:-mr-20",
+                      icon: <FaUsers />,
+                      rowDir: "md:flex-col",
+                      textDir: "text-left  md:text-right",
+                      text: "Revenue Model",
+                    },
+                    {
+                      id: 6,
+                      label: `${(
+                        parseFloat(
+                          CompetitiveLandscapeData?.finalScore?.replace("%", "")
+                        ) /
+                          5 +
+                        ((20 -
+                          parseFloat(
+                            CompetitiveLandscapeData?.finalScore?.replace(
+                              "%",
+                              ""
+                            )
+                          ) /
+                            5) *
+                          60) /
+                          100
+                      ).toFixed(1)}%`,
+                      position:
+                        "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      mgIcon: "md:-ml-20",
+                      icon: <FaBalanceScale />,
+                      rowDir: "md:flex-col",
+                      textDir: "text-left  md:text-left",
+                      text: "Competitive Landscape",
+                    },
+                    {
+                      id: 4,
+                      label: `${(
+                        parseFloat(data?.marketPotential) / 5 +
+                        ((20 - parseFloat(data?.marketPotential) / 5) * 60) /
+                          100
+                      ).toFixed(1)}%`,
+                      position:
+                        "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
+                      icon: <FaGlobe />,
+                      rowDir: "md:flex-col-reverse",
+                      textDir: "text-left  md:text-center",
+                      text: "Market Potential",
+                    },
+                  ],
                 },
               ].map((item, index) => {
                 const radius = 40;
-                // const color =
-                //   item.score > 80 ? "green" : item.score > 50 ? "orange" : "red";
-                // const backgroundColor =
-                //   item.score > 80
-                //     ? "#d4edda"
-                //     : item.score > 50
-                //     ? "#fff3cd"
-                //     : "#f8d7da";
-                const backgroundColor = "white";
-
-                // const strokeColor =
-                //   item.score > 80
-                //     ? "#e6f7e9" // Light green
-                //     : item.score > 50
-                //     ? "#fff9e6" // Light yellow
-                //     : "#fdecea"; // Light red
                 const circumference = 2 * Math.PI * radius;
                 const offset =
                   circumference - (item.score / 100) * circumference;
+
                 return (
                   <div
+                    href={item.href}
                     key={index}
-                    className="circular-progress"
+                    className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 pr-0 md:min-w-[380px] ${
+                      index !== 0
+                        ? "xl-custom:border-l-2 xl-custom:border-gray-300"
+                        : ""
+                    }`}
                     style={{ textAlign: "center" }}
                   >
-                    <svg width="200" height="200" viewBox="0 0 100 100">
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r={radius} // Slightly larger than the main circle radius
-                        fill={backgroundColor} // Light background color
-                      />
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r={radius}
-                        fill="none"
-                        // stroke={strokeColor}
-                        stroke="#cac8fa"
-                        strokeWidth="8"
-                      />
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r={radius}
-                        fill="none"
-                        // stroke={color}
-                        stroke="url(#gradientStroke)"
-                        strokeWidth="8"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={offset}
-                        strokeLinecap="round"
-                        transform="rotate(-90 50 50)"
-                      />
-                      {/* Percentage Text */}
-                      <text
-                        x="50"
-                        y="55"
-                        textAnchor="middle"
-                        fontSize="15"
-                        // fill={color}
-                        fill="black"
+                    <div className="relative  flex justify-center items-center">
+                      <div>
+                        {item?.points.map((point) => (
+                          <div
+                            key={point.id}
+                            className={`absolute ${point.position} text-center flex ${point.rowDir} justify-center items-center  gap-2 mx-6`}
+                          >
+                            <div
+                              className={`w-6 h-6 ${point.bgColor} ${point.mgIcon} text-white   rounded-full flex items-center  justify-center shadow-lg`}
+                              style={{
+                                background: point.bgColor,
+                              }}
+                            >
+                              {point.icon}
+                            </div>
+                            <div className="">
+                              <h4
+                                className={`text-xs ${point.textDir} font-black text-gray-600`}
+                              >
+                                {point.label}
+                              </h4>
+                              <p
+                                className={`text-[12px] ${point.textDir} text-left m-0 w-[100px]`}
+                              >
+                                {point.text}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <svg
+                        // width="150"
+                        // height="150"
+                        viewBox="0 0 120 120" // Increased the viewBox size
+                        className="w-5/6  md:w-40 lg:w-40 mb-32 md:mb-4"
                       >
-                        {item.score}%
-                      </text>
-                    </svg>
-                    <p
-                      style={{
-                        marginTop: "10px",
-                        color: "#000",
-                        fontSize: "1.4rem",
-                      }}
-                      className=" text-2xl"
-                    >
-                      {item.label}
+                        <circle cx="60" cy="60" r={radius} fill="white" />
+                        <circle
+                          cx="60"
+                          cy="60"
+                          r={radius}
+                          fill="none"
+                          stroke="#cac8fa"
+                          strokeWidth="8"
+                        />
+                        <circle
+                          cx="60"
+                          cy="60"
+                          r="60"
+                          fill="none"
+                          stroke="#DBDBDD"
+                          strokeWidth="2"
+                          strokeDasharray="2 4"
+                        />
+                        <defs>
+                          <linearGradient
+                            id="gradientStroke"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop
+                              offset="0%"
+                              style={{ stopColor: "#BD42CE", stopOpacity: 1 }}
+                            />
+                            <stop
+                              offset="50%"
+                              style={{ stopColor: "#8749EC", stopOpacity: 1 }}
+                            />
+                            <stop
+                              offset="100%"
+                              style={{ stopColor: "#616BFC", stopOpacity: 1 }}
+                            />
+                          </linearGradient>
+                        </defs>
+                        <circle
+                          cx="60" // Adjusted center for better alignment
+                          cy="60" // Adjusted center for better alignment
+                          r={radius}
+                          fill="none"
+                          stroke="url(#gradientStroke)" // Reference the gradient here
+                          strokeWidth="8"
+                          strokeDasharray={circumference}
+                          strokeDashoffset={offset}
+                          strokeLinecap="round"
+                          transform="rotate(-90 60 60)" // Adjusted rotation origin
+                        />
+                        {/* Percentage Text */}
+                        <text
+                          x="60" // Adjusted to match the new center position
+                          y="65" // Adjusted to match the new center position
+                          textAnchor="middle"
+                          fontSize="15"
+                          fill="black"
+                        >
+                          {item.score}%
+                        </text>
+                      </svg>
+                    </div>
+                    <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-lg lg:text-sm font-thin text-gray-800">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Praesentium nemo eveniet sequi? Dolorem at est libero
+                      reprehenderit.
                     </p>
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
+            {/* Left Text Section */}
+            <div>
+              <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
+                Take the first step{" "}
+                <span className="font-semibold">towards</span> making your idea
+                to a reality, <span className="font-semibold">launch</span> your
+                idea now.
+              </h3>
+            </div>
+            {/* Button Section */}
+            <div className="btns-container">
+              <Link href="/plan-details" passHref>
+                <button className="btn min-w-[170px]">Launch Your Idea</button>
+              </Link>
             </div>
           </div>
         </section>

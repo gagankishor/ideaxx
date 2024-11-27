@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
       </p>
 
       <h2 className="text-md font-semibold text-[#4FADEA] mt-10 mb-3">
-        7. Children's Privacy
+        7. Children&lsquo;s Privacy
       </h2>
       <p className="text-md text-left mb-5">
       IDEAX does not knowingly collect personal information from children under 13 years of age. If we become aware that we have inadvertently collected such data, we will take immediate steps to delete it from our systems. Parents or guardians who suspect their child has provided us with personal information can contact us to request its removal.
@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
         15. Marketing Communications
       </h2>
       <p className="text-md text-left mb-5">
-      By subscribing to our services or providing your email, you consent to receive marketing communications, including newsletters, promotional offers, and updates about new features. You can opt out of these communications anytime by clicking the "unsubscribe" link provided in our emails or by contacting our support team. Note that even after opting out, you may still receive essential service-related notifications.
+      By subscribing to our services or providing your email, you consent to receive marketing communications, including newsletters, promotional offers, and updates about new features. You can opt out of these communications anytime by clicking the &quot;unsubscribe&quot; link provided in our emails or by contacting our support team. Note that even after opting out, you may still receive essential service-related notifications.
       </p>
 
       <h2 className="text-md font-semibold text-[#4FADEA] mt-10 mb-3">
@@ -225,7 +225,7 @@ const PrivacyPolicy = () => {
   </h2>
   <p className="text-md text-left mb-5">
     Businesses using IDEAX services must also comply with our data protection
-    policies and ensure their own customers' data is protected.
+    policies and ensure their own customers&lsquo; data is protected.
   </p>
 
   <h2 className="text-md font-semibold text-[#4FADEA] mt-10 mb-3">

@@ -25,7 +25,7 @@ export const Hero = () => {
             <Link className="btn" href="/mainWizard">
               Test Your Idea <FaArrowAltCircleRight />
             </Link>
-            <span>It's Totally Free</span>
+            <span>It&lsquo;s Totally Free</span>
           </div>
         </div>
       </div>

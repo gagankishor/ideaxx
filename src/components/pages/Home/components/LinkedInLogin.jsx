@@ -2,6 +2,7 @@
 import { RestAPI } from '@/config/Api';
 import { AuthContext } from '@/context/AuthContext';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
 import Swal from 'sweetalert2';
@@ -64,6 +65,9 @@ const LinkedInLogin = ({handleLogin}) => {
       />
     </div>
   );
+};
+LinkedInLogin.propTypes = {
+  handleLogin: PropTypes.func.isRequired,
 };
 export default LinkedInLogin;
 // AQWAg3LVrcuHodhYKVeyuQRd5rOzKMyhjji05StWmiq9vF6EIB5ea31-mR-oZH1uN9AeaqZuzHFLIHmcA9Opt6re9KIskWNT__olbQfv18IqLdyk_qXIhyODcI1DqVleoqZEAeMAZfN_4WoseXDCTyJpu-Q2VsFcGuMLTZHgGA9Pkp4zPv5LFF-n5biqj8fII8sv6xzw4fdSMU-k-puKlSOTaHplmzrMYioRCZEPGmAChROIjyVJT_j03EXmuSYVK10t6EayWwGdzYhxXKL0zAtBRXiwHGeCIwQc4nCOEZiftpr8z3h9Bzi19pdNsX32l3KUZePEvldS7iKhVgLls0b-UNig8A

@@ -84,7 +84,7 @@ const AwardsSection = () => {
                 <div className="flex items-center mb-5">
                   <div>
                     <img
-                      src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
+                      src="/blog/1/image.png"
                       className="w-60 rounded-md"
                       alt="Blog 3"
                     />
@@ -112,7 +112,7 @@ const AwardsSection = () => {
                 <div className="flex items-center mb-5">
                   <div>
                     <img
-                      src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
+                      src="/blog/1/image1.png"
                       className="w-60  rounded-md"
                       alt="Blog 3"
                     />
@@ -139,7 +139,7 @@ const AwardsSection = () => {
                 <div className="flex items-center mb-5">
                   <div>
                     <img
-                      src="https://img.freepik.com/premium-photo/3d-camera-world-photography-day_582688-783.jpg?w=740"
+                      src="/blog/1/image2.png"
                       className="w-60 rounded-md"
                       alt="Blog 3"
                     />

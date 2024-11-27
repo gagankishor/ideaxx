@@ -49,7 +49,7 @@ const AwardsSection = () => {
               </p>
               <a
                 href="#"
-                className="read-more flex justify-center items-center"
+                className="read-more flex justify-center gap-4 items-center"
               >
                 <FaBookOpen /> Read the report →
               </a>
@@ -72,17 +72,17 @@ const AwardsSection = () => {
               </p>
               <a
                 href="#"
-                className="read-more flex justify-center items-center"
+                className="read-more flex justify-center items-center gap-4"
               >
                 <FaBookOpen /> Read the report →
               </a>
             </div>
           </div>
           <div className="badge-section" style={{ marginTop: "40px" }}>
-            <div className="blog-section mt-10">
-              <div className="blog-post mb-10">
-                <div className="flex items-center mb-5">
-                  <div>
+            <div className="blog-section ">
+              <div className="blog-post mb-0">
+                <div className="flex items-center mb-0">
+                  <div className=" md:w-[90%]">
                     <img
                       src="/blog/1/image.png"
                       className="w-60 rounded-md"
@@ -108,9 +108,9 @@ const AwardsSection = () => {
 
               <div className="w-full h-px bg-gray-600 my-4"></div>
 
-              <div className="blog-post mb-10">
-                <div className="flex items-center mb-5">
-                  <div>
+              <div className="blog-post mb-0">
+                <div className="flex items-center mb-0">
+                  <div className=" md:w-[90%]">
                     <img
                       src="/blog/1/image1.png"
                       className="w-60  rounded-md"
@@ -135,9 +135,9 @@ const AwardsSection = () => {
               </div>
               <div className="w-full h-px bg-gray-600 my-4"></div>
 
-              <div className="blog-post mb-10">
-                <div className="flex items-center mb-5">
-                  <div>
+              <div className="blog-post mb-0">
+                <div className="flex items-center mb-0">
+                  <div className=" md:w-[80%]">
                     <img
                       src="/blog/1/image2.png"
                       className="w-60 rounded-md"
@@ -162,6 +162,7 @@ const AwardsSection = () => {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>

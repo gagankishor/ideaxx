@@ -409,8 +409,7 @@ const ProductLineupSection = () => {
                 author: "Mr Vikas Puri",
                 role: "JMD EXPORTS Managing Director",
 
-                image:
-                  "/landing/efacd3a2-633e-4ea0-8813-21e574eb1291.jpg",
+                image: "/landing/efacd3a2-633e-4ea0-8813-21e574eb1291.jpg",
                 company: "TechStart",
               },
               {
@@ -418,8 +417,7 @@ const ProductLineupSection = () => {
                   "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
                 author: "Mr. Taki Kedo",
                 role: "CEO of 360 home decor",
-                image:
-                  "/landing/33bc43ad-e037-4b6b-8b23-2b23eabab5b2.jpg",
+                image: "/landing/33bc43ad-e037-4b6b-8b23-2b23eabab5b2.jpg",
                 company: "Visionary Inc.",
               },
               {
@@ -427,8 +425,7 @@ const ProductLineupSection = () => {
                   "I love the tools for managing cash flow; they make financial planning so much easier!",
                 author: "Mr. Ayman Basha",
                 role: "GM of BASHA IMPEX",
-                image:
-                  "/landing/AymanBasha.jpeg",
+                image: "/landing/AymanBasha.jpeg",
                 company: "ShopEase",
               },
             ].map((testimonial, index) => (
@@ -456,7 +453,29 @@ const ProductLineupSection = () => {
             ))}
           </div>
         </div>
+        
       </div>
+      <div className="bg-black text-center py-10 px-4 sm:py-16">
+          {/* Headline */}
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
+          
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+             Start validating {" "}
+            </span>
+            your business ideas with Ideax
+          </h1>
+
+          {/* Button */}
+          <div className="btns-container mt-10 ">
+            <Link
+              className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
+              style={{ fontSize: "14px",margin:"auto" }}
+              href="/mainWizard"
+            >
+              Test Your Idea <FaArrowAltCircleRight />
+            </Link>
+          </div>
+        </div>
     </div>
   );
 };

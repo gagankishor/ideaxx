@@ -977,7 +977,7 @@ const WizardResult = () => {
                 {
                   href: "#idea",
                   data: bardata,
-                  score: data?.success_percentage.toFixed(2),
+                  score: data?.success_percentage,
                   label: "Idea Score",
                   points: [
                     {

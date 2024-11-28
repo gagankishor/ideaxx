@@ -365,11 +365,16 @@ const CoreSolutionsSection = () => {
             </div>
             <div style={{ position: "absolute", zIndex: 1000 }}></div>
           </div>
-          <div className="btns-container">
-            <Link href="/mainWizard" className="btn" style={{ margin: "auto" }}>
-              Test Your Idea <FaArrowAltCircleRight />
-            </Link>
-          </div>
+          <div className="btns-container flex justify-center mx-auto">
+          <Link
+            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto
+            "
+            style={{ fontSize: "14px" }}
+            href="/mainWizard"
+          >
+            Test Your Idea <FaArrowAltCircleRight />
+          </Link>
+        </div>
         </div>
       </div>
     </section>

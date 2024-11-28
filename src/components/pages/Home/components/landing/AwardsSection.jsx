@@ -1,4 +1,5 @@
-import { FaBookOpen } from "react-icons/fa";
+import { Link } from "lucide-react";
+import { FaArrowAltCircleRight, FaBookOpen } from "react-icons/fa";
 const AwardsSection = () => {
   return (
     <div
@@ -105,9 +106,7 @@ const AwardsSection = () => {
                   </div>
                 </div>
               </div>
-
               <div className="w-full h-px bg-gray-600 my-4"></div>
-
               <div className="blog-post mb-0">
                 <div className="flex items-center mb-0">
                   <div className=" md:w-[90%]">
@@ -134,7 +133,6 @@ const AwardsSection = () => {
                 </div>
               </div>
               <div className="w-full h-px bg-gray-600 my-4"></div>
-
               <div className="blog-post mb-0">
                 <div className="flex items-center mb-0">
                   <div className=" md:w-[80%]">
@@ -162,7 +160,6 @@ const AwardsSection = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

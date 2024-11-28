@@ -19,7 +19,56 @@ import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { HiBuildingOffice } from "react-icons/hi2";
 import { IoBusiness } from "react-icons/io5";
+import { Activity, Zap } from "lucide-react";
+import { BiSolidZap } from "react-icons/bi";
+import LightingCard from "@/components/wizard-result/LightingCard";
+
 Chart.register(ArcElement, Tooltip, Legend);
+const CircularProgress = ({
+  percentage,
+  color,
+  size = 120,
+  strokeWidth = 8,
+  children,
+}) => {
+  const radius = (size - strokeWidth) / 2;
+  const circumference = radius * 2 * Math.PI;
+  const offset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg className="transform -rotate-90" width={size} height={size}>
+        {/* Background circle */}
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          strokeWidth={strokeWidth}
+          stroke="rgba(0,0,0,0.1)"
+          fill="none"
+        />
+        {/* Progress circle */}
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          strokeWidth={strokeWidth}
+          stroke={color}
+          fill="none"
+          strokeLinecap="round"
+          style={{
+            strokeDasharray: circumference,
+            strokeDashoffset: offset,
+            transition: "stroke-dashoffset 0.5s ease",
+          }}
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        {children}
+      </div>
+    </div>
+  );
+};
 const WizardResult = () => {
   const [aiContent, setAiContent] = useState("");
   const [displayedText, setDisplayedText] = useState("");
@@ -263,29 +312,29 @@ const WizardResult = () => {
   const colors = {
     blue: {
       outer: "#56BEEE",
-      inner: "#0055BB", 
-      innermost: "#003388", 
-      text: "#00C2FF", 
+      inner: "#0055BB",
+      innermost: "#003388",
+      text: "#00C2FF",
     },
     orange: {
-      outer: "#FF9500", 
+      outer: "#FF9500",
       inner: "#FF7B00",
       innermost: "#CC5500",
-      text: "#FFB340", 
+      text: "#FFB340",
     },
     green: {
-      outer: "#AED442", 
-      inner: "#28B14A", 
+      outer: "#AED442",
+      inner: "#28B14A",
       innermost: "#1F8A3A",
       text: "#4DE17A",
     },
     red: {
-      outer: "#FF453A", 
-      inner: "#D93A31", 
-      innermost: "#B32E27", 
+      outer: "#FF453A",
+      inner: "#D93A31",
+      innermost: "#B32E27",
     },
     background: "#1C1C1E",
-    centerCircle: "#2C2C2E", 
+    centerCircle: "#2C2C2E",
   };
 
   const renderCircleSegment = (startAngle, endAngle, radius, color) => {
@@ -333,116 +382,244 @@ const WizardResult = () => {
       </text>
     );
   };
+  const consumption = {
+    percentage: 48.5,
+    currentWatts: 1323,
+  };
+  const metrics = {
+    lighting: {
+      percentage: parseFloat(data?.success_percentage).toFixed(2),
+      value: "50",
+      unit: "Hz",
+      color: "rgb(239, 68, 68)",
+    },
+    global: { percentage: totalMarketScrore, value: "89 991", color: "rgb(239, 68, 68)" },
+    instant: {
+      percentage: totalMarketScrore2,
+      value: "8820",
+      unit: "W",
+      color: "rgb(234, 179, 8)",
+    },
+    costs: {
+      last30Days: "11 045,00",
+      today: "211,43",
+    },
+    consumption: {
+      last30Days: "64 996,03",
+      today: "1012,18",
+      trendUp: "+11.64%",
+      trendDown: "-1.02%",
+    },
+  };
+  const consumptions = [
+    {
+      percentage: 75, // 75% of maximum capacity
+      currentWatts: `${data?.totalMarketSize} potential users`, // Current consumption in watts
+      title:'Target Market Size'
+
+    },
+    {
+      percentage: 60,
+      currentWatts: InvestmentLevelData?.chosenInvestmentLevel,
+      title:'Investment Level'
+
+    },
+    {
+      percentage: 90,
+      currentWatts: TimeToMarketData ? TimeToMarketData?.totalTTM : "0",
+      title:'Time to Market'
+
+    },
+    {
+      percentage: 50,
+      currentWatts: `${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
+                    `${data?.ExpectedROIData}`,
+      title:'Expected ROI'
+
+    },
+    {
+      percentage: 50,
+      currentWatts: MarketShareData?.chosenOutcome || MarketShareData,
+      title:'Market Share'
+    },
+  ];
+{/* <div className="info-item">
+                <strong>Target Market Size</strong>
+                <span>{data?.totalMarketSize} potential users</span>
+              </div>
+              <div className="info-item">
+                <strong>Investment Level</strong>
+                <span>{InvestmentLevelData?.chosenInvestmentLevel}</span>
+              </div>
+              <div className="info-item">
+                <strong>Time to Market</strong>
+                <span>
+                  {" "}
+                  {TimeToMarketData ? TimeToMarketData?.totalTTM : "0"}{" "}
+                </span>
+              </div>
+              <div className="info-item">
+                <strong>Expected ROI</strong>
+                <span>
+                  {`${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
+                    `${data?.ExpectedROIData}`}
+                </span>
+              </div>
+              <div className="info-item">
+                <strong>Market Share</strong>
+                <span>{MarketShareData?.chosenOutcome || MarketShareData}</span>
+              </div> */}
   // const radius = 40; // Radius of the circle
   // const circumference = 2 * Math.PI * radius; // Circumference of the circle
   // const offset = circumference - (48 / 100) * circumference;
   return (
     <>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-10 py-4 bg-white text-gray-800">
+        {/* Lighting Consumption */}
+        <div className="flex flex-col gap-6 ">
+          <div className="bg-gray-50 p-4 rounded-lg shadow">
+            <h2 className="text-sm text-gray-600 mb-4">
+              Idea Score
+            </h2>
+            <div className="flex justify-start">
+              <CircularProgress
+                percentage={metrics.lighting.percentage}
+                color={metrics.lighting.color}
+                size={120}
+                strokeWidth={14}
+              >
+                <div className="text-center">
+                  {/* <Zap className="mx-auto mb-2" size={24} /> */}
+                  <BiSolidZap
+                    className="mx-auto mb-2 text-[#686868]"
+                    size={34}
+                  />
+                </div>
+              </CircularProgress>
+              <div className=" px-5 flex flex-col justify-between">
+                <div className="text-5xl font-bold mb-1">
+                  {metrics.lighting.percentage}%
+                </div>
+                <div>
+                  <div className="text-sm text-gray-500 text-left">NOW</div>
+                  <div className="text-2xl text-left">
+                    {metrics.lighting.value}
+                    <span className="text-sm ml-1 ">
+                      {metrics.lighting.unit}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg shadow">
+            <h2 className="text-sm text-gray-600 mb-4">ENERGY COSTS</h2>
+            <div className="space-y-4">
+              <div>
+                <div className="text-sm text-gray-600">
+                  PRICE (LAST 30 DAYS)
+                </div>
+                <div className="text-2xl">{metrics.costs.last30Days} Euros</div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">PRICE (TODAY)</div>
+                <div className="text-2xl ">{metrics.costs.today} Euros</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Global Consumption */}
+        <div className="bg-gray-50 p-4 rounded-lg shadow">
+          <h2 className="text-sm text-gray-600 mb-4">
+            Market Score
+          </h2>
+          <div className="flex justify-start mb-4">
+            <CircularProgress
+              percentage={metrics.global.percentage}
+              color={metrics.global.color}
+              size={120}
+              strokeWidth={14}
+            >
+              <div className="text-center">
+                {/* <Zap className="mx-auto mb-2" size={24} /> */}
+                <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} />
+              </div>
+            </CircularProgress>
+            <div className="px-5 flex flex-col justify-between ">
+              {/* First text at the top */}
+              <div className="text-5xl font-bold">
+                {metrics.global.percentage}%
+              </div>
+              {/* Second text at the bottom */}
+              <div className="text-2xl">{metrics.global.value}</div>
+            </div>
+          </div>
+          <div className=" bg-gray-200 h-[1px] w-full my-5"></div>
+          <div className="space-y-4">
+            <div>
+              <div className="text-sm text-gray-600">LAST 30 DAYS</div>
+              <div className="text-xl">
+                {metrics.consumption.last30Days} kWh
+              </div>
+            </div>
+            <div>
+              <div className="text-sm text-gray-600">TODAY</div>
+              <div className="text-xl">{metrics.consumption.today} kWh</div>
+            </div>
+            <div className="flex justify-between">
+              <div>
+                <div className="text-sm text-gray-600">TREND</div>
+                <div className="text-red-500">
+                  {metrics.consumption.trendUp} ▼
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">TREND</div>
+                <div className="text-green-500">
+                  {metrics.consumption.trendDown} ▲
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Instant Consumption */}
+        <div className="bg-gray-50 p-4 rounded-lg shadow">
+          <h2 className="text-sm text-gray-600 mb-4">
+           Score With Ideax
+          </h2>
+          <div className="flex justify-center">
+            <CircularProgress
+              percentage={metrics.instant.percentage}
+              size={250}
+              color={metrics.instant.color}
+              strokeWidth={35}
+            >
+              <div className="text-center">
+                {/* <Zap className="mx-auto mb-2 text-[#686868]" size={24} /> */}
+                <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} />
+              </div>
+            </CircularProgress>
+          </div>
+          <div className=" mt-5">
+            <div className="text-3xl font-bold text-center">
+              {metrics.instant.percentage}%
+            </div>
+            <div className="text-xl mt-2 text-center">
+              {metrics.instant.value}
+              <span className="text-sm ml-1">{metrics.instant.unit}</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="max-w-[1400px] m-auto ">
         {/* <div className="fixed bottom-3 w-full z-50 sm:hidden flex justify-center items-center">
           <div className="mx-10 text-center w-[96%] text-xl rounded-lg h-16 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-medium flex items-center justify-center">
             Launch Your Idea Free
           </div>
+
         </div> */}
-        <div className="mt-5 border-gray-300 border  rounded-lg w-[94%] mx-auto p-5">
-          <div>
-            <h2 className="mb-0 text-center text-lg md:text-xl lg:text-2xl">
-              Your Idea Outlook
-            </h2>
-            <p className="text-sm md:mb-5 md:text-base text-center">
-              Slight changes may occur in the results depending on market
-              trends.
-            </p>
-          </div>
-          <div
-            className="w-full max-w-2xl mx-auto p-8 rounded-lg"
-            // style={{ background: colors.background }}
-          >
-            <div className="relative">
-              <svg viewBox="0 0 400 400" className="w-full">
-              <defs>
-    <linearGradient id="gradientColor" x1="0%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" style={{ stopColor: 'blue', stopOpacity: 1 }} />
-      <stop offset="100%" style={{ stopColor: '#6AB7E3', stopOpacity: 1 }} />
-    </linearGradient>
-  </defs>
-                {/* Outer segments */}
-                {renderCircleSegment(30, 149, 110, "url(#gradientColor)")}
-                {renderCircleSegment(150, 269, 110, colors.orange.outer)}
-                {renderCircleSegment(270, 29, 110, colors.green.outer)}
 
-                {/* Inner circle 1 */}
-                {renderCircleSegment(0, 180, 100, colors.centerCircle)}
-                {renderCircleSegment(180, 360, 100, colors.centerCircle)}
-
-                {/* Inner circle 2 */}
-                {renderCircleSegment(30, 148, 90, colors.blue.inner)}
-                {renderCircleSegment(150, 268, 90, colors.orange.inner)}
-                {renderCircleSegment(270, 28, 90, colors.green.inner)}
-
-                {/* Inner circle 3 */}
-                {renderCircleSegment(0, 180, 60, colors.centerCircle)}
-                {renderCircleSegment(180, 360, 60, colors.centerCircle)}
-                {renderCircleSegment(0, 180, 52, "#D6F0F8")}
-                {renderCircleSegment(180, 360, 52, "#D6F0F8")}
-                {/* Innermost circle 4 */}
-                {renderCircleSegment(30, 150, 50, colors.blue.innermost)}
-                {renderCircleSegment(150, 270, 50, colors.orange.innermost)}
-                {renderCircleSegment(270, 30, 50, colors.green.innermost)}
-                {renderCircleSegment(0, 180, 37, "#D6F0F8")}
-                {renderCircleSegment(180, 360, 37, "#D6F0F8")}
-                {/* Center black circles */}
-                {renderCircleSegment(0, 180, 35, colors.centerCircle)}
-                {renderCircleSegment(180, 360, 35, colors.centerCircle)}
-                {renderCircleSegment(0, 180, 12, "url(#gradientColor)")}
-                {renderCircleSegment(180, 360, 13, "#D6F0F8")}
-                {renderCircleSegment(0, 180, 10, "#0C233B")}
-                {renderCircleSegment(180, 360, 10, "#0C233B")}
-                {/* Main text labels */}
-                {renderText("CLARITY", 90, 140, colors.blue.text)}
-                {renderText("RELEVANCE", 210, 140, colors.orange.text)}
-                {renderText("MOTION", 330, 140, colors.green.text)}
-
-                {/* Percentage labels */}
-                {/* {renderText("Idea", 90, 105, "#FFFFFF", "16px")}
-                {renderText("Market", 210, 105, "#FFFFFF", "16px")}
-                {renderText("with ideax%", 330, 105, "#FFFFFF", "16px")} */}
-
-                {/* Secondary percentage labels */}
-                {renderText("Idea", 90, 70, colors.blue.text)}
-                {renderText("Market", 210, 70, colors.orange.text)}
-                {renderText("With Ideax", 330, 70, colors.green.text)}
-
-                {/* Center elements */}
-                <circle cx="200" cy="200" r="5" fill={colors.blue.text} />
-                <line
-                  x1="200"
-                  y1="160"
-                  x2="200"
-                  y2="200"
-                  stroke={colors.blue.text}
-                  strokeWidth="2"
-                />
-
-                {/* Central text */}
-                <text
-                  x="200"
-                  y="200"
-                  fill="#FFFFFF"
-                  style={{
-                    fontSize: "12px",
-                    fontWeight: "bold",
-                    fontFamily: "Arial, sans-serif",
-                  }}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                >
-                  
-                </text>
-              </svg>
-            </div>
-          </div>
-        </div>
         <section
           id="market"
           className="business-check-container border-gray-300 border  m-auto mt-10 flex flex-col-reverse lg:flex-row lg:mx-10 p-5"
@@ -795,8 +972,15 @@ const WizardResult = () => {
                 })}
               </div>
             </div>
+
             <div className="business-additional-info">
-              <div className="info-item">
+               <div className="flex flex-wrap gap-2">
+                {consumptions.map((consumption, index) => (
+                  <LightingCard key={index} consumption={consumption} />
+                ))}
+              </div>
+
+              {/* <div className="info-item">
                 <strong>Target Market Size</strong>
                 <span>{data?.totalMarketSize} potential users</span>
               </div>
@@ -821,7 +1005,7 @@ const WizardResult = () => {
               <div className="info-item">
                 <strong>Market Share</strong>
                 <span>{MarketShareData?.chosenOutcome || MarketShareData}</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

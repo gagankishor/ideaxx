@@ -126,9 +126,9 @@ const ProductLineupSection = () => {
           />
         </div>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
-          <div className="relative p-[10px] md:w-[48%]">
+          <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="home-platform/blank1.jpg"
+              src="/home-platform/image.png"
               className="w-full"
               alt="Image 1"
             />
@@ -152,9 +152,9 @@ const ProductLineupSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative p-[10px] md:w-[48%]">
+          <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="home-platform/blank2.jpg"
+              src="/home-platform/image.png"
               className="w-full"
               alt="Image 2"
             />
@@ -178,9 +178,9 @@ const ProductLineupSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative p-[10px] md:w-[48%]">
+          <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="home-platform/blank3.jpg"
+              src="/home-platform/image.png"
               className="w-full"
               alt="Image 3"
             />
@@ -204,9 +204,9 @@ const ProductLineupSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative p-[10px] md:w-[48%]">
+          <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="home-platform/blank4.jpg"
+              src="/home-platform/image.png"
               className="w-full"
               alt="Image 4"
             />
@@ -360,21 +360,15 @@ const ProductLineupSection = () => {
               <span style={{ fontWeight: "600" }}>ideax</span>
             </h2>
 
-            <div className="btns-container" style={{ marginBottom: "40px" }}>
-              <button
-                className="btn"
-                style={{
-                  backgroundColor: "white",
-                  color: "black",
-                  border: "unset",
-                  padding: "10px 20px",
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                }}
-              >
-                Test Your Idea <FaArrowAltCircleRight />
-              </button>
-            </div>
+            <div className="btns-container">
+          <Link
+            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            style={{ fontSize: "14px" }}
+            href="/mainWizard"
+          >
+            Test Your Idea <FaArrowAltCircleRight />
+          </Link>
+        </div>
             <div
               style={{
                 display: "flex",
@@ -383,8 +377,8 @@ const ProductLineupSection = () => {
               }}
             >
               <img
-                src="darksection1/ideax-bottom.webp"
-                style={{ width: "100%", maxWidth: "300px", height: "auto" }}
+                src="darksection1/footer_icons.webp"
+                style={{ width: "100%", maxWidth: "1000px", height: "auto" }}
                 alt="ideax bottom"
               />
             </div>
@@ -415,8 +409,8 @@ const ProductLineupSection = () => {
               {
                 quote:
                   "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
-                author: "Mr. Taki Kedo",
-                role: "CEO of 360 home decor",
+                author: "Mr. Eyad Abdulla COO",
+                role: "Diamond GVT Ceramic",
                 image: "/landing/33bc43ad-e037-4b6b-8b23-2b23eabab5b2.jpg",
                 company: "Visionary Inc.",
               },
@@ -453,29 +447,25 @@ const ProductLineupSection = () => {
             ))}
           </div>
         </div>
-        
       </div>
       <div className="bg-black text-center py-10 px-4 sm:py-16">
-          {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
-          
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
-             Start validating {" "}
-            </span>
-            your business ideas with Ideax
-          </h1>
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+            Start validating{" "}
+          </span>
+          your business ideas with Ideax
+        </h1>
 
-          {/* Button */}
-          <div className="btns-container mt-10 ">
-            <Link
-              className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
-              style={{ fontSize: "14px",margin:"auto" }}
-              href="/mainWizard"
-            >
-              Test Your Idea <FaArrowAltCircleRight />
-            </Link>
-          </div>
+        <div className="btns-container mt-10 ">
+          <Link
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
+            style={{ fontSize: "14px", margin: "auto" }}
+            href="/mainWizard"
+          >
+            Test Your Idea <FaArrowAltCircleRight />
+          </Link>
         </div>
+      </div>
     </div>
   );
 };

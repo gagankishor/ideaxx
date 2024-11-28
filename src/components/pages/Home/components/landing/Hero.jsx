@@ -21,12 +21,15 @@ export const Hero = () => {
               </p>
             </span>
 
-          <div className="btns-container">
-            <Link className="btn" href="/mainWizard">
-              Test Your Idea <FaArrowAltCircleRight />
-            </Link>
-            <span>It&lsquo;s Totally Free</span>
-          </div>
+            <div className="btns-container">
+          <Link
+            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            style={{ fontSize: "14px" }}
+            href="/mainWizard"
+          >
+            Test Your Idea <FaArrowAltCircleRight />
+          </Link>
+        </div>
         </div>
       </div>
       <div className="container hero-container2">

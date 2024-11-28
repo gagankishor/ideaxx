@@ -1,5 +1,4 @@
-import { Link } from "lucide-react";
-import { FaArrowAltCircleRight, FaBookOpen } from "react-icons/fa";
+import {  FaBookOpen } from "react-icons/fa";
 const AwardsSection = () => {
   return (
     <div

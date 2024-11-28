@@ -19,9 +19,9 @@ import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { HiBuildingOffice } from "react-icons/hi2";
 import { IoBusiness } from "react-icons/io5";
-import { Activity, Zap } from "lucide-react";
 import { BiSolidZap } from "react-icons/bi";
 import LightingCard from "@/components/wizard-result/LightingCard";
+import PropTypes from "prop-types";
 
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
@@ -309,83 +309,12 @@ const WizardResult = () => {
       [index]: !prev[index],
     }));
   };
-  const colors = {
-    blue: {
-      outer: "#56BEEE",
-      inner: "#0055BB",
-      innermost: "#003388",
-      text: "#00C2FF",
-    },
-    orange: {
-      outer: "#FF9500",
-      inner: "#FF7B00",
-      innermost: "#CC5500",
-      text: "#FFB340",
-    },
-    green: {
-      outer: "#AED442",
-      inner: "#28B14A",
-      innermost: "#1F8A3A",
-      text: "#4DE17A",
-    },
-    red: {
-      outer: "#FF453A",
-      inner: "#D93A31",
-      innermost: "#B32E27",
-    },
-    background: "#1C1C1E",
-    centerCircle: "#2C2C2E",
-  };
+  
 
-  const renderCircleSegment = (startAngle, endAngle, radius, color) => {
-    const centerX = 200;
-    const centerY = 200;
+ 
 
-    const x1 = centerX + radius * Math.cos((startAngle * Math.PI) / 180);
-    const y1 = centerY + radius * Math.sin((startAngle * Math.PI) / 180);
-    const x2 = centerX + radius * Math.cos((endAngle * Math.PI) / 180);
-    const y2 = centerY + radius * Math.sin((endAngle * Math.PI) / 180);
-
-    const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-
-    return (
-      <path
-        d={`M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`}
-        fill={color}
-        style={{ opacity: 0.9 }}
-      />
-    );
-  };
-
-  const renderText = (text, angle, radius, color, size = "14px") => {
-    const centerX = 200;
-    const centerY = 200;
-    const textAngle = (angle * Math.PI) / 180;
-    const x = centerX + radius * Math.cos(textAngle);
-    const y = centerY + radius * Math.sin(textAngle);
-
-    return (
-      <text
-        x={x}
-        y={y}
-        fill={color}
-        style={{
-          fontSize: size,
-          fontWeight: "bold",
-          fontFamily: "Arial, sans-serif",
-        }}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        transform={`rotate(${angle + 90}, ${x}, ${y})`}
-      >
-        {text}
-      </text>
-    );
-  };
-  const consumption = {
-    percentage: 48.5,
-    currentWatts: 1323,
-  };
+  
+ 
   const metrics = {
     lighting: {
       percentage: parseFloat(data?.success_percentage).toFixed(2),
@@ -1554,5 +1483,12 @@ const WizardResult = () => {
       </div>
     </>
   );
+};
+CircularProgress.propTypes = {
+  percentage: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  size: PropTypes.number,
+  strokeWidth: PropTypes.number,
+  children: PropTypes.node,
 };
 export default WizardResult;

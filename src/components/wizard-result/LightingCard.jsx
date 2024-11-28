@@ -1,4 +1,5 @@
 import { Activity } from "lucide-react";
+import PropTypes from "prop-types";
 
 const LightingCard = ({ consumption }) => {
     return (
@@ -45,6 +46,13 @@ const LightingCard = ({ consumption }) => {
         </div>
       </div>
     );
+  };
+  LightingCard.propTypes = {
+    consumption: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+      currentWatts: PropTypes.number.isRequired,
+    }).isRequired,
   };
 export default LightingCard;
   

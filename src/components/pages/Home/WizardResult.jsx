@@ -741,12 +741,12 @@ const WizardResult = () => {
                       {
                         id: 6,
                         label: `${
-                          parseFloat(
+                          (parseFloat(
                             CompetitiveLandscapeData?.finalScore?.replace(
                               "%",
                               ""
                             )
-                          ) / 5
+                          ) / 5).toFixed(2)
                         }%`,
                         position:
                           "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",

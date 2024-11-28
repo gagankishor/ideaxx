@@ -9,36 +9,30 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 export default function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [isVisible, setIsVisible] = useState(false);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        setIsVisible(true);
-      } else {
-        // Scrolling up
-        setIsVisible(false);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     if (currentScrollY > lastScrollY) {
+  //       // Scrolling down
+  //       setIsVisible(true);
+  //     } else {
+  //       // Scrolling up
+  //       setIsVisible(false);
+  //     }
+  //     setLastScrollY(currentScrollY);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollY]);
   return (
     <footer className="bg-white border-t-2 mt-2 pb-5 mb-52 py-4">
        <div
-      className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "translate-y-full"
-      }`}
+      className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 translate-y-0`}
     >
       <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center py-0 px-6 animate-slide-up space-y-4 md:space-y-0">
         <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">

@@ -311,7 +311,7 @@ const WizardResult = () => {
   };
   const metrics = {
     lighting: {
-      percentage: parseFloat(data?.success_percentage).toFixed(2),
+      percentage: parseFloat(data?.success_percentage)?.toFixed(2),
       value: "50",
       unit: "Hz",
       color: "rgb(239, 68, 68)",
@@ -883,7 +883,7 @@ const WizardResult = () => {
                             fontSize="15"
                             fill="black"
                           >
-                            {(item.score).toFixed(2)}%
+                            {item?.score}%
                           </text>
                         </svg>
                       </div>
@@ -977,7 +977,7 @@ const WizardResult = () => {
                 {
                   href: "#idea",
                   data: bardata,
-                  score: (data?.success_percentage).toFixed(2),
+                  score: data?.success_percentage.toFixed(2),
                   label: "Idea Score",
                   points: [
                     {
@@ -1221,7 +1221,7 @@ const WizardResult = () => {
                 {
                   href: "#ideax",
                   data: bardata3,
-                  score: (totalMarketScrore2).toFixed(2),
+                  score: totalMarketScrore2.toFixed(2),
                   label: "Score with Ideax",
                   points: [
                     {

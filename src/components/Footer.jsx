@@ -10,7 +10,6 @@ import {
 export default function Footer() {
   // const [isVisible, setIsVisible] = useState(false);
   // const [lastScrollY, setLastScrollY] = useState(0);
-
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const currentScrollY = window.scrollY;
@@ -30,25 +29,24 @@ export default function Footer() {
   // }, [lastScrollY]);
   return (
     <footer className="bg-white border-t-2 mt-2 pb-5 mb-52 py-4">
-       <div
-      className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 translate-y-0`}
-    >
-      <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center py-0 px-6 animate-slide-up space-y-4 md:space-y-0">
-        <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
-          Validate your AI business idea with ease and confidence.
-        </h4>
-        <div className="btns-container">
-          <Link
-            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            style={{ fontSize: "14px" }}
-            href="/mainWizard"
-          >
-            Test Your Idea <FaArrowAltCircleRight />
-          </Link>
+      <div
+        className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 translate-y-0`}
+      >
+        <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center py-0 px-6 animate-slide-up space-y-4 md:space-y-0">
+          <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
+            Validate your AI business idea with ease and confidence.
+          </h4>
+          <div className="btns-container">
+            <Link
+              className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              style={{ fontSize: "14px" }}
+              href="/mainWizard"
+            >
+              Test Your Idea <FaArrowAltCircleRight />
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600">
         {/* Product Column */}
         <div>
@@ -77,9 +75,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-
         {/* Services Column */}
-        
         {/* Solutions Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">Solutions</h4>
@@ -131,7 +127,6 @@ export default function Footer() {
             <li>
               <Link href="#">Cash Flow Managment</Link>
             </li>
-            
           </ul>
         </div>
         <div>
@@ -165,13 +160,11 @@ export default function Footer() {
           </ul>
         </div> */}
         {/* Support Column */}
-        
         <div className="md:col-span-2 ">
           {/* <h4 className="font-semibold mb-4 text-left text-4xl">IdeaX</h4> */}
           <img src="/logo.png" alt="ideax logo" width={200} />
           <ul className="space-y-2 text-left p-2">
             <li>
-            
               Ideax empowers entrepreneurs with AI-driven tools, market
               insights, and a supportive community, transforming ideas into
               successful ventures.
@@ -248,16 +241,12 @@ export default function Footer() {
     </footer>
   );
 }
-
 // import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
 // const Footer = () => {
 //   return (
 //     <footer className="bg-gray-800 text-white h-16 flex items-center justify-center">
 //       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-xs space-y-2 md:space-y-0 md:space-x-6 px-4">
-
 //         {/* Footer Text */}
-
 //         {/* Footer Links */}
 //         <div className="flex space-x-3">
 //           <a href="/termsOfService" className="text-white hover:text-gray-400 transition duration-200">

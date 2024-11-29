@@ -49,7 +49,7 @@ export default function Wizard() {
         const transformedChoices = countries.map((country, index) => ({
           id: `iaq7${String.fromCharCode(97 + index)}`, // Generates IDs like i7a, i7b, etc.
           label: country.country.toUpperCase(), // Capitalizes the country name
-          value: `${country.id}`, // Assuming score is available in country data
+          value: `${country.score}`, // Assuming score is available in country data
         }));
         setCountriesChoices(transformedChoices)
       } catch (err) {

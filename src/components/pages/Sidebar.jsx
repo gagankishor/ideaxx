@@ -74,7 +74,7 @@ export default function SideBar () {
           <li>
             <Link
               href="/"
-              className={location.pathname === "/" ? "active" : undefined}
+              // className={location.pathname === "/" ? "active" : undefined}
             >
               <FaEye />
               Overview

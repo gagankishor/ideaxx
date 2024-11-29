@@ -154,7 +154,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image.png"
+              src="/home-platform/image1.png"
               className="w-full"
               alt="Image 2"
             />
@@ -165,7 +165,7 @@ const ProductLineupSection = () => {
                     src="/main-icon/Businessidentity.png"
                     alt=""
                     width={40}
-                    className=" bg-white rounded-md p-1"
+                    className="bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
                     Brand Name
@@ -180,7 +180,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image.png"
+              src="/home-platform/image3.png"
               className="w-full"
               alt="Image 3"
             />
@@ -377,7 +377,7 @@ const ProductLineupSection = () => {
               }}
             >
               <img
-                src="darksection1/footer_icons.webp"
+                src="darksection1/image.png"
                 style={{ width: "100%", maxWidth: "1000px", height: "auto" }}
                 alt="ideax bottom"
               />

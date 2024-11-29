@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link"; // Correct import for Link
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
 import { useContext, useState } from "react";
@@ -10,13 +10,13 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 export const MainNavBar = () => {
   const [toggle, setToggle] = useState(false);
   const { isAuthenticated, logout } = useContext(AuthContext);
-  const router = useRouter();
-  const pathname = router.pathname;
+  // const router = useRouter();
+  // const pathname = router.pathname;
 
   const showMenu = () => {
     setToggle(!toggle); // Simplified toggle logic
   };
-  
+  const pathname = usePathname()
   return (
     <>
       <nav className="border-b-[1px] border-gray-100">
@@ -26,7 +26,6 @@ export const MainNavBar = () => {
               <img src="/logo.png" alt="Ideax Logo" />
             </Link>
           </div>
-
           <div className="burger">
             {toggle ? (
               <TfiClose onClick={showMenu} color="var(--main-color)" />

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import "./WizardResult.css";
 import {
+  FaArrowAltCircleRight,
   FaAward,
   FaBalanceScale,
   FaChartLine,
@@ -22,6 +23,7 @@ import { IoBusiness } from "react-icons/io5";
 import { BiSolidZap } from "react-icons/bi";
 import LightingCard from "@/components/wizard-result/LightingCard";
 import PropTypes from "prop-types";
+import AnimatedText from "@/components/wizard-result/AnimatedText";
 
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
@@ -305,21 +307,39 @@ const WizardResult = () => {
   const [expandedItems, setExpandedItems] = useState({});
   const handleToggle = (index) => {
     setExpandedItems((prev) => ({
-      ...prev,
       [index]: !prev[index],
     }));
   };
   const metrics = {
     lighting: {
       percentage: parseFloat(data?.success_percentage)?.toFixed(2),
-      value: "50",
+      value:
+        parseFloat(data?.success_percentage) < 33
+          ? "Low"
+          : parseFloat(data?.success_percentage) < 66
+          ? "Moderate"
+          : "High",
       unit: "Hz",
       color: "rgb(239, 68, 68)",
     },
-    global: { percentage: totalMarketScrore, value: "89 991", color: "rgb(239, 68, 68)" },
+    global: {
+      percentage: totalMarketScrore,
+      value:
+        totalMarketScrore < 33
+          ? "Bad"
+          : totalMarketScrore < 66
+          ? "Moderate"
+          : "Good",
+      color: "rgb(239, 68, 68)",
+    },
     instant: {
       percentage: totalMarketScrore2,
-      value: "8820",
+      value:
+        totalMarketScrore2 < 33
+          ? "Bad"
+          : totalMarketScrore2 < 66
+          ? "Moderate"
+          : "Good",
       unit: "W",
       color: "rgb(234, 179, 8)",
     },
@@ -330,81 +350,53 @@ const WizardResult = () => {
     consumption: {
       last30Days: "64 996,03",
       today: "1012,18",
-      trendUp: "+11.64%",
-      trendDown: "-1.02%",
+      trendUp: "-1.64%",
+      trendDown: "+11.02%",
     },
   };
   const consumptions = [
     {
       percentage: 75, // 75% of maximum capacity
       currentWatts: `${data?.totalMarketSize} potential users`, // Current consumption in watts
-      title:'Target Market Size'
-
+      title: "Target Market Size",
     },
     {
       percentage: 60,
       currentWatts: InvestmentLevelData?.chosenInvestmentLevel,
-      title:'Investment Level'
-
+      title: "Investment Level",
     },
     {
       percentage: 90,
       currentWatts: TimeToMarketData ? TimeToMarketData?.totalTTM : "0",
-      title:'Time to Market'
-
+      title: "Time to Market",
     },
     {
       percentage: 50,
-      currentWatts: `${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
-                    `${data?.ExpectedROIData}`,
-      title:'Expected ROI'
-
+      currentWatts:
+        `${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
+        `${data?.ExpectedROIData}`,
+      title: "Expected ROI",
     },
     {
       percentage: 50,
       currentWatts: MarketShareData?.chosenOutcome || MarketShareData,
-      title:'Market Share'
+      title: "Market Share",
     },
   ];
-{/* <div className="info-item">
-                <strong>Target Market Size</strong>
-                <span>{data?.totalMarketSize} potential users</span>
-              </div>
-              <div className="info-item">
-                <strong>Investment Level</strong>
-                <span>{InvestmentLevelData?.chosenInvestmentLevel}</span>
-              </div>
-              <div className="info-item">
-                <strong>Time to Market</strong>
-                <span>
-                  {" "}
-                  {TimeToMarketData ? TimeToMarketData?.totalTTM : "0"}{" "}
-                </span>
-              </div>
-              <div className="info-item">
-                <strong>Expected ROI</strong>
-                <span>
-                  {`${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
-                    `${data?.ExpectedROIData}`}
-                </span>
-              </div>
-              <div className="info-item">
-                <strong>Market Share</strong>
-                <span>{MarketShareData?.chosenOutcome || MarketShareData}</span>
-              </div> */}
-  // const radius = 40; // Radius of the circle
-  // const circumference = 2 * Math.PI * radius; // Circumference of the circle
-  // const offset = circumference - (48 / 100) * circumference;
+  console.log(data);
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-10 py-4 bg-white text-gray-800">
-        {/* Lighting Consumption */}
-        <div className="flex flex-col gap-6 ">
-          <div className="bg-gray-50 p-4 rounded-lg shadow">
-            <h2 className="text-sm text-gray-600 mb-4">
-              Idea Score
-            </h2>
-            <div className="flex justify-start">
+      <div className=" py-5">
+        <h2 className=" mb-0 text-center">Results Summary Overview</h2>
+        <p className="">
+          Slight changes may occur in the results depending on market trends.
+        </p>
+      </div>
+      <div className="grid max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-10 py-4 bg-white text-gray-800">
+        <div className="flex flex-col gap-6">
+          <div className="bg-white p-4 rounded-lg shadow ">
+            <h2 className="text-sm text-gray-600 mb-4">Idea Score</h2>
+            <div className="flex flex-col sm:flex-row items-center sm:items-start">
               <CircularProgress
                 percentage={metrics.lighting.percentage}
                 color={metrics.lighting.color}
@@ -412,22 +404,21 @@ const WizardResult = () => {
                 strokeWidth={14}
               >
                 <div className="text-center">
-                  {/* <Zap className="mx-auto mb-2" size={24} /> */}
-                  <BiSolidZap
+                  <FaLightbulb
                     className="mx-auto mb-2 text-[#686868]"
                     size={34}
                   />
                 </div>
               </CircularProgress>
-              <div className=" px-5 flex flex-col justify-between">
-                <div className="text-5xl font-bold mb-1">
-                  {metrics.lighting.percentage}%
+              <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
+                <div className="text-4xl md:text-5xl font-bold mb-2">
+                  <AnimatedText score={metrics.lighting.percentage} /> %
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 text-left">NOW</div>
-                  <div className="text-2xl text-left">
+                  <div className="text-sm text-gray-500">Success Chance</div>
+                  <div className="text-2xl">
                     {metrics.lighting.value}
-                    <span className="text-sm ml-1 ">
+                    <span className="text-sm ml-1">
                       {metrics.lighting.unit}
                     </span>
                   </div>
@@ -435,29 +426,52 @@ const WizardResult = () => {
               </div>
             </div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg shadow">
-            <h2 className="text-sm text-gray-600 mb-4">ENERGY COSTS</h2>
-            <div className="space-y-4">
+
+          <div className="bg-white flex flex-col md:flex-row justify-between p-4 rounded-lg shadow ">
+            {/* <h2 className="text-sm text-gray-600 mb-4">ENERGY COSTS</h2> */}
+            <div className="space-y-4 w-[50%]">
               <div>
-                <div className="text-sm text-gray-600">
-                  PRICE (LAST 30 DAYS)
+                <div className="text-sm text-gray-600">IDEA</div>
+                <div className="text-2xl">
+                  {parseInt(data?.phase1) * 3.17 * 5} %
                 </div>
-                <div className="text-2xl">{metrics.costs.last30Days} Euros</div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">PRICE (TODAY)</div>
-                <div className="text-2xl ">{metrics.costs.today} Euros</div>
+                <div className="text-sm text-gray-600">
+                  Current j ob relateion with your idea
+                </div>
+                <div className="text-2xl">
+                  {parseInt(data?.phase2) * 3.17 * 5} %
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">
+                  Experience with your idea{" "}
+                </div>
+                <div className="text-2xl">
+                  {parseInt(data?.phase5) * 3.17 * 5} %
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4 w-[50%]">
+              <div>
+                <div className="text-sm text-gray-600">Investment</div>
+                <div className="text-2xl">
+                  {parseInt(data?.phase6) * 3.17 * 5} %
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">Country</div>
+                <div className="text-2xl">
+                  {parseInt(data?.phase7) * 3.17 * 5} %
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Global Consumption */}
-        <div className="bg-gray-50 p-4 rounded-lg shadow">
-          <h2 className="text-sm text-gray-600 mb-4">
-            Market Score
-          </h2>
-          <div className="flex justify-start mb-4">
+        <div className="bg-white p-4 rounded-lg shadow">
+          <h2 className="text-sm text-gray-600 mb-4">Market Score</h2>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
             <CircularProgress
               percentage={metrics.global.percentage}
               color={metrics.global.color}
@@ -465,40 +479,84 @@ const WizardResult = () => {
               strokeWidth={14}
             >
               <div className="text-center">
-                {/* <Zap className="mx-auto mb-2" size={24} /> */}
-                <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} />
+                <HiBuildingOffice
+                  className="mx-auto mb-2 text-[#686868]"
+                  size={34}
+                />
               </div>
             </CircularProgress>
-            <div className="px-5 flex flex-col justify-between ">
-              {/* First text at the top */}
-              <div className="text-5xl font-bold">
-                {metrics.global.percentage}%
+            <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
+              <div className="text-4xl md:text-5xl font-bold">
+                <AnimatedText score={metrics.global.percentage} /> %
               </div>
-              {/* Second text at the bottom */}
-              <div className="text-2xl">{metrics.global.value}</div>
+              <div className="mt-auto">
+                <div className="text-sm text-gray-500">Market Status</div>
+                <div className="text-2xl">{metrics.global.value}</div>
+              </div>
             </div>
           </div>
-          <div className=" bg-gray-200 h-[1px] w-full my-5"></div>
+          <div className="bg-white h-[1px] w-full my-5"></div>
           <div className="space-y-4">
-            <div>
-              <div className="text-sm text-gray-600">LAST 30 DAYS</div>
-              <div className="text-xl">
-                {metrics.consumption.last30Days} kWh
+            <div className=" flex flex-col justify-between md:flex-row">
+              <div className="w-[50%]">
+                <div className=" ">
+                  <div className="text-sm text-gray-600">Market Potential</div>
+                  <div className="text-xl">
+                    {parseFloat(data?.marketPotential) / 5} %
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">
+                    Unique Value Proposition
+                  </div>
+                  <div className="text-xl">
+                    {parseFloat(
+                      uniqueValueProposition?.finalScore?.replace("%", "")
+                    ) / 5}{" "}
+                    %
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">Team & Resources</div>
+                  <div className="text-xl">
+                    {parseFloat(TeamAndResourcesData) / 5} %
+                  </div>
+                </div>
               </div>
-            </div>
-            <div>
-              <div className="text-sm text-gray-600">TODAY</div>
-              <div className="text-xl">{metrics.consumption.today} kWh</div>
+              <div className="w-[50%]">
+                <div>
+                  <div className="text-sm text-gray-600">
+                    Competitive Landscape
+                  </div>
+                  <div className="text-xl">
+                    {(
+                      parseFloat(
+                        CompetitiveLandscapeData?.finalScore?.replace("%", "")
+                      ) / 5
+                    ).toFixed(2)}{" "}
+                    %
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">Revenue Model</div>
+                  <div className="text-xl">
+                    {parseFloat(
+                      RevenueModelData?.finalScore?.replace("%", "")
+                    ) / 5}{" "}
+                    %
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="flex justify-between">
               <div>
-                <div className="text-sm text-gray-600">TREND</div>
+                <div className="text-sm text-gray-600">TREND PEV. MONTH</div>
                 <div className="text-red-500">
                   {metrics.consumption.trendUp} ▼
                 </div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">TREND</div>
+                <div className="text-sm text-gray-600">TREND CURRENT MONTH</div>
                 <div className="text-green-500">
                   {metrics.consumption.trendDown} ▲
                 </div>
@@ -506,11 +564,9 @@ const WizardResult = () => {
             </div>
           </div>
         </div>
-        {/* Instant Consumption */}
-        <div className="bg-gray-50 p-4 rounded-lg shadow">
-          <h2 className="text-sm text-gray-600 mb-4">
-           Score With Ideax
-          </h2>
+
+        <div className="bg-white p-4 rounded-lg shadow">
+          <h2 className="text-sm text-gray-600 mb-4">Score With Ideax</h2>
           <div className="flex justify-center">
             <CircularProgress
               percentage={metrics.instant.percentage}
@@ -519,14 +575,13 @@ const WizardResult = () => {
               strokeWidth={35}
             >
               <div className="text-center">
-                {/* <Zap className="mx-auto mb-2 text-[#686868]" size={24} /> */}
                 <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} />
               </div>
             </CircularProgress>
           </div>
-          <div className=" mt-5">
-            <div className="text-3xl font-bold text-center">
-              {metrics.instant.percentage}%
+          <div className="mt-5">
+            <div className="text-4xl md:text-5xl font-bold text-center">
+              <AnimatedText score={metrics.instant.percentage} />%
             </div>
             <div className="text-xl mt-2 text-center">
               {metrics.instant.value}
@@ -540,21 +595,21 @@ const WizardResult = () => {
           <div className="mx-10 text-center w-[96%] text-xl rounded-lg h-16 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-medium flex items-center justify-center">
             Launch Your Idea Free
           </div>
-
         </div> */}
-
         <section
           id="market"
           className="business-check-container border-gray-300 border  m-auto mt-10 flex flex-col-reverse lg:flex-row lg:mx-10 p-5"
         >
           <div className=" w-[100%]">
-            <h2 className=" mb-0 text-center">
-              Overview of Market Research for the Idea
-            </h2>
-            <p className="">
-              Slight changes may occur in the results depending on market
-              trends.
-            </p>
+            <div className=" text-left ">
+              <h2 className=" mb-0 text-left">
+                Overview of Market Research for the Idea
+              </h2>
+              <p className="text-left">
+                Slight changes may occur in the results depending on market
+                trends.
+              </p>
+            </div>
             <div className="business-overview items-center">
               <div className="overview-left md:pr-10">
                 <div
@@ -601,7 +656,6 @@ const WizardResult = () => {
                   </div>
                   <span>{uniqueValueProposition?.finalScore}</span>
                   <div className="tooltip" style={{ color: "gray" }}>
-                    {/* <FcQuestions size={20} /> */}
                     <PiQuestion size={18} />
                     <span className="tooltip-text">
                       Distinct benefit offered to customers, differentiating the
@@ -610,7 +664,6 @@ const WizardResult = () => {
                     </span>
                   </div>
                 </div>
-                {/* Revenue Model */}
                 <div className="overview-item">
                   <p>Revenue Model</p>
                   <div className="progress-bar">
@@ -656,7 +709,6 @@ const WizardResult = () => {
                   </div>
                   <span>{CompetitiveLandscapeData?.finalScore}</span>
                   <div className="tooltip" style={{ color: "gray" }}>
-                    {/* <BsQuestionDiamondFill size={20} /> */}
                     <PiQuestion size={18} />
                     <span className="tooltip-text">
                       Analysis of competitors, market share, strengths, and
@@ -694,7 +746,7 @@ const WizardResult = () => {
                   {
                     href: "#market",
                     data: bardata2,
-                    score: (totalMarketScrore.toFixed(2)),
+                    score: totalMarketScrore.toFixed(2),
                     label: "Market Score",
                     points: [
                       {
@@ -706,6 +758,8 @@ const WizardResult = () => {
                         rowDir: "md:flex-row-reverse",
                         textDir: "text-left md:text-right",
                         text: "Team & Resources",
+                        toolDir:"left-full"
+
                       },
                       {
                         id: 2,
@@ -720,6 +774,8 @@ const WizardResult = () => {
                         rowDir: "md:flex-row",
                         textDir: "text-left md:text-left",
                         text: "Unique Value Proposition",
+                        toolDir:"right-full"
+
                       },
                       {
                         id: 5,
@@ -737,17 +793,19 @@ const WizardResult = () => {
                         rowDir: "md:flex-col",
                         textDir: "text-left  md:text-right",
                         text: "Revenue Model",
+                        toolDir:"left-full"
+
                       },
                       {
                         id: 6,
-                        label: `${
-                          (parseFloat(
+                        label: `${(
+                          parseFloat(
                             CompetitiveLandscapeData?.finalScore?.replace(
                               "%",
                               ""
                             )
-                          ) / 5).toFixed(2)
-                        }%`,
+                          ) / 5
+                        ).toFixed(2)}%`,
                         position:
                           "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                         bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -756,6 +814,8 @@ const WizardResult = () => {
                         rowDir: "md:flex-col",
                         textDir: "text-left  md:text-left",
                         text: "Competitive Landscape",
+                        toolDir:"right-full"
+
                       },
                       {
                         id: 4,
@@ -767,6 +827,7 @@ const WizardResult = () => {
                         rowDir: "md:flex-col-reverse",
                         textDir: "text-left  md:text-center",
                         text: "Market Potential",
+                        toolDir:"left-full"
                       },
                     ],
                   },
@@ -800,7 +861,18 @@ const WizardResult = () => {
                                   background: point.bgColor,
                                 }}
                               >
-                                {point.icon}
+                                <div
+                                  className="tooltip"
+                                  style={{ color: "white" ,marginLeft:"0" }}
+                                >
+                                  {point.icon}
+                                  <span className={`tooltip-text2  ${point?.toolDir}`}>
+                                    Distinct benefit offered to customers,
+                                    differentiating the business from
+                                    competitors and solving key problems
+                                    effectively.
+                                  </span>
+                                </div>
                               </div>
                               <div className="">
                                 <h4
@@ -841,6 +913,15 @@ const WizardResult = () => {
                             strokeWidth="2"
                             strokeDasharray="2 4"
                           />
+                          <circle
+                          cx="60"
+                          cy="60"
+                          r="30"
+                          fill="none"
+                          stroke="#DBDBDD"
+                          strokeWidth="2"
+                          strokeDasharray="2 4"
+                        />
                           <defs>
                             <linearGradient
                               id="gradientStroke"
@@ -864,26 +945,25 @@ const WizardResult = () => {
                             </linearGradient>
                           </defs>
                           <circle
-                            cx="60" // Adjusted center for better alignment
-                            cy="60" // Adjusted center for better alignment
+                            cx="60"
+                            cy="60"
                             r={radius}
                             fill="none"
-                            stroke="url(#gradientStroke)" // Reference the gradient here
+                            stroke="url(#gradientStroke)"
                             strokeWidth="8"
                             strokeDasharray={circumference}
                             strokeDashoffset={offset}
                             strokeLinecap="round"
-                            transform="rotate(-90 60 60)" // Adjusted rotation origin
+                            transform="rotate(-90 60 60)"
                           />
-                          {/* Percentage Text */}
                           <text
-                            x="60" // Adjusted to match the new center position
-                            y="65" // Adjusted to match the new center position
+                            x="60"
+                            y="65"
                             textAnchor="middle"
                             fontSize="15"
                             fill="black"
                           >
-                            {item?.score}%
+                            <AnimatedText score={item?.score} />%
                           </text>
                         </svg>
                       </div>
@@ -895,15 +975,16 @@ const WizardResult = () => {
                 })}
               </div>
             </div>
-
             <div className="business-additional-info">
-               <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {consumptions.map((consumption, index) => (
                   <LightingCard key={index} consumption={consumption} />
                 ))}
               </div>
-
-              {/* <div className="info-item">
+            </div>
+          </div>
+        </section>
+        {/* <div className="info-item">
                 <strong>Target Market Size</strong>
                 <span>{data?.totalMarketSize} potential users</span>
               </div>
@@ -929,9 +1010,6 @@ const WizardResult = () => {
                 <strong>Market Share</strong>
                 <span>{MarketShareData?.chosenOutcome || MarketShareData}</span>
               </div> */}
-            </div>
-          </div>
-        </section>
         <section
           id="idea"
           className="business-check-container border-gray-300 border  m-auto mt-10 p-10 lg:mx-10"
@@ -942,24 +1020,24 @@ const WizardResult = () => {
                 display: "flex",
                 gap: "10px",
               }}
-              className=" mb-0 justify-center"
+              className=" mb-0 justify-start text-left"
             >
               Your Idea Overview{" "}
               <FaRobot size={28} style={{ color: "var(--main-color)" }} />
             </h2>
-            <p className=" ">
+            <p className=" text-left">
               Slight changes may occur in the results depending on market
               trends.
             </p>
           </div>
           <div className="flex flex-col-reverse lg:flex-row items-start h-full justify-around">
-            <div className=" lg:mr-[10px] ">
+            <div className=" min-w-[60%] ">
               <div className="m-auto">
                 {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
                 {loading ? (
                   <p>Loading AI-generated insights...</p>
                 ) : (
-                  <p className="text-justify p-2 text-[14px] md:text-[14px]">
+                  <p className="text-justify  text-[14px] md:text-[14px]">
                     {displayedText}
                   </p>
                 )}
@@ -989,6 +1067,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
                       text: "IDEA",
+                      toolDir:"left-full"
+
                     },
                     {
                       id: 2,
@@ -999,6 +1079,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
                       text: "Investment",
+                      toolDir:"right-full"
+
                     },
                     {
                       id: 5,
@@ -1011,6 +1093,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left md:text-right",
                       text: "Current Job related",
+                      toolDir:"left-full"
+
                     },
                     {
                       id: 6,
@@ -1023,18 +1107,21 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left md:text-left",
                       text: "Experience",
+                      toolDir:"right-full"
+
                     },
                     {
                       id: 4,
-                      label: `${parseInt(data?.phase7) * 3.17}%`,
-                      position:
-                        "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3 ",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",
-                      icon: <FaGlobe />,
-                      rowDir: "md:flex-col-reverse",
-                      textDir: "text-left md:text-center",
-                      text: "Country",
-                    },
+                      label: `${Math.round(data?.phase7 * 3.17)}%`, // Use Math.round for cleaner percentages
+                      position: "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Fixed extra space
+                      icon: <FaGlobe />, // Ensure you have imported FaGlobe
+                      rowDir: "md:flex-col-reverse", // Ensured proper casing
+                      textDir: "text-left md:text-center", // Ensured proper casing
+                      text: "Country", // Tooltip text
+                      toolDir: "left-[20%]", // Tooltip position for smaller screens
+                      toolDirLg: "lg:right-full lg:left-unset", // Tooltip position for larger screens
+                    }
                   ],
                 },
               ].map((item, index) => {
@@ -1066,8 +1153,21 @@ const WizardResult = () => {
                               style={{
                                 background: point.bgColor,
                               }}
-                            >
-                              {point.icon}
+                            ><div
+                            className="tooltip"
+                            style={{ color: "white" ,marginLeft:"0" }}
+                          >
+                            {point.icon}
+                            <span className={`tooltip-text2 ${point?.toolDir || ""} ${point?.toolDirLg || ""}`}>
+
+
+                              Distinct benefit offered to customers,
+                              differentiating the business from
+                              competitors and solving key problems
+                              effectively.
+                            </span>
+                          </div>
+                              
                             </div>
                             <div className="">
                               <h4
@@ -1103,6 +1203,15 @@ const WizardResult = () => {
                           cx="60"
                           cy="60"
                           r="60"
+                          fill="none"
+                          stroke="#DBDBDD"
+                          strokeWidth="2"
+                          strokeDasharray="2 4"
+                        />
+                        <circle
+                          cx="60"
+                          cy="60"
+                          r="30"
                           fill="none"
                           stroke="#DBDBDD"
                           strokeWidth="2"
@@ -1150,7 +1259,7 @@ const WizardResult = () => {
                           fontSize="15"
                           fill="black"
                         >
-                          {item.score}%
+                          <AnimatedText score={item?.score} />%
                         </text>
                       </svg>
                     </div>
@@ -1171,8 +1280,8 @@ const WizardResult = () => {
           className="business-check-container border-gray-300 border  m-auto mt-10 lg:mx-10 "
         >
           <div>
-            <h2 className=" mb-0 text-center">How you can improve your idea</h2>
-            <p className="">
+            <h2 className=" mb-0 text-left">How you can improve your idea</h2>
+            <p className="text-left">
               Slight changes may occur in the results depending on market
               trends.
             </p>
@@ -1236,6 +1345,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
                       text: "Team & Resources",
+                      toolDir:"left-full"
+
                     },
                     {
                       id: 2,
@@ -1258,6 +1369,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
                       text: "Unique Value Proposition",
+                      toolDir:"right-full"
+
                     },
                     {
                       id: 5,
@@ -1282,6 +1395,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left  md:text-right",
                       text: "Revenue Model",
+                      toolDir:"left-full"
+
                     },
                     {
                       id: 6,
@@ -1309,6 +1424,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left  md:text-left",
                       text: "Competitive Landscape",
+                      toolDir:"right-full"
+
                     },
                     {
                       id: 4,
@@ -1324,6 +1441,8 @@ const WizardResult = () => {
                       rowDir: "md:flex-col-reverse",
                       textDir: "text-left  md:text-center",
                       text: "Market Potential",
+                      toolDir:"left-full"
+
                     },
                   ],
                 },
@@ -1357,7 +1476,19 @@ const WizardResult = () => {
                                 background: point.bgColor,
                               }}
                             >
-                              {point.icon}
+                              <div
+                                  className="tooltip"
+                                  style={{ color: "white" ,marginLeft:"0" }}
+                                >
+                                  {point.icon}
+                                  <span className={`tooltip-text2  ${point?.toolDir}`}>
+
+                                    Distinct benefit offered to customers,
+                                    differentiating the business from
+                                    competitors and solving key problems
+                                    effectively.
+                                  </span>
+                                </div>
                             </div>
                             <div className="">
                               <h4
@@ -1393,6 +1524,15 @@ const WizardResult = () => {
                           cx="60"
                           cy="60"
                           r="60"
+                          fill="none"
+                          stroke="#DBDBDD"
+                          strokeWidth="2"
+                          strokeDasharray="2 4"
+                        />
+                        <circle
+                          cx="60"
+                          cy="60"
+                          r="30"
                           fill="none"
                           stroke="#DBDBDD"
                           strokeWidth="2"
@@ -1440,7 +1580,7 @@ const WizardResult = () => {
                           fontSize="15"
                           fill="black"
                         >
-                          {item.score}%
+                          <AnimatedText score={item?.score} />%
                         </text>
                       </svg>
                     </div>
@@ -1455,9 +1595,8 @@ const WizardResult = () => {
             </div>
           </div>
         </section>
-        <section>
+        {/* <section>
           <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
-            {/* Left Text Section */}
             <div>
               <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
                 Take the first step{" "}
@@ -1466,14 +1605,32 @@ const WizardResult = () => {
                 idea now.
               </h3>
             </div>
-            {/* Button Section */}
             <div className="btns-container">
               <Link href="/plan-details" passHref>
                 <button className="btn min-w-[170px]">Launch Your Idea</button>
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
+      </div>
+      <div className="bg-black text-center py-10 px-4 sm:py-16">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+            Take the first step{" "}
+          </span>
+          <span className="font-semibold">towards</span> making your idea to a
+          reality, <span className="font-semibold">launch</span> your idea now.
+        </h1>
+
+        <div className="btns-container mt-10 ">
+          <Link
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
+            style={{ fontSize: "14px", margin: "auto" }}
+            href="/plan-details"
+          >
+            Launch Your Idea <FaArrowAltCircleRight />
+          </Link>
+        </div>
       </div>
     </>
   );

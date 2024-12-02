@@ -39,7 +39,7 @@ const LightingCard = ({ consumption }) => {
             </div>
           </div>
           {/* <Activity size={16} className="text-gray-600 hidden sm:block" /> */}
-          <img src={consumption?.imageUrl} className="mx-auto w-14  text-[#686868]" alt="idea" />
+          <img src={consumption?.imageUrl} className="mx-auto w-14  text-[#686868]" alt={consumption.title} />
 
         </div>
       </div>
@@ -52,6 +52,7 @@ LightingCard.propTypes = {
     title: PropTypes.string.isRequired,
     percentage: PropTypes.number.isRequired,
     currentWatts: PropTypes.number.isRequired,
+    imageUrl: PropTypes.number.isRequired,
   }).isRequired,
 };
 

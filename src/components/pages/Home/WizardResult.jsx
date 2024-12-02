@@ -20,7 +20,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { HiBuildingOffice } from "react-icons/hi2";
 import { IoBusiness } from "react-icons/io5";
-import { BiSolidZap } from "react-icons/bi";
+// import { BiSolidZap } from "react-icons/bi";
 import LightingCard from "@/components/wizard-result/LightingCard";
 import PropTypes from "prop-types";
 import AnimatedText from "@/components/wizard-result/AnimatedText";
@@ -1316,7 +1316,7 @@ const WizardResult = () => {
           <div>
             <h2 className=" mb-0 text-left">How you can improve your idea</h2>
             <p className="text-left">
-              You can increase your idea's success odds by using ideax.
+              You can increase your idea&rsquo;s success odds by using ideax.
             </p>
           </div>
           <div className="flex flex-col-reverse  lg:flex-row justify-between ">

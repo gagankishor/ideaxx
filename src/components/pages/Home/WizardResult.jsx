@@ -24,6 +24,7 @@ import { BiSolidZap } from "react-icons/bi";
 import LightingCard from "@/components/wizard-result/LightingCard";
 import PropTypes from "prop-types";
 import AnimatedText from "@/components/wizard-result/AnimatedText";
+import { Store } from "lucide-react";
 
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
@@ -108,7 +109,7 @@ const WizardResult = () => {
     if (score <= 50) return "red";
     if (score <= 70) return "orange";
     if (score <= 90) return "green";
-    if (score <= 100) return "blue";
+    if (score <= 100) return "#4FADEA";
     return "blue";
   };
   const getBarColor = (score) => {
@@ -319,8 +320,8 @@ const WizardResult = () => {
           : parseFloat(data?.success_percentage) < 66
           ? "Moderate"
           : "High",
-      unit: "Hz",
-      color: "rgb(239, 68, 68)",
+      unit: "",
+      color: getBarColor2(data?.success_percentage),
     },
     global: {
       percentage: totalMarketScrore,
@@ -330,7 +331,7 @@ const WizardResult = () => {
           : totalMarketScrore < 66
           ? "Moderate"
           : "Good",
-      color: "rgb(239, 68, 68)",
+      color: getBarColor2(totalMarketScrore),
     },
     instant: {
       percentage: totalMarketScrore2,
@@ -341,7 +342,7 @@ const WizardResult = () => {
           ? "Moderate"
           : "Good",
       unit: "W",
-      color: "rgb(234, 179, 8)",
+      color: getBarColor2(totalMarketScrore2),
     },
     costs: {
       last30Days: "11 045,00",
@@ -359,16 +360,19 @@ const WizardResult = () => {
       percentage: 75, // 75% of maximum capacity
       currentWatts: `${data?.totalMarketSize} potential users`, // Current consumption in watts
       title: "Target Market Size",
+      imageUrl: "/result-page/Layer5.png",
     },
     {
       percentage: 60,
       currentWatts: InvestmentLevelData?.chosenInvestmentLevel,
       title: "Investment Level",
+      imageUrl: "/result-page/Layer7.png",
     },
     {
       percentage: 90,
       currentWatts: TimeToMarketData ? TimeToMarketData?.totalTTM : "0",
       title: "Time to Market",
+      imageUrl: "/result-page/Layer8.png",
     },
     {
       percentage: 50,
@@ -376,11 +380,13 @@ const WizardResult = () => {
         `${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
         `${data?.ExpectedROIData}`,
       title: "Expected ROI",
+      imageUrl: "/result-page/Layer6.png",
     },
     {
       percentage: 50,
       currentWatts: MarketShareData?.chosenOutcome || MarketShareData,
       title: "Market Share",
+      imageUrl: "/result-page/Layer1.png",
     },
   ];
   console.log(data);
@@ -432,38 +438,60 @@ const WizardResult = () => {
             <div className="space-y-4 w-[50%]">
               <div>
                 <div className="text-sm text-gray-600">IDEA</div>
-                <div className="text-2xl">
-                  {parseInt(data?.phase1) * 3.17 * 5} %
+                <div className="text-lg">
+                  {parseInt(data?.phase1) == 1
+                    ? "It is still an idea"
+                    : parseInt(data?.phase1) == 3
+                    ? "I made a plan for it"
+                    : "I already started"}
+                  {/* {parseInt(data?.phase1) * 3.17 * 5} % */}
                 </div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">
-                  Current j ob relateion with your idea
-                </div>
-                <div className="text-2xl">
-                  {parseInt(data?.phase2) * 3.17 * 5} %
+                <div className="text-sm text-gray-600">current job related to idea</div>
+                <div className="text-lg">
+                  {parseInt(data?.phase4) == 5
+                    ? "Yes"
+                    : "No"}
+                  {/* {parseInt(data?.phase2) * 3.17 * 5} % */}
                 </div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">
-                  Experience with your idea{" "}
-                </div>
-                <div className="text-2xl">
-                  {parseInt(data?.phase5) * 3.17 * 5} %
+                <div className="text-sm text-gray-600">Investment </div>
+                <div className="text-lg">
+                  {/* {parseInt(data?.phase5) * 3.17 * 5} % */}
+                  {parseInt(data?.phase5) == 1
+                    ? "Less than 1 Lakh "
+                    : parseInt(data?.phase5) == 2
+                    ? "1 Lakh ₹ - 10 Lakh ₹"
+                    : parseInt(data?.phase5) == 3
+                    ? "10 Lakh ₹ - 50 Lakh ₹"
+                    : parseInt(data?.phase5) == 4
+                    ? "50 Lakh ₹ - 1 Crore ₹"
+                    : "More than 1 Crore ₹"}
                 </div>
               </div>
             </div>
             <div className="space-y-4 w-[50%]">
               <div>
-                <div className="text-sm text-gray-600">Investment</div>
-                <div className="text-2xl">
-                  {parseInt(data?.phase6) * 3.17 * 5} %
+                <div className="text-sm text-gray-600">
+                  Experience with your idea
+                </div>
+                <div className="text-lg">
+                  {/* {parseInt(data?.phase6) * 3.17 * 5} % */}
+                  {parseInt(data?.phase6) == 0
+                    ? "No experience"
+                    : parseInt(data?.phase6) == 3
+                    ? "1 - 3 Years"
+                    : parseInt(data?.phase6) == 4
+                    ? "3 - 5 Years"
+                    : "More than 5 years"}
                 </div>
               </div>
               <div>
                 <div className="text-sm text-gray-600">Country</div>
-                <div className="text-2xl">
-                  {parseInt(data?.phase7) * 3.17 * 5} %
+                <div className="text-lg">
+                  {data?.country}
                 </div>
               </div>
             </div>
@@ -479,10 +507,11 @@ const WizardResult = () => {
               strokeWidth={14}
             >
               <div className="text-center">
-                <HiBuildingOffice
+                {/* <HiBuildingOffice
                   className="mx-auto mb-2 text-[#686868]"
                   size={34}
-                />
+                /> */}
+                <Store className="mx-auto mb-2 text-[#686868]" />
               </div>
             </CircularProgress>
             <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
@@ -575,7 +604,13 @@ const WizardResult = () => {
               strokeWidth={35}
             >
               <div className="text-center">
-                <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} />
+                <img
+                  src="/result-page/Layer9.png"
+                  className="mx-auto w-12  text-[#686868]"
+                  alt="idea"
+                />
+
+                {/* <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} /> */}
               </div>
             </CircularProgress>
           </div>
@@ -585,7 +620,7 @@ const WizardResult = () => {
             </div>
             <div className="text-xl mt-2 text-center">
               {metrics.instant.value}
-              <span className="text-sm ml-1">{metrics.instant.unit}</span>
+              <span className="text-sm ml-1"></span>
             </div>
           </div>
         </div>
@@ -602,9 +637,7 @@ const WizardResult = () => {
         >
           <div className=" w-[100%]">
             <div className=" text-left ">
-              <h2 className=" mb-0 text-left">
-                Overview of Market Research for the Idea
-              </h2>
+              <h2 className=" mb-0 text-left">Market Research Analytics</h2>
               <p className="text-left">
                 Slight changes may occur in the results depending on market
                 trends.
@@ -758,8 +791,7 @@ const WizardResult = () => {
                         rowDir: "md:flex-row-reverse",
                         textDir: "text-left md:text-right",
                         text: "Team & Resources",
-                        toolDir:"left-full"
-
+                        toolDir: "left-full",
                       },
                       {
                         id: 2,
@@ -774,8 +806,7 @@ const WizardResult = () => {
                         rowDir: "md:flex-row",
                         textDir: "text-left md:text-left",
                         text: "Unique Value Proposition",
-                        toolDir:"right-full"
-
+                        toolDir: "right-full",
                       },
                       {
                         id: 5,
@@ -793,8 +824,7 @@ const WizardResult = () => {
                         rowDir: "md:flex-col",
                         textDir: "text-left  md:text-right",
                         text: "Revenue Model",
-                        toolDir:"left-full"
-
+                        toolDir: "left-full",
                       },
                       {
                         id: 6,
@@ -814,8 +844,7 @@ const WizardResult = () => {
                         rowDir: "md:flex-col",
                         textDir: "text-left  md:text-left",
                         text: "Competitive Landscape",
-                        toolDir:"right-full"
-
+                        toolDir: "right-full",
                       },
                       {
                         id: 4,
@@ -827,7 +856,7 @@ const WizardResult = () => {
                         rowDir: "md:flex-col-reverse",
                         textDir: "text-left  md:text-center",
                         text: "Market Potential",
-                        toolDir:"left-full"
+                        toolDir: "left-full",
                       },
                     ],
                   },
@@ -863,10 +892,12 @@ const WizardResult = () => {
                               >
                                 <div
                                   className="tooltip"
-                                  style={{ color: "white" ,marginLeft:"0" }}
+                                  style={{ color: "white", marginLeft: "0" }}
                                 >
                                   {point.icon}
-                                  <span className={`tooltip-text2  ${point?.toolDir}`}>
+                                  <span
+                                    className={`tooltip-text2  ${point?.toolDir}`}
+                                  >
                                     Distinct benefit offered to customers,
                                     differentiating the business from
                                     competitors and solving key problems
@@ -914,14 +945,14 @@ const WizardResult = () => {
                             strokeDasharray="2 4"
                           />
                           <circle
-                          cx="60"
-                          cy="60"
-                          r="30"
-                          fill="none"
-                          stroke="#DBDBDD"
-                          strokeWidth="2"
-                          strokeDasharray="2 4"
-                        />
+                            cx="60"
+                            cy="60"
+                            r="30"
+                            fill="none"
+                            stroke="#DBDBDD"
+                            strokeWidth="2"
+                            strokeDasharray="2 4"
+                          />
                           <defs>
                             <linearGradient
                               id="gradientStroke"
@@ -1025,10 +1056,7 @@ const WizardResult = () => {
               Your Idea Overview{" "}
               <FaRobot size={28} style={{ color: "var(--main-color)" }} />
             </h2>
-            <p className=" text-left">
-              Slight changes may occur in the results depending on market
-              trends.
-            </p>
+            <p className=" text-left">Based on the description you provided</p>
           </div>
           <div className="flex flex-col-reverse lg:flex-row items-start h-full justify-around">
             <div className=" min-w-[60%] ">
@@ -1067,8 +1095,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
                       text: "IDEA",
-                      toolDir:"left-full"
-
+                      toolDir: "left-full",
                     },
                     {
                       id: 2,
@@ -1079,8 +1106,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
                       text: "Investment",
-                      toolDir:"right-full"
-
+                      toolDir: "right-full",
                     },
                     {
                       id: 5,
@@ -1093,8 +1119,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left md:text-right",
                       text: "Current Job related",
-                      toolDir:"left-full"
-
+                      toolDir: "left-full",
                     },
                     {
                       id: 6,
@@ -1107,13 +1132,13 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left md:text-left",
                       text: "Experience",
-                      toolDir:"right-full"
-
+                      toolDir: "right-full",
                     },
                     {
                       id: 4,
                       label: `${Math.round(data?.phase7 * 3.17)}%`, // Use Math.round for cleaner percentages
-                      position: "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
+                      position:
+                        "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Fixed extra space
                       icon: <FaGlobe />, // Ensure you have imported FaGlobe
                       rowDir: "md:flex-col-reverse", // Ensured proper casing
@@ -1121,7 +1146,7 @@ const WizardResult = () => {
                       text: "Country", // Tooltip text
                       toolDir: "left-[20%]", // Tooltip position for smaller screens
                       toolDirLg: "lg:right-full lg:left-unset", // Tooltip position for larger screens
-                    }
+                    },
                   ],
                 },
               ].map((item, index) => {
@@ -1153,21 +1178,22 @@ const WizardResult = () => {
                               style={{
                                 background: point.bgColor,
                               }}
-                            ><div
-                            className="tooltip"
-                            style={{ color: "white" ,marginLeft:"0" }}
-                          >
-                            {point.icon}
-                            <span className={`tooltip-text2 ${point?.toolDir || ""} ${point?.toolDirLg || ""}`}>
-
-
-                              Distinct benefit offered to customers,
-                              differentiating the business from
-                              competitors and solving key problems
-                              effectively.
-                            </span>
-                          </div>
-                              
+                            >
+                              <div
+                                className="tooltip"
+                                style={{ color: "white", marginLeft: "0" }}
+                              >
+                                {point.icon}
+                                <span
+                                  className={`tooltip-text2 ${
+                                    point?.toolDir || ""
+                                  } ${point?.toolDirLg || ""}`}
+                                >
+                                  Distinct benefit offered to customers,
+                                  differentiating the business from competitors
+                                  and solving key problems effectively.
+                                </span>
+                              </div>
                             </div>
                             <div className="">
                               <h4
@@ -1263,11 +1289,19 @@ const WizardResult = () => {
                         </text>
                       </svg>
                     </div>
-                    <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-sm lg:text-sm font-thin text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Animi reiciendis, obcaecati consequatur recusandae
-                      cupiditate illum.
-                    </p>
+                    <div className="description-box-parent">
+                      <textarea
+                        placeholder="Describe your idea in few line ..."
+                        value={data?.idea_description || ""}
+                        
+                        className="description-box mt-12"
+                        aria-label="Description box"
+                        rows="3"
+                        readOnly
+                        // minLength="50"
+                        // onMouseLeave={handleBlur}
+                      />
+                    </div>
                   </div>
                 );
               })}
@@ -1282,8 +1316,7 @@ const WizardResult = () => {
           <div>
             <h2 className=" mb-0 text-left">How you can improve your idea</h2>
             <p className="text-left">
-              Slight changes may occur in the results depending on market
-              trends.
+              You can increase your idea's success odds by using ideax.
             </p>
           </div>
           <div className="flex flex-col-reverse  lg:flex-row justify-between ">
@@ -1345,8 +1378,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-row-reverse",
                       textDir: "text-left md:text-right",
                       text: "Team & Resources",
-                      toolDir:"left-full"
-
+                      toolDir: "left-full",
                     },
                     {
                       id: 2,
@@ -1369,8 +1401,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-row",
                       textDir: "text-left md:text-left",
                       text: "Unique Value Proposition",
-                      toolDir:"right-full"
-
+                      toolDir: "right-full",
                     },
                     {
                       id: 5,
@@ -1395,8 +1426,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left  md:text-right",
                       text: "Revenue Model",
-                      toolDir:"left-full"
-
+                      toolDir: "left-full",
                     },
                     {
                       id: 6,
@@ -1424,8 +1454,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-col",
                       textDir: "text-left  md:text-left",
                       text: "Competitive Landscape",
-                      toolDir:"right-full"
-
+                      toolDir: "right-full",
                     },
                     {
                       id: 4,
@@ -1441,8 +1470,7 @@ const WizardResult = () => {
                       rowDir: "md:flex-col-reverse",
                       textDir: "text-left  md:text-center",
                       text: "Market Potential",
-                      toolDir:"left-full"
-
+                      toolDir: "left-full",
                     },
                   ],
                 },
@@ -1477,18 +1505,18 @@ const WizardResult = () => {
                               }}
                             >
                               <div
-                                  className="tooltip"
-                                  style={{ color: "white" ,marginLeft:"0" }}
+                                className="tooltip"
+                                style={{ color: "white", marginLeft: "0" }}
+                              >
+                                {point.icon}
+                                <span
+                                  className={`tooltip-text2  ${point?.toolDir}`}
                                 >
-                                  {point.icon}
-                                  <span className={`tooltip-text2  ${point?.toolDir}`}>
-
-                                    Distinct benefit offered to customers,
-                                    differentiating the business from
-                                    competitors and solving key problems
-                                    effectively.
-                                  </span>
-                                </div>
+                                  Distinct benefit offered to customers,
+                                  differentiating the business from competitors
+                                  and solving key problems effectively.
+                                </span>
+                              </div>
                             </div>
                             <div className="">
                               <h4

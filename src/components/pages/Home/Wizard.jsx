@@ -58,7 +58,6 @@ export default function Wizard() {
         setLoading(false);
       }
     };
-
     fetchCountries();
   }, []);
   const steps = [             
@@ -247,7 +246,7 @@ export default function Wizard() {
         { id: "i6b", label: "No", value: "2" },
       ],
       bgColor: "#F9CC48",
-    },
+    }, 
     {
       title: "What is your investment plan for your idea?",
       description:
@@ -282,6 +281,28 @@ export default function Wizard() {
       bgColor: "#0D004C",
     },
     {
+      title: "What is your estimated daily availability for working on your idea?",
+      description:
+        "",
+      choices: [
+        { id: "i9a", label: "1 - 2 hours per day", value: "1" },
+        { id: "i9b", label: "3 - 4 hours per day", value: "3" },
+        { id: "i9c", label: "more", value: "4" },
+      ],
+      bgColor: "#F69679",
+    },
+    {
+      title: "What is your estimated timeline for building your business?",
+      description:
+        "",
+      choices: [
+        { id: "i8a", label: "2 to 3 months", value: "1" },
+        { id: "i8b", label: "4 to 6 months.", value: "3" },
+        { id: "i8c", label: "It will take longer than this.", value: "4" },
+      ],
+      bgColor: "#F69679",
+    },
+    {
       title: "Tell us more about your idea",
       description: "Please describe your idea in 50 to 250 letters. What is your idea? Who is it designed for? What makes it unique or special?",
       choices: [{ id: "i8a", label: "India", value: "5" }],
@@ -313,11 +334,11 @@ export default function Wizard() {
       setShowError("There was an error validating your text.");
     }
   };
-  let n = 8;
+  let n = 10;
   // let n = step != 8 ? (isAuthenticated ? 7 : 8) : 8;
   const isStepValid = async () => {
     const currentStepData = formData[`step${step + 1}`];
-    if (step === 7) {
+    if (step === 9) {
       if (showError != null) {
         Swal.fire({
           title: "Info",
@@ -329,8 +350,17 @@ export default function Wizard() {
         
         try {
           if (previousValue !== formData?.description) {
-            setShowError("Checking...");
-            const response = await axios.post(`${RestAPI}/ai/text-checker`, {
+            if(formData?.description<50){
+              Swal.fire({
+                title: "Info",
+                text: "Please enter atlest 50 charecter text.",
+                icon: "info",
+                confirmButtonText: "OK",
+              });
+            }else{
+
+              setShowError("Checking...");
+              const response = await axios.post(`${RestAPI}/ai/text-checker`, {
               text: formData.description,
             });
             if (response.data.data.isvalid === false) {
@@ -345,6 +375,7 @@ export default function Wizard() {
             } else {
               setShowError(null);
               return showError === null;
+            }
             }
           } else {
             setPreviousValue(formData?.description);
@@ -365,7 +396,7 @@ export default function Wizard() {
       setStep((step) => step + 1);
     } else {
       let textmassge = "Please make a selection before proceeding.";
-      if (step === 7) {
+      if (step === 9) {
         textmassge = showError;
       }
       else {
@@ -406,7 +437,7 @@ export default function Wizard() {
       //   icon: "error",
       //   confirmButtonText: "OK",
       // });
-    } else if (step === 7 && !(await isStepValid())) {
+    } else if (step === 9 && !(await isStepValid())) {
       // Swal.fire({
       //   title: "Info",
       //   text: showError,
@@ -761,7 +792,7 @@ export default function Wizard() {
                     //   maxHeight: "270px",
                     // }}
                   >
-                    {step === 8 ? (
+                    {step === 10 ? (
                       <div className="final-step">
                         {!isAuthenticated ? (
                           <div className="login-methods-buttons">
@@ -860,7 +891,7 @@ export default function Wizard() {
                     ) : (
                       steps[step].choices.map((choice) => (
                         <div className="custom-check" key={choice.id}>
-                          {step === 7 ? (
+                          {step === 9 ? (
                             <div className="description-box-parent">
                               <textarea
                                 placeholder="Describe your idea in few line ..."
@@ -881,7 +912,7 @@ export default function Wizard() {
                               />
                               <div className="description-info">
                                 <small
-                                  style={{ color: "black", fontWeight: "300" }}
+                                  style={{ color: "black", fontSize:"12px", fontWeight: "300" }}
                                 >
                                   {formData.description?.length || 0}/250
                                   characters written |{" "}

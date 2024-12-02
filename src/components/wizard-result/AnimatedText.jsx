@@ -1,38 +1,33 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-
 const AnimatedText = ({ score }) => {
   const [currentScore, setCurrentScore] = useState(0);
-
   useEffect(() => {
-    // If score is not defined, do nothing
-    if (!score) return;
-
-    const duration = 2000; // Animation duration in milliseconds
-    const steps = 60; // Number of steps in the animation
+    if (typeof score !== "number" || isNaN(score)) return; 
+    const duration = 2000; 
+    const steps = 60; 
     const increment = score / steps;
     let current = 0;
-
     const interval = setInterval(() => {
       current += increment;
       if (current >= score) {
         clearInterval(interval);
-        setCurrentScore(score); // Ensure it ends at the exact score
+        setCurrentScore(score); 
       } else {
-        setCurrentScore(Math.floor(current));
+        setCurrentScore(current);
       }
     }, duration / steps);
-
-    return () => clearInterval(interval); // Cleanup on component unmount
+    return () => clearInterval(interval); 
   }, [score]);
-
   return (
     <>
-      {currentScore}
+      {typeof currentScore === "number" && !isNaN(currentScore)
+        ? currentScore.toFixed(2)
+        : "0.00"}
     </>
   );
 };
 AnimatedText.propTypes = {
- score: PropTypes.number.isRequired, // Ensure score is a required number
+  score: PropTypes.number.isRequired, 
 };
 export default AnimatedText;

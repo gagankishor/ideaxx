@@ -1,4 +1,4 @@
-import { Activity } from "lucide-react";
+// import { Activity ,Store} from "lucide-react";
 import PropTypes from "prop-types";
 
 const LightingCard = ({ consumption }) => {
@@ -38,7 +38,9 @@ const LightingCard = ({ consumption }) => {
               <span className="text-gray-600 text-sm"></span>
             </div>
           </div>
-          <Activity size={16} className="text-gray-600 hidden sm:block" />
+          {/* <Activity size={16} className="text-gray-600 hidden sm:block" /> */}
+          <img src={consumption?.imageUrl} className="mx-auto w-14  text-[#686868]" alt="idea" />
+
         </div>
       </div>
     </div>

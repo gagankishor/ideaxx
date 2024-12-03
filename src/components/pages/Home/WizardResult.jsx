@@ -1371,7 +1371,7 @@ const WizardResult = () => {
                       label: `${(
                         parseFloat(TeamAndResourcesData) / 5 +
                         ((20 - parseFloat(TeamAndResourcesData) / 5) * 60) / 100
-                      ).toFixed(1)}%`,
+                      ).toFixed(2)}%`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaChartLine />,
@@ -1394,7 +1394,7 @@ const WizardResult = () => {
                             5) *
                           60) /
                           100
-                      ).toFixed(1)}%`,
+                      ).toFixed(2)}%`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                       icon: <FaAward />,
@@ -1417,7 +1417,7 @@ const WizardResult = () => {
                             5) *
                           60) /
                           100
-                      ).toFixed(1)}%`,
+                      ).toFixed(2)}%`,
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
@@ -1445,7 +1445,7 @@ const WizardResult = () => {
                             5) *
                           60) /
                           100
-                      ).toFixed(1)}%`,
+                      ).toFixed(2)}%`,
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -1462,7 +1462,7 @@ const WizardResult = () => {
                         parseFloat(data?.marketPotential) / 5 +
                         ((20 - parseFloat(data?.marketPotential) / 5) * 60) /
                           100
-                      ).toFixed(1)}%`,
+                      ).toFixed(2)}%`,
                       position:
                         "top-80 mt-12 -left-10 md:mt-0 md:-top-14 md:left-3 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc) ",

@@ -12,7 +12,7 @@ const AnimatedText = ({ score }) => {
       current += increment;
       if (current >= score) {
         clearInterval(interval);
-        setCurrentScore(score); 
+        setCurrentScore(score.toFixed(2)); 
       } else {
         setCurrentScore(current.toFixed(2));
       }

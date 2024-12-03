@@ -29,7 +29,6 @@ const LightingCard = ({ consumption }) => {
             <div className="text-gray-800 text-3xl font-semibold mb-1 text-center sm:text-left">
               {consumption.percentage}%
             </div>
-
             {/* Current consumption */}
             <div className="flex items-center justify-center sm:justify-start space-x-1">
               <span className="text-gray-800 text-xl font-semibold">

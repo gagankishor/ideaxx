@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { X, Instagram, Send, Youtube } from "lucide-react";
 import {
   AlertDialog,
@@ -6,6 +6,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import PropTypes from "prop-types";
 
 const ReferralPopup = ({ isOpen, onClose }) => {
   const [emailInputs, setEmailInputs] = useState([""]);
@@ -135,7 +136,7 @@ const ReferralPopup = ({ isOpen, onClose }) => {
               Your Rewards
             </h3>
             <p className="text-blue-600 text-sm">
-              You've earned{" "}
+              You&rsquo;ve earned{" "}
               <span className="font-bold">
                 {getTotalRewards()} free{" "}
                 {getTotalRewards() === 1 ? "test" : "tests"}!
@@ -147,5 +148,8 @@ const ReferralPopup = ({ isOpen, onClose }) => {
     </AlertDialog>
   );
 };
-
+ReferralPopup.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose:PropTypes.bool.isRequired 
+};
 export default ReferralPopup;

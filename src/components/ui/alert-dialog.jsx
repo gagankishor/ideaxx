@@ -1,9 +1,9 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 export const AlertDialog = ({ open, onOpenChange, children }) => {
   return (
     <div
-      className={`fixed inset-0 z-50 ${open ? 'flex' : 'hidden'} justify-center items-center bg-black bg-opacity-50`}
+      className={`fixed inset-0 z-50 ${open ? 'flex' : 'hidden'} justify-center items-center`}
       role="dialog"
       aria-modal="true"
     >
@@ -16,6 +16,12 @@ export const AlertDialog = ({ open, onOpenChange, children }) => {
   );
 };
 
+AlertDialog.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onOpenChange: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
 export const AlertDialogContent = ({ className, children }) => {
   return (
     <div
@@ -26,13 +32,33 @@ export const AlertDialogContent = ({ className, children }) => {
     </div>
   );
 };
+
+AlertDialogContent.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+AlertDialogContent.defaultProps = {
+  className: '',
+};
+
 export const AlertDialogHeader = ({ children }) => {
   return <div className="mb-4">{children}</div>;
 };
+
+AlertDialogHeader.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export const AlertDialogTitle = ({ className, children }) => {
-  return (
-    <h2 className={`text-xl font-semibold ${className}`}>
-      {children}
-    </h2>
-  );
+  return <h2 className={`text-xl font-semibold ${className}`}>{children}</h2>;
+};
+
+AlertDialogTitle.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+AlertDialogTitle.defaultProps = {
+  className: '',
 };

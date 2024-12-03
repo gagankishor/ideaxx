@@ -305,7 +305,7 @@ const Plans = () => {
               <h2 className="plan-title">One Life-Time Plan START-UP</h2>
               <ul className="plan-features">
                 {startupFeatures.map((feature, index) => (
-                  <li className="flex flex-col">
+                  <li key={index} className="flex flex-col">
                     <div className=" text-left " style={{textAlign:"left"}}>
                       <span>✔</span>
                       {feature.title}
@@ -325,7 +325,7 @@ const Plans = () => {
               <ul className="plan-features">
                 <ul className="plan-features">
                   {enterpriseFeatures.map((feature, index) => (
-                    <li className="flex flex-col">
+                    <li key={index} className="flex flex-col">
                       <div className=" text-left">
                         <span>✔</span>
                         {feature.title}

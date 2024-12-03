@@ -187,49 +187,54 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61568750836670"
               aria-label="Facebook"
               className="hover:text-blue-600"
+              target="_blank"
             >
               <FaFacebook />
             </a>
             <a
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/channel/UCrdNUxGAjUbpd7JmyIjer8Q"
               aria-label="YouTube"
+              target="_blank"
               className="hover:text-red-600"
             >
               <FaYoutube />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/ide.ax1/"
               aria-label="Instagram"
+              target="_blank"
               className="hover:text-pink-600"
             >
               <FaInstagram />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/Ideax2025"
               aria-label="Twitter"
+              target="_blank"
               className="hover:text-blue-400"
             >
               <FaTwitter />
             </a>
             <a
-              href="https://in.pinterest.com/"
+              href="https://pin.it/21RIzmMEz"
               aria-label="Pinterest"
+              target="_blank"
               className="hover:text-red-600"
             >
               <FaPinterest />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/showcase/ideaxx/posts/?feedView=all"
               aria-label="LinkedIn"
+              target="_blank"
               className="hover:text-blue-600"
             >
               <FaLinkedin />
             </a>
           </div>
-          {/* Footer Links */}
           <div className="flex space-x-4 ">
             <Link href="/termsOfService">Terms of Use</Link>
             <Link href="/privacyPolicy">Privacy Policy</Link>

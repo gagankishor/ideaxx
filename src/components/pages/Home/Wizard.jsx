@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { BsStars } from "react-icons/bs";
@@ -15,6 +15,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import { CiMail } from "react-icons/ci";
 import { MdVerified } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import ReferralPopup from "./components/wizard/ReferralPopup";
 
 export default function Wizard() {
   const router = useRouter();
@@ -38,8 +39,8 @@ export default function Wizard() {
   const [secondsLeft, setSecondsLeft] = useState(300); // 300 seconds = 5 minutes
   const [canResend, setCanResend] = useState(false);
   const [countriesChoices, setCountriesChoices] = useState([]);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  
   useEffect(() => {
     const fetchCountries = async () => {
       try {
@@ -51,16 +52,16 @@ export default function Wizard() {
           label: country.country.toUpperCase(), // Capitalizes the country name
           value: `${country.score}`, // Assuming score is available in country data
         }));
-        setCountriesChoices(transformedChoices)
+        setCountriesChoices(transformedChoices);
       } catch (err) {
-        console.log(err)
+        console.log(err);
       } finally {
         setLoading(false);
       }
     };
     fetchCountries();
   }, []);
-  const steps = [             
+  const steps = [
     {
       title: "It all starts with an idea",
       description:
@@ -246,7 +247,7 @@ export default function Wizard() {
         { id: "i6b", label: "No", value: "2" },
       ],
       bgColor: "#F9CC48",
-    }, 
+    },
     {
       title: "What is your investment plan for your idea?",
       description:
@@ -281,9 +282,9 @@ export default function Wizard() {
       bgColor: "#0D004C",
     },
     {
-      title: "What is your estimated daily availability for working on your idea?",
-      description:
-        "",
+      title:
+        "What is your estimated daily availability for working on your idea?",
+      description: "",
       choices: [
         { id: "i9a", label: "1 - 2 hours per day", value: "1" },
         { id: "i9b", label: "3 - 4 hours per day", value: "3" },
@@ -293,8 +294,7 @@ export default function Wizard() {
     },
     {
       title: "What is your estimated timeline for building your business?",
-      description:
-        "",
+      description: "",
       choices: [
         { id: "i8a", label: "2 to 3 months", value: "1" },
         { id: "i8b", label: "4 to 6 months.", value: "3" },
@@ -304,7 +304,8 @@ export default function Wizard() {
     },
     {
       title: "Tell us more about your idea",
-      description: "Please describe your idea in 50 to 250 letters. What is your idea? Who is it designed for? What makes it unique or special?",
+      description:
+        "Please describe your idea in 50 to 250 letters. What is your idea? Who is it designed for? What makes it unique or special?",
       choices: [{ id: "i8a", label: "India", value: "5" }],
       bgColor: "#8781BD",
       options: [{}],
@@ -327,7 +328,6 @@ export default function Wizard() {
         setShowError("Please describe your idea in at least 50 characters.");
       } else {
         setShowError(null);
-        
       }
     } catch (error) {
       console.error("Error validating text:", error);
@@ -347,42 +347,46 @@ export default function Wizard() {
           confirmButtonText: "OK",
         });
       } else if (showError === null) {
-        
         try {
           if (previousValue !== formData?.description) {
-            if(formData?.description<50){
+            if (!formData?.description || formData.description.length < 50) {
               Swal.fire({
                 title: "Info",
                 text: "Please enter atlest 50 charecter text.",
                 icon: "info",
                 confirmButtonText: "OK",
               });
-            }else{
-
+            } else {
               setShowError("Checking...");
               const response = await axios.post(`${RestAPI}/ai/text-checker`, {
-              text: formData.description,
-            });
-            if (response.data.data.isvalid === false) {
-              setShowError("Please enter valid text.");
-              Swal.fire({
-                title: "Info",
-                text: "Please enter valid text.",
-                icon: "info",
-                confirmButtonText: "OK",
+                text: formData.description,
               });
-              return false;
-            } else {
-              setShowError(null);
-              return showError === null;
+              if (response.data.data.isvalid === false) {
+                setShowError("Please enter valid text.");
+                Swal.fire({
+                  title: "Info",
+                  text: "Please enter valid text.",
+                  icon: "info",
+                  confirmButtonText: "OK",
+                });
+                return false;
+              } else {
+                setShowError(null);
+                return showError === null;
+              }
             }
-            }
+          } else if (formData?.description < 50) {
+            Swal.fire({
+              title: "Info",
+              text: "Please enter atlest 50 charecter text.",
+              icon: "info",
+              confirmButtonText: "OK",
+            });
           } else {
             setPreviousValue(formData?.description);
           }
         } catch (e) {
           setShowError("Server Error");
-
           return false;
         }
       } else {
@@ -398,9 +402,7 @@ export default function Wizard() {
       let textmassge = "Please make a selection before proceeding.";
       if (step === 9) {
         textmassge = showError;
-      }
-      else {
-
+      } else {
         Swal.fire({
           title: "Info",
           text: textmassge,
@@ -471,8 +473,11 @@ export default function Wizard() {
           // setResult(data);
           setLoading(false);
           // navigate("/plan-details");
-          localStorage.setItem("wizardResultData",JSON.stringify(response.data.data))
-          router.push('/wizard-result')
+          localStorage.setItem(
+            "wizardResultData",
+            JSON.stringify(response.data.data)
+          );
+          router.push("/wizard-result");
           // redirect('/wizard-result')
           // router.push({
           //   pathname: '/wizard-result',
@@ -503,7 +508,7 @@ export default function Wizard() {
             ) {
               // Redirect to plan details if the button is "View Plan"
               // window.location.href = "/plan-details";
-              console.log(result)
+              console.log(result);
             }
             // else{
             //   window.location.href = "/"
@@ -551,13 +556,16 @@ export default function Wizard() {
       if (response.data.message) {
         // setResult(data);
         setLoading(false);
-        localStorage.setItem("wizardResultData",JSON.stringify(response.data.data))
+        localStorage.setItem(
+          "wizardResultData",
+          JSON.stringify(response.data.data)
+        );
 
-        router.push('/wizard-result')
+        router.push("/wizard-result");
 
         // router.push({
         //   pathname: '/wizard-result',
-        //   query: { data: JSON.stringify(data.data) }, 
+        //   query: { data: JSON.stringify(data.data) },
         // });
       } else {
         Swal.fire({
@@ -577,7 +585,7 @@ export default function Wizard() {
           ) {
             // Redirect to plan details if the button is "View Plan"
             // window.location.href = "/plan-details";
-            console.log(result)
+            console.log(result);
           }
           // else{
           //   window.location.href = "/"
@@ -656,12 +664,15 @@ export default function Wizard() {
             // setResult(data);
             setLoading(false);
             setIsOpenLogin(false);
-            localStorage.setItem("wizardResultData",JSON.stringify(response.data.data))
-            router.push('/wizard-result')
+            localStorage.setItem(
+              "wizardResultData",
+              JSON.stringify(response.data.data)
+            );
+            router.push("/wizard-result");
 
             // router.push({
             //   pathname: '/wizard-result',
-            //   query: { data: JSON.stringify(data.data) }, 
+            //   query: { data: JSON.stringify(data.data) },
             // });
           } else {
             Swal.fire({
@@ -750,9 +761,9 @@ export default function Wizard() {
       const timer = setInterval(() => {
         setSecondsLeft((prev) => prev - 1);
       }, 1000);
-      return () => clearInterval(timer); 
+      return () => clearInterval(timer);
     } else {
-      setCanResend(true); 
+      setCanResend(true);
     }
   }, [secondsLeft]);
 
@@ -871,6 +882,17 @@ export default function Wizard() {
                                 />
                               </div>
                             )}
+                            <button
+                              type="button"
+                              onClick={() => setIsPopupOpen(true)}
+                              className="p-3 mt-10 bg-blue-500 text-white rounded-lg"
+                            >
+                              Refer and get more free test
+                            </button>
+                            <ReferralPopup
+                              isOpen={isPopupOpen}
+                              onClose={() => setIsPopupOpen(false)}
+                            />
                           </div>
                         )}
                       </div>
@@ -886,7 +908,6 @@ export default function Wizard() {
                             {option.label}
                           </option>
                         ))}
-                        
                       </select>
                     ) : (
                       steps[step].choices.map((choice) => (
@@ -912,7 +933,11 @@ export default function Wizard() {
                               />
                               <div className="description-info">
                                 <small
-                                  style={{ color: "black", fontSize:"12px", fontWeight: "300" }}
+                                  style={{
+                                    color: "black",
+                                    fontSize: "12px",
+                                    fontWeight: "300",
+                                  }}
                                 >
                                   {formData.description?.length || 0}/250
                                   characters written |{" "}
@@ -934,8 +959,10 @@ export default function Wizard() {
                                         <div className="spinner2"></div>
                                       </div>
                                     </div>
-                                  ) : ( formData?.description?.length < 50?
-                                    showError:" "
+                                  ) : formData?.description?.length < 50 ? (
+                                    showError
+                                  ) : (
+                                    " "
                                   )}
                                 </small>
                               )}
@@ -1054,7 +1081,7 @@ export default function Wizard() {
               src={`wizard4/${step + 1}.webp`}
               alt="wizard 4"
               style={{
-                width:  "100%",
+                width: "100%",
                 position: "absolute",
               }}
             />

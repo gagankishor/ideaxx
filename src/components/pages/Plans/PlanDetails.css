@@ -65,7 +65,7 @@
     font-size: 1rem;
     color: #444;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
   }
   
   .plan-features li span {

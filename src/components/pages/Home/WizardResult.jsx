@@ -16,7 +16,7 @@ import {
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaRegLightbulb } from "react-icons/fa6";
 import Link from "next/link";
 import { HiBuildingOffice } from "react-icons/hi2";
 import { IoBusiness } from "react-icons/io5";
@@ -399,7 +399,7 @@ const WizardResult = () => {
         </p>
       </div>
       <div className="grid max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-10 py-4 bg-white text-gray-800">
-        <div className="flex flex-col gap-6">
+        {/* <div className="flex flex-col gap-6">
           <div className="bg-white p-4 rounded-lg shadow ">
             <h2 className="text-sm text-gray-600 mb-4">Idea Score</h2>
             <div className="flex flex-col sm:flex-row items-center sm:items-start">
@@ -410,7 +410,7 @@ const WizardResult = () => {
                 strokeWidth={14}
               >
                 <div className="text-center">
-                  <FaLightbulb
+                  <FaRegLightbulb
                     className="mx-auto mb-2 text-[#686868]"
                     size={34}
                   />
@@ -432,9 +432,7 @@ const WizardResult = () => {
               </div>
             </div>
           </div>
-
           <div className="bg-white flex flex-col md:flex-row justify-between p-4 rounded-lg shadow ">
-            {/* <h2 className="text-sm text-gray-600 mb-4">ENERGY COSTS</h2> */}
             <div className="space-y-4 w-[50%]">
               <div>
                 <div className="text-sm text-gray-600">IDEA</div>
@@ -444,22 +442,19 @@ const WizardResult = () => {
                     : parseInt(data?.phase1) == 3
                     ? "I made a plan for it"
                     : "I already started"}
-                  {/* {parseInt(data?.phase1) * 3.17 * 5} % */}
                 </div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">current job related to idea</div>
+                <div className="text-sm text-gray-600">
+                  current job related to idea
+                </div>
                 <div className="text-lg">
-                  {parseInt(data?.phase4) == 5
-                    ? "Yes"
-                    : "No"}
-                  {/* {parseInt(data?.phase2) * 3.17 * 5} % */}
+                  {parseInt(data?.phase4) == 5 ? "Yes" : "No"}
                 </div>
               </div>
               <div>
                 <div className="text-sm text-gray-600">Investment </div>
                 <div className="text-lg">
-                  {/* {parseInt(data?.phase5) * 3.17 * 5} % */}
                   {parseInt(data?.phase5) == 1
                     ? "Less than 1 Lakh "
                     : parseInt(data?.phase5) == 2
@@ -478,7 +473,6 @@ const WizardResult = () => {
                   Experience with your idea
                 </div>
                 <div className="text-lg">
-                  {/* {parseInt(data?.phase6) * 3.17 * 5} % */}
                   {parseInt(data?.phase6) == 0
                     ? "No experience"
                     : parseInt(data?.phase6) == 3
@@ -490,11 +484,111 @@ const WizardResult = () => {
               </div>
               <div>
                 <div className="text-sm text-gray-600">Country</div>
-                <div className="text-lg">
+                <div className="text-lg">{data?.country}</div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        <div className="bg-white p-4 rounded-lg shadow">
+          <h2 className="text-sm text-gray-600 mb-4">Idea Score</h2>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
+            <CircularProgress
+              percentage={metrics.lighting.percentage}
+              color={metrics.lighting.color}
+              size={120}
+              strokeWidth={14}
+            >
+              <div className="text-center">
+              <FaRegLightbulb
+                    className="mx-auto mb-2 text-[#686868]"
+                    size={34}
+                  />
+              </div>
+            </CircularProgress>
+            <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
+              <div className="text-4xl md:text-5xl font-bold">
+                <AnimatedText score={metrics.lighting.percentage} /> %
+              </div>
+              <div className="mt-auto">
+                <div className="text-sm text-gray-500">Success Chance</div>
+                <div className="text-2xl">{metrics.lighting.value}</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-200 h-[1px] w-full my-5"></div>
+          <div className="space-y-4">
+            <div className=" flex flex-col justify-between md:flex-row">
+              <div className="w-[50%]">
+                <div className=" ">
+                  <div className="text-sm text-gray-600">Idea</div>
+                  <div className="text-xl">
+                  {parseInt(data?.phase1) == 1
+                    ? "It is still an idea"
+                    : parseInt(data?.phase1) == 3
+                    ? "I made a plan for it"
+                    : "I already started"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">
+                  Investment
+                  </div>
+                  <div className="text-xl">
+                  {parseInt(data?.phase5) == 1
+                    ? "Less than 1 Lakh "
+                    : parseInt(data?.phase5) == 2
+                    ? "1 Lakh ₹ - 10 Lakh ₹"
+                    : parseInt(data?.phase5) == 3
+                    ? "10 Lakh ₹ - 50 Lakh ₹"
+                    : parseInt(data?.phase5) == 4
+                    ? "50 Lakh ₹ - 1 Crore ₹"
+                    : "More than 1 Crore ₹"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">current job related to idea</div>
+                  <div className="text-xl">
+                  {parseInt(data?.phase4) == 5 ? "Yes" : "No"}
+                  </div>
+                </div>
+              </div>
+              <div className="w-[50%]">
+                <div>
+                  <div className="text-sm text-gray-600">
+                  Experience with your idea
+                  </div>
+                  <div className="text-xl">
+                  {parseInt(data?.phase6) == 0
+                    ? "No experience"
+                    : parseInt(data?.phase6) == 3
+                    ? "1 - 3 Years"
+                    : parseInt(data?.phase6) == 4
+                    ? "3 - 5 Years"
+                    : "More than 5 years"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">Country</div>
+                  <div className="text-xl">
                   {data?.country}
+                  </div>
                 </div>
               </div>
             </div>
+            {/* <div className="flex justify-between">
+              <div>
+                <div className="text-sm text-gray-600">TREND PEV. MONTH</div>
+                <div className="text-red-500">
+                  {metrics.consumption.trendUp} ▼
+                </div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600">TREND CURRENT MONTH</div>
+                <div className="text-green-500">
+                  {metrics.consumption.trendDown} ▲
+                </div>
+              </div>
+            </div> */}
           </div>
         </div>
         <div className="bg-white p-4 rounded-lg shadow">
@@ -507,11 +601,7 @@ const WizardResult = () => {
               strokeWidth={14}
             >
               <div className="text-center">
-                {/* <HiBuildingOffice
-                  className="mx-auto mb-2 text-[#686868]"
-                  size={34}
-                /> */}
-                <Store className="mx-auto mb-2 text-[#686868]" />
+                <Store className="mx-auto mb-2 text-[#686868]" size={34} />
               </div>
             </CircularProgress>
             <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
@@ -524,7 +614,7 @@ const WizardResult = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white h-[1px] w-full my-5"></div>
+          <div className="bg-gray-200 h-[1px] w-full my-5"></div>
           <div className="space-y-4">
             <div className=" flex flex-col justify-between md:flex-row">
               <div className="w-[50%]">
@@ -577,7 +667,7 @@ const WizardResult = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-between">
+            {/* <div className="flex justify-between">
               <div>
                 <div className="text-sm text-gray-600">TREND PEV. MONTH</div>
                 <div className="text-red-500">
@@ -590,7 +680,7 @@ const WizardResult = () => {
                   {metrics.consumption.trendDown} ▲
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -607,10 +697,9 @@ const WizardResult = () => {
                 <img
                   src="/result-page/Layer9.png"
                   className="mx-auto w-12  text-[#686868]"
-                  alt="idea"
+                  alt="idea graph icon"
+                  size={34}
                 />
-
-                {/* <BiSolidZap className="mx-auto mb-2 text-[#686868]" size={34} /> */}
               </div>
             </CircularProgress>
           </div>
@@ -620,17 +709,12 @@ const WizardResult = () => {
             </div>
             <div className="text-xl mt-2 text-center">
               {metrics.instant.value}
-              <span className="text-sm ml-1"></span>
+              <span className="text-sm ml-1"></span> 
             </div>
           </div>
         </div>
       </div>
       <div className="max-w-[1400px] m-auto ">
-        {/* <div className="fixed bottom-3 w-full z-50 sm:hidden flex justify-center items-center">
-          <div className="mx-10 text-center w-[96%] text-xl rounded-lg h-16 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-medium flex items-center justify-center">
-            Launch Your Idea Free
-          </div>
-        </div> */}
         <section
           id="market"
           className="business-check-container border-gray-300 border  m-auto mt-10 flex flex-col-reverse lg:flex-row lg:mx-10 p-5"
@@ -1293,7 +1377,6 @@ const WizardResult = () => {
                       <textarea
                         placeholder="Describe your idea in few line ..."
                         value={data?.idea_description || ""}
-                        
                         className="description-box mt-12"
                         aria-label="Description box"
                         rows="3"

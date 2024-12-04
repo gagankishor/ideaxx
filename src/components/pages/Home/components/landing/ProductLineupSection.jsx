@@ -145,10 +145,10 @@ const ProductLineupSection = () => {
                     Team 
                   </h3>
                 </div>
-                <p className="text-white text-sm text-center max-w-[70%]">
+                {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
                   the image.{" "}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -171,10 +171,10 @@ const ProductLineupSection = () => {
                   Business Tools
                   </h3>
                 </div>
-                <p className="text-white text-sm text-center max-w-[70%]">
+                {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
                   the image.{" "}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -197,16 +197,16 @@ const ProductLineupSection = () => {
                     Website Design
                   </h3>
                 </div>
-                <p className="text-white text-sm text-center max-w-[70%]">
+                {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
                   the image.{" "}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image5.jpg"
+              src="/home-platform/image4.jpeg"
               className="w-full"
               alt="Image 4"
             />
@@ -220,17 +220,17 @@ const ProductLineupSection = () => {
                     className=" bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    New Idea
+                    Team
                   </h3>
                 </div>
-                <p className="text-white text-sm text-center max-w-[70%]">
+                {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
                   the image.{" "}
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
       {/* <div
         style={{

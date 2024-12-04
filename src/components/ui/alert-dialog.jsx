@@ -32,7 +32,6 @@ export const AlertDialogContent = ({ className, children }) => {
     </div>
   );
 };
-
 AlertDialogContent.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
@@ -41,7 +40,6 @@ AlertDialogContent.propTypes = {
 AlertDialogContent.defaultProps = {
   className: '',
 };
-
 export const AlertDialogHeader = ({ children }) => {
   return <div className="mb-4">{children}</div>;
 };

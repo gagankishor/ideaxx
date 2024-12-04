@@ -65,8 +65,8 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/collaboration.webp"
-                src="/darksection1/collaboration1.webp"
-                alt="Product"
+                src="/darksection1/security.jpg"
+                alt="Security"
                 className="product-image"
               />
               <p className=" p-4 text-white text-justify">
@@ -80,8 +80,8 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/collaboration.webp"
-                src="/darksection1/collaboration1.webp"
-                alt="Product"
+                src="/darksection1/Efficiency.jpg"
+                alt="Efficiency"
                 className="product-image"
               />
               <p className=" p-4 text-white text-justify">
@@ -142,7 +142,7 @@ const ProductLineupSection = () => {
                     className=" bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Brand Name
+                    Team 
                   </h3>
                 </div>
                 <p className="text-white text-sm text-center max-w-[70%]">
@@ -168,7 +168,7 @@ const ProductLineupSection = () => {
                     className="bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Brand Name
+                  Business Tools
                   </h3>
                 </div>
                 <p className="text-white text-sm text-center max-w-[70%]">
@@ -194,7 +194,7 @@ const ProductLineupSection = () => {
                     className=" bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Brand Name
+                    Website Design
                   </h3>
                 </div>
                 <p className="text-white text-sm text-center max-w-[70%]">
@@ -206,7 +206,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image.png"
+              src="/home-platform/image5.jpg"
               className="w-full"
               alt="Image 4"
             />
@@ -220,7 +220,7 @@ const ProductLineupSection = () => {
                     className=" bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Brand Name
+                    New Idea
                   </h3>
                 </div>
                 <p className="text-white text-sm text-center max-w-[70%]">

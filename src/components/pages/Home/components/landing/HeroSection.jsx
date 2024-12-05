@@ -24,12 +24,12 @@ const HeroSection = () => {
         transition={{ duration: 0.8 }}
       >
         <img
-          src="/landing/image.png" // Replace with your Solana logo path
+          src="/landing/image.png"
           alt="Solana Logo"
           className="h-12"
         />
         <img
-          src="/logo.png" // Replace with your IDX logo path
+          src="/logo.png" 
           alt="IDX Logo"
           className="h-16"
         />
@@ -47,10 +47,10 @@ const HeroSection = () => {
 
       {/* Call to Action Buttons */}
      
-      <div className="btns-container">
+      <div className="btns-container" style={{paddingX:'40px'}}>
           <Link
-            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            style={{ fontSize: "14px" }}
+            className="btn  flex items-center justify-center gap-2 px-4 py-4 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 pr-10"
+            style={{ fontSize: "14px",paddingRight:'35px' }}
             href="/mainWizard"
           >
             Get Started <FaArrowAltCircleRight />

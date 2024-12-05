@@ -115,13 +115,14 @@ const ProductLineupSection = () => {
         </p>
         <div className=" flex flex-row items-center justify-center">
           <div className=" flex flex-col justify-center items-center">
-
-          <img
-            src="landing/validetionImage.png"
-            alt="Ideax AI"
-            style={{ width: "48%", margin: "" }}
-          />
-          <p className=" text-center text-white">Get your idea certified and boost its credibility instantly</p>
+            <img
+              src="landing/validetionImage.png"
+              alt="Ideax AI"
+              style={{ width: "48%", margin: "" }}
+            />
+            <p className=" text-center text-white">
+              Get your idea certified and boost its credibility instantly
+            </p>
           </div>
           <img
             src="landing/ideas.webp"
@@ -145,9 +146,7 @@ const ProductLineupSection = () => {
                     width={40}
                     className=" bg-white rounded-md p-1"
                   />
-                  <h3 className="text-white text-xl font-bold mb-1">
-                    Team 
-                  </h3>
+                  <h3 className="text-white text-xl font-bold mb-1">Team</h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
@@ -159,7 +158,6 @@ const ProductLineupSection = () => {
           <div className="relative p-[1px] md:w-[48%]">
             <img
               src="/platforms/webpafe_landscape_eq.jpg"
-
               className="w-full"
               alt="Image 2"
             />
@@ -173,7 +171,7 @@ const ProductLineupSection = () => {
                     className="bg-white rounded-md p-1"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                  Business Tools
+                    Business Tools
                   </h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
@@ -224,9 +222,7 @@ const ProductLineupSection = () => {
                     width={40}
                     className=" bg-white rounded-md p-1"
                   />
-                  <h3 className="text-white text-xl font-bold mb-1">
-                    Team
-                  </h3>
+                  <h3 className="text-white text-xl font-bold mb-1">Team</h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
@@ -235,7 +231,7 @@ const ProductLineupSection = () => {
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
       {/* <div
         style={{
@@ -366,20 +362,21 @@ const ProductLineupSection = () => {
             </h2>
 
             <div className="btns-container">
-          <Link
-            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            style={{ fontSize: "14px" }}
-            href="/mainWizard"
-          >
-            Test Your Idea <FaArrowAltCircleRight />
-          </Link>
-        </div>
+              <Link
+                className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                style={{ fontSize: "14px" }}
+                href="/mainWizard"
+              >
+                Test Your Idea <FaArrowAltCircleRight />
+              </Link>
+            </div>
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
                 width: "100%",
               }}
+              className="mt-10"
             >
               <img
                 src="darksection1/image.png"
@@ -389,7 +386,7 @@ const ProductLineupSection = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10">
+        <div className="mt-8">
           <h3 className="text-3xl font-semibold text-center mb-8 text-white">
             What Our Clients Say About Us
           </h3>
@@ -406,7 +403,7 @@ const ProductLineupSection = () => {
                 quote:
                   "The AI features have significantly improved our decision-making process.",
                 author: "Mr Vikas Puri",
-                role: "JMD EXPORTS Managing Director",
+                role: "JMD EXPORTS M. D.",
 
                 image: "/landing/efacd3a2-633e-4ea0-8813-21e574eb1291.jpg",
                 company: "TechStart",
@@ -416,7 +413,7 @@ const ProductLineupSection = () => {
                   "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
                 author: "Mr. Eyad Abdulla COO",
                 role: "Diamond GVT Ceramic",
-                image: "/landing/33bc43ad-e037-4b6b-8b23-2b23eabab5b2.jpg",
+                image: "/landing/ventom.jpeg",
                 company: "Visionary Inc.",
               },
               {
@@ -430,7 +427,7 @@ const ProductLineupSection = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="max-w-sm mx-auto bg-white text-black p-8 rounded-xl flex flex-col items-center shadow-lg relative mt-10"
+                className="max-w-sm mx-auto  text-white p-8  flex flex-col items-center  relative mt-10"
               >
                 <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
                   <img
@@ -445,8 +442,10 @@ const ProductLineupSection = () => {
                   <h4 className="font-semibold text-lg">
                     {testimonial.author}
                   </h4>
-                  <p className="text-sm mb-4">{testimonial.role}</p>
-                  <p className="text-sm italic">“{testimonial.quote}”</p>
+                  <p className="text-sm text-white mb-4">{testimonial.role}</p>
+                  <p className="text-sm text-white italic">
+                    “{testimonial.quote}”
+                  </p>
                 </div>
               </div>
             ))}

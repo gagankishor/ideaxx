@@ -37,7 +37,7 @@ export const Hero = () => {
         <div className="hero-block2" >
           <img src="/roadmap.webp" alt="Business Idea Checker" className="hero-roadmap-img" />
           <div className="roadmap-card">
-            <img src="/ideaX_aa.webp" alt="Roadmap" className="roadmap-card-img" />
+            <img src="/landing/market-score.png" alt="Roadmap" className="roadmap-card-img" />
           </div>
           <motion.img
             src="/Startup-Business-Idea-Checker-Online-Ideax.webp"

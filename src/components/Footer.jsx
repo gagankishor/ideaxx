@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { FaArrowAltCircleRight, FaFacebook, FaTwitter } from "react-icons/fa";
+import { useState } from "react";
+import { FaArrowAltCircleRight, FaChevronDown, FaChevronUp, FaFacebook, FaTwitter } from "react-icons/fa";
 import {
   FaInstagram,
   FaLinkedin,
@@ -27,6 +28,106 @@ export default function Footer() {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, [lastScrollY]);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  const aiTools = [
+    { title: "Business Idea Checker", description: "Evaluate your business idea with AI assistance." },
+    { title: "Market Analysis", description: "Get insights into market trends and opportunities." },
+    { title: "Competitor Research", description: "Analyze competitors to strengthen your strategy." },
+    { title: "Profitability Assessment", description: "Assess the potential profitability of your idea." },
+    { title: "Growth Potential Insights", description: "Discover growth opportunities for your business." },
+    { title: "Investor Matchmaking", description: "Connect with potential investors for funding." },
+    { title: "Startup Roadmap", description: "Plan your startup journey with AI-guided steps." },
+  ];
+
+  const solutions = [
+    { title: "Entrepreneur Community", description: "Join a network of like-minded entrepreneurs." },
+    { title: "Collaborative Workspace", description: "Work together with tools for collaboration." },
+    { title: "Industry-Specific Insights", description: "Receive tailored insights for your industry." },
+    { title: "AI-Powered Reports", description: "Generate detailed reports using AI." },
+    { title: "Financial Planning Tools", description: "Plan your finances effectively." },
+    { title: "Business Strategy", description: "Develop comprehensive business strategies." },
+    { title: "Global Market Reach", description: "Expand your reach to global markets." },
+  ];
+
+  const services = [
+    { title: "Check And Save Your Idea", description: "Validate and securely save your business idea." },
+    { title: "Business Identity", description: "Establish a strong brand identity." },
+    { title: "Marketing", description: "Enhance your marketing efforts with AI." },
+    { title: "Legal Documentation", description: "Simplify your legal paperwork." },
+    { title: "Virtual Team", description: "Build and manage a remote team." },
+    { title: "Business Tools", description: "Access tools to optimize your business operations." },
+    { title: "Cash Flow Management", description: "Monitor and manage your business cash flow." },
+  ];
+  const services2 = [
+    {
+      title: "Consulting",
+      description: "Receive expert advice tailored to your business challenges and goals.",
+    },
+    {
+      title: "Entrepreneur",
+      description: "Support and resources to help entrepreneurs build and grow their businesses.",
+    },
+    {
+      title: "Strategies Planning",
+      description: "Develop actionable strategies to achieve your business objectives.",
+    },
+    {
+      title: "Community",
+      description: "Join a vibrant community of professionals and entrepreneurs for networking.",
+    },
+    {
+      title: "Buy-Sell Your Idea",
+      description: "Connect with buyers or sellers to trade innovative business ideas.",
+    },
+  ];
+  // <ul className="space-y-2 text-left">
+  //           <li>
+  //             <Link href="#services">Consulting</Link>
+  //           </li>
+  //           <li>
+  //             <Link href="#services">Entrepreneur</Link>
+  //           </li>
+  //           <li>
+  //             <Link href="#services">Strategies Planing</Link>
+  //           </li>
+  //           <li>
+  //             <Link href="#services">Community</Link>
+  //           </li>
+  //           <li>
+  //             <Link href="#services">Buy-Sell Your Idea</Link>
+  //           </li>
+  //         </ul>
+  const renderDropdownList = (items, startIndex) => (
+    <ul className="space-y-2 text-left">
+      {items.map((item, index) => {
+        const fullIndex = startIndex + index;
+        const isActive = activeDropdown === fullIndex;
+        return (
+          <li key={index}>
+            <div
+              className="flex items-center justify-between cursor-pointer hover:text-blue-500"
+              onClick={() => toggleDropdown(fullIndex)}
+            >
+              <span>{item.title}</span>
+              {isActive ? (
+                <FaChevronUp className="text-gray-600" />
+              ) : (
+                <FaChevronDown className="text-gray-600" />
+              )}
+            </div>
+            {isActive && (
+              <p className="mt-0 text-[12px] text-gray-500 text-left pl-2">{item.description}</p>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
   return (
     <footer className="bg-white border-t-2 mt-2 pb-5 mb-52 py-4">
       <div
@@ -34,8 +135,9 @@ export default function Footer() {
       >
         <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center py-0 px-6 animate-slide-up space-y-4 md:space-y-0">
           <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
-            Validate your AI business idea with ease and confidence.
+          Business solutions platform powered by Solana network.
           </h4>
+          <img src="/landing/image.webp" alt="" />
           <div className="btns-container">
             <Link
               className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -51,103 +153,107 @@ export default function Footer() {
         {/* Product Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">AI Tools</h4>
-          <ul className="space-y-2 text-left">
+          {renderDropdownList(aiTools, 0)}
+          {/* <ul className="space-y-2 text-left">
             <li>
-              <Link href="#">Business Idea Checker</Link>
+              <Link href="#features">Business Idea Checker</Link>
             </li>
             <li>
-              <Link href="#">Market Analysis</Link>
+              <Link href="#features">Market Analysis</Link>
             </li>
             <li>
-              <Link href="#">Competitor Research</Link>
+              <Link href="#features">Competitor Research</Link>
             </li>
             <li>
-              <Link href="#">Profitability Assessment</Link>
+              <Link href="#features">Profitability Assessment</Link>
             </li>
             <li>
-              <Link href="#">Growth Potential Insights</Link>
+              <Link href="#features">Growth Potential Insights</Link>
             </li>
             <li>
-              <Link href="#">Investor Matchmaking</Link>
+              <Link href="#features">Investor Matchmaking</Link>
             </li>
             <li>
-              <Link href="#">Startup Roadmap</Link>
+              <Link href="#features">Startup Roadmap</Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
         {/* Services Column */}
         {/* Solutions Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">Solutions</h4>
-          <ul className="space-y-2 text-left">
+          {renderDropdownList(solutions, aiTools.length)}
+          {/* <ul className="space-y-2 text-left">
             <li>
-              <Link href="#">Entrepreneur Community</Link>
+              <Link href="#features">Entrepreneur Community</Link>
             </li>
             <li>
-              <Link href="#">Collaborative Workspace</Link>
+              <Link href="#features">Collaborative Workspace</Link>
             </li>
             <li>
-              <Link href="#">Industry-Specific Insights</Link>
+              <Link href="#features">Industry-Specific Insights</Link>
             </li>
             <li>
-              <Link href="#">AI-Powered Reports</Link>
+              <Link href="#features">AI-Powered Reports</Link>
             </li>
             <li>
-              <Link href="#">Financial Planning Tools</Link>
+              <Link href="#features">Financial Planning Tools</Link>
             </li>
             <li>
-              <Link href="#">Business Strategy</Link>
+              <Link href="#features">Business Strategy</Link>
             </li>
             <li>
-              <Link href="#">Global Market Reach</Link>
+              <Link href="#features">Global Market Reach</Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
         <div>
           <h4 className="font-semibold mb-4 text-left">Services</h4>
-          <ul className="space-y-2 text-left">
+          {renderDropdownList(services, aiTools.length + solutions.length)}
+          {/* <ul className="space-y-2 text-left">
             <li>
-              <Link href="#">Check And Save Your Idea</Link>
+              <Link href="#services">Check And Save Your Idea</Link>
             </li>
             <li>
-              <Link href="#">Business identity</Link>
+              <Link href="#services">Business identity</Link>
             </li>
             <li>
-              <Link href="#">Marketing</Link>
+              <Link href="#services">Marketing</Link>
             </li>
             <li>
-              <Link href="#">Legal Documentation</Link>
+              <Link href="#services">Legal Documentation</Link>
             </li>
             <li>
-              <Link href="#">Virtual Team</Link>
+              <Link href="#services">Virtual Team</Link>
             </li>
             <li>
-              <Link href="#">Business Tools</Link>
+              <Link href="#services">Business Tools</Link>
             </li>
             <li>
-              <Link href="#">Cash Flow Managment</Link>
+              <Link href="#services">Cash Flow Managment</Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
         <div>
-          <h4 className="font-semibold mb-4 text-left">Services</h4>
-          <ul className="space-y-2 text-left">
+          <h4 className="font-semibold mb-4 text-left">.</h4>
+          {renderDropdownList(services2, aiTools.length + solutions.length+ services.length)}
+          {/* <ul className="space-y-2 text-left">
             <li>
-              <Link href="#">Consulting</Link>
+              <Link href="#services">Consulting</Link>
             </li>
             <li>
-              <Link href="#">Entrepreneur</Link>
+              <Link href="#services">Entrepreneur</Link>
             </li>
             <li>
-              <Link href="#">Strategies Planing</Link>
+              <Link href="#services">Strategies Planing</Link>
             </li>
             <li>
-              <Link href="#">Community</Link>
+              <Link href="#services">Community</Link>
             </li>
             <li>
-              <Link href="#">Buy-Sell Your Idea</Link>
+              <Link href="#services">Buy-Sell Your Idea</Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
         {/* Resources Column */}
         {/* <div>

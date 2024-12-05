@@ -82,7 +82,7 @@ const AwardsSection = () => {
             <div className="blog-section ">
               <div className="blog-post mb-0">
                 <div className="flex items-center mb-0">
-                  <div className=" md:w-[90%]">
+                  <div className=" md:w-[100%]">
                     <img
                       src="/blog/1/image.png"
                       className="w-60 rounded-md"
@@ -105,7 +105,7 @@ const AwardsSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-px bg-gray-600 my-4"></div>
+              <div className="w-full h-px bg-gray-600 my-0"></div>
               <div className="blog-post mb-0">
                 <div className="flex items-center mb-0">
                   <div className=" md:w-[90%]">
@@ -131,7 +131,7 @@ const AwardsSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-px bg-gray-600 my-4"></div>
+              <div className="w-full h-px bg-gray-600 my-0 "></div>
               <div className="blog-post mb-0">
                 <div className="flex items-center mb-0">
                   <div className=" md:w-[80%]">

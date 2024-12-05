@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation,  Autoplay } from 'swiper/modules';
+import { motion } from 'framer-motion';
+
 const TrustedBySection = () => {
   return (
     <div className="base-layout-segment-component-4">
@@ -129,28 +131,48 @@ const TrustedBySection = () => {
             
           </div>
           {/* Highlight Section */}
-          <div className="logos">
-            <div className="highlight-section">
-              <div className="col col-left">
-                {/* <img
-                  src="gartner.avif"
-                  alt="Gartner logo"
-                  className="gartner-logo"
-                /> */}
-                <div className="col-left-content">
-                From Concept to Execution Your All-in-One Business Solutions
-                </div>
-              </div>
-              <p className="col col-right" style={{textAlign:'left',color:"white",fontSize:'16px'}}>
-                Welcome to ideax, the ultimate platform for entrepreneurs! 
-                <span className="highlight-text ml-1">
-                 Whether you’re brainstorming 
-                your next big idea or looking for a dedicated online team to bring it to life, we offer the tools 
-                and expertise you need to succeed.
-                </span>
-              </p>
-            </div>
-          </div>
+          <div className="px-4 sm:px-10 py-20 ">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="bg-black border border-gray-800 rounded-3xl overflow-hidden shadow-2xl"
+      >
+        <div className="flex flex-col md:flex-row items-center">
+          {/* Left Column */}
+          <motion.div 
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="w-full md:w-1/2 p-10 text-white space-y-6"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+              From Concept to Execution
+            </h1>
+            <h2 className="text-2xl font-medium text-gray-300">
+              Your All-in-One Business Solutions
+            </h2>
+          </motion.div>
+
+          {/* Right Column */}
+          <motion.div 
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}Work together
+
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="w-full md:w-1/2 p-10 bg-black bg-opacity-50 h-full"
+          >
+            <p className="text-lg text-white leading-relaxed">
+              Welcome to <span className="font-bold text-blue-400">ideax</span>, the ultimate platform for entrepreneurs! 
+              <span className="block mt-4 font-semibold text-gray-300">
+                Whether you&rsquo;re brainstorming your next big idea or looking for a dedicated online team to bring it to life, 
+                we offer the tools and expertise you need to succeed.
+              </span>
+            </p>
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
         </div>
       </div>
     </div>

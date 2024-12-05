@@ -35,7 +35,6 @@ const CardSlider = () => {
     ],
   };
   const cards = [
-
     {
       pointers: [
         "New Idea finalise",
@@ -182,6 +181,7 @@ const CardSlider = () => {
                     fontSize: "18px",
                     fontWeight: "300",
                     padding: "0px",
+                    marginBottom:''
                   }}
                 >
                   <div
@@ -213,7 +213,7 @@ const CardSlider = () => {
                   <p
                     key={index}
                     className="card-description"
-                    style={{display:"flex" ,justifyContent:'left',alignItems:"center", textAlign: "left",fontSize:'12px',lineHeight:'25px' }}
+                    style={{display:"flex" ,justifyContent:'left',alignItems:"center", textAlign: "left",fontSize:'14px',lineHeight:'30px' }}
                   >
                     <FaCheckCircle
                       style={{ margin: "0 5px", borderRadius: "5px" }}

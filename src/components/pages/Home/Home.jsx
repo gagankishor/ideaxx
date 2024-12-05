@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // import { Helmet } from "react-helmet";
 
 import { Hero } from "./components/landing/Hero";
@@ -6,6 +6,8 @@ import TrustedBySection from "./components/landing/TrustedBySection";
 import ProductLineupSection from "./components/landing/ProductLineupSection";
 import CoreSolutionsSection from "./components/landing/CoreSolutionsSection";
 import CardSlider from "@/components/CardSlider";
+import BlockchainTechnology from "./components/landing/BlockchainTechnology";
+import HeroSection from "./components/landing/HeroSection";
 
 export default function Home() {
   return (
@@ -15,21 +17,20 @@ export default function Home() {
         <meta name="description" content="Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now." />
         <meta name="keywords" content="Business Idea Checker, Startup Idea Checker, Business idea checker online, Startup business idea checker, Business idea checker free, Seo data for home page" />
       </Helmet> */}
-
+      <HeroSection/>
+      
       <Hero />
-      <h2
-        className="card-slider-haedding"
-      >
+      <h2 className="card-slider-haedding">
         {" "}
-        Empowering Your Business with a Fully Integrated Online Team From
-        Strategy to Execution <br/>
-        We’ve Got You Covered{" "}
+        Simplifies business operations, reduces bureaucratic delays, and
+        supports secure transactions
       </h2>
       <CardSlider />
+      <BlockchainTechnology/>
       {/* <IconSlider/> */}
-      <TrustedBySection />
-      <CoreSolutionsSection /> 
-      <ProductLineupSection />
+      <TrustedBySection/>
+      <CoreSolutionsSection/>
+      <ProductLineupSection/>
       {/* <div className="home-main-contaner">
         <Validation />
         <Features />

@@ -11,12 +11,14 @@ import {
   FaGlobe,
   FaLightbulb,
   FaRobot,
+  FaTwitter,
   FaUsers,
+  FaWhatsapp,
 } from "react-icons/fa";
 // import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { PiQuestion } from "react-icons/pi";
-import { FaArrowRight, FaRegLightbulb } from "react-icons/fa6";
+import { FaArrowRight, FaFacebook, FaRegLightbulb } from "react-icons/fa6";
 import Link from "next/link";
 import { HiBuildingOffice } from "react-icons/hi2";
 import { IoBusiness } from "react-icons/io5";
@@ -25,6 +27,7 @@ import LightingCard from "@/components/wizard-result/LightingCard";
 import PropTypes from "prop-types";
 import AnimatedText from "@/components/wizard-result/AnimatedText";
 import { Store } from "lucide-react";
+import Modal from "react-modal";
 
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
@@ -174,7 +177,7 @@ const WizardResult = () => {
   const InvestmentLevelData = parseJSON(data?.InvestmentLevelData);
   const ExpectedROIData = parseJSON(data?.ExpectedROIData);
   const textForTipData = parseJSON(data?.textForTipData);
-  console.log(textForTipData);
+  // console.log(textForTipData);
   const fullAiContent = `
   ${data?.resultText} 
   `;
@@ -389,7 +392,69 @@ const WizardResult = () => {
       imageUrl: "/result-page/Layer1.png",
     },
   ];
-  console.log(data);
+  // console.log(data);
+  const [taskCompletion, setTaskCompletion] = useState(false);
+  const [motivationalCardOpen, setMotivationalCardOpen] = useState(false);
+  const [showCongratulations, setShowCongratulations] = useState(false);
+  const [shareModalOpen, setShareModalOpen] = useState(false);
+  const onRequestTaskCompletion = () => {
+    setTaskCompletion(false);
+  };
+  const handleOpenTaskCompletionCard = () => {
+    setTaskCompletion(true);
+    setMotivationalCardOpen(false);
+  };
+  const onMotivationalCardClose = () => {
+    setMotivationalCardOpen(false);
+  };
+  const handleOpenMotivationalCard = () => {
+    setMotivationalCardOpen(true);
+  };
+  const onCloseCongratulations = () => {
+    setShowCongratulations(false);
+  };
+  const handleOpenCongratulationsCard = () => {
+    setShowCongratulations(true);
+    onRequestTaskCompletion(false);
+  };
+
+  const handleShareAchievement = () => {
+    setShareModalOpen(true);
+    setMotivationalCardOpen(false);
+  };
+
+  const handleCloseShareModal = () => {
+    setShareModalOpen(false);
+  };
+  const tasks = [
+    { 
+      title: "Daily Check-in Task", 
+      description: "Login daily to this button game page", 
+      points: "+1", 
+      button: "Claim Now" 
+    },
+    { 
+      title: "Trading Task", 
+      description: "Accumulate at least 50 USDC ", 
+      points: "+2", 
+      button: "Share Result" 
+    },
+    { 
+      title: "Referral Task", 
+      description: "Refer a friend via the link", 
+      points: "+3", 
+      button: "Invite Friends" 
+    }
+  ];
+  const socialShareLinks = {
+    facebook: `https://www.facebook.com/sharer/sharer.php`,
+    twitter: `https://twitter.com/intent/tweet?text=I just earned more attempts in the game!`,
+    whatsapp: `https://api.whatsapp.com/send?text=I just earned more attempts in the game! Check it out: ideax.in`
+  };
+
+  const handleShare = (platform) => {
+    window.open(socialShareLinks[platform], '_blank');
+  };
   return (
     <>
       <div className=" py-5">
@@ -1742,7 +1807,176 @@ const WizardResult = () => {
             Launch Your Idea <FaArrowAltCircleRight />
           </Link>
         </div>
+        <h1 className="text-2xl mt-10 sm:text-3xl md:text-5xl font-bold text-white">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+          Get More Free Test{" "}
+          </span>
+          <span className="font-semibold">Now</span> 
+        </h1>
+        <div className="btns-container mt-10 ">
+          <button
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
+            style={{ fontSize: "14px", margin: "auto" }}
+            onClick={handleOpenMotivationalCard}
+          >
+            Get More Free Test <FaArrowAltCircleRight />
+          </button>
+        </div>
       </div>
+      <Modal
+        isOpen={taskCompletion}
+        onRequestClose={onRequestTaskCompletion}
+        className="bg-white shadow-lg rounded-lg p-6 max-w-lg mx-auto focus:outline-none"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 pt-20 flex items-center justify-center z-50"
+      >
+        <div>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Earn More Attempts</h2>
+          <p className="text-sm text-gray-600 mb-4">Complete the following tasks to earn more attempts!</p>
+          <div className="space-y-6">
+            {tasks.map((task, index) => (
+              <div key={index} className="bg-gray-100 rounded-lg p-2 flex justify-between items-center">
+                <div>
+                  <h3 className="text-lg text-left font-semibold text-gray-800">{task.title}</h3>
+                  <p className="text-sm text-left text-gray-600">{task.description}</p>
+                </div>
+                <div className="text-right">
+                  <span className="text-[#6161FF] font-bold block mb-2">{task.points}</span>
+                  <button 
+                    className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-medium py-1 px-3 rounded text-sm" 
+                    onClick={handleOpenCongratulationsCard}
+                  >
+                    {task.button}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-end mt-6">
+            <button
+              onClick={onRequestTaskCompletion}
+              className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={motivationalCardOpen}
+        onRequestClose={onMotivationalCardClose}
+        className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto focus:outline-none"
+        overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
+      >
+        <div className="relative">
+          <div className="flex justify-center mb-4">
+            <svg
+              className="h-16 w-16 text-[#6161FF]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-gray-800 text-center">Don&rsquo;t Give Up!</h2>
+          <p className="text-gray-600 mt-2 text-center">
+            You have tried so hard to achieve your goals.
+          </p>
+          <div className="flex justify-between items-center mt-6">
+            <button 
+              className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-bold py-2 px-4 rounded" 
+              onClick={handleOpenTaskCompletionCard}
+            >
+              Get More Attempts
+            </button>
+            <button 
+              className="bg-[#6161FF] hover:bg-[#6161FF] text-white font-bold py-2 px-4 rounded" 
+              onClick={handleShareAchievement}
+            >
+              Share My Achievement
+            </button>
+          </div>
+          <button
+            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+            onClick={onMotivationalCardClose}
+            aria-label="Close"
+          >
+            <svg
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={showCongratulations}
+        onRequestClose={onCloseCongratulations}
+        className="bg-gray-900 text-center rounded-lg p-6 max-w-xs mx-auto focus:outline-none"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      >
+        <div className="flex flex-col items-center space-y-4">
+          <span className="text-3xl">
+            <img src="" alt="" />
+            
+            </span>
+          <h2 className="text-xl font-semibold text-white">Congratulations!</h2>
+          <p className="text-sm text-gray-400">You have claimed 1 additional attempt!</p>
+          <button
+            onClick={onCloseCongratulations}
+            className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-semibold py-2 px-6 rounded-lg"
+          >
+            Got it
+          </button>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={shareModalOpen}
+        onRequestClose={handleCloseShareModal}
+        className="bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto focus:outline-none"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      >
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Share Your Result </h2>
+          <div className="flex justify-center space-x-4 mb-6">
+      <button 
+        onClick={() => handleShare('facebook')}
+        className="bg-[#6161FF] text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-700"
+      >
+        <FaFacebook className="w-6 h-6" />
+      </button>
+      <button 
+        onClick={() => handleShare('twitter')}
+        className="bg-blue-400 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-600"
+      >
+        <FaTwitter className="w-6 h-6" />
+      </button>
+      <button 
+        onClick={() => handleShare('whatsapp')}
+        className="bg-green-500 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-green-600"
+      >
+        <FaWhatsapp className="w-6 h-6" />
+      </button>
+    </div>
+          <button 
+            onClick={handleCloseShareModal} 
+            className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded"
+          >
+            Close
+          </button>
+        </div>
+      </Modal>
     </>
   );
 };

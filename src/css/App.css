@@ -3790,7 +3790,7 @@ nav .container .burger {
 
 .badge-section {
   background: linear-gradient(rgba(66,66,66,1) 0%,rgba(0,0,0,1) 100%);
-  padding: 20px;
+  padding: 0px;
   border-radius: 10px;
   width: 100%;
   border: 1px solid #545454;

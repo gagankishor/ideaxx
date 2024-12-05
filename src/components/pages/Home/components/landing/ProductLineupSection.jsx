@@ -34,11 +34,11 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/Integrity.webp"
-                src="/darksection1/Integrity1.webp"
+                src="/darksection1/Integrity.jpg"
                 alt="Product"
                 className="product-image"
               />
-              <p className="p-4 text-white text-justify">
+              <p className="p-4 text-white text-center">
                 AI-powered platform ensuring integrity at every level—streamline
                 operations, uphold compliance, and foster trust with
                 intelligent, transparent solutions for modern organizations.
@@ -50,11 +50,11 @@ const ProductLineupSection = () => {
             <div className="product-box black-background">
               <img
                 // src="/darksection1/innovation.webp"
-                src="/darksection1/innovation1.webp"
+                src="/darksection1/innovation.jpg"
                 alt="Product"
                 className="product-image"
               />
-              <p className="p-4 text-white text-justify">
+              <p className="p-4 text-white text-center">
                 Driving innovation—accelerate insights, streamline workflows,
                 and empower your team to turn bold ideas into impactful
                 solutions.
@@ -69,7 +69,7 @@ const ProductLineupSection = () => {
                 alt="Security"
                 className="product-image"
               />
-              <p className=" p-4 text-white text-justify">
+              <p className=" p-4 text-white ">
                 Discover how our platform enhances operational efficiency by
                 streamlining workflows, minimizing manual processes, and
                 maximizing productivity across all levels of your business.
@@ -84,7 +84,7 @@ const ProductLineupSection = () => {
                 alt="Efficiency"
                 className="product-image"
               />
-              <p className=" p-4 text-white text-justify">
+              <p className=" p-4 text-white ">
                 Explore the robust security measures embedded within our
                 platform, designed to safeguard your data and ensure full
                 compliance with the highest industry standards.
@@ -114,11 +114,15 @@ const ProductLineupSection = () => {
           vision.
         </p>
         <div className=" flex flex-row items-center justify-center">
+          <div className=" flex flex-col justify-center items-center">
+
           <img
             src="landing/validetionImage.png"
             alt="Ideax AI"
-            style={{ width: "25%", margin: "" }}
+            style={{ width: "48%", margin: "" }}
           />
+          <p className=" text-center text-white">Get your idea certified and boost its credibility instantly</p>
+          </div>
           <img
             src="landing/ideas.webp"
             alt="Ideax AI"
@@ -128,7 +132,7 @@ const ProductLineupSection = () => {
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image.png"
+              src="/platforms/webpafe_landscape.jpg"
               className="w-full"
               alt="Image 1"
             />
@@ -154,7 +158,8 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image1.png"
+              src="/platforms/webpafe_landscape_eq.jpg"
+
               className="w-full"
               alt="Image 2"
             />
@@ -180,7 +185,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image3.png"
+              src="/platforms/webpafe_landscape_web.jpg"
               className="w-full"
               alt="Image 3"
             />

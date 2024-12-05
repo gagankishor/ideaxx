@@ -352,7 +352,7 @@ const CoreSolutionsSection = () => {
               <div className="from-concept-main-card">
                 {selectedIcon &&
                   contentData[selectedIcon]?.map((content, idx) => (
-                    <div className="from-concept-card" key={idx}>
+                    <div className="from-concept-card min-h-[180px]" key={idx}>
                       <div>
                         <h3 style={{ color: "white" }}>{content.title}</h3>
                       </div>

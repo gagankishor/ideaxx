@@ -36,8 +36,8 @@ export const MainNavBar = () => {
           <div className={`right-side ${toggle ? "show" : "hide"}`}>
           <ul className="logo-menu">
             <li><Link href="#home">Home</Link></li>
-            <li><Link href="#services">Services</Link></li>
-            <li><Link href="#features">Features</Link></li>
+            <li><Link href="/plan-details">Subscription Plans</Link></li>
+            <li><Link href="#services">Connect Your Wallet</Link></li>
           </ul>
             <ul className="main-menu">
               {isAuthenticated ? (
@@ -54,12 +54,19 @@ export const MainNavBar = () => {
               <div className="btns-container">
                 <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Learning Guide</Link>
               </div>
+              {/* <div className="btns-container">
+                <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Connect Your Wallet</Link>
+              </div> */}
               {/* Conditionally render the button based on the current pathname */}
               {pathname !== "/mainWizard" && (
                 <div className="btns-container">
-                  <Link className="btn" style={{ fontSize: "14px" }} href="/mainWizard">
-                    Test Your Idea <FaArrowAltCircleRight />
-                  </Link>
+                  <Link
+            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            style={{ fontSize: "14px" }}
+            href="/mainWizard"
+          >
+            Test Your Idea <FaArrowAltCircleRight />
+          </Link>
                 </div>
               )}
             </ul>

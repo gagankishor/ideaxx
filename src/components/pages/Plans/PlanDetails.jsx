@@ -3,7 +3,9 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { RiArrowUpDoubleFill } from "react-icons/ri";
 // import { Check, ChevronDown, ChevronUp } from "lucide-react";
 // import { useState } from "react";
-import SubscriptionPlans from "./SubscriptionPlans";
+// import SubscriptionPlans from "./SubscriptionPlans";
+// import PricingCard from "./PricingCard";
+import PricingPlans from "./PricingCard";
 const Plans = () => {
   const startupFeatures = [
     {
@@ -172,7 +174,50 @@ const Plans = () => {
   ];
   // const [isExpanded, setIsExpanded] = useState("");
   
-  
+  // const planData = [
+  //   {
+  //     title: "Business",
+  //     description: "Level up with more power and enhanced features.",
+  //     originalPrice: 760.00,
+  //     discountPercentage: 70,
+  //     discountedPrice: 229.00,
+  //     features: [
+  //       "100 websites",
+  //       "Managed WordPress Hosting",
+  //       "200 GB NVMe storage",
+  //       "Hostinger Website Builder",
+  //       "Free domain (₹749.00 value)",
+  //       "Free automatic website migration",
+  //       "Free email",
+  //       "Unlimited free SSL",
+  //       "Daily backups (₹2,148.00 value)",
+  //       "Basic WooCommerce Optimisation",
+  //       "Free CDN"
+  //     ]
+  //   },
+  //   {
+  //     title: "Cloud Startup",
+  //     description: "Enjoy optimised performance & guaranteed resources.",
+  //     originalPrice: 1899.00,
+  //     discountPercentage: 59,
+  //     discountedPrice: 699.00,
+  //     features: [
+  //       "300 websites",
+  //       "Managed WordPress Hosting",
+  //       "200 GB NVMe storage",
+  //       "Hostinger Website Builder",
+  //       "Free domain (₹749.00 value)",
+  //       "Free automatic website migration",
+  //       "Free email",
+  //       "Unlimited free SSL",
+  //       "Daily backups (₹2,148.00 value)",
+  //       "Standard WooCommerce",
+  //       "Free CDN",
+  //       "Dedicated IP address",
+  //       "Priority support"
+  //     ]
+  //   }
+  // ];
   return (
     <>
       <div className="flex flex-wrap bg-[#19229A] relative">
@@ -206,6 +251,8 @@ const Plans = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[#191C59] opacity-50"></div>
         </div>
       </div>
+      <PricingPlans/>
+      {/* <PricingCard plan={planData}/> */}
       <div className="main-plan-container">
         <div className="selling-points-section">
           <div className="selling-points-container">
@@ -241,37 +288,7 @@ const Plans = () => {
             </div>
           </div>
         </div>
-        <div className="testimonials-section">
-          <h2 className="testimonial-heading">What Our Clients Say</h2>
-          <div className="testimonials-container">
-            <div className="testimonial-card">
-              <p className="testimonial-text">
-                &quot;This platform has completely transformed the way we
-                develop ideas. The AI assistance and market analytics have been
-                invaluable to our business.&quot;
-              </p>
-              <h4 className="client-name">- John Doe, CEO of Startup Inc.</h4>
-            </div>
-            <div className="testimonial-card">
-              <p className="testimonial-text">
-                &quot;The lifetime plan is a game-changer. The resources and
-                community have helped me bring my project to life.&quot;
-              </p>
-              <h4 className="client-name">
-                - Jane Smith, Founder of Innovate Labs
-              </h4>
-            </div>
-            <div className="testimonial-card">
-              <p className="testimonial-text">
-                &quot;The Enterprise Launch plan gave us the edge we needed to
-                grow quickly. Highly recommend it!&quot;
-              </p>
-              <h4 className="client-name">
-                - Mike Johnson, Director at Tech Solutions
-              </h4>
-            </div>
-          </div>
-        </div>
+        
         <div className="flex flex-col items-center text-center">
           <RiArrowUpDoubleFill
             className="text-[24px] text-[#6161FF] mx-auto mb-5 animate-bounce"
@@ -302,7 +319,7 @@ const Plans = () => {
         <div className="plans-container">
           <div className="plan-card">
             <div>
-              <h2 className="plan-title">One Life-Time Plan START-UP</h2>
+              <h2 className="plan-title">Startup Plan</h2>
               <ul className="plan-features">
                 {startupFeatures.map((feature, index) => (
                   <li key={index} className="flex flex-col">
@@ -314,7 +331,6 @@ const Plans = () => {
                   </li>
                 ))}
               </ul>
-              <SubscriptionPlans/>
 
             </div>
             {/* <button className="subscribe-button">Subscribe Now</button> */}
@@ -334,13 +350,13 @@ const Plans = () => {
                     </li>
                   ))}
                 </ul>
-
               </ul>
             </div>
             <button className="subscribe-button">Contect Sales</button>
           </div>
         </div>
       </div>
+      {/* <SubscriptionPlans/> */}
     </>
   );
 };

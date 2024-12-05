@@ -16,6 +16,8 @@ import { CiMail } from "react-icons/ci";
 import { MdVerified } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import ReferralPopup from "./components/wizard/ReferralPopup";
+// import MotivationalCard from "./components/wizard/MotivationalCard";
+// import TaskCompletionInterface from "./components/wizard/TaskCompletionInterface";
 
 export default function Wizard() {
   const router = useRouter();
@@ -34,6 +36,9 @@ export default function Wizard() {
   const [isOtpSent, setisOtpSent] = useState(false);
   const [lodingOtpSent, setLodingOtpSent] = useState(false);
   const [isOpenLogin, setIsOpenLogin] = useState(false);
+  const [taskCompletion, setTaskCompletion] = useState(false);
+  const [motivationalCardOpen, setMotivationalCardOpen] = useState(false);
+
   const [previousValue, setPreviousValue] = useState("");
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [secondsLeft, setSecondsLeft] = useState(300); // 300 seconds = 5 minutes
@@ -283,22 +288,41 @@ export default function Wizard() {
     },
     {
       title:
-        "What is your estimated daily availability for working on your idea?",
+        "What is your estimated daily availability for working on your idea, in hours?",
       description: "",
       choices: [
-        { id: "i9a", label: "1 - 2 hours per day", value: "1" },
-        { id: "i9b", label: "3 - 4 hours per day", value: "3" },
-        { id: "i9c", label: "more", value: "4" },
+        { id: "i9a", label: "Less than 1 hour", value: "1" },
+        { id: "i9b", label: "1 to 2 hours", value: "2" },
+        { id: "i9c", label: "3 to 4 hours", value: "3" },
+        { id: "i9d", label: "5 to 6 hours", value: "4" },
+        { id: "i9e", label: "More than 6 hours", value: "5" },
       ],
       bgColor: "#F69679",
     },
     {
-      title: "What is your estimated timeline for building your business?",
+      title:
+        "In your opinion, what is the estimated ideal timeframe for developing your idea?",
       description: "",
       choices: [
-        { id: "i8a", label: "2 to 3 months", value: "1" },
-        { id: "i8b", label: "4 to 6 months.", value: "3" },
-        { id: "i8c", label: "It will take longer than this.", value: "4" },
+        {
+          id: "i8a",
+          label:
+            "Less than 3 months - For very fast-paced or smaller scale projects.",
+          value: "1",
+        },
+        {
+          id: "i8b",
+          label:
+            "3 to 6 months - Suitable for moderately complex projects that require some research and development.",
+          value: "2",
+        },
+        {
+          id: "i8c",
+          label:
+            "6 to 12 months - A common timeframe for more involved projects, allowing for thorough planning, development, and initial testing.",
+          value: "3",
+        },
+        // { id: "i8c", label: "It will take longer than this.", value: "4" },
       ],
       bgColor: "#F69679",
     },
@@ -415,7 +439,6 @@ export default function Wizard() {
   const prevStep = () => {
     setStep((step) => step - 1);
   };
-
   const handleOtpChange = (e, index) => {
     const newOtp = [...otp];
     newOtp[index] = e.target.value;
@@ -447,6 +470,8 @@ export default function Wizard() {
       //   confirmButtonText: "OK",
       // });
     } else {
+      
+      
       setLoading(true);
       const payloadFormData = new FormData();
       payloadFormData.append("phase1", formData.step1 || "");
@@ -617,6 +642,12 @@ export default function Wizard() {
   };
   const onRequestClose = () => {
     setIsOpenLogin(false);
+  };
+  const onRequestTaskCompletion = () => {
+    setTaskCompletion(false);
+  };
+  const onMotivationalCardClose = () => {
+    setMotivationalCardOpen(false);
   };
   const closeEmailLoginModal = () => {
     setEmailLoginModalOpen(false);
@@ -882,13 +913,15 @@ export default function Wizard() {
                                 />
                               </div>
                             )}
-                            <button
+                            {/* <button
                               type="button"
                               onClick={() => setIsPopupOpen(true)}
                               className="p-3 mt-10 bg-blue-500 text-white rounded-lg"
                             >
                               Refer and get more free test
-                            </button>
+                            </button> */}
+                            {/* <TaskCompletionInterface/> */}
+                            {/* <MotivationalCard isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}/> */}
                             <ReferralPopup
                               isOpen={isPopupOpen}
                               onClose={() => setIsPopupOpen(false)}
@@ -1088,6 +1121,93 @@ export default function Wizard() {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={taskCompletion}
+        onRequestClose={onRequestTaskCompletion}
+        className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto focus:outline-none"
+      overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
+    >
+      <div>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Earn more attempts</h2>
+        <div className="space-y-4">
+          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+            <div>
+              <h3 className="text-lg font-medium text-gray-800">Daily Check-in Task</h3>
+              <p className="text-gray-600">Login to the home page</p>
+            </div>
+            <span className="text-yellow-500 font-bold">+1</span>
+          </div>
+          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+            <div>
+              <h3 className="text-lg font-medium text-gray-800">Trading Task</h3>
+              <p className="text-gray-600">Accumulate at least $5,000 equivalent in trading volume</p>
+            </div>
+            <span className="text-yellow-500 font-bold">+2</span>
+          </div>
+          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+            <div>
+              <h3 className="text-lg font-medium text-gray-800">Refer a Friend</h3>
+              <p className="text-gray-600">Refer a friend to join the platform</p>
+            </div>
+            <span className="text-yellow-500 font-bold">+3</span>
+          </div>
+          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+            <div>
+              <h3 className="text-lg font-medium text-gray-800">Sharing Task</h3>
+              <p className="text-gray-600">Share your achievement with your friends</p>
+            </div>
+            <span className="text-yellow-500 font-bold">+1</span>
+          </div>
+        </div>
+        <div className="flex justify-end mt-4">
+          <button
+            onClick={onRequestTaskCompletion}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+
+    </Modal>
+    <Modal
+        isOpen={motivationalCardOpen}
+        onRequestClose={onMotivationalCardClose}
+        
+        className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto focus:outline-none"
+      overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
+    >
+      <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+              <div className="flex items-center justify-center">
+                <svg className="h-16 w-16 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800 mt-4">Don&rsquo;t give up!</h2>
+              <p className="text-gray-600 mt-2">You have tried so hard to achieve your goals.</p>
+              <div className="flex justify-between items-center mt-6">
+                <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">
+                  Get More Attempts
+                </button>
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                  Share my achievement
+                </button>
+              </div>
+              <button
+                className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                onClick={onMotivationalCardClose}
+              >
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    </Modal>
       <Modal
         isOpen={isOpenLogin}
         onRequestClose={onRequestClose}

@@ -11,10 +11,10 @@ export const Hero = () => {
         <div className="hero-block">
 
           <h1 className="idea-checker-heading">
-            AI Startup/ Business Idea Validator 
+          AI-Powered Startup and Business Idea Validator 
           </h1>
             <span className="idea-checker-subheading">
-              <p className="idea-checker-description" style={{ fontSize: "1.2rem" }}>
+              <p className="idea-checker-description" style={{ fontSize: "1.2rem", maxWidth:'700px' }}>
                 Use our AI algorithms to assess the feasibility of your business
                 idea based on market trends, competition, and potential
                 profitability.
@@ -29,6 +29,7 @@ export const Hero = () => {
           >
             Test Your Idea <FaArrowAltCircleRight />
           </Link>
+          <span >Enjoy free results for a limited time only!</span>
         </div>
         </div>
       </div>

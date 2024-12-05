@@ -211,9 +211,9 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/image4.jpeg"
+              src="/home-platform/imageMobile.png"
               className="w-full"
-              alt="Image 4"
+              alt="image Mobile"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">

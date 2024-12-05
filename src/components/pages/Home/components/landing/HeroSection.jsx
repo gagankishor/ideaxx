@@ -53,7 +53,7 @@ const HeroSection = () => {
             style={{ fontSize: "14px" }}
             href="/mainWizard"
           >
-            Test Your Idea <FaArrowAltCircleRight />
+            Get Started <FaArrowAltCircleRight />
           </Link>
         </div>
 
@@ -62,3 +62,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+ 

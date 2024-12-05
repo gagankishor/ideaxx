@@ -134,15 +134,21 @@ export default function Footer() {
         className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 translate-y-0`}
       >
         <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center py-0 px-6 animate-slide-up space-y-4 md:space-y-0">
+          <div className=" flex flex-row justify-center items-center gap-3">
+
           <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
-          Business solutions platform powered by Solana network.
+          Business solutions platform powered by Solana network.{" "}
           </h4>
-          <img src="/landing/image.webp" alt="" />
+          <Link href="https://solana.com/">
+          <img src="/landing/image.png" width={35} alt="Solana logo" />
+          </Link>
+          </div>
           <div className="btns-container">
             <Link
               className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               style={{ fontSize: "14px" }}
               href="/mainWizard"
+              target="_blank"
             >
               Test Your Idea <FaArrowAltCircleRight />
             </Link>

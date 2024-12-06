@@ -32,7 +32,7 @@ export const Hero = () => {
           <span >Enjoy free results for a limited time only!</span>
         </div>
         </div>
-      </div>
+      </div> 
       <div className="container hero-container2">
         <div className="hero-block2" >
           <img src="/roadmap.webp" alt="Business Idea Checker" className="hero-roadmap-img" />

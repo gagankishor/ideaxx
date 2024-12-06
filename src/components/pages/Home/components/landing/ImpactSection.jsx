@@ -171,7 +171,7 @@ const ImpactSection = () => {
                           <div>
                             <img
                               src={testimonial.image}
-                              alt=""
+                              alt={testimonial.name}
                               width={50}
                               className=" w-[50px] rounded-full"
                             />

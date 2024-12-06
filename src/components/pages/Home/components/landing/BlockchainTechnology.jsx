@@ -64,11 +64,11 @@ const BlockchainTechnology = () => {
         <h2 className="text-xl font-semibold mb-4 text-[#29DAB9]">
           Security Features
         </h2>
-        <h3 className="text-lg font-medium mb-2 text-[#9348FB]">
-          Enhanced Data Protection
-        </h3>
-        <p className="text-lg text-gray-300 leading-7">
-          Ideax employs state-of-the-art encryption methods to protect sensitive
+        
+        <p className="text-lg text-left text-gray-300 leading-7">
+          
+          Enhanced Data Protection 
+        Ideax employs state-of-the-art encryption methods to protect sensitive
           data transmitted across the network. This ensures that your business
           information remains confidential and secure from unauthorized access.
         </p>

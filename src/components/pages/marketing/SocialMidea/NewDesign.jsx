@@ -851,7 +851,7 @@ export const NewDesign = () => {
                           >
                             <img
                               src="/socialmidea/3DImage.png"
-                              alt=""
+                              alt="physical product priviwe"
                               style={{ width: "100%" }}
                             />
                           </div>

@@ -1,7 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { FaArrowAltCircleRight, FaChevronDown, FaChevronUp, FaFacebook, FaTwitter } from "react-icons/fa";
+import {
+  FaArrowAltCircleRight,
+  FaChevronDown,
+  FaChevronUp,
+  FaFacebook,
+  FaTwitter,
+} from "react-icons/fa";
 import {
   FaInstagram,
   FaLinkedin,
@@ -35,54 +41,119 @@ export default function Footer() {
   };
 
   const aiTools = [
-    { title: "Business Idea Checker", description: "Evaluate your business idea with AI assistance." },
-    { title: "Market Analysis", description: "Get insights into market trends and opportunities." },
-    { title: "Competitor Research", description: "Analyze competitors to strengthen your strategy." },
-    { title: "Profitability Assessment", description: "Assess the potential profitability of your idea." },
-    { title: "Growth Potential Insights", description: "Discover growth opportunities for your business." },
-    { title: "Investor Matchmaking", description: "Connect with potential investors for funding." },
-    { title: "Startup Roadmap", description: "Plan your startup journey with AI-guided steps." },
+    {
+      title: "Business Idea Checker",
+      description: "Evaluate your business idea with AI assistance.",
+    },
+    {
+      title: "Market Analysis",
+      description: "Get insights into market trends and opportunities.",
+    },
+    {
+      title: "Competitor Research",
+      description: "Analyze competitors to strengthen your strategy.",
+    },
+    {
+      title: "Profitability Assessment",
+      description: "Assess the potential profitability of your idea.",
+    },
+    {
+      title: "Growth Potential Insights",
+      description: "Discover growth opportunities for your business.",
+    },
+    {
+      title: "Investor Matchmaking",
+      description: "Connect with potential investors for funding.",
+    },
+    {
+      title: "Startup Roadmap",
+      description: "Plan your startup journey with AI-guided steps.",
+    },
   ];
 
   const solutions = [
-    { title: "Entrepreneur Community", description: "Join a network of like-minded entrepreneurs." },
-    { title: "Collaborative Workspace", description: "Work together with tools for collaboration." },
-    { title: "Industry-Specific Insights", description: "Receive tailored insights for your industry." },
-    { title: "AI-Powered Reports", description: "Generate detailed reports using AI." },
-    { title: "Financial Planning Tools", description: "Plan your finances effectively." },
-    { title: "Business Strategy", description: "Develop comprehensive business strategies." },
-    { title: "Global Market Reach", description: "Expand your reach to global markets." },
+    {
+      title: "Entrepreneur Community",
+      description: "Join a network of like-minded entrepreneurs.",
+    },
+    {
+      title: "Collaborative Workspace",
+      description: "Work together with tools for collaboration.",
+    },
+    {
+      title: "Industry-Specific Insights",
+      description: "Receive tailored insights for your industry.",
+    },
+    {
+      title: "AI-Powered Reports",
+      description: "Generate detailed reports using AI.",
+    },
+    {
+      title: "Financial Planning Tools",
+      description: "Plan your finances effectively.",
+    },
+    {
+      title: "Business Strategy",
+      description: "Develop comprehensive business strategies.",
+    },
+    {
+      title: "Global Market Reach",
+      description: "Expand your reach to global markets.",
+    },
   ];
 
   const services = [
-    { title: "Check And Save Your Idea", description: "Validate and securely save your business idea." },
-    { title: "Business Identity", description: "Establish a strong brand identity." },
-    { title: "Marketing", description: "Enhance your marketing efforts with AI." },
-    { title: "Legal Documentation", description: "Simplify your legal paperwork." },
+    {
+      title: "Check And Save Your Idea",
+      description: "Validate and securely save your business idea.",
+    },
+    {
+      title: "Business Identity",
+      description: "Establish a strong brand identity.",
+    },
+    {
+      title: "Marketing",
+      description: "Enhance your marketing efforts with AI.",
+    },
+    {
+      title: "Legal Documentation",
+      description: "Simplify your legal paperwork.",
+    },
     { title: "Virtual Team", description: "Build and manage a remote team." },
-    { title: "Business Tools", description: "Access tools to optimize your business operations." },
-    { title: "Cash Flow Management", description: "Monitor and manage your business cash flow." },
+    {
+      title: "Business Tools",
+      description: "Access tools to optimize your business operations.",
+    },
+    {
+      title: "Cash Flow Management",
+      description: "Monitor and manage your business cash flow.",
+    },
   ];
   const services2 = [
     {
       title: "Consulting",
-      description: "Receive expert advice tailored to your business challenges and goals.",
+      description:
+        "Receive expert advice tailored to your business challenges and goals.",
     },
     {
       title: "Entrepreneur",
-      description: "Support and resources to help entrepreneurs build and grow their businesses.",
+      description:
+        "Support and resources to help entrepreneurs build and grow their businesses.",
     },
     {
       title: "Strategies Planning",
-      description: "Develop actionable strategies to achieve your business objectives.",
+      description:
+        "Develop actionable strategies to achieve your business objectives.",
     },
     {
       title: "Community",
-      description: "Join a vibrant community of professionals and entrepreneurs for networking.",
+      description:
+        "Join a vibrant community of professionals and entrepreneurs for networking.",
     },
     {
       title: "Buy-Sell Your Idea",
-      description: "Connect with buyers or sellers to trade innovative business ideas.",
+      description:
+        "Connect with buyers or sellers to trade innovative business ideas.",
     },
   ];
   // <ul className="space-y-2 text-left">
@@ -121,7 +192,9 @@ export default function Footer() {
               )}
             </div>
             {isActive && (
-              <p className="mt-0 text-[12px] text-gray-500 text-left pl-2">{item.description}</p>
+              <p className="mt-0 text-[12px] text-gray-500 text-left pl-2">
+                {item.description}
+              </p>
             )}
           </li>
         );
@@ -129,19 +202,18 @@ export default function Footer() {
     </ul>
   );
   return (
-    <footer className="bg-white border-t-2 mt-2 pb-5 mb-52 py-4">
+    <footer className="bg-white border-t-2  pb-5 mb-52 py-4">
       <div
         className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 translate-y-0`}
       >
         <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center py-0 px-6 animate-slide-up space-y-4 md:space-y-0">
-          <div className=" flex flex-row justify-center items-center gap-3">
-
-          <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
-          Business solutions platform powered by Solana network.{" "}
-          </h4>
-          <Link href="https://solana.com/">
-          <img src="/landing/image.png" width={35} alt="Solana logo" />
-          </Link>
+          <div className=" flex flex-row justify-center items-center gap-2">
+            <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
+              Business solutions platform powered by Solana network{" "}
+            </h4>
+            <Link href="https://solana.com/">
+              <img src="/landing/image.png" width={25} alt="Solana logo" />
+            </Link>
           </div>
           <div className="btns-container">
             <Link
@@ -242,7 +314,10 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-semibold mb-4 text-left">.</h4>
-          {renderDropdownList(services2, aiTools.length + solutions.length+ services.length)}
+          {renderDropdownList(
+            services2,
+            aiTools.length + solutions.length + services.length
+          )}
           {/* <ul className="space-y-2 text-left">
             <li>
               <Link href="#services">Consulting</Link>

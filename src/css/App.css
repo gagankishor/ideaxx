@@ -3782,8 +3782,8 @@ nav .container .burger {
 }
 
 .read-more {
-  color: #ffffff;
-  text-decoration: underline;
+  /* color: #ffffff; */
+  /* text-decoration: underline; */
   text-align: left;
   line-height: 160%;
 }

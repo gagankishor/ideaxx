@@ -6,6 +6,8 @@ import { HiRocketLaunch } from "react-icons/hi2";
 import Link from "next/link";
 import ImpactSection from "./ImpactSection";
 import AwardsSection from "./AwardsSection";
+import { motion } from "framer-motion";
+
 const ProductLineupSection = () => {
   const containerStyle = {
     display: "flex",
@@ -34,14 +36,14 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/Integrity.webp"
-                src="/darksection1/Integrity.jpg"
+                src="/darksection1/box_Integrity.jpg"
                 alt="Product"
                 className="product-image"
               />
               <p className="p-4 text-white text-center">
                 AI-powered platform ensuring integrity at every level—streamline
                 operations, uphold compliance, and foster trust with
-                intelligent, transparent solutions for modern organizations.
+                intelligent, transparent solutions for modern...
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -50,14 +52,13 @@ const ProductLineupSection = () => {
             <div className="product-box black-background">
               <img
                 // src="/darksection1/innovation.webp"
-                src="/darksection1/innovation.jpg"
+                src="/darksection1/box_Innovation.jpg"
                 alt="Product"
                 className="product-image"
               />
               <p className="p-4 text-white text-center">
                 Driving innovation—accelerate insights, streamline workflows,
-                and empower your team to turn bold ideas into impactful
-                solutions.
+                and empower your team to turn bold ideas into impactful...
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -65,14 +66,14 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/collaboration.webp"
-                src="/darksection1/security.jpg"
+                src="/darksection1/box_Security.jpg"
                 alt="Security"
                 className="product-image"
               />
               <p className=" p-4 text-white ">
                 Discover how our platform enhances operational efficiency by
                 streamlining workflows, minimizing manual processes, and
-                maximizing productivity across all levels of your business.
+                maximizing productivity across all...
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -80,14 +81,14 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/collaboration.webp"
-                src="/darksection1/Efficiency.jpg"
+                src="/darksection1/box_Efficiency.jpg"
                 alt="Efficiency"
                 className="product-image"
               />
               <p className=" p-4 text-white ">
                 Explore the robust security measures embedded within our
                 platform, designed to safeguard your data and ensure full
-                compliance with the highest industry standards.
+                compliance with the highest industry...
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -142,7 +143,7 @@ const ProductLineupSection = () => {
                 <div className="mb-2 flex flex-row gap-3">
                   <img
                     src="/main-icon/Businessidentity.png"
-                    alt=""
+                    alt="Team"
                     width={40}
                     className=" bg-white rounded-md p-1"
                   />
@@ -166,7 +167,7 @@ const ProductLineupSection = () => {
                 <div className="mb-2 flex flex-row gap-3">
                   <img
                     src="/main-icon/Businessidentity.png"
-                    alt=""
+                    alt="Business Tools"
                     width={40}
                     className="bg-white rounded-md p-1"
                   />
@@ -192,7 +193,7 @@ const ProductLineupSection = () => {
                 <div className="mb-2 flex flex-row gap-3">
                   <img
                     src="/main-icon/Businessidentity.png"
-                    alt=""
+                    alt="Website Design"
                     width={40}
                     className=" bg-white rounded-md p-1"
                   />
@@ -218,7 +219,7 @@ const ProductLineupSection = () => {
                 <div className="mb-2 flex flex-row gap-3">
                   <img
                     src="/main-icon/Businessidentity.png"
-                    alt=""
+                    alt="Team"
                     width={40}
                     className=" bg-white rounded-md p-1"
                   />
@@ -453,13 +454,20 @@ const ProductLineupSection = () => {
         </div>
       </div>
       <div className="bg-black text-center py-10 px-4 sm:py-16">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
+        {/* <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
             Start validating{" "}
           </span>
           your business ideas with Ideax
-        </h1>
-
+        </h1> */}
+        <motion.h1
+        className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        Start validating your business ideas with Ideax
+      </motion.h1>
         <div className="btns-container mt-10 ">
           <Link
             className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"

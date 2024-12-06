@@ -20,7 +20,7 @@ return (
           <div className="form">
           <div className="row">
             <div className="col">
-              <img src="/RegistrationCertificate.png" alt="" />
+              <img src="/RegistrationCertificate.png" alt="Registration Certificate" />
             </div>
             <div className="col" style={{display:'flex' ,justifyContent:'center' , flexDirection:'column',alignItems:'center'}}>
               <div>

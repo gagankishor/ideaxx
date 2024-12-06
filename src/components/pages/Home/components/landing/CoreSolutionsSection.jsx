@@ -252,34 +252,34 @@ const CoreSolutionsSection = () => {
           
           
           <img
-            src="/main-icon/ConsultingW.png"
+            src="/main-icon/hand.webp"
             style={{ marginRight: "10px" }}
             alt="icon 3"
             width={50}
-            className=" bg-[#6C6CFF] rounded-lg p-2"
+            className=" bg-[#A31C2F] rounded-lg p-0"
 
           />
           <img
-            src="/main-icon/EntrepreneurW.png"
+            src="/main-icon/legal.webp"
             style={{ marginRight: "10px" }}
             alt="Startup business idea checker"
             width={50}
-            className=" bg-[#6C6CFF] rounded-lg p-2"
+            className=" bg-[#0A7678] rounded-lg p-0"
 
           />
           <img
-            src="/main-icon/CommunityW.png"
+            src="/main-icon/marketing.webp"
             style={{ marginRight: "10px" }}
             alt="Business idea checker free"
             width={50}
-            className=" bg-[#6C6CFF] rounded-lg p-2"
+            className=" bg-[#0F6333] rounded-lg p-0"
 
           />
           <img
-            src="/main-icon/CashFlowW.png"
+            src="/main-icon/team.webp"
             alt="icon 4"
             width={50}
-            className=" bg-[#6C6CFF] rounded-lg p-2"
+            className=" bg-[#480D6B] rounded-lg p-0"
           />
         </div>
         <h2 className="client-heading-text mb-0 p-0">Work together</h2>

@@ -26,7 +26,7 @@ const HeroSection = () => {
         <img
           src="/landing/image.png"
           alt="Solana Logo"
-          className="h-12"
+          className="h-20"
         />
         <img
           src="/logo.png" 
@@ -36,7 +36,7 @@ const HeroSection = () => {
       </motion.div>
       {/* Subheadline */}
       <motion.p
-        className="text-lg sm:text-xl text-center text-gray-300 mb-8 max-w-3xl"
+        className="text-lg sm:text-xl text-center text-gray-300 mb-8 max-w-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}

@@ -27,7 +27,7 @@ export const Hero = () => {
             >
               Test Your Idea <FaArrowAltCircleRight />
             </Link>
-            <span>Enjoy free results for a limited time only!</span>
+            <span>Enjoy our Total Free product</span>
           </div>
         </div>
       </div>

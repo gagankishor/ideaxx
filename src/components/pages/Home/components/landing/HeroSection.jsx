@@ -55,8 +55,11 @@ const HeroSection = () => {
           >
             Get Started <FaArrowAltCircleRight />
           </Link>
+          
         </div>
-
+<span className="pt-3">
+Total Free!
+            </span>
     </div>
   );
 };

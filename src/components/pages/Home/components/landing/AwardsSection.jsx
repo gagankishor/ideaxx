@@ -1,29 +1,32 @@
 import Link from "next/link";
 import React from "react";
-import {  FaArrowAltCircleRight, FaBookOpen } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaBookOpen } from "react-icons/fa";
 const AwardsSection = () => {
   const blogs = [
     {
       id: 1,
       image: "/blog/1/image.png",
       title: "10 Questions to Ask Yourself Before Starting Your Business",
-      excerpt: "Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requ...",
-      link: "/blog/1"
+      excerpt:
+        "Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requ...",
+      link: "/blog/1",
     },
     {
       id: 2,
       image: "/blog/1/image10.png",
       title: "The Mindset of a Successful Entrepreneur",
-      excerpt: "Embarking on an entrepreneurial journey requires more than just a solid business plan and financial...",
-      link: "/blog/2"
+      excerpt:
+        "Embarking on an entrepreneurial journey requires more than just a solid business plan and financial...",
+      link: "/blog/2",
     },
     {
       id: 3,
-      image: "/blog/1/image2.png",
+      image: "/blog/1/image11.png",
       title: "Top Business Trends to Watch in 2024",
-      excerpt: "As we approach 2024, the business landscape continues to evolve rapidly, influenced by...",
-      link: "/blogs/1"
-    }
+      excerpt:
+        "As we approach 2024, the business landscape continues to evolve rapidly, influenced by...",
+      link: "/blog/1",
+    },
   ];
   return (
     <div
@@ -71,13 +74,17 @@ const AwardsSection = () => {
                 padding: "20px",
                 borderRadius: "10px",
                 height: "50%",
-                margin:'auto',
-                transform: 'translateX(0%)'
+                margin: "auto",
+                transform: "translateX(0%)",
               }}
             >
               <h3>Industry Recognition</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-              Our platform has been widely acknowledged as a pioneer in business management solutions, leveraging the power of advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes, make data-driven decisions, achieve sustainable growth. 
+                Our platform has been widely acknowledged as a pioneer in
+                business management solutions, leveraging the power of advanced
+                AI to revolutionize operations. By providing cutting-edge tools,
+                we empower businesses to optimize processes, make data-driven
+                decisions, achieve sustainable growth.
               </p>
               <a
                 href="#"
@@ -93,12 +100,16 @@ const AwardsSection = () => {
                 padding: "20px",
                 borderRadius: "10px",
                 height: "50%",
-                transform: 'translateX(0%)'
+                transform: "translateX(0%)",
               }}
             >
               <h3>Trusted by Entrepreneurs</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-              Entrepreneurs and startups across diverse industries trust IDEAX as their preferred partner for success. Our platform empowers business owners with innovative tools designed to streamline operations, and fuel growth. By offering  solutions that adapt to  market demands.
+                Entrepreneurs and startups across diverse industries trust IDEAX
+                as their preferred partner for success. Our platform empowers
+                business owners with innovative tools designed to streamline
+                operations, and fuel growth. By offering solutions that adapt to
+                market demands.
               </p>
               <a
                 href="#"
@@ -109,40 +120,43 @@ const AwardsSection = () => {
             </div>
           </div>
           <div className="badge-section" style={{ marginTop: "40px" }}>
-          <div className="container mx-auto px-4 md:pl-0 max-w-4xl">
-      {blogs.map((blog, index) => (
-        <React.Fragment key={blog.id}>
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 ">
-            <div className="flex-shrink-0 w-full md:w-60">
-              <img
-                src={blog.image}
-                className="w-full md:w-60 h-auto rounded-md object-cover"
-                alt={`Blog ${blog.id}`}
-              />
+            <div className="container mx-auto flex md:flex-col px-4 md:pl-0 max-w-4xl justify-around items-stretch">
+              {blogs.map((blog, index) => (
+                <React.Fragment key={blog.id}>
+                  <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 ">
+                    <a
+                      className="flex-shrink-0 w-full md:w-60"
+                      href={blog.link}
+                    >
+                      <img
+                        src={blog.image}
+                        className="w-full md:w-60 h-auto rounded-md object-cover"
+                        alt={`Blog ${blog.id}`}
+                      />
+                    </a>
+                    <div className="flex-grow w-full">
+                      <h4 className="text-white text-xl text-center md:text-left mb-2">
+                        {blog.title}
+                      </h4>
+                      <p className="text-gray-200 text-center md:text-left mb-3">
+                        {blog.excerpt}
+                      </p>
+                      <div className="flex justify-center md:justify-start">
+                        <a
+                          href={blog.link}
+                          className="text-blue-400 hover:underline"
+                        >
+                          Read more
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  {index < blogs.length - 1 && (
+                    <div className="w-full h-px bg-gray-600 my-1"></div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
-            <div className="flex-grow w-full">
-              <h4 className="text-white text-xl text-center md:text-left mb-2">
-                {blog.title}
-              </h4>
-              <p className="text-gray-200 text-center md:text-left mb-3">
-                {blog.excerpt}
-              </p>
-              <div className="flex justify-center md:justify-start">
-                <a
-                  href={blog.link}
-                  className="text-blue-400 hover:underline"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          </div>
-          {index < blogs.length - 1 && (
-            <div className="w-full h-px bg-gray-600 my-1"></div>
-          )}
-        </React.Fragment>
-      ))}
-    </div>
           </div>
         </div>
       </div>

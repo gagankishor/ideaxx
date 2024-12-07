@@ -129,7 +129,7 @@ const ImpactSection = () => {
           Delivering impact across 200+ industries
         </h2>
         <div className="impact-details flex justify-center items-start gap-8 max-w-5xl mx-auto">
-          <div className="relative">
+          <div className="relative ">
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10">
               {settings.appendDots(
                 [...Array(testimonials.length).keys()].map(
@@ -140,7 +140,7 @@ const ImpactSection = () => {
             <Slider
               ref={sliderRef}
               {...settings}
-              className="w-full max-w-[340px] sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1200px] mx-auto pt-8 "
+              className="w-full max-w-[340px] sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1200px] 2xl:max-w-[1400px] mx-auto pt-8 "
             >
               {testimonials.map((testimonial, index) => (
                 <div className="stat-item relative" key={index}>

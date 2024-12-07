@@ -427,9 +427,9 @@ const ProductLineupSection = () => {
               },
             ].map((testimonial, index) => (
               <div
-  key={index}
-  className="max-w-sm mx-auto shadow-md rounded-lg bg-[#ffffffcb] text-black p-8 flex flex-col items-center relative mt-10"
->
+                key={index}
+                className="max-w-sm mx-auto shadow-md rounded-lg bg-[#ffffffcb] text-black p-8 flex flex-col items-center relative mt-10"
+              >
                 <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
                   <img
                     src={testimonial.image}
@@ -441,7 +441,7 @@ const ProductLineupSection = () => {
                 <div className="text-center mt-5">
                   <h4 className="font-semibold text-lg">
                     {testimonial.author}
-                  </h4> 
+                  </h4>
                   <p className="text-sm text-black mb-4">{testimonial.role}</p>
                   <p className="text-sm text-black italic">
                     “{testimonial.quote}”
@@ -454,15 +454,15 @@ const ProductLineupSection = () => {
       </div>
       <div className="bg-black text-center py-10 px-4 sm:py-16">
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
-        <motion.span
-        className="text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        Start validating{" "}
-      </motion.span>  
-      {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+          <motion.span
+            className="text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Start validating{" "}
+          </motion.span>
+          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
             Start validating
           </span> */}
           your business idea with IDX
@@ -476,6 +476,7 @@ const ProductLineupSection = () => {
             Test Your Idea <FaArrowAltCircleRight />
           </Link>
         </div>
+        <div className="pt-4 text-white">Total Free!</div>
       </div>
     </div>
   );

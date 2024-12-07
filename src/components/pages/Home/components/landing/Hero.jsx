@@ -27,8 +27,8 @@ export const Hero = () => {
             >
               Test Your Idea <FaArrowAltCircleRight />
             </Link>
-            <span>Enjoy our Total Free product</span>
           </div>
+          <div className="text-black text-sm pt-2">Enjoy our Total Free product</div>
         </div>
       </div>
       <div className="container hero-container2">

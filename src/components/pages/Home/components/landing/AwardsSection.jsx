@@ -80,11 +80,7 @@ const AwardsSection = () => {
             >
               <h3>Industry Recognition</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-                Our platform has been widely acknowledged as a pioneer in
-                business management solutions, leveraging the power of advanced
-                AI to revolutionize operations. By providing cutting-edge tools,
-                we empower businesses to optimize processes, make data-driven
-                decisions, achieve sustainable growth.
+              Our platform is widely acknowledged as a pioneer in business, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes.
               </p>
               <a
                 href="#"
@@ -108,12 +104,11 @@ const AwardsSection = () => {
                 Entrepreneurs and startups across diverse industries trust IDEAX
                 as their preferred partner for success. Our platform empowers
                 business owners with innovative tools designed to streamline
-                operations, and fuel growth. By offering solutions that adapt to
-                market demands.
+                operations.
               </p>
               <a
                 href="#"
-                className="read-more flex justify-center items-center gap-4 text-blue-400 hover:underline"
+                className="read-more flex justify-center mb-0 items-center gap-4 text-blue-400 hover:underline"
               >
                 <FaBookOpen /> Read the report →
               </a>

@@ -5,6 +5,7 @@ import {
   FaArrowAltCircleRight,
   FaChevronDown,
   FaChevronUp,
+  FaDiscord,
   FaFacebook,
   FaTwitter,
 } from "react-icons/fa";
@@ -179,9 +180,12 @@ export default function Footer() {
         const fullIndex = startIndex + index;
         const isActive = activeDropdown === fullIndex;
         return (
-          <li key={index}>
+          <li 
+            key={index} 
+            className="transition-all duration-300 ease-in-out"
+          >
             <div
-              className="flex items-center justify-between cursor-pointer hover:text-blue-500"
+              className="flex items-center justify-between cursor-pointer hover:text-blue-500 py-2"
               onClick={() => toggleDropdown(fullIndex)}
             >
               <span>{item.title}</span>
@@ -191,54 +195,61 @@ export default function Footer() {
                 <FaChevronDown size={10} className="text-gray-600 opacity-35" />
               )}
             </div>
-            {isActive && (
-             <p 
-      className="
-        mt-3 
-        text-xs 
-        text-gray-700 
-        text-left 
-        px-3 
-        py-2 
-        border-l-4 
-        border-blue-500 
-        bg-gray-100 
-        rounded-r-md 
-        shadow-md 
-        transition-all 
-        duration-300 
-        ease-in-out 
-        hover:shadow-lg 
-        hover:translate-x-1 
-        hover:border-blue-600 
-        animate-fade-in 
-        relative 
-        overflow-hidden
-      "
-    >
-      <span 
-        className="
-          relative 
-          z-10 
-          block 
-          opacity-90
-        "
-      >
-        {item.description}
-      </span>
-      <span 
-        className="
-          absolute 
-          inset-0 
-          bg-gradient-to-r 
-          from-blue-100 
-          to-transparent 
-          opacity-20 
-          pointer-events-none
-        "
-      />
-    </p>
-            )}
+            <div
+              className={`
+                overflow-hidden 
+                transition-all 
+                duration-500 
+                ease-in-out 
+                ${isActive ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}
+              `}
+            >
+              <p
+                className="
+                  mt-3 
+                  text-xs 
+                  text-gray-700 
+                  text-left 
+                  px-3 
+                  py-2 
+                  border-l-4 
+                  border-blue-500 
+                  bg-gray-100 
+                  rounded-r-md 
+                  shadow-md 
+                  transition-all 
+                  duration-300 
+                  ease-in-out 
+                  hover:shadow-lg 
+                  hover:translate-x-1 
+                  hover:border-blue-600 
+                  relative 
+                  overflow-hidden
+                "
+              >
+                <span
+                  className="
+                    relative 
+                    z-10 
+                    block 
+                    opacity-90
+                  "
+                >
+                  {item.description}
+                </span>
+                <span
+                  className="
+                    absolute 
+                    inset-0 
+                    bg-gradient-to-r 
+                    from-blue-100 
+                    to-transparent 
+                    opacity-20 
+                    pointer-events-none
+                  "
+                />
+              </p>
+            </div>
           </li>
         );
       })}
@@ -271,89 +282,17 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600">
-        {/* Product Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">AI Tools</h4>
           {renderDropdownList(aiTools, 0)}
-          {/* <ul className="space-y-2 text-left">
-            <li>
-              <Link href="#features">Business Idea Checker</Link>
-            </li>
-            <li>
-              <Link href="#features">Market Analysis</Link>
-            </li>
-            <li>
-              <Link href="#features">Competitor Research</Link>
-            </li>
-            <li>
-              <Link href="#features">Profitability Assessment</Link>
-            </li>
-            <li>
-              <Link href="#features">Growth Potential Insights</Link>
-            </li>
-            <li>
-              <Link href="#features">Investor Matchmaking</Link>
-            </li>
-            <li>
-              <Link href="#features">Startup Roadmap</Link>
-            </li>
-          </ul> */}
         </div>
-        {/* Services Column */}
-        {/* Solutions Column */}
         <div>
           <h4 className="font-semibold mb-4 text-left">Solutions</h4>
           {renderDropdownList(solutions, aiTools.length)}
-          {/* <ul className="space-y-2 text-left">
-            <li>
-              <Link href="#features">Entrepreneur Community</Link>
-            </li>
-            <li>
-              <Link href="#features">Collaborative Workspace</Link>
-            </li>
-            <li>
-              <Link href="#features">Industry-Specific Insights</Link>
-            </li>
-            <li>
-              <Link href="#features">AI-Powered Reports</Link>
-            </li>
-            <li>
-              <Link href="#features">Financial Planning Tools</Link>
-            </li>
-            <li>
-              <Link href="#features">Business Strategy</Link>
-            </li>
-            <li>
-              <Link href="#features">Global Market Reach</Link>
-            </li>
-          </ul> */}
         </div>
         <div>
           <h4 className="font-semibold mb-4 text-left">Services</h4>
           {renderDropdownList(services, aiTools.length + solutions.length)}
-          {/* <ul className="space-y-2 text-left">
-            <li>
-              <Link href="#services">Check And Save Your Idea</Link>
-            </li>
-            <li>
-              <Link href="#services">Business identity</Link>
-            </li>
-            <li>
-              <Link href="#services">Marketing</Link>
-            </li>
-            <li>
-              <Link href="#services">Legal Documentation</Link>
-            </li>
-            <li>
-              <Link href="#services">Virtual Team</Link>
-            </li>
-            <li>
-              <Link href="#services">Business Tools</Link>
-            </li>
-            <li>
-              <Link href="#services">Cash Flow Managment</Link>
-            </li>
-          </ul> */}
         </div>
         <div>
           <h4 className="font-semibold mb-4 text-left">.</h4>
@@ -361,37 +300,8 @@ export default function Footer() {
             services2,
             aiTools.length + solutions.length + services.length
           )}
-          {/* <ul className="space-y-2 text-left">
-            <li>
-              <Link href="#services">Consulting</Link>
-            </li>
-            <li>
-              <Link href="#services">Entrepreneur</Link>
-            </li>
-            <li>
-              <Link href="#services">Strategies Planing</Link>
-            </li>
-            <li>
-              <Link href="#services">Community</Link>
-            </li>
-            <li>
-              <Link href="#services">Buy-Sell Your Idea</Link>
-            </li>
-          </ul> */}
         </div>
-        {/* Resources Column */}
-        {/* <div>
-          <h4 className="font-semibold mb-4 text-left">Resources</h4>
-          <ul className="space-y-2 text-left">
-            <li><Link href="#">Ideax Blog</Link></li>
-            <li><Link href="#">Privacy & Security Hub</Link></li>
-            <li><Link href="#">Entrepreneur Guide</Link></li>
-            <li><Link href="#">AI Trends in Business</Link></li>
-          </ul>
-        </div> */}
-        {/* Support Column */}
         <div className="md:col-span-2 ">
-          {/* <h4 className="font-semibold mb-4 text-left text-4xl">IdeaX</h4> */}
           <img src="/logo.png" alt="ideax logo" width={200} />
           <ul className="space-y-2 text-left p-2">
             <li>
@@ -412,9 +322,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
-        {/* Social Icons */}
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
-          {/* Social Icons */}
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a
               href="https://www.facebook.com/profile.php?id=61568750836670"
@@ -449,12 +357,12 @@ export default function Footer() {
               <FaTwitter />
             </a>
             <a
-              href="https://pin.it/21RIzmMEz"
-              aria-label="Pinterest"
+              href="https://discord.com"
+              aria-label="Discord"
               target="_blank"
-              className="hover:text-red-600"
+              className="hover:text-[#5865F2]"
             >
-              <FaPinterest />
+              <FaDiscord />
             </a>
             <a
               href="https://www.linkedin.com/showcase/ideaxx/posts/?feedView=all"
@@ -462,7 +370,7 @@ export default function Footer() {
               target="_blank"
               className="hover:text-blue-600"
             >
-              <FaLinkedin/>
+              <FaLinkedin />
             </a>
           </div>
           <div className="flex space-x-4 ">
@@ -476,39 +384,3 @@ export default function Footer() {
     </footer>
   );
 }
-// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-// const Footer = () => {
-//   return (
-//     <footer className="bg-gray-800 text-white h-16 flex items-center justify-center">
-//       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-xs space-y-2 md:space-y-0 md:space-x-6 px-4">
-//         {/* Footer Text */}
-//         {/* Footer Links */}
-//         <div className="flex space-x-3">
-//           <a href="/termsOfService" className="text-white hover:text-gray-400 transition duration-200">
-//             Terms and Conditions
-//           </a>
-//           <a href="/privacyPolicy" className="text-white hover:text-gray-400 transition duration-200">
-//             Privacy Policy
-//           </a>
-//         </div>
-// <p className=" text-white font-light">All rights reserved &copy; 2024 - ideax</p>
-//         {/* Social Media Links */}
-//         <div className="flex space-x-3">
-//           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
-//             <FaFacebookF size={12} />
-//           </a>
-//           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className=" text-white hover:text-blue-400">
-//             <FaTwitter size={12} />
-//           </a>
-//           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-500">
-//             <FaInstagram size={12} />
-//           </a>
-//           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className=" text-white hover:text-blue-600">
-//             <FaLinkedinIn size={12} />
-//           </a>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-// export default Footer;

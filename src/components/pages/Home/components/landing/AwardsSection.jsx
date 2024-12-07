@@ -80,7 +80,7 @@ const AwardsSection = () => {
             >
               <h3>Industry Recognition</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-              Our platform is widely acknowledged as a pioneer in business, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes.
+              Our platform is widely acknowledged as a pioneer in business management, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes.
               </p>
               <a
                 href="#"

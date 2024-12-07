@@ -427,9 +427,9 @@ const ProductLineupSection = () => {
               },
             ].map((testimonial, index) => (
               <div
-                key={index}
-                className="max-w-sm mx-auto  text-white p-8  flex flex-col items-center  relative mt-10"
-              >
+  key={index}
+  className="max-w-sm mx-auto shadow-md rounded-lg bg-[#ffffffcb] text-black p-8 flex flex-col items-center relative mt-10"
+>
                 <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
                   <img
                     src={testimonial.image}
@@ -438,13 +438,12 @@ const ProductLineupSection = () => {
                     className="w-full h-full object-cover "
                   />
                 </div>
-
                 <div className="text-center mt-5">
                   <h4 className="font-semibold text-lg">
                     {testimonial.author}
-                  </h4>
-                  <p className="text-sm text-white mb-4">{testimonial.role}</p>
-                  <p className="text-sm text-white italic">
+                  </h4> 
+                  <p className="text-sm text-black mb-4">{testimonial.role}</p>
+                  <p className="text-sm text-black italic">
                     “{testimonial.quote}”
                   </p>
                 </div>
@@ -466,7 +465,7 @@ const ProductLineupSection = () => {
       {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
             Start validating
           </span> */}
-          your business ideas with Ideax
+          your business idea with IDX
         </h2>
         <div className="btns-container mt-10 ">
           <Link

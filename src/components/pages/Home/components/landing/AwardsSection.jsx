@@ -12,7 +12,7 @@ const AwardsSection = () => {
     },
     {
       id: 2,
-      image: "/blog/1/image1.png",
+      image: "/blog/1/image10.png",
       title: "The Mindset of a Successful Entrepreneur",
       excerpt: "Embarking on an entrepreneurial journey requires more than just a solid business plan and financial...",
       link: "/blog/2"
@@ -98,7 +98,7 @@ const AwardsSection = () => {
             >
               <h3>Trusted by Entrepreneurs</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-              Entrepreneurs and startups across diverse industries trust IDEAX as their preferred partner for success. Our platform empowers business owners with innovative tools designed to streamline operations, enhance productivity, and fuel growth. By offering  solutions that adapt to  market demands.
+              Entrepreneurs and startups across diverse industries trust IDEAX as their preferred partner for success. Our platform empowers business owners with innovative tools designed to streamline operations, and fuel growth. By offering  solutions that adapt to  market demands.
               </p>
               <a
                 href="#"

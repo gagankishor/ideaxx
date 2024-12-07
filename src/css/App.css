@@ -3798,6 +3798,7 @@ nav .container .burger {
 
 .badge-category {
   margin-bottom: 20px;
+  background-color: #ffffffcb;
 }
 
 .badge-category h4 {
@@ -3808,7 +3809,7 @@ nav .container .burger {
 }
 
 .badge-category p {
-  color: white;
+  color: rgba(255, 255, 255, 0.856);
   text-align: left;
 
 }

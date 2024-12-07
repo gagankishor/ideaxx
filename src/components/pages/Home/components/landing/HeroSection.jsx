@@ -26,7 +26,7 @@ const HeroSection = () => {
         <img
           src="/landing/image.png"
           alt="Solana Logo"
-          className="h-20"
+          className="h-24"
         />
         <img
           src="/landing/idxLogo.png" 

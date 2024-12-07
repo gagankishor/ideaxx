@@ -16,6 +16,7 @@ import { CiMail } from "react-icons/ci";
 import { MdVerified } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import ReferralPopup from "./components/wizard/ReferralPopup";
+import Image from "next/image";
 // import MotivationalCard from "./components/wizard/MotivationalCard";
 // import TaskCompletionInterface from "./components/wizard/TaskCompletionInterface";
 
@@ -1110,14 +1111,12 @@ export default function Wizard() {
                 position: "absolute",
               }}
             /> */}
-            <img
-              src={`wizard4/${step + 1}.webp`}
-              alt="wizard 4"
-              style={{
-                width: "100%",
-                position: "absolute",
-              }}
-            />
+            <Image
+    src={`/wizard4/${step + 1}.webp`}
+    alt="wizard 4"
+    layout="fill"
+    objectFit="cover"
+  />
           </div>
         </div>
       </div>

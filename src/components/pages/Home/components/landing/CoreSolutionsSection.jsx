@@ -58,59 +58,64 @@ const contentData = {
     {
       title: "Idea Validation",
       description:
-        "Use our AI algorithms to assess the feasibility of your business idea based on market trends, competition, and potential profitability.",
+        "Leverage AI to evaluate the feasibility of your business idea based on market trends and potential profitability.",
     },
     {
       title: "Feedback & Insights",
       description:
-        "Receive detailed reports with actionable insights to refine your idea and strategy.",
+        "Receive comprehensive reports with actionable insights to improve your idea and business strategy effectively.",
     },
     {
       title: "Market Research",
       description:
-        "Access curated data that highlights opportunities and challenges in your industry.",
+        "Access curated data to uncover opportunities and challenges within your target market and industry.",
     },
     {
       title: "Competitor Analysis",
       description:
-        "Gain in-depth insights into your competitors to identify your unique value proposition.",
+        "Analyze competitors in-depth to identify your unique value proposition and stand out in the market.",
     },
     {
       title: "Risk Assessment",
       description:
-        "Evaluate potential risks associated with your business idea to prepare for challenges.",
+        "Assess potential risks and prepare for challenges to ensure a well-rounded business strategy.",
+    },
+    {
+      title: "Trend Analysis",
+      description:
+        "Discover emerging trends that could impact your business and use them to stay ahead of the curve.",
     },
   ],
   "Integrated Online Team": [
     {
       title: "Strategic Planning",
       description:
-        "Comprehensive business strategy development to align your goals and resources.",
+        "Comprehensive strategies to align your business goals, resources, and long-term vision effectively and efficiently.",
     },
     {
       title: "Marketing & Branding",
       description:
-        "Tailored marketing strategies and branding solutions to make your business stand out.",
+        "Tailored strategies and branding solutions designed to make your business unique, recognizable, and highly competitive.",
     },
     {
       title: "Design & Development",
       description:
-        "Expert website and application development to create an impactful online presence.",
+        "Expert development of websites and applications for a strong and impactful online presence that attracts customers.",
     },
     {
       title: "Customer Support & Engagement",
       description:
-        "Dedicated teams to manage customer interactions and build loyalty.",
+        "Specialized teams to handle customer interactions and build lasting loyalty through exceptional  service.",
     },
     {
       title: "Finance & HR Services",
       description:
-        "Professional support in finance, administration, and human resources to ensure smooth operations.",
+        "Support in finance, administration, and HR to ensure seamless operations and achieve organizational goals effectively.",
     },
     {
       title: "Project Management",
       description:
-        "End-to-end project management services to keep your initiatives on track.",
+        "Complete project management services to deliver results efficiently, on time, and with high-quality standards.",
     },
   ],
   Community: [
@@ -127,46 +132,61 @@ const contentData = {
     {
       title: "Investor Access",
       description:
-        "Connect with potential investors who are looking for innovative projects to support and fund.",
+        "Connect with potential investors actively seeking out innovative projects to passionately support and generously fund.",
     },
   ],
   "Buy-Sell Platform": [
     {
       title: "Buy Ideas",
       description:
-        "Explore a marketplace where you can purchase fully developed ideas or project studies, whether they are just concepts or existing businesses.",
+        "Explore a marketplace to purchase fully developed ideas or project concepts that are ready to launch or scale successfully.",
     },
     {
       title: "Sell Ideas",
       description:
-        "List your own ideas or business projects for sale, reaching a wide audience of interested buyers.",
+        "List your innovative ideas or business projects for sale, connecting with buyers who value creativity and potential.",
     },
     {
       title: "Secure Transactions",
       description:
-        "Ensure a safe and reliable transaction process for both buyers and sellers.",
+        "Experience a safe and seamless transaction process designed to protect both buyers and sellers with ease.",
     },
   ],
   "Safe Cloud Storage": [
     {
       title: "Document Management",
       description:
-        "Securely store all important documents, including employee contracts, company registrations, and other vital records.",
+        "Securely store and organize your important documents, including contracts, registrations, and records efficiently.",
     },
     {
       title: "Easy Access",
       description:
-        "Access your documents anytime, anywhere, ensuring you have the necessary information at your fingertips.",
+        "Access your stored documents anytime and anywhere, ensuring vital information is always available when needed most.",
     },
     {
       title: "Data Protection",
       description:
-        "Benefit from robust security measures that keep your sensitive information safe and confidential.",
+        "Enjoy robust security measures that protect your sensitive information, ensuring it remains completely confidential.",
     },
   ],
 };
 const CoreSolutionsSection = () => {
-  const [selectedIcon, setSelectedIcon] = useState("Community");
+  const [selectedIndex, setSelectedIndex] = useState(2);
+  const selectedIcon = icons[selectedIndex].label;
+  // const [selectedIcon, setSelectedIcon] = useState("Community");
+  const handleNext = () => {
+    console.log("first asdfas")
+    setSelectedIndex((prevIndex) => (prevIndex + 1) % icons.length);
+  };
+  
+  const handlePrevious = () => {
+    alert("sjdhgf"); // This should trigger the alert when the previous button is clicked
+    console.log("first asdfas")
+    setSelectedIndex((prevIndex) =>
+      prevIndex === 0 ? icons.length - 1 : prevIndex - 1
+    );
+  };
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -175,16 +195,24 @@ const CoreSolutionsSection = () => {
     slidesToScroll: 1, // Scroll one slide at a time
     nextArrow: (
       <button
-        className="next-arrow ml-[-20px]"
+        onClick={(e) => {
+          e.stopPropagation(); // Ensure this is required
+          handleNext();
+        }}
+        className="next-arrow ml-[-20px]" // Ensure styling is correct for visibility
       >
-        <MdOutlineArrowForwardIos color="white" size={30} />
+        <MdOutlineArrowForwardIos color="white" size={30} />dfg
       </button>
     ),
     prevArrow: (
       <button
-        className="prev-arrow"
+        onClick={(e) => {
+          e.stopPropagation(); // Ensure this is required
+          handlePrevious();
+        }}
+        className="prev-arrow" // Ensure styling is correct for visibility
       >
-        <MdArrowBackIosNew color="white" size={30} />
+        <MdArrowBackIosNew color="white" size={30} />dsfdsf
       </button>
     ),
     responsive: [
@@ -211,6 +239,7 @@ const CoreSolutionsSection = () => {
       },
     ],
   };
+  
   return (
     <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>
@@ -233,65 +262,63 @@ const CoreSolutionsSection = () => {
               Ideax provide
             </h2>
           </div> */}
-           <div
-        style={{
-          backgroundColor: "black",
-          zIndex: "0",
-          textAlign: "center",
-          padding: "40px 0 0px",
-        }}
-      >
-        <div style={{ display: "flex", margin: "auto", width: "fit-content" }}>
-          {/* <img
+          <div
+            style={{
+              backgroundColor: "black",
+              zIndex: "0",
+              textAlign: "center",
+              padding: "40px 0 0px",
+            }}
+          >
+            <div
+              style={{ display: "flex", margin: "auto", width: "fit-content" }}
+            >
+              {/* <img
             src="main-icon/Idea.png"
             style={{ marginRight: "10px",color:'white' ,backgroundColor:"#6161FF",padding:"7px",borderRadius:'5px'}}
             alt=""
             width={50}
           /> */}
-          
-          
-          
-          <img
-            src="/main-icon/hand.webp"
-            style={{ marginRight: "10px" }}
-            alt="icon 3"
-            width={50}
-            className=" bg-[#A31C2F] rounded-lg p-0"
 
-          />
-          <img
-            src="/main-icon/legal.webp"
-            style={{ marginRight: "10px" }}
-            alt="Startup business idea checker"
-            width={50}
-            className=" bg-[#0A7678] rounded-lg p-0"
-
-          />
-          <img
-            src="/main-icon/marketing.webp"
-            style={{ marginRight: "10px" }}
-            alt="Business idea checker free"
-            width={50}
-            className=" bg-[#0F6333] rounded-lg p-0"
-
-          />
-          <img
-            src="/main-icon/team.webp"
-            alt="icon 4"
-            width={50}
-            className=" bg-[#480D6B] rounded-lg p-0"
-          />
-        </div>
-        <h2 className="client-heading-text mb-0 p-0">Work together</h2>
-        <p className="client-description md:max-w-[60%]" style={{padding:"10px"}}>
-          Now any team can streamline work, collaborate, and solve their most
-          complex problems together with our suite of products.
-        </p>
-      </div>
+              <img
+                src="/main-icon/hand.webp"
+                style={{ marginRight: "10px" }}
+                alt="icon 3"
+                width={50}
+                className=" bg-[#A31C2F] rounded-lg p-0"
+              />
+              <img
+                src="/main-icon/legal.webp"
+                style={{ marginRight: "10px" }}
+                alt="Startup business idea checker"
+                width={50}
+                className=" bg-[#0A7678] rounded-lg p-0"
+              />
+              <img
+                src="/main-icon/marketing.webp"
+                style={{ marginRight: "10px" }}
+                alt="Business idea checker free"
+                width={50}
+                className=" bg-[#0F6333] rounded-lg p-0"
+              />
+              <img
+                src="/main-icon/team.webp"
+                alt="icon 4"
+                width={50}
+                className=" bg-[#480D6B] rounded-lg p-0"
+              />
+            </div>
+            <h2 className="client-heading-text mb-0 p-0">Work together</h2>
+            <p
+              className="client-description md:max-w-[60%]"
+              style={{ padding: "10px" }}
+            >
+              Now any team can streamline work, collaborate, and solve their
+              most complex problems together with our suite of products.
+            </p>
+          </div>
           <div className="slider-container" style={{ marginTop: "50px" }}>
-          <div
-  className="left-sedow2 hover:opacity-0 pointer-events-none transition-opacity duration-300"
-></div>
+            <div className="left-sedow2 hover:opacity-0 pointer-events-none transition-opacity duration-300"></div>
             <div
               className="carousel-container"
               style={{
@@ -308,19 +335,18 @@ const CoreSolutionsSection = () => {
                       textAlign: "center",
                       padding: "110px",
                       width: "20%",
-
                     }}
                     className="icon-item"
-                    onClick={() => setSelectedIcon(item.label)}
+                    onClick={() => setSelectedIndex(index)}
                   >
                     <div
                       className="icon"
                       style={{
                         fontSize: "24px",
                         cursor: "pointer",
-                        textAlign:'center',
-                        margin:'auto',
-                        width:'fit-content',
+                        textAlign: "center",
+                        margin: "auto",
+                        width: "fit-content",
                         color:
                           selectedIcon === item.label ? "#6161FF" : "#b8b4b4",
                       }}
@@ -360,21 +386,21 @@ const CoreSolutionsSection = () => {
                         <p style={{ color: "white" }}>{content.description}</p>
                       </div>
                     </div>
-                ))}
+                  ))}
               </div>
             </div>
             <div style={{ position: "absolute", zIndex: 1000 }}></div>
           </div>
           <div className="btns-container flex justify-center mx-auto">
-          <Link
-            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto
+            <Link
+              className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto
             "
-            style={{ fontSize: "14px" }}
-            href="/mainWizard"
-          >
-            Test Your Idea <FaArrowAltCircleRight />
-          </Link>
-        </div>
+              style={{ fontSize: "14px" }}
+              href="/mainWizard"
+            >
+              Test Your Idea <FaArrowAltCircleRight />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

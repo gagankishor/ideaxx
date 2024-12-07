@@ -115,7 +115,7 @@ const AwardsSection = () => {
             </div>
           </div>
           <div className="badge-section" style={{ marginTop: "40px" }}>
-            <div className="container mx-auto flex md:flex-col px-4 md:pl-0 max-w-4xl justify-around items-stretch">
+            <div className="container mx-auto  px-4 md:pl-0 max-w-4xl ">
               {blogs.map((blog, index) => (
                 <React.Fragment key={blog.id}>
                   <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 ">

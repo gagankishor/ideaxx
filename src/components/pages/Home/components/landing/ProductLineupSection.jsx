@@ -121,7 +121,7 @@ const ProductLineupSection = () => {
               alt="Ideax AI"
               style={{ width: "48%", margin: "" }}
             />
-            <p className=" text-center text-white">
+            <p className=" text-center text-white max-w-[40%]">
               Get your idea certified and boost its credibility instantly
             </p>
           </div>
@@ -454,20 +454,20 @@ const ProductLineupSection = () => {
         </div>
       </div>
       <div className="bg-black text-center py-10 px-4 sm:py-16">
-        {/* <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
-            Start validating{" "}
-          </span>
-          your business ideas with Ideax
-        </h1> */}
-        <motion.h1
-        className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
+        <motion.span
+        className="text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Start validating your business ideas with Ideax
-      </motion.h1>
+        Start validating{" "}
+      </motion.span>  
+      {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+            Start validating
+          </span> */}
+          your business ideas with Ideax
+        </h2>
         <div className="btns-container mt-10 ">
           <Link
             className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"

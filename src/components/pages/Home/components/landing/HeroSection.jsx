@@ -18,7 +18,7 @@ const HeroSection = () => {
         Empower Your Business with IDX on Solana
       </motion.h1>
  <motion.div
-        className="flex items-center space-x-4 mb-8"
+        className="flex items-center space-x-0 mb-8"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
@@ -29,9 +29,9 @@ const HeroSection = () => {
           className="h-20"
         />
         <img
-          src="/logo.png" 
+          src="/landing/idxLogo.png" 
           alt="IDX Logo"
-          className="h-16"
+          className="h-28"
         />
       </motion.div>
       {/* Subheadline */}

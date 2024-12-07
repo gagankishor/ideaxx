@@ -186,15 +186,58 @@ export default function Footer() {
             >
               <span>{item.title}</span>
               {isActive ? (
-                <FaChevronUp className="text-gray-600" />
+                <FaChevronUp size={10} className="text-gray-600 opacity-35" />
               ) : (
-                <FaChevronDown className="text-gray-600" />
+                <FaChevronDown size={10} className="text-gray-600 opacity-35" />
               )}
             </div>
             {isActive && (
-              <p className="mt-0 text-[12px] text-gray-500 text-left pl-2">
-                {item.description}
-              </p>
+             <p 
+      className="
+        mt-3 
+        text-xs 
+        text-gray-700 
+        text-left 
+        px-3 
+        py-2 
+        border-l-4 
+        border-blue-500 
+        bg-gray-100 
+        rounded-r-md 
+        shadow-md 
+        transition-all 
+        duration-300 
+        ease-in-out 
+        hover:shadow-lg 
+        hover:translate-x-1 
+        hover:border-blue-600 
+        animate-fade-in 
+        relative 
+        overflow-hidden
+      "
+    >
+      <span 
+        className="
+          relative 
+          z-10 
+          block 
+          opacity-90
+        "
+      >
+        {item.description}
+      </span>
+      <span 
+        className="
+          absolute 
+          inset-0 
+          bg-gradient-to-r 
+          from-blue-100 
+          to-transparent 
+          opacity-20 
+          pointer-events-none
+        "
+      />
+    </p>
             )}
           </li>
         );
@@ -419,7 +462,7 @@ export default function Footer() {
               target="_blank"
               className="hover:text-blue-600"
             >
-              <FaLinkedin />
+              <FaLinkedin/>
             </a>
           </div>
           <div className="flex space-x-4 ">

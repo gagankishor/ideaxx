@@ -1928,7 +1928,7 @@ const WizardResult = () => {
       >
         <div className="flex flex-col items-center space-y-4">
           <span className="text-3xl">
-            <img src="" alt="congrechuletion for reward" />
+            {/* <img src="" alt="congrechuletion for reward" />  */}
             
             </span>
           <h2 className="text-xl font-semibold text-white">Congratulations!</h2>

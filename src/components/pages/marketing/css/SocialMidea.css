@@ -1,0 +1,17 @@
+.youtube-card-contener {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    margin: 5rem 0px;
+}
+.youtube-card-contener .card {
+    overflow: hidden;
+    width: 400px;
+    cursor: pointer;
+}
+
+.youtube-card-contener .card img {
+    /* overflow: hidden; */
+    width: 100%;
+}

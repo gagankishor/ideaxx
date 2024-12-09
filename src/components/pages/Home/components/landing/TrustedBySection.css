@@ -1,0 +1,123 @@
+  .segment-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logosTitleWrapper {
+    text-align: center;
+  }
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px; 
+    flex-wrap: wrap;
+  }
+  /* .company-logo {
+    margin: 0 20px;
+    height: 75px;
+    padding: 0px;
+    border-radius: 5px;
+  } */
+  .logos-carousel-container {
+    @apply w-full mx-auto;
+  }
+  .company-logo {
+    @apply max-h-24 mx-auto transition-transform duration-200 hover:scale-110;
+  }
+  .logos {
+    padding: 100px 40px;
+  }
+  .highlight-section {
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .col {
+    padding: 80px;
+    width: 50%;
+  }
+  .col-left {
+    position: relative;
+  }
+  .gartner-logo {
+    width: 180px;
+    position: absolute;
+    top: 0;
+  }
+  .highlight-text {
+    font-weight: 700;
+  }
+  .image-contener {
+    min-height: 60px;
+  }
+  .image-contener-h{
+    font-size:'12px';
+  }
+  .col-left-content {
+    font-size: 2.25rem;
+  }
+  @media (max-width: 1024px) {
+    .col {
+      width: 100%;
+      padding: 30px 30px 0px;
+    }
+    .base-layout-segment-component-4 {
+        padding: unset;
+    }
+    .col-left-content {
+        margin-top: 40px;
+        font-size: 38px;
+    }
+    .segment-wrapper {
+        max-width: unset;
+        margin: 0;
+      }
+  }
+  
+  @media (max-width: 768px) {
+    .logos {
+      padding: 80px 20px;
+    }
+    .highlight-section {
+      height: auto;
+      padding: 28px; /* Add padding for smaller screens */
+      
+    }
+    .col-left-content {
+        margin-top: 0px;
+        font-size: 28px;
+        padding: 0px;
+
+    }
+    .col-left {
+      position: relative;
+      margin-top: 0px;
+      padding: 0px;
+
+
+    }
+    /* .company-logo {
+      width: 60px;
+    } */
+  
+    .logos-container {
+      margin: 0 10px; 
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+    .logosTitleWrapper h2 {
+      font-size: 20px; /* Adjust title size for small screens */
+    }
+    .col {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  

@@ -15,7 +15,7 @@ const TrustedBySection = () => {
           {/* Title */}
           <div style={{marginTop:'100px'}}>
             <div className="logosTitleWrapper">
-            <h2 className="main-heading-h2">
+            <h2 className="main-heading-h2 text-2xl ">
   Trusted by 200+ companies and over 1,000 customers, from innovative startups to leading enterprises
 </h2>
             </div>

@@ -38,12 +38,10 @@ const ProductLineupSection = () => {
                 // src="/darksection1/Integrity.webp"
                 src="/darksection1/box_Integrity.jpg"
                 alt="Product"
-                className="product-image"
+                className="product-image" 
               />
               <p className="p-4 text-white text-center">
-                AI-powered platform ensuring integrity at every level—streamline
-                operations, uphold compliance, and foster trust with
-                intelligent, transparent solutions for modern...
+                AI-powered platform streamlines operations, ensures compliance, and fosters trust with intelligent, transparent solutions for modern businesses.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -57,8 +55,7 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className="p-4 text-white text-center">
-                Driving innovation—accelerate insights, streamline workflows,
-                and empower your team to turn bold ideas into impactful...
+                Drive innovation—accelerate insights, streamline workflows, and empower your team to transform bold ideas into impact.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -71,9 +68,7 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className=" p-4 text-white ">
-                Discover how our platform enhances operational efficiency by
-                streamlining workflows, minimizing manual processes, and
-                maximizing productivity across all...
+                Discover how our platform boosts operational efficiency by streamlining workflows, reducing manual tasks, and maximizing productivity.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -86,9 +81,7 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className=" p-4 text-white ">
-                Explore the robust security measures embedded within our
-                platform, designed to safeguard your data and ensure full
-                compliance with the highest industry...
+                Explore our platform's robust security measures designed to safeguard data and ensure full industry compliance.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -131,6 +124,7 @@ const ProductLineupSection = () => {
             style={{ width: "40%", margin: "" }}
           />
         </div>
+        <p className="text-white p-8 text-2xl max-w-5xl mx-auto">Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on a laptop!</p>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img
@@ -138,14 +132,14 @@ const ProductLineupSection = () => {
               className="w-full"
               alt="Image 1"
             />
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/Businessidentity.png"
+                    src="/main-icon/team.webp"
                     alt="Team"
                     width={40}
-                    className=" bg-white rounded-md p-1"
+                    className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">Team</h3>
                 </div>
@@ -162,14 +156,14 @@ const ProductLineupSection = () => {
               className="w-full"
               alt="Image 2"
             />
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/Businessidentity.png"
+                    src="/main-icon/hand.webp"
                     alt="Business Tools"
                     width={40}
-                    className="bg-white rounded-md p-1"
+                    className="bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
                     Business Tools
@@ -188,17 +182,17 @@ const ProductLineupSection = () => {
               className="w-full"
               alt="Image 3"
             />
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/Businessidentity.png"
+                    src="/main-icon/marketing.webp"
                     alt="Website Design"
                     width={40}
-                    className=" bg-white rounded-md p-1"
+                    className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Website Design
+                    Marketing
                   </h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
@@ -214,14 +208,14 @@ const ProductLineupSection = () => {
               className="w-full"
               alt="image Mobile"
             />
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-4 bg-black bg-opacity-0 w-full">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/Businessidentity.png"
+                    src="/main-icon/legal.webp"
                     alt="Team"
                     width={40}
-                    className=" bg-white rounded-md p-1"
+                    className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">Team</h3>
                 </div>
@@ -295,7 +289,7 @@ const ProductLineupSection = () => {
             <div>
               <h3 className="card-title">Validate Your Idea</h3>
               <p className="card-text text-justify">
-                Sign up and submit your business idea. Receive an instant report
+                No need to sing up, only submit your business idea. Receive an instant report
                 with AI-driven insights.
               </p>
             </div>
@@ -359,7 +353,7 @@ const ProductLineupSection = () => {
               }}
             >
               Deliver your best work with{" "}
-              <span style={{ fontWeight: "600" }}>ideax</span>
+              <span style={{ fontWeight: "600" }}>IDX</span>
             </h2>
 
             <div className="btns-container">
@@ -394,16 +388,16 @@ const ProductLineupSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
             {[
               {
-                quote: "IDEAX has transformed the way we manage our business!",
-                author: "Mr. Ashish Maan",
+                quote: "IDEAX has completely transformed the way we efficiently manage and grow our business.",
+                author: "Ashish Maan",
                 role: "Startup Founder",
                 image: "/landing/1711453307385.jpg", // Replace with actual image URLs
                 company: "BizCorp",
               },
               {
                 quote:
-                  "The AI features have significantly improved our decision-making process.",
-                author: "Mr Vikas Puri",
+                  "The AI features have significantly improved our strategic decision-making process overall.",
+                author: "Vikas Puri",
                 role: "JMD EXPORTS M. D.",
 
                 image: "/landing/efacd3a2-633e-4ea0-8813-21e574eb1291.jpg",
@@ -411,16 +405,16 @@ const ProductLineupSection = () => {
               },
               {
                 quote:
-                  "Thanks to IDEAX, I found the perfect business idea that I could implement right away!",
-                author: "Mr. Eyad Abdulla COO",
+                  "Thanks to IDEAX, I found the perfect business idea that I could implement right away",
+                author: "Eyad Abdulla",
                 role: "Diamond GVT Ceramic",
                 image: "/landing/ventom.jpeg",
                 company: "Visionary Inc.",
               },
               {
                 quote:
-                  "I love the tools for managing cash flow; they make financial planning so much easier!",
-                author: "Mr. Ayman Basha",
+                  "I appreciate the tools for managing cash flow; they make financial planning so much easier!",
+                author: "Ayman Basha",
                 role: "GM of BASHA IMPEX",
                 image: "/landing/AymanBasha.jpeg",
                 company: "ShopEase",
@@ -439,11 +433,11 @@ const ProductLineupSection = () => {
                   />
                 </div>
                 <div className="text-center mt-5">
-                  <h4 className="font-semibold text-lg">
+                  <h4 className="font-semibold text-white text-lg">
                     {testimonial.author}
                   </h4>
-                  <p className="text-sm text-black mb-4">{testimonial.role}</p>
-                  <p className="text-sm text-black italic">
+                  <p className="text-sm text-white mb-4">{testimonial.role}</p>
+                  <p className="text-sm text-white italic">
                     “{testimonial.quote}”
                   </p>
                 </div>

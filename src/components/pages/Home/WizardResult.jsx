@@ -665,8 +665,15 @@ const WizardResult = () => {
               size={120}
               strokeWidth={14}
             >
-              <div className="text-center">
-                <Store className="mx-auto mb-2 text-[#686868]" size={34} />
+              <div className="text-center bg-white">
+              <img
+                  src="/result-page/image.png"
+                  className="mx-auto w-10 bg-white  "
+                  alt="idea graph icon"
+                  size={24}
+                />
+                {/* <img src="" alt="" size={34}/> */}
+                {/* <Store className="mx-auto mb-2 text-[#686868]" size={34} /> */}
               </div>
             </CircularProgress>
             <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
@@ -761,9 +768,9 @@ const WizardResult = () => {
               <div className="text-center">
                 <img
                   src="/result-page/Layer9.png"
-                  className="mx-auto w-12  text-[#686868]"
+                  className="mx-auto w-20  text-[#686868]"
                   alt="idea graph icon"
-                  size={34}
+                  size={50}
                 />
               </div>
             </CircularProgress>
@@ -1439,12 +1446,14 @@ const WizardResult = () => {
                       </svg>
                     </div>
                     <div className="description-box-parent">
+                    <h4 className=" text-left mt-12">Your idea description</h4>
+
                       <textarea
                         placeholder="Describe your idea in few line ..."
                         value={data?.idea_description || ""}
-                        className="description-box mt-12"
+                        className="description-box "
                         aria-label="Description box"
-                        rows="3"
+                        rows="4"
                         readOnly
                         // minLength="50"
                         // onMouseLeave={handleBlur}
@@ -1456,7 +1465,6 @@ const WizardResult = () => {
             </div>
           </div>
         </section>
-
         <section
           id="ideax"
           className="business-check-container border-gray-300 border  m-auto mt-10 lg:mx-10 "
@@ -1761,9 +1769,7 @@ const WizardResult = () => {
                       </svg>
                     </div>
                     <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-lg lg:text-sm font-thin text-gray-800">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Praesentium nemo eveniet sequi? Dolorem at est libero
-                      reprehenderit.
+                    Enhance your idea's success with interactive demonstrations, a user-friendly mobile responsive, social media integration, and personalized recommendations. Simplify processes, maximize engagement, and create a unique value for customers.
                     </p>
                   </div>
                 );
@@ -1790,37 +1796,29 @@ const WizardResult = () => {
         </section> */}
       </div>
       <div className="bg-black text-center py-10 px-4 sm:py-16">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-10 lg:max-w-6xl mx-auto">
+          <span className="text-transparent bg-clip-text  bg-gradient-to-r from-purple-500 to-blue-500 	">
             Take the first step{" "}
           </span>
           <span className="font-semibold">towards</span> making your idea to a
           reality, <span className="font-semibold">launch</span> your idea now.
         </h1>
 
-        <div className="btns-container mt-10 ">
-          <Link
-            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
-            style={{ fontSize: "14px", margin: "auto" }}
-            href="/plan-details"
-          >
-            Launch Your Idea <FaArrowAltCircleRight />
-          </Link>
-        </div>
-        <h1 className="text-2xl mt-10 sm:text-3xl md:text-5xl font-bold text-white">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
-          Get More Free Test{" "}
-          </span>
-          <span className="font-semibold">Now</span> 
-        </h1>
-        <div className="btns-container mt-10 ">
-          <button
-            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
-            style={{ fontSize: "14px", margin: "auto" }}
+        <div className="btns-container mt-10 flex md:flex-row justify-center gap-5">
+        <button
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"
+            style={{ fontSize: "14px" }}
             onClick={handleOpenMotivationalCard}
           >
             Get More Free Test <FaArrowAltCircleRight />
           </button>
+          <Link
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"
+            style={{ fontSize: "14px"}}
+            href="/plan-details"
+          >
+            Launch Your Idea <FaArrowAltCircleRight />
+          </Link>
         </div>
       </div>
       <Modal
@@ -1870,17 +1868,7 @@ const WizardResult = () => {
       >
         <div className="relative">
           <div className="flex justify-center mb-4">
-            <svg
-              className="h-16 w-16 text-[#6161FF]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" />
-            </svg>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXyMOQzbOL_yLSf6vxOknPO6btGZ35TNF45_sj9ZWGpxWS0rT" width={50} alt="" />
           </div>
           <h2 className="text-2xl font-bold text-gray-800 text-center">Don&rsquo;t Give Up!</h2>
           <p className="text-gray-600 mt-2 text-center">

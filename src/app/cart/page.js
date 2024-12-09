@@ -19,7 +19,7 @@ const Cart = () => {
               </div>
               <div className="text-center sm:text-right mt-4 sm:mt-0">
                 <button className="bg-red-100 text-red-500 px-4 py-2 rounded font-semibold mb-2">
-                  SAVE ₹15,840.00
+                  SAVE ₹3,597.00
                 </button>
                 <div className="text-2xl font-bold text-gray-800">₹699.00 / month</div>
                 <div className="text-gray-500 line-through">₹3999.00 / month</div>
@@ -34,12 +34,12 @@ const Cart = () => {
           <div className="mb-6">
             <h3 className="text-xl font-bold mb-4">Subtotal</h3>
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-500 line-through">₹19,152.00</span>
-              <span className="text-xl font-bold text-gray-800">₹3,312.00</span>
+              <span className="text-gray-500 line-through">₹11,988.00</span>
+              <span className="text-xl font-bold text-gray-800">₹8,391.00</span>
             </div>
             <div className="flex justify-between items-center text-sm text-gray-500">
-              <span>Plan discount -83%</span>
-              <span className="text-red-500">-₹15,840.00</span>
+              <span>Plan discount -30%</span>
+              <span className="text-red-500">-₹3,597.00</span>
             </div>
           </div>
           <div className="mb-6">

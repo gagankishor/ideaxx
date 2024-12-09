@@ -144,7 +144,7 @@ const contentData = {
     {
       title: "Sell Ideas",
       description:
-        "List your innovative ideas or business projects for sale, connecting with buyers who value creativity and potential.",
+        "List your innovative ideas or business projects for sale, connecting with investors who value creativity and potential.",
     },
     {
       title: "Secure Transactions",
@@ -190,6 +190,7 @@ const CoreSolutionsSection = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
+    centerMode: true,
     nextArrow: (
       <div
         
@@ -236,7 +237,6 @@ const CoreSolutionsSection = () => {
       },
     ],
   };
-  
   return (
     <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>
@@ -289,7 +289,7 @@ const CoreSolutionsSection = () => {
               style={{ padding: "10px" }}
             >
               Now any team can streamline work, collaborate, and solve their
-              most complex problems together with our suite of products.
+              most complex problems together with our suite of products and much more.
             </p>
           </div>
           <div className="slider-container" style={{ marginTop: "50px" }}>

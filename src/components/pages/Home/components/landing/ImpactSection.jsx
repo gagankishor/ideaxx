@@ -5,7 +5,7 @@ const testimonials = [
     videoSrc: "BelloAnimationsVideo.mp4",
     image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.jpeg",
     quote:
-      "The insights and tools provided helped us achieve milestones we didn't think were possible.",
+      "The tools provided a significant breakthrough in streamlining our operations and achieving key milestones.",
     name: "Mr. Taki Kedo",
     title: "CEO, 360 Home decor",
     stats: [
@@ -29,7 +29,7 @@ const testimonials = [
   {
     videoSrc: "Vantom_Solar_Batteries.mp4",
     quote:
-      "The insights and tools provided helped us achieve milestones we didn't think were possible.",
+      "Implementing these solutions transformed our business approach and maximized growth potential.",
     name: "Eyad Abdulla",
     title: "COO, Vantom Power",
     image:"/landing/ventom.jpeg",
@@ -55,10 +55,10 @@ const testimonials = [
   {
     videoSrc: "MercedesMaybachSL.mp4",
     quote:
-      "The insights and tools provided helped us achieve milestones we didn't think were possible.",
+      "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Taki Kaddo",
     title: "CTO, Pick It Up",
-    image:"/landing/takiKardo.jpeg",
+    image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.jpeg",
     stats: [
       {
         amount: "300K",

@@ -6,6 +6,7 @@ import { RiArrowUpDoubleFill } from "react-icons/ri";
 // import SubscriptionPlans from "./SubscriptionPlans";
 // import PricingCard from "./PricingCard";
 import PricingPlans from "./PricingCard";
+import { useState } from "react";
 const Plans = () => {
   const startupFeatures = [
     {
@@ -172,56 +173,10 @@ const Plans = () => {
         "Safeguard your important business documents and resources with 50 GB of secure cloud storage, ensuring your data is protected and accessible whenever you need it.",
     },
   ];
-  // const [isExpanded, setIsExpanded] = useState("");
-  
-  // const planData = [
-  //   {
-  //     title: "Business",
-  //     description: "Level up with more power and enhanced features.",
-  //     originalPrice: 760.00,
-  //     discountPercentage: 70,
-  //     discountedPrice: 229.00,
-  //     features: [
-  //       "100 websites",
-  //       "Managed WordPress Hosting",
-  //       "200 GB NVMe storage",
-  //       "Hostinger Website Builder",
-  //       "Free domain (₹749.00 value)",
-  //       "Free automatic website migration",
-  //       "Free email",
-  //       "Unlimited free SSL",
-  //       "Daily backups (₹2,148.00 value)",
-  //       "Basic WooCommerce Optimisation",
-  //       "Free CDN"
-  //     ]
-  //   },
-  //   {
-  //     title: "Cloud Startup",
-  //     description: "Enjoy optimised performance & guaranteed resources.",
-  //     originalPrice: 1899.00,
-  //     discountPercentage: 59,
-  //     discountedPrice: 699.00,
-  //     features: [
-  //       "300 websites",
-  //       "Managed WordPress Hosting",
-  //       "200 GB NVMe storage",
-  //       "Hostinger Website Builder",
-  //       "Free domain (₹749.00 value)",
-  //       "Free automatic website migration",
-  //       "Free email",
-  //       "Unlimited free SSL",
-  //       "Daily backups (₹2,148.00 value)",
-  //       "Standard WooCommerce",
-  //       "Free CDN",
-  //       "Dedicated IP address",
-  //       "Priority support"
-  //     ]
-  //   }
-  // ];
+  const [isExpanded, setIsExpanded] = useState("");
   return (
     <>
       <div className="flex flex-wrap bg-[#19229A] relative">
-        {/* Left Section */}
         <div className="w-full lg:w-2/5 bg-[#161D78] text-white p-10 lg:p-20 box-border">
           <h2 className="text-2xl lg:text-3xl font-semibold">
             How to Build a Startup
@@ -241,7 +196,6 @@ const Plans = () => {
             </a>
           </div>
         </div>
-        {/* Right Section */}
         <div className="w-full lg:w-3/5 relative">
           <img
             src="plan1.jpeg"
@@ -251,8 +205,34 @@ const Plans = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[#191C59] opacity-50"></div>
         </div>
       </div>
+      <div className="flex flex-col items-center text-center">
+          <RiArrowUpDoubleFill
+            className="text-[24px] text-[#6161FF] mx-auto mb-5 animate-bounce"
+            size={80}
+            style={{
+              animation: "slideDown 2s infinite",
+            }}
+          />
+          <style>
+            {`
+              @keyframes slideDown {
+                0% {
+                  transform: translateY(0) rotate(180deg);
+                }
+                50% {
+                  transform: translateY(10px) rotate(180deg);
+                }
+                100% {
+                  transform: translateY(0) rotate(180deg);
+                }
+              }
+            `}
+          </style>
+          <h2 className="heading mt-10 text-xl lg:text-2xl font-semibold">
+            Our Plans
+          </h2>
+        </div>
       <PricingPlans/>
-      {/* <PricingCard plan={planData}/> */}
       <div className="main-plan-container">
         <div className="selling-points-section">
           <div className="selling-points-container">
@@ -289,34 +269,8 @@ const Plans = () => {
           </div>
         </div>
         
-        <div className="flex flex-col items-center text-center">
-          <RiArrowUpDoubleFill
-            className="text-[24px] text-[#6161FF] mx-auto mb-5 animate-bounce"
-            size={80}
-            style={{
-              animation: "slideDown 2s infinite",
-            }}
-          />
-          <style>
-            {`
-              @keyframes slideDown {
-                0% {
-                  transform: translateY(0) rotate(180deg);
-                }
-                50% {
-                  transform: translateY(10px) rotate(180deg);
-                }
-                100% {
-                  transform: translateY(0) rotate(180deg);
-                }
-              }
-            `}
-          </style>
-          <h2 className="heading mt-10 text-xl lg:text-2xl font-semibold">
-            Our Plans
-          </h2>
-        </div>
-        <div className="plans-container">
+        
+        {/* <div className="plans-container">
           <div className="plan-card">
             <div>
               <h2 className="plan-title">Startup Plan</h2>
@@ -333,7 +287,6 @@ const Plans = () => {
               </ul>
 
             </div>
-            {/* <button className="subscribe-button">Subscribe Now</button> */}
           </div>
           <div className="plan-card">
             <div>
@@ -354,9 +307,8 @@ const Plans = () => {
             </div>
             <button className="subscribe-button">Contect Sales</button>
           </div>
-        </div>
+        </div> */}
       </div>
-      {/* <SubscriptionPlans/> */}
     </>
   );
 };

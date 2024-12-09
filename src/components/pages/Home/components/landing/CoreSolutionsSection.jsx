@@ -191,7 +191,6 @@ const CoreSolutionsSection = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
-    centerMode: true,
   centerPadding: '0px', // Ensure the selected item is truly centered
   initialSlide: selectedIndex, // Set the initial slide to the selected index
   afterChange: (current) => {

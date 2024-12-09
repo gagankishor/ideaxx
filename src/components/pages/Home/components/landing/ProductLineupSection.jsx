@@ -217,7 +217,7 @@ const ProductLineupSection = () => {
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
-                  <h3 className="text-white text-xl font-bold mb-1">Team</h3>
+                  <h3 className="text-white text-xl font-bold mb-1">Full mobile experience</h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about

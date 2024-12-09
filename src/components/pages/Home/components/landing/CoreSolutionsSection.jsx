@@ -191,6 +191,15 @@ const CoreSolutionsSection = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
+    centerMode: true,
+  centerPadding: '0px', // Ensure the selected item is truly centered
+  initialSlide: selectedIndex, // Set the initial slide to the selected index
+  afterChange: (current) => {
+    // Update selectedIndex if it doesn't match the current slide
+    if (current !== selectedIndex) {
+      setSelectedIndex(current);
+    }
+  },
     nextArrow: (
       <div
         
@@ -344,7 +353,6 @@ const CoreSolutionsSection = () => {
             <div className="right-sedow2 hover:opacity-0 pointer-events-none transition-opacity duration-300"></div>
           </div>
           <div style={{ overflow: "hidden" }}>
-            
             <div className="from-concept-continer">
               <div className="from-concept-main-card">
                 {selectedIcon &&
@@ -354,7 +362,7 @@ const CoreSolutionsSection = () => {
                         <h3 style={{ color: "white" }}>{content.title}</h3>
                       </div>
                       <div>
-                        <p style={{ color: "white" }}>{content.description}</p>
+                        <p style={{ color: "white" }} className="text-md">{content.description}</p>
                       </div>
                     </div>
                   ))}

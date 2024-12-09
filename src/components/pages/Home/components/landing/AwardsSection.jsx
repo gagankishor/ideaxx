@@ -82,7 +82,10 @@ const AwardsSection = () => {
             >
               <h3>Industry Recognition</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-              Our platform is widely acknowledged as a pioneer in business management, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes.
+              Entrepreneurs and startups across diverse industries trust IDEAX
+                as their preferred partner for success. Our platform empowers
+                business owners with innovative tools designed to streamline
+                operations.
               </p>
               <a
                 href="#"
@@ -103,10 +106,7 @@ const AwardsSection = () => {
             >
               <h3>Trusted by Entrepreneurs</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-                Entrepreneurs and startups across diverse industries trust IDEAX
-                as their preferred partner for success. Our platform empowers
-                business owners with innovative tools designed to streamline
-                operations.
+                Our platform is widely acknowledged as a pioneer in business management, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes.
               </p>
               <a
                 href="#"

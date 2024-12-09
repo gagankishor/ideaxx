@@ -993,7 +993,7 @@ const WizardResult = () => {
                           ) / 5
                         ).toFixed(2)}%`,
                         position:
-                          "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
+                          "top-72 mt-3 z-0 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                         bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
                         mgIcon: "md:-ml-20",
                         icon: <FaBalanceScale />,
@@ -1863,29 +1863,29 @@ const WizardResult = () => {
       <Modal
         isOpen={motivationalCardOpen}
         onRequestClose={onMotivationalCardClose}
-        className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto focus:outline-none"
+        className="bg-white shadow-md rounded-lg p-6 max-w-sm mx-auto focus:outline-none"
         overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
       >
         <div className="relative">
           <div className="flex justify-center mb-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEXyMOQzbOL_yLSf6vxOknPO6btGZ35TNF45_sj9ZWGpxWS0rT" width={50} alt="" />
+            <img src="/result-page/congrechuletion.webp" width={100} alt="" />
           </div>
           <h2 className="text-2xl font-bold text-gray-800 text-center">Don&rsquo;t Give Up!</h2>
           <p className="text-gray-600 mt-2 text-center">
             You have tried so hard to achieve your goals.
           </p>
-          <div className="flex justify-between items-center mt-6">
+          <div className="flex flex-col gap-5 justify-between  items-center mt-6">
             <button 
-              className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-bold py-2 px-4 rounded" 
+              className="bg-[#417CF5] hover:bg-[#417CF5] text-white font-bold py-2 px-4 rounded" 
               onClick={handleOpenTaskCompletionCard}
             >
               Get More Attempts
             </button>
             <button 
-              className="bg-[#6161FF] hover:bg-[#6161FF] text-white font-bold py-2 px-4 rounded" 
+              className=" hover:bg-[#417CF5] text-black hover:text-white  font-bold py-2 px-4 rounded" 
               onClick={handleShareAchievement}
             >
-              Share My Achievement
+              Share Achievement
             </button>
           </div>
           <button

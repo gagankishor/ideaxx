@@ -7,19 +7,19 @@ const websiteEssentials = [
     title: "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
     imageUrl: "/blog/3/image3.webp",
-    hrefUrl: "blog/1",
+    hrefUrl: "/blog/1",
   },
   {
     title: "Top Business Trends to Watch in 2024 ...",
     category: "Business Trends",
     imageUrl: "/blog/2/image3.webp", // Data visualization image
-    hrefUrl: "blog/2",
+    hrefUrl: "/blog/2",
   },
   {
     title: "How AI is Shaping the Future of Entrepreneurship",
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image3.webp", // AI and data science image
-    hrefUrl: "blog/3",
+    hrefUrl: "/blog/3",
   },
 ];
 const BlogDetails = () => {

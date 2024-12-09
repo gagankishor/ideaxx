@@ -7,27 +7,27 @@ const articles = [
       "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
     imageUrl: "/blog/2/image.webp", // Unsplash image
-    hrefUrl: "blog/2",
+    hrefUrl: "/blog/2",
   },
   {
     title:
       "Top Business Trends to Watch in 2024 ...",
     category: "Business Trends",
     imageUrl: "/blog/3/image2.webp", // Unsplash image
-    hrefUrl: "blog/3",
+    hrefUrl: "/blog/3",
   },
   {
     title: "How AI is Shaping the Future of Entrepreneurship",
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image1.webp",
-    hrefUrl: "blog/4",
+    hrefUrl: "/blog/4",
 
   },
   {
     title: "The Rise of Online Businesses: Opportunities and Challenges",
     category: "Opportunities and Challenges",
     imageUrl: "/blog/5/image.webp",
-    hrefUrl: "blog/5",
+    hrefUrl: "/blog/5",
 
   },
   // {
@@ -44,19 +44,19 @@ const editorsPick = [
     title: "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
     imageUrl: "/blog/3/image3.webp",
-    hrefUrl: "blog/1",
+    hrefUrl: "/blog/1",
   },
   {
     title: "Top Business Trends to Watch in 2024 ...",
     category: "Business Trends",
     imageUrl: "/blog/2/image3.webp", // Data visualization image
-    hrefUrl: "blog/2",
+    hrefUrl: "/blog/2",
   },
   {
     title: "How AI is Shaping the Future of Entrepreneurship",
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image3.webp", // AI and data science image
-    hrefUrl: "blog/3",
+    hrefUrl: "/blog/3",
   },
 ];
 const businessStrategies = [
@@ -64,21 +64,21 @@ const businessStrategies = [
     title: "Transforming Businesses with Virtual Business Management",
     category: "Virtual Business Management",
     imageUrl: "/blog/image2.jpg", // Startup scaling image
-    hrefUrl: "blog/6",
+    hrefUrl: "/blog/6",
 
   },
   {
     title: "The Rise of Online Businesses: Opportunities and Challenges",
     category: "Opportunities and Challenges",
     imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
-    hrefUrl: "blog/4",
+    hrefUrl: "/blog/4",
 
   },
   {
     title: "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
     imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2", 
-    hrefUrl: "blog/1",
+    hrefUrl: "/blog/1",
 
   },
 ];

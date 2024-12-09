@@ -45,7 +45,7 @@ const CardSlider = () => {
       id: 8,
       title: "Idea",
       description: "",
-      bgImage: "/sliderLandigPage/1.webp",
+      bgImage: "/sliderLandigPage/1a.jpg",
     },
     {
       pointers: ["Brand Name", "Logo", "Font", "Colors", "Slogan"],
@@ -112,7 +112,7 @@ const CardSlider = () => {
       id: 3,
       title: "Consulting",
       description: "community",
-      bgImage: "/sliderLandigPage/8.webp",
+      bgImage: "/sliderLandigPage/9a.jpg",
     },
     {
       pointers: ["Ideas", "Library", "Courses", "Entertainment"],
@@ -128,7 +128,7 @@ const CardSlider = () => {
       id: 2,
       title: "Strategies",
       description: "Business",
-      bgImage: "/sliderLandigPage/10.webp",
+      bgImage: "/sliderLandigPage/10a.jpg",
     },
     {
       pointers: ["Networking", "Events", "Resource"],

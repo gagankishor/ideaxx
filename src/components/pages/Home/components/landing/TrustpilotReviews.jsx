@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaStar, FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 

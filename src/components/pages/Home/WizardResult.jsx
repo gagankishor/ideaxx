@@ -26,7 +26,7 @@ import { IoBusiness } from "react-icons/io5";
 import LightingCard from "@/components/wizard-result/LightingCard";
 import PropTypes from "prop-types";
 import AnimatedText from "@/components/wizard-result/AnimatedText";
-import { Store } from "lucide-react";
+// import { Store } from "lucide-react";
 import Modal from "react-modal";
 
 Chart.register(ArcElement, Tooltip, Legend);
@@ -1769,7 +1769,7 @@ const WizardResult = () => {
                       </svg>
                     </div>
                     <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-lg lg:text-sm font-thin text-gray-800">
-                    Enhance your idea's success with interactive demonstrations, a user-friendly mobile responsive, social media integration, and personalized recommendations. Simplify processes, maximize engagement, and create a unique value for customers.
+                    Enhance your idea&rsquo;s success with interactive demonstrations, a user-friendly mobile responsive, social media integration, and personalized recommendations. Simplify processes, maximize engagement, and create a unique value for customers.
                     </p>
                   </div>
                 );

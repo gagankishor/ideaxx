@@ -81,7 +81,7 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className=" p-4 text-white ">
-                Explore our platform's robust security measures designed to safeguard data and ensure full industry compliance.
+                Explore our platform&rsquo;s robust security measures designed to safeguard data and ensure full industry compliance.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>

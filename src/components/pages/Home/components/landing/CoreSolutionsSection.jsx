@@ -195,19 +195,19 @@ const CoreSolutionsSection = () => {
         
         className="next-arrow ml-[-20px] cursor-pointer" 
       >
-        <MdOutlineArrowForwardIos onClick={(e) => 
+        <MdOutlineArrowForwardIos onClick={() => 
           handleNext()
         } color="white" size={30} />
       </div>
     ),
     prevArrow: (
       <div
-        onClick={(e) => {
+        onClick={() => {
           handlePrevious();
         }}
         className="prev-arrow cursor-pointer" 
       >
-        <MdArrowBackIosNew onClick={(e) => 
+        <MdArrowBackIosNew onClick={() => 
           handlePrevious()
         } color="white" size={30} />
       </div>

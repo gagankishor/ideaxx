@@ -52,7 +52,7 @@ const Cart = () => {
           </button>
           <div className="text-gray-500 text-sm mt-6 flex items-center space-x-2">
             <span>🛡️</span>
-            <span>7-day money-back guarantee</span>
+            <span>7-day money-back guarantee </span>
           </div>
         </div>
       </div>

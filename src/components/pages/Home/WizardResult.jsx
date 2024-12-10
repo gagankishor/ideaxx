@@ -9,6 +9,8 @@ import {
   FaChartLine,
   FaCoins,
   FaGlobe,
+  FaHardHat,
+  FaHeart,
   FaLightbulb,
   FaRobot,
   FaTwitter,
@@ -1933,9 +1935,10 @@ const WizardResult = () => {
       >
         <div className="flex flex-col items-center space-y-4">
           <span className="text-3xl">
+            <FaHeart className=" text-[#6161FF] "/>
             {/* <img src="" alt="congrechuletion for reward" />  */}
           </span>
-          <h2 className="text-xl font-semibold text-white">Congratulations!</h2>
+          <h2 className="text-xl font-semibold text-black">Congratulations!</h2>
           <p className="text-sm text-gray-400">
             You have claimed 1 additional attempt!
           </p>

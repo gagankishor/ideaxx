@@ -15,31 +15,10 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 export default function Footer() {
-  // const [isVisible, setIsVisible] = useState(false);
-  // const [lastScrollY, setLastScrollY] = useState(0);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
-  //     if (currentScrollY > lastScrollY) {
-  //       // Scrolling down
-  //       setIsVisible(true);
-  //     } else {
-  //       // Scrolling up
-  //       setIsVisible(false);
-  //     }
-  //     setLastScrollY(currentScrollY);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [lastScrollY]);
   const [activeDropdown, setActiveDropdown] = useState(null);
-
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
-  };
-
+  }
   const aiTools = [
     {
       title: "Business Idea Checker",
@@ -70,7 +49,6 @@ export default function Footer() {
       description: "Plan your startup journey with AI-guided steps.",
     },
   ];
-
   const solutions = [
     {
       title: "Entrepreneur Community",
@@ -101,7 +79,6 @@ export default function Footer() {
       description: "Expand your reach to global markets.",
     },
   ];
-
   const services = [
     {
       title: "Test And Save Idea",
@@ -156,23 +133,6 @@ export default function Footer() {
         "Connect with buyers or sellers to trade innovative business ideas.",
     },
   ];
-  // <ul className="space-y-2 text-left">
-  //           <li>
-  //             <Link href="#services">Consulting</Link>
-  //           </li>
-  //           <li>
-  //             <Link href="#services">Entrepreneur</Link>
-  //           </li>
-  //           <li>
-  //             <Link href="#services">Strategies Planing</Link>
-  //           </li>
-  //           <li>
-  //             <Link href="#services">Community</Link>
-  //           </li>
-  //           <li>
-  //             <Link href="#services">Buy-Sell Your Idea</Link>
-  //           </li>
-  //         </ul>
   const renderDropdownList = (items, startIndex) => (
     <ul className="space-y-2 text-left">
       {items.map((item, index) => {
@@ -255,7 +215,7 @@ export default function Footer() {
     </ul>
   );
   return (
-    <footer className="bg-white border-t-2  pb-5 mb-52 py-4">
+    <footer className="bg-white border-t-2  pb-5  mb-52 py-12">
       <div
         className={`fixed bottom-0 w-full z-50 bg-white rounded-t-lg shadow-lg border-t border-gray-300 transition-transform duration-300 translate-y-0`}
       >
@@ -320,7 +280,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="text-black text-7xl text-left px-20">
+      <div className="text-black text-7xl text-left px-5 md:px-20">
         Index
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">

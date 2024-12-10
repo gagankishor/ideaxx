@@ -3,11 +3,9 @@ import { useState } from "react";
 // import Slider from "react-slick";
 import "./CoreSolutionsSection.css";
 import { FaArrowAltCircleRight, FaRobot } from "react-icons/fa";
-
 import Slider from "react-slick";
 import { GiTeamIdea } from "react-icons/gi";
 import { TiCloudStorage } from "react-icons/ti";
-
 import {
   MdArrowBackIosNew,
   MdOutlineArrowForwardIos,
@@ -15,7 +13,6 @@ import {
 } from "react-icons/md";
 import Link from "next/link";
 import { RiCommunityFill } from "react-icons/ri";
-
 const icons = [
   {
     id: 1,
@@ -178,7 +175,6 @@ const CoreSolutionsSection = () => {
     console.log("dfjksdfksd");
     setSelectedIndex((prevIndex) => (prevIndex + 1) % icons.length);
   };
-
   const handlePrevious = () => {
     setSelectedIndex((prevIndex) =>
       prevIndex === 0 ? icons.length - 1 : prevIndex - 1

@@ -280,7 +280,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600 md:h-[430px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600 md:h-[400px]">
         <div>
           <h4 className="font-semibold mb-4 text-left">AI Tools</h4>
           {renderDropdownList(aiTools, 0)}
@@ -303,7 +303,7 @@ export default function Footer() {
         <div className="md:col-span-2 ">
           <img src="/logo.png" alt="ideax logo" width={200} />
           <ul className="space-y-2 text-left p-2">
-            <li>
+            <li className="">
               Ideax empowers entrepreneurs with AI-driven tools, market
               insights, and a supportive community, transforming ideas into
               successful ventures.
@@ -319,6 +319,9 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="text-black text-7xl text-left px-20">
+        Index
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">

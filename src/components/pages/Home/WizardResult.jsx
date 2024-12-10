@@ -427,33 +427,33 @@ const WizardResult = () => {
     setShareModalOpen(false);
   };
   const tasks = [
-    { 
-      title: "Daily Check-in Task", 
-      description: "Login daily to this button game page", 
-      points: "+1", 
-      button: "Claim Now" 
+    {
+      title: "Daily Check-in Task",
+      description: "Login daily to this button game page",
+      points: "+1",
+      button: "Claim Now",
     },
-    { 
-      title: "Trading Task", 
-      description: "Accumulate at least 50 USDC ", 
-      points: "+2", 
-      button: "Share Result" 
+    {
+      title: "Trading Task",
+      description: "Accumulate at least 50 USDC ",
+      points: "+2",
+      button: "Share Result",
     },
-    { 
-      title: "Referral Task", 
-      description: "Refer a friend via the link", 
-      points: "+3", 
-      button: "Invite Friends" 
-    }
+    {
+      title: "Referral Task",
+      description: "Refer a friend via the link",
+      points: "+3",
+      button: "Invite Friends",
+    },
   ];
   const socialShareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php`,
     twitter: `https://twitter.com/intent/tweet?text=I just earned more attempts in the game!`,
-    whatsapp: `https://api.whatsapp.com/send?text=I just earned more attempts in the game! Check it out: ideax.in`
+    whatsapp: `https://api.whatsapp.com/send?text=I just earned more attempts in the game! Check it out: ideax.in`,
   };
 
   const handleShare = (platform) => {
-    window.open(socialShareLinks[platform], '_blank');
+    window.open(socialShareLinks[platform], "_blank");
   };
   return (
     <>
@@ -564,10 +564,10 @@ const WizardResult = () => {
               strokeWidth={14}
             >
               <div className="text-center">
-              <FaRegLightbulb
-                    className="mx-auto mb-2 text-[#686868]"
-                    size={34}
-                  />
+                <FaRegLightbulb
+                  className="mx-auto mb-2 text-[#686868]"
+                  size={34}
+                />
               </div>
             </CircularProgress>
             <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
@@ -587,56 +587,54 @@ const WizardResult = () => {
                 <div className=" ">
                   <div className="text-sm text-gray-600">Idea</div>
                   <div className="text-xl">
-                  {parseInt(data?.phase1) == 1
-                    ? "It is still an idea"
-                    : parseInt(data?.phase1) == 3
-                    ? "I made a plan for it"
-                    : "I already started"}
+                    {parseInt(data?.phase1) == 1
+                      ? "It is still an idea"
+                      : parseInt(data?.phase1) == 3
+                      ? "I made a plan for it"
+                      : "I already started"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600">Investment</div>
+                  <div className="text-xl">
+                    {parseInt(data?.phase5) == 1
+                      ? "Less than 1 Lakh "
+                      : parseInt(data?.phase5) == 2
+                      ? "1 Lakh ₹ - 10 Lakh ₹"
+                      : parseInt(data?.phase5) == 3
+                      ? "10 Lakh ₹ - 50 Lakh ₹"
+                      : parseInt(data?.phase5) == 4
+                      ? "50 Lakh ₹ - 1 Crore ₹"
+                      : "More than 1 Crore ₹"}
                   </div>
                 </div>
                 <div>
                   <div className="text-sm text-gray-600">
-                  Investment
+                    current job related to idea
                   </div>
                   <div className="text-xl">
-                  {parseInt(data?.phase5) == 1
-                    ? "Less than 1 Lakh "
-                    : parseInt(data?.phase5) == 2
-                    ? "1 Lakh ₹ - 10 Lakh ₹"
-                    : parseInt(data?.phase5) == 3
-                    ? "10 Lakh ₹ - 50 Lakh ₹"
-                    : parseInt(data?.phase5) == 4
-                    ? "50 Lakh ₹ - 1 Crore ₹"
-                    : "More than 1 Crore ₹"}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">current job related to idea</div>
-                  <div className="text-xl">
-                  {parseInt(data?.phase4) == 5 ? "Yes" : "No"}
+                    {parseInt(data?.phase4) == 5 ? "Yes" : "No"}
                   </div>
                 </div>
               </div>
               <div className="w-[50%]">
                 <div>
                   <div className="text-sm text-gray-600">
-                  Experience with your idea
+                    Experience with your idea
                   </div>
                   <div className="text-xl">
-                  {parseInt(data?.phase6) == 0
-                    ? "No experience"
-                    : parseInt(data?.phase6) == 3
-                    ? "1 - 3 Years"
-                    : parseInt(data?.phase6) == 4
-                    ? "3 - 5 Years"
-                    : "More than 5 years"}
+                    {parseInt(data?.phase6) == 0
+                      ? "No experience"
+                      : parseInt(data?.phase6) == 3
+                      ? "1 - 3 Years"
+                      : parseInt(data?.phase6) == 4
+                      ? "3 - 5 Years"
+                      : "More than 5 years"}
                   </div>
                 </div>
                 <div>
                   <div className="text-sm text-gray-600">Country</div>
-                  <div className="text-xl">
-                  {data?.country}
-                  </div>
+                  <div className="text-xl">{data?.country}</div>
                 </div>
               </div>
             </div>
@@ -666,7 +664,7 @@ const WizardResult = () => {
               strokeWidth={14}
             >
               <div className="text-center bg-white">
-              <img
+                <img
                   src="/result-page/image.png"
                   className="mx-auto w-10 bg-white  "
                   alt="idea graph icon"
@@ -768,9 +766,9 @@ const WizardResult = () => {
               <div className="text-center">
                 <img
                   src="/result-page/Layer9.png"
-                  className="mx-auto w-20  text-[#686868]"
+                  className="mx-auto w-28  text-[#686868]"
                   alt="idea graph icon"
-                  size={50}
+                  size={60}
                 />
               </div>
             </CircularProgress>
@@ -781,7 +779,7 @@ const WizardResult = () => {
             </div>
             <div className="text-xl mt-2 text-center">
               {metrics.instant.value}
-              <span className="text-sm ml-1"></span> 
+              <span className="text-sm ml-1"></span>
             </div>
           </div>
         </div>
@@ -1021,7 +1019,6 @@ const WizardResult = () => {
                   const circumference = 2 * Math.PI * radius;
                   const offset =
                     circumference - (item.score / 100) * circumference;
-
                   return (
                     <div
                       href={item.href}
@@ -1048,7 +1045,7 @@ const WizardResult = () => {
                               >
                                 <div
                                   className="tooltip"
-                                  style={{ color: "white", marginLeft: "0" }}
+                                  style={{ color: "white", marginLeft: "0"}}
                                 >
                                   {point.icon}
                                   <span
@@ -1446,7 +1443,9 @@ const WizardResult = () => {
                       </svg>
                     </div>
                     <div className="description-box-parent">
-                    <h4 className=" text-left mt-12">Your idea description</h4>
+                      <h4 className=" text-left mt-12">
+                        Your idea description
+                      </h4>
 
                       <textarea
                         placeholder="Describe your idea in few line ..."
@@ -1635,7 +1634,6 @@ const WizardResult = () => {
                 const circumference = 2 * Math.PI * radius;
                 const offset =
                   circumference - (item.score / 100) * circumference;
-
                 return (
                   <div
                     href={item.href}
@@ -1769,7 +1767,11 @@ const WizardResult = () => {
                       </svg>
                     </div>
                     <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-lg lg:text-sm font-thin text-gray-800">
-                    Enhance your idea&rsquo;s success with interactive demonstrations, a user-friendly mobile responsive, social media integration, and personalized recommendations. Simplify processes, maximize engagement, and create a unique value for customers.
+                      Enhance your idea&rsquo;s success with interactive
+                      demonstrations, a user-friendly mobile responsive, social
+                      media integration, and personalized recommendations.
+                      Simplify processes, maximize engagement, and create a
+                      unique value for customers.
                     </p>
                   </div>
                 );
@@ -1805,7 +1807,7 @@ const WizardResult = () => {
         </h1>
 
         <div className="btns-container mt-10 flex md:flex-row justify-center gap-5">
-        <button
+          <button
             className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"
             style={{ fontSize: "14px" }}
             onClick={handleOpenMotivationalCard}
@@ -1814,7 +1816,7 @@ const WizardResult = () => {
           </button>
           <Link
             className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"
-            style={{ fontSize: "14px"}}
+            style={{ fontSize: "14px" }}
             href="/plan-details"
           >
             Launch Your Idea <FaArrowAltCircleRight />
@@ -1828,19 +1830,32 @@ const WizardResult = () => {
         overlayClassName="fixed inset-0 bg-black bg-opacity-50 pt-20 flex items-center justify-center z-50"
       >
         <div>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Earn More Attempts</h2>
-          <p className="text-sm text-gray-600 mb-4">Complete the following tasks to earn more attempts!</p>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">
+            Earn More Attempts
+          </h2>
+          <p className="text-sm text-gray-600 mb-4">
+            Complete the following tasks to earn more attempts!
+          </p>
           <div className="space-y-6">
             {tasks.map((task, index) => (
-              <div key={index} className="bg-gray-100 rounded-lg p-2 flex justify-between items-center">
+              <div
+                key={index}
+                className="bg-gray-100 rounded-lg p-2 flex justify-between items-center"
+              >
                 <div>
-                  <h3 className="text-lg text-left font-semibold text-gray-800">{task.title}</h3>
-                  <p className="text-sm text-left text-gray-600">{task.description}</p>
+                  <h3 className="text-lg text-left font-semibold text-gray-800">
+                    {task.title}
+                  </h3>
+                  <p className="text-sm text-left text-gray-600">
+                    {task.description}
+                  </p>
                 </div>
                 <div className="text-right">
-                  <span className="text-[#6161FF] font-bold block mb-2">{task.points}</span>
-                  <button 
-                    className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-medium py-1 px-3 rounded text-sm" 
+                  <span className="text-[#6161FF] font-bold block mb-2">
+                    {task.points}
+                  </span>
+                  <button
+                    className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-medium py-1 px-3 rounded text-sm"
                     onClick={handleOpenCongratulationsCard}
                   >
                     {task.button}
@@ -1870,19 +1885,21 @@ const WizardResult = () => {
           <div className="flex justify-center mb-4">
             <img src="/result-page/congrechuletion.webp" width={100} alt="" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-800 text-center">Don&rsquo;t Give Up!</h2>
+          <h2 className="text-2xl font-bold text-gray-800 text-center">
+            Don&rsquo;t Give Up!
+          </h2>
           <p className="text-gray-600 mt-2 text-center">
             You have tried so hard to achieve your goals.
           </p>
           <div className="flex flex-col gap-5 justify-between  items-center mt-6">
-            <button 
-              className="bg-[#417CF5] hover:bg-[#417CF5] text-white font-bold py-2 px-4 rounded" 
+            <button
+              className="bg-[#417CF5] hover:bg-[#417CF5] text-white font-bold py-2 px-4 rounded"
               onClick={handleOpenTaskCompletionCard}
             >
               Get More Attempts
             </button>
-            <button 
-              className=" hover:bg-[#417CF5] text-black hover:text-white  font-bold py-2 px-4 rounded" 
+            <button
+              className=" hover:bg-[#417CF5] text-black hover:text-white  font-bold py-2 px-4 rounded"
               onClick={handleShareAchievement}
             >
               Share Achievement
@@ -1917,10 +1934,11 @@ const WizardResult = () => {
         <div className="flex flex-col items-center space-y-4">
           <span className="text-3xl">
             {/* <img src="" alt="congrechuletion for reward" />  */}
-            
-            </span>
+          </span>
           <h2 className="text-xl font-semibold text-white">Congratulations!</h2>
-          <p className="text-sm text-gray-400">You have claimed 1 additional attempt!</p>
+          <p className="text-sm text-gray-400">
+            You have claimed 1 additional attempt!
+          </p>
           <button
             onClick={onCloseCongratulations}
             className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-semibold py-2 px-6 rounded-lg"
@@ -1938,27 +1956,27 @@ const WizardResult = () => {
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Share Your Result </h2>
           <div className="flex justify-center space-x-4 mb-6">
-      <button 
-        onClick={() => handleShare('facebook')}
-        className="bg-[#6161FF] text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-700"
-      >
-        <FaFacebook className="w-6 h-6" />
-      </button>
-      <button 
-        onClick={() => handleShare('twitter')}
-        className="bg-blue-400 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-600"
-      >
-        <FaTwitter className="w-6 h-6" />
-      </button>
-      <button 
-        onClick={() => handleShare('whatsapp')}
-        className="bg-green-500 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-green-600"
-      >
-        <FaWhatsapp className="w-6 h-6" />
-      </button>
-    </div>
-          <button 
-            onClick={handleCloseShareModal} 
+            <button
+              onClick={() => handleShare("facebook")}
+              className="bg-[#6161FF] text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-700"
+            >
+              <FaFacebook className="w-6 h-6" />
+            </button>
+            <button
+              onClick={() => handleShare("twitter")}
+              className="bg-blue-400 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-600"
+            >
+              <FaTwitter className="w-6 h-6" />
+            </button>
+            <button
+              onClick={() => handleShare("whatsapp")}
+              className="bg-green-500 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-green-600"
+            >
+              <FaWhatsapp className="w-6 h-6" />
+            </button>
+          </div>
+          <button
+            onClick={handleCloseShareModal}
             className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded"
           >
             Close

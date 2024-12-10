@@ -49,12 +49,6 @@ const BlogDetails = () => {
           <h1 className="text-4xl font-bold mb-4">{blog?.title}</h1>
           <div className="flex items-center justify-between mb-6">
             <div>
-              {/* <p className="text-sm font-medium text-gray-800 text-left">
-                Melissa Suzuno
-              </p>
-              <p className="text-sm text-gray-500">
-                HR and L&D Insights Writer, Udemy
-              </p> */}
             </div>
             <button className="text-sm text-blue-600 hover:underline flex items-center"></button>
           </div>
@@ -70,7 +64,7 @@ const BlogDetails = () => {
                 <p className="text-gray-700 text-left font-semibold text-lg">
                   {section.header}
                 </p>
-              )}
+              )} 
               {section?.image && (
                 <img
                   src={section.image}
@@ -81,7 +75,6 @@ const BlogDetails = () => {
               {section?.text && (
                 <p className="text-gray-700 text-left">{section.text}</p>
               )}
-
               {section?.subContent?.map((feature, featureIndex) => (
                 <div key={featureIndex} className="space-y-4">
                   {feature?.header && (

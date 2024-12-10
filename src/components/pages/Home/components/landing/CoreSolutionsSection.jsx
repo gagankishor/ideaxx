@@ -175,10 +175,10 @@ const CoreSolutionsSection = () => {
   const selectedIcon = icons[selectedIndex].label;
   // const [selectedIcon, setSelectedIcon] = useState("Community");
   const handleNext = () => {
-    console.log("dfjksdfksd")
+    console.log("dfjksdfksd");
     setSelectedIndex((prevIndex) => (prevIndex + 1) % icons.length);
   };
-  
+
   const handlePrevious = () => {
     setSelectedIndex((prevIndex) =>
       prevIndex === 0 ? icons.length - 1 : prevIndex - 1
@@ -191,22 +191,20 @@ const CoreSolutionsSection = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
-  centerPadding: '0px', // Ensure the selected item is truly centered
-  initialSlide: selectedIndex, // Set the initial slide to the selected index
-  afterChange: (current) => {
-    // Update selectedIndex if it doesn't match the current slide
-    if (current !== selectedIndex) {
-      setSelectedIndex(current);
-    }
-  },
+    centerPadding: "0px",
+    initialSlide: selectedIndex, 
+    afterChange: (current) => {
+      if (current !== selectedIndex) {
+        setSelectedIndex(current);
+      }
+    },
     nextArrow: (
-      <div
-        
-        className="next-arrow ml-[-20px] cursor-pointer" 
-      >
-        <MdOutlineArrowForwardIos onClick={() => 
-          handleNext()
-        } color="white" size={30} />
+      <div className="next-arrow ml-[-20px] cursor-pointer">
+        <MdOutlineArrowForwardIos
+          onClick={() => handleNext()}
+          color="white"
+          size={30}
+        />
       </div>
     ),
     prevArrow: (
@@ -214,11 +212,13 @@ const CoreSolutionsSection = () => {
         onClick={() => {
           handlePrevious();
         }}
-        className="prev-arrow cursor-pointer" 
+        className="prev-arrow cursor-pointer"
       >
-        <MdArrowBackIosNew onClick={() => 
-          handlePrevious()
-        } color="white" size={30} />
+        <MdArrowBackIosNew
+          onClick={() => handlePrevious()}
+          color="white"
+          size={30}
+        />
       </div>
     ),
     responsive: [
@@ -249,7 +249,6 @@ const CoreSolutionsSection = () => {
     <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>
         <div style={{ margin: "auto", maxWidth: "1200px" }}>
-         
           <div
             style={{
               backgroundColor: "black",
@@ -261,8 +260,6 @@ const CoreSolutionsSection = () => {
             <div
               style={{ display: "flex", margin: "auto", width: "fit-content" }}
             >
-              
-
               <img
                 src="/main-icon/hand.webp"
                 style={{ marginRight: "10px" }}
@@ -297,7 +294,8 @@ const CoreSolutionsSection = () => {
               style={{ padding: "10px" }}
             >
               Now any team can streamline work, collaborate, and solve their
-              most complex problems together with our suite of products and much more.
+              most complex problems together with our suite of products and much
+              more.
             </p>
           </div>
           <div className="slider-container" style={{ marginTop: "50px" }}>
@@ -361,7 +359,9 @@ const CoreSolutionsSection = () => {
                         <h3 style={{ color: "white" }}>{content.title}</h3>
                       </div>
                       <div>
-                        <p style={{ color: "white" }} className="text-md">{content.description}</p>
+                        <p style={{ color: "white" }} className="text-md">
+                          {content.description}
+                        </p>
                       </div>
                     </div>
                   ))}

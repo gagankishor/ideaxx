@@ -9,7 +9,6 @@ import {
   FaChartLine,
   FaCoins,
   FaGlobe,
-  FaHardHat,
   FaHeart,
   FaLightbulb,
   FaRobot,

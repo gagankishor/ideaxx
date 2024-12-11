@@ -14,18 +14,20 @@ export const MainNavBar = () => {
   // const pathname = router.pathname;
 
   const showMenu = () => {
-    setToggle(!toggle); // Simplified toggle logic
+    setToggle(!toggle);
   };
   const pathname = usePathname();
   return (
     <>
       <nav className="border-b-[1px] border-gray-100">
         <div className="container border-b-[1px] border-gray-100">
-          <div className="logo-side">
+          <div className="logo-side ">
             <Link href="/">
               {" "}
-              {/* Use href instead of to */}
-              <img src="/logo.png" sizes="10" className="" alt="Ideax Logo" />
+              <div className="w-14">
+
+              <img src="/logo.png" sizes="10" className=" bg-black rounded-full" alt="Ideax Logo" />
+              </div>
             </Link>
           </div>
           <div className="burger">

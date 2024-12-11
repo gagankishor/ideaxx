@@ -220,11 +220,11 @@ const CoreSolutionsSection = () => {
       },
     ],
   };
-  const scrollToSelected = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickGoTo(selectedIndex);
-    }
-  };
+  // const scrollToSelected = () => {
+  //   if (sliderRef.current) {
+  //     sliderRef.current.slickGoTo(selectedIndex);
+  //   }
+  // };
 
   // Trigger scroll on index change
   React.useEffect(() => {

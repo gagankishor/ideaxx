@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 // import Slider from "react-slick";
 import "./CoreSolutionsSection.css";
 import { FaArrowAltCircleRight, FaRobot } from "react-icons/fa";
@@ -168,13 +168,14 @@ const contentData = {
   ],
 };
 const CoreSolutionsSection = () => {
-  const [selectedIndex, setSelectedIndex] = useState(2);
+  const [selectedIndex, setSelectedIndex] = useState(3); // Set the initial index to 3 (the center icon)
   const selectedIcon = icons[selectedIndex].label;
-  // const [selectedIcon, setSelectedIcon] = useState("Community");
+  const sliderRef = useRef(null);
+
   const handleNext = () => {
-    console.log("dfjksdfksd");
     setSelectedIndex((prevIndex) => (prevIndex + 1) % icons.length);
   };
+
   const handlePrevious = () => {
     setSelectedIndex((prevIndex) =>
       prevIndex === 0 ? icons.length - 1 : prevIndex - 1
@@ -188,59 +189,49 @@ const CoreSolutionsSection = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: "0px",
-    initialSlide: selectedIndex,
-    afterChange: (current) => {
-      if (current !== selectedIndex) {
-        setSelectedIndex(current);
-      }
-    },
+    initialSlide: selectedIndex, // Start at the selected index
+    afterChange: (current) => setSelectedIndex(current),
     nextArrow: (
       <div className="next-arrow ml-[-20px] cursor-pointer">
         <MdOutlineArrowForwardIos
-          onClick={() => handleNext()}
+          onClick={handleNext}
           color="white"
           size={30}
         />
       </div>
     ),
     prevArrow: (
-      <div
-        onClick={() => {
-          handlePrevious();
-        }}
-        className="prev-arrow cursor-pointer"
-      >
-        <MdArrowBackIosNew
-          onClick={() => handlePrevious()}
-          color="white"
-          size={30}
-        />
+      <div className="prev-arrow cursor-pointer">
+        <MdArrowBackIosNew onClick={handlePrevious} color="white" size={30} />
       </div>
     ),
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
       {
         breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 1, slidesToScroll: 1 }, // Adjusted for small screens
       },
     ],
   };
+  const scrollToSelected = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(selectedIndex);
+    }
+  };
+
+  // Trigger scroll on index change
+  React.useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(selectedIndex);
+    }
+  }, [selectedIndex]);
   return (
     <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>
@@ -304,7 +295,7 @@ const CoreSolutionsSection = () => {
                 color: "#fff",
               }}
             >
-              <Slider {...settings}>
+              <Slider {...settings} ref={sliderRef}>
                 {icons.map((item, index) => (
                   <div
                     key={index}
@@ -312,6 +303,10 @@ const CoreSolutionsSection = () => {
                       textAlign: "center",
                       padding: "110px",
                       width: "20%",
+                      transition: "transform 0.3s ease, opacity 0.3s ease",
+                      transform:
+                        selectedIndex === index ? "scale(1.2)" : "scale(1)", // Highlight effect
+                      opacity: selectedIndex === index ? 1 : 0.6, // Dim non-selected items
                     }}
                     className="icon-item"
                     onClick={() => setSelectedIndex(index)}
@@ -324,8 +319,7 @@ const CoreSolutionsSection = () => {
                         textAlign: "center",
                         margin: "auto",
                         width: "fit-content",
-                        color:
-                          selectedIcon === item.label ? "#6161FF" : "#b8b4b4",
+                        color: selectedIndex === index ? "#6161FF" : "#b8b4b4",
                       }}
                     >
                       {item.icon}
@@ -333,8 +327,7 @@ const CoreSolutionsSection = () => {
                     <div
                       className="icon-title w-28"
                       style={{
-                        color:
-                          selectedIcon === item.label ? "white" : "#b8b4b4",
+                        color: selectedIndex === index ? "white" : "#b8b4b4",
                       }}
                     >
                       {item.label}
@@ -372,8 +365,8 @@ const CoreSolutionsSection = () => {
               style={{ fontSize: "14px" }}
               href="/mainWizard"
             >
-              Test Your Idea 
-            <FaArrowAltCircleRight />
+              Test Your Idea
+              <FaArrowAltCircleRight />
             </Link>
           </div>
         </div>

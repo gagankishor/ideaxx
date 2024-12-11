@@ -24,7 +24,7 @@ export const MainNavBar = () => {
           <div className="logo-side ">
             <Link href="/">
               {" "}
-              <div className="w-14">
+              <div className="w-14"> 
 
               <img src="/logo.png" sizes="10" className=" bg-black rounded-full" alt="Ideax Logo" />
               </div>

@@ -53,7 +53,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "MercedesMaybachSL.mp4",
+    videoSrc: "/trip_f_1.mp4",
     quote:
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Taki Kaddo",

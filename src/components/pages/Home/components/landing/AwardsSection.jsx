@@ -58,6 +58,7 @@ const AwardsSection = () => {
           </div>
         </div>
         <TrustpilotReviews/>
+       
         <div className="info-cards">
           <div
             className="info-cards2"

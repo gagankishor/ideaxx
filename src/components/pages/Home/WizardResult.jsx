@@ -388,6 +388,7 @@ const WizardResult = () => {
   const handleOpenCongratulationsCard = () => {
     setShowCongratulations(true);
     onRequestTaskCompletion(false);
+    setShareModalOpen(false);
   };
   const handleShareAchievement = () => {
     setShareModalOpen(true);
@@ -402,18 +403,23 @@ const WizardResult = () => {
       description: "Login daily to this button game page",
       points: "+1",
       button: "Claim Now",
+      onclickButton:handleOpenCongratulationsCard
     },
     {
       title: "Share Your Result",
       description: "Share your result and get 2 free test ",
       points: "+2",
       button: "Share Result",
+      onclickButton:handleShareAchievement
+
     },
     {
       title: "Referral Task",
       description: "Refer a friend via the link",
       points: "+3",
       button: "Invite Friends",
+      onclickButton:handleShareAchievement
+
     },
   ];
   const socialShareLinks = {
@@ -422,7 +428,9 @@ const WizardResult = () => {
     whatsapp: `https://api.whatsapp.com/send?text=I just earned more attempts in the game! Check it out: ideax.in`,
   };
   const handleShare = (platform) => {
-    window.open(socialShareLinks[platform], "_blank");
+    window.open(socialShareLinks[platform], "_blank"); 
+    handleOpenCongratulationsCard()
+
   };
   return (
     <>
@@ -1673,7 +1681,7 @@ const WizardResult = () => {
                   </span>
                   <button
                     className="bg-[#6161FF] hover:bg-[#4F4FDD] text-white font-medium py-1 px-3 rounded text-sm"
-                    onClick={handleOpenCongratulationsCard}
+                    onClick={task.onclickButton}
                   >
                     {task.button}
                   </button>

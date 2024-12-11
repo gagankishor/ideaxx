@@ -1,5 +1,6 @@
 import { FaStar, FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import TrustBoxWidget from './TrustBoxWidget';
 
 const TrustpilotReviews = () => {
   return (
@@ -22,7 +23,7 @@ const TrustpilotReviews = () => {
           alt="Trustpilot Logo" 
           className="h-10 "
         />
-            <div className="flex items-center  justify-center md:justify-start space-x-2 mb-2">
+            <div className="flex items-center  justify-center md:justify-start pl-10 space-x-2 mb-2">
               {[...Array(4)].map((_, index) => (
                 <motion.div
                   key={index}
@@ -74,14 +75,15 @@ const TrustpilotReviews = () => {
             </div>
             
           </motion.div>
-
           {/* Animated Trustpilot Logo and Link */}
-          <motion.div 
+          <TrustBoxWidget />
+          {/* <motion.div 
             className="trustpilot-logo-container"
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
+          
             <a 
               href="https://www.trustpilot.com/review/yourcompany" 
               target="_blank" 
@@ -94,7 +96,7 @@ const TrustpilotReviews = () => {
               </span>
               <FaArrowRight />
             </a>
-          </motion.div>
+          </motion.div> */}
         </div>
       </motion.div>
     </div>

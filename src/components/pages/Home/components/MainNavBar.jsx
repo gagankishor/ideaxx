@@ -16,14 +16,16 @@ export const MainNavBar = () => {
   const showMenu = () => {
     setToggle(!toggle); // Simplified toggle logic
   };
-  const pathname = usePathname()
+  const pathname = usePathname();
   return (
     <>
       <nav className="border-b-[1px] border-gray-100">
         <div className="container border-b-[1px] border-gray-100">
           <div className="logo-side">
-            <Link href="/"> {/* Use href instead of to */}
-              <img src="/logo.png" alt="Ideax Logo" />
+            <Link href="/">
+              {" "}
+              {/* Use href instead of to */}
+              <img src="/logo.png" sizes="10" className="" alt="Ideax Logo" />
             </Link>
           </div>
           <div className="burger">
@@ -34,25 +36,53 @@ export const MainNavBar = () => {
             )}
           </div>
           <div className={`right-side ${toggle ? "show" : "hide"}`}>
-          <ul className="logo-menu">
-            <li><Link href="#home">Home</Link></li>
-            <li><Link href="/plan-details">Subscription Plans</Link></li>
-            <li><Link href="#services">Connect Your Wallet</Link></li>
-          </ul>
+            <ul className="logo-menu">
+              <li>
+                <Link href="#home">Home</Link>
+              </li>
+              <li>
+                <Link href="/plan-details">Subscription Plans</Link>
+              </li>
+              <li>
+                <Link href="#services">Connect Your Wallet</Link>
+              </li>
+            </ul>
             <ul className="main-menu">
               {isAuthenticated ? (
                 <li className="nav-login-btn" onClick={logout}>
                   <span
-                   className="font-bold pl-3 lg:mr-3"
-                   style={{ cursor: "pointer", marginRight: '20px' ,color:'black'}}>Sign Out</span>
+                    className="font-bold pl-3 lg:mr-3"
+                    style={{
+                      cursor: "pointer",
+                      marginRight: "20px",
+                      color: "black",
+                    }}
+                  >
+                    Sign Out
+                  </span>
                 </li>
               ) : (
-                <li style={{ cursor: "pointer", marginRight: '20px', fontWeight: '700',color:'black' }}>
-                  <Link href="/login" style={{ color: "black" }}>Sign Up</Link>
+                <li
+                  style={{
+                    cursor: "pointer",
+                    marginRight: "20px",
+                    fontWeight: "700",
+                    color: "black",
+                  }}
+                >
+                  <Link href="/login" style={{ color: "black" }}>
+                    Sign Up
+                  </Link>
                 </li>
               )}
               <div className="btns-container">
-                <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Learning Guide</Link>
+                <Link
+                  className="btn2"
+                  style={{ fontSize: "14px" }}
+                  href="/learning-guide"
+                >
+                  Learning Guide
+                </Link>
               </div>
               {/* <div className="btns-container">
                 <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Connect Your Wallet</Link>
@@ -61,12 +91,12 @@ export const MainNavBar = () => {
               {pathname !== "/mainWizard" && (
                 <div className="btns-container">
                   <Link
-            className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            style={{ fontSize: "14px" }}
-            href="/mainWizard"
-          >
-            Test Your Idea <FaArrowAltCircleRight />
-          </Link>
+                    className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    style={{ fontSize: "14px" }}
+                    href="/mainWizard"
+                  >
+                    Test Your Idea <FaArrowAltCircleRight />
+                  </Link>
                 </div>
               )}
             </ul>

@@ -188,7 +188,7 @@ const CoreSolutionsSection = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: "0px",
-    initialSlide: selectedIndex, 
+    initialSlide: selectedIndex,
     afterChange: (current) => {
       if (current !== selectedIndex) {
         setSelectedIndex(current);
@@ -372,7 +372,8 @@ const CoreSolutionsSection = () => {
               style={{ fontSize: "14px" }}
               href="/mainWizard"
             >
-              Test Your Idea <FaArrowAltCircleRight />
+              Test Your Idea 
+            <FaArrowAltCircleRight />
             </Link>
           </div>
         </div>

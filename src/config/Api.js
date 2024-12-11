@@ -1,9 +1,8 @@
 // export const RestAPI = "https://api.middle-east-music.com/api";
 // export const RestAPI = "https://lgbl2b34-3000.inc1.devtunnels.ms/api";
 // export const RestAPI = "http://88.222.212.243/api";
-// export const RestAPI = "http://127.0.0.1:3005/api";
-export const RestAPI = "https://ideax.in/api";
-
+export const RestAPI = "http://127.0.0.1:3005/api";
+// export const RestAPI = "https://ideax.in/api";
 // https://lgbl2b34-3000.inc1.devtunnels.ms/
 import axios from 'axios';
 const savePostDesign = async (postData) => {
@@ -21,10 +20,10 @@ const savePostDesign = async (postData) => {
   formData.append('selectedPlatform',postData.selectedPlatform);
   postData?.uploadedFiles?.forEach((file) => {
     formData.append(`uploadedFiles`, file);
-  }); 
+  });
   try {
     const response = await axios.post(`${RestAPI}/post-design`, formData, {
-      headers: {  
+      headers: {
         'Content-Type': 'multipart/form-data',
       },
     });
@@ -34,4 +33,4 @@ const savePostDesign = async (postData) => {
     return null;
   }
 };
-export default  savePostDesign
+export default  savePostDesign;

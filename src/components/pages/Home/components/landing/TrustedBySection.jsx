@@ -163,7 +163,7 @@ const TrustedBySection = () => {
             className="w-full md:w-1/2 p-10 bg-black bg-opacity-50 h-full"
           >
             <p className="text-lg text-white leading-relaxed">
-              Welcome to <span className="font-bold text-blue-400">ideax</span>, the ultimate platform for entrepreneurs! 
+              Welcome to <span className="font-bold text-blue-400">IDX</span>, the ultimate platform for entrepreneurs! 
               <span className="block mt-4 font-semibold text-gray-300">
                 Whether you&rsquo;re brainstorming your next big idea or looking for a dedicated online team to bring it to life, 
                 we offer the tools and expertise you need to succeed.

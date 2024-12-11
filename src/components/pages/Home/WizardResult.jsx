@@ -8,6 +8,7 @@ import {
   FaBalanceScale,
   FaChartLine,
   FaCoins,
+  FaGift,
   FaGlobe,
   FaHeart,
   FaLightbulb,
@@ -41,7 +42,6 @@ const CircularProgress = ({
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
   const offset = circumference - (percentage / 100) * circumference;
-
   return (
     <div className="relative" style={{ width: size, height: size }}>
       <svg className="transform -rotate-90" width={size} height={size}>
@@ -81,22 +81,16 @@ const WizardResult = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [loading, setLoading] = useState(true);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  // const location = useLocation();
-  // const { data } = location.state || {};
   const [data, setData] = useState(null);
-
   useEffect(() => {
     const storedData = localStorage.getItem("wizardResultData");
     if (storedData) {
-      setData(JSON.parse(storedData)); // or handle as needed
+      setData(JSON.parse(storedData));
     }
   }, []);
-
-  // Check for presence of data
   if (!data) {
     console.warn("No wizard result data found in localStorage.");
   }
-  // console.log("_______________", data);
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString
@@ -178,7 +172,6 @@ const WizardResult = () => {
   const InvestmentLevelData = parseJSON(data?.InvestmentLevelData);
   const ExpectedROIData = parseJSON(data?.ExpectedROIData);
   const textForTipData = parseJSON(data?.textForTipData);
-  // console.log(textForTipData);
   const fullAiContent = `
   ${data?.resultText} 
   `;
@@ -227,16 +220,6 @@ const WizardResult = () => {
       parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", "")) +
       parseFloat(TeamAndResourcesData)) /
     5;
-  // const successPercentage = parseFloat(data?.success_percentage || 0);
-  // const totalMarketScrore2 = (
-  //   totalMarketScrore +
-  //   ((100 - (
-  //     parseFloat(data?.marketPotential || 0) +
-  //     parseFloat(RevenueModelData?.finalScore?.replace("%", "") || 0) +
-  //     parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", "") || 0) +
-  //     parseFloat(TeamAndResourcesData || 0)
-  //   ) / 4) * 60) / 100
-  // ).toFixed(2);
   const totalMarketScrore2 =
     parseFloat(totalMarketScrore) +
     parseFloat(
@@ -263,18 +246,6 @@ const WizardResult = () => {
         ) +
         parseFloat(((20 - parseFloat(data?.marketPotential) / 5) * 60) / 100)
     );
-  // console.log(
-  //   "this is score",
-  //   parseFloat(totalMarketScrore) ,
-  //     ((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)).toFixed(1) ,
-  //     (((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100).toFixed(1),
-  //     (((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100).toFixed(1),
-  //     (((20-(parseFloat(data?.marketPotential)/5))*60)/100).toFixed(1),
-  //     (parseFloat((((20-(parseFloat(TeamAndResourcesData)/5))*60)/100)) +
-  //     parseFloat(((20-(parseFloat(RevenueModelData?.finalScore?.replace("%", ""))/5))*60)/100)+
-  //     parseFloat(((20-(parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", ""))/5))*60)/100)+
-  //     parseFloat(((20-(parseFloat(data?.marketPotential)/5))*60)/100))
-  // );
   const bardata2 = {
     labels: ["Score", "Remaining"],
     datasets: [
@@ -361,8 +332,8 @@ const WizardResult = () => {
   };
   const consumptions = [
     {
-      percentage: 75, // 75% of maximum capacity
-      currentWatts: `${data?.totalMarketSize} potential users`, // Current consumption in watts
+      percentage: 75,
+      currentWatts: `${data?.totalMarketSize} potential users`,
       title: "Target Market Size",
       imageUrl: "/result-page/Layer5.png",
     },
@@ -399,7 +370,7 @@ const WizardResult = () => {
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [shareModalOpen, setShareModalOpen] = useState(false);
   const onRequestTaskCompletion = () => {
-    setTaskCompletion(false);
+    setTaskCompletion(false); 
   };
   const handleOpenTaskCompletionCard = () => {
     setTaskCompletion(true);
@@ -418,12 +389,10 @@ const WizardResult = () => {
     setShowCongratulations(true);
     onRequestTaskCompletion(false);
   };
-
   const handleShareAchievement = () => {
     setShareModalOpen(true);
     setMotivationalCardOpen(false);
   };
-
   const handleCloseShareModal = () => {
     setShareModalOpen(false);
   };
@@ -435,8 +404,8 @@ const WizardResult = () => {
       button: "Claim Now",
     },
     {
-      title: "Trading Task",
-      description: "Accumulate at least 50 USDC ",
+      title: "Share Your Result",
+      description: "Share your result and get 2 free test ",
       points: "+2",
       button: "Share Result",
     },
@@ -452,7 +421,6 @@ const WizardResult = () => {
     twitter: `https://twitter.com/intent/tweet?text=I just earned more attempts in the game!`,
     whatsapp: `https://api.whatsapp.com/send?text=I just earned more attempts in the game! Check it out: ideax.in`,
   };
-
   const handleShare = (platform) => {
     window.open(socialShareLinks[platform], "_blank");
   };
@@ -465,96 +433,6 @@ const WizardResult = () => {
         </p>
       </div>
       <div className="grid max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-10 py-4 bg-white text-gray-800">
-        {/* <div className="flex flex-col gap-6">
-          <div className="bg-white p-4 rounded-lg shadow ">
-            <h2 className="text-sm text-gray-600 mb-4">Idea Score</h2>
-            <div className="flex flex-col sm:flex-row items-center sm:items-start">
-              <CircularProgress
-                percentage={metrics.lighting.percentage}
-                color={metrics.lighting.color}
-                size={120}
-                strokeWidth={14}
-              >
-                <div className="text-center">
-                  <FaRegLightbulb
-                    className="mx-auto mb-2 text-[#686868]"
-                    size={34}
-                  />
-                </div>
-              </CircularProgress>
-              <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between text-center sm:text-left">
-                <div className="text-4xl md:text-5xl font-bold mb-2">
-                  <AnimatedText score={metrics.lighting.percentage} /> %
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">Success Chance</div>
-                  <div className="text-2xl">
-                    {metrics.lighting.value}
-                    <span className="text-sm ml-1">
-                      {metrics.lighting.unit}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white flex flex-col md:flex-row justify-between p-4 rounded-lg shadow ">
-            <div className="space-y-4 w-[50%]">
-              <div>
-                <div className="text-sm text-gray-600">IDEA</div>
-                <div className="text-lg">
-                  {parseInt(data?.phase1) == 1
-                    ? "It is still an idea"
-                    : parseInt(data?.phase1) == 3
-                    ? "I made a plan for it"
-                    : "I already started"}
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">
-                  current job related to idea
-                </div>
-                <div className="text-lg">
-                  {parseInt(data?.phase4) == 5 ? "Yes" : "No"}
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">Investment </div>
-                <div className="text-lg">
-                  {parseInt(data?.phase5) == 1
-                    ? "Less than 1 Lakh "
-                    : parseInt(data?.phase5) == 2
-                    ? "1 Lakh ₹ - 10 Lakh ₹"
-                    : parseInt(data?.phase5) == 3
-                    ? "10 Lakh ₹ - 50 Lakh ₹"
-                    : parseInt(data?.phase5) == 4
-                    ? "50 Lakh ₹ - 1 Crore ₹"
-                    : "More than 1 Crore ₹"}
-                </div>
-              </div>
-            </div>
-            <div className="space-y-4 w-[50%]">
-              <div>
-                <div className="text-sm text-gray-600">
-                  Experience with your idea
-                </div>
-                <div className="text-lg">
-                  {parseInt(data?.phase6) == 0
-                    ? "No experience"
-                    : parseInt(data?.phase6) == 3
-                    ? "1 - 3 Years"
-                    : parseInt(data?.phase6) == 4
-                    ? "3 - 5 Years"
-                    : "More than 5 years"}
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">Country</div>
-                <div className="text-lg">{data?.country}</div>
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h2 className="text-sm text-gray-600 mb-4">Idea Score</h2>
           <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
@@ -639,20 +517,6 @@ const WizardResult = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="flex justify-between">
-              <div>
-                <div className="text-sm text-gray-600">TREND PEV. MONTH</div>
-                <div className="text-red-500">
-                  {metrics.consumption.trendUp} ▼
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">TREND CURRENT MONTH</div>
-                <div className="text-green-500">
-                  {metrics.consumption.trendDown} ▲
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
         <div className="bg-white p-4 rounded-lg shadow">
@@ -738,20 +602,6 @@ const WizardResult = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="flex justify-between">
-              <div>
-                <div className="text-sm text-gray-600">TREND PEV. MONTH</div>
-                <div className="text-red-500">
-                  {metrics.consumption.trendUp} ▼
-                </div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600">TREND CURRENT MONTH</div>
-                <div className="text-green-500">
-                  {metrics.consumption.trendDown} ▲
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
 
@@ -818,7 +668,6 @@ const WizardResult = () => {
                   </div>
                   <span>{data?.marketPotential} %</span>
                   <div className="tooltip" style={{ color: "gray" }}>
-                    {/* <BsFillQuestionCircleFill size={20} /> */}
                     <PiQuestion size={18} />
                     <span className="tooltip-text">
                       Total demand for a product or service within a target
@@ -1046,7 +895,7 @@ const WizardResult = () => {
                               >
                                 <div
                                   className="tooltip"
-                                  style={{ color: "white", marginLeft: "0"}}
+                                  style={{ color: "white", marginLeft: "0" }}
                                 >
                                   {point.icon}
                                   <span
@@ -1169,32 +1018,6 @@ const WizardResult = () => {
             </div>
           </div>
         </section>
-        {/* <div className="info-item">
-                <strong>Target Market Size</strong>
-                <span>{data?.totalMarketSize} potential users</span>
-              </div>
-              <div className="info-item">
-                <strong>Investment Level</strong>
-                <span>{InvestmentLevelData?.chosenInvestmentLevel}</span>
-              </div>
-              <div className="info-item">
-                <strong>Time to Market</strong>
-                <span>
-                  {" "}
-                  {TimeToMarketData ? TimeToMarketData?.totalTTM : "0"}{" "}
-                </span>
-              </div>
-              <div className="info-item">
-                <strong>Expected ROI</strong>
-                <span>
-                  {`${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
-                    `${data?.ExpectedROIData}`}
-                </span>
-              </div>
-              <div className="info-item">
-                <strong>Market Share</strong>
-                <span>{MarketShareData?.chosenOutcome || MarketShareData}</span>
-              </div> */}
         <section
           id="idea"
           className="business-check-container border-gray-300 border  m-auto mt-10 p-10 lg:mx-10"
@@ -1215,7 +1038,6 @@ const WizardResult = () => {
           <div className="flex flex-col-reverse lg:flex-row items-start h-full justify-around">
             <div className=" min-w-[60%] ">
               <div className="m-auto">
-                {/* <div className="w-full pt-5 pb-5 flex justify-center items-center text-left"></div> */}
                 {loading ? (
                   <p>Loading AI-generated insights...</p>
                 ) : (
@@ -1226,13 +1048,6 @@ const WizardResult = () => {
               </div>
             </div>
             <div className="overview-right h-full">
-              {/* <div className="business-score-circle">
-            <Doughnut data={bardata2} options={options} />
-            <div className="doughnut-center">
-              <p className="circle-text">{totalMarketScrore}%</p>
-              <p>Idea Score</p>
-            </div>
-          </div> */}
               {[
                 {
                   href: "#idea",
@@ -1290,16 +1105,16 @@ const WizardResult = () => {
                     },
                     {
                       id: 4,
-                      label: `${Math.round(data?.phase7 * 3.17)}%`, // Use Math.round for cleaner percentages
+                      label: `${Math.round(data?.phase7 * 3.17)}%`,
                       position:
                         "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
-                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)", // Fixed extra space
-                      icon: <FaGlobe />, // Ensure you have imported FaGlobe
-                      rowDir: "md:flex-col-reverse", // Ensured proper casing
-                      textDir: "text-left md:text-center", // Ensured proper casing
-                      text: "Country", // Tooltip text
-                      toolDir: "left-[20%]", // Tooltip position for smaller screens
-                      toolDirLg: "lg:right-full lg:left-unset", // Tooltip position for larger screens
+                      bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
+                      icon: <FaGlobe />,
+                      rowDir: "md:flex-col-reverse",
+                      textDir: "text-left md:text-center",
+                      text: "Country",
+                      toolDir: "left-[20%]",
+                      toolDirLg: "lg:right-full lg:left-unset",
                     },
                   ],
                 },
@@ -1420,11 +1235,11 @@ const WizardResult = () => {
                           </linearGradient>
                         </defs>
                         <circle
-                          cx="60" // Adjusted center for better alignment
-                          cy="60" // Adjusted center for better alignment
+                          cx="60"
+                          cy="60"
                           r={radius}
                           fill="none"
-                          stroke="url(#gradientStroke)" // Reference the gradient here
+                          stroke="url(#gradientStroke)"
                           strokeWidth="8"
                           strokeDasharray={circumference}
                           strokeDashoffset={offset}
@@ -1455,8 +1270,6 @@ const WizardResult = () => {
                         aria-label="Description box"
                         rows="4"
                         readOnly
-                        // minLength="50"
-                        // onMouseLeave={handleBlur}
                       />
                     </div>
                   </div>
@@ -1689,9 +1502,7 @@ const WizardResult = () => {
                         ))}
                       </div>
                       <svg
-                        // width="150"
-                        // height="150"
-                        viewBox="0 0 120 120" // Increased the viewBox size
+                        viewBox="0 0 120 120"
                         className="w-5/6  md:w-40 lg:w-40 mb-32 md:mb-4"
                       >
                         <circle cx="60" cy="60" r={radius} fill="white" />
@@ -1834,7 +1645,7 @@ const WizardResult = () => {
           <h2 className="text-xl font-bold text-gray-900 mb-4">
             Earn More Attempts
           </h2>
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-sm text-gray-600 mb-4 text-left">
             Complete the following tasks to earn more attempts!
           </p>
           <div className="space-y-6">
@@ -1843,13 +1654,18 @@ const WizardResult = () => {
                 key={index}
                 className="bg-gray-100 rounded-lg p-2 flex justify-between items-center"
               >
-                <div>
-                  <h3 className="text-lg text-left font-semibold text-gray-800">
-                    {task.title}
-                  </h3>
-                  <p className="text-sm text-left text-gray-600">
-                    {task.description}
-                  </p>
+                <div className=" flex flex-row">
+                  <div className="p-4">
+                    <FaGift />
+                  </div>
+                  <div>
+                    <h3 className="text-lg text-left font-semibold text-gray-800">
+                      {task.title}
+                    </h3>
+                    <p className="text-sm text-left text-gray-600">
+                      {task.description}
+                    </p>
+                  </div>
                 </div>
                 <div className="text-right">
                   <span className="text-[#6161FF] font-bold block mb-2">
@@ -1875,7 +1691,6 @@ const WizardResult = () => {
           </div>
         </div>
       </Modal>
-
       <Modal
         isOpen={motivationalCardOpen}
         onRequestClose={onMotivationalCardClose}
@@ -1894,13 +1709,13 @@ const WizardResult = () => {
           </p>
           <div className="flex flex-col gap-5 justify-between  items-center mt-6">
             <button
-              className="bg-[#417CF5] hover:bg-[#417CF5] text-white font-bold py-2 px-4 rounded"
+              className="bg-[#417CF5] hover:bg-[#3574f3] text-white font-bold py-2 px-4 rounded"
               onClick={handleOpenTaskCompletionCard}
             >
               Get More Attempts
             </button>
             <button
-              className=" hover:bg-[#417CF5] text-black hover:text-white  font-bold py-2 px-4 rounded"
+              className=" bg-[#919191] hover:bg-[#417CF5] text-black hover:text-white  font-bold py-2 px-4 rounded"
               onClick={handleShareAchievement}
             >
               Share Achievement
@@ -1934,7 +1749,7 @@ const WizardResult = () => {
       >
         <div className="flex flex-col items-center space-y-4">
           <span className="text-3xl">
-            <FaHeart className=" text-[#6161FF] "/>
+            <FaHeart className=" text-[#6161FF] " />
             {/* <img src="" alt="congrechuletion for reward" />  */}
           </span>
           <h2 className="text-xl font-semibold text-black">Congratulations!</h2>

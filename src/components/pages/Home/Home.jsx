@@ -17,7 +17,7 @@ export default function Home() {
         <meta name="description" content="Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now." />
         <meta name="keywords" content="Business Idea Checker, Startup Idea Checker, Business idea checker online, Startup business idea checker, Business idea checker free, Seo data for home page" />
       </Helmet> */}
-      <HeroSection/>
+      <HeroSection />
       
       <Hero />
       <h2 className="card-slider-haedding">
@@ -26,11 +26,11 @@ export default function Home() {
         supports secure transactions
       </h2>
       <CardSlider />
-      <BlockchainTechnology/>
+      <BlockchainTechnology />
       {/* <IconSlider/> */}
-      <TrustedBySection/>
-      <CoreSolutionsSection/>
-      <ProductLineupSection/>
+      <TrustedBySection />
+      <CoreSolutionsSection />
+      <ProductLineupSection />
       {/* <div className="home-main-contaner">
         <Validation />
         <Features />

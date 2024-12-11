@@ -82,7 +82,7 @@ const AwardsSection = () => {
             >
               <h3>Industry Recognition</h3>
               <p className=" w-5/6 m-auto mb-10 ">
-              Entrepreneurs and startups across diverse industries trust IDEAX
+                Entrepreneurs and startups across diverse industries trust IDEAX
                 as their preferred partner for success. Our platform empowers
                 business owners with innovative tools designed to streamline
                 operations.

@@ -45,7 +45,7 @@ const CardSlider = () => {
       id: 8,
       title: "Idea",
       description: "",
-      bgImage: "/sliderLandigPage/1a.jpg",
+      bgImage: "/slides_landing_page/idea.jpg",
     },
     {
       pointers: ["Brand Name", "Logo", "Font", "Colors", "Slogan"],
@@ -53,7 +53,7 @@ const CardSlider = () => {
       id: 14,
       title: "Business identity",
       description: "",
-      bgImage: "/sliderLandigPage/2.webp",
+      bgImage: "/slides_landing_page/Business_Identity.jpg",
     },
     {
       pointers: [
@@ -70,7 +70,7 @@ const CardSlider = () => {
       id: 4,
       title: "Marketing",
       description: "",
-      bgImage: "/sliderLandigPage/3.webp",
+      bgImage: "/slides_landing_page/Marketing.jpg",
     },
     {
       pointers: [
@@ -80,7 +80,7 @@ const CardSlider = () => {
       id: 5,
       title: "Legal",
       description: "",
-      bgImage: "/sliderLandigPage/4.webp",
+      bgImage: "/slides_landing_page/Legal.jpg",
     },
     {
       pointers: ["My Team dashboard" , "Team Meetings" , "Management Platforms" ,"Legal"],
@@ -88,7 +88,7 @@ const CardSlider = () => {
       id: 15,
       title: "Team",
       description: "",
-      bgImage: "/sliderLandigPage/5.webp",
+      bgImage: "/slides_landing_page/team.jpg",
     },
     {
       pointers: [ "Website", "App", "CRM", "Equipment", "Templates",  "Management Platforms"],
@@ -96,7 +96,7 @@ const CardSlider = () => {
       id: 13,
       title: "Business Tools",
       description: "",
-      bgImage: "/sliderLandigPage/6.webp",
+      bgImage: "/slides_landing_page/Business_Tools.jpg",
     },
     {
       pointers: ["Funds", "Expenses", "Income", "Reports", "Vault", "Platforms"],
@@ -104,7 +104,7 @@ const CardSlider = () => {
       id: 11,
       title: "Cash Flow",
       description: "",
-      bgImage: "/sliderLandigPage/7.webp",
+      bgImage: "/slides_landing_page/Cash_Flow.jpg",
     },
     {
       pointers: ["Request Consultation", "Summary", "Resell Service"],
@@ -112,7 +112,7 @@ const CardSlider = () => {
       id: 3,
       title: "Consulting",
       description: "community",
-      bgImage: "/sliderLandigPage/9a.jpg",
+      bgImage: "/slides_landing_page/Consulting.jpg",
     },
     {
       pointers: ["Ideas", "Library", "Courses", "Entertainment"],
@@ -120,7 +120,7 @@ const CardSlider = () => {
       id: 9,
       title: "Entrepreneur",
       description: "",
-      bgImage: "/sliderLandigPage/9.webp",
+      bgImage: "/slides_landing_page/Entrepreneur.jpg",
     },
     {
       pointers: ["Marketing Strategies","Investors", "Investors"],
@@ -128,7 +128,7 @@ const CardSlider = () => {
       id: 2,
       title: "Strategies",
       description: "Business",
-      bgImage: "/sliderLandigPage/10a.jpg",
+      bgImage: "/slides_landing_page/Strategies.jpg",
     },
     {
       pointers: ["Networking", "Events", "Resource"],
@@ -136,7 +136,7 @@ const CardSlider = () => {
       id: 1,
       title: "Community",
       description: "Community",
-      bgImage: "/sliderLandigPage/11.webp",
+      bgImage: "/slides_landing_page/Community.jpg",
     },
     {
       pointers: ["Marketplace", "Evaluation", "Listings"],
@@ -144,7 +144,7 @@ const CardSlider = () => {
       id: 12,
       title: "Buy-Sell",
       description: "",
-      bgImage: "/sliderLandigPage/12.webp",
+      bgImage: "/slides_landing_page/Buy-Sell.jpg",
     },
   ];
   return (

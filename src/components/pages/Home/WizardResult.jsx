@@ -423,9 +423,14 @@ const WizardResult = () => {
     },
   ];
   const socialShareLinks = {
-    facebook: `https://www.facebook.com/sharer/sharer.php`,
-    twitter: `https://twitter.com/intent/tweet?text=I just earned more attempts in the game!`,
-    whatsapp: `https://api.whatsapp.com/send?text=I just earned more attempts in the game! Check it out: ideax.in`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=https://ideax.in&title=Empower Your Business with IDX on Solana&description=Streamline operations, enhance security, and drive efficiency with our AI-driven blockchain solution. Trusted by 200+ companies and over 1,000 customers!&picture=https://ideax.in/ideaX_aa.jpg`,
+    twitter: `https://twitter.com/intent/tweet?text=Empower Your Business with IDX on Solana! 🚀 Leverage AI and blockchain to streamline operations and enhance security. Trusted by 200+ companies. Check it out: https://ideax.in&hashtags=Blockchain,Solana,AI,Startups`,
+    whatsapp: `https://api.whatsapp.com/send?text=Unlock the power of AI-driven blockchain technology with IDX on Solana! 🌐 Streamline your business, enhance security, and save costs. Trusted by 200+ companies! Learn more at https://ideax.in`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=https://ideax.in&title=Empower Your Business with IDX on Solana&summary=Streamline operations, enhance security, and drive efficiency with our AI-driven blockchain solution. Trusted by 200+ companies and over 1,000 customers!&source=IdeaX`,
+    facebookR: `https://www.facebook.com/sharer/sharer.php?u=https://ideax.in/wizard-result&title=Empower Your Business with IDX on Solana&description=Streamline operations, enhance security, and drive efficiency with our AI-driven blockchain solution. Trusted by 200+ companies and over 1,000 customers!&picture=https://ideax.in/ideaX_aa.jpg`,
+    twitterR: `https://twitter.com/intent/tweet?text=Empower Your Business with IDX on Solana! 🚀 Leverage AI and blockchain to streamline operations and enhance security. Trusted by 200+ companies. Check it out: https://ideax.in/wizard-result&hashtags=Blockchain,Solana,AI,Startups`,
+    whatsappR: `https://api.whatsapp.com/send?text=Unlock the power of AI-driven blockchain technology with IDX on Solana! 🌐 Streamline your business, enhance security, and save costs. Trusted by 200+ companies! Learn more at https://ideax.in/wizard-result`,
+    linkedinR: `https://www.linkedin.com/sharing/share-offsite/?url=https://ideax.in/wizard-result&title=Empower Your Business with IDX on Solana&summary=Streamline operations, enhance security, and drive efficiency with our AI-driven blockchain solution. Trusted by 200+ companies and over 1,000 customers!&source=IdeaX`,
   };
   const handleShare = (platform) => {
     window.open(socialShareLinks[platform], "_blank"); 

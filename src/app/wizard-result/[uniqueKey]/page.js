@@ -32,6 +32,7 @@ import AnimatedText from "@/components/wizard-result/AnimatedText";
 import Modal from "react-modal";
 import { RestAPI } from "@/config/Api";
 import { useParams } from "next/navigation";
+import axios from "axios";
 
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
@@ -86,7 +87,7 @@ const WizardResult = () => {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [data, setData] = useState(null);
   
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const { uniqueKey } = params;
   console.log(uniqueKey)
   useEffect(() => {
@@ -98,7 +99,7 @@ const WizardResult = () => {
         console.log("first",response)
       } catch (err) {
         console.error("Error fetching data:", err);
-        setError(err.response?.data?.message || "An error occurred");
+        // setError(err.response?.data?.message || "An error occurred");
       } finally {
         setLoading(false);
       }

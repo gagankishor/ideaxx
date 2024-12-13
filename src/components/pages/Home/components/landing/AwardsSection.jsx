@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaArrowAltCircleRight, FaBookOpen } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 // import TrustpilotReviews from "./TrustpilotReviews";
 import TrustBoxWidget from "./TrustBoxWidget";
 const AwardsSection = () => {

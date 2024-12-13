@@ -27,7 +27,7 @@ const Documentation = () => {
             IDX Documentation
           </h1>
           <p className="mb-8 text-white text-left">
-            IDX is a blockchain built for mass adoption. It's a high-performance
+            IDX is a blockchain built for mass adoption. It a high-performance
             network that is utilized for a range of use cases, including
             finance, NFTs, payments, and gaming. IDX operates as a single global
             state machine and is open, interoperable and decentralized.

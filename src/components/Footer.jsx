@@ -6,12 +6,10 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaDiscord,
-  FaFacebook,
   FaTwitter,
 } from "react-icons/fa";
 import {
   FaInstagram,
-  FaLinkedin,
   FaYoutube,
 } from "react-icons/fa6";
 export default function Footer() {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CarrierPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen">

@@ -128,7 +128,7 @@ const ProductLineupSection = () => {
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/platforms/webpafe_landscape.jpg"
+              src="/home-platform/new_page_home.jpg"
               className="w-full"
               alt="Image 1"
             />
@@ -152,7 +152,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/platforms/webpafe_landscape_eq.jpg"
+              src="/home-platform/new_page_home_mob.jpg"
               className="w-full"
               alt="Image 2"
             />

@@ -277,6 +277,12 @@ export default function Footer() {
             <li>
               <Link href="/blog">Blogs</Link>
             </li>
+            <li>
+                <Link href="/documentation">Documentation</Link>
+              </li>
+            <li>
+                <Link href="/career">Career</Link>
+              </li>
           </ul>
         </div>
       </div>
@@ -286,14 +292,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
           <div className="flex space-x-4 mb-4 md:mb-0">
-            <a
+            {/* <a
               href="https://www.facebook.com/profile.php?id=61568750836670"
               aria-label="Facebook"
               className="hover:text-blue-600"
               target="_blank"
             >
               <FaFacebook size={30}/>
-            </a>
+            </a> */}
             <a
               href="https://www.youtube.com/channel/UCrdNUxGAjUbpd7JmyIjer8Q"
               aria-label="YouTube"
@@ -326,14 +332,14 @@ export default function Footer() {
             >
               <FaDiscord size={30}/>
             </a>
-            <a
+            {/* <a
               href="https://www.linkedin.com/showcase/ideaxx/posts/?feedView=all"
               aria-label="LinkedIn"
               target="_blank"
               className="hover:text-blue-600"
             >
               <FaLinkedin size={30}/>
-            </a>
+            </a> */}
           </div>
           <div className="flex space-x-4 ">
             <Link href="/termsOfService">Terms of Use</Link>

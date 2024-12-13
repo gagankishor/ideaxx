@@ -89,12 +89,12 @@ const AwardsSection = () => {
                 business owners with innovative tools designed to streamline
                 operations.
               </p>
-              <a
+              {/* <a
                 href="#"
                 className="read-more flex justify-center gap-4 items-center text-blue-400 hover:underline"
               >
                 <FaBookOpen /> Read the report →
-              </a>
+              </a> */}
             </div>
             <div
               className="card forrester"
@@ -110,12 +110,12 @@ const AwardsSection = () => {
               <p className=" w-5/6 m-auto mb-10 ">
                 Our platform is widely acknowledged as a pioneer in business management, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes.
               </p>
-              <a
+              {/* <a
                 href="#"
                 className="read-more flex justify-center mb-0 items-center gap-4 text-blue-400 hover:underline"
               >
                 <FaBookOpen /> Read the report →
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="badge-section" style={{ marginTop: "40px" }}>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowAltCircleRight, FaBookOpen } from "react-icons/fa";
 import TrustpilotReviews from "./TrustpilotReviews";
+import TrustBoxWidget from "./TrustBoxWidget";
 const AwardsSection = () => {
   const blogs = [
     {
@@ -57,7 +58,7 @@ const AwardsSection = () => {
             </Link>
           </div>
         </div>
-        <TrustpilotReviews/>
+        <TrustBoxWidget />
        
         <div className="info-cards">
           <div

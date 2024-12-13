@@ -24,9 +24,9 @@ export const MainNavBar = () => {
           <div className="logo-side ">
             <Link href="/">
               {" "}
-              <div className="w-14"> 
+              <div className="w-12"> 
 
-              <img src="/logo.png" sizes="10" className=" bg-black rounded-full" alt="Ideax Logo" />
+              <img src="/logo.png" sizes="8" className=" bg-black rounded-full" alt="Ideax Logo" />
               </div>
             </Link>
           </div>
@@ -40,13 +40,17 @@ export const MainNavBar = () => {
           <div className={`right-side ${toggle ? "show" : "hide"}`}>
             <ul className="logo-menu">
               <li>
-                <Link href="#home">Home</Link>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/plan-details">Subscription Plans</Link>
+                <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <Link href="#services">Connect Your Wallet</Link>
+                <Link href="/documentation">Documentation</Link>
+              </li>
+              
+              <li>
+                <Link href="/career">Career</Link>
               </li>
             </ul>
             <ul className="main-menu">

@@ -41,7 +41,7 @@ const ProductLineupSection = () => {
                 className="product-image" 
               />
               <p className="p-4 text-white text-center">
-                AI-powered platform streamlines operations, ensures compliance, and fosters trust with intelligent, transparent solutions for modern businesses.
+                AI-powered streamlines operations, ensures compliance, and fosters trust with intelligent, transparent solutions for modern businesses.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -68,7 +68,7 @@ const ProductLineupSection = () => {
                 className="product-image"
               />
               <p className=" p-4 text-white ">
-                Discover how our platform boosts operational efficiency by streamlining workflows, reducing manual tasks, and maximizing productivity.
+                Discover operational efficiency by streamlining workflows, reducing manual tasks, and maximizing productivity.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
@@ -124,7 +124,7 @@ const ProductLineupSection = () => {
             style={{ width: "40%", margin: "" }}
           />
         </div>
-        <p className="text-white p-8 text-2xl max-w-5xl mx-auto">Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on a laptop!</p>
+        <p className="text-white pt-14  text-2xl max-w-5xl mx-auto">Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on a laptop!</p>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img

@@ -98,6 +98,10 @@ body {
   font-family: var(--font-family);
   font-weight: 400;
   min-height: 100vh;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* Standard */
 }
 
 form label,

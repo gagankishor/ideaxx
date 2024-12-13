@@ -87,64 +87,8 @@ const TrustBoxWidget = () => {
       {/* End TrustBox widget */}
 
       {/* Display review count */}
-      <div>
-        <h3>Total Reviews: {reviewCount}</h3>
-      </div>
-
-      {/* Display reviews */}
-      <div>
-        <h4>Latest Reviews:</h4>
-        <ul>
-          {reviews.slice(0, 5).map((review) => (
-            <li key={review.id}>
-              <p><strong>{review.title}</strong></p>
-              <p>{review.text}</p>
-              <p>Rating: {review.rating}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="bg-gray-100 py-8 px-4 sm:px-8 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-center mb-6">Customer Reviews</h2>
       
-      {/* Average Rating */}
-      <div className="flex justify-center items-center mb-8">
-        <div className="flex space-x-1 text-yellow-500">
-          {[...Array(5)].map((_, index) => (
-            <FaStar key={index} className="text-xl" />
-          ))}
-        </div>
-        <span className="ml-2 text-lg text-gray-700">(4.8/5)</span>
-      </div>
-      {/* Reviews */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {reviews.map((review) => (
-          <div
-            key={review.id}
-            className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition duration-300"
-          >
-            <div className="flex items-center space-x-4 mb-3">
-              <div className="h-10 w-10 bg-gray-300 rounded-full flex items-center justify-center text-lg font-bold text-gray-700">
-                {review.name[0]}
-              </div>
-              <div>
-                <h3 className="font-medium">{review.name}</h3>
-                <p className="text-sm text-gray-500">{review.date}</p>
-              </div>
-            </div>
-            <div className="flex space-x-1 mb-2 text-yellow-500">
-              {[...Array(review.rating)].map((_, index) => (
-                <FaStar key={index} className="text-sm" />
-              ))}
-              {[...Array(5 - review.rating)].map((_, index) => (
-                <FaStar key={index + review.rating} className="text-sm text-gray-300" />
-              ))}
-            </div>
-            <p className="text-gray-700 text-sm">{review.review}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+     
     </div>
   );
 };

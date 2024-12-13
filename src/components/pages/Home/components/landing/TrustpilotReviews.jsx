@@ -1,6 +1,4 @@
-import { FaStar } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import TrustBoxWidget from './TrustBoxWidget';
+
 
 const TrustpilotReviews = () => {
   return (

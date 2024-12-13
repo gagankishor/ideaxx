@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
+import { useEffect } from "react";
+// import { FaStar } from "react-icons/fa";
 
 const TrustBoxWidget = () => {
-  const [reviews, setReviews] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      review: "Great service and excellent support!",
-      rating: 5,
-      date: "Dec 1, 2024",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      review: "Amazing experience! Highly recommend.",
-      rating: 4,
-      date: "Nov 28, 2024",
-    },
-    {
-      id: 3,
-      name: "Emily Johnson",
-      review: "Good quality, but delivery was delayed.",
-      rating: 3,
-      date: "Nov 20, 2024",
-    },
-  ]);
-  const [reviewCount, setReviewCount] = useState(0);
+  // const [reviews, setReviews] = useState([
+  //   {
+  //     id: 1,
+  //     name: "John Doe",
+  //     review: "Great service and excellent support!",
+  //     rating: 5,
+  //     date: "Dec 1, 2024",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Jane Smith",
+  //     review: "Amazing experience! Highly recommend.",
+  //     rating: 4,
+  //     date: "Nov 28, 2024",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Emily Johnson",
+  //     review: "Good quality, but delivery was delayed.",
+  //     rating: 3,
+  //     date: "Nov 20, 2024",
+  //   },
+  // ]);
+  // const [reviewCount, setReviewCount] = useState(0);
   // const reviews = ;
   
   useEffect(() => {
@@ -42,28 +42,28 @@ const TrustBoxWidget = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Fetch reviews from Trustpilot API
-    const fetchReviews = async () => {
-      try {
-        const response = await fetch(
-          "https://api.trustpilot.com/v1/business-units/6758a7a09ddbaeac9eae7c5a/reviews",
-          {
-            headers: {
-              Authorization: `Bearer YOUR_API_KEY`,
-            },
-          }
-        );
-        const data = await response.json();
-        setReviews(data.reviews || []);
-        setReviewCount(data.numberOfReviews || 0);
-      } catch (error) {
-        console.error("Error fetching Trustpilot reviews:", error);
-      }
-    };
+  // useEffect(() => {
+  //   // Fetch reviews from Trustpilot API
+  //   const fetchReviews = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://api.trustpilot.com/v1/business-units/6758a7a09ddbaeac9eae7c5a/reviews",
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer YOUR_API_KEY`,
+  //           },
+  //         }
+  //       );
+  //       const data = await response.json();
+  //       setReviews(data.reviews || []);
+  //       setReviewCount(data.numberOfReviews || 0);
+  //     } catch (error) {
+  //       console.error("Error fetching Trustpilot reviews:", error);
+  //     }
+  //   };
 
-    fetchReviews();
-  }, []);
+  //   fetchReviews();
+  // }, []);
   
   return (
     <div>

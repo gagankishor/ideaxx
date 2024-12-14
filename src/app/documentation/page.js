@@ -3,6 +3,8 @@ import Breadcrumb from "@/components/pages/document/Breadcrumb";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 import { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
+import PropTypes from "prop-types"; // Import PropTypes
+
 const sections = [
   {
     title: "Getting Started",
@@ -92,6 +94,12 @@ const SidebarSection = ({ title, items, isOpen, toggleOpen }) => (
     )}
   </div>
 );
+SidebarSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  toggleOpen: PropTypes.func.isRequired,
+};
 const Documentation = () => {
   // const [gettingStartedOpen, setGettingStartedOpen] = useState(true);
   // const [coreConceptsOpen, setCoreConceptsOpen] = useState(false);
@@ -153,7 +161,7 @@ const Documentation = () => {
           <p className="mb-8 text-[#C0C0C0] text-left text-lg">
             Welcome to the IDX Documentation. IDX is a blockchain built for mass
             adoption, designed to handle a range of applications such as
-            finance, gaming, payments, and NFTs. Here you'll find everything you
+            finance, gaming, payments, and NFTs. Here you find everything you
             need to start building on IDX.
           </p>
           {/* Dynamically generate content */}

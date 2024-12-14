@@ -36,6 +36,31 @@ html {
   --black: black;
   --white: white;
 }
+/* Default state - hide the scrollbar */
+.scrollbar-hover {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE/Edge */
+}
+
+.scrollbar-hover::-webkit-scrollbar {
+  visibility: hidden; /* For Chrome, Safari, and Opera */
+}
+
+/* Show scrollbar on hover */
+.scrollbar-hover:hover {
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar {
+  visibility:visible;
+  display: block; /* Show scrollbar */
+  width: 4px; /* Adjust width */
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Customize thumb color */
+  border-radius: 4px;
+}
 
 ::-webkit-scrollbar {
   background-color: rgba(255, 255, 255, 0);
@@ -46,23 +71,22 @@ html {
   background-color: var(--main-color);
   border-radius: 25px;
 }
-/* Apply scrollbar styling only to this section */
 .scroll-section::-webkit-scrollbar {
-  width: 3px; /* Width of the scrollbar */
+  width: 3px;
 }
 
 .scroll-section::-webkit-scrollbar-track {
-  background: #F1F1F1; /* Track color */
-  border-radius: 0px; /* Rounded corners */
+  background: #F1F1F1;
+  border-radius: 0px;
 }
 
 .scroll-section::-webkit-scrollbar-thumb {
-  background: #C1C1C1; /* Scroll thumb color */
-  border-radius: 0px; /* Rounded corners */
+  background: #C1C1C1;
+  border-radius: 0px;
 }
 
 .scroll-section::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Darker on hover */
+  background: #555; 
 }
 
 a {

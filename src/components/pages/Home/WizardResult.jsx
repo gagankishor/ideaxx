@@ -369,6 +369,7 @@ const WizardResult = () => {
   const [motivationalCardOpen, setMotivationalCardOpen] = useState(false);
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [shareModalOpen, setShareModalOpen] = useState(false);
+  const [shareModalOpen2, setShareModalOpen2] = useState(false);
   const onRequestTaskCompletion = () => {
     setTaskCompletion(false); 
   };
@@ -394,8 +395,16 @@ const WizardResult = () => {
     setShareModalOpen(true);
     setMotivationalCardOpen(false);
   };
+  const handleShareAchievement2 = () => {
+    setShareModalOpen2(true);
+    setMotivationalCardOpen(false);
+  };
   const handleCloseShareModal = () => {
     setShareModalOpen(false);
+  };
+  
+  const handleCloseShareModal2 = () => {
+    setShareModalOpen2(false);
   };
   const tasks = [
     {
@@ -410,8 +419,7 @@ const WizardResult = () => {
       description: "Share your result and get 2 free test ",
       points: "+2",
       button: "Share Result",
-      onclickButton:handleShareAchievement
-
+      onclickButton:handleShareAchievement2
     },
     {
       title: "Referral Task",
@@ -419,7 +427,6 @@ const WizardResult = () => {
       points: "+3",
       button: "Invite Friends",
       onclickButton:handleShareAchievement
-
     },
   ];
   const socialShareLinks = {
@@ -435,7 +442,6 @@ const WizardResult = () => {
   const handleShare = (platform) => {
     window.open(socialShareLinks[platform], "_blank"); 
     handleOpenCongratulationsCard()
-
   };
   return (
     <>
@@ -1807,6 +1813,42 @@ const WizardResult = () => {
           </div>
           <button
             onClick={handleCloseShareModal}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded"
+          >
+            Close
+          </button>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={shareModalOpen2}
+        onRequestClose={handleCloseShareModal2}
+        className="bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto focus:outline-none"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      >
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Refer firend </h2>
+          <div className="flex justify-center space-x-4 mb-6">
+            <button
+              onClick={() => handleShare("facebookR")}
+              className="bg-[#6161FF] text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-700"
+            >
+              <FaFacebook className="w-6 h-6" />
+            </button>
+            <button
+              onClick={() => handleShare("twitterR")}
+              className="bg-blue-400 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-600"
+            >
+              <FaTwitter className="w-6 h-6" />
+            </button>
+            <button
+              onClick={() => handleShare("whatsappR")}
+              className="bg-green-500 text-white py-2 px-4 rounded-full transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-green-600"
+            >
+              <FaWhatsapp className="w-6 h-6" />
+            </button>
+          </div>
+          <button
+            onClick={handleCloseShareModal2}
             className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded"
           >
             Close

@@ -124,7 +124,8 @@ const ProductLineupSection = () => {
             style={{ width: "40%", margin: "" }}
           />
         </div>
-        <p className="text-white pt-14  text-2xl max-w-5xl mx-auto">Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on a laptop!</p>
+        <p className="text-white pt-14  text-2xl max-w-5xl mx-auto">
+        Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on traditional computing devices!</p>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img

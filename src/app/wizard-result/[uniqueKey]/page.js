@@ -95,7 +95,7 @@ const WizardResult = () => {
       console.log("firstdsgsd")
       try {
         const response = await axios.get(`${RestAPI}/wizard-result/${uniqueKey}`);
-        setData(response.data); // Assuming the data is in `response.data`
+        setData(response.data.data.wizardResult); // Assuming the data is in `response.data`
         console.log("first",response)
       } catch (err) {
         console.error("Error fetching data:", err);
@@ -106,7 +106,6 @@ const WizardResult = () => {
     };
     fetchData();
   }, [uniqueKey]);
-
   const parseJSON = (jsonString) => {
     try {
       let cleanedString = jsonString

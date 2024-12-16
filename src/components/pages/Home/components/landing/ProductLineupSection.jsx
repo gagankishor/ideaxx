@@ -41,12 +41,11 @@ const ProductLineupSection = () => {
                 className="product-image" 
               />
               <p className="p-4 text-white text-center">
-                AI-powered streamlines operations, ensures compliance, and fosters trust with intelligent, transparent solutions for modern businesses.
+              AI-powered operations ensure compliance, enhance trust, and build value  intelligent solutions for modern businesses.
               </p>
               <div className="ripple-border"></div>
               <div className="ripple-border-2"></div>
             </div>
-
             <div className="product-box black-background">
               <img
                 // src="/darksection1/innovation.webp"
@@ -62,7 +61,6 @@ const ProductLineupSection = () => {
             </div>
             <div className="product-box">
               <img
-                // src="/darksection1/collaboration.webp"
                 src="/darksection1/box_Security.jpg"
                 alt="Security"
                 className="product-image"
@@ -75,7 +73,6 @@ const ProductLineupSection = () => {
             </div>
             <div className="product-box">
               <img
-                // src="/darksection1/collaboration.webp"
                 src="/darksection1/box_Efficiency.jpg"
                 alt="Efficiency"
                 className="product-image"

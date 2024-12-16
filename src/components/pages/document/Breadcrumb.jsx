@@ -25,7 +25,7 @@ Breadcrumb.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
-      href: PropTypes.string, // Optional if the breadcrumb is non-clickable
+      href: PropTypes.string,
     })
   ).isRequired,
 };

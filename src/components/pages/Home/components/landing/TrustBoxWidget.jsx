@@ -68,56 +68,90 @@ const TrustBoxWidget = () => {
   // }, []);
 
   return (
-    <div>
-      {/* End TrustBox widget */}
-
-      {/* Display review count */}
-
-      <div className="flex flex-col items-center justify-center p-4 border rounded-lg shadow-md max-w-xs bg-white mx-auto">
-        {/* Trustpilot Header */}
-        <div className="flex items-center space-x-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-green-500"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 0l3.09 7.26H24L15.545 11.79 18.635 24 12 17.89 5.365 24l3.09-12.21L0 7.26h8.91z" />
-          </svg>
-          <h3 className="text-lg font-bold text-gray-800">Trustpilot</h3>
-        </div>
-
-        {/* Star Ratings */}
-        <div className="flex items-center space-x-1 mt-2">
-          <FaStar className="text-green-500 w-5 h-5" />
-          <FaStar className="text-green-500 w-5 h-5" />
-          <FaStar className="text-green-500 w-5 h-5" />
-          <FaStar className="text-green-500 w-5 h-5" />
-          <FaStarHalfAlt className="text-green-500 w-5 h-5" />
-        </div>
-
-        {/* TrustScore and Reviews */}
-        <div className="text-sm text-gray-600 mt-2">
-          <span className="font-bold text-gray-800">TrustScore 4.7</span> |{" "}
-          <span className="font-bold text-gray-800">36,106 reviews</span>
-        </div>
-        <div
-          className="trustpilot-widget"
-          data-locale="en-US"
-          data-template-id="56278e9abfbbba0bdcd568bc"
-          data-businessunit-id="6758a7a09ddbaeac9eae7c5a"
-          data-style-height="52px"
-          data-style-width="100%"
+    <div className=" flex flex-row justify-between">
+      <div>
+        <a
+          href="https://www.trustpilot.com/review/idxsolana.io"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <a
-            href="https://www.trustpilot.com/review/idxsolana.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Trustpilot
-          </a>
+          <img
+            src="https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg"
+            alt="trustpilot logo"
+            className=" w-40"
+          />
+        </a>
+        <div>
+          <h3 className=" text-left text-white">Excellent</h3>
+          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
+          <div>
+            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
+          </div>
         </div>
       </div>
+      <div>
+        <a
+          href="https://solscan.io/token/BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/2425083/7e2bad3748d02a0a138d5d99e41e30cf_e6f761f96626d2de01e5c3d68481b670.jpg?width=564"
+            className=" w-40"
+          />
+          <p className=" text-white">SOLSCAN</p>
+        </a>
+        {/* <div>
+          <h3 className=" text-left text-white">Excellent</h3>
+          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
+          <div>
+            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
+          </div>
+        </div> */}
+      </div>
+      <div>
+        <a
+          href="https://www.geckoterminal.com/solana/pools/6CQSpRdGtNWEbLhKpx7DAw7FDAm3g7wvjtsvaTKWBwxo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://play-lh.googleusercontent.com/umqXwUBwJ4CrLTHUuHh-1gks_IimHTYbM1h5-9__jZa3euhkC-9IlLtM6GW3-j88Oh-J"
+            alt="trustpilot logo"
+            className=" w-40"
+          />
+          <p className=" text-white">gecko terminal</p>
+        </a>
+        {/* <div>
+          <h3 className=" text-left text-white">Excellent</h3>
+          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
+          <div>
+            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
+          </div>
+        </div> */}
+      </div>
+      <div>
+        <a
+          href="https://www.trustpilot.com/review/idxsolana.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://images.seeklogo.com/logo-png/52/1/dex-screener-logo-png_seeklogo-527276.png?v=638686514610000000"
+            alt="trustpilot logo"
+            className=" w-40"
+          />
+          <p className=" text-white">DEX SCREENER</p>
+        </a>
+        {/* <div>
+          <h3 className=" text-left text-white">Excellent</h3>
+          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
+          <div>
+            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
+          </div>
+        </div> */}
+      </div>
+      
     </div>
   );
 };

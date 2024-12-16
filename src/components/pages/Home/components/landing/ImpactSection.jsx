@@ -53,12 +53,12 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/trip_f_1.mp4",
+    videoSrc: "/MercedesMaybachSL.mp4",
     quote:
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Taki Kaddo",
     title: "CTO, Pick It Up",
-    image:"/MercedesMaybachSL.mp4",
+    image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.jpeg",
     stats: [
       {
         amount: "300K",

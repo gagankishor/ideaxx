@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+// import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 // import { FaStar } from "react-icons/fa";
 
 const TrustBoxWidget = () => {

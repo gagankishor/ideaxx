@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 // import Slider from "react-slick";
 import "./CoreSolutionsSection.css";
 import { FaArrowAltCircleRight, FaRobot } from "react-icons/fa";

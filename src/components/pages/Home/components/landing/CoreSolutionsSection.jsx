@@ -193,7 +193,7 @@ const CoreSolutionsSection = () => {
     centerPadding: "0px",
     afterChange: (current) => {
       // Calculate the center index based on slidesToShow
-      const centerIndex = Math.floor(5 / 2); // For 5 visible slides, center is index 2
+      const centerIndex = Math.floor(3 / 2); // For 5 visible slides, center is index 2
       setSelectedIndex(current + centerIndex);
     },
     nextArrow: (

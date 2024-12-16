@@ -126,7 +126,7 @@ const ProductLineupSection = () => {
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/new_page_home.jpg"
+              src="/home-platform/2.jpg"
               className="w-full"
               alt="Image 1"
             />
@@ -150,7 +150,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/new_page_home_mob.jpg"
+              src="/home-platform/webpafe_landscape_sec_n_mob.jpg"
               className="w-full"
               alt="Image 2"
             />
@@ -158,13 +158,13 @@ const ProductLineupSection = () => {
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/hand.webp"
+                    src="/main-icon/marketing.webp"
                     alt="Business Tools"
                     width={40}
                     className="bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Business Tools
+                  Marketing
                   </h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
@@ -176,7 +176,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/platforms/webpafe_landscape_web.jpg"
+              src="/home-platform/1.jpg"
               className="w-full"
               alt="Image 3"
             />
@@ -184,13 +184,13 @@ const ProductLineupSection = () => {
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/marketing.webp"
+                    src="/main-icon/hand.webp"
                     alt="Website Design"
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                    Marketing
+                  Business Tools
                   </h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
@@ -202,7 +202,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/imageMobile.png"
+              src="/home-platform/webpafe_landscape_sec_n_mob_2.jpg"
               className="w-full"
               alt="image Mobile"
             />
@@ -215,7 +215,7 @@ const ProductLineupSection = () => {
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
-                  <h3 className="text-white text-xl font-bold mb-1">Full mobile experience</h3>
+                  <h3 className="text-white text-xl font-bold mb-1">Idea</h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about

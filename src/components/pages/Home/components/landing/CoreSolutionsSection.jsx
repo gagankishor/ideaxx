@@ -192,7 +192,6 @@ const CoreSolutionsSection = () => {
     centerMode: true,
     centerPadding: "0px",
     afterChange: (current) => {
-      // Calculate the center index based on slidesToShow
       const centerIndex = Math.floor(3 / 2); // For 5 visible slides, center is index 2
       setSelectedIndex(current + centerIndex);
     },
@@ -224,7 +223,7 @@ const CoreSolutionsSection = () => {
 
   React.useEffect(() => {
     if (sliderRef.current) {
-      sliderRef.current.slickGoTo(selectedIndex - Math.floor(5 / 2));
+      sliderRef.current.slickGoTo(selectedIndex - Math.floor(3 / 2));
     }
   }, [selectedIndex]);
 

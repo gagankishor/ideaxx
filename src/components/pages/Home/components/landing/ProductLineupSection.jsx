@@ -210,7 +210,7 @@ const ProductLineupSection = () => {
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/legal.webp"
+                    src="/main-icon/idea3D.png"
                     alt="Team"
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
@@ -235,7 +235,6 @@ const ProductLineupSection = () => {
         }}
       >
         <div style={{ display: "flex", margin: "auto", width: "fit-content" }}>
-         
           <img
             src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/mayatauber/Group_1261164294.png"
             style={{ marginRight: "10px" }}

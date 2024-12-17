@@ -286,7 +286,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="text-black text-7xl text-left px-5 md:px-20">
+      <div className="text-black text-7xl text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         Index
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">

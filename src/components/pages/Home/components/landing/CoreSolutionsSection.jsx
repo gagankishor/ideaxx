@@ -181,7 +181,6 @@ const CoreSolutionsSection = () => {
       sliderRef.current.slickPrev();
     }
   };
-  
   const settings = {
     dots: true,
     infinite: true,
@@ -219,15 +218,12 @@ const CoreSolutionsSection = () => {
       },
     ],
   };
-
   React.useEffect(() => {
     if (sliderRef.current) {
       sliderRef.current.slickGoTo(selectedIndex - Math.floor(3 / 2));
     }
   }, [selectedIndex]);
-
   const selectedIcon = icons[selectedIndex % icons.length].label; // Handle wrap-around indexing
-
   return (
     <section id="features" style={{ padding: "0px 0px", color: "white" }}>
       <div style={{ backgroundColor: "black", padding: "30px 0" }}>

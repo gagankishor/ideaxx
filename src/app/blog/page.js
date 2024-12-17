@@ -174,7 +174,6 @@ const Blogs = () => {
               className="w-full h-full object-cover"
             />
           </div>
-
           {/* Right Section (Text) */}
           <div className="px-12 flex flex-col justify-center ">
             <p className="uppercase   text-gray-50 font-thin text-xl mt-10 md:mt-0 mb-5">

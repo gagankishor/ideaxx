@@ -27,7 +27,7 @@ const AwardsSection = () => {
       title: "Top Business Trends to Watch in 2024",
       excerpt:
         "As we approach 2024, the business landscape continues to evolve rapidly, influenced by...",
-      link: "/blog/1",
+      link: "/blog/3",
     },
   ];
   return (

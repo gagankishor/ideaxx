@@ -12,7 +12,6 @@ export default function Contact() {
               below.
             </p>
             <form className="space-y-6">
-              {/* Name Input */}
               <div>
                 <label
                   htmlFor="name"
@@ -28,8 +27,6 @@ export default function Contact() {
                   required
                 />
               </div>
-  
-              {/* Email Input */}
               <div>
                 <label
                   htmlFor="email"
@@ -45,8 +42,6 @@ export default function Contact() {
                   required
                 />
               </div>
-  
-              {/* Message Input */}
               <div>
                 <label
                   htmlFor="message"
@@ -62,8 +57,6 @@ export default function Contact() {
                   required
                 ></textarea>
               </div>
-  
-              {/* Submit Button */}
               <div className="text-center">
                 <button
                   type="submit"
@@ -73,8 +66,6 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-  
-            {/* Contact Information */}
             <div className="mt-12 text-center">
               <p className="text-gray-600">Or reach us at:</p>
               {/* <p className="text-gray-800 font-medium">Phone: +1 234 567 890</p> */}

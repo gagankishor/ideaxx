@@ -293,10 +293,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a
-              href="https://www.facebook.com/profile.php?id=61568750836670"
-              aria-label="Facebook"
+              href="https://t.me/idxsolana"
+              aria-label="Telegram"
               className="hover:text-blue-600"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FaTelegram size={30}/>
             </a>

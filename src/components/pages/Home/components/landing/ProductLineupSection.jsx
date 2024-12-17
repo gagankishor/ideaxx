@@ -150,21 +150,21 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/webpafe_landscape_sec_n_mob.jpg"
+              src="/home-platform/new_page_home_mob-2.jpg"
               className="w-full"
               alt="Image 2"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
-                  <img
-                    src="/main-icon/marketing.webp"
-                    alt="Business Tools"
+                <img
+                    src="/main-icon/hand.webp"
+                    alt="Website Design"
                     width={40}
-                    className="bg-white rounded-md p-[2px]"
+                    className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">
-                  Marketing
+                  Business Tools
                   </h3>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">

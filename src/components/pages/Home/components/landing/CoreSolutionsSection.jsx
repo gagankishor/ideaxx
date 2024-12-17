@@ -176,13 +176,12 @@ const CoreSolutionsSection = () => {
       sliderRef.current.slickNext();
     }
   };
-
   const handlePrevious = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPrev();
     }
   };
-
+  
   const settings = {
     dots: true,
     infinite: true,

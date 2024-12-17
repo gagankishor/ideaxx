@@ -37,29 +37,6 @@ const articles = [
   //   hrefUrl: "blog/6",
 
   // },
-  
-];
-const editorsPick = [
-  {
-    title: "The Mindset of a Successful Entrepreneur ...",
-    category: "Entrepreneurship",
-    imageUrl: "/blog/3/image3.webp",
-    hrefUrl: "/blog/1",
-  },
-  {
-    title: "Top Business Trends to Watch in 2024 ...",
-    category: "Business Trends",
-    imageUrl: "/blog/2/image3.webp", // Data visualization image
-    hrefUrl: "/blog/2",
-  },
-  {
-    title: "How AI is Shaping the Future of Entrepreneurship",
-    category: "Entrepreneurship",
-    imageUrl: "/blog/4/image3.webp", // AI and data science image
-    hrefUrl: "/blog/3",
-  },
-];
-const businessStrategies = [
   {
     title: "Transforming Businesses with Virtual Business Management",
     category: "Virtual Business Management",
@@ -67,22 +44,50 @@ const businessStrategies = [
     hrefUrl: "/blog/6",
 
   },
+  
+];
+const editorsPick = [
   {
-    title: "The Rise of Online Businesses: Opportunities and Challenges",
-    category: "Opportunities and Challenges",
-    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
-    hrefUrl: "/blog/4",
-
+    title: "IDX Token Price: Real-Time Updates...",
+    category: "IDX Token ",
+    imageUrl: "/blog/3/image3.webp",
+    hrefUrl: "/blog/7",
   },
   {
-    title: "The Mindset of a Successful Entrepreneur ...",
+    title: "How to Purchase IDX Token...",
+    category: "IDX Tokens",
+    imageUrl: "/blog/2/image3.webp", // Data visualization image
+    hrefUrl: "/blog/8",
+  },
+  {
+    title: "Revolutionizing Business Management with Advanced Technology...",
     category: "Entrepreneurship",
-    imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2", 
-    hrefUrl: "/blog/1",
-
+    imageUrl: "/blog/4/image3.webp", // AI and data science image
+    hrefUrl: "/blog/9",
   },
 ];
+const businessStrategies = [
+  {
+    title: "Enterprise Blockchain Solutions",
+    category: "Blockchain",
+    imageUrl: "/blog/image2.jpg", // Startup scaling image
+    hrefUrl: "/blog/10",
 
+  },
+  {
+    title: "Redefining Speed and Security in Blockchain Transactions",
+    category: "Solana IDX Token",
+    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
+    hrefUrl: "/blog/11",
+
+  },
+  {
+    title: "Powering Business Innovation on the Blockchain...",
+    category: "IDX Cryptocurrency",
+    imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2", 
+    hrefUrl: "/blog/12",
+  },
+];
 // const websiteEssentials = [
 //   {
 //     title: "The Ultimate Guide to Building a Personal Portfolio Website",
@@ -195,7 +200,7 @@ const Blogs = () => {
       <div className="bg-gray-50 mx-5 md:mx-20 py-12">
         <div className="max-w-full  mx-auto">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">
-            Editor&lsquo;s Pick
+          IDX Solana
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 mt-10 lg:grid-cols-3 gap-6">
             {editorsPick.map((article, index) => (

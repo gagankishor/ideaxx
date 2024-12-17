@@ -6,12 +6,14 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaDiscord,
+  FaTelegram,
   FaTwitter,
 } from "react-icons/fa";
 import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 export default function Footer() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const toggleDropdown = (index) => {
@@ -290,14 +292,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
           <div className="flex space-x-4 mb-4 md:mb-0">
-            {/* <a
+            <a
               href="https://www.facebook.com/profile.php?id=61568750836670"
               aria-label="Facebook"
               className="hover:text-blue-600"
               target="_blank"
             >
-              <FaFacebook size={30}/>
-            </a> */}
+              <FaTelegram size={30}/>
+            </a>
             <a
               href="https://www.youtube.com/channel/UCrdNUxGAjUbpd7JmyIjer8Q"
               aria-label="YouTube"
@@ -330,14 +332,15 @@ export default function Footer() {
             >
               <FaDiscord size={30}/>
             </a>
-            {/* <a
-              href="https://www.linkedin.com/showcase/ideaxx/posts/?feedView=all"
-              aria-label="LinkedIn"
+            <a
+              href="https://substack.com/@idxsolana"
+              aria-label="substack"
               target="_blank"
-              className="hover:text-blue-600"
+              className="hover:text-[#FF6719] "
             >
-              <FaLinkedin size={30}/>
-            </a> */}
+              <SiSubstack 
+              size={30}/>
+            </a>
           </div>
           <div className="flex space-x-4 ">
             <Link href="/termsOfService">Terms of Use</Link>

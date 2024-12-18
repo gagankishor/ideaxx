@@ -1,5 +1,5 @@
 "use client";
-import React, {  useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 // import Slider from "react-slick";
 import "./CoreSolutionsSection.css";
 import { FaArrowAltCircleRight, FaRobot } from "react-icons/fa";
@@ -168,7 +168,7 @@ const contentData = {
   ],
 };
 const CoreSolutionsSection = () => {
-  const [selectedIndex, setSelectedIndex] = useState(3); // Default center index
+  const [selectedIndex, setSelectedIndex] = useState(6); // Default center index
   const sliderRef = useRef(null);
 
   const handleNext = () => {
@@ -195,7 +195,11 @@ const CoreSolutionsSection = () => {
     },
     nextArrow: (
       <div className="next-arrow ml-[-20px] cursor-pointer">
-        <MdOutlineArrowForwardIos onClick={handleNext} color="white" size={30} />
+        <MdOutlineArrowForwardIos
+          onClick={handleNext}
+          color="white"
+          size={30}
+        />
       </div>
     ),
     prevArrow: (
@@ -288,66 +292,72 @@ const CoreSolutionsSection = () => {
               }}
             >
               <Slider {...settings} ref={sliderRef}>
-        {icons.map((item, index) => (
-          <div
-            key={index}
-            style={{
-              textAlign: "center",
-              padding: "110px",
-              width: "20%",
-              transition: "transform 0.3s ease, opacity 0.3s ease",
-              transform:
-                selectedIndex % icons.length === index
-                  ? "scale(1.2)"
-                  : "scale(1)", // Highlight center icon
-              opacity: selectedIndex % icons.length === index ? 1 : 0.6, // Dim non-selected items
-            }}
-            className="icon-item"
-            onClick={() => setSelectedIndex(index)}
-          >
-            <div
-              className="icon"
-              style={{
-                fontSize: "24px",
-                cursor: "pointer",
-                textAlign: "center",
-                margin: "auto",
-                width: "fit-content",
-                color: selectedIndex % icons.length === index ? "#6161FF" : "#b8b4b4",
-              }}
-            >
-              {item.icon}
-            </div>
-            <div
-              className="icon-title w-28"
-              style={{
-                color: selectedIndex % icons.length === index ? "white" : "#b8b4b4",
-              }}
-            >
-              {item.label}
-            </div>
-          </div>
-        ))}
-      </Slider>
+                {icons.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      textAlign: "center",
+                      padding: "110px",
+                      width: "20%",
+                      transition: "transform 0.3s ease, opacity 0.3s ease",
+                      transform:
+                        selectedIndex % icons.length === index
+                          ? "scale(1.2)"
+                          : "scale(1)", // Highlight center icon
+                      opacity: selectedIndex % icons.length === index ? 1 : 0.6, // Dim non-selected items
+                    }}
+                    className="icon-item"
+                    onClick={() => setSelectedIndex(index)}
+                  >
+                    <div
+                      className="icon"
+                      style={{
+                        fontSize: "24px",
+                        cursor: "pointer",
+                        textAlign: "center",
+                        margin: "auto",
+                        width: "fit-content",
+                        color:
+                          selectedIndex % icons.length === index
+                            ? "#6161FF"
+                            : "#b8b4b4",
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+                    <div
+                      className="icon-title w-28"
+                      style={{
+                        color:
+                          selectedIndex % icons.length === index
+                            ? "white"
+                            : "#b8b4b4",
+                      }}
+                    >
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </Slider>
             </div>
             <div className="right-sedow2 hover:opacity-0 pointer-events-none transition-opacity duration-300"></div>
           </div>
           <div style={{ overflow: "hidden" }}>
             <div className="from-concept-continer">
               <div className="from-concept-main-card">
-              {selectedIcon &&
-        contentData[selectedIcon]?.map((content, idx) => (
-          <div className="from-concept-card min-h-[180px]" key={idx}>
-            <div>
-              <h3 style={{ color: "white" }}>{content.title}</h3>
-            </div>
-            <div>
-              <p style={{ color: "white" }} className="text-md">
-                {content.description}
-              </p>
-            </div>
-          </div>
-        ))}
+                {selectedIcon &&
+                  contentData[selectedIcon]?.map((content, idx) => (
+                    <div className="from-concept-card min-h-[180px]" key={idx}>
+                      <div>
+                        <h3 style={{ color: "white" }}>{content.title}</h3>
+                      </div>
+                      <div>
+                        <p style={{ color: "white" }} className="text-md">
+                          {content.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
             <div style={{ position: "absolute", zIndex: 1000 }}></div>

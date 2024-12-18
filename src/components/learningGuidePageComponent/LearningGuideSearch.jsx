@@ -51,7 +51,7 @@ const LearningGuideSearch = () => {
   return (
     <div className="flex flex-col items-center justify-center px-4 py-16 bg-white">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-thin text-gray-900 mb-4 text-center">
-        Learning Guide For Ideax.in
+        Learning Guide For ideax
       </h1>
       <p className="text-gray-600 mb-8 text-lg sm:text-xl md:text-2xl text-center max-w-2xl">
         Explore guided, interactive and expertly crafted resources to get to

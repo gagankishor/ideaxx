@@ -66,30 +66,10 @@ const TrustBoxWidget = () => {
 
   //   fetchReviews();
   // }, []);
-
+  
   return (
     <div className=" flex flex-row justify-center  gap-8">
       
-      <div className=" flex justify-center items-center">
-        <a
-          href="https://solscan.io/token/BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/award-section/solscan-removebg-preview.png"
-            className=" w-40"
-          />
-          {/* <p className=" text-white">SOLSCAN</p> */}
-        </a>
-        {/* <div>
-          <h3 className=" text-left text-white">Excellent</h3>
-          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
-          <div>
-            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
-          </div>
-        </div> */}
-      </div>
       <div className=" flex justify-center items-center">
         <a
           href="https://www.geckoterminal.com/solana/pools/6CQSpRdGtNWEbLhKpx7DAw7FDAm3g7wvjtsvaTKWBwxo"
@@ -111,6 +91,27 @@ const TrustBoxWidget = () => {
           </div>
         </div> */}
       </div>
+      <div className=" flex justify-center items-center">
+        <a
+          href="https://solscan.io/token/BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/award-section/solscan-removebg-preview.png"
+            className=" w-52"
+          />
+          {/* <p className=" text-white">SOLSCAN</p> */}
+        </a>
+        {/* <div>
+          <h3 className=" text-left text-white">Excellent</h3>
+          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
+          <div>
+            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
+          </div>
+        </div> */}
+      </div>
+      
       <div className=" flex justify-center items-center">
         <a
           href="https://www.trustpilot.com/review/idxsolana.io"
@@ -141,7 +142,7 @@ const TrustBoxWidget = () => {
           rel="noopener noreferrer"
         >
           <img
-            src="https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg"
+            src="/award-section/cover-dextools-removebg-preview.png"
             alt="trustpilot logo"
             className=" w-40"
           />
@@ -154,6 +155,27 @@ const TrustBoxWidget = () => {
           </div>
         </div> */}
       </div>
+      <div  className=" flex justify-center items-center">
+        <a
+          href="https://www.trustpilot.com/review/idxsolana.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/award-section/Layer.png"
+            alt="trustpilot logo"
+            className=" w-40"
+          />
+        </a>
+        {/* <div>
+          <h3 className=" text-left text-white">Excellent</h3>
+          <div><img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="" /></div>
+          <div>
+            <p className=" text-left text-white">TrustScore 4.5 | 1204 reviews </p>
+          </div>
+        </div> */}
+      </div>
+      
     </div>
   );
 };

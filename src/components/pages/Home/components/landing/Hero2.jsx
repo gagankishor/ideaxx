@@ -1,10 +1,10 @@
-// import { FaArrowAltCircleRight } from "react-icons/fa";
-// import Link from "next/link"; // Correct import for Link
-import { motion } from "framer-motion";
-export const Hero = () => {
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import Link from "next/link"; // Correct import for Link
+// import { motion } from "framer-motion";
+export const Hero2 = () => {
   return (
-    <div className="hero">
-      {/* <div className="container">
+    <div className="hero mt-5">
+      <div className="container">
         <div className="hero-block">
           <h1 className="idea-checker-heading">
             AI-Powered Startup and Business Idea Validator
@@ -30,8 +30,8 @@ export const Hero = () => {
           </div>
           <div className="text-black text-sm pt-2">Enjoy our Total Free Ai Tools</div>
         </div>
-      </div> */}
-      <div className="container hero-container2 mt-6">
+      </div>
+      {/* <div className="container hero-container2">
         <div className="hero-block2">
           <img
             src="/roadmap.webp"
@@ -70,7 +70,7 @@ export const Hero = () => {
             }}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

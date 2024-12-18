@@ -7,6 +7,7 @@ import Link from "next/link";
 import ImpactSection from "./ImpactSection";
 import AwardsSection from "./AwardsSection";
 import { motion } from "framer-motion";
+import { Hero2 } from "./Hero2";
 
 const ProductLineupSection = () => {
   const containerStyle = {
@@ -319,6 +320,7 @@ const ProductLineupSection = () => {
         </div>
       </div>
       <ImpactSection />
+      <Hero2/>
       <AwardsSection />
       {/* <ImpactSection/> */}
       <div

@@ -1,4 +1,4 @@
-"use client"; // Ensure the component runs on the client side
+"use client";
 import ArticleCard from "@/components/blogs/ArticleCard";
 import { useEffect, useState } from "react";
 const articles = [
@@ -6,14 +6,14 @@ const articles = [
     title:
       "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
-    imageUrl: "/blog/2/image.webp", // Unsplash image
+    imageUrl: "/blog/2/image.webp",
     hrefUrl: "/blog/2",
   },
   {
     title:
       "Top Business Trends to Watch in 2024 ...",
     category: "Business Trends",
-    imageUrl: "/blog/3/image2.webp", // Unsplash image
+    imageUrl: "/blog/3/image2.webp",
     hrefUrl: "/blog/3",
   },
   {
@@ -21,30 +21,25 @@ const articles = [
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image1.webp",
     hrefUrl: "/blog/4",
-
   },
   {
     title: "The Rise of Online Businesses: Opportunities and Challenges",
     category: "Opportunities and Challenges",
     imageUrl: "/blog/5/image.webp",
     hrefUrl: "/blog/5",
-
   },
   // {
   //   title: "Transforming Businesses with Virtual Business Management",
   //   category: "Virtual Business Management",
   //   imageUrl: "/blog/image2.jpg", // Startup scaling image
   //   hrefUrl: "blog/6",
-
   // },
   {
     title: "Transforming Businesses with Virtual Business Management",
     category: "Virtual Business Management",
-    imageUrl: "/blog/image2.jpg", // Startup scaling image
+    imageUrl: "/blog/image2.jpg",
     hrefUrl: "/blog/6",
-
   },
-  
 ];
 const editorsPick = [
   {
@@ -56,13 +51,13 @@ const editorsPick = [
   {
     title: "How to Purchase IDX Token...",
     category: "IDX Tokens",
-    imageUrl: "/blog/2/image3.webp", // Data visualization image
+    imageUrl: "/blog/2/image3.webp",
     hrefUrl: "/blog/8",
   },
   {
     title: "Revolutionizing Business Management with Advanced Technology...",
     category: "Entrepreneurship",
-    imageUrl: "/blog/4/image3.webp", // AI and data science image
+    imageUrl: "/blog/4/image3.webp",
     hrefUrl: "/blog/9",
   },
 ];
@@ -70,9 +65,8 @@ const businessStrategies = [
   {
     title: "Enterprise Blockchain Solutions",
     category: "Blockchain",
-    imageUrl: "/blog/image2.jpg", // Startup scaling image
+    imageUrl: "/blog/image2.jpg",
     hrefUrl: "/blog/10",
-
   },
   {
     title: "Redefining Speed and Security in Blockchain Transactions",
@@ -118,11 +112,8 @@ const Blogs = () => {
     <div className=" max-w-full bg-gray-50 ">
       <div className="bg-gray-50 pt-10 md:min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl items-center">
-          {/* Left Section */}
-          
             <div>
               <p className="text-sm text-left font-light uppercase mb-2">
-                {/* {blogs[1]?.category || "Category"} */}
               </p>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {blogs[1]?.title || "Default Title"}
@@ -137,12 +128,9 @@ const Blogs = () => {
                 Read more <span className="ml-2 text-xl">&rarr;</span>
               </a>
             </div>
-          
-
-          {/* Right Section */}
           <div className="relative">
             <img
-              src="/blog/1/image.png" // Replace with your actual image path
+              src="/blog/1/image.png"
               alt="AI Knowledge Hub"
               className="w-full h-auto object-cover rounded-lg"
             />
@@ -171,15 +159,13 @@ const Blogs = () => {
       </div>
       <div className="bg-[#010407] text-white min-h-screen  flex items-center justify-center ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0  items-center">
-          {/* Left Section (Image) */}
           <div className="">
             <img
-              src="/blog/image.webp" // Replace with your actual image path
+              src="/blog/image.webp"
               alt="AI Knowledge Hub"
               className="w-full h-full object-cover"
             />
           </div>
-          {/* Right Section (Text) */}
           <div className="px-12 flex flex-col justify-center ">
             <p className="uppercase   text-gray-50 font-thin text-xl mt-10 md:mt-0 mb-5">
              AI Business Idea Checker
@@ -210,7 +196,6 @@ const Blogs = () => {
                 category={article.category}
                 imageUrl={article.imageUrl}
                 hrefUrl={article?.hrefUrl}
-
               />
             ))}
           </div>
@@ -219,10 +204,10 @@ const Blogs = () => {
       <div className="bg-[#262CBE] py-20 md:py-48">
         <div className=" flex justify-center flex-col  items-center">
           <h3 className="text-white text-4xl md:text-7xl md:w-[50%]">
-            Create a business plan and start now 
+            Create a business plan and start now
           </h3>
           <button className="inline-flex  mt-10 bg-white mx-auto items-center px-6 py-3 border border-white text-[#262CBE] font-bold rounded-full  hover:bg-white hover:text-black transition">
-            Test Your Idea  
+            Test Your Idea
           </button>
         </div>
       </div>
@@ -240,7 +225,6 @@ const Blogs = () => {
                 category={article.category}
                 imageUrl={article.imageUrl}
                 hrefUrl={article?.hrefUrl}
-
               />
             ))}
           </div>
@@ -267,5 +251,4 @@ const Blogs = () => {
     </div>
   );
 };
-
 export default Blogs;

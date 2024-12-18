@@ -293,7 +293,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a
-              href="https://t.me/idxsolana"
+              href="https://t.me/IDX_Solana"
               aria-label="Telegram"
               className="hover:text-blue-600"
               target="_blank"
@@ -301,16 +301,16 @@ export default function Footer() {
             >
               <FaTelegram size={30}/>
             </a>
-            <a
+            {/* <a
               href="https://www.youtube.com/channel/UCrdNUxGAjUbpd7JmyIjer8Q"
               aria-label="YouTube"
               target="_blank"
               className="hover:text-red-600"
             >
               <FaYoutube  size={30}/>
-            </a>
+            </a> */}
             <a
-              href="https://www.instagram.com/ide.ax1/"
+              href="https://www.instagram.com/idx_solana/?utm_source=ig_web_button_share_sheet"
               aria-label="Instagram"
               target="_blank"
               className="hover:text-pink-600"
@@ -318,7 +318,7 @@ export default function Footer() {
               <FaInstagram size={30}/>
             </a>
             <a
-              href="https://x.com/Ideax2025"
+              href="https://x.com/IDX_SOLANA"
               aria-label="Twitter"
               target="_blank"
               className="hover:text-blue-400"
@@ -326,7 +326,7 @@ export default function Footer() {
               <FaTwitter size={30}/>
             </a>
             <a
-              href="https://discord.com"
+              href="https://discord.com/idx_solana"
               aria-label="Discord"
               target="_blank"
               className="hover:text-[#5865F2]"

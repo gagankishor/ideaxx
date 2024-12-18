@@ -94,6 +94,11 @@ const BlogDetails = () => {
                       {feature.text}
                     </p>
                   )}
+                  {feature?.htmlText && (
+                    <p className="text-gray-700 text-left">
+                      {feature.htmlText}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
@@ -114,7 +119,6 @@ const BlogDetails = () => {
                   category={article.category}
                   imageUrl={article.imageUrl}
                   hrefUrl={article?.hrefUrl}
-
                 />
               ))}
             </div>

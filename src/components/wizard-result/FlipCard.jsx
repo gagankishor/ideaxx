@@ -67,7 +67,13 @@ const FlipCard = ({ value, label, isTop, isFlipping, previousValue }) => {
     </div>
   );
 };
-
+FlipCard.propTypes = {
+    value: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
+    isTop: PropTypes.bool.isRequired,
+    isFlipping: PropTypes.bool.isRequired,
+    previousValue: PropTypes.number.isRequired
+  };
 export default function FlipCountdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 7,
@@ -259,22 +265,3 @@ export default function FlipCountdown() {
 }
 
 // Additional Tailwind CSS classes for 3D effects
-const extraStyles = `
-<style>
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-x-180 {
-    transform: rotateX(180deg);
-  }
-  .-rotate-x-180 {
-    transform: rotateX(-180deg);
-  }
-</style>
-`;

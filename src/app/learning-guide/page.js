@@ -223,8 +223,13 @@ const learningGuidePage = () => {
       </div>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-20">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center p-6 rounded-xl bg-gradient-to-b from-blue-50 to-blue-200 my-8 sm:my-14 space-y-4 lg:space-y-0">
-          <p className="font-medium text-2xl sm:text-3xl lg:text-4xl lg:w-[70%] text-left text-gray-800">
-          Dive into our comprehensive guide to unlock your potential with IDX Token. Explore expert articles, in-depth tutorials, and real-world case studies today.
+          <p className="font-medium text-2xl sm:text-3xl lg:text-4xl lg:w-[80%] text-left text-gray-800">
+          Dive into our comprehensive guide to unlock your potential with IDX Token. 
+          <br/>
+          <span className=" text-2xl font-thin">
+
+           Explore expert articles, in-depth tutorials, and real-world case studies today.
+          </span>
           </p>
           <button className="px-4 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition">
           Subscribe

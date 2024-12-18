@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Rocket, Clock } from "lucide-react";
+import PropTypes from "prop-types";
 
 const FlipCard = ({ value, label, isTop, isFlipping, previousValue }) => {
   return (

@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import {
   FaInstagram,
-  FaYoutube,
+  
 } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 export default function Footer() {

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Rocket, Clock } from "lucide-react";
 import PropTypes from "prop-types";
 
-const FlipCard = ({ value, label, isTop, isFlipping, previousValue }) => {
+const FlipCard = ({ value, label, isTop, isFlipping }) => {
   return (
     <div className="relative w-24 h-36 perspective-1000 mx-1">
       <div className="absolute inset-0 z-0">

@@ -9,16 +9,23 @@ import {
   FaTelegram,
   FaTwitter,
 } from "react-icons/fa";
-import {
-  FaInstagram,
-  
-} from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
+import SubscribeModal from "./pages/Home/SubscribeModal";
+
 export default function Footer() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
-  }
+  };
+  const [showSubscribe, setShowSubscribe] = useState(false);
+  const onSubscribeClose = () => {
+    setShowSubscribe(false);
+  };
+  const handelShowSubscribe = () => {
+    setShowSubscribe(true);
+  };
+  
   const aiTools = [
     {
       title: "Business Idea Checker",
@@ -139,10 +146,7 @@ export default function Footer() {
         const fullIndex = startIndex + index;
         const isActive = activeDropdown === fullIndex;
         return (
-          <li 
-            key={index} 
-            className="transition-all duration-300 ease-in-out"
-          >
+          <li key={index} className="transition-all duration-300 ease-in-out">
             <div
               className="flex items-center justify-between cursor-pointer hover:text-blue-500 py-2"
               onClick={() => toggleDropdown(fullIndex)}
@@ -160,7 +164,7 @@ export default function Footer() {
                 transition-all 
                 duration-500 
                 ease-in-out 
-                ${isActive ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}
+                ${isActive ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}
               `}
             >
               <p
@@ -278,11 +282,16 @@ export default function Footer() {
               <Link href="/blog">Blogs</Link>
             </li>
             <li>
-                <Link href="/documentation">Documentation</Link>
-              </li>
+              <Link href="/documentation">Documentation</Link>
+            </li>
             <li>
-                <Link href="/career">Career</Link>
-              </li>
+              <Link href="/career">Career</Link>
+            </li>
+            <li>
+              <button onClick={handelShowSubscribe} href="/career">
+                Subscribe
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -299,7 +308,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTelegram size={30}/>
+              <FaTelegram size={30} />
             </a>
             {/* <a
               href="https://www.youtube.com/channel/UCrdNUxGAjUbpd7JmyIjer8Q"
@@ -315,7 +324,7 @@ export default function Footer() {
               target="_blank"
               className="hover:text-pink-600"
             >
-              <FaInstagram size={30}/>
+              <FaInstagram size={30} />
             </a>
             <a
               href="https://x.com/IDX_SOLANA"
@@ -323,7 +332,7 @@ export default function Footer() {
               target="_blank"
               className="hover:text-blue-400"
             >
-              <FaTwitter size={30}/>
+              <FaTwitter size={30} />
             </a>
             <a
               href="https://discord.com/idx_solana"
@@ -331,7 +340,7 @@ export default function Footer() {
               target="_blank"
               className="hover:text-[#5865F2]"
             >
-              <FaDiscord size={30}/>
+              <FaDiscord size={30} />
             </a>
             <a
               href="https://substack.com/@idxsolana"
@@ -339,8 +348,7 @@ export default function Footer() {
               target="_blank"
               className="hover:text-[#FF6719] "
             >
-              <SiSubstack 
-              size={30}/>
+              <SiSubstack size={30} />
             </a>
           </div>
           <div className="flex space-x-4 ">
@@ -351,6 +359,7 @@ export default function Footer() {
         </div>
       </div>
       <div className=" h-1"></div>
+      <SubscribeModal isOpen={showSubscribe} onRequestClose={onSubscribeClose}/>
     </footer>
   );
 }

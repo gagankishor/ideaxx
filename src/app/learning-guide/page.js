@@ -1,9 +1,11 @@
 "use client";
 import LearningGuideSearch from "@/components/learningGuidePageComponent/LearningGuideSearch";
+import SubscribeModal from "@/components/pages/Home/SubscribeModal";
+import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-const learningGuidePage = () => {
+const LearningGuidePage = () => {
   const tutorials = [
     {
       title: "How to get started in the Ideax Studio editor",
@@ -79,9 +81,16 @@ const learningGuidePage = () => {
   //     handleSearch();
   //   }
   // };
-
+  const [showSubscribe, setShowSubscribe] = useState(false);
+  const onSubscribeClose = () => {
+    setShowSubscribe(false);
+  };
+  const handelShowSubscribe = () => {
+    setShowSubscribe(true);
+  };
   return (
     <>
+      <SubscribeModal isOpen={showSubscribe} onRequestClose={onSubscribeClose}/>
       <LearningGuideSearch />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-4 p-4 bg-white max-w-full lg:px-20 mx-auto">
         {/* Main Card (First Card): Stacks on mobile, spans 2 columns and 2 rows on larger screens */}
@@ -231,12 +240,11 @@ const learningGuidePage = () => {
            Explore expert articles, in-depth tutorials, and real-world case studies today.
           </span>
           </p>
-          <button className="px-4 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition">
+          <button onClick={handelShowSubscribe} className="px-4 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition">
           Subscribe
           </button>
         </div>
       </div>
-
       <div className="max-w-full mx-auto space-y-4">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-20 space-y-4 md:space-y-0">
@@ -293,4 +301,4 @@ const learningGuidePage = () => {
   );
 };
 
-export default learningGuidePage;
+export default LearningGuidePage;

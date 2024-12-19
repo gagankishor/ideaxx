@@ -20,6 +20,7 @@ const tutorials = [
     },
   ];
 export default function CoursePage() {
+  
   return (
     <div className="min-h-screen">
       

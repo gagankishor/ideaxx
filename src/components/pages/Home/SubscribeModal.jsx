@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Mail, CheckCircle, Loader } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 const SubscribeModal = ({ isOpen, onRequestClose }) => {
   const [email, setEmail] = useState('');

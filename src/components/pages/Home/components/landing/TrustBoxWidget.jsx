@@ -99,7 +99,7 @@ const TrustBoxWidget = () => {
         >
           <img
             src="/award-section/solscan-removebg-preview.png"
-            className=" w-52"
+            className=" w-40 mb-4"
           />
           {/* <p className=" text-white">SOLSCAN</p> */}
         </a>
@@ -123,7 +123,7 @@ const TrustBoxWidget = () => {
             src="/award-section/dexscreener.png"
 
             alt="trustpilot logo"
-            className=" w-40"
+            className=" w-40 "
           />
           {/* <p className=" text-white">DEX SCREENER</p> */}
         </a>

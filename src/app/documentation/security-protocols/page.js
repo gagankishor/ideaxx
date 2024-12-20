@@ -1,8 +1,29 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const SecurityProtocols = () => {
+    const tableOfContents = [
+        {
+          title: "Security Protocols",
+          links: [
+            { label: "Data Security", href: "#data_security" },
+            { label: "Audit Reports", href: "#audit_reports" },
+            // { label: "Intro to Development", href: "#" },
+            // { label: "Wallets", href: "#" },
+          ],
+        },
+        // {
+        //   title: "Core Concepts",
+        //   links: [
+        //     { label: "Solana Account Model", href: "#" },
+        //     { label: "Transactions and Instructions", href: "#" },
+        //     { label: "Fees on Solana", href: "#" },
+        //     { label: "Programs on Solana", href: "#" },
+        //   ],
+        // },
+      ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
       <div className="flex-1 p-8 max-w-3xl overflow-y-scroll">
@@ -17,7 +38,7 @@ const SecurityProtocols = () => {
         </h1>
 
         {/* Data Security Section */}
-        <section className="mb-12">
+        <section className="pt-12" id="data_security">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Data Security
           </h2>
@@ -31,7 +52,7 @@ const SecurityProtocols = () => {
         </section>
 
         {/* Audit Reports Section */}
-        <section className="mb-12 ">
+        <section className="pt-12 " id="audit_reports">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Audit Reports
           </h2>
@@ -44,6 +65,7 @@ const SecurityProtocols = () => {
           </p>
         </section>
       </div>
+      <TableOfContents data={tableOfContents}/>
     </div>
   );
 };

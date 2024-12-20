@@ -4,6 +4,26 @@ import Breadcrumb from "@/components/pages/document/Breadcrumb";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const SystemArchitecture = () => {
+    const tableOfContents = [
+        {
+          title: "Getting Started",
+          links: [
+            { label: "Quick Start", href: "#" },
+            { label: "Installation", href: "#" },
+            { label: "Intro to Development", href: "#" },
+            { label: "Wallets", href: "#" },
+          ],
+        },
+        {
+          title: "Core Concepts",
+          links: [
+            { label: "Solana Account Model", href: "#" },
+            { label: "Transactions and Instructions", href: "#" },
+            { label: "Fees on Solana", href: "#" },
+            { label: "Programs on Solana", href: "#" },
+          ],
+        },
+      ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
       <div className="flex-1 p-8 max-w-3xl overflow-y-scroll">
@@ -109,7 +129,7 @@ const SystemArchitecture = () => {
         </section>
       </div>
 
-      <TableOfContents />
+      <TableOfContents data={tableOfContents}/>
     </div>
   );
 };

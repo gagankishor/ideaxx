@@ -64,7 +64,7 @@ export const MainNavBar = () => {
                       color: "black",
                     }}
                   >
-                    Sign Out
+                    Logout
                   </span>
                 </li>
               ) : (
@@ -77,7 +77,7 @@ export const MainNavBar = () => {
                   }}
                 >
                   <Link href="/login" style={{ color: "black" }}>
-                    Sign Up
+                    Login
                   </Link>
                 </li>
               )}

@@ -1,15 +1,107 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import ParameterReference from "@/components/pages/document/ParameterReference";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const APIDocumentation = () => {
-    const copyToClipboard = (text) => {
-        navigator.clipboard.writeText(text).then(() => {
-          alert("Code copied to clipboard!");
-        });
-      };
-    
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Code copied to clipboard!");
+    });
+  };
+  const tableOfContents = [
+    {
+      title: "Getting Started",
+      links: [
+        { label: "Quick Start", href: "#" },
+        { label: "Installation", href: "#" },
+        { label: "Intro to Development", href: "#" },
+        { label: "Wallets", href: "#" },
+      ],
+    },
+    {
+      title: "Core Concepts",
+      links: [
+        { label: "Solana Account Model", href: "#" },
+        { label: "Transactions and Instructions", href: "#" },
+        { label: "Fees on Solana", href: "#" },
+        { label: "Programs on Solana", href: "#" },
+      ],
+    },
+  ];
+  const parameters = [
+    {
+      parameter: "idea_stage",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 1, 3, 5",
+      description: "Current stage of the business",
+    },
+    {
+      parameter: "work_status",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 1, 2, 3, 4, 5",
+      description: "Current employment status",
+    },
+    {
+      parameter: "project_type",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "Range: 1 to 21",
+      description: "Type/sector of the project",
+    },
+    {
+      parameter: "job_relation",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 2, 5",
+      description: "Whether current job relates",
+    },
+    {
+      parameter: "investment_plan",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 1, 2, 3, 4, 5",
+      description: "Planned investment range",
+    },
+    {
+      parameter: "work_experience",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 0, 3, 4, 5",
+      description: "Years of relevant work experience",
+    },
+    {
+      parameter: "project_location",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "Valid country ID",
+      description: "Country ID for project location",
+    },
+    {
+      parameter: "idea_description",
+      type: "String",
+      required: "Yes",
+      validationRules: "Min: 50 chars, Max: 250 chars",
+      description: "Description of business idea",
+    },
+    {
+      parameter: "daily_hours",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 1, 2, 3, 4, 5",
+      description: "Daily hours available",
+    },
+    {
+      parameter: "timeframe",
+      type: "Integer",
+      required: "Yes",
+      validationRules: "One of: 1, 2, 3",
+      description: "Estimated development timeframe",
+    },
+  ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
       <div className="flex-1 p-8 max-w-3xl overflow-y-scroll">
@@ -31,7 +123,9 @@ const APIDocumentation = () => {
             <tbody>
               <tr>
                 <th className="p-4 bg-[#1E1E1E]">Endpoint</th>
-                <td className="p-4">POST <code>https://ideax.in/api/get-idea-result</code></td>
+                <td className="p-4">
+                  POST <code>https://ideax.in/api/get-idea-result</code>
+                </td>
               </tr>
               <tr>
                 <th className="p-4 bg-[#1E1E1E]">Description</th>
@@ -55,13 +149,15 @@ const APIDocumentation = () => {
             All numeric parameters must be integers. The request body should be
             a JSON object containing:
           </p>
+          <div className="w-full overflow-x-auto shadow-lg rounded-lg"></div>
           <ul className="list-disc ml-6 mb-8 text-gray-300">
             <li>
-              <strong>idea_stage:</strong> 1 (Still an idea), 3 (Made a plan),
-              5 (Already started)
+              <strong>idea_stage:</strong> 1 (Still an idea), 3 (Made a plan), 5
+              (Already started)
             </li>
             <li>
-              <strong>work_status:</strong> 1 (Unemployed), 2 (Working full-time), 3 (Working part-time), etc.
+              <strong>work_status:</strong> 1 (Unemployed), 2 (Working
+              full-time), 3 (Working part-time), etc.
             </li>
             <li>
               <strong>project_type:</strong> 1 (Services), 2 (Retail), ..., 21
@@ -75,22 +171,22 @@ const APIDocumentation = () => {
               1 Crore ₹)
             </li>
             <li>
-              <strong>work_experience:</strong> 0 (No experience), ..., 5
-              (More than 5 years)
+              <strong>work_experience:</strong> 0 (No experience), ..., 5 (More
+              than 5 years)
             </li>
             <li>
               <strong>daily_hours:</strong> 1 (&lt; 1 hour), ..., 5 (&gt; 6
               hours)
             </li>
             <li>
-              <strong>timeframe:</strong> 1 (&lt; 3 months), 2 (3-6 months),
-              3 (6-12 months)
+              <strong>timeframe:</strong> 1 (&lt; 3 months), 2 (3-6 months), 3
+              (6-12 months)
             </li>
           </ul>
-          
         </section>
+        <ParameterReference/>
         <section className="mb-12h">
-        <h3 className="text-3xl font-semibold mb-4 text-[#C0C0C0]">
+          <h3 className="text-3xl font-semibold mb-4 text-[#C0C0C0]">
             Example Request
           </h3>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
@@ -130,7 +226,9 @@ const APIDocumentation = () => {
           <h3 className="text-3xl font-semibold mb-4 text-[#C0C0C0]">
             Response Format
           </h3>
-          <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">Success Response (200 OK)</h4>
+          <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
+            Success Response (200 OK)
+          </h4>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
             {`{
   "status": 200,
@@ -159,7 +257,9 @@ const APIDocumentation = () => {
             </button>
           </pre>
 
-          <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">Validation Error Response (400)</h4>
+          <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
+            Validation Error Response (400)
+          </h4>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
             {`{
   "status": 400,
@@ -182,7 +282,9 @@ const APIDocumentation = () => {
             </button>
           </pre>
 
-          <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">Server Error (500)</h4>
+          <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
+            Server Error (500)
+          </h4>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
             {`{
   "status": 500,
@@ -214,11 +316,15 @@ const APIDocumentation = () => {
             <tbody>
               <tr>
                 <th className="p-4 bg-[#1E1E1E]">Base URL</th>
-                <td className="p-4 "><code>https://ideax.in/api/widget/:uniqueKey</code></td>
+                <td className="p-4 ">
+                  <code>https://ideax.in/api/widget/:uniqueKey</code>
+                </td>
               </tr>
               <tr>
                 <th className="p-4 bg-[#1E1E1E]">Endpoint</th>
-                <td className="p-4 bg-[#121212]">GET <code>/api/widget/:uniqueKey</code></td>
+                <td className="p-4 bg-[#121212]">
+                  GET <code>/api/widget/:uniqueKey</code>
+                </td>
               </tr>
               <tr>
                 <th className="p-4 bg-[#1E1E1E]">Response</th>
@@ -261,7 +367,7 @@ const APIDocumentation = () => {
         </section>
       </div>
 
-      <TableOfContents />
+      <TableOfContents data={tableOfContents}/>
     </div>
   );
 };

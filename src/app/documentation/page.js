@@ -5,6 +5,26 @@ import TableOfContents from "@/components/pages/document/TableOfContents";
 
 
 const Documentation = () => {
+  const tableOfContents = [
+    {
+      title: "Getting Started",
+      links: [
+        { label: "Quick Start", href: "#" },
+        { label: "Installation", href: "#" },
+        { label: "Intro to Development", href: "#" },
+        { label: "Wallets", href: "#" },
+      ],
+    },
+    {
+      title: "Core Concepts",
+      links: [
+        { label: "Solana Account Model", href: "#" },
+        { label: "Transactions and Instructions", href: "#" },
+        { label: "Fees on Solana", href: "#" },
+        { label: "Programs on Solana", href: "#" },
+      ],
+    },
+  ];
   return (
    
         <>
@@ -28,8 +48,7 @@ By leveraging cutting-edge AI and the latest in blockchain technology on the Sol
 
           </p>
         </div>
-        <TableOfContents />
-        </>
+        <TableOfContents data={tableOfContents}/>        </>
   );
 };
 

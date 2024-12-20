@@ -1,5 +1,13 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+const parameterValueShape = PropTypes.shape({
+  code: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired
+});
 
+const parameterDetailShape = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  values: PropTypes.arrayOf(parameterValueShape).isRequired
+});
 const parameterDetails = {
   idea_stage: {
     name: "Idea Stage",
@@ -79,7 +87,7 @@ const parameterDetails = {
   }
 };
 
-const ParameterCard = ({ parameter, details }) => (
+const ParameterCard = ({ details }) => (
   <div className="bg-gray-800 rounded-lg p-6 mb-6">
     <h3 className="text-xl font-bold text-white mb-4">{details.name}</h3>
     <div className="space-y-2">
@@ -94,7 +102,9 @@ const ParameterCard = ({ parameter, details }) => (
     </div>
   </div>
 );
-
+ParameterCard.propTypes = {
+  details: parameterDetailShape.isRequired
+};
 const ParameterReference = () => {
   const [activeTab, setActiveTab] = useState('table');
 

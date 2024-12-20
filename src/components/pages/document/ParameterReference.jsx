@@ -149,7 +149,7 @@ const ParameterReference = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-900">
-              {Object.entries(parameterDetails).map(([key, details], index) => (
+              {Object.entries(parameterDetails).map(([key, details]) => (
                 <tr key={key} className="text-gray-300">
                   <td className="px-6 py-4 font-mono">{key}</td>
                   <td className="px-6 py-4">Integer</td>

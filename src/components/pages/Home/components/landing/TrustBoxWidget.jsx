@@ -114,7 +114,7 @@ const TrustBoxWidget = () => {
       
       <div className=" flex justify-center items-center">
         <a
-          href="https://www.trustpilot.com/review/idxsolana.io"
+          href="https://dexscreener.com/solana/6cqsprdgtnweblhkpx7daw7fdam3g7wvjtsvatkwbwxo"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -122,7 +122,7 @@ const TrustBoxWidget = () => {
             // src="https://images.seeklogo.com/logo-png/52/1/dex-screener-logo-png_seeklogo-527276.png?v=638686514610000000"
             src="/award-section/dexscreener.png"
 
-            alt="trustpilot logo"
+            alt="dexscreener logo"
             className=" w-40 "
           />
           {/* <p className=" text-white">DEX SCREENER</p> */}
@@ -137,13 +137,13 @@ const TrustBoxWidget = () => {
       </div>
       <div  className=" flex justify-center items-center">
         <a
-          href="https://www.trustpilot.com/review/idxsolana.io"
+          href="https://www.dextools.io/app/en/token/idx?t=1734640687124"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
             src="/award-section/cover-dextools-removebg-preview.png"
-            alt="trustpilot logo"
+            alt="dextools logo"
             className=" w-40"
           />
         </a>

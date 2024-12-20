@@ -125,7 +125,6 @@ const TrustBoxWidget = () => {
             alt="dexscreener logo"
             className=" w-40 "
           />
-          {/* <p className=" text-white">DEX SCREENER</p> */}
         </a>
         {/* <div>
           <h3 className=" text-left text-white">Excellent</h3>
@@ -175,7 +174,6 @@ const TrustBoxWidget = () => {
           </div>
         </div> */}
       </div>
-      
     </div>
   );
 };

@@ -6,9 +6,9 @@ import TableOfContents from "@/components/pages/document/TableOfContents";
 const SystemArchitecture = () => {
     const tableOfContents = [
         {
-          title: "Getting Started",
+          title: "System Architecture",
           links: [
-            { label: "Quick Start", href: "#" },
+            { label: "Presentation Layer (Frontend/UI)", href: "#" },
             { label: "Installation", href: "#" },
             { label: "Intro to Development", href: "#" },
             { label: "Wallets", href: "#" },
@@ -20,7 +20,7 @@ const SystemArchitecture = () => {
             { label: "Solana Account Model", href: "#" },
             { label: "Transactions and Instructions", href: "#" },
             { label: "Fees on Solana", href: "#" },
-            { label: "Programs on Solana", href: "#" },
+            { label: "Programs on Solana", href: "#" }, 
           ],
         },
       ];

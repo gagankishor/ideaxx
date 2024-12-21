@@ -6,23 +6,23 @@ import TableOfContents from "@/components/pages/document/TableOfContents";
 const UserGuide = () => {
     const tableOfContents = [
         {
-          title: "Getting Started",
+          title: "User Guide",
           links: [
-            { label: "Quick Start", href: "#" },
-            { label: "Installation", href: "#" },
-            { label: "Intro to Development", href: "#" },
-            { label: "Wallets", href: "#" },
+            { label: "Getting Started", href: "#GettingStarted" },
+            { label: "Operating Instructions", href: "#OperatingInstructions" },
+            { label: "Troubleshooting", href: "#Troubleshooting" },
+            // { label: "Wallets", href: "#" },
           ],
         },
-        {
-          title: "Core Concepts",
-          links: [
-            { label: "Solana Account Model", href: "#" },
-            { label: "Transactions and Instructions", href: "#" },
-            { label: "Fees on Solana", href: "#" },
-            { label: "Programs on Solana", href: "#" },
-          ],
-        },
+        // {
+        //   title: "Core Concepts",
+        //   links: [
+        //     { label: "Solana Account Model", href: "#" },
+        //     { label: "Transactions and Instructions", href: "#" },
+        //     { label: "Fees on Solana", href: "#" },
+        //     { label: "Programs on Solana", href: "#" },
+        //   ],
+        // },
       ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">

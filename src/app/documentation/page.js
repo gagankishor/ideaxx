@@ -7,23 +7,23 @@ import TableOfContents from "@/components/pages/document/TableOfContents";
 const Documentation = () => {
   const tableOfContents = [
     {
-      title: "Getting Started",
+      title: "Overview and Introduction",
       links: [
-        { label: "Quick Start", href: "#" },
-        { label: "Installation", href: "#" },
-        { label: "Intro to Development", href: "#" },
-        { label: "Wallets", href: "#" },
+        { label: "Overview", href: "#" },
+        // { label: "Installation", href: "#" },
+        // { label: "Intro to Development", href: "#" },
+        // { label: "Wallets", href: "#" },
       ],
     },
-    {
-      title: "Core Concepts",
-      links: [
-        { label: "Solana Account Model", href: "#" },
-        { label: "Transactions and Instructions", href: "#" },
-        { label: "Fees on Solana", href: "#" },
-        { label: "Programs on Solana", href: "#" },
-      ],
-    },
+    // {
+    //   title: "Core Concepts",
+    //   links: [
+    //     { label: "Solana Account Model", href: "#" },
+    //     { label: "Transactions and Instructions", href: "#" },
+    //     { label: "Fees on Solana", href: "#" },
+    //     { label: "Programs on Solana", href: "#" },
+    //   ],
+    // },
   ];
   return (
    

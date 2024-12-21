@@ -54,6 +54,31 @@ export const MainNavBar = () => {
               </li>
             </ul>
             <ul className="main-menu">
+              
+              <div className="btns-container">
+                <Link
+                  className="btn2"
+                  style={{ fontSize: "14px" }}
+                  href="/learning-guide"
+                >
+                  Learning Guide
+                </Link>
+              </div>
+              {/* <div className="btns-container">
+                <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Connect Your Wallet</Link>
+              </div> */}
+              {/* Conditionally render the button based on the current pathname */}
+              {pathname !== "/mainWizard" && (
+                <div className="btns-container">
+                  <Link
+                    className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    style={{ fontSize: "14px" }}
+                    href="/mainWizard"
+                  >
+                    Test Your Idea <FaArrowAltCircleRight />
+                  </Link>
+                </div>
+              )}
               {isAuthenticated ? (
                 <li className="nav-login-btn" onClick={logout}>
                   <span
@@ -80,30 +105,6 @@ export const MainNavBar = () => {
                     Login
                   </Link>
                 </li>
-              )}
-              <div className="btns-container">
-                <Link
-                  className="btn2"
-                  style={{ fontSize: "14px" }}
-                  href="/learning-guide"
-                >
-                  Learning Guide
-                </Link>
-              </div>
-              {/* <div className="btns-container">
-                <Link className="btn2" style={{ fontSize: "14px" }} href="/learning-guide">Connect Your Wallet</Link>
-              </div> */}
-              {/* Conditionally render the button based on the current pathname */}
-              {pathname !== "/mainWizard" && (
-                <div className="btns-container">
-                  <Link
-                    className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                    style={{ fontSize: "14px" }}
-                    href="/mainWizard"
-                  >
-                    Test Your Idea <FaArrowAltCircleRight />
-                  </Link>
-                </div>
               )}
             </ul>
           </div>

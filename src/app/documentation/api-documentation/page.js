@@ -7,7 +7,7 @@ import TableOfContents from "@/components/pages/document/TableOfContents";
 const APIDocumentation = () => {
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-      alert("Code copied to clipboard!");
+      // alert("Code copied to clipboard!");
     });
   };
   const tableOfContents = [
@@ -356,13 +356,26 @@ const APIDocumentation = () => {
           <h3 className="text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
             Example Response (HTML)
           </h3>
-          <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto">
-            {`<div>
-  <img src="https://ideax.in/logo.png" alt="Logo" />
-  <p>Validation Status: Valid</p>
-  <p>Success Percentage: 85%</p>
-  <div class="trustpilot-widget">...</div>
-</div>`}
+          <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
+            {`<iframe
+  src="https://idxsolana.io/api/widget/abc123"
+  width="300"
+  height="200"
+  style="border: none;">
+</iframe>`}
+<button
+              className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
+              onClick={() =>
+                copyToClipboard(`<iframe
+  src="https://idxsolana.io/api/widget/abc123"
+  width="300"
+  height="200"
+  style="border: none;">
+</iframe>`)
+              }
+            >
+              Copy Code
+            </button>
           </pre>
         </section>
       </div>

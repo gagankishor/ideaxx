@@ -48,10 +48,16 @@ export const MainNavBar = () => {
               <li>
                 <Link href="/documentation">Documentation</Link>
               </li>
-              
+              <li>
+                <Link href="/documentation/api-documentation">Api</Link>
+              </li>
               <li>
                 <Link href="/career">Career</Link>
               </li>
+              {isAuthenticated && <li>
+                <Link href="/result-history">Results</Link>
+              </li>}
+              
             </ul>
             <ul className="main-menu">
               

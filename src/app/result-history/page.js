@@ -8,11 +8,11 @@ const ResultHistory = () => {
   // Sample data - replace with your actual data source
   const axiosInstance = useAxiosWithAuth();
 
-  const [results] = useState([
-    { id: 1, date: "2024-12-21", idea: "Toy Store", key: "dsffsadf" },
-    { id: 2, date: "2024-12-20", idea: "Electric Car", key: "ksdffsey" },
-    { id: 3, date: "2024-12-19", idea: "Online Book Store", key: "kesdfsy" },
-  ]);
+  // const [results] = useState([
+  //   { id: 1, date: "2024-12-21", idea: "Toy Store", key: "dsffsadf" },
+  //   { id: 2, date: "2024-12-20", idea: "Electric Car", key: "ksdffsey" },
+  //   { id: 3, date: "2024-12-19", idea: "Online Book Store", key: "kesdfsy" },
+  // ]);
   const [resultHistory, setResultHistory] = useState([]);
 
   useEffect(() => {

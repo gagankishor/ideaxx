@@ -1,7 +1,7 @@
 "use client";
 import useAxiosWithAuth from "@/config/useAxiosWithAuth";
-import { Eye, Trash2 } from "lucide-react";
-import Link from "next/link";
+// import { Eye, Trash2 } from "lucide-react";
+// import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ResultHistory = () => {

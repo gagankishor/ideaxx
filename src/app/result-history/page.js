@@ -28,18 +28,18 @@ const ResultHistory = () => {
     fetchResultHistory();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      const endpoint = `delete-result/${id}`;
-      await axiosInstance({
-        method: "delete",
-        url: endpoint,
-      });
-      setResultHistory((prev) => prev.filter((result) => result.id !== id));
-    } catch (error) {
-      console.error("Error deleting result:", error);
-    }
-  };
+  // const handleDelete = async (id) => {
+  //   try {
+  //     const endpoint = `delete-result/${id}`;
+  //     await axiosInstance({
+  //       method: "delete",
+  //       url: endpoint,
+  //     });
+  //     setResultHistory((prev) => prev.filter((result) => result.id !== id));
+  //   } catch (error) {
+  //     console.error("Error deleting result:", error);
+  //   }
+  // };
 
   return (
     <div className="p-4 mx-auto min-h-screen bg-gray-50">

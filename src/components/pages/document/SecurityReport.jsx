@@ -50,9 +50,9 @@ const SecurityReport = () => {
         <div className="text-lg font-semibold mb-2">Audited By:</div>
         <div className="text-white mb-6">
           <p className="font-bold text-white">
-            DR CBS CYBER SECURITY SERVICES LLP, Jaipur
+            CYBER  SECURITY SERVICES, Jaipur
           </p>
-          <p className="italic text-white">LLP Id No. AAK-4058</p>
+          <p className="italic text-white">LLP Id No. EAK-9018</p>
         </div>
 
         {/* <div className="bg-gray-50 p-6 rounded-lg mb-6">

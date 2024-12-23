@@ -228,7 +228,7 @@ export default function Footer() {
             <h4 className="text-gray-700 hidden md:block text-base md:text-lg font-light text-center md:text-left">
               Business solutions platform powered by Solana network{" "}
             </h4>
-            <Link href="https://solana.com/">
+            <Link href="https://solana.com/" className="hidden md:block">
               <img src="/landing/image.png" width={25} alt="Solana logo" />
             </Link>
           </div>

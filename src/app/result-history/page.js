@@ -42,37 +42,46 @@ const ResultHistory = () => {
   };
 
   return (
-    <div className="p-4 mx-auto min-h-screen bg-gray-100">
-      <div className="max-w-4xl bg-white rounded-lg shadow-md mx-auto">
+    <div className="p-4 mx-auto min-h-screen bg-gray-50">
+      <div className="mx-auto">
         <header className="p-4 border-b">
           <h2 className="text-xl font-semibold text-gray-800">
             Idea Result History
           </h2>
         </header>
-        <section className="p-4 flex flex-wrap gap-4 justify-center">
-          {resultHistory?.map((result) => (
-            <div
-              key={result.id}
-              className="relative w-72 h-56 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md overflow-hidden flex flex-col justify-between p-4"
-            >
-              {/* Thumbnail or Preview */}
-              <div className="w-full h-28 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center">
-                {result.thumbnailUrl ? (
-                  <img
-                    src={result.thumbnailUrl}
-                    alt={`Preview of ${result?.wizardResult?.idea_description}`}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <span className="text-gray-500 text-sm">No Preview Available</span>
-                )}
-              </div>
-              <div className="text-center mt-2">
-                <p className="text-sm font-thin text-gray-800">
-                  {result?.wizardResult?.idea_description || "Untitled"}
-                </p>
-              </div>
-              <div className="flex justify-between mt-4">
+        <section className="p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {resultHistory?.map((result) => (
+        <article
+          key={result.id}
+          className="relative h-screen bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md overflow-hidden group"
+        >
+          {/* Iframe Container */}
+          <div className="w-full h-full bg-white rounded-t-lg overflow-hidden">
+            <iframe
+              src={`http://localhost:3000/wizard-result/${result.uniqueKey}`}
+              className="w-full h-full"
+              title={result?.wizardResult?.idea_description || "Wizard Result"}
+              loading="lazy"
+              aria-label="Wizard Result Preview"
+            />
+          </div>
+
+          {/* Description Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-3">
+            <h2 className="text-sm font-medium text-gray-800 text-center line-clamp-2">
+              {result?.wizardResult?.idea_description || "Untitled"}
+            </h2>
+          </div>
+        </article>
+      ))}
+    </section>
+      </div>
+    </div>
+  );
+};
+
+export default ResultHistory;
+{/* <div className="flex justify-between mt-4">
                 <Link
                   href={`/wizard-result/${result?.uniqueKey}`}
                   className="flex items-center gap-1 px-2 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded focus:outline-none focus:ring focus:ring-blue-200"
@@ -87,13 +96,4 @@ const ResultHistory = () => {
                 >
                   <Trash2 className="w-4 h-4" /> Delete
                 </button>
-              </div>
-            </div>
-          ))}
-        </section>
-      </div>
-    </div>
-  );
-};
-
-export default ResultHistory;
+              </div> */}

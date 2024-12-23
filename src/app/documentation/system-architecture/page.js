@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const SystemArchitecture = () => {
@@ -127,6 +128,7 @@ const SystemArchitecture = () => {
             <li>Database (MySQL): Stores and retrieves data as required by the backend.</li>
           </ul>
         </section>
+        <PaginationButtons previous={{ name: "User Guide", href: "/user-guide" }} next={{ name: "Technology Stack ", href: "/technology-stack" }}/>
       </div>
 
       <TableOfContents data={tableOfContents}/>

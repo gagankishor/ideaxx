@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import ParameterReference from "@/components/pages/document/ParameterReference";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
@@ -296,6 +297,7 @@ const APIDocumentation = () => {
             </div>
           </section>
         </section>
+        <PaginationButtons previous={{href:"/technology-stack",name:"Technology Stack"}} next={{href:"/security-protocols",name:"Security Protocols"}}/>
       </div>
 
       <TableOfContents data={tableOfContents} />

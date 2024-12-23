@@ -61,7 +61,7 @@ const SidebarSection = ({ title, items, isOpen, toggleOpen, currentPath }) => (
             return (
               <Link 
                 key={index} 
-                className={`hover:text-white cursor-pointer ${isActive ? 'text-white' : ''}`} 
+                className={`hover:text-white scpa cursor-pointer ${isActive ? 'text-white' : ''}`} 
                 href={fullPath}
               >
                 <li className={`${isActive ? 'text-white' : 'text-[#818384]'} hover:text-white cursor-pointer`}>
@@ -126,7 +126,7 @@ const DocumentationSidebar = () => {
     };
 
     return (
-        <div className="md:min-w-80 bg-[#121212] text-white h-screen p-4 sticky top-20">
+        <div className="md:min-w-80 hidden  lg:block bg-[#121212] text-white h-screen p-4 sticky top-20">
           {sections.map((section, index) => (
             <SidebarSection
               key={index}

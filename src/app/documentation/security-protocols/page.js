@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import SecurityReport from "@/components/pages/document/SecurityReport";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
@@ -66,10 +67,10 @@ const SecurityProtocols = () => {
           </p>
         </section>
         <SecurityReport/>
+        <PaginationButtons previous={{ name: "API Documentation ", href: "/api-documentation" }} next={{ name: "Integration Guidelines", href: "/integration-guidelines" }}/>
       </div>
       <TableOfContents data={tableOfContents}/>
     </div>
   );
 };
-
 export default SecurityProtocols;

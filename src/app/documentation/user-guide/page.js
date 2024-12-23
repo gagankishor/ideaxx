@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const UserGuide = () => {
@@ -11,18 +12,8 @@ const UserGuide = () => {
             { label: "Getting Started", href: "#GettingStarted" },
             { label: "Operating Instructions", href: "#OperatingInstructions" },
             { label: "Troubleshooting", href: "#Troubleshooting" },
-            // { label: "Wallets", href: "#" },
           ],
         },
-        // {
-        //   title: "Core Concepts",
-        //   links: [
-        //     { label: "Solana Account Model", href: "#" },
-        //     { label: "Transactions and Instructions", href: "#" },
-        //     { label: "Fees on Solana", href: "#" },
-        //     { label: "Programs on Solana", href: "#" },
-        //   ],
-        // },
       ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
@@ -100,6 +91,7 @@ const UserGuide = () => {
           </ul>
           <p className="text-gray-300 text-left text-lg">Over 10,000 transactions are processed daily.</p>
         </section>
+        <PaginationButtons previous={{href:"/",name:"Overview and Introduction"}} next={{href:"/api-documentation",name:"System Architecture"}}/>
       </div>
 
       <TableOfContents data={tableOfContents}/>

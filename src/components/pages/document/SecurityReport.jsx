@@ -111,12 +111,12 @@ const SecurityReport = () => {
                 </tr>
                 <tr>
                   <td className="py-3 font-semibold">Prepared by</td>
-                  <td>[Auditor Name]</td>
+                  <td>Ravi Kumar</td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <td className="py-3 font-semibold">Verified by</td>
                   <td>[Verifier Name]</td>
-                </tr>
+                </tr> */}
                 <tr>
                   <td className="py-3 font-semibold">Release date</td>
                   <td>December 23, 2024</td>

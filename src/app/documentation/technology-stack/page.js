@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const TechnologyStack = () => {
@@ -139,6 +140,7 @@ const TechnologyStack = () => {
             </li>
           </ul>
         </section>
+        <PaginationButtons previous={{ name: "System Architecture", href: "/system-architecture" }} next={{ name: "API Documentation ", href: "/api-documentation" }}/>
       </div>
       <TableOfContents data={tableOfContents}/>
     </div>

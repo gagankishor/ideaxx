@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const TableOfContents = ({ data }) => (
-  <div className="bg-[#121212] text-white p-6 h-screen sticky top-20 right-0 space-y-4 scrollbar-hover">
+  <div className="bg-[#121212] hidden lg:block text-white p-6 h-screen sticky top-20 right-0 space-y-4 scrollbar-hover">
     <h2 className="text-lg font-bold">Table of Contents</h2>
     <ul className="space-y-4 text-lg">
       {data.map((section, index) => (

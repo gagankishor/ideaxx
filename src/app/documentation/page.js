@@ -1,5 +1,6 @@
 "use client";
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 
@@ -47,6 +48,7 @@ Additionally, it ensures rapid and secure financial transfers through third-part
 By leveraging cutting-edge AI and the latest in blockchain technology on the Solana network, it minimizes human intervention and sets a new standard in digital business operations.
 
           </p>
+          <PaginationButtons previous={null} next={{href:"/documentation/user-guide",name:"User Guide"}}/>
         </div>
         <TableOfContents data={tableOfContents}/>        </>
   );

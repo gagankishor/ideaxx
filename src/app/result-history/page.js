@@ -1,18 +1,11 @@
 "use client";
 import useAxiosWithAuth from "@/config/useAxiosWithAuth";
-import { Eye } from "lucide-react";
+import { Eye, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ResultHistory = () => {
-  // Sample data - replace with your actual data source
   const axiosInstance = useAxiosWithAuth();
-
-  // const [results] = useState([
-  //   { id: 1, date: "2024-12-21", idea: "Toy Store", key: "dsffsadf" },
-  //   { id: 2, date: "2024-12-20", idea: "Electric Car", key: "ksdffsey" },
-  //   { id: 3, date: "2024-12-19", idea: "Online Book Store", key: "kesdfsy" },
-  // ]);
   const [resultHistory, setResultHistory] = useState([]);
 
   useEffect(() => {
@@ -34,70 +27,64 @@ const ResultHistory = () => {
     };
     fetchResultHistory();
   }, []);
-  console.log(resultHistory, "=======================------------------");
+
+  const handleDelete = async (id) => {
+    try {
+      const endpoint = `delete-result/${id}`;
+      await axiosInstance({
+        method: "delete",
+        url: endpoint,
+      });
+      setResultHistory((prev) => prev.filter((result) => result.id !== id));
+    } catch (error) {
+      console.error("Error deleting result:", error);
+    }
+  };
+
   return (
-    <div className="p-4  mx-auto min-h-screen bg-gray-100">
+    <div className="p-4 mx-auto min-h-screen bg-gray-100">
       <div className="max-w-4xl bg-white rounded-lg shadow-md mx-auto">
         <header className="p-4 border-b">
           <h2 className="text-xl font-semibold text-gray-800">
             Idea Result History
           </h2>
         </header>
-        <section className="p-4">
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
-                    Idea
-                  </th>
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
-                    Date
-                  </th>
-
-                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {resultHistory?.map((result) => (
-                  <tr
-                    key={result.id}
-                    className="border-t hover:bg-gray-50 transition-colors"
-                  >
-                    <td className="px-4 py-2 text-sm text-gray-800">
-                      {result?.wizardResult?.idea_description}
-                    </td>
-                    <td className="px-4 py-2 text-sm text-gray-800">
-                      {new Date(result?.createdAt).toLocaleString("en-US", {
-                        year: "numeric",
-                        month: "2-digit",
-                        day: "2-digit",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                        second: "2-digit",
-                        hour12: false,
-                      })}
-                    </td>
-                    <td className="px-4 py-2">
-                      <Link
-                        href={`/wizard-result/${result?.uniqueKey}`}
-                        className="flex items-center gap-2 px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded focus:outline-none focus:ring focus:ring-blue-200"
-                        aria-label={`View details of ${result.idea}`}
-                      >
-                        <Eye className="w-4 h-4" />
-                        View
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <section className="p-4 flex flex-wrap gap-4 justify-center">
+          {resultHistory?.map((result) => (
+            <div
+              key={result.id}
+              className="relative w-72 h-40 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md overflow-hidden flex flex-col justify-end p-4"
+            >
+              {/* <div className="absolute inset-y-0 right-0 w-16 bg-blue-300 flex justify-center items-center rotate-6 shadow-lg transform translate-x-4">
+                <span className="text-white text-sm font-bold">Ticket</span>
+              </div> */}
+              <div className="text-center">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {result?.wizardResult?.idea_description}
+                </h3>
+              </div>
+              <div className="flex justify-between mt-4">
+                <Link
+                  href={`/wizard-result/${result?.uniqueKey}`}
+                  className="flex items-center gap-1 px-2 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded focus:outline-none focus:ring focus:ring-blue-200"
+                  aria-label={`View details of ${result.idea}`}
+                >
+                  <Eye className="w-4 h-4" /> View
+                </Link>
+                <button
+                  onClick={() => handleDelete(result.id)}
+                  className="flex items-center gap-1 px-2 py-1 text-sm font-medium text-red-600 hover:bg-red-50 rounded focus:outline-none focus:ring focus:ring-red-200"
+                  aria-label={`Delete ${result.idea}`}
+                >
+                  <Trash2 className="w-4 h-4" /> Delete
+                </button>
+              </div>
+            </div>
+          ))}
         </section>
       </div>
     </div>
   );
 };
+
 export default ResultHistory;

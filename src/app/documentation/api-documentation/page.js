@@ -30,78 +30,78 @@ const APIDocumentation = () => {
       ],
     },
   ];
-//   const parameters = [
-//     {
-//       parameter: "idea_stage",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 1, 3, 5",
-//       description: "Current stage of the business",
-//     },
-//     {
-//       parameter: "work_status",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 1, 2, 3, 4, 5",
-//       description: "Current employment status",
-//     },
-//     {
-//       parameter: "project_type",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "Range: 1 to 21",
-//       description: "Type/sector of the project",
-//     },
-//     {
-//       parameter: "job_relation",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 2, 5",
-//       description: "Whether current job relates",
-//     },
-//     {
-//       parameter: "investment_plan",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 1, 2, 3, 4, 5",
-//       description: "Planned investment range",
-//     },
-//     {
-//       parameter: "work_experience",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 0, 3, 4, 5",
-//       description: "Years of relevant work experience",
-//     },
-//     {
-//       parameter: "project_location",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "Valid country ID",
-//       description: "Country ID for project location",
-//     },
-//     {
-//       parameter: "idea_description",
-//       type: "String",
-//       required: "Yes",
-//       validationRules: "Min: 50 chars, Max: 250 chars",
-//       description: "Description of business idea",
-//     },
-//     {
-//       parameter: "daily_hours",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 1, 2, 3, 4, 5",
-//       description: "Daily hours available",
-//     },
-//     {
-//       parameter: "timeframe",
-//       type: "Integer",
-//       required: "Yes",
-//       validationRules: "One of: 1, 2, 3",
-//       description: "Estimated development timeframe",
-//     },
-//   ];
+  //   const parameters = [
+  //     {
+  //       parameter: "idea_stage",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 1, 3, 5",
+  //       description: "Current stage of the business",
+  //     },
+  //     {
+  //       parameter: "work_status",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 1, 2, 3, 4, 5",
+  //       description: "Current employment status",
+  //     },
+  //     {
+  //       parameter: "project_type",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "Range: 1 to 21",
+  //       description: "Type/sector of the project",
+  //     },
+  //     {
+  //       parameter: "job_relation",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 2, 5",
+  //       description: "Whether current job relates",
+  //     },
+  //     {
+  //       parameter: "investment_plan",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 1, 2, 3, 4, 5",
+  //       description: "Planned investment range",
+  //     },
+  //     {
+  //       parameter: "work_experience",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 0, 3, 4, 5",
+  //       description: "Years of relevant work experience",
+  //     },
+  //     {
+  //       parameter: "project_location",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "Valid country ID",
+  //       description: "Country ID for project location",
+  //     },
+  //     {
+  //       parameter: "idea_description",
+  //       type: "String",
+  //       required: "Yes",
+  //       validationRules: "Min: 50 chars, Max: 250 chars",
+  //       description: "Description of business idea",
+  //     },
+  //     {
+  //       parameter: "daily_hours",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 1, 2, 3, 4, 5",
+  //       description: "Daily hours available",
+  //     },
+  //     {
+  //       parameter: "timeframe",
+  //       type: "Integer",
+  //       required: "Yes",
+  //       validationRules: "One of: 1, 2, 3",
+  //       description: "Estimated development timeframe",
+  //     },
+  //   ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
       <div className="flex-1 p-8 max-w-3xl overflow-y-scroll">
@@ -150,7 +150,7 @@ const APIDocumentation = () => {
             a JSON object containing:
           </p>
           <div className="w-full overflow-x-auto shadow-lg rounded-lg"></div>
-          <ul className="list-disc ml-6 mb-8 text-gray-300">
+          {/* <ul className="list-disc ml-6 mb-8 text-gray-300">
             <li>
               <strong>idea_stage:</strong> 1 (Still an idea), 3 (Made a plan), 5
               (Already started)
@@ -182,47 +182,46 @@ const APIDocumentation = () => {
               <strong>timeframe:</strong> 1 (&lt; 3 months), 2 (3-6 months), 3
               (6-12 months)
             </li>
-          </ul>
+          </ul> */}
         </section>
-        <ParameterReference/>
+        <ParameterReference />
         <section className="mb-12h">
           <h3 className="text-3xl font-semibold mb-4 text-[#C0C0C0]">
             Example Request
           </h3>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
             {`{
-  "idea_stage": 5,
-  "work_status": 3,
-  "project_type": 3,
-  "job_relation": 5,
-  "investment_plan": 4,
-  "work_experience": 4,
-  "project_location": 1,
-  "idea_description": "AI-powered fitness application that provides personalized workout routines based on user's fitness level and goals",
-  "daily_hours": 4,
-  "timeframe": 2
-}`}
+              "idea_stage": 2,
+              "work_status": 3,
+              "project_type": 3,
+              "job_relation": 1,
+              "investment_plan": 4,
+              "work_experience": 4,
+              "project_location": 1,
+              "idea_description": "AI-powered fitness application that provides personalized workout routines based on user's fitness level and goals",
+              "daily_hours": 4,
+              "timeframe": 2
+            }`}
             <button
               className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
               onClick={() =>
                 copyToClipboard(`{
-  "idea_stage": 5,
-  "work_status": 3,
-  "project_type": 3,
-  "job_relation": 5,
-  "investment_plan": 4,
-  "work_experience": 4,
-  "project_location": 1,
-  "idea_description": "AI-powered fitness application that provides personalized workout routines based on user's fitness level and goals",
-  "daily_hours": 4,
-  "timeframe": 2
-}`)
+                  "idea_stage": 5,
+                  "work_status": 3,
+                  "project_type": 3,
+                  "job_relation": 5,
+                  "investment_plan": 4,
+                  "work_experience": 4,
+                  "project_location": 1,
+                  "idea_description": "AI-powered fitness application that provides personalized workout routines based on user's fitness level and goals",
+                  "daily_hours": 4,
+                  "timeframe": 2
+                }`)
               }
             >
               Copy Code
             </button>
           </pre>
-
           <h3 className="text-3xl font-semibold mb-4 text-[#C0C0C0]">
             Response Format
           </h3>
@@ -231,51 +230,50 @@ const APIDocumentation = () => {
           </h4>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
             {`{
-  "status": 200,
-  "error": false,
-  "message": "Success",
-  "data": {
-    "resultText": "Detailed analysis and recommendations...",
-    "success_percentage": "75.23"
-  }
-}`}
+              "status": 200,
+              "error": false,
+              "message": "Success",
+              "data": {
+                "resultText": "Detailed analysis and recommendations...",
+                "success_percentage": "75.23"
+              }
+            }`}
             <button
               className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
               onClick={() =>
                 copyToClipboard(`{
-  "status": 200,
-  "error": false,
-  "message": "Success",
-  "data": {
-    "resultText": "Detailed analysis and recommendations...",
-    "success_percentage": "75.23"
-  }
-}`)
+                  "status": 200,
+                  "error": false,
+                  "message": "Success",
+                  "data": {
+                    "resultText": "Detailed analysis and recommendations...",
+                    "success_percentage": "75.23"
+                  }
+                }`)
               }
             >
               Copy Code
             </button>
           </pre>
-
           <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
             Validation Error Response (400)
           </h4>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
             {`{
-  "status": 400,
-  "error": true,
-  "message": "Validation error message",
-  "data": null
-}`}
+              "status": 400,
+              "error": true,
+              "message": "Validation error message",
+              "data": null
+            }`}
             <button
               className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
               onClick={() =>
                 copyToClipboard(`{
-  "status": 400,
-  "error": true,
-  "message": "Validation error message",
-  "data": null
-}`)
+                  "status": 400,
+                  "error": true,
+                  "message": "Validation error message",
+                  "data": null
+                }`)
               }
             >
               Copy Code
@@ -285,29 +283,28 @@ const APIDocumentation = () => {
           <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
             Server Error (500)
           </h4>
-          <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
+          <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
             {`{
-  "status": 500,
-  "error": true,
-  "message": "An error occurred while processing your request",
-  "data": null
-}`}
+              "status": 500,
+              "error": true,
+              "message": "An error occurred while processing your request",
+              "data": null
+            }`}
             <button
               className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
               onClick={() =>
                 copyToClipboard(`{
-  "status": 500,
-  "error": true,
-  "message": "An error occurred while processing your request",
-  "data": null
-}`)
+                  "status": 500,
+                  "error": true,
+                  "message": "An error occurred while processing your request",
+                  "data": null
+                }`)
               }
             >
               Copy Code
             </button>
           </pre>
         </section>
-
         <section className="mb-12 ">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Embeddable Widget API
@@ -352,26 +349,25 @@ const APIDocumentation = () => {
               </tr>
             </tbody>
           </table>
-
           <h3 className="text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
             Example Response (HTML)
           </h3>
           <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
             {`<iframe
-  src="https://idxsolana.io/api/widget/abc123"
-  width="300"
-  height="200"
-  style="border: none;">
-</iframe>`}
-<button
+              src="https://idxsolana.io/api/widget/abc123"
+              width="300"
+              height="200"
+              style="border: none;">
+            </iframe>`}
+            <button
               className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
               onClick={() =>
                 copyToClipboard(`<iframe
-  src="https://idxsolana.io/api/widget/abc123"
-  width="300"
-  height="200"
-  style="border: none;">
-</iframe>`)
+                  src="https://idxsolana.io/api/widget/abc123"
+                  width="300"
+                  height="200"
+                  style="border: none;">
+                </iframe>`)
               }
             >
               Copy Code
@@ -380,7 +376,7 @@ const APIDocumentation = () => {
         </section>
       </div>
 
-      <TableOfContents data={tableOfContents}/>
+      <TableOfContents data={tableOfContents} />
     </div>
   );
 };

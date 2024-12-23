@@ -14,8 +14,8 @@ const parameterDetails = {
     name: "Idea Stage",
     values: [
       { code: 1, description: "Still an idea" },
-      { code: 3, description: "Made a plan" },
-      { code: 5, description: "Already started" }
+      { code: 2, description: "Made a plan" },
+      { code: 3, description: "Already started" }
     ]
   },
   work_status: {
@@ -45,8 +45,8 @@ const parameterDetails = {
   job_relation: {
     name: "Job Relation",
     values: [
-      { code: 2, description: "No (Current job not related)" },
-      { code: 5, description: "Yes (Current job related)" }
+      { code: 1, description: "No (Current job not related)" },
+      { code: 2, description: "Yes (Current job related)" }
     ]
   },
   investment_plan: {
@@ -62,10 +62,10 @@ const parameterDetails = {
   work_experience: {
     name: "Work Experience",
     values: [
-      { code: 0, description: "No experience" },
-      { code: 3, description: "1 - 3 Years" },
-      { code: 4, description: "3 - 5 Years" },
-      { code: 5, description: "More than 5 years" }
+      { code: 1, description: "No experience" },
+      { code: 2, description: "1 - 3 Years" },
+      { code: 3, description: "3 - 5 Years" },
+      { code: 4, description: "More than 5 years" }
     ]
   },
   daily_hours: {

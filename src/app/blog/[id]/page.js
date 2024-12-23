@@ -54,7 +54,7 @@ const BlogDetails = () => {
         console.error("Error fetching blog content:", error);
       }
     };
-    fetchBlog();
+    fetchBlog();  
   }, [blogId]);
 
   // Fetch blog data and increment views
@@ -62,7 +62,7 @@ const BlogDetails = () => {
     if (!blogId) return;
     const fetchBlogData = async () => {
       try {
-        const { data } = await axios.post(`${RestAPI}/view/${blogId}`);
+        const { data } = await axios.post(`${RestAPI}/blog/view/${blogId}`);
         setBlogData(data);
       } catch (error) {
         console.error("Error fetching blog data:", error);
@@ -75,7 +75,7 @@ const BlogDetails = () => {
   const handleLike = async () => {
     try {
       setIsLiked(true);
-      const { data } = await axios.post(`${RestAPI}/like/${blogId}`);
+      const { data } = await axios.post(`${RestAPI}/blog/like/${blogId}`);
       setBlogData(data);
     } catch (error) {
       console.error("Error liking the blog:", error);
@@ -85,7 +85,7 @@ const BlogDetails = () => {
   // Handle review submission
   // const handleReviewSubmit = async () => {
   //   try {
-  //     const { data } = await axios.post(`${RestAPI}/review/${blogId}`, {
+  //     const { data } = await axios.post(`${RestAPI}/blog/review/${blogId}`, {
   //       user: "Anonymous",
   //       comment: review,
   //     });
@@ -95,11 +95,9 @@ const BlogDetails = () => {
   //     console.error("Error submitting the review:", error);
   //   }
   // };
-
   if (!blog) {
     return <p>Loading...</p>;
   }
-
   return (
     <>
       <div className="min-h-screen bg-gray-50 p-6">

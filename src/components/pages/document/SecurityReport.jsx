@@ -2,14 +2,13 @@
 import {
   ChevronDown,
   FileText,
-  Shield,
   Tool,
   AlertTriangle,
   Book,
   Calendar,
-  Users,
   CheckCircle,
 } from "lucide-react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 const SecurityReport = () => {
@@ -35,7 +34,11 @@ const SecurityReport = () => {
       />
     </div>
   );
-
+  SectionHeader.propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.elementType,
+    sectionKey: PropTypes.string.isRequired,
+  };
   return (
     <div className="max-w-6xl mx-auto p-6 bg-black">
       <div className="text-center mb-10">
@@ -330,7 +333,7 @@ const SecurityReport = () => {
                   <td className="py-3 px-4">
                     <div className="font-medium">Weak Password Policy</div>
                     <div className="text-sm text-gray-600">
-                      System allows weak passwords that don't meet security
+                      System allows weak passwords that don&lsquo;t meet security
                       standards
                     </div>
                   </td>

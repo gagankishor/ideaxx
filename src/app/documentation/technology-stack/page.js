@@ -6,21 +6,17 @@ import TableOfContents from "@/components/pages/document/TableOfContents";
 const TechnologyStack = () => {
     const tableOfContents = [
         {
-          title: "Getting Started",
+          title: "Technology Stack",
           links: [
-            { label: "Quick Start", href: "#" },
-            { label: "Installation", href: "#" },
-            { label: "Intro to Development", href: "#" },
-            { label: "Wallets", href: "#" },
-          ],
-        },
-        {
-          title: "Core Concepts",
-          links: [
-            { label: "Solana Account Model", href: "#" },
-            { label: "Transactions and Instructions", href: "#" },
-            { label: "Fees on Solana", href: "#" },
-            { label: "Programs on Solana", href: "#" },
+            { label: "Frontend", href: "#Frontend" },
+            { label: "Backend", href: "#Backend" },
+            { label: "Database", href: "#Database" },
+            { label: "Authentication", href: "#Authentication" },
+            { label: "Hosting/Deployment", href: "#HostingDeployment" },
+            { label: "API Communication", href: "#APICommunication" },
+            { label: "Version Control", href: "#VersionControl" },
+            { label: "Package Management", href: "#PackageManagement" },
+            { label: "Styling", href: "#Styling" },
           ],
         },
       ];
@@ -33,11 +29,10 @@ const TechnologyStack = () => {
             { label: "Technology Stack", href: "/technology-stack" },
           ]}
         />
-        <h1 className="text-6xl font-bold mb-6 text-[#C0C0C0]">
+        <h1 className="text-6xl font-bold mb-0 text-[#C0C0C0]">
           Technology Stack
         </h1>
-
-        <section className="mb-8">
+        <section id="Frontend" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">Frontend</h2>
           <ul className="list-disc ml-6 text-gray-300 text-left text-lg">
             <li>
@@ -52,7 +47,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="Backend" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">Backend</h2>
           <ul className="list-disc ml-6 text-gray-300 text-left text-lg">
             <li>
@@ -64,7 +59,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="Database" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">Database</h2>
           <ul className="list-disc ml-6 text-gray-300 text-left text-lg">
             <li>
@@ -73,7 +68,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="Authentication" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Authentication
           </h2>
@@ -87,7 +82,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="HostingDeployment" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Hosting/Deployment
           </h2>
@@ -101,7 +96,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="APICommunication" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             API Communication
           </h2>
@@ -112,7 +107,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="VersionControl" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Version Control
           </h2>
@@ -123,7 +118,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="PackageManagement" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Package Management
           </h2>
@@ -134,7 +129,7 @@ const TechnologyStack = () => {
           </ul>
         </section>
 
-        <section>
+        <section id="Styling" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Styling
           </h2>
@@ -145,7 +140,6 @@ const TechnologyStack = () => {
           </ul>
         </section>
       </div>
-
       <TableOfContents data={tableOfContents}/>
     </div>
   );

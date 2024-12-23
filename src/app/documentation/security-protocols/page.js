@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/pages/document/Breadcrumb";
+import SecurityReport from "@/components/pages/document/SecurityReport";
 import TableOfContents from "@/components/pages/document/TableOfContents";
 
 const SecurityProtocols = () => {
@@ -52,7 +53,7 @@ const SecurityProtocols = () => {
         </section>
 
         {/* Audit Reports Section */}
-        <section className="pt-12 " id="audit_reports">
+        <section className="pt-20 " id="audit_reports">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Audit Reports
           </h2>
@@ -64,6 +65,7 @@ const SecurityProtocols = () => {
             users.
           </p>
         </section>
+        <SecurityReport/>
       </div>
       <TableOfContents data={tableOfContents}/>
     </div>

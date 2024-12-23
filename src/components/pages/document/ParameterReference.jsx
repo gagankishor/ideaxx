@@ -111,7 +111,7 @@ const ParameterReference = () => {
 
   return (
     <div className="max-w-7xl mx-auto  bg-[#121212] min-h-screen">
-      <h1 className="text-3xl font-bold text-white mb-8">Parameter Reference</h1>
+      <h1 className="text-3xl font-bold text-[#C0C0C0] mb-8">Parameter Reference</h1>
       
       <div className="flex space-x-4 mb-6">
         <button

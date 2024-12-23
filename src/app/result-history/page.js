@@ -53,15 +53,24 @@ const ResultHistory = () => {
           {resultHistory?.map((result) => (
             <div
               key={result.id}
-              className="relative w-72 h-40 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md overflow-hidden flex flex-col justify-end p-4"
+              className="relative w-72 h-56 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md overflow-hidden flex flex-col justify-between p-4"
             >
-              {/* <div className="absolute inset-y-0 right-0 w-16 bg-blue-300 flex justify-center items-center rotate-6 shadow-lg transform translate-x-4">
-                <span className="text-white text-sm font-bold">Ticket</span>
-              </div> */}
-              <div className="text-center">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {result?.wizardResult?.idea_description}
-                </h3>
+              {/* Thumbnail or Preview */}
+              <div className="w-full h-28 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center">
+                {result.thumbnailUrl ? (
+                  <img
+                    src={result.thumbnailUrl}
+                    alt={`Preview of ${result?.wizardResult?.idea_description}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-gray-500 text-sm">No Preview Available</span>
+                )}
+              </div>
+              <div className="text-center mt-2">
+                <p className="text-sm font-thin text-gray-800">
+                  {result?.wizardResult?.idea_description || "Untitled"}
+                </p>
               </div>
               <div className="flex justify-between mt-4">
                 <Link

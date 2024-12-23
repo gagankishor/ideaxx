@@ -8,21 +8,21 @@ const SystemArchitecture = () => {
         {
           title: "System Architecture",
           links: [
-            { label: "Presentation Layer (Frontend/UI)", href: "#" },
-            { label: "Installation", href: "#" },
-            { label: "Intro to Development", href: "#" },
-            { label: "Wallets", href: "#" },
+            { label: "Presentation Layer (Frontend/UI)", href: "#PresentationLayer" },
+            { label: "Application Layer (Backend/API)", href: "#ApplicationLayer" },
+            { label: "Data Layer (Database)", href: "#DataLayer" },
+            { label: "System Architecture Diagram", href: "#SystemArchitectureDiagram" },
           ],
         },
-        {
-          title: "Core Concepts",
-          links: [
-            { label: "Solana Account Model", href: "#" },
-            { label: "Transactions and Instructions", href: "#" },
-            { label: "Fees on Solana", href: "#" },
-            { label: "Programs on Solana", href: "#" }, 
-          ],
-        },
+        // {
+        //   title: "Core Concepts",
+        //   links: [
+        //     { label: "Solana Account Model", href: "#" },
+        //     { label: "Transactions and Instructions", href: "#" },
+        //     { label: "Fees on Solana", href: "#" },
+        //     { label: "Programs on Solana", href: "#" }, 
+        //   ],
+        // },
       ];
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
@@ -37,7 +37,7 @@ const SystemArchitecture = () => {
           System Architecture
         </h1>
 
-        <section className="mb-8">
+        <section id="PresentationLayer" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Presentation Layer (Frontend/UI)
           </h2>
@@ -63,7 +63,7 @@ const SystemArchitecture = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="ApplicationLayer" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Application Layer (Backend/API)
           </h2>
@@ -90,7 +90,7 @@ const SystemArchitecture = () => {
           </ul>
         </section>
 
-        <section className="mb-8">
+        <section id="DataLayer" className="pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Data Layer (Database)
           </h2>
@@ -114,7 +114,7 @@ const SystemArchitecture = () => {
           </ul>
         </section>
 
-        <section>
+        <section id="SystemArchitectureDiagram" className=" pt-16">
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             System Architecture Diagram
           </h2>

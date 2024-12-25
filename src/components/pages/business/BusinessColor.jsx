@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import {  ChromePicker } from "react-color";
+// import {  ChromePicker } from "react-color";
 import { FaPalette } from "react-icons/fa";
 import { SideBar } from "../../components/Sidebar";
 import { Helmet } from "react-helmet";
@@ -65,7 +65,7 @@ export default function BusinessColor() {
       color: ["#4285F4", "#34A853", "#FBBC05", "#EA4335"],
     },
   ];
-  const [color, setColor] = useState("#6AB0B0");
+  const [color] = useState("#6AB0B0");
   // const [generatedPalette, setGeneratedPalette] = useState([]);
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -85,12 +85,12 @@ export default function BusinessColor() {
       Authorization: `Bearer ${loggedToken}`,
     },
   };
-  const handleColorChange = (color) => {
-    const updatedColors = [...colors];
-    updatedColors[selectedIndex] = color.hex;
-    setColors(updatedColors);
-    setColor(color.hex);
-  };
+  // const handleColorChange = (color) => {
+  //   const updatedColors = [...colors];
+  //   updatedColors[selectedIndex] = color.hex;
+  //   setColors(updatedColors);
+  //   setColor(color.hex);
+  // };
 
   const fetchColorPalette = async () => {
     setLoading(true);
@@ -236,10 +236,10 @@ export default function BusinessColor() {
                   <img src={brandData?.logo} alt="Brand Logo" />
                 </div>
 
-                <ChromePicker
+                {/* <ChromePicker
                   color={color}
                   onChangeComplete={handleColorChange}
-                />
+                /> */}
               </div>
 
               <div className="button-group">

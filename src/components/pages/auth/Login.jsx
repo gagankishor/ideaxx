@@ -11,6 +11,7 @@ import LinkedInLoginmain from "../Home/components/LinkedInLogin";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
+// import SocialLogin from "../Home/components/wizard/LoginWithSocials";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +30,6 @@ const Login = () => {
     newOtp[index] = e.target.value;
     setOtp(newOtp);
   };
-
   useEffect(() => {
     if (secondsLeft > 0) {
       const timer = setInterval(() => setSecondsLeft((prev) => prev - 1), 1000);
@@ -100,7 +100,6 @@ const Login = () => {
   const handleLinkedInLogin = async (status)=>{
     console.log(status)
     router.push('/')
-
   }
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -246,6 +245,7 @@ const Login = () => {
                     </button>
                     <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
                     <LinkedInLoginmain handleLogin={handleLinkedInLogin}/>
+                    {/* <SocialLogin handleLogin={handleLinkedInLogin}/> */}
                   </div>
                 )}
               </div>

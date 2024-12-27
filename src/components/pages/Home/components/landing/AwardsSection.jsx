@@ -142,7 +142,7 @@ const AwardsSection = () => {
                         <a
                           href={blog.link}
                           className="text-blue-400 hover:underline"
-                          area-label={blog.title}
+                          // area-label={blog.title}
                         >
                           Read more
                         </a>

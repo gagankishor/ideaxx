@@ -40,7 +40,8 @@ const ResultHistory = () => {
   //   }
   // };
   const handleRedirect = (uniqueKey) => {
-    window.location.href = `http://localhost:3000/wizard-result/${uniqueKey}`;
+    const hostUrl = window.location.origin;
+    window.location.href = `${hostUrl}/wizard-result/${uniqueKey}`;
   };
   const handleDelete = async (id) => {
     try {

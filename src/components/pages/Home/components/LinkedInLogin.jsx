@@ -58,7 +58,7 @@ const LinkedInLogin = ({handleLogin}) => {
         src="/linkedin.png"
         alt="Sign in with LinkedIn"
         style={{
-          maxWidth: '180px',
+          maxWidth: '240px',
           cursor: 'pointer',
           marginTop: '15px',
         }}

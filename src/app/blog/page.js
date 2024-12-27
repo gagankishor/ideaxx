@@ -123,6 +123,7 @@ const Blogs = () => {
               </p>
               <a
                 href="/blog/1"
+                aria-label={blogs[1]?.title || "Default Title"}
                 className="font-semibold hover:underline leading-9 flex items-center underline"
               >
                 Read more <span className="ml-2 text-xl">&rarr;</span>

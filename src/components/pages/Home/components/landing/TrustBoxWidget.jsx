@@ -100,6 +100,7 @@ const TrustBoxWidget = () => {
           <img
             src="/award-section/solscan-removebg-preview.png"
             className=" w-40 mb-4"
+            alt="solscan logo"
           />
           {/* <p className=" text-white">SOLSCAN</p> */}
         </a>

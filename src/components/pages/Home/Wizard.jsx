@@ -933,7 +933,7 @@ export default function Wizard() {
                       >
                         <option value="">Select Country</option>
                         {steps[step].choices.map((option) => (
-                          <option key={option.id} value={option.value}>
+                          <option key={option.id} value={option.id}>
                             {option.label}
                           </option>
                         ))}

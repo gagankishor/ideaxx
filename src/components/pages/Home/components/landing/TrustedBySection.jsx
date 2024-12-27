@@ -42,7 +42,7 @@ const TrustedBySection = () => {
           <a href="https://www.vantompower.com/"  target="_blank">
             <img
               src="TrustedBySection/Layer.jpg"
-              alt="Company logo"
+              alt="Vantompower logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
             />
@@ -52,7 +52,7 @@ const TrustedBySection = () => {
           <a href="https://pickitup.ae/" target="_blank">
             <img
               src="TrustedBySection/up@300_rec.jpg"
-              alt="Company logo"
+              alt="Pickitup logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
             />
           </a>
@@ -61,7 +61,7 @@ const TrustedBySection = () => {
           <a href="https://www.basha-impex.com/" target="_blank">
             <img
               src="TrustedBySection/BashaExportlogos.jpg"
-              alt="Company logo"
+              alt="basha-impex logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
             />
           </a>
@@ -70,7 +70,7 @@ const TrustedBySection = () => {
           <a href="https://360homedecor.uk/" target="_blank">
             <img
               src="TrustedBySection/360HOMEDECORLOGO.jpg"
-              alt="Company logo"
+              alt="360homedecor logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
             />
@@ -80,7 +80,7 @@ const TrustedBySection = () => {
           <a href="https://tecmicra.co.in/" target="_blank">
             <img
               src="TrustedBySection/T.jpg"
-              alt="Company logo"
+              alt="tecmicra logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }} 
             />
@@ -90,7 +90,7 @@ const TrustedBySection = () => {
           <a href="https://ameliyasafaris.com/" target="_blank">
             <img
               src="TrustedBySection/ameliyasafaris.jpg"
-              alt="Company logo"
+              alt="ameliyasafaris logo"
               className="company-logo rounded-lg object-contain my-auto mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
             />
@@ -100,7 +100,7 @@ const TrustedBySection = () => {
           <a href="https://apsleyandheron.com" target="_blank">
             <img
               src="TrustedBySection/apsleyandheron.jpg"
-              alt="Company logo"
+              alt="apsleyandheron logo"
               className="company-logo rounded-lg my-auto object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
             />
@@ -110,7 +110,7 @@ const TrustedBySection = () => {
           <a href="https://ocsmedecin.mu" target="_blank">
             <img
               src="TrustedBySection/ocsmedecin.jpg"
-              alt="Company logo"
+              alt="ocsmedecin logo"
               className="company-logo rounded-lg my-auto object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
             />
@@ -120,7 +120,7 @@ const TrustedBySection = () => {
           <a href="https://unityhealth.mu/" target="_blank">
             <img
               src="TrustedBySection/unityhealth.jpg"
-              alt="Company logo"
+              alt="unityhealth logo"
               className="company-logo rounded-lg my-auto object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
             />

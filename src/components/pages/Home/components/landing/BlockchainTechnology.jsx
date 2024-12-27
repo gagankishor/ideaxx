@@ -4,14 +4,14 @@ const BlockchainTechnology = () => {
   return (
     <div className="bg-gray-900 mt-20 text-gray-100 py-12 px-6 sm:px-16">
       {/* Headline */}
-      <motion.h1
+      <motion.h2
         className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         Our Blockchain Technology
-      </motion.h1>
+      </motion.h2>
 
       {/* Main Subheadline */}
       <motion.section

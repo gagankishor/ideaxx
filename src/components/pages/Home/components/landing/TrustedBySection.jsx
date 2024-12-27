@@ -146,9 +146,9 @@ const TrustedBySection = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="w-full md:w-1/2 p-10 text-white space-y-6"
           >
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
               From Concept to Execution
-            </h1>
+            </h2>
             <h2 className="text-2xl font-medium text-gray-300">
               Your All-in-One Business Solutions
             </h2>

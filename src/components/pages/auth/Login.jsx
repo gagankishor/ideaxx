@@ -11,6 +11,7 @@ import LinkedInLoginmain from "../Home/components/LinkedInLogin";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
+import SocialLogin from "../Home/components/wizard/LoginWithSocials";
 // import SocialLogin from "../Home/components/wizard/LoginWithSocials";
 
 const Login = () => {
@@ -244,8 +245,8 @@ const Login = () => {
                       Send OTP
                     </button>
                     <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
-                    <LinkedInLoginmain handleLogin={handleLinkedInLogin}/>
-                    {/* <SocialLogin handleLogin={handleLinkedInLogin}/> */}
+                    {/* <LinkedInLoginmain handleLogin={handleLinkedInLogin}/> */}
+                    <SocialLogin handleLogin={handleLinkedInLogin}/>
                   </div>
                 )}
               </div>

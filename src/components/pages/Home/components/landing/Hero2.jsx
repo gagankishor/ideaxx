@@ -6,9 +6,9 @@ export const Hero2 = () => {
     <div className="hero mt-5">
       <div className="container">
         <div className="hero-block">
-          <h1 className="idea-checker-heading">
+          <h2 className="idea-checker-heading">
             AI-Powered Startup and Business Idea Validator
-          </h1>
+          </h2>
           <span className="idea-checker-subheading">
             <p
               className="idea-checker-description"

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '@/context/AuthContext';
 import PropTypes from 'prop-types';
 import { RestAPI } from '@/config/Api';
-const FACEBOOK_APP_ID = "2562995173885156";
+const FACEBOOK_APP_ID = "2344916755863155";
 const FB_SDK_URL = 'https://connect.facebook.net/en_US/sdk.js';
 const FB_SDK_VERSION = 'v18.0';
 const SocialLogin = ({ handleLogin, onError }) => {

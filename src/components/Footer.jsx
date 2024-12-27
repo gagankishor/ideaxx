@@ -258,7 +258,7 @@ export default function Footer() {
           {renderDropdownList(services, aiTools.length + solutions.length)}
         </div>
         <div>
-          <h4 className="font-semibold mb-4 text-left">.</h4>
+          <h4 className="font-semibold mb-4 text-left opacity-0">.</h4>
           {renderDropdownList(
             services2,
             aiTools.length + solutions.length + services.length

@@ -259,11 +259,11 @@ export default function Wizard() {
       description:
         "While every type of business has its own financing needs, Your idea can always be started on a small budget.",
       choices: [
-        { id: "i4a", label: "Less than 1 Lakh ₹", value: "1" },
-        { id: "i4b", label: "1 Lakh ₹ - 10 Lakh ₹", value: "2" },
-        { id: "i4c", label: "10 Lakh ₹ - 50 Lakh ₹", value: "3" },
-        { id: "i4d", label: "50 Lakh ₹ - 1 Crore ₹", value: "4" },
-        { id: "i4e", label: "More than 1 Crore ₹", value: "5" },
+        { id: "i4a", label: "Less than 1K USD", value: "1" },
+        { id: "i4b", label: "1K - 10K USD", value: "2" },
+        { id: "i4c", label: "10K - 50K USD", value: "3" },
+        { id: "i4d", label: "50K USD – 100K USD", value: "4" },
+        { id: "i4e", label: "More than 100K", value: "5" },
       ],
       bgColor: "#00AEEF",
     },
@@ -323,7 +323,6 @@ export default function Wizard() {
             "6 to 12 months - A common timeframe for more involved projects, allowing for thorough planning, development, and initial testing.",
           value: "3",
         },
-        // { id: "i8c", label: "It will take longer than this.", value: "4" },
       ],
       bgColor: "#F69679",
     },
@@ -471,8 +470,6 @@ export default function Wizard() {
       //   confirmButtonText: "OK",
       // });
     } else {
-      
-      
       setLoading(true);
       const payloadFormData = new FormData();
       payloadFormData.append("phase1", formData.step1 || "");
@@ -747,7 +744,7 @@ export default function Wizard() {
     }
   };
   const handleSendOtp = async () => {
-    setLodingOtpSent(true); // Corrected spelling from setLodingOtpSent
+    setLodingOtpSent(true);
     const payload = { email };
     try {
       const response = await axios.post(`${RestAPI}/otp/generate`, payload, {
@@ -871,7 +868,6 @@ export default function Wizard() {
                                 size={25}
                                 style={{ marginRight: "2px", width: "20%" }}
                               />
-                              {/* Added margin for spacing */}
                               <span
                                 style={{
                                   fontWeight: "500",
@@ -891,11 +887,11 @@ export default function Wizard() {
                                   display: "flex",
                                   alignItems: "center",
                                   justifyContent: "center",
-                                  backgroundColor: "#f0f8ff", // Light background for better contrast
-                                  padding: "10px 15px", // Padding for spacing
+                                  backgroundColor: "#f0f8ff",
+                                  padding: "10px 15px",
                                   borderRadius: "8px",
                                   maxWidth: "fit-content",
-                                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // Soft shadow for depth
+                                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
                                 }}
                               >
                                 <span
@@ -935,7 +931,6 @@ export default function Wizard() {
                         onChange={(e) => handleChoiceChange(e.target.value)}
                         value={selectedOption}
                       >
-                        {" "}
                         <option value="">Select Country</option>
                         {steps[step].choices.map((option) => (
                           <option key={option.id} value={option.value}>
@@ -1112,11 +1107,11 @@ export default function Wizard() {
               }}
             /> */}
             <Image
-    src={`/wizard4/${step + 1}.webp`}
-    alt="wizard 4"
-    layout="fill"
-    objectFit="cover"
-  />
+              src={`/wizard4/${step + 1}.webp`}
+              alt="wizard 4"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
         </div>
       </div>
@@ -1124,68 +1119,94 @@ export default function Wizard() {
         isOpen={taskCompletion}
         onRequestClose={onRequestTaskCompletion}
         className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto focus:outline-none"
-      overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
-    >
-      <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Earn more attempts</h2>
-        <div className="space-y-4">
-          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
-            <div>
-              <h3 className="text-lg font-medium text-gray-800">Daily Check-in Task</h3>
-              <p className="text-gray-600">Login to the home page</p>
+        overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
+      >
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Earn more attempts
+          </h2>
+          <div className="space-y-4">
+            <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+              <div>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Daily Check-in Task
+                </h3>
+                <p className="text-gray-600">Login to the home page</p>
+              </div>
+              <span className="text-yellow-500 font-bold">+1</span>
             </div>
-            <span className="text-yellow-500 font-bold">+1</span>
+            <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+              <div>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Trading Task
+                </h3>
+                <p className="text-gray-600">
+                  Accumulate at least $5,000 equivalent in trading volume
+                </p>
+              </div>
+              <span className="text-yellow-500 font-bold">+2</span>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+              <div>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Refer a Friend
+                </h3>
+                <p className="text-gray-600">
+                  Refer a friend to join the platform
+                </p>
+              </div>
+              <span className="text-yellow-500 font-bold">+3</span>
+            </div>
+            <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+              <div>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Sharing Task
+                </h3>
+                <p className="text-gray-600">
+                  Share your achievement with your friends
+                </p>
+              </div>
+              <span className="text-yellow-500 font-bold">+1</span>
+            </div>
           </div>
-          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
-            <div>
-              <h3 className="text-lg font-medium text-gray-800">Trading Task</h3>
-              <p className="text-gray-600">Accumulate at least $5,000 equivalent in trading volume</p>
-            </div>
-            <span className="text-yellow-500 font-bold">+2</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
-            <div>
-              <h3 className="text-lg font-medium text-gray-800">Refer a Friend</h3>
-              <p className="text-gray-600">Refer a friend to join the platform</p>
-            </div>
-            <span className="text-yellow-500 font-bold">+3</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
-            <div>
-              <h3 className="text-lg font-medium text-gray-800">Sharing Task</h3>
-              <p className="text-gray-600">Share your achievement with your friends</p>
-            </div>
-            <span className="text-yellow-500 font-bold">+1</span>
+          <div className="flex justify-end mt-4">
+            <button
+              onClick={onRequestTaskCompletion}
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded"
+            >
+              Close
+            </button>
           </div>
         </div>
-        <div className="flex justify-end mt-4">
-          <button
-            onClick={onRequestTaskCompletion}
-            className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-
-    </Modal>
-    <Modal
+      </Modal>
+      <Modal
         isOpen={motivationalCardOpen}
         onRequestClose={onMotivationalCardClose}
-        
         className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto focus:outline-none"
-      overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
-    >
-      <div className="fixed z-10 inset-0 overflow-y-auto">
+        overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50"
+      >
+        <div className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen">
             <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
               <div className="flex items-center justify-center">
-                <svg className="h-16 w-16 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="h-16 w-16 text-yellow-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-800 mt-4">Don&rsquo;t give up!</h2>
-              <p className="text-gray-600 mt-2">You have tried so hard to achieve your goals.</p>
+              <h2 className="text-2xl font-bold text-gray-800 mt-4">
+                Don&rsquo;t give up!
+              </h2>
+              <p className="text-gray-600 mt-2">
+                You have tried so hard to achieve your goals.
+              </p>
               <div className="flex justify-between items-center mt-6">
                 <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">
                   Get More Attempts
@@ -1198,7 +1219,15 @@ export default function Wizard() {
                 className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
                 onClick={onMotivationalCardClose}
               >
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
@@ -1206,7 +1235,7 @@ export default function Wizard() {
             </div>
           </div>
         </div>
-    </Modal>
+      </Modal>
       <Modal
         isOpen={isOpenLogin}
         onRequestClose={onRequestClose}
@@ -1375,7 +1404,6 @@ export default function Wizard() {
                 />
               </div>
             )}
-
             <div className="button-container">
               {isOtpSent ? (
                 loadingmailLogin ? (

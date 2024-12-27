@@ -52,11 +52,11 @@ const parameterDetails = {
   investment_plan: {
     name: "Investment Plan",
     values: [
-      { code: 1, description: "Less than 1 Lakh ₹" },
-      { code: 2, description: "1 Lakh ₹ - 10 Lakh ₹" },
-      { code: 3, description: "10 Lakh ₹ - 50 Lakh ₹" },
-      { code: 4, description: "50 Lakh ₹ - 1 Crore ₹" },
-      { code: 5, description: "More than 1 Crore ₹" }
+      { code: 1, description: "Less than 1K USD" },
+      { code: 2, description: "1K USD - 10K USD" },
+      { code: 3, description: "10K USD - 50K USD" },
+      { code: 4, description: "50K USD – 100K USD" },
+      { code: 5, description: "More than 100K" }
     ]
   },
   work_experience: {
@@ -87,7 +87,6 @@ const parameterDetails = {
     ]
   }
 };
-
 const ParameterCard = ({ details }) => (
   <div className="bg-gray-800 rounded-lg p-6 mb-6">
     <h3 className="text-xl font-bold text-white mb-4">{details.name}</h3>

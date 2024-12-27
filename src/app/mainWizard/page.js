@@ -1,7 +1,6 @@
-// src/app/mainWizard/page.js
-
 // import Wizard from '@/components/pages/Home/Wizard';
-import FlipCountdown from '@/components/wizard-result/FlipCard';
+import Wizard from '@/components/pages/Home/Wizard';
+// import FlipCountdown from '@/components/wizard-result/FlipCard';
 export const metadata = {
   title: "Startup Business Idea Checker Online - Ideax",
   description: "Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now.",
@@ -24,7 +23,6 @@ export const metadata = {
   }
 };
 const MainWizard = () => {
-  return <FlipCountdown />;
-};       
-
+  return <Wizard />;
+};
 export default MainWizard;

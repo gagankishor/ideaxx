@@ -55,9 +55,11 @@ export default function Wizard() {
         const countries = response.data.data;
         const transformedChoices = countries.map((country, index) => ({
           id: `iaq7${String.fromCharCode(97 + index)}`, // Generates IDs like i7a, i7b, etc.
+          countryId: country.id, // Assuming country ID is available in country data
           label: country.country.toUpperCase(), // Capitalizes the country name
           value: `${country.score}`, // Assuming score is available in country data
         }));
+        console.log(transformedChoices)
         setCountriesChoices(transformedChoices);
       } catch (err) {
         console.log(err);
@@ -449,7 +451,7 @@ export default function Wizard() {
     console.log(value, step);
     setSelectedOption(value);
     setFormData((prevData) => ({ ...prevData, [`step${step + 1}`]: value }));
-    console.log(formData);
+    // console.log(formData);
     setIsNextDisabled(false);
   };
   const handleSubmit = async (event) => {
@@ -933,7 +935,7 @@ export default function Wizard() {
                       >
                         <option value="">Select Country</option>
                         {steps[step].choices.map((option) => (
-                          <option key={option.id} value={option.id}>
+                          <option key={option.id} value={option.countryId}>
                             {option.label}
                           </option>
                         ))}

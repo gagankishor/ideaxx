@@ -3,6 +3,8 @@ import useAxiosWithAuth from "@/config/useAxiosWithAuth";
 // import { Eye, Trash2 } from "lucide-react";
 // import Link from "next/link";
 import { useEffect, useState } from "react";
+// import { FaBinoculars } from "react-icons/fa";
+import { IoTrashBin } from "react-icons/io5";
 
 const ResultHistory = () => {
   const axiosInstance = useAxiosWithAuth();
@@ -84,7 +86,7 @@ const ResultHistory = () => {
                 className="absolute top-2 right-2 z-10 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg hover:bg-red-600"
                 aria-label="Delete"
               >
-                &times;
+                <IoTrashBin />
               </button>
               <div
                 className="w-full h-full bg-white rounded-t-lg overflow-hidden cursor-pointer "
@@ -93,8 +95,7 @@ const ResultHistory = () => {
                 <img
                   src="/result-page/Startup-Business-Idea.png"
                   className="w-full h-full blur-sm"
-                  alt="Wizard Result Preview"
-                />
+                  alt="Wizard Result Preview"         />
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-white/5 backdrop-blur-none opacity-100 transition-opacity duration-200 p-3">
                 <h2 className="text-lg font-medium text-gray-800 text-center line-clamp-2">
@@ -113,7 +114,7 @@ const ResultHistory = () => {
                 className="absolute top-2 right-2 z-10 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg hover:bg-red-600"
                 aria-label="Delete"
               >
-                &times;
+                 <IoTrashBin />
               </button>
               <div
                 className="w-full h-full bg-white rounded-t-lg overflow-hidden cursor-pointer "

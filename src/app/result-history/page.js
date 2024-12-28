@@ -60,12 +60,6 @@ const ResultHistory = () => {
     } catch (error) {
       console.error("Error fetching result history:", error);
     }
-    fetch(`/api/delete-result/${id}`, { method: "DELETE" })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Deleted:", data);
-      })
-      .catch((error) => console.error("Error deleting:", error));
   };
   return (
     <div className="p-4 mx-auto min-h-screen bg-gray-50">

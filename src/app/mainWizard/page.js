@@ -1,5 +1,6 @@
 // import Wizard from '@/components/pages/Home/Wizard';
-import Wizard from '@/components/pages/Home/Wizard';
+// import Wizard from '@/components/pages/Home/Wizard';
+import FlipCountdown from '@/components/wizard-result/FlipCard';
 // import FlipCountdown from '@/components/wizard-result/FlipCard';
 export const metadata = {
   title: "Startup Business Idea Checker Online - Ideax",
@@ -23,6 +24,6 @@ export const metadata = {
   }
 };
 const MainWizard = () => {
-  return <Wizard />;
+  return <FlipCountdown />;
 };
 export default MainWizard;

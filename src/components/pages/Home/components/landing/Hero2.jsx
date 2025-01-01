@@ -2,11 +2,11 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import Link from "next/link"; // Correct import for Link
 // import { motion } from "framer-motion";
 export const Hero2 = () => {
-  return (
-    <div className="hero mt-5">
+  return ( 
+    <div className="hero mb-5" style={{marginTop: "60px"}}>
       <div className="container">
         <div className="hero-block">
-          <h2 className="idea-checker-heading">
+          <h2 className="idea-checker-heading text-5xl text-black font-thin">
             AI-Powered Startup and Business Idea Validator
           </h2>
           <span className="idea-checker-subheading">
@@ -26,7 +26,7 @@ export const Hero2 = () => {
               href="/mainWizard"
             >
               Test Your Idea <FaArrowAltCircleRight />
-            </Link>
+            </Link>b 
           </div>
           <div className="text-black text-sm pt-2">Enjoy our Total Free Ai Tools</div>
         </div>

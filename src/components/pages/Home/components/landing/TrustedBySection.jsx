@@ -41,7 +41,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://www.vantompower.com/"  target="_blank">
             <img
-              src="TrustedBySection/Layer.jpg"
+              src="TrustedBySection/Layer.webp"
               alt="Vantompower logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
@@ -51,7 +51,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://pickitup.ae/" target="_blank">
             <img
-              src="TrustedBySection/up@300_rec.jpg"
+              src="TrustedBySection/up@300_rec.webp"
               alt="Pickitup logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
             />
@@ -60,7 +60,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://www.basha-impex.com/" target="_blank">
             <img
-              src="TrustedBySection/BashaExportlogos.jpg"
+              src="TrustedBySection/BashaExportlogos.webp"
               alt="basha-impex logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
             />
@@ -69,7 +69,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://360homedecor.uk/" target="_blank">
             <img
-              src="TrustedBySection/360HOMEDECORLOGO.jpg"
+              src="TrustedBySection/360HOMEDECORLOGO.webp"
               alt="360homedecor logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
@@ -79,7 +79,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://tecmicra.co.in/" target="_blank">
             <img
-              src="TrustedBySection/T.jpg"
+              src="TrustedBySection/T.webp"
               alt="tecmicra logo"
               className="company-logo rounded-lg object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }} 
@@ -89,7 +89,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://ameliyasafaris.com/" target="_blank">
             <img
-              src="TrustedBySection/ameliyasafaris.jpg"
+              src="TrustedBySection/ameliyasafaris.webp"
               alt="ameliyasafaris logo"
               className="company-logo rounded-lg object-contain my-auto mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
@@ -99,7 +99,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://apsleyandheron.com" target="_blank">
             <img
-              src="TrustedBySection/apsleyandheron.jpg"
+              src="TrustedBySection/apsleyandheron.webp"
               alt="apsleyandheron logo"
               className="company-logo rounded-lg my-auto object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
@@ -109,7 +109,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://ocsmedecin.mu" target="_blank">
             <img
-              src="TrustedBySection/ocsmedecin.jpg"
+              src="TrustedBySection/ocsmedecin.webp"
               alt="ocsmedecin logo"
               className="company-logo rounded-lg my-auto object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}
@@ -119,7 +119,7 @@ const TrustedBySection = () => {
         <SwiperSlide>
           <a href="https://unityhealth.mu/" target="_blank">
             <img
-              src="TrustedBySection/unityhealth.jpg"
+              src="TrustedBySection/unityhealth.webp"
               alt="unityhealth logo"
               className="company-logo rounded-lg my-auto object-contain mx-auto hover:scale-105 transition-transform duration-300"
               style={{ backgroundColor: "white" }}

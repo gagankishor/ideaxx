@@ -232,7 +232,7 @@ const Login = () => {
               )}
               <div className="button-container text-center flex justify-center items-center mt-5">
                 {isOtpSent ? (
-                  <button onClick={handleEmailLogin} className="btn  ">
+                  <button onClick={handleEmailLogin} className="btn">
                     Sign Up
                   </button>
                 ) : (
@@ -246,7 +246,7 @@ const Login = () => {
                     </button>
                     <LoginWithGoogle handleLogin={handleGoogleLogin} />{" "}
                     <LinkedInLoginmain handleLogin={handleLinkedInLogin}/>
-                    <SocialLogin handleLogin={handleLinkedInLogin}/>
+                    <SocialLogin/>
                   </div>
                 )}
               </div>

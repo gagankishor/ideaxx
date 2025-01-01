@@ -1,10 +1,12 @@
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 // import Link from "next/link"; // Correct import for Link
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 export const Hero = () => {
   return (
     <div className="hero">
-      {/* <div className="container">
+      <div className="container">
         <div className="hero-block">
           <h1 className="idea-checker-heading">
             AI-Powered Startup and Business Idea Validator
@@ -30,7 +32,7 @@ export const Hero = () => {
           </div>
           <div className="text-black text-sm pt-2">Enjoy our Total Free Ai Tools</div>
         </div>
-      </div> */}
+      </div>
       <div className="container hero-container2 mt-6">
         <div className="hero-block2">
           <img
@@ -40,7 +42,7 @@ export const Hero = () => {
           />
           <div className="roadmap-card">
             <img
-              src="/landing/market-score.png"
+              src="/landing/market-score.webp"
               alt="Roadmap"
               className="roadmap-card-img"
             />

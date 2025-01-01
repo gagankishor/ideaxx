@@ -22,7 +22,6 @@ import Image from "next/image";
 
 export default function Wizard() {
   const router = useRouter();
-
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({});
   const [isNextDisabled, setIsNextDisabled] = useState(false);
@@ -446,7 +445,6 @@ export default function Wizard() {
     newOtp[index] = e.target.value;
     setOtp(newOtp);
   };
-
   const handleChoiceChange = (value) => {
     console.log(value, step);
     setSelectedOption(value);
@@ -474,13 +472,15 @@ export default function Wizard() {
     } else {
       setLoading(true);
       const payloadFormData = new FormData();
-      payloadFormData.append("phase1", formData.step1 || "");
-      payloadFormData.append("phase2", formData.step2 || "");
-      payloadFormData.append("phase3", formData.step3 || "");
-      payloadFormData.append("phase4", formData.step4 || "");
-      payloadFormData.append("phase5", formData.step5 || "");
-      payloadFormData.append("phase6", formData.step6 || "");
-      payloadFormData.append("phase7", formData.step7 || "5");
+      payloadFormData.append("idea_stage", formData.step1 || "");
+        payloadFormData.append("work_status", formData.step2 || "");
+        payloadFormData.append("project_type", formData.step3 || "");
+        payloadFormData.append("job_relation", formData.step4 || "");
+        payloadFormData.append("investment_plan", formData.step5 || "");
+        payloadFormData.append("work_experience", formData.step6 || "");
+        payloadFormData.append("project_location", formData.step7 || "5");
+        payloadFormData.append("daily_hours", formData.step8 || "5");
+        payloadFormData.append("timeframe", formData.step9 || "5");
       payloadFormData.append("idea_description", formData.description || "");
       payloadFormData.append("idea_name", "Google");
       const endpoint = `${RestAPI}/wizard`;
@@ -508,7 +508,6 @@ export default function Wizard() {
           //   pathname: '/wizard-result',
           //   query: { data: JSON.stringify(data.data) }, // Encode the data as a string
           // });
-
           // Swal.fire({
           //   title: "Success",
           //   text: response.data.message,
@@ -558,13 +557,15 @@ export default function Wizard() {
     setIsOpenLogin(false);
     setLoading(true);
     const payloadFormData = new FormData();
-    payloadFormData.append("phase1", formData.step1 || "");
-    payloadFormData.append("phase2", formData.step2 || "");
-    payloadFormData.append("phase3", formData.step3 || "");
-    payloadFormData.append("phase4", formData.step4 || "");
-    payloadFormData.append("phase5", formData.step5 || "");
-    payloadFormData.append("phase6", formData.step6 || "");
-    payloadFormData.append("phase7", formData.step7 || "5");
+    payloadFormData.append("idea_stage", formData.step1 || "");
+        payloadFormData.append("work_status", formData.step2 || "");
+        payloadFormData.append("project_type", formData.step3 || "");
+        payloadFormData.append("job_relation", formData.step4 || "");
+        payloadFormData.append("investment_plan", formData.step5 || "");
+        payloadFormData.append("work_experience", formData.step6 || "");
+        payloadFormData.append("project_location", formData.step7 || "5");
+        payloadFormData.append("daily_hours", formData.step8 || "5");
+        payloadFormData.append("timeframe", formData.step9 || "5");
     payloadFormData.append("idea_description", formData.description || "");
     payloadFormData.append("idea_name", "Google");
     const endpoint = `${RestAPI}/wizard`;
@@ -585,9 +586,7 @@ export default function Wizard() {
           "wizardResultData",
           JSON.stringify(response.data.data)
         );
-
         router.push("/wizard-result");
-
         // router.push({
         //   pathname: '/wizard-result',
         //   query: { data: JSON.stringify(data.data) },
@@ -671,13 +670,15 @@ export default function Wizard() {
         closeEmailLoginModal();
         setLoading(true);
         const payloadFormData = new FormData();
-        payloadFormData.append("phase1", formData.step1 || "");
-        payloadFormData.append("phase2", formData.step2 || "");
-        payloadFormData.append("phase3", formData.step3 || "");
-        payloadFormData.append("phase4", formData.step4 || "");
-        payloadFormData.append("phase5", formData.step5 || "");
-        payloadFormData.append("phase6", formData.step6 || "");
-        payloadFormData.append("phase7", formData.step7 || "5");
+        payloadFormData.append("idea_stage", formData.step1 || "");
+        payloadFormData.append("work_status", formData.step2 || "");
+        payloadFormData.append("project_type", formData.step3 || "");
+        payloadFormData.append("job_relation", formData.step4 || "");
+        payloadFormData.append("investment_plan", formData.step5 || "");
+        payloadFormData.append("work_experience", formData.step6 || "");
+        payloadFormData.append("project_location", formData.step7 || "5");
+        payloadFormData.append("daily_hours", formData.step8 || "5");
+        payloadFormData.append("timeframe", formData.step9 || "5");
         payloadFormData.append("idea_description", formData.description || "");
         payloadFormData.append("idea_name", "Google");
         const endpoint = `${RestAPI}/wizard`;
@@ -700,7 +701,6 @@ export default function Wizard() {
               JSON.stringify(response.data.data)
             );
             router.push("/wizard-result");
-
             // router.push({
             //   pathname: '/wizard-result',
             //   query: { data: JSON.stringify(data.data) },
@@ -810,7 +810,7 @@ export default function Wizard() {
     setCanResend(false);
     await handleSendOtp();
     setResendOTPLodaing(false);
-  };
+  }; 
   return (
     <div className="wizard">
       <div className="container">

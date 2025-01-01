@@ -3,18 +3,19 @@ import axios from 'axios';
 import { AuthContext } from '@/context/AuthContext';
 import PropTypes from 'prop-types';
 import { RestAPI } from '@/config/Api';
-const FACEBOOK_APP_ID = "2344916755863155";
+const FACEBOOK_APP_ID = "954525033296808";
+
 const FB_SDK_URL = 'https://connect.facebook.net/en_US/sdk.js';
 const FB_SDK_VERSION = 'v18.0';
 const SocialLogin = ({ handleLogin, onError }) => {
   const { isAuthenticated, login } = useContext(AuthContext);
   const [loginStatus, setLoginStatus] = useState(isAuthenticated);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [isFBSDKLoaded, setIsFBSDKLoaded] = useState(false);
   const handleError = useCallback((errorMessage) => {
     const formattedError = errorMessage || 'An unexpected error occurred';
-    setError(formattedError);
+    // setError(formattedError);
     onError?.(formattedError);
   }, [onError]);
   const loadFBSDK = useCallback(() => {
@@ -89,7 +90,7 @@ const SocialLogin = ({ handleLogin, onError }) => {
     }
     try {
       setLoading(true);
-      setError(null);
+      // setError(null);
       const loginResponse = await new Promise((resolve) => {
         window.FB.login(resolve, {
           scope,
@@ -130,11 +131,11 @@ const SocialLogin = ({ handleLogin, onError }) => {
   if (loginStatus) return null;
   return (
     <div className="space-y-4">
-      {error && (
+      {/* {error && (
         <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded">
           {error}
         </div>
-      )}
+      )} */}
       {loading ? (
         <div className="flex justify-center">
           <div className="w-6 h-6 border-2 border-primary rounded-full animate-spin" />

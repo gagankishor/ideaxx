@@ -98,7 +98,7 @@ const ResultHistory = () => {
               </div>
             </article>
           ))}
-          {resultHistory?.map((result) => (
+          {/* {resultHistory?.map((result) => (
             <article
               key={result.id}
               className="relative bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow duration-300 hover:scale-105"
@@ -126,7 +126,7 @@ const ResultHistory = () => {
                 </h2>
               </div>
             </article>
-          ))}
+          ))} */}
         </section>
       </div>
     </div>

@@ -8,6 +8,12 @@ import CoreSolutionsSection from "./components/landing/CoreSolutionsSection";
 import CardSlider from "@/components/CardSlider";
 import BlockchainTechnology from "./components/landing/BlockchainTechnology";
 import HeroSection from "./components/landing/HeroSection";
+import AwardsSection from "./components/landing/AwardsSection";
+import ImpactSection from "./components/landing/ImpactSection";
+// import { FaArrowAltCircleRight } from "react-icons/fa";
+// import Link from "next/link";
+import TestimonialsSection from "./components/landing/TestimonialsSection";
+import { Hero2 } from "./components/landing/Hero2";
 
 export default function Home() {
   return (
@@ -31,6 +37,12 @@ export default function Home() {
       <TrustedBySection />
       <CoreSolutionsSection />
       <ProductLineupSection />
+      <ImpactSection />
+      <Hero2/>
+      <AwardsSection />
+      {/* <ImpactSection/> */}
+      <TestimonialsSection/>
+      
       {/* <div className="home-main-contaner">
         <Validation />
         <Features />

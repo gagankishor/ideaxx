@@ -229,7 +229,7 @@ export default function Footer() {
               Business solutions platform powered by Solana network{" "}
             </h4>
             <Link href="https://solana.com/" className="hidden md:block">
-              <img src="/landing/image.png" width={25} alt="Solana logo" />
+              <img src="/landing/image.webp" width={25} alt="Solana logo" />
             </Link>
           </div>
           <div className="btns-container">

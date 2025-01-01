@@ -98,7 +98,7 @@ const TrustBoxWidget = () => {
           rel="noopener noreferrer"
         >
           <img
-            src="/award-section/solscan-removebg-preview.png"
+            src="/award-section/solscan-removebg-preview.webp"
             className=" w-40 mb-4"
             alt="solscan logo"
           />
@@ -121,7 +121,7 @@ const TrustBoxWidget = () => {
         >
           <img
             // src="https://images.seeklogo.com/logo-png/52/1/dex-screener-logo-png_seeklogo-527276.png?v=638686514610000000"
-            src="/award-section/dexscreener.png"
+            src="/award-section/dexscreener.webp"
 
             alt="dexscreener logo"
             className=" w-40 "
@@ -142,7 +142,7 @@ const TrustBoxWidget = () => {
           rel="noopener noreferrer"
         >
           <img
-            src="/award-section/cover-dextools-removebg-preview.png"
+            src="/award-section/cover-dextools-removebg-preview.webp"
             alt="dextools logo"
             className=" w-40"
           />
@@ -162,7 +162,7 @@ const TrustBoxWidget = () => {
           rel="noopener noreferrer"
         >
           <img
-            src="/award-section/Layer.png"
+            src="/award-section/Layer.webp"
             alt="trustpilot logo"
             className=" w-40"
           />

@@ -4,10 +4,10 @@ import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import Link from "next/link";
-import ImpactSection from "./ImpactSection";
-import AwardsSection from "./AwardsSection";
-import { motion } from "framer-motion";
-import { Hero2 } from "./Hero2";
+// import ImpactSection from "./ImpactSection";
+// import AwardsSection from "./AwardsSection";
+// import { motion } from "framer-motion";
+// import { Hero2 } from "./Hero2";
 
 const ProductLineupSection = () => {
   const containerStyle = {
@@ -37,7 +37,7 @@ const ProductLineupSection = () => {
             <div className="product-box">
               <img
                 // src="/darksection1/Integrity.webp"
-                src="/darksection1/box_Integrity.jpg"
+                src="/darksection1/box_Integrity.webp"
                 alt="Product"
                 className="product-image" 
               />
@@ -50,7 +50,7 @@ const ProductLineupSection = () => {
             <div className="product-box black-background">
               <img
                 // src="/darksection1/innovation.webp"
-                src="/darksection1/box_Innovation.jpg"
+                src="/darksection1/box_Innovation.webp"
                 alt="Product"
                 className="product-image"
               />
@@ -62,7 +62,7 @@ const ProductLineupSection = () => {
             </div>
             <div className="product-box">
               <img
-                src="/darksection1/box_Security.jpg"
+                src="/darksection1/box_Security.webp"
                 alt="Security"
                 className="product-image"
               />
@@ -74,7 +74,7 @@ const ProductLineupSection = () => {
             </div>
             <div className="product-box">
               <img
-                src="/darksection1/box_Efficiency.jpg"
+                src="/darksection1/box_Efficiency.webp"
                 alt="Efficiency"
                 className="product-image"
               />
@@ -108,7 +108,7 @@ const ProductLineupSection = () => {
         <div className=" flex flex-row items-center justify-center">
           <div className=" flex flex-col justify-center items-center">
             <img
-              src="landing/validetionImage.png"
+              src="landing/validetionImage.webp"
               alt="Ideax AI"
               style={{ width: "48%", margin: "" }}
             />
@@ -127,7 +127,7 @@ const ProductLineupSection = () => {
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/2.jpg"
+              src="/home-platform/2.webp"
               className="w-full"
               alt="Image 1"
             />
@@ -151,7 +151,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/new_page_home_mob-2.jpg"
+              src="/home-platform/new_page_home_mob-2.webp"
               className="w-full"
               alt="Image 2"
             />
@@ -177,7 +177,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/1.jpg"
+              src="/home-platform/1.webp"
               className="w-full"
               alt="Image 3"
             />
@@ -203,7 +203,7 @@ const ProductLineupSection = () => {
           </div>
           <div className="relative p-[1px] md:w-[48%]">
             <img
-              src="/home-platform/webpafe_landscape_sec_n_mob_2.jpg"
+              src="/home-platform/webpafe_landscape_sec_n_mob_2.webp"
               className="w-full"
               alt="image Mobile"
             />
@@ -211,7 +211,7 @@ const ProductLineupSection = () => {
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
-                    src="/main-icon/idea3D.png"
+                    src="/main-icon/idea3D.webp"
                     alt="Team"
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
@@ -318,158 +318,6 @@ const ProductLineupSection = () => {
             </div>
           </div>
         </div>
-      </div>
-      <ImpactSection />
-      <Hero2/>
-      <AwardsSection />
-      {/* <ImpactSection/> */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          background: "linear-gradient(180deg, #341E81 0%, #341E81 100%)",
-          padding: "0px 30px 50px",
-          color: "white",
-        }}
-      >
-        <div style={{ margin: "40px 5%", maxWidth: "1200px" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "2.75rem",
-                fontWeight: "200",
-                color: "white",
-                lineHeight: "110%",
-                textAlign: "center",
-                marginBottom: "20px",
-              }}
-            >
-              Deliver your best work with{" "}
-              <span style={{ fontWeight: "600" }}>IDX</span>
-            </h2>
-
-            <div className="btns-container">
-              <Link
-                className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-                style={{ fontSize: "14px" }}
-                href="/mainWizard"
-              >
-                Test Your Idea <FaArrowAltCircleRight />
-              </Link>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-              }}
-              className="mt-10"
-            >
-              <img
-                src="darksection1/image.png"
-                style={{ width: "100%", maxWidth: "1000px", height: "auto" }}
-                alt="ideax bottom"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="mt-8">
-          <h3 className="text-3xl font-semibold text-center mb-8 text-white">
-            What Our Clients Say About Us
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
-            {[
-              {
-                quote: "IDEAX has completely transformed the way we efficiently manage and grow our business.",
-                author: "Ashish Maan",
-                role: "Startup Founder",
-                image: "/landing/1711453307385.jpg", // Replace with actual image URLs
-                company: "BizCorp",
-              },
-              {
-                quote:
-                  "The AI features have significantly improved our strategic decision-making process overall.",
-                author: "Vikas Puri",
-                role: "JMD EXPORTS M. D.",
-
-                image: "/landing/efacd3a2-633e-4ea0-8813-21e574eb1291.jpg",
-                company: "TechStart",
-              },
-              {
-                quote:
-                  "Thanks to IDEAX, I found the perfect business idea that I could implement right away",
-                author: "Eyad Abdulla",
-                role: "Diamond GVT Ceramic",
-                image: "/landing/ventom.jpeg",
-                company: "Visionary Inc.",
-              },
-              {
-                quote:
-                  "I appreciate the tools for managing cash flow; they make financial planning so much easier!",
-                author: "Ayman Basha",
-                role: "GM of BASHA IMPEX",
-                image: "/landing/AymanBasha.jpeg",
-                company: "ShopEase",
-              },
-            ].map((testimonial, index) => (
-              <div
-                key={index}
-                className=" trstomonialColor max-w-sm mx-auto shadow-md rounded-lg bg-[#ffffffcb] text-black p-8 flex flex-col items-center relative mt-10"
-              >
-                <div className="w-20 h-20 mb-4 rounded-full overflow-hidden absolute top-[-15%] ">
-                  <img
-                    src={testimonial.image}
-                    // src='https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png'
-                    alt={`${testimonial.author}'s photo`}
-                    className="w-full h-full object-cover "
-                  />
-                </div>
-                <div className="text-center mt-5">
-                  <h4 className="font-semibold text-white text-lg">
-                    {testimonial.author}
-                  </h4>
-                  <p className="text-sm text-white mb-4">{testimonial.role}</p>
-                  <p className="text-sm text-white italic">
-                    “{testimonial.quote}”
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="bg-black text-center py-10 px-4 sm:py-16">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">
-          <motion.span
-            className="text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Start validating{" "}
-          </motion.span>
-          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
-            Start validating
-          </span> */}
-          your business idea with IDX
-        </h2>
-        <div className="btns-container mt-10 ">
-          <Link
-            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto"
-            style={{ fontSize: "14px", margin: "auto" }}
-            href="/mainWizard"
-          >
-            Test Your Idea <FaArrowAltCircleRight />
-          </Link>
-        </div>
-        <div className="pt-4 text-white">Total Free!</div>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <img src="/ideaxLogo/idxSolanaLogo.png" alt="Solana Logo" className="h-28" />
+        <img src="/ideaxLogo/idxSolanaLogo.webp" alt="Solana Logo" className="h-28" />
         {/* <img src="/landing/image.png" alt="Solana Logo" className="h-14" /> */}
       </motion.div>
       <motion.p

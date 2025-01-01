@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const testimonials = [
   {
     videoSrc: "BelloAnimationsVideo.mp4",
-    image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.jpeg",
+    image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.webp",
     quote:
       "The tools provided a significant breakthrough in streamlining our operations and achieving key milestones.",
     name: "Mr. Taki Kedo",
@@ -32,7 +32,7 @@ const testimonials = [
       "Implementing these solutions transformed our business approach and maximized growth potential.",
     name: "Eyad Abdulla",
     title: "COO, Vantom Power",
-    image:"/landing/ventom.jpeg",
+    image:"/landing/ventom.webp",
 
     stats: [
       {
@@ -58,7 +58,7 @@ const testimonials = [
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Taki Kaddo",
     title: "CTO, Pick It Up",
-    image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.jpeg",
+    image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.webp",
     stats: [
       {
         amount: "300K",

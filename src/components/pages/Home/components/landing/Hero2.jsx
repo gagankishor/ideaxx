@@ -26,7 +26,7 @@ export const Hero2 = () => {
               href="/mainWizard"
             >
               Test Your Idea <FaArrowAltCircleRight />
-            </Link>b 
+            </Link>
           </div>
           <div className="text-black text-sm pt-2">Enjoy our Total Free Ai Tools</div>
         </div>

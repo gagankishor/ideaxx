@@ -145,22 +145,22 @@ const ImpactSection = () => {
               {testimonials.map((testimonial, index) => (
                 <div className="stat-item relative" key={index}>
                   <div className="absolute w-full h-full  lg:block">
-                    {testimonial.imageSrc ? (
-                      <img
-                        src={testimonial.imageSrc}
-                        alt="360 home decor"
+                  {testimonial.imageSrc ? (
+                    <img
+                      src={testimonial.imageSrc}
+                      alt="360 home decor"
                         className="w-full object-cover z-0"
-                      />
-                    ) : (
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        src={testimonial.videoSrc}
+                    />
+                  ) : (
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      src={testimonial.videoSrc}
                         className="w-full h-full object-cover z-0"
-                      />
-                    )}
-                  </div>
+                    />
+                  )}
+                </div>
                   <div className="relative z-10 p-14 bg-opacity-75  bg-black h-full md:bg-opacity-35">
                     <div className="flex flex-col md:flex-row items-start h-full">
                       <div className="md:w-2/3 flex flex-col justify-end space-y-2 h-full">

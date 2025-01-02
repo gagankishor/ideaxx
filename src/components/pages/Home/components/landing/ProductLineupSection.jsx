@@ -105,23 +105,23 @@ const ProductLineupSection = () => {
           validation and a fully integrated online team that executes their
           vision.
         </p>
-        <div className=" flex flex-row items-center justify-center">
-          <div className=" flex flex-col justify-center items-center">
-            <img
-              src="landing/validetionImage.webp"
-              alt="Ideax AI"
-              style={{ width: "48%", margin: "" }}
-            />
-            <p className=" text-center text-white max-w-[40%]">
-              Get your idea certified and boost its credibility instantly
-            </p>
-          </div>
-          <img
-            src="landing/ideas.webp"
-            alt="Ideax AI"
-            style={{ width: "40%", margin: "" }}
-          />
-        </div>
+        <div className="flex flex-col md:flex-row items-center justify-center w-full p-4 gap-8">
+      <div className="flex flex-col justify-center items-center w-full md:w-1/2">
+        <img
+          src="landing/validetionImage.webp"
+          alt="Ideax AI"
+          className="w-4/5 md:w-1/2 mb-4"
+        />
+        <p className="text-center text-white w-full md:w-2/3 lg:w-1/2">
+          Get your idea certified and boost its credibility instantly
+        </p>
+      </div>
+      <img
+        src="landing/ideas.webp"
+        alt="Ideax AI"
+        className="w-4/5 md:w-2/5"
+      />
+    </div>
         <p className="text-white pt-14  text-2xl max-w-5xl mx-auto">
         Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on traditional computing devices!</p>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">

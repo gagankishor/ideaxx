@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 export const Hero = () => {
   return (
-    <div className="hero" style={{marginTop: "60px"}}>
+    <div className="hero hidden lg:block" style={{marginTop: "60px"}}>
       {/* <div className="container">
         <div className="hero-block">
           <h1 className="idea-checker-heading">

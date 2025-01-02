@@ -181,6 +181,8 @@ const CoreSolutionsSection = () => {
       sliderRef.current.slickPrev();
     }
   };
+  const getCenterIndex = (slidesToShow) => Math.floor(slidesToShow / 2);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -190,7 +192,8 @@ const CoreSolutionsSection = () => {
     centerMode: true,
     centerPadding: "0px",
     afterChange: (current) => {
-      const centerIndex = Math.floor(3 / 2); // For 5 visible slides, center is index 2
+      const slidesToShow = window.innerWidth <= 480 ? 1 : 3;
+      const centerIndex = getCenterIndex(slidesToShow);
       setSelectedIndex(current + centerIndex);
     },
     nextArrow: (
@@ -224,7 +227,9 @@ const CoreSolutionsSection = () => {
   };
   React.useEffect(() => {
     if (sliderRef.current) {
-      sliderRef.current.slickGoTo(selectedIndex - Math.floor(3 / 2));
+      const slidesToShow = window.innerWidth <= 480 ? 1 : 3;
+      const centerIndex = getCenterIndex(slidesToShow);
+      sliderRef.current.slickGoTo(selectedIndex - centerIndex);
     }
   }, [selectedIndex]);
   const selectedIcon = icons[selectedIndex % icons.length].label; // Handle wrap-around indexing

@@ -1788,11 +1788,11 @@ table tr:nth-child(even) {
     margin: 0;
 }
 .idea-checker-heading {
-    background-color: #111111;
+    /* background-color: #ffffff; */
     word-wrap: break-word;
     box-sizing: border-box;
     overflow: hidden;
-    color: white;
+    /* color: rgb(0, 0, 0); */
     padding: 20px; 
     width: 100%; /* Ensure it doesn't exceed container width */
 }

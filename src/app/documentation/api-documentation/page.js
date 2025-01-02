@@ -4,7 +4,6 @@ import Breadcrumb from "@/components/pages/document/Breadcrumb";
 import PaginationButtons from "@/components/pages/document/PaginationButtons";
 import ParameterReference from "@/components/pages/document/ParameterReference";
 import TableOfContents from "@/components/pages/document/TableOfContents";
-
 const APIDocumentation = () => {
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -29,7 +28,6 @@ const APIDocumentation = () => {
       ],
     },
   ];
-
   return (
     <div className="min-h-screen flex bg-[#121212] text-white">
       <div className="flex-1 p-8 max-w-3xl overflow-y-scroll">
@@ -47,7 +45,7 @@ const APIDocumentation = () => {
           <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Business Plan Analysis API
           </h2>
-          <table className="w-full border border-gray-600 text-left">
+          <table className="w-full border border-gray-600 text-left overflow-scroll">
             <tbody>
               <tr>
                 <th className="p-4 bg-[#1E1E1E]">Endpoint</th>
@@ -69,7 +67,7 @@ const APIDocumentation = () => {
               </tr>
             </tbody>
           </table>
-          <section id="RequestParameters" className="pt-16">
+          <section id="RequestParameters" className="pt-16 overflow-scroll">
             <h3 className="text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
               Request Parameters
             </h3>
@@ -80,10 +78,10 @@ const APIDocumentation = () => {
             {/* <div className="w-full overflow-x-auto shadow-lg rounded-lg"></div> */}
           </section>
         </section>
-        <section id="ParameterReference" className="pt-16">
+        <section id="ParameterReference" className="pt-16 overflow-scroll">
           <ParameterReference />
         </section>
-        <section className="mb-12h">
+        <section className="mb-12h overflow-scroll max-w-screen">
           <section id="ExampleRequest" className="pt-16">
             <h3 className="text-3xl text-left font-semibold mb-4 text-[#C0C0C0]">
               Example Request
@@ -282,12 +280,12 @@ const APIDocumentation = () => {
             <h3 className="text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
               Example Response
             </h3>
-            <div className="overflow-hidden rounded-lg border bg-white border-gray-200">
+            <div className="overflow-hidden rounded-lg border bg-white ">
               <iframe
                 src="https://idxsolana.io/api/widget/fe3492f0"
                 width="100%"
                 height="400"
-                className="w-full h-96"
+                className="w-56 lg:w-full  h-96"
                 title="Example Response Widget"
                 frameBorder="0"
                 loading="lazy"

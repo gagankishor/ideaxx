@@ -1,8 +1,8 @@
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 // import Link from "next/link"; // Correct import for Link
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+// import Link from "next/link";
+// import { FaArrowAltCircleRight } from "react-icons/fa";
 export const Hero = () => {
   return (
     <div className="hero" style={{marginTop: "60px"}}>

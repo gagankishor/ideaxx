@@ -197,9 +197,9 @@ const ImpactSection = () => {
                             />
 
                             <div>
-                              <h4 className="text-xl font-bold">
+                              <span className="text-xl font-bold">
                                 {stat.amount}
-                              </h4>
+                              </span>
                               <p className="text-sm text-left">
                                 {stat.description}
                               </p>

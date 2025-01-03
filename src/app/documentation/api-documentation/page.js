@@ -29,61 +29,104 @@ const APIDocumentation = () => {
     },
   ];
   return (
-    <div className="min-h-screen flex bg-[#121212] text-white">
-      <div className="flex-1 p-8 max-w-3xl overflow-y-scroll">
+    <div className="min-h-screen flex flex-col md:flex-row bg-[#121212] text-white max-w-screen overflow-x-scroll scrollbar-hover">
+      <div className="flex-1 p-3 md:p-8 max-w-full md:max-w-3xl  scrollbar-hover">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
             { label: "API Documentation", href: "/api-documentation" },
           ]}
         />
-        <h1 className="text-6xl font-bold mb-6 text-[#C0C0C0]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#C0C0C0]">
           API Documentation
         </h1>
 
         <section className="mb-12">
-          <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Business Plan Analysis API
           </h2>
-          <table className="w-full border border-gray-600 text-left overflow-scroll">
-            <tbody>
-              <tr>
-                <th className="p-4 bg-[#1E1E1E]">Endpoint</th>
-                <td className="p-4">
-                  POST <code>https://ideax.in/api/get-idea-result</code>
-                </td>
-              </tr>
-              <tr>
-                <th className="p-4 bg-[#1E1E1E]">Description</th>
-                <td className="p-4 bg-[#121212]">
-                  This API analyzes user inputs about their business idea,
-                  circumstances, and plans to generate a comprehensive business
-                  plan analysis and success prediction.
-                </td>
-              </tr>
-              <tr>
-                <th className="p-4 bg-[#1E1E1E]">Authentication</th>
-                <td className="p-4">Authentication is not required.</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="w-full max-w-4xl mx-auto">
+      {/* Mobile-first approach with card-like view */}
+      <div className="block md:hidden">
+        <div className="space-y-4">
+          {/* Endpoint Section */}
+          <div className="bg-gray-900 rounded-lg p-4">
+            <div className="font-bold text-gray-200 mb-2">Endpoint</div>
+            <div className="bg-gray-800 p-2 rounded">
+              <span className="text-blue-500 font-mono">POST</span>
+              <code className="block mt-1 text-sm overflow-x-auto">
+                https://ideax.in/api/get-idea-result
+              </code>
+            </div>
+          </div>
+
+          {/* Description Section */}
+          <div className="bg-gray-900 rounded-lg p-4">
+            <div className="font-bold text-gray-200 mb-2">Description</div>
+            <div className="bg-gray-800 p-2 rounded text-sm">
+              This API analyzes user inputs about their business idea,
+              circumstances, and plans to generate a comprehensive business
+              plan analysis and success prediction.
+            </div>
+          </div>
+
+          {/* Authentication Section */}
+          <div className="bg-gray-900 rounded-lg p-4">
+            <div className="font-bold text-gray-200 mb-2">Authentication</div>
+            <div className="bg-gray-800 p-2 rounded text-sm">
+              Authentication is not required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Traditional table view for larger screens */}
+      <div className="hidden md:block overflow-hidden rounded-lg">
+        <table className="w-full border-collapse bg-gray-900">
+          <tbody>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 bg-gray-800 text-left w-1/4">Endpoint</th>
+              <td className="p-4">
+                <span className="text-blue-500 font-mono">POST</span>{' '}
+                <code className="bg-gray-800 px-2 py-1 rounded">
+                  https://ideax.in/api/get-idea-result
+                </code>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 bg-gray-800 text-left">Description</th>
+              <td className="p-4 bg-gray-700">
+                This API analyzes user inputs about their business idea,
+                circumstances, and plans to generate a comprehensive business
+                plan analysis and success prediction.
+              </td>
+            </tr>
+            <tr>
+              <th className="p-4 bg-gray-800 text-left">Authentication</th>
+              <td className="p-4">
+                Authentication is not required.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
           <section id="RequestParameters" className="pt-16 overflow-scroll">
-            <h3 className="text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
               Request Parameters
             </h3>
-            <p className=" text-gray-300 text-left text-lg">
+            <p className="text-gray-300 text-left text-lg">
               All numeric parameters must be integers. The request body should
               be a JSON object containing:
             </p>
-            {/* <div className="w-full overflow-x-auto shadow-lg rounded-lg"></div> */}
           </section>
         </section>
         <section id="ParameterReference" className="pt-16 overflow-scroll">
           <ParameterReference />
         </section>
-        <section className="mb-12h overflow-scroll max-w-screen">
+        <section className="mb-12 overflow-scroll max-w-screen">
           <section id="ExampleRequest" className="pt-16">
-            <h3 className="text-3xl text-left font-semibold mb-4 text-[#C0C0C0]">
+            <h3 className="text-2xl md:text-3xl text-left font-semibold mb-4 text-[#C0C0C0]">
               Example Request
             </h3>
             <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
@@ -121,13 +164,13 @@ const APIDocumentation = () => {
             </pre>
           </section>
           <section id="ResponseFormat" className="pt-16">
-            <h3 className="text-3xl text-left font-semibold mb-4 text-[#C0C0C0]">
+            <h3 className="text-2xl md:text-3xl text-left font-semibold mb-4 text-[#C0C0C0]">
               Response Format
             </h3>
-            <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
+            <h4 className="text-xl md:text-2xl font-semibold mb-2 text-[#C0C0C0]">
               Success Response (200 OK)
             </h4>
-            <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
+            <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
               {`{
               "status": 200,
               "error": false,
@@ -154,10 +197,10 @@ const APIDocumentation = () => {
                 Copy Code
               </button>
             </pre>
-            <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
+            <h4 className="text-xl md:text-2xl font-semibold mb-2 text-[#C0C0C0]">
               Validation Error Response (400)
             </h4>
-            <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
+            <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
               {`{
               "status": 400,
               "error": true,
@@ -180,7 +223,7 @@ const APIDocumentation = () => {
             </pre>
           </section>
           <section>
-            <h4 className="text-2xl font-semibold mb-2 text-[#C0C0C0]">
+            <h4 className="text-xl md:text-2xl font-semibold mb-2 text-[#C0C0C0]">
               Server Error (500)
             </h4>
             <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
@@ -206,55 +249,111 @@ const APIDocumentation = () => {
             </pre>
           </section>
         </section>
-        <section className="mb-12 ">
-          <h2 className="text-4xl font-semibold mb-4 text-[#C0C0C0]">
+        <section className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[#C0C0C0]">
             Embeddable Widget API
           </h2>
-          <table className="w-full mb-8 border border-gray-600 text-left">
-            <tbody>
-              <tr>
-                <th className="p-4 bg-[#1E1E1E]">Base URL</th>
-                <td className="p-4 ">
-                  <code>https://ideax.in/api/widget/:uniqueKey</code>
-                </td>
-              </tr>
-              <tr>
-                <th className="p-4 bg-[#1E1E1E]">Endpoint</th>
-                <td className="p-4 bg-[#121212]">
-                  GET <code>/api/widget/:uniqueKey</code>
-                </td>
-              </tr>
-              <tr>
-                <th className="p-4 bg-[#1E1E1E]">Response</th>
-                <td className="p-4 ">
-                  The API returns an HTML response that includes:
-                  <ul className="list-disc ml-6 mt-2">
-                    <li>
-                      <strong>Logo:</strong> A logo image hosted at{" "}
-                      <code>https://ideax.in/logo.png</code>.
-                    </li>
-                    <li>
-                      <strong>Validation Status:</strong> A message confirming
-                      the validation status.
-                    </li>
-                    <li>
-                      <strong>Success Percentage:</strong> The success
-                      percentage associated with the unique key.
-                    </li>
-                    <li>
-                      <strong>Trustpilot Widget:</strong> An embedded Trustpilot
-                      widget.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="w-full max-w-4xl mx-auto">
+      {/* Mobile-first approach with a card-like view for small screens */}
+      <div className="block md:hidden">
+        <div className="space-y-4">
+          {/* Base URL Section */}
+          <div className="bg-gray-900 rounded-lg p-4">
+            <div className="font-bold text-gray-200 mb-2">Base URL</div>
+            <code className="block bg-gray-800 p-2 rounded text-sm overflow-x-auto scrollbar-hover">
+              https://ideax.in/api/widget/:uniqueKey
+            </code>
+          </div>
+
+          {/* Endpoint Section */}
+          <div className="bg-gray-900 rounded-lg p-4">
+            <div className="font-bold text-gray-200 mb-2">Endpoint</div>
+            <div className="bg-gray-800 p-2 rounded">
+              <span className="text-green-500 font-mono">GET</span>
+              <code className="block mt-1 text-sm overflow-x-auto">
+                /api/widget/:uniqueKey
+              </code>
+            </div>
+          </div>
+
+          {/* Response Section */}
+          <div className="bg-gray-900 rounded-lg p-4">
+            <div className="font-bold text-gray-200 mb-2">Response</div>
+            <div className="bg-gray-800  p-2 rounded">
+              <p className="text-sm text-gray-200 text-left mb-2">The API returns an HTML response that includes:</p>
+              <ul className="list-disc ml-4 space-y-2 text-sm">
+                <li>
+                  <span className="font-semibold">Logo:</span> A logo image hosted at{' '}
+                  <code className="bg-gray-700 px-1 rounded">https://ideax.in/logo.png</code>
+                </li>
+                <li>
+                  <span className="font-semibold">Validation Status:</span> A message confirming the validation status
+                </li>
+                <li>
+                  <span className="font-semibold">Success Percentage:</span> The success percentage associated with the unique key
+                </li>
+                <li>
+                  <span className="font-semibold">Trustpilot Widget:</span> An embedded Trustpilot widget
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Traditional table view for larger screens */}
+      <div className="hidden md:block overflow-hidden rounded-lg">
+        <table className="w-full border-collapse bg-gray-900">
+          <tbody>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 bg-gray-800 text-left w-1/4">Base URL</th>
+              <td className="p-4">
+                <code className="bg-gray-800 px-2 py-1 rounded">
+                  https://ideax.in/api/widget/:uniqueKey
+                </code>
+              </td>
+            </tr>
+            <tr className="border-b border-gray-700">
+              <th className="p-4 bg-gray-800 text-left">Endpoint</th>
+              <td className="p-4">
+                <span className="text-green-500 font-mono">GET</span>{' '}
+                <code className="bg-gray-800 px-2 py-1 rounded">
+                  /api/widget/:uniqueKey
+                </code>
+              </td>
+            </tr>
+            <tr>
+              <th className="p-4 bg-gray-800 text-left align-top">Response</th>
+              <td className="p-4">
+                <p className="mb-2">The API returns an HTML response that includes:</p>
+                <ul className="list-disc ml-6 space-y-2">
+                  <li>
+                    <span className="font-semibold">Logo:</span> A logo image hosted at{' '}
+                    <code className="bg-gray-800 px-2 py-1 rounded">
+                      https://ideax.in/logo.png
+                    </code>
+                  </li>
+                  <li>
+                    <span className="font-semibold">Validation Status:</span> A message confirming the validation status
+                  </li>
+                  <li>
+                    <span className="font-semibold">Success Percentage:</span> The success percentage associated with the unique key
+                  </li>
+                  <li>
+                    <span className="font-semibold">Trustpilot Widget:</span> An embedded Trustpilot widget
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
           <section id="ExampleRequest">
-            <h3 className="text-3xl  text-left font-semibold pt-16 text-[#C0C0C0]">
+            <h3 className="text-2xl md:text-3xl text-left font-semibold pt-16 text-[#C0C0C0]">
               Example Request
             </h3>
-            <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative">
+            <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
               {`<iframe
               src="https://idxsolana.io/api/widget/abc123"
               width="300"
@@ -276,16 +375,16 @@ const APIDocumentation = () => {
               </button>
             </pre>
           </section>
-          <section id="ExampleResponse" className="pt-16  rounded-lg shadow-md">
-            <h3 className="text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
+          <section id="ExampleResponse" className="pt-16 rounded-lg shadow-md">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left text-[#C0C0C0]">
               Example Response
             </h3>
-            <div className="overflow-hidden rounded-lg border bg-white ">
+            <div className="overflow-hidden rounded-lg border bg-white">
               <iframe
                 src="https://idxsolana.io/api/widget/fe3492f0"
                 width="100%"
                 height="400"
-                className="w-56 lg:w-full  h-96"
+                className="w-full h-96"
                 title="Example Response Widget"
                 frameBorder="0"
                 loading="lazy"
@@ -298,9 +397,8 @@ const APIDocumentation = () => {
         <PaginationButtons previous={{href:"/technology-stack",name:"Technology Stack"}} next={{href:"/security-protocols",name:"Security Protocols"}}/>
       </div>
 
-      <TableOfContents data={tableOfContents} />
+      <TableOfContents data={tableOfContents} className="w-full md:w-1/4" />
     </div>
   );
 };
-
 export default APIDocumentation;

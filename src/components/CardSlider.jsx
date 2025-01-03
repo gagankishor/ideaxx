@@ -174,7 +174,7 @@ const CardSlider = () => {
                 className="slider-card-image"
               />
               <div className="card-content2">
-                <h3
+                <div
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -209,7 +209,7 @@ const CardSlider = () => {
                     />
                   </div>
                   {card.title}
-                </h3>
+                </div>
                 {card.pointers.map((pointer, index) => (
                   <p
                     key={index}

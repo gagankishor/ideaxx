@@ -164,9 +164,9 @@ const ProductLineupSection = () => {
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
-                  <h3 className="text-white text-xl font-bold mb-1">
+                  <span className="text-white text-xl font-bold mb-1">
                   Business Tools
-                  </h3>
+                  </span>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about
@@ -190,9 +190,9 @@ const ProductLineupSection = () => {
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
-                  <h3 className="text-white text-xl font-bold mb-1">
+                  <span className="text-white text-xl font-bold mb-1">
                   Business Tools
-                  </h3>
+                  </span>
                 </div>
                 {/* <p className="text-white text-sm text-center max-w-[70%]">
                   This is a description for Image It gives more context about

@@ -81,7 +81,6 @@ const testimonials = [
 const ImpactSection = () => {
   const sliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const settings = {
     dots: false,
     infinite: true,
@@ -116,7 +115,6 @@ const ImpactSection = () => {
     ),
   };
   useEffect(() => {
-    // Reset slider to first slide after the last slide
     if (currentSlide === testimonials.length) {
       setCurrentSlide(0);
       sliderRef.current.slickGoTo(0);

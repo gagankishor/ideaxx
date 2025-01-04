@@ -5,23 +5,23 @@ import "../css/App.css";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Startup Business Idea Checker Online - Ideax",
-  description: "Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now.",
-  keywords: "Business Idea Checker, Startup Idea Checker, Business idea checker online, Startup business idea checker, Business idea checker free",
+  title: "IDX on Solana - IDX Token - Enterprise Crypto Blockchain Solution",
+  description: " IDX on Solana is the top crypto token of 2025 with highest growth potential. Buy IDX token today. Best Enterprises Blockchain Solution.",
+  keywords: "IDX on Solana, IDX Token, IDX Crypto, Solana IDX Token, IDX Token price, IDX Token Purchase",
   icons: {
     icon: "/favicon.ico", 
     apple: "/apple-touch-icon.png", 
   },
   openGraph: {
-    title: "Startup Business Idea Checker Online - Ideax",
-    description: "Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now.",
+    title: "IDX on Solana - IDX Token - Enterprise Crypto Blockchain Solution",
+  description: " IDX on Solana is the top crypto token of 2025 with highest growth potential. Buy IDX token today. Best Enterprises Blockchain Solution.",
     images: ["/logo.png"], 
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Startup Business Idea Checker Online - Ideax",
-    description: "Best AI based Startup Business Idea Checker Online free tool. Verify your business ideas and get valuable insights. Test business idea now.",
+    title: "IDX on Solana - IDX Token - Enterprise Crypto Blockchain Solution",
+  description: " IDX on Solana is the top crypto token of 2025 with highest growth potential. Buy IDX token today. Best Enterprises Blockchain Solution.",
     images: ["/logo.png"],
   }
 };

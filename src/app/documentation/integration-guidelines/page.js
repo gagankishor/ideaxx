@@ -33,11 +33,9 @@ const IntegrationGuidelines = () => {
   
 
   return (
-    <div className="min-h-screen bg-[#121212] max-w-screen-sm text-white relative">
+    <div className="min-h-screen flex flex-col md:flex-row bg-[#121212] text-white max-w-screen ">
       {/* Mobile Menu Button */}
-      
-
-      <div className="flex flex-col md:flex-row">
+      <div className="flex-1 p-3 md:p-8 max-w-full md:max-w-3xl  scrollbar-hover">
         {/* Main Content */}
         <div className="flex-1 p-4 md:p-8 w-full md:max-w-3xl lg:max-w-4xl mx-auto">
           <Breadcrumb
@@ -49,7 +47,6 @@ const IntegrationGuidelines = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#C0C0C0]">
             Integration Guidelines
           </h1>
-
           {/* System Integration Steps Section */}
           <section className="pt-8 md:pt-16" id="SystemIntegrationSteps">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[#C0C0C0]">
@@ -82,7 +79,7 @@ const IntegrationGuidelines = () => {
             <div className="space-y-6">
               {/* Code blocks with improved responsiveness */}
               <div className="relative">
-                <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto">
+                <pre className="bg-[#1E1E1E] max-w-[300px] md:max-w-full p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto scrollbar-hover">
                   {`{
   "idea_stage": 5,
   "work_status": 3,
@@ -120,8 +117,8 @@ const IntegrationGuidelines = () => {
                 <h4 className="text-xl md:text-2xl font-semibold mb-2 text-[#C0C0C0]">
                   Success Response (200 OK)
                 </h4>
-                <div className="relative">
-                  <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto">
+                <div className="relative overflow-x-scroll">
+                  <pre className="bg-[#1E1E1E] max-w-[300px] md:max-w-full p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto scrollbar-hover">
                     {`{
   "status": 200,
   "error": false,
@@ -152,8 +149,8 @@ const IntegrationGuidelines = () => {
                 <h4 className="text-xl md:text-2xl font-semibold mb-2 text-[#C0C0C0]">
                   Validation Error Response (400)
                 </h4>
-                <div className="relative">
-                  <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto">
+                <div className="relative overflow-x-scroll">
+                  <pre className="bg-[#1E1E1E] max-w-[300px] md:max-w-full p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto scrollbar-hover">
                     {`{
   "status": 400,
   "error": true,
@@ -182,10 +179,10 @@ const IntegrationGuidelines = () => {
             />
           </div>
         </div>
-<TableOfContents data={tableOfContents} />
         {/* Table of Contents Sidebar */}
         
       </div>
+      <TableOfContents data={tableOfContents} className="w-full md:w-1/4" />
     </div>
   );
 };

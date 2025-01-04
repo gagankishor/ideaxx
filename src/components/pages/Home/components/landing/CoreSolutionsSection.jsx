@@ -354,7 +354,7 @@ const CoreSolutionsSection = () => {
                   contentData[selectedIcon]?.map((content, idx) => (
                     <div className="from-concept-card min-h-[180px]" key={idx}>
                       <div>
-                        <h3 style={{ color: "white" }}>{content.title}</h3>
+                        <h5 style={{ color: "white" }}>{content.title}</h5>
                       </div>
                       <div>
                         <p style={{ color: "white" }} className="text-md">

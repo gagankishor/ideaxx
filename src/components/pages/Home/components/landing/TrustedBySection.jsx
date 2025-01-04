@@ -16,8 +16,8 @@ const TrustedBySection = () => {
           <div style={{marginTop:'100px'}}>
             <div className="logosTitleWrapper">
             <h2 className="main-heading-h2 text-2xl ">
-  Trusted by 200+ companies and over 1,000 customers, from innovative startups to leading enterprises
-</h2>
+              Trusted by 200+ companies and over 1,000 customers, from innovative startups to leading enterprises
+            </h2>
             </div>
             <div className="logos-carousel-container py-8 ">
             <Swiper

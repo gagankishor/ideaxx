@@ -246,19 +246,19 @@ export default function Footer() {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600 md:h-[400px]">
         <div>
-          <h4 className="font-semibold mb-4 text-left">AI Tools</h4>
+          <span className="font-semibold mb-4 text-left">AI Tools</span>
           {renderDropdownList(aiTools, 0)}
         </div>
         <div>
-          <h4 className="font-semibold mb-4 text-left">Solutions</h4>
+          <span className="font-semibold mb-4 text-left">Solutions</span>
           {renderDropdownList(solutions, aiTools.length)}
         </div>
         <div>
-          <h4 className="font-semibold mb-4 text-left">Services</h4>
+          <span className="font-semibold mb-4 text-left">Services</span>
           {renderDropdownList(services, aiTools.length + solutions.length)}
         </div>
         <div>
-          <h4 className="font-semibold mb-4 text-left opacity-0">.</h4>
+          <span className="font-semibold mb-4 text-left opacity-0">.</span>
           {renderDropdownList(
             services2,
             aiTools.length + solutions.length + services.length

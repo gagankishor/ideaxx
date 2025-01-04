@@ -120,25 +120,25 @@ const AwardsSection = () => {
             <div className="container mx-auto  px-4 md:pl-0 max-w-4xl ">
               {blogs.map((blog, index) => (
                 <React.Fragment key={blog.id}>
-                  <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 ">
-                    <a
+                  <a href={blog.link} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 ">
+                    <div
                       className="flex-shrink-0 w-full md:w-60"
-                      href={blog.link}
+                      
                     >
                       <img
                         src={blog.image}
                         className="w-full md:w-60 h-auto rounded-md object-cover"
                         alt={`Blog ${blog.id}`}
                       />
-                    </a>
+                    </div>
                     <div className="flex-grow w-full">
-                      <h4 className="text-white text-xl text-center md:text-left mb-2">
+                      <h6 className="text-white text-xl text-center md:text-left mb-2">
                         {blog.title}
-                      </h4>
+                      </h6>
                       <p className="text-gray-200 text-center md:text-left mb-3">
                         {blog.excerpt}
                       </p>
-                      <div className="flex justify-center md:justify-start">
+                      {/* <div className="flex justify-center md:justify-start">
                         <a
                           href={blog.link}
                           className="text-blue-400 hover:underline"
@@ -146,9 +146,9 @@ const AwardsSection = () => {
                         >
                           Read more
                         </a>
-                      </div>
+                      </div> */}
                     </div>
-                  </div>
+                  </a>
                   {index < blogs.length - 1 && (
                     <div className="w-full h-px bg-gray-600 my-1"></div>
                   )}

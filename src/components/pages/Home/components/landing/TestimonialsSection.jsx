@@ -114,9 +114,9 @@ const TestimonialsSection = () => {
                 />
               </div>
               <div className="text-center mt-5">
-                <h4 className="font-semibold text-white text-lg">
+                <span className="font-semibold text-white text-lg">
                   {testimonial.author}
-                </h4>
+                </span>
                 <p className="text-sm text-white mb-4">{testimonial.role}</p>
                 <p className="text-sm text-white italic">
                   “{testimonial.quote}”

@@ -57,7 +57,7 @@ const LinkedInLogin = () => {
     const linkedInAuthUrl = `https://www.linkedin.com/oauth/v2/authorization?${new URLSearchParams({
       response_type: 'code',
       redirect_uri: `${window.location.origin}/linkedin`,
-      client_id: '86exe2qff6nxy9',
+      client_id: '77h00eotulctmz',
       scope: 'openid profile email',
       // state: 'random_state_string', // Should be randomly generated and verified
     })}`;

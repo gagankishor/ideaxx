@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // layout.js
 export const metadata = {
   title: "Startup Business Idea Checker Online - Ideax",
@@ -24,4 +26,6 @@ export const metadata = {
   export default function Layout({ children }) {
     return <>{children}</>;
   }
-  
+  Layout.propTypes = {
+    children: PropTypes.node.isRequired,
+  };

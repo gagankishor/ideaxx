@@ -109,7 +109,7 @@ const ProductLineupSection = () => {
       <div className="flex flex-col justify-center items-center w-full md:w-1/2">
         <img
           src="landing/validetionImage.webp"
-          alt="Ideax AI"
+          alt="validetion Image"
           className="w-4/5 md:w-1/2 mb-4"
         />
         <p className="text-center text-white w-full md:w-2/3 lg:w-1/2">
@@ -129,7 +129,7 @@ const ProductLineupSection = () => {
             <img
               src="/home-platform/2.webp"
               className="w-full"
-              alt="Image 1"
+              alt=" Team platform image"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
@@ -153,7 +153,7 @@ const ProductLineupSection = () => {
             <img
               src="/home-platform/new_page_home_mob-2.webp"
               className="w-full"
-              alt="Image 2"
+              alt="Website Design platform image"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
@@ -179,14 +179,14 @@ const ProductLineupSection = () => {
             <img
               src="/home-platform/1.webp"
               className="w-full"
-              alt="Image 3"
+              alt="Business tools platform image"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
                   <img
                     src="/main-icon/hand.webp"
-                    alt="Website Design"
+                    alt="Business Tools"
                     width={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
@@ -205,7 +205,7 @@ const ProductLineupSection = () => {
             <img
               src="/home-platform/webpafe_landscape_sec_n_mob_2.webp"
               className="w-full"
-              alt="image Mobile"
+              alt="Team mobile platform image"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">

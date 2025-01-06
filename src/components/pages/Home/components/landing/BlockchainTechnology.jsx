@@ -5,7 +5,7 @@ const BlockchainTechnology = () => {
     <div className="bg-gray-900 mt-20 text-gray-100 py-12 px-6 sm:px-16">
       {/* Headline */}
       <motion.h2
-        className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB]"
+        className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB] "
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -20,9 +20,9 @@ const BlockchainTechnology = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h2 className="text-2xl font-semibold mb-4 text-[#29DAB9]">
+        <h3 className="text-2xl font-semibold mb-4 text-[#29DAB9]">
           Harness the Speed of Solana
-        </h2>
+        </h3>
         <p className="text-lg text-left text-gray-300 leading-7">
           Ideax leverages the Solana network, renowned for its exceptional
           processing capabilities, with the ability to handle over{" "}
@@ -43,9 +43,9 @@ const BlockchainTechnology = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <h2 className="text-xl font-semibold mb-4 text-[#29DAB9]">
+        <h3 className="text-xl font-semibold mb-4 text-[#29DAB9]">
           Reduced Operational Costs
-        </h2>
+        </h3>
         <p className="text-lg text-left text-gray-300 leading-7">
           By utilizing the Solana network&rsquo;s low transaction costs, ideaX
           significantly reduces the expenses associated with traditional
@@ -61,9 +61,9 @@ const BlockchainTechnology = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        <h2 className="text-xl font-semibold mb-4 text-[#29DAB9]">
+        <h3 className="text-xl font-semibold mb-4 text-[#29DAB9]">
           Security Features
-        </h2>
+        </h3>
         
         <p className="text-lg text-left text-gray-300 leading-7">
           

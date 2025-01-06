@@ -246,19 +246,19 @@ export default function Footer() {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600 md:h-[400px]">
         <div>
-          <span className="font-semibold mb-4 text-left">AI Tools</span>
+          <p className="font-semibold mb-4 text-left">AI Tools</p>
           {renderDropdownList(aiTools, 0)}
         </div>
         <div>
-          <span className="font-semibold mb-4 text-left">Solutions</span>
+          <p className="font-semibold mb-4 text-left">Solutions</p>
           {renderDropdownList(solutions, aiTools.length)}
         </div>
         <div>
-          <span className="font-semibold mb-4 text-left">Services</span>
+          <p className="font-semibold mb-4 text-left">Services</p>
           {renderDropdownList(services, aiTools.length + solutions.length)}
         </div>
         <div>
-          <span className="font-semibold mb-4 text-left opacity-0">.</span>
+          <p className="font-semibold mb-4 text-left opacity-0">.</p>
           {renderDropdownList(
             services2,
             aiTools.length + solutions.length + services.length
@@ -347,6 +347,14 @@ export default function Footer() {
               aria-label="substack"
               target="_blank"
               className="hover:text-[#FF6719] "
+            >
+              <SiSubstack size={30} /> 
+            </a>
+            <a
+              href="https://en.wikipedia.org/wiki/Solana"
+              aria-label="wikipedia"
+              target="_blank"
+              className="hover:text-[#FF6719] hidden"
             >
               <SiSubstack size={30} />
             </a>

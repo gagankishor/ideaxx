@@ -271,7 +271,7 @@ const CoreSolutionsSection = () => {
               />
               <img
                 src="/main-icon/team.webp"
-                alt="icon 4"
+                alt="Team icon"
                 width={50}
                 className=" bg-[#480D6B] rounded-lg p-0"
               />

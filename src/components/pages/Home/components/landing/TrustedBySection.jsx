@@ -149,9 +149,9 @@ const TrustedBySection = () => {
             <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
               From Concept to Execution
             </h2>
-            <h2 className="text-2xl font-medium text-gray-300">
+            <h5 className="text-2xl font-medium text-gray-300">
               Your All-in-One Business Solutions
-            </h2>
+            </h5>
           </motion.div>
 
           {/* Right Column */}

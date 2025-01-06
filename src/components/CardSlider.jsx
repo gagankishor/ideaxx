@@ -164,7 +164,7 @@ const CardSlider = () => {
             <div key={card.id} className="slider-card" style={{ width: "90%" }}>
               <img
                 src={card.bgImage}
-                alt="Slider Image"
+                alt={`${card.title} Image`}
                 style={{
                   width: "100%",
                   height: "auto",

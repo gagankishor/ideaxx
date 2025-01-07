@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { useEffect, useRef, useState } from "react";
 const testimonials = [
   {
-    videoSrc: "/BelloAnimationsVideo.webm",
+    videoSrc: "/BelloAnimationsVideo.mp4",
     image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.webp",
     quote:
       "The tools provided a significant breakthrough in streamlining our operations and achieving key milestones.",
@@ -27,7 +27,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/Vantom_Solar_Batteries.webm",
+    videoSrc: "/Vantom_Solar_Batteries.mp4",
     quote:
       "Implementing these solutions transformed our business approach and maximized growth potential.",
     name: "Eyad Abdulla",
@@ -53,7 +53,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/MercedesMaybachSL.webm",
+    videoSrc: "/MercedesMaybachSL.mp4",
     quote:
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Taki Kaddo",

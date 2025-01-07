@@ -6,6 +6,7 @@ import { TfiClose } from "react-icons/tfi";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext"; // Ensure this context is set up correctly
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import Image from "next/image";
 
 export const MainNavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -26,7 +27,7 @@ export const MainNavBar = () => {
               {" "}
               <div className="w-12"> 
 
-              <img src="/logo.png" sizes="8" className=" bg-black rounded-full p-1" alt=" IDX on Solana" />
+              <Image width={200} height={200} src="/logo.webp" sizes="8" className=" bg-black rounded-full p-1" alt=" IDX on Solana" />
               </div>
             </Link>
           </div>

@@ -12,6 +12,7 @@ import {
 import { FaInstagram } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 import SubscribeModal from "./pages/Home/SubscribeModal";
+import Image from "next/image";
 
 export default function Footer() {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -265,7 +266,8 @@ export default function Footer() {
           )}
         </div>
         <div className="md:col-span-2 ">
-          <img src="/logo.png" alt="ideax logo" width={200} />
+          <Image src="/logo.webp
+          " alt="ideax logo" width={200} height={200} />
           <ul className="space-y-2 text-left p-2">
             <li className="">
               Ideax empowers entrepreneurs with AI-driven tools, market

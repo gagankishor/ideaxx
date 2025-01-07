@@ -22,7 +22,7 @@ export default {
       {
         protocol: 'https',
         hostname: 'via.placeholder.com',
-        pathname: '/**', // This allows any image path under 'via.placeholder.com'
+        pathname: '/**',
       },
     ],
   },

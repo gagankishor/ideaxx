@@ -58,8 +58,7 @@ export const MainNavBar = () => {
               {isAuthenticated && <li>
                 <Link href="/result-history">Results</Link>
               </li>}
-              
-            </ul>
+            </ul> 
             <ul className="main-menu">
               
               <div className="btns-container">

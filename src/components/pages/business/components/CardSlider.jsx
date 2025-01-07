@@ -1,6 +1,7 @@
 import  { useState } from 'react';
 import './css/CardSlider.css';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 const CardSlider = ({cards,logo,onColorSelect }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

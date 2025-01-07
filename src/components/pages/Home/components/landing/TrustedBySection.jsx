@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Image from "next/image";
 
 const TrustedBySection = () => {

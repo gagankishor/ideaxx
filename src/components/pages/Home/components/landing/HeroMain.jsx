@@ -3,14 +3,18 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { Inter } from 'next/font/google';
+import Image from "next/image";
+const inter = Inter({ subsets: ['latin'] });
+
 export const HeroMain = () => {
   return (
     <div className="hero">
       <div className="container">
         <div className="hero-block">
-          <h1 className="idea-checker-heading">
-            AI-Powered Startup and Business Idea Validator
-          </h1>
+        <h1 className={`idea-checker-heading ${inter.className}`}>
+          AI-Powered Startup and Business Idea Validator
+        </h1>
           <span className="idea-checker-subheading">
             <p
               className="idea-checker-description"
@@ -35,41 +39,35 @@ export const HeroMain = () => {
       </div>
       <div className="container hero-container2 mt-6">
         <div className="hero-block2">
-          <img
+          <Image
             src="/roadmap.webp"
             alt="Business Idea Checker"
             className="hero-roadmap-img"
+            height={400}
+            width={400}
           />
           <div className="roadmap-card">
-            <img
+            <Image
               src="/landing/market-score.webp"
               alt="Roadmap"
               className="roadmap-card-img"
+              width={50}
+              height={50}
             />
           </div>
-          <motion.img
+          <Image
+            width={400}
+            height={400}
             src="/Startup-Business-Idea-Checker-Online-Ideax.webp"
             alt="Startup Idea Checker"
-            className="motion-img1"
-            initial={{ x: 0, y: 0, opacity: 1 }}
-            animate={{ x: 0, opacity: 1, y: [0, -20, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "mirror",
-            }}
+            className="motion-img1 animate-bounce-up"
           />
-          <motion.img
+          <Image
+            width={400}
+            height={400}
             src="/Startup-Business-Idea-Checker-Online-Ideax-2.webp"
             alt="Business idea checker online"
-            className="motion-img2"
-            initial={{ x: 0, y: 0, opacity: 1 }}
-            animate={{ x: 0, opacity: 1, y: [0, 20, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "mirror",
-            }}
+            className="motion-img2 animate-bounce-down"
           />
         </div>
       </div>

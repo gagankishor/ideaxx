@@ -4,6 +4,7 @@ import { RiPassValidFill } from "react-icons/ri";
 import { PiPlugsConnectedFill } from "react-icons/pi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import Link from "next/link";
+import Image from "next/image";
 // import ImpactSection from "./ImpactSection";
 // import AwardsSection from "./AwardsSection";
 // import { motion } from "framer-motion";
@@ -27,19 +28,25 @@ const ProductLineupSection = () => {
             <span className="highlighted-text">AI</span> for all your work
           </h2>
           <div className="image-background">
-            <img
-              src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Homepage%20-%202024/michael-testing/Ellipse_5790.png"
+            <Image
+              src="/darksection1/image.png"
               alt="Background"
               className="background-image"
+              layout="fill"
+              objectFit="cover"
+              // height={100}
+              // width={100}
             />
           </div>
           <div className="product-container">
             <div className="product-box">
-              <img
+              <Image
                 // src="/darksection1/Integrity.webp"
                 src="/darksection1/box_Integrity.webp"
                 alt="Product"
                 className="product-image" 
+                height={200}
+                width={300}
               />
               <p className="p-4 text-white text-center">
               AI-powered operations ensure compliance, enhance trust, and build value  intelligent solutions for modern businesses.
@@ -48,11 +55,13 @@ const ProductLineupSection = () => {
               <div className="ripple-border-2"></div>
             </div>
             <div className="product-box black-background">
-              <img
+              <Image
                 // src="/darksection1/innovation.webp"
                 src="/darksection1/box_Innovation.webp"
                 alt="Product"
                 className="product-image"
+                height={200}
+                width={300}
               />
               <p className="p-4 text-white text-center">
                 Drive innovation—accelerate insights, streamline workflows, and empower your team to transform bold ideas into impact.
@@ -61,10 +70,12 @@ const ProductLineupSection = () => {
               <div className="ripple-border-2"></div>
             </div>
             <div className="product-box">
-              <img
+              <Image
                 src="/darksection1/box_Security.webp"
                 alt="Security"
                 className="product-image"
+                height={200}
+                width={300}
               />
               <p className=" p-4 text-white ">
                 Discover operational efficiency by streamlining workflows, reducing manual tasks, and maximizing productivity.
@@ -73,10 +84,12 @@ const ProductLineupSection = () => {
               <div className="ripple-border-2"></div>
             </div>
             <div className="product-box">
-              <img
+              <Image
                 src="/darksection1/box_Efficiency.webp"
                 alt="Efficiency"
                 className="product-image"
+                height={200}
+                width={300}
               />
               <p className=" p-4 text-white ">
                 Explore our platform&rsquo;s robust security measures designed to safeguard data and ensure full industry compliance.
@@ -107,37 +120,44 @@ const ProductLineupSection = () => {
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center w-full p-4 gap-8">
       <div className="flex flex-col justify-center items-center w-full md:w-1/2">
-        <img
-          src="landing/validetionImage.webp"
+        <Image
+          src="/landing/validetionImage.webp"
           alt="validetion Image"
           className="w-4/5 md:w-1/2 mb-4"
+          height={400}
+          width={400}
         />
         <p className="text-center text-white w-full md:w-2/3 lg:w-1/2">
           Get your idea certified and boost its credibility instantly
         </p>
       </div>
-      <img
-        src="landing/ideas.webp"
+      <Image
+        src="/landing/ideas.webp"
         alt="Ideax AI"
         className="w-4/5 md:w-2/5"
+        height={400}
+        width={400}
       />
     </div>
         <p className="text-white pt-14  text-2xl max-w-5xl mx-auto">
         Experience the first system fully controlled via mobile app—seamlessly manage all your tasks from your phone, reducing your reliance on traditional computing devices!</p>
         <div className="video-section flex flex-wrap justify-center gap-1 md:gap-1">
           <div className="relative p-[1px] md:w-[48%]">
-            <img
+            <Image
               src="/home-platform/2.webp"
               className="w-full"
               alt=" Team platform image"
+              height={400}
+              width={400}
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
-                  <img
+                  <Image
                     src="/main-icon/team.webp"
                     alt="Team"
                     width={40}
+                    height={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">Team</h3>
@@ -150,18 +170,21 @@ const ProductLineupSection = () => {
             </div>
           </div>
           <div className="relative p-[1px] md:w-[48%]">
-            <img
+            <Image
               src="/home-platform/new_page_home_mob-2.webp"
               className="w-full"
               alt="Website Design platform image"
+              height={400}
+              width={400}
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
-                <img
+                <Image
                     src="/main-icon/hand.webp"
                     alt="Website Design"
                     width={40}
+                    height={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
                   <span className="text-white text-xl font-bold mb-1">
@@ -176,19 +199,23 @@ const ProductLineupSection = () => {
             </div>
           </div>
           <div className="relative p-[1px] md:w-[48%]">
-            <img
+            <Image
               src="/home-platform/1.webp"
               className="w-full"
+              height={400}
+              width={400}
               alt="Business tools platform image"
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
-                  <img
+                  <Image
                     src="/main-icon/hand.webp"
                     alt="Business Tools"
                     width={40}
+                    height={40}
                     className=" bg-white rounded-md p-[2px]"
+
                   />
                   <span className="text-white text-xl font-bold mb-1">
                   Business Tools
@@ -202,18 +229,21 @@ const ProductLineupSection = () => {
             </div>
           </div>
           <div className="relative p-[1px] md:w-[48%]">
-            <img
+            <Image
               src="/home-platform/webpafe_landscape_sec_n_mob_2.webp"
               className="w-full"
               alt="Team mobile platform image"
+              width={400}
+              height={400}
             />
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 p-1 bg-black bg-opacity-0 w-full">
               <div className="flex flex-col items-center mt-6">
                 <div className="mb-2 flex flex-row gap-3">
-                  <img
+                  <Image
                     src="/main-icon/idea3D.webp"
                     alt="Team"
                     width={40}
+                    height={40}
                     className=" bg-white rounded-md p-[2px]"
                   />
                   <h3 className="text-white text-xl font-bold mb-1">Idea</h3>

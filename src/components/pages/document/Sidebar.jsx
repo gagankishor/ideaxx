@@ -4,7 +4,6 @@ import { SlArrowDown } from "react-icons/sl";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 const sections = [
     {
       title: "Getting Started",
@@ -30,7 +29,6 @@ const sections = [
       ],
     },
 ];
-
 const SidebarSection = ({ title, items, isOpen, toggleOpen, currentPath }) => (
   <div className="mb-2">
     {isOpen ? (
@@ -95,7 +93,6 @@ const SidebarSection = ({ title, items, isOpen, toggleOpen, currentPath }) => (
     )}
   </div>
 );
-
 SidebarSection.propTypes = {
   title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
@@ -108,7 +105,6 @@ SidebarSection.propTypes = {
   toggleOpen: PropTypes.func.isRequired,
   currentPath: PropTypes.string.isRequired,
 };
-
 const DocumentationSidebar = () => {
     const currentPath = usePathname();
     const [openSections, setOpenSections] = useState(
@@ -117,14 +113,12 @@ const DocumentationSidebar = () => {
           return acc;
         }, {})
     );
-
     const toggleSection = (index) => {
         setOpenSections((prev) => ({
           ...prev,
           [index]: !prev[index],
         }));
     };
-
     return (
         <div className="md:min-w-80 hidden  lg:block bg-[#121212] text-white h-screen p-4 sticky top-20">
           {sections.map((section, index) => (
@@ -140,5 +134,4 @@ const DocumentationSidebar = () => {
         </div>
     );
 };
-
 export default DocumentationSidebar;

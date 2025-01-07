@@ -13,6 +13,7 @@ import {
 } from "react-icons/md";
 import Link from "next/link";
 import { RiCommunityFill } from "react-icons/ri";
+import Image from "next/image";
 const icons = [
   {
     id: 1,
@@ -248,31 +249,35 @@ const CoreSolutionsSection = () => {
             <div
               style={{ display: "flex", margin: "auto", width: "fit-content" }}
             >
-              <img
+              <Image
                 src="/main-icon/hand.webp"
                 style={{ marginRight: "10px" }}
                 alt="icon 3"
                 width={50}
+                height={50}
                 className=" bg-[#A31C2F] rounded-lg p-0"
               />
-              <img
+              <Image
                 src="/main-icon/legal.webp"
                 style={{ marginRight: "10px" }}
                 alt="Startup business idea checker"
                 width={50}
+                height={50}
                 className=" bg-[#0A7678] rounded-lg p-0"
               />
-              <img
+              <Image
                 src="/main-icon/marketing.webp"
                 style={{ marginRight: "10px" }}
                 alt="Business idea checker free"
                 width={50}
+                height={50}
                 className=" bg-[#0F6333] rounded-lg p-0"
               />
-              <img
+              <Image
                 src="/main-icon/team.webp"
                 alt="Team icon"
                 width={50}
+                height={50}
                 className=" bg-[#480D6B] rounded-lg p-0"
               />
             </div>

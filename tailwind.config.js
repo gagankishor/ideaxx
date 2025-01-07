@@ -11,6 +11,20 @@ export default {
       screens: {
         'xl-custom': '1258px', // Custom breakpoint
       },
+      keyframes: {
+        bounceUp: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        bounceDown: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(20px)' },
+        },
+      },
+      animation: {
+        'bounce-up': 'bounceUp 2s infinite',
+        'bounce-down': 'bounceDown 2s infinite',
+      },
     },
   },
   plugins: [],

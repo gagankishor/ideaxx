@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { useEffect, useRef, useState } from "react";
 const testimonials = [
   {
-    videoSrc: "/landing-page-video/BelloAnimationsVideo.webm",
+    videoSrc: "/BelloAnimationsVideo.webm",
     image:"/landing/WhatsApp Image 2024-11-27 at 6.07.51 PM.webp",
     quote:
       "The tools provided a significant breakthrough in streamlining our operations and achieving key milestones.",
@@ -27,7 +27,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/landing-page-video/Vantom_Solar_Batteries.webm",
+    videoSrc: "/Vantom_Solar_Batteries.webm",
     quote:
       "Implementing these solutions transformed our business approach and maximized growth potential.",
     name: "Eyad Abdulla",
@@ -53,7 +53,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/landing-page-video/MercedesMaybachSL.webm",
+    videoSrc: "/MercedesMaybachSL.webm",
     quote:
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Taki Kaddo",
@@ -150,13 +150,22 @@ const ImpactSection = () => {
                         className="w-full object-cover z-0"
                     />
                   ) : (
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      src={testimonial.videoSrc}
-                        className="w-full h-full object-cover z-0"
-                    />
+                    <div className="relative w-full aspect-video overflow-hidden">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      >
+                        {/* Provide multiple sources for better compatibility */}
+                        <source src={testimonial.videoSrc} type="video/mp4" />
+                        <source src={testimonial.videoSrc.replace('.mp4', '.webm')} type="video/webm" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
                   )}
                 </div>
                   <div className="relative z-10 p-14 bg-opacity-75  bg-black h-full md:bg-opacity-35">

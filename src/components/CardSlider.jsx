@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight, FaCheckCircle } from "react-icons/fa";
-
+import Image from "next/image";
 const CardSlider = () => {
   const settings = {
     dots: true,
@@ -35,7 +35,6 @@ const CardSlider = () => {
     ],
   };
   const cards = [
-    
     {
       pointers: ["Funds", "Expenses", "Income", "Reports", "Vault", "Platforms"],
       icon: "/main-icon/CashFlow.webp",
@@ -162,7 +161,7 @@ const CardSlider = () => {
         <Slider {...settings}>
           {cards.map((card) => (
             <div key={card.id} className="slider-card" style={{ width: "90%" }}>
-              <img
+              <Image
                 src={card.bgImage}
                 alt={`${card.title} Image`}
                 style={{
@@ -171,6 +170,8 @@ const CardSlider = () => {
                   objectFit: "cover",
                   backgroundColor: "transparent",
                 }}
+                height={200}
+                width={350}
                 className="slider-card-image"
               />
               <div className="card-content2">
@@ -198,10 +199,11 @@ const CardSlider = () => {
                       borderRadius: "5px",
                     }}
                   >
-                    <img
+                    <Image
                       src={card.icon}
                       alt={card.title}
                       width={25}
+                      height={25}
                       style={{
                         objectFit: "cover",
                         color: "white",

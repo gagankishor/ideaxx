@@ -95,13 +95,16 @@ const CardSlider = ({cards,logo,onColorSelect }) => {
           >
             <div className='sub-card'>
                 <div className='logo-image'>
-                    <img src= {logo ?logo:card.image}  />
+                    <Image  
+                      src= {logo ?logo:card.image} 
+                      height={100}
+                      width={100} 
+                    />
                 </div>
                 <div className='logo-color'>
                     {card?.color?.map((color,index)=>(
                         <div className="sub-color" key={index}
                             style={{backgroundColor:color,justifyContent:'center',alignItems:'center' ,alignContent:'center',
-                            
                             }}>
                                 <div style={{width:'30%',height:'1px',backgroundColor:'white',marginLeft:'35%'}}></div>
                         </div>

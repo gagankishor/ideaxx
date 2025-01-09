@@ -1,10 +1,9 @@
+"use client";
 import  { useState } from 'react';
 import axios from 'axios';
 import { FaRobot } from 'react-icons/fa';
 import { TbSocial } from 'react-icons/tb';
-import { Helmet } from 'react-helmet';
-import { RestAPI } from '../../../config/Api';
-import { SideBar } from '../../../components/Sidebar';
+import { RestAPI } from '@/config/Api';
 
 export const CreateNewBlog = () => {
   const [subject, setSubject] = useState('');
@@ -14,8 +13,6 @@ export const CreateNewBlog = () => {
   const [descriptionLoding, setDescriptionLoding] = useState(false);
   const [saveLoding, setSaveLoding] = useState(false);
   const [saveDraftLoding, setSaveDraftLoding] = useState(false);
-
-
   const handleSubjectEdit = async () => {
     try {
       setSubjectLoding(true)
@@ -31,7 +28,6 @@ export const CreateNewBlog = () => {
 
     }
   };
-
   const handleDescriptionEdit = async () => {
     try {
       setDescriptionLoding(true)
@@ -66,11 +62,8 @@ export const CreateNewBlog = () => {
 
   return (
     <>
-      <Helmet>
-        <title>New Blog | ideax</title>
-      </Helmet>
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <TbSocial />

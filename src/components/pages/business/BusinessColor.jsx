@@ -1,15 +1,14 @@
+"use client"
 import { useState, useContext } from "react";
 // import {  ChromePicker } from "react-color";
 import { FaPalette } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
-import { Helmet } from "react-helmet";
 import axios from "axios";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
 import CardSlider from "./components/CardSlider";
-import { IdeaContext } from "../../config/ideaDataContext";
 import "./BusinessColor.css";
 import Swal from "sweetalert2";
+import { IdeaContext } from "@/context/ideaDataContext";
 export default function BusinessColor() {
   const cards = [
     {
@@ -106,7 +105,6 @@ export default function BusinessColor() {
         }
       );
       setColors(response.data.data);
-      // setGeneratedPalette(response.data.data);
     } catch (error) {
       console.error("There was an error fetching the color palette:", error);
     } finally {
@@ -168,7 +166,6 @@ export default function BusinessColor() {
       setSaving(false);
     }
   };
-
   const platforms = [
     {
       id: 1,
@@ -195,15 +192,9 @@ export default function BusinessColor() {
       link: "https://color.io",
     },
   ];
-
   return (
     <>
-      <Helmet>
-        <title>Brand Color | ideax</title>
-      </Helmet>
-
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaPalette /> Brand Color
@@ -231,17 +222,14 @@ export default function BusinessColor() {
                     ></div>
                   ))}
                 </div>
-
                 <div className="image-container">
                   <img src={brandData?.logo} alt="Brand Logo" />
                 </div>
-
                 {/* <ChromePicker
                   color={color}
                   onChangeComplete={handleColorChange}
                 /> */}
               </div>
-
               <div className="button-group">
                 <button
                   className="btn"
@@ -259,7 +247,6 @@ export default function BusinessColor() {
                 </button>
               </div>
             </div>
-
             <CardSlider
               cards={cards}
               logo={brandData?.logo}

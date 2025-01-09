@@ -1,22 +1,13 @@
 
- 
-import { Helmet } from 'react-helmet'
-
+import { EnterpriseLaunch } from '@/components/components/EnterpriseLaunch'
 import { RiSeoLine } from 'react-icons/ri'
-import { SideBar } from '../../components/Sidebar'
-import { EnterpriseLaunch } from '../../components/EnterpriseLaunch'
 
 export const LegalConsultation = () => {
     
       
   return (
     <>
-       <Helmet>
-        <title> Legal Consultation
-        | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />

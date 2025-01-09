@@ -25,5 +25,6 @@ export default {
         pathname: '/**',
       },
     ],
+    domains: ["1000logos.net","upload.wikimedia.org"],
   },
 };

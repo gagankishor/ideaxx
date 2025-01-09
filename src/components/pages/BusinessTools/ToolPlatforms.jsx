@@ -1,8 +1,6 @@
- 
-import { SideBar } from '../../components/Sidebar'
-import { Helmet } from 'react-helmet'
+
+import { Pletforms } from '@/components/components/Pletforms';
 import { FaTools } from 'react-icons/fa'
-import { Pletforms } from '../../components/Pletforms'
 
 export const ToolPlatforms = () => {
 const platforms = [
@@ -17,11 +15,7 @@ const platforms = [
     ];
   return (
     <>
-    <Helmet>
-      <title> Location | ideax</title>
-    </Helmet>
     <div className="dashboard container">
-      <SideBar />
       <div className="content">
         <h1 id="heading">
         <FaTools /> Business Tools

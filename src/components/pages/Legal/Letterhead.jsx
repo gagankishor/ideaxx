@@ -1,6 +1,5 @@
+"use client";
 import { useRef, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
 import { RiFileTextLine } from "react-icons/ri";
 // import html2pdf from "html2pdf.js";
 // import { Document, Packer, Paragraph } from "docx"; // Using docx for DOCX generation
@@ -67,11 +66,7 @@ export const Letterhead = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Letterhead | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiFileTextLine /> Letterhead

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { userToken } from "../../../config/Auth";
+import { userToken } from "@/config/Auth";
 import { RxReload } from "react-icons/rx";
-import { RestAPI } from "../../../config/Api";
+import { RestAPI } from "@/config/Api";
 import { FaPlus } from "react-icons/fa";
 
 const SuggestionInvestment = () => {

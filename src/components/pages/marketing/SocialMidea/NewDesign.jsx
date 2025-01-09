@@ -1,6 +1,5 @@
+"use client";
 import  { useState } from "react";
-import { SideBar } from "../../../components/Sidebar";
-import { Helmet } from "react-helmet";
 import {
   // FaCloud,
   // FaCross,
@@ -11,17 +10,19 @@ import {
 } from "react-icons/fa";
 import { TbSocial } from "react-icons/tb";
 // import { Pletforms } from "../../../components/Pletforms";
-import { AssignedTo } from "../../../components/AssignedTo";
+// import { AssignedTo } from "../../../components/AssignedTo";
 // import { status } from "nprogress";
-import { SelectCard } from "../../../components/SelectCard";
-import { Blogs } from "../../../components/Blogs";
+// import { SelectCard } from "../../../components/SelectCard";
 // import { FiInfo } from "react-icons/fi";
 import { FaCloudArrowUp } from "react-icons/fa6";
 import { BsBoxSeam } from "react-icons/bs";
 import { IoCameraOutline } from "react-icons/io5";
 import { MdDoubleArrow } from "react-icons/md";
 // import { IdeaContext } from "../../../config/ideaDataContext";
-import savePostDesign from "../../../config/Api";
+import savePostDesign from "@/config/Api";
+import { SelectCard } from "@/components/components/SelectCard";
+import { Blogs } from "@/components/components/Blogs";
+import { AssignedTo } from "@/components/components/AssignedTo";
 
 export const NewDesign = () => {
   const platforms = [
@@ -213,11 +214,8 @@ export const NewDesign = () => {
   };
   return (
     <>
-      <Helmet>
-        <title>Brand Name | ideax</title>
-      </Helmet>
+      
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <div className="top-continer">
             <h1 id="heading">

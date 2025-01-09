@@ -1,8 +1,4 @@
- 
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
-
-import { RiSeoLine } from "react-icons/ri";
+ import { RiSeoLine } from "react-icons/ri";
 import { FaMale } from "react-icons/fa";
 import { CiFileOn } from "react-icons/ci";
 
@@ -10,11 +6,7 @@ export const TeamLegal = () => {
   
   return (
     <>
-      <Helmet>
-        <title> Team | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

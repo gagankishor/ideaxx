@@ -1,10 +1,9 @@
+"use client"
+import { Blogs } from "@/components/components/Blogs";
+import { IdeaContext } from "@/context/ideaDataContext";
 import { useContext, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
 import { RiMapPin2Line } from "react-icons/ri";
 import Swal from "sweetalert2";
-import { Blogs } from "../../components/Blogs";
-import { IdeaContext } from "../../config/ideaDataContext";
 export const Location = () => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
@@ -81,11 +80,7 @@ export const Location = () => {
   };
   return (
     <>
-      <Helmet>
-        <title> Location | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiMapPin2Line />

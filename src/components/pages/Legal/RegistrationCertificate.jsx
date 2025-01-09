@@ -1,17 +1,11 @@
-import { Helmet } from "react-helmet";
-import { SideBar } from '../../components/Sidebar'
 
+import { EnterpriseLaunch } from "@/components/components/EnterpriseLaunch";
 import { RiSeoLine } from "react-icons/ri";
-import { EnterpriseLaunch } from "../../components/EnterpriseLaunch";
 
 export const RegistrationCertificate = () => {
 return (
     <>
-      <Helmet>
-        <title> Registration Certificate | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

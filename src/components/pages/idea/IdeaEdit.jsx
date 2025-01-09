@@ -1,16 +1,16 @@
+"use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
+import { useRouter } from "next/router";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
 import { FaStore } from "react-icons/fa";
-import useAxiosWithAuth from "../../config/useAxiosWithAuth";
+import useAxiosWithAuth from "@/config/useAxiosWithAuth";
 
 export default function IdeaEdit() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { id } = router.query;
+  const navigate = router.push;
   const token = userToken();
   
   const [idea, setIdea] = useState({
@@ -89,11 +89,8 @@ export default function IdeaEdit() {
 
   return (
     <>
-      <Helmet>
-        <title>Edit Idea | ideax</title>
-      </Helmet>
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaStore /> My Ideas

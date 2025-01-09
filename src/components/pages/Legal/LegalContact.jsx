@@ -1,9 +1,9 @@
+"use client";
+import { IdeaContext } from "@/context/ideaDataContext";
 import  { useContext, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
+
 import { RiSeoLine } from "react-icons/ri";
 import Swal from "sweetalert2";
-import { IdeaContext } from "../../config/ideaDataContext";
 
 export const LegalContact = () => {
   const [permanentNumber, setPermanentNumber] = useState("");
@@ -37,13 +37,6 @@ export const LegalContact = () => {
     );
 
     try {
-      // const response = await axios.post(
-      //   `${RestAPI}/save-legal-information`,
-      //   data,
-      //   {
-      //     headers: { "Content-Type": "multipart/form-data" },
-      //   }
-      // );
       Swal.fire({
         title: "Success",
         text: "Legal information saved successfully!",
@@ -68,11 +61,7 @@ export const LegalContact = () => {
   };
   return (
     <>
-      <Helmet>
-        <title>Contact Information | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

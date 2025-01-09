@@ -1,14 +1,13 @@
+"use client"
 import { FaFont, FaRobot } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
-import { Helmet } from "react-helmet";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
 import "./BusinessFont.css";
 import { TbBulb } from "react-icons/tb";
-import { IdeaContext } from "../../config/ideaDataContext";
 import Swal from "sweetalert2";
+import { IdeaContext } from "@/context/ideaDataContext";
 
 export default function BusinessFont() {
   const platforms = [
@@ -395,13 +394,8 @@ useEffect(()=>{
 },[])
 
   return (
-    <>
-      <Helmet>
-        <title>Font | ideax</title>
-      </Helmet>
-
+    <>    
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaFont /> Font

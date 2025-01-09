@@ -2,8 +2,8 @@ import PropTypes from "prop-types"; // Import PropTypes
 import { useState } from "react";
 import axios from "axios";
 import { RxReload } from "react-icons/rx";
-import { userToken } from "../../../config/Auth";
-import { RestAPI } from "../../../config/Api";
+import { userToken } from "@/config/Auth";
+import { RestAPI } from "@/config/Api";
 
 const SuggestionInput = ({ endpoint, name, sectorId, serviceName, ideaDescription, clients }) => {
   const [suggestions, setSuggestions] = useState([]);

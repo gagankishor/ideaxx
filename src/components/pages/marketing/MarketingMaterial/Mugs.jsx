@@ -1,9 +1,8 @@
 
  
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../../components/Sidebar'
+
+import { PletformsNew } from '@/components/components/PletformsNew';
 import { RiSeoLine } from 'react-icons/ri'
-import { PletformsNew } from '../../../components/Pletforms copy'
 
 export const Mugs = () => {
    
@@ -19,11 +18,8 @@ export const Mugs = () => {
       ];
   return (
     <>
-       <Helmet>
-        <title>Marketing Material | ideax</title>
-      </Helmet>
+      
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />

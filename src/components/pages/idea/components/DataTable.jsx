@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import PropTypes from 'prop-types'; // Import PropTypes
 import { FaEdit, FaFile } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 export const DataTable = ({ data, note }) => {
   return (

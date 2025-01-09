@@ -1,8 +1,4 @@
-
- 
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../../components/Sidebar'
-import { Pletforms } from '../../../components/Pletforms'
+import { Pletforms } from '@/components/components/Pletforms';
 import { RiSeoLine } from 'react-icons/ri'
 export const PenAndNotebook = () => {
     
@@ -18,11 +14,8 @@ export const PenAndNotebook = () => {
       ];
   return (
     <>
-       <Helmet>
-        <title>Marketing Material | ideax</title>
-      </Helmet>
+      
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />

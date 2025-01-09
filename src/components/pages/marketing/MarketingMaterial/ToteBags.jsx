@@ -1,15 +1,7 @@
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../../components/Sidebar'
-import { RiSeoLine } from 'react-icons/ri'
-import { PletformsNew } from '../../../components/Pletforms copy'
 
+import { PletformsNew } from '@/components/components/PletformsNew';
+import { RiSeoLine } from 'react-icons/ri'
 export const ToteBags = () => {
-    // const blogs = [
-    //     { id: 1, name: "Blog", logo: "/blog.webp", link: "#" },
-    //     { id: 2, name: "Blog", logo: "/blog.webp", link: "#" },
-    //     { id: 3, name: "Blog", logo: "/blog.webp", link: "#" }, 
-    //     { id: 4, name: "Blog", logo: "/blog.webp", link: "#" },
-    //   ];
       const platforms = [
         { id: 1, name: "", logo: "/ToteBags.png", link: "#" },
         { id: 2, name: "", logo: "/ToteBags.png", link: "#" },
@@ -22,25 +14,17 @@ export const ToteBags = () => {
       ];
   return (
     <>
-       <Helmet>
-        <title>Marketing Material | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />
-
           Marketing Material
-
           </h1>
           <div className="form">
-
             <PletformsNew platforms={platforms} title="Tote Bags" />
-
           </div>
         </div>
       </div>
     </>
-  )
+  ) 
 }

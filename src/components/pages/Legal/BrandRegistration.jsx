@@ -1,65 +1,66 @@
-
- 
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../components/Sidebar'
-
-import { RiSeoLine } from 'react-icons/ri'
-import { Blogs } from '../../components/Blogs'
-import { EnterpriseLaunch } from '../../components/EnterpriseLaunch'
-
+import { Blogs } from "@/components/components/Blogs";
+import { EnterpriseLaunch } from "@/components/components/EnterpriseLaunch";
+import { RiSeoLine } from "react-icons/ri";
 export const BrandRegistration = () => {
-    const blogs = [
-      {
-        id: 1,
-        name: "Blog",
-        logo: "blog.webp",
-        link: "#",
-      },
-      {
-        id: 2,
-        name: "Blog",
-        logo: "blog.webp",
-        link: "#",
-      },
-      {
-        id: 3,
-        name: "Blog",
-        logo: "blog.webp",
-        link: "#",
-      },
-      {
-        id: 4,
-        name: "Blog",
-        logo: "blog.webp",
-        link: "#",
-      },
-    ];
+  const blogs = [
+    {
+      id: 1,
+      name: "Blog",
+      logo: "blog.webp",
+      link: "#",
+    },
+    {
+      id: 2,
+      name: "Blog",
+      logo: "blog.webp",
+      link: "#",
+    },
+    {
+      id: 3,
+      name: "Blog",
+      logo: "blog.webp",
+      link: "#",
+    },
+    {
+      id: 4,
+      name: "Blog",
+      logo: "blog.webp",
+      link: "#",
+    },
+  ];
   return (
     <>
-       <Helmet>
-        <title> Contact information
-        | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
-          <RiSeoLine />
-          Contact information
+            <RiSeoLine />
+            Contact information
           </h1>
           <form className="form">
-          <Blogs blogs={blogs} title='Blogs'/>
-          <div className="row" style={{justifyContent:'center',alignItems:'center',margin:"60px 0px"}}>
-            <div style={{ textAlign:'center'}}>
-            Apply for trademark registration
-          <button style={{margin:'auto'}} type='button' className='btn'>Apply</button>
+            <Blogs blogs={blogs} title="Blogs" />
+            <div
+              className="row"
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                margin: "60px 0px",
+              }}
+            >
+              <div style={{ textAlign: "center" }}>
+                Apply for trademark registration
+                <button
+                  style={{ margin: "auto" }}
+                  type="button"
+                  className="btn"
+                >
+                  Apply
+                </button>
+              </div>
             </div>
-
-          </div>
-    <EnterpriseLaunch/>
+            <EnterpriseLaunch />
           </form>
         </div>
       </div>
     </>
-  )
-}
+  );
+};

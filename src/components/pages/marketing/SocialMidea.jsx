@@ -1,17 +1,9 @@
-import { SideBar } from "../../components/Sidebar";
-// import { useContext, useEffect, useRef, useState } from "react";
-import { Helmet } from "react-helmet";
+
 import { TbSocial } from "react-icons/tb";
 import { Pletforms } from "../../components/Pletforms";
-import { Blogs } from "../../components/Blogs";
 import './css/SocialMidea.css'
-import { EnterpriseLaunch } from "../../components/EnterpriseLaunch";
-// import axios from "axios";
-// import { RestAPI } from "../../config/Api";
-// import { userToken } from "../../config/Auth";
-// import { EnterpriseLaunch } from "../../components/EnterpriseLaunch";
-// import './BusinessBrand.css'
-// import { IdeaContext } from "../../config/ideaDataContext";
+import { Blogs } from "@/components/components/Blogs";
+import { EnterpriseLaunch } from "@/components/components/EnterpriseLaunch";
 export default function SocialMidea() {
   
   const platforms = [
@@ -61,12 +53,7 @@ export default function SocialMidea() {
 
   return (
     <>
-      <Helmet>
-        <title>Social Media
-        | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <TbSocial />Social Media</h1>

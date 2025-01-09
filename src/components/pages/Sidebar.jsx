@@ -73,7 +73,7 @@ export default function SideBar () {
         <ul>
           <li>
             <Link
-              href="/"
+              href="/dashboard"
               // className={location.pathname === "/" ? "active" : undefined}
             >
               <FaEye />
@@ -81,14 +81,14 @@ export default function SideBar () {
             </Link>
           </li>
           <li>
-            <Link href="/idea/new" className={isIdeaRoute ? "active" : undefined}>
+            <Link href="/dashboard/idea/new" className={isIdeaRoute ? "active" : undefined}>
               <FaLightbulb />
               Idea
             </Link> 
           </li>
           <li>
             <Link
-              href="/business-identity/brand"
+              href="/dashboard/business-identity/brand"
               className={isBusinessRoute ? "active" : undefined}
             >
               <FaBusinessTime />
@@ -97,7 +97,7 @@ export default function SideBar () {
           </li>
           <li>
             <Link 
-              href="/marketing/social-media/home"
+              href="/dashboard/marketing/social-media/home"
               className={isMarketingRoute ? "active" : undefined}
             >
               <FaCompass />
@@ -106,7 +106,7 @@ export default function SideBar () {
           </li>
           <li>
             <Link 
-              href="/legal/contact"
+              href="/dashboard/legal/contact"
               className={isLegalRoute ? "active" : undefined}
             >
               <FaConfluence />
@@ -115,7 +115,7 @@ export default function SideBar () {
           </li>
           <li>
             <Link 
-              href="/team/myteam"
+              href="/dashboard/team/myteam"
               className={isTeamRoute ? "active" : undefined}
             >
               <FaPeopleCarry />
@@ -124,7 +124,7 @@ export default function SideBar () {
           </li>
           <li>
             <Link 
-              href="/business-tools/website"
+              href="/dashboard/business-tools/website"
               className={isBusinessToolsRoute ? "active" : undefined}
             >
               <FaTools /> Business Tools
@@ -177,11 +177,11 @@ export default function SideBar () {
       </div>
       <div className="part-two">
         <ul>
-          {location.pathname === "/" && (
+          {location.pathname === "/dashboard" && (
             <li>
               <Link
-                className={location.pathname === "/" ? "active" : undefined}
-                href="/"
+                className={location.pathname === "/dashboard" ? "active" : undefined}
+                href="/dashboard"
               >
                 <FaLayerGroup />
                 Welcome
@@ -194,9 +194,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/idea/new" ? "active" : undefined
+                    location.pathname === "/dashboard/idea/new" ? "active" : undefined
                   }
-                  href="/idea/new"
+                  href="/dashboard/idea/new"
                 >
                   <FaPlus />
                   New Idea
@@ -205,9 +205,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/idea/my" ? "active" : undefined
+                    location.pathname === "/dashboard/idea/my" ? "active" : undefined
                   }
-                  href="/idea/my"
+                  href="/dashboard/idea/my"
                 >
                   <FaStore />
                   My Ideas
@@ -216,9 +216,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/idea/find" ? "active" : undefined
+                    location.pathname === "/dashboard/idea/find" ? "active" : undefined
                   }
-                  href="/idea/find"
+                  href="/dashboard/idea/find"
                 >
                   <FaSearch />
                   Find Idea
@@ -232,9 +232,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-identity/new" ? "active" : undefined
+                    location.pathname === "/dashboard/business-identity/new" ? "active" : undefined
                   }
-                  href="/business-identity/brand"
+                  href="/dashboard/business-identity/brand"
                 >
                   <FaBook />
                   Brand Name
@@ -243,9 +243,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-identity/logo" ? "active" : undefined
+                    location.pathname === "/dashboard/business-identity/logo" ? "active" : undefined
                   }
-                  href="/business-identity/logo"
+                  href="/dashboard/business-identity/logo"
                 >
                   <FaPallet />
                   Logo Design
@@ -254,9 +254,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-identity/font" ? "active" : undefined
+                    location.pathname === "/dashboard/business-identity/font" ? "active" : undefined
                   }
-                  href="/business-identity/font"
+                  href="/dashboard/business-identity/font"
                 >
                   <FaFont />
                   Font
@@ -265,9 +265,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-identity/color" ? "active" : undefined
+                    location.pathname === "/dashboard/business-identity/color" ? "active" : undefined
                   }
-                  href="/business-identity/color"
+                  href="/dashboard/business-identity/color"
                 >
                   <FaPalette />
                   Color
@@ -276,9 +276,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-identity/slogan" ? "active" : undefined
+                    location.pathname === "/dashboard/business-identity/slogan" ? "active" : undefined
                   }
-                  href="/business-identity/slogan"
+                  href="/dashboard/business-identity/slogan"
                 >
                   <FaTextHeight />
                   Slogan
@@ -291,9 +291,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname.includes("/marketing/social-media") ? "active" : undefined
+                    location.pathname.includes("/dashboard/marketing/social-media") ? "active" : undefined
                   }
-                  href="/marketing/social-media/home"
+                  href="/dashboard/marketing/social-media/home"
                 >
                   <TbSocial />
                   Social Media
@@ -305,9 +305,9 @@ export default function SideBar () {
                   <li>
                     <Link 
                       className={
-                        location.pathname.includes("/marketing/social-media/home") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/social-media/home") ? "active" : undefined
                       }
-                      href="/marketing/social-media/home"
+                      href="/dashboard/marketing/social-media/home"
                     >
                     <FaHome/>
                      Home
@@ -316,9 +316,9 @@ export default function SideBar () {
                   <li>
                     <Link 
                     className={
-                      location.pathname.includes("/marketing/social-media/my-design") ? "active" : undefined
+                      location.pathname.includes("/dashboard/marketing/social-media/my-design") ? "active" : undefined
                     }
-                    href="/marketing/social-media/my-design"
+                    href="/dashboard/marketing/social-media/my-design"
                     >
                     <FaDesktop/>
                     My Designs
@@ -328,9 +328,9 @@ export default function SideBar () {
                   <li>
                     <Link
                     className={
-                      location.pathname.includes("/marketing/social-media/new-design") ? "active" : undefined
+                      location.pathname.includes("/dashboard/marketing/social-media/new-design") ? "active" : undefined
                     }
-                    href="/marketing/social-media/new-design"
+                    href="/dashboard/marketing/social-media/new-design"
                     >
                     <FaSignsPost/>
                     New Post Design
@@ -344,9 +344,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/marketing/email-marketing" ? "active" : undefined
+                    location.pathname === "/dashboard/marketing/email-marketing" ? "active" : undefined
                   }
-                  href="/marketing/email-marketing"
+                  href="/dashboard/marketing/email-marketing"
                   // href="#"
                 >
                   <SiAmazonsimpleemailservice  />
@@ -357,10 +357,10 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/marketing/seo" ? "active" : undefined
+                    location.pathname === "/dashboard/marketing/seo" ? "active" : undefined
                   }
                   // href="/business-identity/font"
-                  href="/marketing/seo"
+                  href="/dashboard/marketing/seo"
 
                 >
                   <TbSeo  />
@@ -370,10 +370,10 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname.includes("/marketing/blogs") ? "active" : undefined
+                    location.pathname.includes("/dashboard/marketing/blogs") ? "active" : undefined
                   }
                   // href="/business-identity/font"
-                  href="/marketing/blogs/home"
+                  href="/dashboard/marketing/blogs/home"
 
                 >
                   <FaBlog />
@@ -384,9 +384,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                         className={
-                          location.pathname.includes("/marketing/blogs/create-new-blog") ? "active" : undefined
+                          location.pathname.includes("/dashboard/marketing/blogs/create-new-blog") ? "active" : undefined
                         }
-                        href="/marketing/blogs/create-new-blog"
+                        href="/dashboard/marketing/blogs/create-new-blog"
                       >
                         <FaPlus/>
                         Create New Blogs
@@ -395,9 +395,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/blogs/my-blogs") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/blogs/my-blogs") ? "active" : undefined
                       }
-                      href="/marketing/blogs/my-blogs"
+                      href="/dashboard/marketing/blogs/my-blogs"
                       >
                         <FaBlog/>
                         My Blogs
@@ -410,10 +410,10 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname.includes( "/marketing/marketing-material") ? "active" : undefined
+                    location.pathname.includes( "/dashboard/marketing/marketing-material") ? "active" : undefined
                   }
                   // href="/business-identity/color"
-                  href="/marketing/marketing-material/home"
+                  href="/dashboard/marketing/marketing-material/home"
 
                 >
                   <SiMarketo  />
@@ -425,9 +425,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                         className={
-                          location.pathname.includes("/marketing/marketing-material/pen-and-notebook") ? "active" : undefined
+                          location.pathname.includes("/dashboard/marketing/marketing-material/pen-and-notebook") ? "active" : undefined
                         }
-                        href="/marketing/marketing-material/pen-and-notebook"
+                        href="/dashboard/marketing/marketing-material/pen-and-notebook"
                       >
                         {/* <FaPlus/> */}
                         Pen & Notebook
@@ -436,10 +436,10 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/marketing-material/key-chain") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/marketing-material/key-chain") ? "active" : undefined
                       }
 
-                      href="/marketing/marketing-material/key-chain"
+                      href="/dashboard/marketing/marketing-material/key-chain"
                       >
                         {/* <FaBlog/> */}
                         Key Chain
@@ -449,9 +449,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/marketing-material/t-shirts") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/marketing-material/t-shirts") ? "active" : undefined
                       }
-                      href="/marketing/marketing-material/t-shirts"
+                      href="/dashboard/marketing/marketing-material/t-shirts"
                       >
                         {/* <FaBlog/> */}
                         T-shirts
@@ -461,9 +461,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/marketing-material/mugs") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/marketing-material/mugs") ? "active" : undefined
                       }
-                      href="/marketing/marketing-material/mugs"
+                      href="/dashboard/marketing/marketing-material/mugs"
                       >
                         {/* <FaBlog/> */}
                         Mugs
@@ -473,9 +473,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/marketing-material/tote-bags") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/marketing-material/tote-bags") ? "active" : undefined
                       }
-                      href="/marketing/marketing-material/tote-bags"
+                      href="/dashboard/marketing/marketing-material/tote-bags"
                       >
                         {/* <FaBlog/> */}
                         Tote Bags
@@ -485,9 +485,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/marketing-material/stickers") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/marketing-material/stickers") ? "active" : undefined
                       }
-                      href="/marketing/marketing-material/stickers"
+                      href="/dashboard/marketing/marketing-material/stickers"
                       >
                         {/* <FaBlog/> */}
                         Stickers
@@ -497,9 +497,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/marketing-material/gift-cards") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/marketing-material/gift-cards") ? "active" : undefined
                       }
-                      href="/marketing/marketing-material/gift-cards"
+                      href="/dashboard/marketing/marketing-material/gift-cards"
                       >
                         {/* <FaBlog/> */}
                         Gift Cards
@@ -512,9 +512,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/marketing/business-card" ? "active" : undefined
+                    location.pathname === "/dashboard/marketing/business-card" ? "active" : undefined
                   }
-                  href="/marketing/business-card"
+                  href="/dashboard/marketing/business-card"
                                   >
                   <TiBusinessCard />
                   Business Card
@@ -524,10 +524,10 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/marketing/events/home" ? "active" : undefined
+                    location.pathname === "/dashboard/marketing/events/home" ? "active" : undefined
                   }
                   // href="/business-identity/slogan"
-                  href="/marketing/events/home"
+                  href="/dashboard/marketing/events/home"
                 >
                   <RiCalendarEventLine />
                   Marketing Events
@@ -537,9 +537,9 @@ export default function SideBar () {
                     <li>
                       <Link 
                         className={
-                          location.pathname.includes("/marketing/events/new-event") ? "active" : undefined
+                          location.pathname.includes("/dashboard/marketing/events/new-event") ? "active" : undefined
                         }
-                        href="/marketing/events/new-event"
+                        href="/dashboard/marketing/events/new-event"
                       >
                         {/* <FaPlus/> */}
                         New Event
@@ -549,10 +549,10 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/events/home/event-schedule") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/events/home/event-schedule") ? "active" : undefined
                       }
 
-                      href="/marketing/events/event-schedule"
+                      href="/dashboard/marketing/events/event-schedule"
                       >
                         {/* <FaBlog/> */}
                         Event Schedule
@@ -563,10 +563,10 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/marketing/events/my-event") ? "active" : undefined
+                        location.pathname.includes("/dashboard/marketing/events/my-event") ? "active" : undefined
                       }
 
-                      href="/marketing/events/my-event"
+                      href="/dashboard/marketing/events/my-event"
                       >
                         {/* <FaBlog/> */}
                         My Events
@@ -579,10 +579,10 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/marketing/billboards/home" ? "active" : undefined
+                    location.pathname === "/dashboard/marketing/billboards/home" ? "active" : undefined
                   }
                   // href="/business-identity/slogan"
-                  href="/marketing/billboards/home"
+                  href="/dashboard/marketing/billboards/home"
 
                 >
                   <SiBillboard/>
@@ -594,10 +594,10 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/marketing/online-campaigns/home" ? "active" : undefined
+                    location.pathname === "/dashboard/marketing/online-campaigns/home" ? "active" : undefined
                   }
                   // href="/business-identity/slogan"
-                  href="/marketing/online-campaigns/home"
+                  href="/dashboard/marketing/online-campaigns/home"
 
                 >
                 <RiPresentationLine />
@@ -612,9 +612,9 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/contact" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/contact" ? "active" : undefined
                   }
-                  href="/legal/contact"
+                  href="/dashboard/legal/contact"
                 >
 <CiPhone />
 Contact
@@ -623,9 +623,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/email" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/email" ? "active" : undefined
                   }
-                  href="/legal/email"
+                  href="/dashboard/legal/email"
                 >
                   <MdAlternateEmail />
 
@@ -635,9 +635,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/location" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/location" ? "active" : undefined
                   }
-                  href="/legal/location"
+                  href="/dashboard/legal/location"
                 >
                   <IoLocationOutline />
 
@@ -647,9 +647,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/letterhead" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/letterhead" ? "active" : undefined
                   }
-                  href="/legal/letterhead"
+                  href="/dashboard/legal/letterhead"
                 ><SlEnvolopeLetter />
 
 
@@ -659,9 +659,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/rc" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/rc" ? "active" : undefined
                   }
-                  href="/legal/rc"
+                  href="/dashboard/legal/rc"
                 >
                   <FaRegRegistered />
                   RC
@@ -670,9 +670,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/brand-registration" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/brand-registration" ? "active" : undefined
                   }
-                  href="/legal/brand-registration"
+                  href="/dashboard/legal/brand-registration"
                 >
                   <GiArchiveRegister />
 
@@ -682,9 +682,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/additional-certificates" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/additional-certificates" ? "active" : undefined
                   }
-                  href="/legal/additional-certificates"
+                  href="/dashboard/legal/additional-certificates"
                 >
                   <GrCertificate />
 
@@ -695,9 +695,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/legal/legal-consultation" ? "active" : undefined
+                    location.pathname === "/dashboard/legal/legal-consultation" ? "active" : undefined
                   }
-                  href="/legal/legal-consultation"
+                  href="/dashboard/legal/legal-consultation"
                 >
                   <FaSearch />
                   Legal Consultation
@@ -711,9 +711,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/team/myteam" ? "active" : undefined
+                    location.pathname === "/dashboard/team/myteam" ? "active" : undefined
                   }
-                  href="/team/myteam"
+                  href="/dashboard/team/myteam"
                 >
                   <BsMicrosoftTeams />
 
@@ -723,9 +723,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/team/meeting" ? "active" : undefined
+                    location.pathname === "/dashboard/team/meeting" ? "active" : undefined
                   }
-                  href="/team/meeting"
+                  href="/dashboard/team/meeting"
                 >
                   <SiGotomeeting />
 
@@ -735,9 +735,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/team/platforms" ? "active" : undefined
+                    location.pathname === "/dashboard/team/platforms" ? "active" : undefined
                   }
-                  href="/team/platforms"
+                  href="/dashboard/team/platforms"
                 >
                   <GiFloatingPlatforms />
 
@@ -747,9 +747,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/team-legal" ? "active" : undefined
+                    location.pathname === "/dashboard/team-legal" ? "active" : undefined
                   }
-                  href="/team-legal"
+                  href="/dashboard/team-legal"
                 >
                   <GiClawHammer />
 
@@ -764,9 +764,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/website" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/website" ? "active" : undefined
                   }
-                  href="/business-tools/website"
+                  href="/dashboard/business-tools/website"
                 >
                   <FaWeibo />
 
@@ -776,9 +776,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/App" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/App" ? "active" : undefined
                   }
-                  href="/business-tools/App"
+                  href="/dashboard/business-tools/App"
                 >
                   <FaAppStore />
 
@@ -788,9 +788,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/CRM" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/CRM" ? "active" : undefined
                   }
-                  href="/business-tools/CRM"
+                  href="/dashboard/business-tools/CRM"
                 >
                   <GiFloatingPlatforms />
 
@@ -800,9 +800,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/equipment" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/equipment" ? "active" : undefined
                   }
-                  href="/business-tools/equipment"
+                  href="/dashboard/business-tools/equipment"
                 >
                   <GiClawHammer />
 
@@ -812,9 +812,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/templates" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/templates" ? "active" : undefined
                   }
-                  href="/business-tools/templates"
+                  href="/dashboard/business-tools/templates"
                 >
                   <GrTemplate />
                   Templates
@@ -823,9 +823,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/platforms" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/platforms" ? "active" : undefined
                   }
-                  href="/business-tools/platforms"
+                  href="/dashboard/business-tools/platforms"
                 >
                   <GiFloatingPlatforms />
 
@@ -836,9 +836,9 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/business-tools/invoicing" ? "active" : undefined
+                    location.pathname === "/dashboard/business-tools/invoicing" ? "active" : undefined
                   }
-                  href="/business-tools/invoicing"
+                  href="/dashboard/business-tools/invoicing"
                 >
                   <LiaFileInvoiceDollarSolid />
 

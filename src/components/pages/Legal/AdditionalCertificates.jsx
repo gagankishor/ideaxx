@@ -1,12 +1,6 @@
-
- 
-import { Helmet } from 'react-helmet'
-
+import { Blogs } from '@/components/components/Blogs';
+import { EnterpriseLaunch } from '@/components/components/EnterpriseLaunch';
 import { RiSeoLine } from 'react-icons/ri'
-import { SideBar } from '../../components/Sidebar'
-import { Blogs } from '../../components/Blogs'
-import { EnterpriseLaunch } from '../../components/EnterpriseLaunch'
-
 export const AdditionalCertificates = () => {
     
   const blogs = [
@@ -37,12 +31,8 @@ export const AdditionalCertificates = () => {
   ];
   return (
     <>
-       <Helmet>
-        <title> Additional Certificates
-        | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
+       
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />

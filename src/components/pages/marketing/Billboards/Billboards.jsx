@@ -1,12 +1,11 @@
+"use client";
 import  { useContext, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../../components/Sidebar";
-import { RiSeoLine } from "react-icons/ri";
-import { AssignedTo } from "../../../components/AssignedTo";
-import { IdeaContext } from "../../../config/ideaDataContext";
+import { RiSeoLine } from "react-icons/ri"
 import axios from "axios";
-import { RestAPI } from "../../../config/Api";
+import { RestAPI } from "@/config/Api";
 import Swal from "sweetalert2";
+import { IdeaContext } from "@/context/ideaDataContext";
+import { AssignedTo } from "@/components/components/AssignedTo";
 
 export const Billboards = () => {
   const {  brandData } = useContext(IdeaContext);
@@ -155,11 +154,8 @@ export const Billboards = () => {
   };
   return (
     <>
-      <Helmet>
-        <title>SEO | ideax</title>
-      </Helmet>
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine /> Marketing Events

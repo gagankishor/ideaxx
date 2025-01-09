@@ -1,9 +1,6 @@
 
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../components/Sidebar'
-
+import { Pletforms } from '@/components/components/Pletforms';
 import { RiSeoLine } from 'react-icons/ri'
-import { Pletforms } from '../../components/Pletforms'
 
 export const TeamPlatforms = () => {
     
@@ -16,12 +13,7 @@ export const TeamPlatforms = () => {
       ];
   return (
     <>
-       <Helmet>
-        <title> Team
-        | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />

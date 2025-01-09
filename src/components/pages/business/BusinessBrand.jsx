@@ -1,15 +1,15 @@
+"use client"
 import { FaRobot, FaSearch } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
+// import { SideBar } from "../../components/Sidebar";
 import { useContext, useEffect, useRef, useState } from "react";
-import { Helmet } from "react-helmet";
 import axios from "axios";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
 import { EnterpriseLaunch } from "../../components/EnterpriseLaunch";
 import './BusinessBrand.css'
-import { IdeaContext } from "../../config/ideaDataContext";
 import Swal from "sweetalert2";
-export default function IdeaFind() {
+import { IdeaContext } from "@/context/ideaDataContext";
+export default function BrandName() {
   const loggedToken = userToken();
   const hasFetched = useRef(false);
 
@@ -28,7 +28,7 @@ export default function IdeaFind() {
     },
   };
  
-  const findIdea = () => {
+  const findIdeafun = () => {
     setIsFetching(true);
     const requestBody = { brand };
 
@@ -163,11 +163,8 @@ export default function IdeaFind() {
 
   return (
     <>
-      <Helmet>
-        <title>Brand Name | ideax</title>
-      </Helmet>
+      
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaSearch /> Brand Name
@@ -182,7 +179,7 @@ export default function IdeaFind() {
                     className="btn"
                     onClick={(e) => {
                       e.stopPropagation();
-                      findIdea();
+                      findIdeafun();
                     }}
                   >
                     {isFetching ? (

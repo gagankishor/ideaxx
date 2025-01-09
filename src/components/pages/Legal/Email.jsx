@@ -1,9 +1,8 @@
+"use client"
+import { IdeaContext } from "@/context/ideaDataContext";
 import { useContext, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
 import { RiMailLine } from "react-icons/ri";
 import Swal from "sweetalert2";
-import { IdeaContext } from "../../config/ideaDataContext";
 
 
 export const Email = () => {
@@ -57,11 +56,7 @@ export const Email = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Email Verification | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiMailLine />

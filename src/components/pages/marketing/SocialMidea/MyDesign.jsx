@@ -1,9 +1,9 @@
-import { SideBar } from "../../../components/Sidebar";
-import { Helmet } from "react-helmet";
+"use client";
+import { AssignedTo } from "@/components/components/AssignedTo";
+import { Pletforms } from "@/components/components/Pletforms";
 import { FaPlus } from "react-icons/fa";
 import { TbSocial } from "react-icons/tb";
-import { Pletforms } from "../../../components/Pletforms";
-import { AssignedTo } from "../../../components/AssignedTo";
+
 // import { status } from "nprogress";
 
 export const MyDesign = () => {
@@ -27,11 +27,8 @@ const tasklist = [
 ];
 return (
   <>
-    <Helmet>
-      <title>Brand Name | ideax</title>
-    </Helmet>
+    
     <div className="dashboard container">
-      <SideBar />
       <div className="content">
 
         <div className="top-continer">

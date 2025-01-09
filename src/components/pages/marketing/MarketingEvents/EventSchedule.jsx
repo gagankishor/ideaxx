@@ -1,20 +1,15 @@
+"use client";
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../../components/Sidebar";
+import { RestAPI } from "@/config/Api";
 import { RiSeoLine } from "react-icons/ri";
-import axios from "axios"; // Install axios via npm if you are using it
-import { RestAPI } from "../../../config/Api";
-
+import axios from "axios";
 export const EventSchedule = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // Fetch event designs on component mount
   useEffect(() => {
     const fetchEventDesigns = async () => {
       try {
-        
         const response = await axios.get(`${RestAPI}/event-designs`); // Adjust the API URL if needed
         setEvents(response.data.data); // Assuming the data is in `response.data.data`
         setLoading(false);
@@ -24,17 +19,12 @@ export const EventSchedule = () => {
         setLoading(false);
       }
     };
-
     fetchEventDesigns();
   }, []);
 
   return (
     <>
-      <Helmet>
-        <title>SEO | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

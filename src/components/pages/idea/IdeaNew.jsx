@@ -5,22 +5,20 @@ import { useEffect, useState } from "react";
 import { FaPlus, FaRobot } from "react-icons/fa";
 // import { HoverNote } from "../../components/HoverNote";
 import { CustomCheckbox } from "../../components/Checkbox";
-import { userToken } from "../../config/Auth";
+// import { userToken } from "../../config/Auth";
 import SuggestionInput from "./components/Suggestion";
-import { RestAPI } from "../../config/Api";
+// import { RestAPI } from "../../config/Api";
 import { RxPlus, RxTrash } from "react-icons/rx";
 import SuggestionInvestment from "./components/SuggestionInvestment";
 import FinancialProjection from "./components/Finance";
-import { Helmet } from "react-helmet";
-import useAxiosWithAuth from "../../config/useAxiosWithAuth";
-import SideBar from "../Sidebar";
-
+// import { Helmet } from "react-helmet";
+import useAxiosWithAuth from "@/config/useAxiosWithAuth";
+import { userToken } from "@/config/Auth";
+import { RestAPI } from "@/config/Api";
 export default function IdeaNew() {
-  // useState
   const loggedToken = userToken();
   const [step, setStep] = useState(1);
   const [sectors, setSectors] = useState([]);
-
   const [isLoading, setIsLoading] = useState(false);
   const [generatedPlan, setGeneratedPlan] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -31,11 +29,7 @@ export default function IdeaNew() {
     { name: "", description: "", sectorId: "" },
   ]);
   const axiosInstance = useAxiosWithAuth();
-
-  // Formating answer
   const contentToDisplay = generatedPlan ? generatedPlan.ai : "";
-
-  // Form data remember
   const [formData, setFormData] = useState(() => {
     const savedFormData = localStorage.getItem("formData");
     return savedFormData
@@ -49,16 +43,16 @@ export default function IdeaNew() {
           idea_name: "",
           employees_num: "",
           service_type: "",
-          logistics: "",
+          logistics: "", 
           service_area: "",
           clients: "",
-          success_drivers: [], // Ensure this is initialized as an array
-          weaknesses: [], // Ensure this is initialized as an array
+          success_drivers: [],
+          weaknesses: [],
           currency: "",
           initial_investment: "",
-          operation_costs: [], // Ensure this is initialized as an array
-          operation_costs_names: [], // Ensure this is initialized as an array
-          investment_items: [], // Ensure this is initialized as an array
+          operation_costs: [],
+          operation_costs_names: [],
+          investment_items: [],
           status: "",
           first_year_profit: "",
           expected_revenue: "",
@@ -66,7 +60,6 @@ export default function IdeaNew() {
           net_profit_margin: "",
         };
   });
-
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
@@ -80,12 +73,8 @@ export default function IdeaNew() {
         console.error('Error fetching sectors:', error);
       }
     };
-  
     fetchSectors();
   }, []);
-
-  // Data lists --------------
-
   const ideaReasonOptions = [
     "Business plan",
     "Requesting funding from investors or banks",
@@ -95,9 +84,7 @@ export default function IdeaNew() {
     "To submit to a non-financial institution for approval (e.g., getting VISA approval, franchise approval, tenant approval)",
     "Other reasons",
   ];
-
   const ideaStateOptions = ["Still an idea", "Already Started"];
-
   const countries = [
     "United States",
     "China",
@@ -139,58 +126,39 @@ export default function IdeaNew() {
     "Philippines",
     "Colombia",
   ];
-
-  // -------------------------
-
-  // Axios connfigs for Auth & Submit
   const axiosConfig = {
     headers: {
       Accept: "application/vnd.api+json",
       Authorization: `Bearer ${loggedToken}`,
     },
   };
-
-  // Add products or services
   const addProductOrService = () => {
     setProducts([...products, { name: "", description: "", sectorId: "" }]);
   };
-
-  // Add
   const addSuccessDriver = () => {
     setSuccess([...successes, { success: "" }]);
   };
-
-  // Add
   const addWeaknessDriver = () => {
     setWeakness([...weaknesses, { weakness: "" }]);
   };
-
-  // Remove product or service block
   const removeProductOrService = (index) => {
     const newProducts = [...products];
     newProducts.splice(index, 1);
     setProducts(newProducts);
   };
-
-  // Remove
   const removeSuccess = (index) => {
     const newSuccess = [...successes];
     newSuccess.splice(index, 1);
     setSuccess(newSuccess);
   };
-
-  // Remove
   const removeWeakness = (index) => {
     const newWeakness = [...weaknesses];
     newWeakness.splice(index, 1);
     setWeakness(newWeakness);
   };
-
-  // Next step handle
   const nextStep = () => {
     let canProceed = true;
     const alertMessages = [];
-
     switch (step) {
       case 1:
         if (!formData.sector_id) alertMessages.push("Sector is required.");
@@ -227,18 +195,14 @@ export default function IdeaNew() {
       default:
         canProceed = true;
     }
-
     if (alertMessages.length > 0) {
       alert(alertMessages.join("\n"));
       canProceed = false;
     }
-
     if (canProceed) {
       setStep(step + 1);
     }
   };
-
-  // Save generated idea
   const saveIdea = async () => {
     const ideaformData = new FormData();
     // console.log(formData)
@@ -247,8 +211,6 @@ export default function IdeaNew() {
     ideaformData.append("status", "Active");
     ideaformData.append("sector_id", formData?.sector_id ?formData?.sector_id:"");
     ideaformData.append("idea_plan", contentToDisplay);
-    
-
     try {
       const response = await axios({
         method: "post",
@@ -260,8 +222,6 @@ export default function IdeaNew() {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      // Redirect on successful POST request
       if (response.status === 200) {
         // history.push("/idea/my");
         localStorage.setItem('idea',response.data.idea)
@@ -271,24 +231,20 @@ export default function IdeaNew() {
       console.error("There was an error saving the idea:", error);
     }
   };
-
   const handleTextareaChange = (e) => {
     setFormData({ ...formData, idea_description: e.target.value });
     setIsEditing(true);
   };
-
   // Handle checkbox change
   const handleCheckboxChange = (fieldName, newValue) => {
     setFormData({ ...formData, [fieldName]: newValue });
   };
-
   // Find idea button
   const findIdea = () => {
     setIsFetching(true);
     const requestBody = {
       concept: formData.idea_description,
     };
-
     axios
       .post(`${RestAPI}/ai/concept`, requestBody, axiosConfig)
       .then((response) => {
@@ -302,15 +258,11 @@ export default function IdeaNew() {
         setIsFetching(false);
       });
   };
-
   // Form submit
   const handleSubmit = async (e) => {
     try{
-
-
     e.preventDefault();
     setIsLoading(true); // Start loading
-
     window.scrollTo(0, 0);
     // console.log(formData)
     const formDataToSend = new FormData();
@@ -331,8 +283,6 @@ export default function IdeaNew() {
     formDataToSend.append("expected_revenue", formData.expected_revenue);
     formDataToSend.append("expected_year_cost", formData.expected_year_cost);
     formDataToSend.append("net_profit_margin", formData.net_profit_margin);
-
-
     // Append array fields
     if (formData?.success_drivers) {
       formData.success_drivers.forEach((driver, index) => {
@@ -396,12 +346,8 @@ export default function IdeaNew() {
 
   return (
     <>
-      <Helmet>
-        <title>New Idea | ideax</title>
-      </Helmet>
-
       <div className="dashboard container">
-        <SideBar />
+        {/* <SideBar /> */}
         <div className="content">
           {isLoading ? (
             <>

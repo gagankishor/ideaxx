@@ -1,13 +1,12 @@
+"use client"
 import {  FaPallet } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
-import { Helmet } from "react-helmet";
 import { useContext, useEffect, useRef, useState } from "react";
 import "./BusinessLogo.css"; // Assuming you'll create a separate CSS file for styling
 import axios from "axios";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
-import { IdeaContext } from "../../config/ideaDataContext";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
 import Swal from "sweetalert2";
+import { IdeaContext } from "@/context/ideaDataContext";
 // import { FaTrash } from "react-icons/fa6";
 
 export default function BusinessLogo() {
@@ -136,12 +135,8 @@ export default function BusinessLogo() {
 // };
   return (
     <>
-      <Helmet>
-        <title>Logo Design | ideax</title>
-      </Helmet>
-       
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaPallet /> Logo Design

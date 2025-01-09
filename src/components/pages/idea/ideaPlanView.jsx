@@ -1,20 +1,18 @@
+"use client";
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
 
 export default function IdeaPlanViewer() {
-  // const { ideaPlan } = useParams();
   const [fileContent, setFileContent] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
-  const { ideaPlan } = location.state || {};
+  const router = useRouter();
+  const { ideaPlan } = router.query;
+
   useEffect(() => {
     const fetchFileContent = async () => {
       try {
-        // console.log(ideaPlan)
-        alert(ideaPlan)
         const response = await axios.get(`${ideaPlan}`);
         setFileContent(response.data);
       } catch (error) {
@@ -25,14 +23,14 @@ export default function IdeaPlanViewer() {
       }
     };
 
-    fetchFileContent();
+    if (ideaPlan) {
+      fetchFileContent();
+    }
   }, [ideaPlan]);
 
   return (
     <>
-      <Helmet>
-        <title>View Idea Plan | ideax</title>
-      </Helmet>
+    
       <div className="container">
         <h1>Idea Plan Content</h1>
         {loading ? (

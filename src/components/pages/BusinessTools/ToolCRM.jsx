@@ -1,10 +1,6 @@
- 
-import { SideBar } from '../../components/Sidebar'
-import { Helmet } from 'react-helmet'
+import { Blogs } from '@/components/components/Blogs';
+import { Pletforms } from '@/components/components/Pletforms';
 import { FaTools } from 'react-icons/fa'
-import { Pletforms } from '../../components/Pletforms'
-import { Blogs } from '../../components/Blogs'
-
 export const ToolCRM = () => {
     const platforms = [
         { id: 1, name: "", logo: "/keyChainq.png", link: "" },
@@ -41,11 +37,7 @@ export const ToolCRM = () => {
           ];
   return (
     <>
-    <Helmet>
-      <title> Location | ideax</title>
-    </Helmet>
     <div className="dashboard container">
-      <SideBar />
       <div className="content">
         <h1 id="heading">
         <FaTools /> Business Tools

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../../components/Sidebar";
+import { RestAPI } from "@/config/Api";
 import { RiSeoLine } from "react-icons/ri";
-import { RestAPI } from "../../../config/Api";
 import axios from "axios";
 
 export const MyEvent = () => {
@@ -24,11 +22,8 @@ export const MyEvent = () => {
   }, []);
   return (
     <>
-      <Helmet>
-        <title>SEO | ideax</title>
-      </Helmet>
+   
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

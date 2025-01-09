@@ -1,10 +1,8 @@
  
-import { Blogs } from "../../../components/Blogs";
-import { Pletforms } from "../../../components/Pletforms";
-import { SideBar } from "../../../components/Sidebar";
-import { Helmet } from "react-helmet";
-import { EnterpriseLaunch } from "../../../components/EnterpriseLaunch";
+import { Pletforms } from "@/components/components/Pletforms";
 import { FaBlog } from "react-icons/fa";
+import { Blogs } from "@/components/components/Blogs";
+import { EnterpriseLaunch } from "@/components/components/EnterpriseLaunch";
 
 export const MarketingBlogs = () => {
   const blogs = [
@@ -21,24 +19,18 @@ export const MarketingBlogs = () => {
   ];
   return (
     <>
-      <Helmet>
-        <title>Blogs | ideax</title>
-      </Helmet>
+      
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <FaBlog />
-
           Blogs
           </h1>
           <div className="form">
-
             <Pletforms platforms={platforms} title="Platforms" />
             <Blogs blogs={blogs} title="Blogs" />
             <EnterpriseLaunch/>
           </div>
-          
         </div>
       </div>
     </>

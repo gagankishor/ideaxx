@@ -1,10 +1,8 @@
+"use client";
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { SideBar } from '../../../components/Sidebar';
 import { FaBlog } from 'react-icons/fa';
 import axios from 'axios';
-import { RestAPI } from '../../../config/Api';
-
+import { RestAPI } from '@/config/Api';
 export const MyBlogs = () => {
   const [publishedBlogs, setPublishedBlogs] = useState([]);
   const [draftBlogs, setDraftBlogs] = useState([]);
@@ -27,17 +25,12 @@ export const MyBlogs = () => {
         setLoading(false);
       }
     };
-
     fetchBlogs();
   }, []);
-
   return (
     <>
-      <Helmet>
-        <title>My Blog | ideax</title>
-      </Helmet>
+
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaBlog />

@@ -1,13 +1,12 @@
+"use client"
 import { FaRedo, FaRobot, FaTextHeight } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
-import { Helmet } from "react-helmet";
 import { useContext, useEffect, useState } from "react";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
 import axios from "axios";
 import { TbBulb } from "react-icons/tb";
-import { IdeaContext } from "../../config/ideaDataContext";
 import Swal from "sweetalert2";
+import { IdeaContext } from "@/context/ideaDataContext";
 export default function BusinessSlogan() {
   const [isFetching, setIsFetching] = useState(false);
   const [isFetchingSugg, setIsFetchinSugg] = useState(false);
@@ -167,12 +166,8 @@ export default function BusinessSlogan() {
 
   return (
     <>
-      <Helmet>
-        <title>Slogan | ideax</title>
-      </Helmet>
-
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaTextHeight /> Slogan

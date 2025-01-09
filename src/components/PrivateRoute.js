@@ -5,22 +5,20 @@ import { useRouter } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
 
 const PrivateRoute = ({ children }) => {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, loading } = useContext(AuthContext);
   const router = useRouter();
-  // alert(isAuthenticated)
-  console.log(isAuthenticated,"isAuthenticated")
+
   useEffect(() => {
-    if (!isAuthenticated) {
-      alert("isAuthenticated",isAuthenticated)
+    if (!loading && !isAuthenticated) {
       router.push("/login"); // Redirect to login if not authenticated
     }
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, loading, router]);
 
-  // Render children if authenticated
+  if (loading) return <div>Loading...</div>; // Show a loading state until authentication status is resolved
+
   return isAuthenticated ? children : null;
 };
 
-// PropTypes validation
 PrivateRoute.propTypes = {
   children: PropTypes.node.isRequired,
 };

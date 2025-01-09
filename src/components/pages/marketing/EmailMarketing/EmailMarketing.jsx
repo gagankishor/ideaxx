@@ -1,9 +1,8 @@
  
-import { Blogs } from "../../../components/Blogs";
-import { Pletforms } from "../../../components/Pletforms";
-import { SideBar } from "../../../components/Sidebar";
-import { Helmet } from "react-helmet";
-import { EnterpriseLaunch } from "../../../components/EnterpriseLaunch";
+
+import { Blogs } from "@/components/components/Blogs";
+import { EnterpriseLaunch } from "@/components/components/EnterpriseLaunch";
+import { Pletforms } from "@/components/components/Pletforms";
 import { SiMinutemailer } from "react-icons/si";
 
 export const EmailMarketing = () => {
@@ -21,11 +20,8 @@ export const EmailMarketing = () => {
   ];
   return (
     <>
-      <Helmet>
-        <title>Email Marketing | ideax</title>
-      </Helmet>
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <SiMinutemailer />

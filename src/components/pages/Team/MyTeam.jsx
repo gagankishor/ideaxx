@@ -1,6 +1,3 @@
- 
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
 import { RiSeoLine } from "react-icons/ri";
 import { FaFile, FaMale } from "react-icons/fa";
 
@@ -19,11 +16,7 @@ export const MyTeam = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Team | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />
@@ -51,11 +44,9 @@ export const MyTeam = () => {
                 </div>
               ))}
             </div>
-
             <div id="section-heading" style={{ textAlign: "center", margin: "50px 0px" }}>
               As your business expands, ideax will increase your work team members by default
             </div>
-
             <div>
               <label htmlFor="reason-textarea" style={{ display: "block", marginBottom: "10px" }}>
                 Describe the reason for assigning a new team member

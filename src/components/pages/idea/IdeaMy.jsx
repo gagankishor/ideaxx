@@ -1,12 +1,12 @@
+"use client"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaStore } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
 import { DataTable } from "./components/DataTable";
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
+import Link from "next/link";
+// import { Helmet } from "react-helmet";
 
 export default function IdeaMy() {
   const token = userToken();
@@ -45,12 +45,9 @@ export default function IdeaMy() {
 
   return (
     <>
-      <Helmet>
-        <title>My Ideas | ideax</title>
-      </Helmet>
+     
 
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaStore /> My Ideas

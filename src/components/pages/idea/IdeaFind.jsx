@@ -1,13 +1,12 @@
+"use client"
 import { FaSearch, FaRobot } from "react-icons/fa";
-import { SideBar } from "../../components/Sidebar";
-import { Helmet } from "react-helmet";
 import { HoverNote } from "../../components/HoverNote";
 import { CustomCheckbox } from "../../components/Checkbox";
 import { useEffect, useState } from "react";
 import axios from "axios"; // Ensure you have axios installed
-import { RestAPI } from "../../config/Api";
-import { userToken } from "../../config/Auth";
-import useAxiosWithAuth from "../../config/useAxiosWithAuth";
+import { RestAPI } from "@/config/Api";
+import { userToken } from "@/config/Auth";
+import useAxiosWithAuth from "@/config/useAxiosWithAuth";
 
 export default function IdeaFind() {
   const loggedToken = userToken();
@@ -21,13 +20,9 @@ export default function IdeaFind() {
           idea_result: "",
         };
   });
-
-  // const [showTextArea, setShowTextArea] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
   const [sectors, setSectors] = useState([]);
   const axiosInstance = useAxiosWithAuth();
-
-
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
@@ -41,24 +36,20 @@ export default function IdeaFind() {
         console.error('Error fetching sectors:', error);
       }
     };
-  
     fetchSectors();
   }, []);
-  // Handle checkbox change
   const handleCheckboxChange = (fieldName, newValue) => {
     setFormData((prevState) => ({ ...prevState, [fieldName]: newValue }));
   };
-
   const getIdea = async () => {
     setIsFetching(true);
     const payload = {
       sector_id: formData.sector_id,
       logistics: formData.logistics,
     };
-
     try {
       const response = await axios.post(
-        `${RestAPI}/ai/find-idea`, // Ensure RestAPI has the correct endpoint
+        `${RestAPI}/ai/find-idea`, 
         payload,
         {
           headers: {
@@ -67,14 +58,11 @@ export default function IdeaFind() {
           },
         }
       );
-
       setFormData((prevState) => ({
         ...prevState,
         idea_result: response.data.ai,
       }));
-
       // setShowTextArea(true);
-
       // console.log(response);
     } catch (error) {
       console.error("Error fetching idea:", error);
@@ -85,12 +73,9 @@ export default function IdeaFind() {
 
   return (
     <>
-      <Helmet>
-        <title>Find Idea | ideax</title>
-      </Helmet>
+      
 
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <FaSearch /> Find Idea

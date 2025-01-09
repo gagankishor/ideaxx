@@ -1,8 +1,4 @@
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../components/Sidebar";
-
 import { RiSeoLine } from "react-icons/ri";
-
 export const TeamMeeting = () => {
   const platforms = [
     {
@@ -24,11 +20,7 @@ export const TeamMeeting = () => {
   ];
   return (
     <>
-      <Helmet>
-        <title> Team | ideax</title>
-      </Helmet>
-      <div className="dashboard container">
-        <SideBar />
+    <div className="dashboard container">
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

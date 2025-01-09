@@ -1,11 +1,10 @@
+"use client";
 import { useState } from "react";
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../../components/Sidebar";
-import { Blogs } from "../../../components/Blogs";
-import { EnterpriseLaunch } from "../../../components/EnterpriseLaunch";
 import { RiSeoLine } from "react-icons/ri";
 import axios from "axios";
-import { RestAPI } from "../../../config/Api";
+import { RestAPI } from "@/config/Api";
+import { Blogs } from "@/components/components/Blogs";
+import { EnterpriseLaunch } from "@/components/components/EnterpriseLaunch";
 
 export const NewEvent = () => {
   const [selectedEvent, setSelectedEvent] = useState("Choose Your Event");
@@ -117,11 +116,7 @@ export const NewEvent = () => {
 
   return (
     <>
-      <Helmet>
-        <title>SEO | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

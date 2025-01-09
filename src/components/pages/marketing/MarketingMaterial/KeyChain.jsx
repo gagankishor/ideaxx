@@ -1,6 +1,5 @@
-import { Helmet } from "react-helmet";
-import { SideBar } from "../../../components/Sidebar";
-import { Pletforms } from "../../../components/Pletforms";
+
+import { Pletforms } from "@/components/components/Pletforms";
 import { RiSeoLine } from "react-icons/ri";
 export const KeyChain = () => {
   const platforms = [
@@ -15,11 +14,8 @@ export const KeyChain = () => {
   ];
   return (
     <>
-      <Helmet>
-        <title>KeyChain | ideax</title>
-      </Helmet>
+     
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
             <RiSeoLine />

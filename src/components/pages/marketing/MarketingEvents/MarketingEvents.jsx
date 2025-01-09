@@ -1,6 +1,4 @@
  
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../../components/Sidebar'
 import { RiSeoLine } from 'react-icons/ri'
 
 export const MarketingEvents = () => {
@@ -13,11 +11,7 @@ export const MarketingEvents = () => {
       ];
   return (
     <>
-       <Helmet>
-        <title>SEO | ideax</title>
-      </Helmet>
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />

@@ -1,9 +1,7 @@
  
-import { Helmet } from 'react-helmet'
-import { SideBar } from '../../../components/Sidebar'
-import { Blogs } from '../../../components/Blogs'
-import { Pletforms } from '../../../components/Pletforms'
-import { EnterpriseLaunch } from '../../../components/EnterpriseLaunch'
+import { Blogs } from '@/components/components/Blogs';
+import { EnterpriseLaunch } from '@/components/components/EnterpriseLaunch';
+import { Pletforms } from '@/components/components/Pletforms';
 import { RiSeoLine } from 'react-icons/ri'
 
 export const MarketingMaterial = () => {
@@ -21,20 +19,14 @@ export const MarketingMaterial = () => {
       ];
   return (
     <>
-       <Helmet>
-        <title>Marketing Material | ideax</title>
-      </Helmet>
+      
       <div className="dashboard container">
-        <SideBar />
         <div className="content">
           <h1 id="heading">
           <RiSeoLine />
-
           Marketing Material
-
           </h1>
           <div className="form">
-
             <Pletforms platforms={platforms} title="Platforms" />
             <Blogs blogs={blogs} title="Blogs" />
             <EnterpriseLaunch/>

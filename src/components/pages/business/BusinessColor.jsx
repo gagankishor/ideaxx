@@ -222,7 +222,7 @@ export default function BusinessColor() {
                     ></div>
                   ))}
                 </div>
-                <div className="image-container">
+                <div className="image-container2">
                   <img src={brandData?.logo} alt="Brand Logo" />
                 </div>
                 {/* <ChromePicker

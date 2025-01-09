@@ -77,7 +77,7 @@ const CardSlider = ({cards,logo,onColorSelect }) => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container2">
       <button className="arrow left-arrow" onClick={handlePrevClick}>
       &#11164;
       </button>

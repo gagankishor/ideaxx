@@ -51,12 +51,11 @@ import { SlEnvolopeLetter } from "react-icons/sl";
 import { GrCertificate, GrTemplate } from "react-icons/gr";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { LogoutButton } from "./auth/Logout";
-import Link from "next/link";
-
+import Link from "next/link";   
 export default function SideBar () {
-  const pathname = usePathname(); // Replaces useLocation from react-router-dom
-
-  // Determine which section is active based on the pathname
+  const pathname = usePathname();
+  console.log(pathname,"pathname");
+  console.log(location,"location");
   const isIdeaRoute = pathname.includes("/idea");
   const isBusinessRoute = pathname.includes("/business-identity");
   const isMarketingRoute = pathname.includes("/marketing");
@@ -68,13 +67,13 @@ export default function SideBar () {
   const isTeamRoute = pathname.includes("/team");
   const isBusinessToolsRoute = pathname.includes("/business-tools");
   return ( 
-    <div className="sidebar">
+    <div className="sidebar">    
       <div className="part-one">
         <ul>
           <li>
             <Link
               href="/dashboard"
-              // className={location.pathname === "/" ? "active" : undefined}
+              className={pathname === "/dashboard" ? "active" : undefined}
             >
               <FaEye />
               Overview
@@ -177,10 +176,10 @@ export default function SideBar () {
       </div>
       <div className="part-two">
         <ul>
-          {location.pathname === "/dashboard" && (
+          {pathname === "/dashboard" && (
             <li>
               <Link
-                className={location.pathname === "/dashboard" ? "active" : undefined}
+                className={pathname === "/dashboard" ? "active" : undefined}
                 href="/dashboard"
               >
                 <FaLayerGroup />
@@ -188,13 +187,12 @@ export default function SideBar () {
               </Link>
             </li>
           )}
-
           {isIdeaRoute && (
             <>
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/idea/new" ? "active" : undefined
+                    pathname === "/dashboard/idea/new" ? "active" : undefined
                   }
                   href="/dashboard/idea/new"
                 >
@@ -205,7 +203,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/idea/my" ? "active" : undefined
+                    pathname === "/dashboard/idea/my" ? "active" : undefined
                   }
                   href="/dashboard/idea/my"
                 >
@@ -216,7 +214,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/idea/find" ? "active" : undefined
+                    pathname === "/dashboard/idea/find" ? "active" : undefined
                   }
                   href="/dashboard/idea/find"
                 >
@@ -232,7 +230,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-identity/new" ? "active" : undefined
+                    pathname === "/dashboard/business-identity/brand" ? "active" : undefined
                   }
                   href="/dashboard/business-identity/brand"
                 >
@@ -243,7 +241,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-identity/logo" ? "active" : undefined
+                    pathname === "/dashboard/business-identity/logo" ? "active" : undefined
                   }
                   href="/dashboard/business-identity/logo"
                 >
@@ -254,7 +252,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-identity/font" ? "active" : undefined
+                    pathname === "/dashboard/business-identity/font" ? "active" : undefined
                   }
                   href="/dashboard/business-identity/font"
                 >
@@ -265,7 +263,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-identity/color" ? "active" : undefined
+                    pathname === "/dashboard/business-identity/color" ? "active" : undefined
                   }
                   href="/dashboard/business-identity/color"
                 >
@@ -276,7 +274,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-identity/slogan" ? "active" : undefined
+                    pathname === "/dashboard/business-identity/slogan" ? "active" : undefined
                   }
                   href="/dashboard/business-identity/slogan"
                 >
@@ -291,7 +289,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname.includes("/dashboard/marketing/social-media") ? "active" : undefined
+                    pathname.includes("/dashboard/marketing/social-media") ? "active" : undefined
                   }
                   href="/dashboard/marketing/social-media/home"
                 >
@@ -305,7 +303,7 @@ export default function SideBar () {
                   <li>
                     <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/social-media/home") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/social-media/home") ? "active" : undefined
                       }
                       href="/dashboard/marketing/social-media/home"
                     >
@@ -316,7 +314,7 @@ export default function SideBar () {
                   <li>
                     <Link 
                     className={
-                      location.pathname.includes("/dashboard/marketing/social-media/my-design") ? "active" : undefined
+                      pathname.includes("/dashboard/marketing/social-media/my-design") ? "active" : undefined
                     }
                     href="/dashboard/marketing/social-media/my-design"
                     >
@@ -328,7 +326,7 @@ export default function SideBar () {
                   <li>
                     <Link
                     className={
-                      location.pathname.includes("/dashboard/marketing/social-media/new-design") ? "active" : undefined
+                      pathname.includes("/dashboard/marketing/social-media/new-design") ? "active" : undefined
                     }
                     href="/dashboard/marketing/social-media/new-design"
                     >
@@ -344,7 +342,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/marketing/email-marketing" ? "active" : undefined
+                    pathname === "/dashboard/marketing/email-marketing" ? "active" : undefined
                   }
                   href="/dashboard/marketing/email-marketing"
                   // href="#"
@@ -357,7 +355,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/marketing/seo" ? "active" : undefined
+                    pathname === "/dashboard/marketing/seo" ? "active" : undefined
                   }
                   // href="/business-identity/font"
                   href="/dashboard/marketing/seo"
@@ -370,7 +368,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname.includes("/dashboard/marketing/blogs") ? "active" : undefined
+                    pathname.includes("/dashboard/marketing/blogs") ? "active" : undefined
                   }
                   // href="/business-identity/font"
                   href="/dashboard/marketing/blogs/home"
@@ -384,7 +382,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                         className={
-                          location.pathname.includes("/dashboard/marketing/blogs/create-new-blog") ? "active" : undefined
+                          pathname.includes("/dashboard/marketing/blogs/create-new-blog") ? "active" : undefined
                         }
                         href="/dashboard/marketing/blogs/create-new-blog"
                       >
@@ -395,7 +393,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/blogs/my-blogs") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/blogs/my-blogs") ? "active" : undefined
                       }
                       href="/dashboard/marketing/blogs/my-blogs"
                       >
@@ -410,7 +408,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname.includes( "/dashboard/marketing/marketing-material") ? "active" : undefined
+                    pathname.includes( "/dashboard/marketing/marketing-material") ? "active" : undefined
                   }
                   // href="/business-identity/color"
                   href="/dashboard/marketing/marketing-material/home"
@@ -425,7 +423,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                         className={
-                          location.pathname.includes("/dashboard/marketing/marketing-material/pen-and-notebook") ? "active" : undefined
+                          pathname.includes("/dashboard/marketing/marketing-material/pen-and-notebook") ? "active" : undefined
                         }
                         href="/dashboard/marketing/marketing-material/pen-and-notebook"
                       >
@@ -436,7 +434,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/marketing-material/key-chain") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/marketing-material/key-chain") ? "active" : undefined
                       }
 
                       href="/dashboard/marketing/marketing-material/key-chain"
@@ -449,7 +447,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/marketing-material/t-shirts") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/marketing-material/t-shirts") ? "active" : undefined
                       }
                       href="/dashboard/marketing/marketing-material/t-shirts"
                       >
@@ -461,7 +459,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/marketing-material/mugs") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/marketing-material/mugs") ? "active" : undefined
                       }
                       href="/dashboard/marketing/marketing-material/mugs"
                       >
@@ -473,7 +471,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/marketing-material/tote-bags") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/marketing-material/tote-bags") ? "active" : undefined
                       }
                       href="/dashboard/marketing/marketing-material/tote-bags"
                       >
@@ -485,7 +483,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/marketing-material/stickers") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/marketing-material/stickers") ? "active" : undefined
                       }
                       href="/dashboard/marketing/marketing-material/stickers"
                       >
@@ -497,7 +495,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/marketing-material/gift-cards") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/marketing-material/gift-cards") ? "active" : undefined
                       }
                       href="/dashboard/marketing/marketing-material/gift-cards"
                       >
@@ -512,7 +510,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/marketing/business-card" ? "active" : undefined
+                    pathname === "/dashboard/marketing/business-card" ? "active" : undefined
                   }
                   href="/dashboard/marketing/business-card"
                                   >
@@ -524,7 +522,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/marketing/events/home" ? "active" : undefined
+                    pathname === "/dashboard/marketing/events/home" ? "active" : undefined
                   }
                   // href="/business-identity/slogan"
                   href="/dashboard/marketing/events/home"
@@ -537,7 +535,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                         className={
-                          location.pathname.includes("/dashboard/marketing/events/new-event") ? "active" : undefined
+                          pathname.includes("/dashboard/marketing/events/new-event") ? "active" : undefined
                         }
                         href="/dashboard/marketing/events/new-event"
                       >
@@ -549,7 +547,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/events/home/event-schedule") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/events/home/event-schedule") ? "active" : undefined
                       }
 
                       href="/dashboard/marketing/events/event-schedule"
@@ -563,7 +561,7 @@ export default function SideBar () {
                     <li>
                       <Link 
                       className={
-                        location.pathname.includes("/dashboard/marketing/events/my-event") ? "active" : undefined
+                        pathname.includes("/dashboard/marketing/events/my-event") ? "active" : undefined
                       }
 
                       href="/dashboard/marketing/events/my-event"
@@ -579,7 +577,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/marketing/billboards/home" ? "active" : undefined
+                    pathname === "/dashboard/marketing/billboards/home" ? "active" : undefined
                   }
                   // href="/business-identity/slogan"
                   href="/dashboard/marketing/billboards/home"
@@ -594,7 +592,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/marketing/online-campaigns/home" ? "active" : undefined
+                    pathname === "/dashboard/marketing/online-campaigns/home" ? "active" : undefined
                   }
                   // href="/business-identity/slogan"
                   href="/dashboard/marketing/online-campaigns/home"
@@ -612,7 +610,7 @@ export default function SideBar () {
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/contact" ? "active" : undefined
+                    pathname === "/dashboard/legal/contact" ? "active" : undefined
                   }
                   href="/dashboard/legal/contact"
                 >
@@ -623,7 +621,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/email" ? "active" : undefined
+                    pathname === "/dashboard/legal/email" ? "active" : undefined
                   }
                   href="/dashboard/legal/email"
                 >
@@ -635,7 +633,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/location" ? "active" : undefined
+                    pathname === "/dashboard/legal/location" ? "active" : undefined
                   }
                   href="/dashboard/legal/location"
                 >
@@ -647,7 +645,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/letterhead" ? "active" : undefined
+                    pathname === "/dashboard/legal/letterhead" ? "active" : undefined
                   }
                   href="/dashboard/legal/letterhead"
                 ><SlEnvolopeLetter />
@@ -659,7 +657,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/rc" ? "active" : undefined
+                    pathname === "/dashboard/legal/rc" ? "active" : undefined
                   }
                   href="/dashboard/legal/rc"
                 >
@@ -670,7 +668,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/brand-registration" ? "active" : undefined
+                    pathname === "/dashboard/legal/brand-registration" ? "active" : undefined
                   }
                   href="/dashboard/legal/brand-registration"
                 >
@@ -682,7 +680,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/additional-certificates" ? "active" : undefined
+                    pathname === "/dashboard/legal/additional-certificates" ? "active" : undefined
                   }
                   href="/dashboard/legal/additional-certificates"
                 >
@@ -695,7 +693,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/legal/legal-consultation" ? "active" : undefined
+                    pathname === "/dashboard/legal/legal-consultation" ? "active" : undefined
                   }
                   href="/dashboard/legal/legal-consultation"
                 >
@@ -711,7 +709,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/team/myteam" ? "active" : undefined
+                    pathname === "/dashboard/team/myteam" ? "active" : undefined
                   }
                   href="/dashboard/team/myteam"
                 >
@@ -723,7 +721,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/team/meeting" ? "active" : undefined
+                    pathname === "/dashboard/team/meeting" ? "active" : undefined
                   }
                   href="/dashboard/team/meeting"
                 >
@@ -735,7 +733,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/team/platforms" ? "active" : undefined
+                    pathname === "/dashboard/team/platforms" ? "active" : undefined
                   }
                   href="/dashboard/team/platforms"
                 >
@@ -747,7 +745,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/team-legal" ? "active" : undefined
+                    pathname === "/dashboard/team-legal" ? "active" : undefined
                   }
                   href="/dashboard/team-legal"
                 >
@@ -764,7 +762,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/website" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/website" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/website"
                 >
@@ -776,7 +774,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/App" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/App" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/App"
                 >
@@ -788,7 +786,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/CRM" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/CRM" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/CRM"
                 >
@@ -800,7 +798,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/equipment" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/equipment" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/equipment"
                 >
@@ -812,7 +810,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/templates" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/templates" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/templates"
                 >
@@ -823,7 +821,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/platforms" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/platforms" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/platforms"
                 >
@@ -836,7 +834,7 @@ Contact
               <li>
                 <Link
                   className={
-                    location.pathname === "/dashboard/business-tools/invoicing" ? "active" : undefined
+                    pathname === "/dashboard/business-tools/invoicing" ? "active" : undefined
                   }
                   href="/dashboard/business-tools/invoicing"
                 >

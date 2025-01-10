@@ -1,6 +1,4 @@
-import React from 'react';
 
-import { Tools, Bell } from 'lucide-react';
 
 export const ToolEquipment = () => {
   return (
@@ -33,7 +31,7 @@ export const ToolEquipment = () => {
               </div>
               <div className="text-center space-y-4">
                 <h2 className="text-2xl font-semibold text-gray-900">
-                  We're Building Something Amazing
+                  Were Building Something Amazing
                 </h2>
                 <p className="text-gray-600 max-w-lg mx-auto">
                   Our team is working hard to bring you powerful business tools that will transform how you work. Stay tuned for the launch!
@@ -44,7 +42,7 @@ export const ToolEquipment = () => {
                   Get Notified
                 </button> */}
                 <p className="text-sm text-gray-500">
-                  We'll let you know as soon as it's ready
+                  Well let you know as soon as its ready
                 </p>
               </div>
             </div>

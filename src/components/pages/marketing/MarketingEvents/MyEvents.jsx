@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import { RestAPI } from "@/config/Api";
 import { RiSeoLine } from "react-icons/ri";

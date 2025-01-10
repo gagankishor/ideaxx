@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-
+import PropTypes from 'prop-types';
 const ConsultingService = ({ title, description, isSelected, onClick }) => (
     <div
         className={`bg-gray-50 rounded-lg p-6 h-full hover:shadow-md transition-shadow duration-200 cursor-pointer ${isSelected ? 'border-2 border-blue-500' : ''}`}
@@ -93,6 +93,14 @@ const ConsultingServices = () => {
             )}
         </div>
     );
+};
+
+
+ConsultingService.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    isSelected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 

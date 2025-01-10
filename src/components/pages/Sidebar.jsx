@@ -68,6 +68,12 @@ export default function SideBar () {
   const isBusinessToolsRoute = pathname.includes("/business-tools");
   const isCashFlowRoute = pathname.includes("/cash-flow");
   const isConsultingRoute = pathname.includes("/consulting");
+  const isEntrepreneurRoute = pathname.includes("/entrepreneur");
+  const isStrategiesRoute = pathname.includes("/strategies");
+  const isCommunityRoute = pathname.includes("/community");
+  const isBuySellRoute = pathname.includes("/buy-sell");
+  const isMyFilesRoute = pathname.includes("/my-files");
+  const isSettingsRoute = pathname.includes("/settings");
   return ( 
     <div className="sidebar">    
       <div className="part-one">
@@ -132,42 +138,66 @@ export default function SideBar () {
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/cash-flow/funds">
+            <Link 
+              href="/dashboard/cash-flow/funds"
+              className={isCashFlowRoute ? "active" : undefined}
+            >
               <FaCoins /> Cash Flow
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/consulting/new-request">
+            <Link 
+              href="/dashboard/consulting/new-request"
+              className={isConsultingRoute ? "active" : undefined}
+            >
               <FaHandsHelping /> Consulting
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link 
+              href="/dashboard/entrepreneur/my-ideas"
+              className={isEntrepreneurRoute ? "active" : undefined}
+            >
               <FaBoxOpen /> Entrepreneur
             </Link>
           </li>
           <li>
-            <Link href="#">
+          <Link 
+              href="/dashboard/strategies/market-strategies"
+              className={isStrategiesRoute ? "active" : undefined}
+            >
               <FaSuperpowers /> Strategies
             </Link>
           </li>
           <li>
-            <Link href="#">
+          <Link 
+              href="/dashboard/community/community"
+              className={isCommunityRoute ? "active" : undefined}
+            >
               <FaUser /> Community
             </Link>
           </li>
           <li>
-            <Link href="#">
+          <Link 
+              href="/dashboard/buy-sell/buy-sell"
+              className={isBuySellRoute ? "active" : undefined}
+            >
               <FaCartPlus /> Buy-Sell
             </Link>
           </li>
           <li>
-            <Link href="#">
+          <Link 
+              href="/dashboard/my-files/files"
+              className={isMyFilesRoute ? "active" : undefined}
+            >
               <FaFolder /> My Files
             </Link>
           </li>
           <li>
-            <Link href="#">
+          <Link 
+              href="/dashboard/settings/settings"
+              className={isSettingsRoute  ? "active" : undefined}
+            >
               <FaCog /> Settings
             </Link>
           </li>
@@ -226,7 +256,6 @@ export default function SideBar () {
               </li>
             </>
           )}
-
           {isBusinessRoute && (
             <>
               <li>
@@ -616,8 +645,8 @@ export default function SideBar () {
                   }
                   href="/dashboard/legal/contact"
                 >
-<CiPhone />
-Contact
+                  <CiPhone />
+                  Contact
                 </Link>
               </li>
               <li>
@@ -628,7 +657,6 @@ Contact
                   href="/dashboard/legal/email"
                 >
                   <MdAlternateEmail />
-
                   Email
                 </Link>
               </li>
@@ -640,7 +668,6 @@ Contact
                   href="/dashboard/legal/location"
                 >
                   <IoLocationOutline />
-
                   Location
                 </Link>
               </li>
@@ -651,8 +678,6 @@ Contact
                   }
                   href="/dashboard/legal/letterhead"
                 ><SlEnvolopeLetter />
-
-
                   Letterhead
                 </Link>
               </li>
@@ -687,9 +712,7 @@ Contact
                   href="/dashboard/legal/additional-certificates"
                 >
                   <GrCertificate />
-
                   Additional Certificates
-
                 </Link>
               </li>
               <li>
@@ -701,7 +724,6 @@ Contact
                 >
                   <FaSearch />
                   Legal Consultation
-
                 </Link>
               </li>
             </>
@@ -955,15 +977,246 @@ Contact
                   href="/dashboard/consulting/resell-service"
                 >
                   <GiFloatingPlatforms />
-
                   Resell Service
-
                 </Link>
               </li>
-              
-              
             </>
           )}
+          {isEntrepreneurRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/entrepreneur/my-ideas" ? "active" : undefined
+                  }
+                  href="/dashboard/entrepreneur/my-ideas"
+                >
+                  <FaWeibo />
+                  Ideas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/entrepreneur/library" ? "active" : undefined
+                  }
+                  href="/dashboard/entrepreneur/library"
+                >
+                  <FaAppStore />
+                  Library
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/entrepreneur/courses" ? "active" : undefined
+                  }
+                  href="/dashboard/entrepreneur/courses"
+                >
+                  <GiFloatingPlatforms />
+                  Courses
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/entrepreneur/entertainment" ? "active" : undefined
+                  }
+                  href="/dashboard/entrepreneur/entertainment"
+                >
+                  <GiFloatingPlatforms />
+                  Entertainment
+                </Link>
+              </li>
+            </>
+          )}
+          {isStrategiesRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/strategies/market-strategies" ? "active" : undefined
+                  }
+                  href="/dashboard/strategies/market-strategies"
+                >
+                  <FaWeibo />
+                  Market Strategies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/strategies/investors" ? "active" : undefined
+                  }
+                  href="/dashboard/strategies/investors"
+                >
+                  <FaAppStore />
+                  Investors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/strategies/partners" ? "active" : undefined
+                  }
+                  href="/dashboard/strategies/partners"
+                >
+                  <GiFloatingPlatforms />
+                  Partners
+                </Link>
+              </li>
+            </>
+          )}
+          {isCommunityRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/community/community" ? "active" : undefined
+                  }
+                  href="/dashboard/community/community"
+                >
+                  <FaWeibo />
+                  Community
+                </Link>
+              </li>
+              {/* <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/community/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/community/summary"
+                >
+                  <FaAppStore />
+                  Summary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/community/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/community/summary"
+                >
+                  <GiFloatingPlatforms />
+                  Platforms
+                </Link>
+              </li> */}
+            </>
+          )}
+          {isBuySellRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/buy-sell/buy-sell" ? "active" : undefined
+                  }
+                  href="/dashboard/buy-sell/buy-sell"
+                >
+                  <FaWeibo />
+                  Buy-Sell
+                </Link>
+              </li>
+              {/* <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/buy-sell/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/buy-sell/summary"
+                >
+                  <FaAppStore />
+                  Summary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/buy-sell/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/buy-sell/summary"
+                >
+                  <GiFloatingPlatforms />
+                  Platforms
+                </Link>
+              </li> */}
+            </>
+          )}
+          {isMyFilesRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/my-files/files" ? "active" : undefined
+                  }
+                  href="/dashboard/my-files/files"
+                >
+                  <FaWeibo />
+                  Files
+                </Link>
+              </li>
+              {/* <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/my-files/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/my-files/summary"
+                >
+                  <FaAppStore />
+                  Summary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/my-files/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/my-files/summary"
+                >
+                  <GiFloatingPlatforms />
+                  Platforms
+                </Link>
+              </li> */}
+            </>
+          )}
+          {isSettingsRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/settings/settings" ? "active" : undefined
+                  }
+                  href="/dashboard/settings/settings"
+                >
+                  <FaWeibo />
+                  Settings
+                </Link>
+              </li>
+              {/* <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/settings/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/settings/summary"
+                >
+                  <FaAppStore />
+                  Summary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/settings/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/settings/summary"
+                >
+                  <GiFloatingPlatforms />
+                  Platforms
+                </Link>
+              </li> */}
+              </>
+          )}
+          
+          
         </ul>
       </div>
     </div>

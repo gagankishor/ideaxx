@@ -1,10 +1,8 @@
-import Overview from "@/components/pages/Overview";
-import PrivateRoute from "@/components/PrivateRoute";
+import { MarketingEvents } from "@/components/pages/marketing/MarketingEvents/MarketingEvents";
 
-export default function DashboardPage() {
+export default function MarketingEventsPage() {
   return (
-    <PrivateRoute>
-      <Overview />
-    </PrivateRoute>
+    <MarketingEvents/>
+      
   );
 }

@@ -79,27 +79,21 @@ export const NewEvent = () => {
     activitiesFile:null,
     designSamples:null
   });
-  
-
   const handleInputChange = (e) => {
     setEventDetails({
       ...eventDetails,
       [e.target.name]: e.target.value,
     });
   };
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-
     formData.append("selectedEvent", selectedEvent);
     // formData.append("platforms", JSON.stringify(platforms));
-
     // Append event details to formData
     Object.keys(eventDetails).forEach((key) => {
       formData.append(key, eventDetails[key]);
     });
-
     try {
       const response = await axios.post(`${RestAPI}/event/save`, formData, {
         headers: {
@@ -111,9 +105,6 @@ export const NewEvent = () => {
       console.error("Error saving event:", error);
     }
   };
-
-  
-
   return (
     <>
       <div className="dashboard container">
@@ -198,7 +189,6 @@ export const NewEvent = () => {
                 </div>
               )}
             </div>
-
             {selectedEvent === "Launch Event" && (
               <>
                 <div>
@@ -219,7 +209,6 @@ export const NewEvent = () => {
                     placeholder="Describe your event purpose.."
                   />
                 </div>
-
                 <div>
                   <h3 style={{ textAlign: "left", maxWidth: "500px" }}>
                     Identify Your Target Audience
@@ -237,7 +226,6 @@ export const NewEvent = () => {
                     placeholder="Who is your audience.."
                   />
                 </div>
-
                 <div>
                   <h3 style={{ textAlign: "left", maxWidth: "500px" }}>
                     Set a Budget
@@ -255,7 +243,6 @@ export const NewEvent = () => {
                     placeholder="Your estimate budget.."
                   />
                 </div>
-
                 <div>
                   <h3 style={{ textAlign: "left", maxWidth: "500px" }}>
                     Choose a Venue (Virtual or Physical)
@@ -274,7 +261,6 @@ export const NewEvent = () => {
                     placeholder="Choose a venue.."
                   />
                 </div>
-
                 <div>
                   <h3 style={{ textAlign: "left", maxWidth: "500px" }}>
                     Select a Date and Time
@@ -293,7 +279,6 @@ export const NewEvent = () => {
                     placeholder="Choose a date and time.."
                   />
                 </div>
-
                 <div>
                   <h3 style={{ textAlign: "left", maxWidth: "500px" }}>
                     Detailed Plan and Timeline

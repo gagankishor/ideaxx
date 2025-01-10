@@ -1,10 +1,7 @@
-import Overview from "@/components/pages/Overview";
-import PrivateRoute from "@/components/PrivateRoute";
-
-export default function DashboardPage() {
+import { PenAndNotebook } from "@/components/pages/marketing/MarketingMaterial/PenAndNotebook";
+export default function PenAndNotebookPage() {
   return (
-    <PrivateRoute>
-      <Overview />
-    </PrivateRoute>
+    <PenAndNotebook/>
+      
   );
 }

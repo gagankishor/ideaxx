@@ -1,10 +1,7 @@
-import Overview from "@/components/pages/Overview";
-import PrivateRoute from "@/components/PrivateRoute";
-
-export default function DashboardPage() {
+import { EventSchedule } from "@/components/pages/marketing/MarketingEvents/EventSchedule";
+export default function EventSchedulePage() {
   return (
-    <PrivateRoute>
-      <Overview />
-    </PrivateRoute>
+    <EventSchedule/>
+     
   );
 }

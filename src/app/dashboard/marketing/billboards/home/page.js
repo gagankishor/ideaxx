@@ -1,10 +1,6 @@
-import Overview from "@/components/pages/Overview";
-import PrivateRoute from "@/components/PrivateRoute";
-
+import { Billboards } from "@/components/pages/marketing/Billboards/Billboards";
 export default function DashboardPage() {
   return (
-    <PrivateRoute>
-      <Overview />
-    </PrivateRoute>
+    <Billboards/>
   );
 }

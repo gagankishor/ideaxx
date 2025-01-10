@@ -66,6 +66,8 @@ export default function SideBar () {
   const isLegalRoute = pathname.includes("/legal");
   const isTeamRoute = pathname.includes("/team");
   const isBusinessToolsRoute = pathname.includes("/business-tools");
+  const isCashFlowRoute = pathname.includes("/cash-flow");
+  const isConsultingRoute = pathname.includes("/consulting");
   return ( 
     <div className="sidebar">    
       <div className="part-one">
@@ -130,12 +132,12 @@ export default function SideBar () {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/dashboard/cash-flow/funds">
               <FaCoins /> Cash Flow
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/dashboard/consulting/new-request">
               <FaHandsHelping /> Consulting
             </Link>
           </li>
@@ -843,6 +845,123 @@ Contact
                   Invoicing
                 </Link>
               </li>
+            </>
+          )}
+           {isCashFlowRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/cash-flow/funds" ? "active" : undefined
+                  }
+                  href="/dashboard/cash-flow/funds"
+                >
+                  <FaWeibo />
+                  Funds
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/cash-flow/expenses" ? "active" : undefined
+                  }
+                  href="/dashboard/cash-flow/expenses"
+                >
+                  <FaAppStore />
+
+                  Expenses
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/cash-flow/income" ? "active" : undefined
+                  }
+                  href="/dashboard/cash-flow/income"
+                >
+                  <GiFloatingPlatforms />
+
+                  Income
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/cash-flow/reports" ? "active" : undefined
+                  }
+                  href="/dashboard/cash-flow/reports"
+                >
+                  <GiClawHammer />
+
+                  Reports
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/cash-flow/vault" ? "active" : undefined
+                  }
+                  href="/dashboard/cash-flow/vault"
+                >
+                  <GrTemplate />
+                  Vault
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/cash-flow/platforms" ? "active" : undefined
+                  }
+                  href="/dashboard/cash-flow/platforms"
+                >
+                  <GiFloatingPlatforms />
+                  Platforms
+                </Link>
+              </li>
+              
+            </>
+          )}
+          {isConsultingRoute && (
+            <>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/consulting/new-request" ? "active" : undefined
+                  }
+                  href="/dashboard/consulting/new-request"
+                >
+                  <FaWeibo />
+
+                  New Request
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/consulting/summary" ? "active" : undefined
+                  }
+                  href="/dashboard/consulting/summary"
+                >
+                  <FaAppStore />
+
+                  Summary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    pathname === "/dashboard/consulting/resell-service" ? "active" : undefined
+                  }
+                  href="/dashboard/consulting/resell-service"
+                >
+                  <GiFloatingPlatforms />
+
+                  Resell Service
+
+                </Link>
+              </li>
+              
+              
             </>
           )}
         </ul>

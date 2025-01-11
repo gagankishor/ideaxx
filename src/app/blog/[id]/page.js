@@ -1,36 +1,33 @@
-"use client"; // Ensure the component runs on the client side
+"use client";
 import ArticleCard from "@/components/blogs/ArticleCard";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { RestAPI } from "@/config/Api";
 import { FaEye, FaThumbsUp } from "react-icons/fa";
-
 const websiteEssentials = [
   {
     title: "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
     imageUrl: "/blog/3/image3.webp",
-    hrefUrl: "/blog/1",
+    hrefUrl: "/blog/the_mindset_of_a_successful_entrepreneur",
   },
   {
     title: "Top Business Trends to Watch in 2024 ...",
     category: "Business Trends",
     imageUrl: "/blog/2/image3.webp",
-    hrefUrl: "/blog/2",
+    hrefUrl: "/blog/top_business_trends_to_watch_in_2025",
   },
   {
     title: "How AI is Shaping the Future of Entrepreneurship",
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image3.webp",
-    hrefUrl: "/blog/3",
+    hrefUrl: "/blog/how_AI_is_shaping_the_future_of_entrepreneurship",
   },
 ];
-
 const BlogDetails = () => {
   const params = useParams();
   const blogId = params?.id;
-
   const [blog, setBlog] = useState(null);
   const [blogData, setBlogData] = useState({
     views: 0,
@@ -40,9 +37,6 @@ const BlogDetails = () => {
   // const [review, setReview] = useState("");
   // const [showReviews, setShowReviews] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
-  // const [showAddReview, setShowAddReview] = useState(false);
-
-  // Fetch blog content from static data
   useEffect(() => {
     if (!blogId) return;
     const fetchBlog = async () => {
@@ -56,8 +50,6 @@ const BlogDetails = () => {
     };
     fetchBlog();  
   }, [blogId]);
-
-  // Fetch blog data and increment views
   useEffect(() => {
     if (!blogId) return;
     const fetchBlogData = async () => {
@@ -70,8 +62,6 @@ const BlogDetails = () => {
     };
     fetchBlogData();
   }, [blogId]);
-
-  // Handle like button click
   const handleLike = async () => {
     try {
       setIsLiked(true);
@@ -81,88 +71,12 @@ const BlogDetails = () => {
       console.error("Error liking the blog:", error);
     }
   };
-
-  // Handle review submission
-  // const handleReviewSubmit = async () => {
-  //   try {
-  //     const { data } = await axios.post(`${RestAPI}/blog/review/${blogId}`, {
-  //       user: "Anonymous",
-  //       comment: review,
-  //     });
-  //     setBlogData(data);
-  //     setReview(""); // Clear input
-  //   } catch (error) {
-  //     console.error("Error submitting the review:", error);
-  //   }
-  // };
   if (!blog) {
     return <p>Loading...</p>;
   }
   return (
     <>
       <div className="min-h-screen bg-gray-50 p-6">
-        {/* <div className="bg-white p-6 rounded-lg shadow-md">
-  <h1 className="text-2xl font-bold mb-4">Blog Details</h1>
-  <p className="text-gray-700 mb-2">Views: {blogData.views}</p>
-  <p className="text-gray-700 mb-4">Likes: {blogData.likes}</p>
-  <button
-    onClick={handleLike}
-    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-  >
-    Like
-  </button>
-  <div className="mt-6">
-    <button
-      onClick={() => setShowReviews((prev) => !prev)}
-      className="bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200"
-    >
-      {showReviews ? "Hide Reviews" : "View Reviews"}
-    </button>
-
-    {showReviews && (
-      <div className="mt-4">
-        <h2 className="text-xl font-semibold mb-3">Reviews</h2>
-        <ul className="space-y-2">
-          {blogData.reviews.length > 0 ? (
-            blogData.reviews.map((r, index) => (
-              <li key={index} className="border-b pb-2">
-                <p className="text-gray-800 font-medium">{r.user}</p>
-                <p className="text-gray-600">{r.comment}</p>
-              </li>
-            ))
-          ) : (
-            <p className="text-gray-500">No reviews yet.</p>
-          )}
-        </ul>
-      </div>
-    )}
-  </div>
-  <div className="mt-6">
-    <button
-      onClick={() => setShowAddReview((prev) => !prev)}
-      className="bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200"
-    >
-      {showAddReview ? "Cancel" : "Add Review"}
-    </button>
-    {showAddReview && (
-      <div className="mt-4">
-        <textarea
-          value={review}
-          onChange={(e) => setReview(e.target.value)}
-          placeholder="Leave a review"
-          className="w-full p-2 border rounded-md mb-2"
-        />
-        <button
-          onClick={handleReviewSubmit}
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-        >
-          Submit Review
-        </button>
-      </div>
-    )}
-  </div>
-</div> */}
-
         <div className="max-w-3xl mx-auto">
           <div className="flex flex-row justify-between items-center gap-10">
             <p className="text-sm text-left text-gray-600 flex-1">
@@ -188,14 +102,12 @@ const BlogDetails = () => {
                   }
                 >
                   <FaThumbsUp />
-                  {/* <span className="text-sm">{isLiked ? "Liked" : "Like"}</span> */}
                 </button>
               </div>
             </div>
           </div>
           <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
         </div>
-
         <div className="max-w-3xl mx-auto mb-6">
           {blog.imageUrl && (
             <img src={blog.imageUrl} alt={blog.title} className="rounded-md" />
@@ -204,7 +116,6 @@ const BlogDetails = () => {
             <p className="text-gray-700 text-left mt-4">{blog.para}</p>
           )}
         </div>
-
         <div className="max-w-3xl mx-auto space-y-6">
           {blog.content.map((section, sectionIndex) => (
             <div key={sectionIndex} className="space-y-4">
@@ -269,5 +180,4 @@ const BlogDetails = () => {
     </>
   );
 };
-
 export default BlogDetails;

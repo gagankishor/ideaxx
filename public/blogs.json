@@ -1,8 +1,9 @@
 {
-  "1": {
+  "before_starting_your_business": {
     "heading": "Collaboration",
     "title": "10 Questions to Ask Yourself Before Starting Your Business",
     "date": "October 5, 2023",
+    "href":"before_starting_your_business",
     "para": "Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requires a mix of creativity, strategy, and determination. Whether you're a young entrepreneur with a big dream or someone exploring your first business idea, asking the right questions can make all the difference. Here’s a deeper dive into the ten essential questions to guide you as you lay the groundwork for your entrepreneurial success.",
     "content": [
       {
@@ -77,10 +78,11 @@
       { "id": 3, "title": "Agile Project Management: Best Practices" }
     ]
   },
-  "2": {
+  "the_mindset_of_a_successful_entrepreneur": {
     "heading": "Entrepreneurship",
     "title": "The Mindset of a Successful Entrepreneur",
     "date": "November 20, 2024",
+    "href":"the_mindset_of_a_successful_entrepreneur",
     "para": "Embarking on an entrepreneurial journey requires more than just a solid business plan and financial acumen—it demands a particular mindset. Successful entrepreneurs share certain psychological traits that enable them to navigate the unpredictable waters of starting and maintaining a business. This blog delves into these traits, offering practical advice for aspiring entrepreneurs, particularly those who are young or inexperienced. By cultivating these attributes, you can prepare not only to launch your business but to thrive in your entrepreneurial journey.",
     "content": [
       {
@@ -126,9 +128,9 @@
     ]
   }
   ,
-  "3": {
+  "top_business_trends_to_watch_in_2025": {
     "heading": "Business Trends",
-    "title": "Top Business Trends to Watch in 2024",
+    "title": "Top Business Trends to Watch in 2025",
     "date": "November 20, 2024",
     "para": "As we approach 2024, the business landscape continues to evolve rapidly, influenced by technological advancements, shifts in consumer behaviour, and global economic dynamics. Entrepreneurs and business leaders need to stay ahead of the curve to navigate these changes successfully. This blog explores the top business trends for 2024, offering insights into what’s next and how businesses can adapt to thrive in the coming year.",
     "content": [
@@ -175,7 +177,7 @@
     ]
   }
   ,
-  "4":{
+  "how_AI_is_shaping_the_future_of_entrepreneurship":{
     "heading": "Entrepreneurship",
     "title": "How AI is Shaping the Future of Entrepreneurship",
     "date": "November 20, 2024",
@@ -224,7 +226,7 @@
     ]
   }
   ,
-  "5":{
+  "the_rise_of_online_businesses_opportunities_and_challenges":{
     "heading": "Opportunities and Challenges",
     "title": "The Rise of Online Businesses: Opportunities and Challenges",
     "date": "November 20, 2024",
@@ -306,7 +308,7 @@
       { "id": 2, "title": "The Future of E-commerce: Trends to Watch" }
     ]
   },
-  "6":{
+  "transforming_businesses_with_virtual_business_management":{
     "heading": "Virtual Business Management",
     "title": "Transforming Businesses with Virtual Business Management",
     "date": "November 22, 2024",
@@ -355,7 +357,7 @@
     ]
   }
   ,
- "7": {
+  "stay_updated_with_the_latest_IDX_token_price_movements": {
   "heading": "IDX Token Price: Real-Time Updates and Market Insights",
   "title": "Stay Updated with the Latest IDX Token Price Movements",
   "date": "November 22, 2024",
@@ -404,7 +406,7 @@
   ]
 }
 ,
-  "8": {
+  "unlock_the_potential_of_blockchain_with_IDX_token": {
     "heading": "How to Purchase IDX Token",
     "title": "Unlock the Potential of Blockchain with IDX Token",
     "date": "November 22, 2024",
@@ -464,7 +466,7 @@
   }
   ,
   
-    "9": {
+    "unleashing_innovation_with_the_IDEAX_platform": {
       "heading": "IDEAX Platform: Revolutionizing Business Management with Advanced Technology",
       "title": "Unleashing Innovation with the IDEAX Platform",
       "date": "November 22, 2024",
@@ -511,7 +513,7 @@
   
   
   ,
-  "10": {
+  "transforming_business_operations_with_advanced_blockchain_technology": {
     "heading": "Enterprise Blockchain Solutions",
     "title": "Transforming Business Operations with Advanced Blockchain Technology",
     "date": "November 22, 2024",
@@ -559,7 +561,7 @@
       { "id": 2, "title": "How Smart Contracts Are Redefining Business Operations" }
     ]
   },
-  "11": {
+  "redefining_speed_and_security_in_blockchain_transactions": {
   "heading": "Solana IDX Token",
   "title": "Redefining Speed and Security in Blockchain Transactions",
   "date": "November 22, 2024",
@@ -607,7 +609,7 @@
     { "id": 2, "title": "How Solana is Revolutionizing Decentralized Applications" }
   ]
 },
-"12": {
+"powering_business_innovation_on_the_blockchain": {
     "heading": "IDX Cryptocurrency",
     "title": "Powering Business Innovation on the Blockchain",
     "date": "June 11, 2024",
@@ -656,7 +658,7 @@
     ]
   }
  ,
-  "13": {
+  "revolutionizing_business_management_with_blockchain_technology": {
     "heading": "IDX Token Revolution",
     "title": "Discover IDX Token: Revolutionizing Business Management with Blockchain Technology",
     "date": "November 22, 2024",
@@ -705,6 +707,4 @@
       { "id": 2, "title": "Top Benefits of Using Solana for Business Operations" }
     ]
   }
-
-
 }

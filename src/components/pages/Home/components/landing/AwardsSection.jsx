@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-// import TrustpilotReviews from "./TrustpilotReviews";
 import TrustBoxWidget from "./TrustBoxWidget";
 const AwardsSection = () => {
   const blogs = [
@@ -11,7 +10,7 @@ const AwardsSection = () => {
       title: "10 Questions to Ask Yourself Before Starting Your Business",
       excerpt:
         "Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requ...",
-      link: "/blog/1",
+      link: "/blog/before_starting_your_business",
     },
     {
       id: 2,
@@ -19,7 +18,7 @@ const AwardsSection = () => {
       title: "The Mindset of a Successful Entrepreneur",
       excerpt:
         "Embarking on an entrepreneurial journey requires more than just a solid business plan and financial...",
-      link: "/blog/2",
+      link: "/blog/the_mindset_of_a_successful_entrepreneur",
     },
     {
       id: 3,
@@ -27,9 +26,8 @@ const AwardsSection = () => {
       title: "Top Business Trends to Watch in 2024",
       excerpt:
         "As we approach 2024, the business landscape continues to evolve rapidly, influenced by...",
-      link: "/blog/3",
+      link: "/blog/top_business_trends_to_watch_in_2025",
     },
-    
   ];
   return (
     <div
@@ -69,7 +67,6 @@ const AwardsSection = () => {
               justifyContent: "center",
               gap: "20px",
               paddingTop: "40px",
-              // width: "75%",
             }}
           >
             <div
@@ -87,12 +84,6 @@ const AwardsSection = () => {
               <p className=" w-5/6 m-auto  ">
               Entrepreneurs and startups across diverse industries trust IDEAX as their preferred partner for success. Our platform empowers business owners with innovative tools designed to streamline operations, enhance productivity, and drive sustainable growth effectively. 
               </p>
-              {/* <a
-                href="#"
-                className="read-more flex justify-center gap-4 items-center text-blue-400 hover:underline"
-              >
-                <FaBookOpen /> Read the report →
-              </a> */}
             </div>
             <div
               className="card forrester"
@@ -108,12 +99,6 @@ const AwardsSection = () => {
               <p className=" w-5/6 m-auto ">
               Our platform is widely acknowledged as a pioneer in business management, leveraging advanced AI to revolutionize operations. By providing cutting-edge tools, we empower businesses to optimize processes, drive growth, improve efficiency, and achieve sustainable success.
               </p>
-              {/* <a
-                href="#"
-                className="read-more flex justify-center mb-0 items-center gap-4 text-blue-400 hover:underline"
-              >
-                <FaBookOpen /> Read the report →
-              </a> */}
             </div>
           </div>
           <div className="badge-section" style={{ marginTop: "40px" }}>
@@ -123,7 +108,6 @@ const AwardsSection = () => {
                   <a href={blog.link} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0 ">
                     <div
                       className="flex-shrink-0 w-full md:w-60"
-                      
                     >
                       <img
                         src={blog.image}
@@ -138,15 +122,6 @@ const AwardsSection = () => {
                       <p className="text-gray-200 text-center md:text-left mb-3">
                         {blog.excerpt}
                       </p>
-                      {/* <div className="flex justify-center md:justify-start">
-                        <a
-                          href={blog.link}
-                          className="text-blue-400 hover:underline"
-                          // area-label={blog.title}
-                        >
-                          Read more
-                        </a>
-                      </div> */}
                     </div>
                   </a>
                   {index < blogs.length - 1 && (

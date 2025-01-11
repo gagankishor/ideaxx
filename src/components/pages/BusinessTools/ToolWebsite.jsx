@@ -53,14 +53,14 @@ export const ToolWebsite = () => {
     { id: 2, name: "", logo: "/websiteTemplete/image4.png", link: "#" },
     { id: 3, name: "", logo: "/websiteTemplete/image5.png", link: "#" },
     { id: 4, name: "", logo: "/websiteTemplete/image6.png", link: "#" },
-    { id: 1, name: "", logo: "/websiteTemplete/image7.png", link: "#" },
-    { id: 2, name: "", logo: "/websiteTemplete/image8.png", link: "#" },
-    { id: 3, name: "", logo: "/websiteTemplete/image9.png", link: "#" },
-    { id: 4, name: "", logo: "/websiteTemplete/image10.png", link: "#" },
-    { id: 1, name: "", logo: "/websiteTemplete/image2.png", link: "#" },
-    { id: 2, name: "", logo: "/websiteTemplete/image.png", link: "#" },
-    { id: 3, name: "", logo: "/websiteTemplete/image4.png", link: "#" },
-    { id: 4, name: "", logo: "/corporate-responsive.jpg", link: "#" },
+    { id: 5, name: "", logo: "/websiteTemplete/image7.png", link: "#" },
+    { id: 6, name: "", logo: "/websiteTemplete/image8.png", link: "#" },
+    { id: 7, name: "", logo: "/websiteTemplete/image9.png", link: "#" },
+    { id: 8, name: "", logo: "/websiteTemplete/image10.png", link: "#" },
+    { id: 9, name: "", logo: "/websiteTemplete/image2.png", link: "#" },
+    { id: 10, name: "", logo: "/websiteTemplete/image.png", link: "#" },
+    { id: 11, name: "", logo: "/websiteTemplete/image4.png", link: "#" },
+    { id: 12, name: "", logo: "/corporate-responsive.jpg", link: "#" },
   ];
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
@@ -184,7 +184,7 @@ export const ToolWebsite = () => {
                           href={selectedTemplate.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                          className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-7 00 transition-colors"
                         >
                           View Template
                         </a>
@@ -216,7 +216,6 @@ export const ToolWebsite = () => {
                     }}
                   >
                     <img src={item.logo} alt={item.name} />
-                    <div>Business Intellect</div>
                   </div>
                   <p></p>
                 </div>

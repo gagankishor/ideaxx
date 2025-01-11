@@ -7,26 +7,26 @@ const articles = [
       "The Mindset of a Successful Entrepreneur ...",
     category: "Entrepreneurship",
     imageUrl: "/blog/2/image.webp",
-    hrefUrl: "/blog/2",
+    hrefUrl: "/blog/the_mindset_of_a_successful_entrepreneur",
   },
   {
     title:
       "Top Business Trends to Watch in 2024 ...",
     category: "Business Trends",
     imageUrl: "/blog/3/image2.webp",
-    hrefUrl: "/blog/3",
+    hrefUrl: "/blog/top_business_trends_to_watch_in_2025",
   },
   {
     title: "How AI is Shaping the Future of Entrepreneurship",
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image1.webp",
-    hrefUrl: "/blog/4",
+    hrefUrl: "/blog/how_AI_is_shaping_the_future_of_entrepreneurship",
   },
   {
     title: "The Rise of Online Businesses: Opportunities and Challenges",
     category: "Opportunities and Challenges",
     imageUrl: "/blog/5/image.webp",
-    hrefUrl: "/blog/5",
+    hrefUrl: "/blog/the_rise_of_online_businesses_opportunities_and_challenges",
   },
   // {
   //   title: "Transforming Businesses with Virtual Business Management",
@@ -38,7 +38,7 @@ const articles = [
     title: "Transforming Businesses with Virtual Business Management",
     category: "Virtual Business Management",
     imageUrl: "/blog/image2.jpg",
-    hrefUrl: "/blog/6",
+    hrefUrl: "/blog/transforming_businesses_with_virtual_business_management",
   },
 ];
 const editorsPick = [
@@ -46,19 +46,19 @@ const editorsPick = [
     title: "IDX Token Price: Real-Time Updates...",
     category: "IDX Token ",
     imageUrl: "/blog/3/image3.webp",
-    hrefUrl: "/blog/7",
+    hrefUrl: "/blog/stay_updated_with_the_latest_IDX_token_price_movements",
   },
   {
     title: "How to Purchase IDX Token...",
     category: "IDX Tokens",
     imageUrl: "/blog/2/image3.webp",
-    hrefUrl: "/blog/8",
+    hrefUrl: "/blog/unlock_the_potential_of_blockchain_with_IDX_token",
   },
   {
     title: "Revolutionizing Business Management with Advanced Technology...",
     category: "Entrepreneurship",
     imageUrl: "/blog/4/image3.webp",
-    hrefUrl: "/blog/9",
+    hrefUrl: "/blog/unleashing_innovation_with_the_IDEAX_platform",
   },
 ];
 const businessStrategies = [
@@ -66,20 +66,20 @@ const businessStrategies = [
     title: "Enterprise Blockchain Solutions",
     category: "Blockchain",
     imageUrl: "/blog/image2.jpg",
-    hrefUrl: "/blog/10",
+    hrefUrl: "/blog/transforming_business_operations_with_advanced_blockchain_technology",
   },
   {
     title: "Redefining Speed and Security in Blockchain Transactions",
     category: "Solana IDX Token",
     imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
-    hrefUrl: "/blog/11",
+    hrefUrl: "/blog/redefining_speed_and_security_in_blockchain_transactions",
 
   },
   {
     title: "Powering Business Innovation on the Blockchain...",
     category: "IDX Cryptocurrency",
     imageUrl: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2", 
-    hrefUrl: "/blog/12",
+    hrefUrl: "/blog/powering_business_innovation_on_the_blockchain",
   },
 ];
 // const websiteEssentials = [
@@ -116,14 +116,14 @@ const Blogs = () => {
               <p className="text-sm text-left font-light uppercase mb-2">
               </p>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {blogs[1]?.title || "Default Title"}
+                {blogs[1]?.title || "10 Questions to Ask Yourself Before Starting Your Business"}
               </h1>
               <p className="text-gray-700 font-medium text-base sm:text-lg md:text-xl text-left mb-6">
-                {blogs[1]?.para || "Default description text."}
+                {blogs[1]?.para || "Starting a business is one of the most rewarding yet challenging journeys you can embark on. It requires a mix of creativity, strategy, and determination. Whether you're a young entrepreneur with a big dream or someone exploring your first business idea, asking the right questions can make all the difference. Here’s a deeper dive into the ten essential questions to guide you as you lay the groundwork for your entrepreneurial success."}
               </p>
               <a
-                href="/blog/1"
-                aria-label={blogs[1]?.title || "Default Title"}
+                href="/blog/before_starting_your_business"
+                aria-label={blogs[1]?.title || "Questions to Ask Yourself Before"}
                 className="font-semibold hover:underline leading-9 flex items-center underline"
               >
                 Read more <span className="ml-2 text-xl">&rarr;</span>
@@ -138,7 +138,6 @@ const Blogs = () => {
           </div>
         </div>
       </div>
-
       <div className=" bg-black max-w-full mx-5 md:mx-20 h-[1px]"></div>
       <div className="bg-gray-50 mx-5 md:mx-20 py-12">
         <div className="max-w-full  mx-auto">

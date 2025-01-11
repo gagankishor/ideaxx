@@ -9,7 +9,7 @@ import {
   FaTelegram,
   FaTwitter,
 } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaReddit } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
 import SubscribeModal from "./pages/Home/SubscribeModal";
 import Image from "next/image";
@@ -299,7 +299,7 @@ export default function Footer() {
       <div className="text-black text-7xl text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         Index
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-200 pt-4 py-[20px] mb-7">
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a
@@ -358,6 +358,22 @@ export default function Footer() {
               className="hover:text-[#FF6719] hidden"
             >
               <SiSubstack size={30} />
+            </a>
+            <a
+              href="https://www.reddit.com/user/idx_solana/"
+              aria-label="reddit"
+              target="_blank"
+              className="hover:text-[#FF4500]"
+            >
+              <FaReddit size={30} />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61571877777354"
+              aria-label="facebook"
+              target="_blank"
+              className="hover:text-blue-500"
+            >
+              <FaFacebook size={30} />
             </a>
           </div>
           <div className="flex space-x-4 ">

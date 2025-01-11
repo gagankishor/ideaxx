@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useState, useContext } from "react";
-// import {  ChromePicker } from "react-color";
+import { ChromePicker } from "react-color";
 import { FaPalette } from "react-icons/fa";
 import axios from "axios";
 import { RestAPI } from "@/config/Api";
@@ -64,7 +64,7 @@ export default function BusinessColor() {
       color: ["#4285F4", "#34A853", "#FBBC05", "#EA4335"],
     },
   ];
-  const [color] = useState("#6AB0B0");
+  const [color, setColor] = useState("#6AB0B0");
   // const [generatedPalette, setGeneratedPalette] = useState([]);
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -84,13 +84,12 @@ export default function BusinessColor() {
       Authorization: `Bearer ${loggedToken}`,
     },
   };
-  // const handleColorChange = (color) => {
-  //   const updatedColors = [...colors];
-  //   updatedColors[selectedIndex] = color.hex;
-  //   setColors(updatedColors);
-  //   setColor(color.hex);
-  // };
-
+  const handleColorChange = (color) => {
+    const updatedColors = [...colors];
+    updatedColors[selectedIndex] = color.hex;
+    setColors(updatedColors);
+    setColor(color.hex);
+  };
   const fetchColorPalette = async () => {
     setLoading(true);
     try {
@@ -111,7 +110,6 @@ export default function BusinessColor() {
       setLoading(false);
     }
   };
-
   // const defaultColors = ["#F0F4F4", "#D9E6E6", "#A5C7C7", "#6AB0B0", "#2B8C8C"];
   const handleColorSelection = (selectedColors) => {
     setColors(selectedColors);
@@ -225,10 +223,10 @@ export default function BusinessColor() {
                 <div className="image-container2">
                   <img src={brandData?.logo} alt="Brand Logo" />
                 </div>
-                {/* <ChromePicker
+                <ChromePicker
                   color={color}
                   onChangeComplete={handleColorChange}
-                /> */}
+                />
               </div>
               <div className="button-group">
                 <button
@@ -252,7 +250,6 @@ export default function BusinessColor() {
               logo={brandData?.logo}
               onColorSelect={handleColorSelection}
             />
-
             <h2 id="section-heading" style={{ marginTop: "40px" }}>
               Platforms to get colors
             </h2>

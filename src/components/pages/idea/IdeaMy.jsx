@@ -45,8 +45,6 @@ export default function IdeaMy() {
 
   return (
     <>
-     
-
       <div className="dashboard container">
         <div className="content">
           <h1 id="heading">

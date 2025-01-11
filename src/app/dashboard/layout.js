@@ -16,11 +16,9 @@ const Layout = ({ children }) => {
     </div>
   );
 };
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
 export default Layout;
 {
   /* <div className="dashboard container">

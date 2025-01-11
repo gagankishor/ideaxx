@@ -1,6 +1,6 @@
 export const isAuthenticated = () => {
-  // const token = localStorage.getItem("token");
-  const token = "localStorage.getItem()";
+  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem();
 
   if (token) {
     return true;
@@ -10,8 +10,8 @@ export const isAuthenticated = () => {
 };
 
 export const userToken = () => {
-  // const token = localStorage.getItem("token");
-  const token = "localStorage.getItem()";
+  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem();
 
   if (token) {
     return token;

@@ -69,7 +69,7 @@ export default function IdeaMy() {
                 note={
                   <p id="nothing">
                     You don&rsquo;t have any ideas yet,{" "}
-                    <Link to="/idea/new">Make one!</Link>
+                    {/* <Link href="/idea/new">Make one!</Link> */}
                   </p>
                 }
               />

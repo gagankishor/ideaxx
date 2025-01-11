@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types'; // Import PropTypes
 import { FaEdit, FaFile } from 'react-icons/fa';
-
 export const DataTable = ({ data, note }) => {
   return (
     <>
@@ -38,7 +37,7 @@ export const DataTable = ({ data, note }) => {
                 )}
               </td>
               <td>
-                <Link to={`/idea/edit/${item.id}`}>
+                <Link href={`/idea/edit/${item.id}`}>
                   <FaEdit />
                 </Link>
               </td>
@@ -49,7 +48,6 @@ export const DataTable = ({ data, note }) => {
     </>
   );
 };
-
 // Define Prop Types
 DataTable.propTypes = {
   data: PropTypes.arrayOf(

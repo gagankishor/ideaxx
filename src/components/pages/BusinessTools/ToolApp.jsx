@@ -3,10 +3,10 @@ import { FaTools } from "react-icons/fa";
 
 export const ToolApp = () => {
   const platforms = [
-    { id: 1, name: "", logo: "/keyChainq.png", link: "" },
-    { id: 2, name: "", logo: "/keyChainq.png", link: "#" },
-    { id: 3, name: "", logo: "/keyChainq.png", link: "#" },
-    { id: 4, name: "", logo: "/keyChainq.png", link: "#" },
+    { id: 1, name: "wordpress", logo: "/WordPress.png", link: "https://wordpress.com/" },
+    { id: 2, name: "shopify", logo: "/platforms/shopify.png", link: "https://www.shopify.com/" },
+    { id: 3, name: "Wix", logo: "/Wix.png", link: "www.wix.com" },
+    { id: 4, name: "Weebly", logo: "/pngegg.png", link: "https://www.weebly.com/" },
   ];
   return (
     <>
@@ -30,7 +30,7 @@ export const ToolApp = () => {
               <div className="col">
                 <textarea
                   name=""
-                  placeholder="Website details ......"
+                  placeholder="App details ......"
                   id=""
                   style={{
                     justifyContent: "center",

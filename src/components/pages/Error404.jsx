@@ -6,7 +6,7 @@ export default function Error404() {
       <p>
         <span>404 | Page Not Found</span>
         <span>
-          <Link to="/">Return Home</Link>
+          <Link href="/">Return Home</Link>
         </span>
       </p>
     </div>

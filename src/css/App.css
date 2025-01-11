@@ -475,8 +475,8 @@ nav .container .burger {
   display: flex;
 }
 .dashboard .content {
-  padding: 1rem;
-  width: 75%;
+  /* padding: 1rem; */
+  width: 90%;
 }
 .dashboard .content .paragraph-heading {
   color: var(--black);
@@ -585,7 +585,6 @@ nav .container .burger {
   justify-content: center;
   transition: 0.4s;
 }
-
 .dashboard .content .form .slider .card .item img {
   width: 80%;
   height: 90%;
@@ -689,7 +688,6 @@ nav .container .burger {
   color: var(--main-color);
   background: var(--bg-highlight);
 }
-
 /* table {
   margin: 1rem 0;
   width: 100%;
@@ -708,7 +706,6 @@ table th {
 table tr:nth-child(even) {
   background-color: var(--bg-highlight);
 } */
-
 .financial-projection {
   padding: 20px;
   margin-bottom: 2rem;

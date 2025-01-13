@@ -4,21 +4,17 @@ const BlockchainTechnology = () => {
   return (
     <div className="bg-gray-900 mt-20 text-gray-100 py-12 px-6 sm:px-16">
       {/* Headline */}
-      <motion.h2
+      <h2
         className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB] "
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        
       >
         Our Blockchain Technology
-      </motion.h2>
+      </h2>
 
       {/* Main Subheadline */}
-      <motion.section
+      <section
         className="mb-12"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        
       >
         <h3 className="text-2xl font-semibold mb-4 text-[#29DAB9]">
           Harness the Speed of Solana
@@ -34,14 +30,12 @@ const BlockchainTechnology = () => {
           require rapid transaction processing without the burden of hefty
           fees.
         </p>
-      </motion.section>
+      </section>
 
       {/* Reduced Operational Costs */}
-      <motion.section
+      <section
         className="mb-12"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        
       >
         <h3 className="text-xl font-semibold mb-4 text-[#29DAB9]">
           Reduced Operational Costs
@@ -53,13 +47,11 @@ const BlockchainTechnology = () => {
           operations but also saves costs, allowing your business to reinvest
           these savings into growth and innovation.
         </p>
-      </motion.section>
+      </section>
 
       {/* Security Features */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
+      <section
+        
       >
         <h3 className="text-xl font-semibold mb-4 text-[#29DAB9]">
           Security Features
@@ -72,7 +64,7 @@ const BlockchainTechnology = () => {
           data transmitted across the network. This ensures that your business
           information remains confidential and secure from unauthorized access.
         </p>
-      </motion.section>
+      </section>
     </div>
   );
 };

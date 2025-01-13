@@ -1,6 +1,7 @@
+"use client"
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 // import Link from "next/link"; // Correct import for Link
-import { motion } from "framer-motion";
+import Image from "next/image";
 // import Link from "next/link";
 // import { FaArrowAltCircleRight } from "react-icons/fa";
 export const Hero = () => {
@@ -35,42 +36,36 @@ export const Hero = () => {
       </div> */}
       <div className="container hero-container2 mt-6" >
         <div className="hero-block2">
-          <img
-            src="/roadmap.webp"
-            alt="Business Idea Checker"
-            className="hero-roadmap-img"
-          />
-          <div className="roadmap-card">
-            <img
-              src="/landing/market-score.webp"
-              alt="Roadmap"
-              className="roadmap-card-img"
-            />
-          </div>
-          <motion.img
-            src="/Startup-Business-Idea-Checker-Online-Ideax.webp"
-            alt="Startup Idea Checker"
-            className="motion-img1"
-            initial={{ x: 0, y: 0, opacity: 1 }}
-            animate={{ x: 0, opacity: 1, y: [0, -20, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "mirror",
-            }}
-          />
-          <motion.img
-            src="/Startup-Business-Idea-Checker-Online-Ideax-2.webp"
-            alt="Business idea checker online"
-            className="motion-img2"
-            initial={{ x: 0, y: 0, opacity: 1 }}
-            animate={{ x: 0, opacity: 1, y: [0, 20, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "mirror",
-            }}
-          />
+          <Image
+                      src="/roadmap.webp"
+                      alt="Business Idea Checker"
+                      className="hero-roadmap-img"
+                      height={400}
+                      width={400}
+                    />
+                    <div className="roadmap-card">
+                      <Image
+                        src="/landing/market-score.webp"
+                        alt="Roadmap"
+                        className="roadmap-card-img"
+                        width={50}
+                        height={50}
+                      />
+                    </div>
+          <Image
+                      width={400}
+                      height={400}
+                      src="/Startup-Business-Idea-Checker-Online-Ideax.webp"
+                      alt="Startup Idea Checker"
+                      className="motion-img1 animate-bounce-up"
+                    />
+                    <Image
+                      width={400}
+                      height={400}
+                      src="/Startup-Business-Idea-Checker-Online-Ideax-2.webp"
+                      alt="Business idea checker online"
+                      className="motion-img2 animate-bounce-down"
+                    />
         </div>
       </div>
     </div>

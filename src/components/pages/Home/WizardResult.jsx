@@ -549,7 +549,7 @@ const WizardResult = () => {
             >
               <div className="text-center bg-white">
                 <img
-                  src="/result-page/image.png"
+                  src="/result-page/image.webp"
                   className="mx-auto w-10 bg-white  "
                   alt="idea graph icon"
                   size={24}

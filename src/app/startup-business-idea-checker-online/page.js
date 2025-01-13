@@ -1,6 +1,4 @@
 
-"use client";
-
 import CardSlider from "@/components/CardSlider";
 import AwardsSection from "@/components/pages/Home/components/landing/AwardsSection";
 // import BlockchainTechnology from "@/components/pages/Home/components/landing/BlockchainTechnology";

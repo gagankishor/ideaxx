@@ -1,6 +1,4 @@
-"use client";
 // import { Helmet } from "react-helmet";
-
 import { Hero } from "./components/landing/Hero";
 import TrustedBySection from "./components/landing/TrustedBySection";
 import ProductLineupSection from "./components/landing/ProductLineupSection";

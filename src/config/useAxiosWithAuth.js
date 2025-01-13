@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { RestAPI } from './Api';
+import Swal from 'sweetalert2';
 
 const useAxiosWithAuth = () => {
 
@@ -28,10 +29,14 @@ const useAxiosWithAuth = () => {
     },
     (error) => {
       if (error.response && error.response.status === 401) {
-        // localStorage.removeItem('token'); 
-        console.log("first")
-
-        // navigate('/login'); 
+        localStorage.removeItem('token');
+        Swal.fire({
+          icon: 'error',
+          title: 'Session Expired',
+          text: 'Your session has expired. Please log in again to continue.',
+        }).then(() => {
+          window.location.href = "/login";
+        });
       }
       return Promise.reject(error);
     }

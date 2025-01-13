@@ -351,19 +351,19 @@ const WizardResult = () => {
       percentage: 75,
       currentWatts: `${data?.totalMarketSize} potential users`,
       title: "Target Market Size",
-      imageUrl: "/result-page/Layer5.png",
+      imageUrl: "/result-page/Layer5.webp",
     },
     {
       percentage: 60,
       currentWatts: InvestmentLevelData?.chosenInvestmentLevel,
       title: "Investment Level",
-      imageUrl: "/result-page/Layer7.png",
+      imageUrl: "/result-page/Layer7.webp",
     },
     {
       percentage: 90,
       currentWatts: TimeToMarketData ? TimeToMarketData?.totalTTM : "0",
       title: "Time to Market",
-      imageUrl: "/result-page/Layer8.png",
+      imageUrl: "/result-page/Layer8.webp",
     },
     {
       percentage: 50,
@@ -371,13 +371,13 @@ const WizardResult = () => {
         `${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
         `${data?.ExpectedROIData}`,
       title: "Expected ROI",
-      imageUrl: "/result-page/Layer6.png",
+      imageUrl: "/result-page/Layer6.webp",
     },
     {
       percentage: 50,
       currentWatts: MarketShareData?.chosenOutcome || MarketShareData,
       title: "Market Share",
-      imageUrl: "/result-page/Layer1.png",
+      imageUrl: "/result-page/Layer1.webp",
     },
   ];
   // console.log(data);
@@ -645,7 +645,7 @@ const WizardResult = () => {
             >
               <div className="text-center">
                 <img
-                  src="/result-page/Layer9.png"
+                  src="/result-page/Layer9.webp"
                   className="mx-auto w-28  text-[#686868]"
                   alt="idea graph icon"
                   size={60}

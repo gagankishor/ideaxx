@@ -103,7 +103,7 @@ const ResultHistory = () => {
                           className="w-full h-full border-0"
                           sandbox="allow-same-origin allow-scripts"
                           style={{
-                            width: "1220px", // Desktop viewport width
+                            width: "1100px", // Desktop viewport width
                             height: "1080px", // Desktop viewport height
                           }}
                         />

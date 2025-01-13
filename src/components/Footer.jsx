@@ -268,7 +268,7 @@ export default function Footer() {
         <div className="md:col-span-2 ">
           <Image src="/logo.webp" alt="ideax logo" width={200} height={200} />
           <ul className="space-y-2 text-left p-2">
-            <li className="">
+            <li className="mt-4">
               Ideax empowers entrepreneurs with AI-driven tools, market
               insights, and a supportive community, transforming ideas into
               successful ventures.

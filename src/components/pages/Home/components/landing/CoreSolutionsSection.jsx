@@ -253,7 +253,7 @@ const CoreSolutionsSection = () => {
                 src="/main-icon/hand.webp"
                 style={{ marginRight: "10px" }}
                 alt="icon 3"
-                width={50}
+                width={50} 
                 height={50}
                 className=" bg-[#A31C2F] rounded-lg p-0"
               />
@@ -359,7 +359,7 @@ const CoreSolutionsSection = () => {
                   contentData[selectedIcon]?.map((content, idx) => (
                     <div className="from-concept-card min-h-[180px]" key={idx}>
                       <div>
-                        <h5 style={{ color: "white" }}>{content.title}</h5>
+                        <h5 className="text-center" style={{ color: "white" }}>{content.title}</h5>
                       </div>
                       <div>
                         <p style={{ color: "white" }} className="text-md">

@@ -240,7 +240,7 @@ const Login = () => {
                     <button
                       onClick={handleSendOtp}
                       className="btn"
-                      style={{ marginBottom: "15px", margin: "15px auto" }}
+                      style={{ marginBottom: "35px", margin: "15px auto" }}
                     >
                       Send OTP
                     </button>

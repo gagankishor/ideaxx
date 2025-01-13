@@ -7,15 +7,20 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext"; // Ensure this context is set up correctly
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import Image from "next/image";
+import { ChevronDown, History, LogOut, User } from "lucide-react";
 
 export const MainNavBar = () => {
   const [toggle, setToggle] = useState(false);
+  const [proToggle, setProToggle] = useState(false);
   const { isAuthenticated, logout } = useContext(AuthContext);
   // const router = useRouter();
   // const pathname = router.pathname;
 
   const showMenu = () => {
     setToggle(!toggle);
+  };
+  const handleToggle = () => {
+    setProToggle((prev) => !prev);
   };
   const pathname = usePathname();
   return (
@@ -25,9 +30,15 @@ export const MainNavBar = () => {
           <div className="logo-side ">
             <Link href="/">
               {" "}
-              <div className="w-12"> 
-
-              <Image width={200} height={200} src="/logo.webp" sizes="8" className=" bg-black rounded-full p-1" alt=" IDX on Solana" />
+              <div className="w-12">
+                <Image
+                  width={200}
+                  height={200}
+                  src="/logo.webp"
+                  sizes="8"
+                  className=" bg-black rounded-full p-1"
+                  alt=" IDX on Solana"
+                />
               </div>
             </Link>
           </div>
@@ -55,12 +66,13 @@ export const MainNavBar = () => {
               <li>
                 <Link href="/career">Career</Link>
               </li>
-              {isAuthenticated && <li>
-                <Link href="/result-history">Results</Link>
-              </li>}
-            </ul> 
+              {/* {isAuthenticated && (
+                <li>
+                  <Link href="/result-history">Results</Link>
+                </li>
+              )} */}
+            </ul>
             <ul className="main-menu">
-              
               <div className="btns-container">
                 <Link
                   className="btn2"
@@ -86,28 +98,95 @@ export const MainNavBar = () => {
                 </div>
               )}
               {isAuthenticated ? (
-                <li className="nav-login-btn" onClick={logout}>
-                  <span
-                    className="font-bold pl-3 lg:mr-3"
-                    style={{
-                      cursor: "pointer",
-                      marginRight: "20px",
-                      color: "black",
-                    }}
+                <li className="relative">
+                  {/* Profile Container */}
+                  <div
+                    className="flex items-center gap-2 p-1 hover:bg-gray-100 rounded-full transition-colors duration-200 cursor-pointer"
+                    onClick={handleToggle}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === "Enter" && handleToggle()}
+                    aria-haspopup="true"
+                    aria-expanded={proToggle}
                   >
-                    Logout
-                  </span>
+                    <Image
+                      width={40}
+                      height={40}
+                      src="https://ui-avatars.com/api/?name=John+Doe"
+                      className="rounded-full border-2 border-gray-200 hover:border-gray-300 transition-colors duration-200"
+                      alt="Profile Picture"
+                    />
+                    <ChevronDown
+                      size={16}
+                      className={`text-gray-600 transition-transform duration-200 ${
+                        proToggle ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+
+                  {/* Dropdown Menu */}
+                  {proToggle && (
+  <div 
+    className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl transform origin-top-right transition-all duration-200 ease-out"
+    role="menu"
+  >
+    {/* User Profile Header */}
+    <div className="px-4 py-3 bg-gray-50/50 border-b border-gray-100">
+      <div className="flex items-center gap-3">
+        <div className="flex-shrink-0">
+          <Image
+            width={40}
+            height={40}
+            src="https://ui-avatars.com/api/?name=John+Doe"
+            className="rounded-full ring-2 ring-gray-100"
+            alt="Profile Picture"
+          />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-semibold text-gray-900 truncate">John Doe</p>
+          <p className="text-xs text-gray-500 truncate">john.doe@example.com</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Menu Items */}
+    <div className="p-2 space-y-1">
+      <Link
+        href="#"
+        className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
+      >
+        <User size={18} className="text-gray-400 group-hover:text-gray-600" />
+        <span className="group-hover:text-gray-900">Your Profile</span>
+      </Link>
+      
+      <Link
+        href="/result-history"
+        className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
+      >
+        <History size={18} className="text-gray-400 group-hover:text-gray-600" />
+        <span className="group-hover:text-gray-900">Results History</span>
+      </Link>
+
+      <div className="my-2 border-t border-gray-100" />
+
+      <button
+        onClick={logout}
+        className="w-full flex items-center gap-3 px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50 transition-colors duration-150 group"
+      >
+        <LogOut size={18} className="text-red-400 group-hover:text-red-600" />
+        <span className="group-hover:text-red-700 font-medium">Logout</span>
+      </button>
+    </div>
+  </div>
+)}
                 </li>
               ) : (
-                <li
-                  style={{
-                    cursor: "pointer",
-                    marginRight: "20px",
-                    fontWeight: "700",
-                    color: "black",
-                  }}
-                >
-                  <Link href="/login" style={{ color: "black" }}>
+                <li role="menuitem">
+                  <Link
+                    href="/login"
+                    className="px-4 py-2 text-gray-700 font-medium hover:bg-gray-100 rounded-lg 
+                  transition-colors duration-200 no-underline inline-block"
+                  >
                     Login
                   </Link>
                 </li>

@@ -18,6 +18,8 @@ export default {
     ];
   },
   images: {
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         protocol: 'https',
@@ -32,6 +34,11 @@ export default {
       {
         protocol: 'https',
         hostname: 'upload.wikimedia.org',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ui-avatars.com',
         pathname: '/**',
       },
     ],

@@ -49,12 +49,12 @@ const LoginWithGoogle = ({ handleLogin }) => {
   return (
     <>
       {loading ? (
-        <div className="spinner"></div>
+        <div className="spinner mx-auto"></div>
       ) : !loginStatus ? (
         <div style={{ maxWidth: '180px' }}>
-          <Suspense fallback={<div className="spinner"></div>}>
+          <Suspense fallback={<div className="spinner mx-auto"></div>}>
             <GoogleOAuthProvider clientId="247324430690-su30irnnm41cuahimdjllo6foo0rqoq0.apps.googleusercontent.com">
-              <GoogleLogin onSuccess={handleSuccess} onError={handleFailure} />
+              <GoogleLogin  onSuccess={handleSuccess} onError={handleFailure} />
             </GoogleOAuthProvider>
           </Suspense>
         </div>

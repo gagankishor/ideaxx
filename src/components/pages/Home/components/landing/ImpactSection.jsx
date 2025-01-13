@@ -30,7 +30,7 @@ const testimonials = [
     videoSrc: "/Vantom_Solar_Batteries.webm",
     quote:
       "Implementing these solutions transformed our business approach and maximized growth potential.",
-    name: "Eyad Abdulla",
+    name: "Matthew Caldwell",
     title: "COO, Vantom Power",
     image:"/landing/ventomCeo.webp",
     stats: [
@@ -55,7 +55,7 @@ const testimonials = [
     videoSrc: "/MercedesMaybachSL.webm",
     quote:
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
-    name: "Taki Kaddo",
+    name: "Amelia Vaughn",
     title: "CTO, Pick It Up",
     image:"/landing/carManager.webp",
     stats: [

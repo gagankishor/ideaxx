@@ -2,11 +2,11 @@
 import {
   ChevronDown,
   FileText,
-  Tool,
   AlertTriangle,
   Book,
   Calendar,
   CheckCircle,
+  PenTool,
 } from "lucide-react";
 import PropTypes from "prop-types";
 import { useState } from "react";
@@ -199,7 +199,7 @@ const SecurityReport = () => {
         )}
       </section>
       <section className="mb-8">
-        <SectionHeader title="Tools Used" icon={Tool} sectionKey="tools" />
+        <SectionHeader title="Tools Used" icon={PenTool} sectionKey="tools" />
         {activeSection === "tools" && (
           <div className="p-4 border border-blue-100 rounded-b-lg overflow-x-auto">
             <table className="w-full">

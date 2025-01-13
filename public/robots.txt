@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /admin/
-Disallow: /register/
-Allow: /
-
-Sitemap: https://idxsolana.io/sitemap.xml

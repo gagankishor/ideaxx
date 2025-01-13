@@ -28,7 +28,7 @@ const ResultHistory = () => {
       }
     };
     fetchResultHistory();
-  }, []);
+  });
   // const handleDelete = async (id) => {
   //   try {
   //     const endpoint = `delete-result/${id}`;

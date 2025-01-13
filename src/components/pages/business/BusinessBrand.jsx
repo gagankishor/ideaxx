@@ -83,7 +83,7 @@ export default function BrandName() {
         fetchSuggData()
         hasFetched.current = true;
     }
-}, []);
+});
 
 
   const handleTextareaChange = (e) => {

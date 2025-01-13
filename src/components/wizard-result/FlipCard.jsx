@@ -139,7 +139,7 @@ export default function FlipCountdown() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [previousTimeLeft, timeLeft]);
 
   const renderFlipUnit = (value, label, isFlipping) => (
     <div className="flex flex-col items-center">

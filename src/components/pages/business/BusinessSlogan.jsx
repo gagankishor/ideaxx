@@ -85,7 +85,7 @@ export default function BusinessSlogan() {
   };
   useEffect(()=>{
     fetchSloganSugg()
-  },[])
+  })
   const handaleSave = async(payload) =>{
     try {
       // setIsLoading(true);  

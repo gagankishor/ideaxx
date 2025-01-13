@@ -391,7 +391,7 @@ export default function BusinessFont() {
 };
 useEffect(()=>{
   fetchFont('sugg')
-},[])
+})
 
   return (
     <>    

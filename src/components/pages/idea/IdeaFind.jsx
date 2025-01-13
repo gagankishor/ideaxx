@@ -37,7 +37,7 @@ export default function IdeaFind() {
       }
     };
     fetchSectors();
-  }, []);
+  });
   const handleCheckboxChange = (fieldName, newValue) => {
     setFormData((prevState) => ({ ...prevState, [fieldName]: newValue }));
   };

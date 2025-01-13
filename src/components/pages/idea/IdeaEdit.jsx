@@ -61,7 +61,7 @@ export default function IdeaEdit() {
     };
   
     fetchSectors();
-  }, []);
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;

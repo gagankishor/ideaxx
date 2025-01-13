@@ -57,7 +57,7 @@ export const IdeaProvider = ({ children }) => {
         getLastIdea();
     }
     console.log(ideaData)
-  }, []);
+  });
 
   return (
     <IdeaContext.Provider value={{ ideaData, getLastIdea ,brandData,setBrandDataMain }}>

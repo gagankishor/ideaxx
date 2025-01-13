@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { useEffect, useRef, useState } from "react";
 const testimonials = [
   {
-    videoSrc: "/BelloAnimationsVideo.webm",
+    videoSrc: "/BelloAnimationsVideo.mp4",
     image:"/landing/360HomeDecore.webp",
     quote:
       "The tools provided a significant breakthrough in streamlining our operations and achieving key milestones.",
@@ -27,7 +27,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/Vantom_Solar_Batteries.webm",
+    videoSrc: "/Vantom_Solar_Batteries.mp4",
     quote:
       "Implementing these solutions transformed our business approach and maximized growth potential.",
     name: "Matthew Caldwell",
@@ -52,7 +52,7 @@ const testimonials = [
     ],
   },
   {
-    videoSrc: "/MercedesMaybachSL.webm",
+    videoSrc: "/MercedesMaybachSL.mp4",
     quote:
       "Our team’s productivity and creativity reached new heights thanks to the powerful tools provided.",
     name: "Amelia Vaughn",
@@ -118,7 +118,7 @@ const ImpactSection = () => {
       setCurrentSlide(0);
       sliderRef.current.slickGoTo(0);
     }
-  }, [currentSlide, testimonials.length]);
+  }, [currentSlide]);
   return (
     <section className="flex flex-col  items-center bg-gradient-to-b from-[#341E81] to-[#341E81] py-12 text-white">
       <div className="impact-section text-center">
@@ -160,8 +160,8 @@ const ImpactSection = () => {
                         className="w-full h-full object-cover"
                       >
                         {/* Provide multiple sources for better compatibility */}
-                        <source src={testimonial.videoSrc} type="video/webm" />
-                        <source src={testimonial.videoSrc.replace('.webm','.mp4')}  type="video/mp4"/>
+                        <source src={testimonial.videoSrc} type="video/mp4" />
+                        <source src={testimonial.videoSrc.replace('.mp4', '.webm')} type="video/webm" />
                         Your browser does not support the video tag.
                       </video>
                     </div>

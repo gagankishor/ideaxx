@@ -127,7 +127,7 @@ export default function BusinessLogo() {
         fetchSuggData()
         hasFetched.current = true;
     }
-}, []);
+});
 // const handleRemoveImage = () => {
 //   setUploadedLogo(null); // Clear the uploaded logo
 //   // Optionally, clear the file input if needed

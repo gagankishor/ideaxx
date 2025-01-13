@@ -74,7 +74,7 @@ export default function IdeaNew() {
       }
     };
     fetchSectors();
-  }, []);
+  });
   const ideaReasonOptions = [
     "Business plan",
     "Requesting funding from investors or banks",

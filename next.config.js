@@ -24,7 +24,17 @@ export default {
         hostname: 'via.placeholder.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: '1000logos.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        pathname: '/**',
+      },
     ],
-    domains: ["1000logos.net","upload.wikimedia.org"],
+    
   },
 };

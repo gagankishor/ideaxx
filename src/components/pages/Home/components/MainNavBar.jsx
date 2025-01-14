@@ -182,7 +182,7 @@ export const MainNavBar = () => {
                       </div>
                       <div className="p-2 space-y-1">
                         <Link
-                          href="#"
+                          href="/profile"
                           className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
                         >
                           <User

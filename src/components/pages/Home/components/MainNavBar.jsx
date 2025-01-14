@@ -133,7 +133,9 @@ export const MainNavBar = () => {
                     <Image
                       width={40}
                       height={40}
-                      src="https://ui-avatars.com/api/?name=John+Doe"
+                      src={`https://ui-avatars.com/api/?name=${
+                        user?.name || user?.email
+                      }`}
                       className="rounded-full border-2 border-gray-200 hover:border-gray-300 transition-colors duration-200"
                       alt="Profile Picture"
                     />

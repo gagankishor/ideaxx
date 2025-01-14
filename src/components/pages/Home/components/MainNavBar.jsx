@@ -3,22 +3,43 @@ import Link from "next/link"; // Correct import for Link
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContext"; // Ensure this context is set up correctly
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import Image from "next/image";
 import { ChevronDown, History, LogOut, User } from "lucide-react";
+import useAxiosWithAuth from "@/config/useAxiosWithAuth";
 
 export const MainNavBar = () => {
   const [toggle, setToggle] = useState(false);
   const [proToggle, setProToggle] = useState(false);
   const { isAuthenticated, logout } = useContext(AuthContext);
+  const [user, setUser] = useState(null);
   // const router = useRouter();
   // const pathname = router.pathname;
-
+  const axiosInstance = useAxiosWithAuth();
   const showMenu = () => {
     setToggle(!toggle);
   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axiosInstance.get("auth/profile", {
+          headers: {
+            Accept: "application/vnd.api+json",
+            "Content-Type": "application/json",
+          },
+        });
+        setUser(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    if (isAuthenticated) {
+      fetchData();
+    }
+  }, [isAuthenticated]);
   const handleToggle = () => {
     setProToggle((prev) => !prev);
   };
@@ -123,62 +144,84 @@ export const MainNavBar = () => {
                       }`}
                     />
                   </div>
-
-                  {/* Dropdown Menu */}
                   {proToggle && (
-  <div 
-    className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl transform origin-top-right transition-all duration-200 ease-out"
-    role="menu"
-  >
-    {/* User Profile Header */}
-    <div className="px-4 py-3 bg-gray-50/50 border-b border-gray-100">
-      <div className="flex items-center gap-3">
-        <div className="flex-shrink-0">
-          <Image
-            width={40}
-            height={40}
-            src="https://ui-avatars.com/api/?name=John+Doe"
-            className="rounded-full ring-2 ring-gray-100"
-            alt="Profile Picture"
-          />
-        </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-gray-900 truncate">John Doe</p>
-          <p className="text-xs text-gray-500 truncate">john.doe@example.com</p>
-        </div>
-      </div>
-    </div>
+                    <div
+                      className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl transform origin-top-right transition-all duration-200 ease-out"
+                      role="menu"
+                    >
+                      {/* User Profile Header */}
+                      <div className="px-4 py-3 bg-gray-50/50 border-b border-gray-100">
+                        <div className="flex items-center gap-3">
+                          <div className="flex-shrink-0">
+                            <Image
+                              width={40}
+                              height={40}
+                              src={`https://ui-avatars.com/api/?name=${
+                                user?.name || user?.email
+                              }`}
+                              className="rounded-full ring-2 ring-gray-100"
+                              alt="Profile Picture"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-semibold text-gray-900 truncate">
+                              {user?.name || user?.email
+  .split("@")[0] // Take the part before "@"
+  .replace(/[^a-zA-Z\s]/g, "") // Remove numbers and symbols
+  .replace(/_/g, " ") // Replace underscores with spaces
+  .replace(/\./g, " ") // Replace dots with spaces
+  .replace(/\b\w/g, (c) => c.toUpperCase())}
+                            </p>
+                            <p className="text-xs text-gray-500 truncate">
+                              {user?.email}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-2 space-y-1">
+                        <Link
+                          href="#"
+                          className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
+                        >
+                          <User
+                            size={18}
+                            className="text-gray-400 group-hover:text-gray-600"
+                          />
+                          <span className="group-hover:text-gray-900">
+                            Your Profile
+                          </span>
+                        </Link>
 
-    {/* Menu Items */}
-    <div className="p-2 space-y-1">
-      <Link
-        href="#"
-        className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
-      >
-        <User size={18} className="text-gray-400 group-hover:text-gray-600" />
-        <span className="group-hover:text-gray-900">Your Profile</span>
-      </Link>
-      
-      <Link
-        href="/result-history"
-        className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
-      >
-        <History size={18} className="text-gray-400 group-hover:text-gray-600" />
-        <span className="group-hover:text-gray-900">Results History</span>
-      </Link>
+                        <Link
+                          href="/result-history"
+                          className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-150 group"
+                        >
+                          <History
+                            size={18}
+                            className="text-gray-400 group-hover:text-gray-600"
+                          />
+                          <span className="group-hover:text-gray-900">
+                            Results History
+                          </span>
+                        </Link>
 
-      <div className="my-2 border-t border-gray-100" />
+                        <div className="my-2 border-t border-gray-100" />
 
-      <button
-        onClick={logout}
-        className="w-full flex items-center gap-3 px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50 transition-colors duration-150 group"
-      >
-        <LogOut size={18} className="text-red-400 group-hover:text-red-600" />
-        <span className="group-hover:text-red-700 font-medium">Logout</span>
-      </button>
-    </div>
-  </div>
-)}
+                        <button
+                          onClick={logout}
+                          className="w-full flex items-center gap-3 px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50 transition-colors duration-150 group"
+                        >
+                          <LogOut
+                            size={18}
+                            className="text-red-400 group-hover:text-red-600"
+                          />
+                          <span className="group-hover:text-red-700 font-medium">
+                            Logout
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </li>
               ) : (
                 <li role="menuitem">

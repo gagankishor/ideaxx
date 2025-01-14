@@ -6,3 +6,8 @@ export default function HomePage() {
   // return <div>sdfgasdfasf</div>
 
 }
+// import dynamic from 'next/dynamic'
+
+// const NoSSR = dynamic(() => import('../components/no-ssr-component'), {
+//   ssr: false
+// })

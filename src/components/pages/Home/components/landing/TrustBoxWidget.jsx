@@ -188,6 +188,19 @@ const TrustBoxWidget = () => {
                       },
                     },
                   },
+                  {
+                    className: "flex justify-center items-center",
+                    anchor: {
+                      href: "https://coinmarketcap.com/currencies/ideax/",
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      image: {
+                        src: "/award-section/Coinmarketcap_svg_logo.png",
+                        alt: "coin MarketCap logo",
+                        className: "w-48",
+                      },
+                    },
+                  },
                 ].map((logo, index) => (
                   <SwiperSlide key={index}>
                     <a

@@ -48,8 +48,8 @@ export const Hero = () => {
                         src="/landing/market-score.webp"
                         alt="Roadmap"
                         className="roadmap-card-img"
-                        width={50}
-                        height={50}
+                        width={350}
+                        height={450}
                       />
                     </div>
           <Image

@@ -54,8 +54,8 @@ import { LogoutButton } from "./auth/Logout";
 import Link from "next/link";   
 export default function SideBar () {
   const pathname = usePathname();
-  console.log(pathname,"pathname");
-  console.log(location,"location");
+  // console.log(pathname,"pathname");
+  // console.log(location,"location");
   const isIdeaRoute = pathname.includes("/idea");
   const isBusinessRoute = pathname.includes("/business-identity");
   const isMarketingRoute = pathname.includes("/marketing");

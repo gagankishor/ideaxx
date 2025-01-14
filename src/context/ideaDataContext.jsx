@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import { RestAPI } from "@/config/Api";
@@ -7,10 +8,13 @@ export const IdeaContext = createContext();
 
 export const IdeaProvider = ({ children }) => {
   const [ideaData, setIdeaData] = useState(null);
-  const [brandData, setBrandData] = useState(localStorage.getItem('brandData'));
+  const [brandData, setBrandData] = useState(null);
+
   const setBrandDataMain = (data) => {
-    localStorage.setItem('brandData', data);
-    setBrandData(data);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("brandData", JSON.stringify(data));
+      setBrandData(data);
+    }
   };
   const getLastIdea = async () => {
     try {
@@ -19,7 +23,7 @@ export const IdeaProvider = ({ children }) => {
         url: `${RestAPI}/idea/last-idea`,
         headers: {
           Accept: "application/vnd.api+json",
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",
         },
       });
@@ -27,44 +31,47 @@ export const IdeaProvider = ({ children }) => {
       if (response.status === 200 && response.data.last_idea) {
         const lastIdea = response.data.last_idea;
         setIdeaData(lastIdea);
-        if(lastIdea?.brand){
 
-          setBrandDataMain(lastIdea?.brand)
+        if (lastIdea?.brand) {
+          setBrandDataMain(lastIdea?.brand);
         }
 
-        localStorage.setItem('idea', JSON.stringify(lastIdea));
+        localStorage.setItem("idea", JSON.stringify(lastIdea));
       }
     } catch (error) {
       console.error("There was an error fetching the last idea:", error);
     }
   };
-  
-  useEffect(() => {
-    // Safely attempt to load ideaData from localStorage on initial render
-    const storedIdeaData = localStorage.getItem('idea');
-    getLastIdea();
 
-    if (storedIdeaData && storedIdeaData !== "undefined") {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedIdeaData = localStorage.getItem("idea");
+      if (storedIdeaData && storedIdeaData !== "undefined") {
         try {
-            const parsedData = JSON.parse(storedIdeaData);
-            setIdeaData(parsedData);
-            console.log(parsedData)
-            setBrandDataMain(parsedData?.brand)
+          const parsedData = JSON.parse(storedIdeaData);
+          setIdeaData(parsedData);
+          setBrandDataMain(parsedData?.brand);
         } catch (error) {
-            console.error("Error parsing stored idea data:", error);
+          console.error("Error parsing stored idea data:", error);
         }
-    } else {
+      } else {
         getLastIdea();
+      }
+
+      const storedBrandData = localStorage.getItem("brandData");
+      if (storedBrandData) {
+        setBrandData(JSON.parse(storedBrandData));
+      }
     }
-    console.log(ideaData)
-  });
+  }, []);
 
   return (
-    <IdeaContext.Provider value={{ ideaData, getLastIdea ,brandData,setBrandDataMain }}>
+    <IdeaContext.Provider value={{ ideaData, getLastIdea, brandData, setBrandDataMain }}>
       {children}
     </IdeaContext.Provider>
   );
 };
+
 IdeaProvider.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+  children: PropTypes.node.isRequired,
+};

@@ -113,7 +113,7 @@ export default function BusinessColor() {
   // const defaultColors = ["#F0F4F4", "#D9E6E6", "#A5C7C7", "#6AB0B0", "#2B8C8C"];
   const handleColorSelection = (selectedColors) => {
     setColors(selectedColors);
-    console.log("Selected colors:", selectedColors);
+    // console.log("Selected colors:", selectedColors);
   };
   const handaleSave = async () => {
     try {
@@ -135,7 +135,7 @@ export default function BusinessColor() {
         axiosConfig
       );
       if (response.data && response.data.data) {
-        console.log(response.data);
+        // console.log(response.data);
         setBrandDataMain(response.data.data);
         Swal.fire({
           title: "Success",

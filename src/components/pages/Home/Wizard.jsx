@@ -58,7 +58,7 @@ export default function Wizard() {
           label: country.country.toUpperCase(), // Capitalizes the country name
           value: `${country.score}`, // Assuming score is available in country data
         }));
-        console.log(transformedChoices)
+        // console.log(transformedChoices)
         setCountriesChoices(transformedChoices);
       } catch (err) {
         console.log(err);
@@ -446,7 +446,7 @@ export default function Wizard() {
     setOtp(newOtp);
   };
   const handleChoiceChange = (value) => {
-    console.log(value, step);
+    // console.log(value, step);
     setSelectedOption(value);
     setFormData((prevData) => ({ ...prevData, [`step${step + 1}`]: value }));
     // console.log(formData);

@@ -17,15 +17,15 @@ export const Letterhead = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({
-      businessName,
-      address,
-      contact,
-      email,
-      location,
-      postalCode,
-      taxNumber,
-    });
+    // console.log({
+    //   businessName,
+    //   address,
+    //   contact,
+    //   email,
+    //   location,
+    //   postalCode,
+    //   taxNumber,
+    // });
   };
 
   // const handlePDFDownload = () => {

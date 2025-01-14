@@ -1,3 +1,4 @@
+"use client";
 import PropTypes from "prop-types"; // Import PropTypes
 import { useState } from "react";
 import axios from "axios";

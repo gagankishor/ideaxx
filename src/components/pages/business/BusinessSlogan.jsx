@@ -92,7 +92,7 @@ export default function BusinessSlogan() {
 
       const response = await axios.post(`${RestAPI}/bi/save-brand`,payload, axiosConfig);
       if (response.data && response.data.data) {
-        console.log(response.data)
+        // console.log(response.data)
         setBrandDataMain(response.data.data); 
         Swal.fire({
           title: "Success",

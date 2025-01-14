@@ -1,4 +1,4 @@
-
+"use client"
 const BuySellPage = () => {
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
@@ -7,5 +7,4 @@ const BuySellPage = () => {
         </div>
     );
 };
-
 export default BuySellPage;

@@ -37,7 +37,7 @@ export const Email = () => {
         confirmButtonText: "OK",
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       Swal.fire({
         title: "Error",
         text: "Failed to save legal information.",

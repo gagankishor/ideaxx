@@ -1,4 +1,4 @@
-
+"use client"
 const FundsPage = () => {
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>

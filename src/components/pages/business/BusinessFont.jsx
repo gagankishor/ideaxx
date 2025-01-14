@@ -227,7 +227,7 @@ export default function BusinessFont() {
         axiosConfig
       );
       if (response.data && response.data.data) {
-        console.log(response.data);
+        // console.log(response.data);
         setBrandDataMain(response.data.data);
         Swal.fire({
           title: "Success",
@@ -333,9 +333,8 @@ export default function BusinessFont() {
       return;
   }
   try {
-    let idea_name = localStorage.getItem("idea_name");
 
-    console.log(idea_name);
+    // console.log(idea_name);
     const response = await axios.post(
       url,
       payload,

@@ -1,3 +1,4 @@
+"use client"
 const CommunityPage = () => {
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>

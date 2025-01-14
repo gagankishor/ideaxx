@@ -1,4 +1,4 @@
-
+"use client"
 const StrategiesInvestorPage = () => {
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>

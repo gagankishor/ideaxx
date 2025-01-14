@@ -20,14 +20,3 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 export default Layout;
-{
-  /* <div className="dashboard container">
-  <SideBar />
-  <div className="content">
-    <h1 id="heading">Overview</h1>
-    <form className="form">
-      <p>Welcome to ideax platform!</p>
-    </form>
-  </div>
-</div> */
-}

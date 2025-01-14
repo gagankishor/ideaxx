@@ -57,8 +57,6 @@ export default function BrandName() {
     } catch (error) {
       console.error("Error fetching data:", error);
       // setError("Error fetching data");
-    } finally {
-      console.log("first")
     }
   };
   const fetchData = async () => {
@@ -73,8 +71,6 @@ export default function BrandName() {
     } catch (error) {
       console.error("Error fetching data:", error);
       // setError("Error fetching data");
-    } finally {
-      console.log("first")
     }
   };
   useEffect(() => {

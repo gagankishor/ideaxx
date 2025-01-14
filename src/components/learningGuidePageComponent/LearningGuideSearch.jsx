@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 const learningResources = [
@@ -23,9 +23,9 @@ const learningResources = [
 
 const LearningGuideSearch = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  useEffect(() => {
-    console.log("Search query updated:", searchQuery);
-  }, [searchQuery]);
+  // useEffect(() => {
+  //   console.log("Search query updated:", searchQuery);
+  // }, [searchQuery]);
 
   const filteredResources = searchQuery.length > 0 
   ? learningResources.filter((resource) => {

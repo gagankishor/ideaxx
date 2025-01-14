@@ -17,7 +17,7 @@ export const NewEvent = () => {
   const selectEvent = (eventType, eventLabel) => {
     setSelectedEvent(eventLabel);
     setIsDropdownOpen(false);
-    console.log(eventType)
+    // console.log(eventType)
   };
   const blogs = [
     { id: 1, name: "Blog", logo: "/blog.webp", link: "#" },

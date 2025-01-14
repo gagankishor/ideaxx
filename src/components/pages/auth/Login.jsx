@@ -98,8 +98,8 @@ const Login = () => {
     // }
     router.push('/')
   };
-  const handleLinkedInLogin = async (status)=>{
-    console.log(status)
+  const handleLinkedInLogin = async ()=>{
+    // console.log(status)
     router.push('/')
   }
   const formatTime = (seconds) => {

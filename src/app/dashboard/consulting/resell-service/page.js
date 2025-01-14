@@ -1,4 +1,4 @@
-
+"use client"
 const ResellservicePage = () => {
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>

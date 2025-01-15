@@ -113,7 +113,7 @@ export const ToolCRM = () => {
                   Salesforce
                 </h2>
                 <p className="text-gray-600 text-left mb-4">
-                  Salesforce is the world's #1 customer relationship management
+                  Salesforce is the world #1 customer relationship management
                   (CRM) platform.
                 </p>
                 <a

@@ -64,8 +64,8 @@ export const ToolApp = () => {
     },
   ];
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [showTemplate, setShowTemplate] = useState(false);
-  const [sentTemplate, setSentTemplate] = useState(false);
+  // const [showTemplate, setShowTemplate] = useState(false);
+  // const [sentTemplate, setSentTemplate] = useState(false);
   return (
     <>
       <div className="dashboard container">
@@ -101,7 +101,7 @@ export const ToolApp = () => {
             <Pletforms platforms={platforms} title="Platforms" />
             <div className="mt-4 mx-auto text-center">
               <button
-                onClick={() => setShowTemplate(true)}
+                // onClick={() => setShowTemplate(true)}
                 className="w-[200px] flex items-center justify-center gap-2 px-4 py-2 rounded-full border-white border-1 text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
               >
                 Create New App

@@ -754,7 +754,7 @@ export default function Wizard() {
           "Content-Type": "application/json",
         },
       });
-      if (response.data.message) {
+      if (response.status === 200 && response.data.message) {
         setisOtpSent(true);
         setCanResend(false);
         setSecondsLeft(300);
@@ -764,12 +764,20 @@ export default function Wizard() {
         //   icon: "success",
         //   confirmButtonText: "OK",
         // });
+      } else if (response.status === 204) {
+        Swal.fire({
+          title: "Error",
+          text: "Your email is not registered",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       } else {
         Swal.fire({
           title: "Error",
           text: "Failed to generate OTP. Please try again.",
           icon: "error",
           confirmButtonText: "OK",
+          
         });
       }
     } catch (error) {
@@ -1252,7 +1260,8 @@ export default function Wizard() {
           <button
             type="button"
             onClick={openEmailLoginModal}
-            className="email-login-btn"
+            className="email-login-btn mt-12"
+            style={{ marginTop: "12px", width: "240px" }}
           >
             <CiMail size={25} style={{ marginRight: "8px" }} />
             SignUp with Email

@@ -497,6 +497,7 @@ export default function Wizard() {
         if (response.data.message) {
           // setResult(data);
           setLoading(false);
+          console.log(response.data.message)
           // navigate("/plan-details");
           localStorage.setItem(
             "wizardResultData",
@@ -514,21 +515,33 @@ export default function Wizard() {
           //   icon: "success",
           //   confirmButtonText: "OK",
           // });
+        }
+        else if(response.status === 204){
+            Swal.fire({
+            title: "Error",
+            text: "Maximum limit reached. You can only validate 1 free idea.",
+            icon: "error",
+            confirmButtonText: "Ok",
+            }).then((result) => {
+            if (result.isConfirmed) {
+              router.push("/");
+            }
+            });
         } else {
           Swal.fire({
-            title: "Error",
+            title: "Somthing went wrong please try again later",
             text: response.data.error,
             icon: "error",
             confirmButtonText:
               response.data.error ===
-              "Maximum limit reached. You can only create 2 plans."
+              "Maximum limit reached. You can only create 1 plans."
                 ? "View Plan"
                 : "OK",
           }).then((result) => {
             if (
               result.isConfirmed &&
               response.data.error ===
-                "Maximum limit reached. You can only create 2 plans."
+                "Maximum limit reached. You can only create 1 plans."
             ) {
               // Redirect to plan details if the button is "View Plan"
               // window.location.href = "/plan-details";
@@ -777,7 +790,7 @@ export default function Wizard() {
           text: "Failed to generate OTP. Please try again.",
           icon: "error",
           confirmButtonText: "OK",
-          
+
         });
       }
     } catch (error) {

@@ -5,7 +5,6 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { X } from "lucide-react"; // Using Lucide icon for close button
 import WebsitePreview from "./WebsitePreviewComponent";
-
 export const ToolWebsite = () => {
   const platforms = [
     {
@@ -64,7 +63,8 @@ export const ToolWebsite = () => {
   ];
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-
+  const [showTemplate, setShowTemplate] = useState(false);
+  const [sentTemplate, setSentTemplate] = useState(false);
   const openModal = (template) => {
     setSelectedTemplate(template);
     setModalIsOpen(true);
@@ -99,54 +99,126 @@ export const ToolWebsite = () => {
   };
   return (
     <>
-      <div className=" relative">
+      <div className="">
         <h1 id="heading">
           <FaTools /> Business Tools
         </h1>
         <form action="" className="form relative">
-          <div>{/* <h2>{ideaData.idea_name}</h2> */}</div>
-          <div className="row">
-            <WebsitePreview />
-            <div className="col">
-              <textarea
-                name=""
-                placeholder="Website details ......"
-                id=""
-                style={{
-                  justifyContent: "center",
-                  width: "400px",
-                  height: "200px",
-                }}
-              ></textarea>
-            </div>
-          </div>
-          <Pletforms platforms={platforms} title="Platforms" />
-          <h2 id="section-heading" style={{ marginTop: "40px" }}>
-            Templates
-          </h2>
-          <div className="slider" style={{ gap: "80px" }}>
-            {templates.map((item) => {
-              return (
-                <div className="card" key={item.id}>
-                  <div
-                    key={item.id}
-                    className="item"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      height: "300px",
-                      width: "240px",
-                      padding: "10px 0px 10px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <img src={item.logo} alt={item.name} />
+          {showTemplate ? (
+            sentTemplate ? (
+              <>
+                <div className="flex  items-center justify-center min-h-screen  p-6">
+                  <div className="text-center p-6 rounded-lg shadow-md max-w-md w-full mb-6">
+                    <p className="text-lg text-gray-700 mb-4">
+                      Request has been sent to your marketing department, we
+                      will set a meeting to discuss the website idea
+                    </p>
+                    <div className="flex justify-center items-center text-green-500 text-2xl">
+                      <span>&#10003;</span>
+                    </div>
+                    <p className="mt-4 text-gray-700">
+                      You can check <span className="font-bold">👥 team</span>{" "}
+                      to confirm meeting date and time
+                    </p>
                   </div>
-                  <p>{item.name} </p>
+                  <div className=" rounded-lg shadow-md overflow-hidden max-w-xl w-full">
+                    
+                      <img
+                        src={selectedTemplate.logo}
+                        alt={selectedTemplate.name}
+                        className="w-full h-full object-cover"
+                      />
+                  </div>
                 </div>
-              );
-            })}
-          </div>
+              </>
+            ) : (
+              <>
+                <h2 className=" text-6xl font-thin w-[60%] text-gray-800">
+                  Choose the starting point For your idea
+                </h2>
+                <h4 id="section-heading" style={{ marginTop: "40px" }}>
+                  Templates
+                </h4>
+                <div className="slider" style={{ gap: "80px" }}>
+                  {templates.map((item) => {
+                    return (
+                      <div className="card" key={item.id}>
+                        <div
+                          key={item.id}
+                          className="item"
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "300px",
+                            width: "240px",
+                            padding: "10px 0px 10px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          <img src={item.logo} alt={item.name} />
+                        </div>
+                        <p>{item.name} </p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="slider">
+                  {templates2.map((item) => {
+                    return (
+                      <div
+                        className="card"
+                        key={item.id}
+                        style={{ height: "250px" }}
+                        onClick={() => openModal(item)}
+                      >
+                        <div
+                          key={item.id}
+                          className="item"
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "200px",
+                            padding: "10px 0px 10px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          <img src={item.logo} alt={item.name} />
+                        </div>
+                        <p></p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )
+          ) : (
+            <>
+              <div className="row">
+                <WebsitePreview />
+                <div className="col">
+                  <textarea
+                    name=""
+                    placeholder="Website details ......"
+                    id=""
+                    style={{
+                      justifyContent: "center",
+                      width: "400px",
+                      height: "400px",
+                    }}
+                  ></textarea>
+                </div>
+              </div>
+              <Pletforms platforms={platforms} title="Platforms" />
+              <div className="mt-4 mx-auto text-center">
+                <button
+                  onClick={() => setShowTemplate(true)}
+                  className="w-[200px] flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                >
+                  Create New Site
+                </button>
+              </div>
+            </>
+          )}
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
@@ -190,38 +262,20 @@ export const ToolWebsite = () => {
                         </a>
                       </div>
                     )}
+                    <div className="mt-4 mx-auto  text-center">
+                      <button
+                        onClick={() => {setSentTemplate(true) ; setModalIsOpen(false); }}
+                        className=" mx-auto w-auto flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                      >
+                        Send the template to your team to start work on the
+                        website
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             )}
           </Modal>
-          <div className="slider">
-            {templates2.map((item) => {
-              return (
-                <div
-                  className="card"
-                  key={item.id}
-                  style={{ height: "250px" }}
-                  onClick={() => openModal(item)}
-                >
-                  <div
-                    key={item.id}
-                    className="item"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      height: "200px",
-                      padding: "10px 0px 10px",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    <img src={item.logo} alt={item.name} />
-                  </div>
-                  <p></p>
-                </div>
-              );
-            })}
-          </div>
         </form>
       </div>
     </>

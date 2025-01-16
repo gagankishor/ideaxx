@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Zap, Shield, Eye, Target, Activity, ArrowRight } from 'lucide-react';
 
 const AboutSection = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [activeCard, setActiveCard] = useState(null);
+  // const [activeCard, setActiveCard] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -77,8 +77,8 @@ const AboutSection = () => {
                   <div 
                     key={index}
                     className={`p-6 rounded-2xl bg-gradient-to-br from-${item.color}-500/10 to-transparent border border-${item.color}-500/20 group hover:from-${item.color}-500/20 transition-all duration-300`}
-                    onMouseEnter={() => setActiveCard(index)}
-                    onMouseLeave={() => setActiveCard(null)}
+                    // onMouseEnter={() => setActiveCard(index)}
+                    // onMouseLeave={() => setActiveCard(null)}
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className={`p-3 rounded-xl bg-${item.color}-500/10 text-${item.color}-400 group-hover:scale-110 transition-transform duration-300`}>

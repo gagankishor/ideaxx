@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, Globe, Shield, Zap } from 'lucide-react';
 
 const HeroSection = () => {

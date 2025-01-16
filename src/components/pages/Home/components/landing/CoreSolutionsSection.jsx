@@ -362,7 +362,7 @@ const CoreSolutionsSection = () => {
                         <h5 className="text-center" style={{ color: "white" }}>{content.title}</h5>
                       </div>
                       <div>
-                        <p style={{ color: "white" }} className="text-md">
+                        <p style={{ color: "white" }} className="text-md text-center">
                           {content.description}
                         </p>
                       </div>

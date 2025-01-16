@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import AboutSection from "@/components/pages/inovetion/aboutSection";
 import HeroSection from "@/components/pages/inovetion/HeroSectionInovetion";
+import HeroSectionAi from "@/components/pages/inovetion/AI-InspiredHeroSection";
+import HeroSectionSolana from "@/components/pages/inovetion/Solana-InspiredCryptoHeroSection";
 const CustomAlert = ({ message, onClose }) => (
     <div className="fixed top-20 right-4 z-50 animate-in fade-in slide-in-from-top-2">
         <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-4 shadow-xl">
@@ -564,6 +566,8 @@ const handleNewsletterSubmit = async (e) => {
       </div> */}
       <AboutSection/>
       <HeroSection/>
+      <HeroSectionAi/>
+      <HeroSectionSolana/>
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-pulse"></div>

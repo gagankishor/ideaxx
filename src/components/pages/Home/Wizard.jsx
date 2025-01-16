@@ -92,26 +92,7 @@ export default function Wizard() {
       ],
       bgColor: "#A36209",
     },
-    // {
-    //   title: "What is your project type?",
-    //   description:
-    //     "Numerous types of projects exist, Select the type of project that is closest to your idea.",
-    //   choices: [
-    //     { id: "i3a", label: "Related to IT Services", value: "Related to IT Services" },
-    //     { id: "i3b", label: "Building a brand", value: "Building a brand" },
-    //     {
-    //       id: "i3c",
-    //       label: "Profession (Engineer, Doctor, Teacher, Photographer, Etc...)",
-    //       value: "Profession (Engineer, Doctor, Teacher, Photographer, Etc...)",
-    //     },
-    //     { id: "i3d", label: "Marketing Services", value: "Marketing Services" },
-    //     { id: "i3e", label: "Retailer", value: "Retailer" },
-    //     { id: "i3f", label: "Wholesaler", value: "Wholesaler" },
-    //     { id: "i3g", label: "Restaurant and Food", value: "Restaurant and Food" },
-    //     { id: "i3h", label: "Entertainment", value: "Entertainment" },
-    //     { id: "i3i", label: "Other", value: "Other" },
-    //   ],
-    // },
+    
     {
       title: "What is your project type?",
       description:

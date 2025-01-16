@@ -40,6 +40,10 @@ export default {
         protocol: 'https',
         hostname: 'ui-avatars.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        pathname: '/**',
       },
     ],
     

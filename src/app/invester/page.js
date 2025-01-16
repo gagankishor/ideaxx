@@ -22,6 +22,8 @@ import {
   ShoppingCart,
   ArrowDownToLine,
 } from "lucide-react";
+import AboutSection from "@/components/pages/inovetion/aboutSection";
+import HeroSection from "@/components/pages/inovetion/HeroSectionInovetion";
 const CustomAlert = ({ message, onClose }) => (
     <div className="fixed top-20 right-4 z-50 animate-in fade-in slide-in-from-top-2">
         <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-4 shadow-xl">
@@ -281,6 +283,7 @@ const handleNewsletterSubmit = async (e) => {
           onClose={() => setShowAlertEmail(false)}
         />
       )}
+      
       <div className="relative py-24 bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900">
         {/* Animated background particles */}
         <div className="absolute inset-0 overflow-hidden">
@@ -559,6 +562,8 @@ const handleNewsletterSubmit = async (e) => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent blur-2xl"></div>
         </div>
       </div> */}
+      <AboutSection/>
+      <HeroSection/>
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-pulse"></div>
@@ -727,34 +732,6 @@ const handleNewsletterSubmit = async (e) => {
           </div>
         </div>
       </div>
-      {/* Purchase Guide Section */}
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white">How to Purchase IDX Token</h2>
-          <p className="mt-4 text-gray-400">Follow our simple step-by-step guide to get started</p>
-        </div>
-
-        <div className="grid md:grid-cols-5 gap-4">
-          {purchaseSteps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 h-full">
-                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 mb-4">
-                  {index + 1}
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-400">{step.description}</p>
-              </div>
-              {index < purchaseSteps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="w-6 h-6 text-blue-400" />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div> */}
-
-      {/* Contact Form Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -963,14 +940,14 @@ const handleNewsletterSubmit = async (e) => {
                   Quick Links
                 </h3>
                 <div className="space-y-3">
-                  {["Documentation", "FAQ", "Blog", "Roadmap"].map((link) => (
+                  {[{name:"Documentation",href:"/do"}, {name:"FAQ",href:""}, {name:"Blog",href:"/blog"}, {name:"Roadmap",href:""}].map((link) => (
                     <a
-                      key={link}
-                      href="#"
+                      key={link.name}
+                      href={link.href}
                       className="flex items-center text-gray-300 hover:text-white transition-colors duration-300"
                     >
                       <ArrowRight className="w-4 h-4 mr-2" />
-                      {link}
+                      {link.name}
                     </a>
                   ))}
                 </div>
@@ -996,7 +973,7 @@ const handleNewsletterSubmit = async (e) => {
                   className="flex items-center text-gray-300 hover:text-white transition-colors duration-300"
                 >
                   <Mail className="w-5 h-5 mr-3" />
-                  support@idxtoken.com
+                  info@idxsolana.io
                 </a>
                 <a
                   href="#"
@@ -1060,184 +1037,3 @@ const handleNewsletterSubmit = async (e) => {
     </div>
   );
 }
-// 'use client';
-// import { useState } from 'react';
-
-// export default function InvestPage() {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     company: '',
-//     investmentAmount: '',
-//     message: ''
-//   });
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     console.log('Form submitted:', formData);
-//     setFormData({
-//       name: '',
-//       email: '',
-//       company: '',
-//       investmentAmount: '',
-//       message: ''
-//     });
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900">
-//       {/* Hero Section */}
-//       <div className="relative overflow-hidden">
-//         {/* Animated background effect */}
-//         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-pulse"></div>
-
-//         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 text-center">
-//           <div className="space-y-8">
-//             <div className="inline-block px-4 py-1 rounded-full bg-blue-500/10 backdrop-blur-sm border border-blue-500/20">
-//               <p className="text-blue-200 text-sm font-medium">Revolutionizing Blockchain Technology</p>
-//             </div>
-
-//             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-//               Invest in the Future of <br/>
-//               <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-//                 IDX Token
-//               </span>
-//             </h1>
-
-//             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-//               Join us in building the next generation of enterprise blockchain solutions.
-//               Powered by Solana, backed by innovation.
-//             </p>
-
-//             <div className="flex flex-wrap justify-center gap-4 mt-8">
-//               <div className="flex items-center space-x-2 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg">
-//                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-//                 <span className="text-white">High Performance</span>
-//               </div>
-//               <div className="flex items-center space-x-2 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg">
-//                 <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-//                 <span className="text-white">Secure</span>
-//               </div>
-//               <div className="flex items-center space-x-2 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg">
-//                 <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-//                 <span className="text-white">Scalable</span>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Decorative elements */}
-//         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
-//           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent blur-2xl"></div>
-//         </div>
-//       </div>
-
-//       {/* Main Content */}
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10 pb-20">
-//         <div className="grid md:grid-cols-2 gap-8">
-//           {/* Left Column - Information */}
-//           <div className="space-y-8">
-//             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-//               <h2 className="text-2xl font-bold text-white mb-6">IDX Token Details</h2>
-//               <div className="space-y-6">
-//                 <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-6 rounded-xl border border-blue-500/30">
-//                   <p className="font-mono text-blue-200 text-sm break-all">
-//                     IDX Address: BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX
-//                   </p>
-//                 </div>
-//                 <div className="space-y-4">
-//                   <h3 className="text-lg font-semibold text-white">Key Benefits</h3>
-//                   <ul className="space-y-3">
-//                     {['High-performance Solana infrastructure', 'Lightning-fast transactions', 'Enhanced security', 'Enterprise-ready'].map((benefit, index) => (
-//                       <li key={index} className="flex items-center space-x-3 text-gray-300">
-//                         <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-//                         </svg>
-//                         <span>{benefit}</span>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-//               <h2 className="text-2xl font-bold text-white mb-6">How to Purchase</h2>
-//               <div className="space-y-6">
-//                 {[
-//                   'Create a Solana-compatible wallet',
-//                   'Fund your wallet',
-//                   'Connect to exchange',
-//                   'Purchase IDX Token',
-//                   'Transfer to personal wallet'
-//                 ].map((step, index) => (
-//                   <div key={index} className="flex items-start space-x-4">
-//                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/30">
-//                       <span className="text-blue-300 font-semibold">{index + 1}</span>
-//                     </div>
-//                     <p className="text-gray-300 mt-1">{step}</p>
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Right Column - Contact Form */}
-//           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-//             <h2 className="text-2xl font-bold text-white mb-6">Investor Contact Form</h2>
-//             <form onSubmit={handleSubmit} className="space-y-6">
-//               {[
-//                 { label: 'Name', type: 'text', key: 'name' },
-//                 { label: 'Email', type: 'email', key: 'email' },
-//                 { label: 'Company', type: 'text', key: 'company' },
-//                 { label: 'Planned Investment Amount', type: 'text', key: 'investmentAmount' }
-//               ].map((field) => (
-//                 <div key={field.key}>
-//                   <label className="block text-sm font-medium text-gray-300 mb-2">{field.label}</label>
-//                   <input
-//                     type={field.type}
-//                     required={field.type === 'email' || field.type === 'text'}
-//                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-//                     value={formData[field.key]}
-//                     onChange={(e) => setFormData({...formData, [field.key]: e.target.value})}
-//                   />
-//                 </div>
-//               ))}
-//               <div>
-//                 <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-//                 <textarea
-//                   rows={4}
-//                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-//                   value={formData.message}
-//                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-//                 />
-//               </div>
-//               <button
-//                 type="submit"
-//                 className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300"
-//               >
-//                 Submit
-//               </button>
-//             </form>
-//           </div>
-//         </div>
-
-//         {/* Community Section */}
-//         <div className="text-center mt-20">
-//           <h2 className="text-2xl font-bold text-white mb-8">Join Our Community</h2>
-//           <div className="flex justify-center space-x-8">
-//             {['Twitter', 'Telegram', 'Discord', 'Substack'].map((platform) => (
-//               <a
-//                 key={platform}
-//                 href="#"
-//                 className="px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300"
-//               >
-//                 {platform}
-//               </a>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }

@@ -22,7 +22,25 @@ import {
   ShoppingCart,
   ArrowDownToLine,
 } from "lucide-react";
-
+const CustomAlert = ({ message, onClose }) => (
+    <div className="fixed top-20 right-4 z-50 animate-in fade-in slide-in-from-top-2">
+      <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-4 shadow-xl">
+        <div className="flex items-start space-x-3">
+          <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-white mb-1">Success!</h3>
+            <p className="text-gray-300">{message}</p>
+          </div>
+          <button 
+            onClick={onClose}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 export default function InvestPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -32,19 +50,24 @@ export default function InvestPage() {
     message: "",
   });
 
-//   const [activeSection, setActiveSection] = useState("general");
-
-  const handleSubmit = async (e) => {
+  //   const [activeSection, setActiveSection] = useState("general");
+  const [showAlert, setShowAlert] = useState(false);
+const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    // alert("Form submitted successfully!");
+    setShowAlert(true);
     setFormData({
-      name: "",
-      email: "",
-      company: "",
-      investmentAmount: "",
-      message: "",
+        name: "",
+        email: "",
+        company: "",
+        investmentAmount: "",
+        message: "",
     });
-  };
+    setTimeout(() => {
+        setShowAlert(false);
+      }, 5000);
+};
 
   const statistics = [
     { label: "Transaction Speed", value: "<0.4s" },
@@ -145,7 +168,206 @@ export default function InvestPage() {
   ];
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900">
-      <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-blue-900/50 border-b border-white/10">
+      {showAlert && (
+        <CustomAlert 
+          message="Your investment inquiry has been submitted successfully. We'll be in touch soon."
+          onClose={() => setShowAlert(false)}
+        />
+      )}
+      <div className="relative py-24 bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900">
+        {/* Animated background particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute w-96 h-96 -top-48 -left-48 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-purple-500/30 rounded-full blur-3xl animate-pulse delay-700"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-white/10 mb-6">
+              <span className="animate-pulse w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
+              <span className="text-blue-200 text-sm">
+                Transforming Enterprise Blockchain
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-white mb-6">
+              About IDX Token
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              The IDX token is designed to revolutionize how businesses interact
+              with blockchain technology. Built on the Solana network, IDX
+              offers unprecedented transaction speeds and scalability, making it
+              ideal for enterprise solutions.
+            </p>
+          </div>
+
+          {/* Main content grid */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Features cards */}
+            <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+              
+
+              {/* Vision & Mission */}
+              <div className="sm:col-span-2 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 className="text-2xl font-bold text-white  mb-6">
+                  Vision & Mission
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2 text-blue-400">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
+                      <span className="font-semibold"> Our Vision</span>
+                    </div>
+                    <p className="text-gray-300 text-left">
+                      To empower businesses globally by integrating blockchain
+                      technology into their core operations efficiently and
+                      securely.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2 text-purple-400">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                        />
+                      </svg>
+                      <span className="font-semibold">Our Mission</span>
+                    </div>
+                    <p className="text-gray-300 text-left">
+                      To provide a robust platform that simplifies transactions,
+                      enhances security, and fosters transparency across
+                      business operations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {[
+                {
+                  title: "Lightning Speed",
+                  description:
+                    "Process thousands of transactions per second with minimal latency",
+                  icon: (
+                    <svg
+                      className="w-6 h-6 text-blue-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  ),
+                  gradient: "from-blue-500/20 to-indigo-500/20",
+                },
+                {
+                  title: "Enterprise Security",
+                  description:
+                    "Military-grade encryption and security protocols for your peace of mind",
+                  icon: (
+                    <svg
+                      className="w-6 h-6 text-purple-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      />
+                    </svg>
+                  ),
+                  gradient: "from-purple-500/20 to-pink-500/20",
+                },
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className={`bg-gradient-to-r ${feature.gradient} backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 group`}
+                >
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="p-3 bg-white/5 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 text-left">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats/Metrics Card */}
+            <div className="bg-gradient-to-b from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 flex flex-col justify-between">
+              <div className="space-y-8">
+                <h3 className="text-2xl font-bold text-white">Key Metrics</h3>
+
+                {[
+                  { label: "Transaction Speed", value: "65,000 TPS" },
+                  { label: "Network Uptime", value: "99.99%" },
+                  { label: "Security Score", value: "A+" },
+                ].map((stat, index) => (
+                  <div key={index} className="relative">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-gray-400">{stat.label}</span>
+                      <span className="text-white font-semibold">
+                        {stat.value}
+                      </span>
+                    </div>
+                    <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full w-11/12 animate-pulse"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-400">Network Status</span>
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span className="text-green-400">Active</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-blue-900/50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -225,11 +447,11 @@ export default function InvestPage() {
           </div>
         </div>
 
-        {/* Decorative background elements */}
+        
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent blur-2xl"></div>
         </div>
-      </div>
+      </div> */}
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-pulse"></div>
@@ -508,13 +730,13 @@ export default function InvestPage() {
                     </li>
                   ))}
                 </ul>
-              </div> 
+              </div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
-                   <p className="font-mono text-blue-200 text-sm break-all">
-                     IDX Address: BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX
-                   </p>
-                 </div>
+              <p className="font-mono text-blue-200 text-sm break-all">
+                IDX Address: BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX
+              </p>
+            </div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
             <h2 className="text-2xl font-bold text-white mb-6">
@@ -527,7 +749,7 @@ export default function InvestPage() {
                 { label: "Company", type: "text", key: "company" },
                 {
                   label: "Planned Investment Amount",
-                  type: "text",
+                  type: "number",
                   key: "investmentAmount",
                 },
               ].map((field) => (
@@ -644,7 +866,6 @@ export default function InvestPage() {
                   ))}
                 </div>
               </div>
-              
             </div>
           </div>
 
@@ -709,58 +930,8 @@ export default function InvestPage() {
           </div>
         </div>
       </div>
-      <div className="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/10">
-        {/* Community Section */}
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold text-white">
-            Stay Connected with Our Community
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                name: "Twitter",
-                icon: "X",
-                members: "50K+ Followers",
-                desc: "Latest updates and news",
-              },
-              {
-                name: "Telegram",
-                icon: "TG",
-                members: "25K+ Members",
-                desc: "Active discussion group",
-              },
-              {
-                name: "Discord",
-                icon: "DC",
-                members: "30K+ Members",
-                desc: "Developer community",
-              },
-              {
-                name: "Substack",
-                icon: "SB",
-                members: "10K+ Subscribers",
-                desc: "In-depth analysis",
-              },
-            ].map((platform) => (
-              <a
-                key={platform.name}
-                href="#"
-                className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-gray-300 group-hover:text-white font-medium">
-                    {platform.name}
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                    {platform.icon}
-                  </div>
-                </div>
-                <p className="text-blue-400 text-sm mb-1">{platform.members}</p>
-                <p className="text-gray-400 text-sm">{platform.desc}</p>
-              </a>
-            ))}
-          </div>
-        </div>
+      <div className="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 ">
+        
 
         {/* Call to Action */}
         <div className="flex flex-col items-center space-y-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl p-8 border border-blue-500/20">
@@ -810,22 +981,22 @@ export default function InvestPage() {
 //       <div className="relative overflow-hidden">
 //         {/* Animated background effect */}
 //         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-500/30 animate-pulse"></div>
-        
+
 //         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 text-center">
 //           <div className="space-y-8">
 //             <div className="inline-block px-4 py-1 rounded-full bg-blue-500/10 backdrop-blur-sm border border-blue-500/20">
 //               <p className="text-blue-200 text-sm font-medium">Revolutionizing Blockchain Technology</p>
 //             </div>
-            
+
 //             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
 //               Invest in the Future of <br/>
 //               <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
 //                 IDX Token
 //               </span>
 //             </h1>
-            
+
 //             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-//               Join us in building the next generation of enterprise blockchain solutions. 
+//               Join us in building the next generation of enterprise blockchain solutions.
 //               Powered by Solana, backed by innovation.
 //             </p>
 
@@ -932,8 +1103,8 @@ export default function InvestPage() {
 //                   onChange={(e) => setFormData({...formData, message: e.target.value})}
 //                 />
 //               </div>
-//               <button 
-//                 type="submit" 
+//               <button
+//                 type="submit"
 //                 className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300"
 //               >
 //                 Submit

@@ -94,7 +94,10 @@ const CopyableAddress = ({ address }) => {
       </div>
     );
   };
-  
+  CopyableAddress.propTypes = {
+    address: PropTypes.string.isRequired,
+    
+};
   // Copy icon component
   const CopyIcon = () => (
     <svg

@@ -4,11 +4,9 @@ import {
   Sparkles,
   CheckCircle,
   ArrowRight,
-  Clock,
   Shield,
   Zap,
   Globe,
-  ChevronDown,
   Eye,
   Target,
   SparklesIcon,
@@ -34,7 +32,7 @@ export default function InvestPage() {
     message: "",
   });
 
-  const [activeSection, setActiveSection] = useState("general");
+//   const [activeSection, setActiveSection] = useState("general");
 
   const handleSubmit = async (e) => {
     e.preventDefault();

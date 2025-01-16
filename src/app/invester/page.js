@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { PropTypes} from 'prop-types';
 import {
   Sparkles,
   CheckCircle,
@@ -7,7 +8,6 @@ import {
   Shield,
   Zap,
   Globe,
-  Eye,
   Target,
   SparklesIcon,
   Bell,
@@ -24,23 +24,113 @@ import {
 } from "lucide-react";
 const CustomAlert = ({ message, onClose }) => (
     <div className="fixed top-20 right-4 z-50 animate-in fade-in slide-in-from-top-2">
-      <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-4 shadow-xl">
-        <div className="flex items-start space-x-3">
-          <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-white mb-1">Success!</h3>
-            <p className="text-gray-300">{message}</p>
+        <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-4 shadow-xl">
+            <div className="flex items-start space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
+                <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-white mb-1">Success!</h3>
+                    <p className="text-gray-300">{message}</p>
+                </div>
+                <button 
+                    onClick={onClose}
+                    className="text-gray-400 hover:text-white transition-colors"
+                >
+                    ×
+                </button>
+            </div>
+        </div>
+    </div>
+);
+
+CustomAlert.propTypes = {
+    message: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
+};
+const CopyableAddress = ({ address }) => {
+    const [copied, setCopied] = useState(false);
+  
+    const copyToClipboard = async () => {
+      try {
+        await navigator.clipboard.writeText(address);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    };
+  
+    return (
+      <div className="relative bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-6 rounded-xl border border-blue-500/30 group">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex-1 font-mono text-blue-200 text-sm break-all">
+            {address}
           </div>
-          <button 
-            onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors"
+          <button
+            onClick={copyToClipboard}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 rounded-lg transition-all duration-200 border border-blue-500/30"
           >
-            ×
+            {copied ? (
+              <>
+                <CheckIcon />
+                <span className="text-blue-200">Copied!</span>
+              </>
+            ) : (
+              <>
+                <CopyIcon />
+                <span className="text-blue-200">Copy</span>
+              </>
+            )}
           </button>
         </div>
+        
+        {/* Tooltip feedback */}
+        <div
+          className={`absolute -top-8 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-blue-500 text-white text-sm rounded-md transition-opacity duration-200 ${
+            copied ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          Copied to clipboard!
+        </div>
       </div>
-    </div>
+    );
+  };
+  
+  // Copy icon component
+  const CopyIcon = () => (
+    <svg
+      className="w-4 h-4 text-blue-200"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"
+      />
+    </svg>
   );
+  
+  // Check icon component
+  const CheckIcon = () => (
+    <svg
+      className="w-4 h-4 text-blue-200"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M5 13l4 4L19 7"
+      />
+    </svg>
+  );
+  
 export default function InvestPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -746,10 +836,12 @@ const handleNewsletterSubmit = async (e) => {
                 </ul>
               </div>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
-              <p className="font-mono text-blue-200 text-sm break-all">
-                IDX Address: BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX
-              </p>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+              <h2 className="text-2xl font-bold text-white mb-6">IDX Address</h2>
+              <div className="space-y-6">
+                <CopyableAddress address="BKzTtgn5th95fAF6m6XcDq211kzaUqwCnsqtWrE2gFWX" />
+                {/* ... rest of the content ... */}
+              </div>
             </div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">

@@ -52,6 +52,7 @@ export default function InvestPage() {
 
   //   const [activeSection, setActiveSection] = useState("general");
   const [showAlert, setShowAlert] = useState(false);
+  const [showAlertEmail, setShowAlertEmail] = useState(false);
 const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
@@ -68,7 +69,14 @@ const handleSubmit = async (e) => {
         setShowAlert(false);
       }, 5000);
 };
-
+const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setShowAlertEmail(true);
+    
+    setTimeout(() => {
+        setShowAlertEmail(false);
+      }, 5000);
+};
   const statistics = [
     { label: "Transaction Speed", value: "<0.4s" },
     { label: "Network Uptime", value: "99.9%" },
@@ -172,6 +180,12 @@ const handleSubmit = async (e) => {
         <CustomAlert 
           message="Your investment inquiry has been submitted successfully. We'll be in touch soon."
           onClose={() => setShowAlert(false)}
+        />
+      )}
+      {showAlertEmail && (
+        <CustomAlert 
+          message="Email been submitted successfully. We'll be in touch soon."
+          onClose={() => setShowAlertEmail(false)}
         />
       )}
       <div className="relative py-24 bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900">
@@ -810,7 +824,7 @@ const handleSubmit = async (e) => {
                 decisions and take advantage of new opportunities as they arise.
               </p>
 
-              <form className="flex gap-4">
+              <form className="flex gap-4" onSubmit={handleNewsletterSubmit}>
                 <input
                   type="email"
                   placeholder="Enter your email"

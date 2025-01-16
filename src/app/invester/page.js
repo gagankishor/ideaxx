@@ -21,6 +21,7 @@ import {
   Building2,
   ShoppingCart,
   ArrowDownToLine,
+  Eye,
 } from "lucide-react";
 import AboutSection from "@/components/pages/inovetion/aboutSection";
 import HeroSection from "@/components/pages/inovetion/HeroSectionInovetion";
@@ -479,7 +480,7 @@ const handleNewsletterSubmit = async (e) => {
           </div>
         </div>
       </div>
-      {/* <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-blue-900/50 border-b border-white/10">
+      <div className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-blue-900/50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -563,7 +564,7 @@ const handleNewsletterSubmit = async (e) => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent blur-2xl"></div>
         </div>
-      </div> */}
+      </div>
       <AboutSection/>
       <HeroSection/>
       <HeroSectionAi/>

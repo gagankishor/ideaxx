@@ -286,6 +286,7 @@ const handleNewsletterSubmit = async (e) => {
           onClose={() => setShowAlertEmail(false)}
         />
       )}
+      <AboutSection/>
       
       <div className="relative py-24 bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900">
         {/* Animated background particles */}
@@ -559,13 +560,10 @@ const handleNewsletterSubmit = async (e) => {
             </div>
           </div>
         </div>
-
-        
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent blur-2xl"></div>
         </div>
       </div>
-      <AboutSection/>
       <HeroSection/>
       <HeroSectionAi/>
       <HeroSectionSolana/>
@@ -616,7 +614,6 @@ const handleNewsletterSubmit = async (e) => {
           </div>
         </div>
       </div>
-
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">

@@ -27,6 +27,7 @@ import AboutSection from "@/components/pages/inovetion/aboutSection";
 import HeroSection from "@/components/pages/inovetion/HeroSectionInovetion";
 import HeroSectionAi from "@/components/pages/inovetion/AI-InspiredHeroSection";
 import HeroSectionSolana from "@/components/pages/inovetion/Solana-InspiredCryptoHeroSection";
+import SolanaHero from "@/components/pages/inovetion/solanaCopy";
 const CustomAlert = ({ message, onClose }) => (
     <div className="fixed top-20 right-4 z-50 animate-in fade-in slide-in-from-top-2">
         <div className="bg-gradient-to-r from-blue-500/10 to-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-4 shadow-xl">
@@ -286,8 +287,8 @@ const handleNewsletterSubmit = async (e) => {
           onClose={() => setShowAlertEmail(false)}
         />
       )}
+      <SolanaHero/>
       <AboutSection/>
-      
       <div className="relative py-24 bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900">
         {/* Animated background particles */}
         <div className="absolute inset-0 overflow-hidden">

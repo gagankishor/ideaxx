@@ -82,9 +82,9 @@ const CircularProgress = ({
 const WizardResult = () => {
   const params = useParams();
   const [aiContent, setAiContent] = useState("");
-  const [displayedText, setDisplayedText] = useState("");
+  // const [displayedText, setDisplayedText] = useState("");
   const [loading, setLoading] = useState(true);
-  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  // const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [data, setData] = useState(null);
   
   // const [error, setError] = useState(null);
@@ -96,6 +96,7 @@ const WizardResult = () => {
       try {
         const response = await axios.get(`${RestAPI}/wizard-result/${uniqueKey}`);
         setData(response.data.data.wizardResult); // Assuming the data is in `response.data`
+        setAiContent(response.data.data.wizardResult?.resultText)
         // console.log("first",response)
       } catch (err) {
         console.error("Error fetching data:", err);
@@ -187,34 +188,36 @@ const WizardResult = () => {
   const InvestmentLevelData = parseJSON(data?.InvestmentLevelData);
   const ExpectedROIData = parseJSON(data?.ExpectedROIData);
   const textForTipData = parseJSON(data?.textForTipData);
-  const fullAiContent = `
-  ${data?.resultText} 
-  `;
+  // const fullAiContent = `
+  // ${data?.resultText} 
+  // `;
   // const params = useParams();
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-  useEffect(() => {
-    if (!loading && aiContent === "") {
-      setAiContent(fullAiContent);
-    }
-  }, [loading]);
-  useEffect(() => {
-    let currentIndex = 0;
-    if (aiContent && !isTypingComplete) {
-      const typingInterval = setInterval(() => {
-        setDisplayedText((prevText) => prevText + aiContent[currentIndex]);
-        currentIndex++;
-        if (currentIndex >= aiContent.length - 1) {
-          clearInterval(typingInterval);
-          setIsTypingComplete(true);
-        }
-      }, 20);
-      return () => clearInterval(typingInterval);
-    }
-  }, [aiContent, isTypingComplete]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
+  // useEffect(() => {
+  //   if (!loading && aiContent === "") {
+  //     setAiContent(fullAiContent);
+  //   }
+  // }, [loading]);
+  // console.log("fullAiContent",fullAiContent)
+  // console.log("aiContent",aiContent)
+  // useEffect(() => {
+  //   let currentIndex = 0;
+  //   if (aiContent && !isTypingComplete) {
+  //     const typingInterval = setInterval(() => {
+  //       setDisplayedText((prevText) => prevText + aiContent[currentIndex]);
+  //       currentIndex++;
+  //       if (currentIndex >= aiContent.length - 1) {
+  //         clearInterval(typingInterval);
+  //         setIsTypingComplete(true);
+  //       }
+  //     }, 20);
+  //     return () => clearInterval(typingInterval);
+  //   }
+  // }, [aiContent, isTypingComplete]);
   const bardata = {
     labels: ["Score", "Remaining"],
     datasets: [
@@ -453,6 +456,7 @@ const WizardResult = () => {
     handleOpenCongratulationsCard()
 
   };
+  // console.log("displayedText",displayedText)
   return (
     <>
       <div className=" py-5">
@@ -1071,7 +1075,7 @@ const WizardResult = () => {
                   <p>Loading AI-generated insights...</p>
                 ) : (
                   <p className="text-justify  text-[14px] md:text-[14px]">
-                    {displayedText}
+                    {aiContent}
                   </p>
                 )}
               </div>
@@ -1134,7 +1138,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 4,
-                      label: `${Math.round(data?.country * 3.17)}%`,
+                      label: `${Math.round(data?.country_score * 3.17) || 5* 3.17}%`,
                       position:
                         "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",

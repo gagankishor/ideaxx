@@ -348,25 +348,25 @@ const WizardResult = () => {
   };
   const consumptions = [
     {
-      percentage: 75,
+      percentage: 86,
       currentWatts: `${data?.totalMarketSize} potential users`,
       title: "Target Market Size",
       imageUrl: "/result-page/Layer5.webp",
     },
     {
-      percentage: 60,
+      percentage: 80,
       currentWatts: InvestmentLevelData?.chosenInvestmentLevel,
       title: "Investment Level",
       imageUrl: "/result-page/Layer7.webp",
     },
     {
-      percentage: 90,
+      percentage: 20,
       currentWatts: TimeToMarketData ? TimeToMarketData?.totalTTM : "0",
       title: "Time to Market",
       imageUrl: "/result-page/Layer8.webp",
     },
     {
-      percentage: 50,
+      percentage: 15,
       currentWatts:
         `${ExpectedROIData?.expectedROI} for ${ExpectedROIData?.timeFrame}` ||
         `${data?.ExpectedROIData}`,
@@ -374,7 +374,7 @@ const WizardResult = () => {
       imageUrl: "/result-page/Layer6.webp",
     },
     {
-      percentage: 50,
+      percentage: 7,
       currentWatts: MarketShareData?.chosenOutcome || MarketShareData,
       title: "Market Share",
       imageUrl: "/result-page/Layer1.webp",
@@ -457,7 +457,7 @@ const WizardResult = () => {
     <>
       <div className=" py-5">
         <h2 className=" mb-0 text-center">Results Summary Overview</h2>
-        <p className="">
+        <p className="text-center">
           Slight changes may occur in the results depending on market trends.
         </p>
       </div>
@@ -491,13 +491,13 @@ const WizardResult = () => {
           <div className="bg-gray-200 h-[1px] w-full my-5"></div>
           <div className="space-y-4">
             <div className=" flex flex-col justify-between md:flex-row">
-              <div className="w-[50%]">
+              <div className="w-[50%] pr-2">
                 <div className=" ">
                   <div className="text-sm text-gray-600">Idea</div>
                   <div className="text-xl">
-                    {parseInt(data?.phase1) == 1
+                    {parseInt(data?.idea_stage) == 1
                       ? "It is still an idea"
-                      : parseInt(data?.phase1) == 3
+                      : parseInt(data?.idea_stage) == 3
                       ? "I made a plan for it"
                       : "I already started"}
                   </div>
@@ -505,13 +505,13 @@ const WizardResult = () => {
                 <div>
                   <div className="text-sm text-gray-600">Investment</div>
                   <div className="text-xl">
-                    {parseInt(data?.phase5) == 1
+                    {parseInt(data?.investment_plan) == 1
                       ? "Less than 1 Lakh "
-                      : parseInt(data?.phase5) == 2
+                      : parseInt(data?.investment_plan) == 2
                       ? "1 Lakh ₹ - 10 Lakh ₹"
-                      : parseInt(data?.phase5) == 3
+                      : parseInt(data?.investment_plan) == 3
                       ? "10 Lakh ₹ - 50 Lakh ₹"
-                      : parseInt(data?.phase5) == 4
+                      : parseInt(data?.investment_plan) == 4
                       ? "50 Lakh ₹ - 1 Crore ₹"
                       : "More than 1 Crore ₹"}
                   </div>
@@ -521,7 +521,7 @@ const WizardResult = () => {
                     current job related to idea
                   </div>
                   <div className="text-xl">
-                    {parseInt(data?.phase4) == 5 ? "Yes" : "No"}
+                    {parseInt(data?.job_relation) == 5 ? "Yes" : "No"}
                   </div>
                 </div>
               </div>
@@ -531,11 +531,11 @@ const WizardResult = () => {
                     Experience with your idea
                   </div>
                   <div className="text-xl">
-                    {parseInt(data?.phase6) == 0
+                    {parseInt(data?.work_experience) == 0
                       ? "No experience"
-                      : parseInt(data?.phase6) == 3
+                      : parseInt(data?.work_experience) == 3
                       ? "1 - 3 Years"
-                      : parseInt(data?.phase6) == 4
+                      : parseInt(data?.work_experience) == 4
                       ? "3 - 5 Years"
                       : "More than 5 years"}
                   </div>
@@ -1086,7 +1086,7 @@ const WizardResult = () => {
                   points: [
                     {
                       id: 1,
-                      label: `${parseInt(data?.phase1) * 3.17}%`,
+                      label: `${parseInt(data?.idea_stage) * 3.17}%`,
                       position: " top-60 -left-10 md:top-7 md:-left-36",
                       bgColor: "linear-gradient(135deg, #6162FA, #9E43E9)",
                       icon: <FaLightbulb />,
@@ -1097,7 +1097,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 2,
-                      label: `${parseInt(data?.phase2) * 3.17}%`,
+                      label: `${parseInt(data?.investment_plan) * 3.17}%`,
                       position: " top-60 -right-10 md:top-7 md:-right-36",
                       bgColor: "linear-gradient(135deg, #8749EC, #BD42CE)",
                       icon: <FaCoins />,
@@ -1108,7 +1108,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 5,
-                      label: `${parseInt(data?.phase5) * 3.17}%`,
+                      label: `${parseInt(data?.job_relation) * 3.17}%`,
                       position:
                         "top-72 mt-3 -left-10  md:top-3/4 md:-translate-y-1/4  md:-left-24",
                       bgColor: "linear-gradient(135deg, #616BFC, #BD42CE)",
@@ -1121,7 +1121,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 6,
-                      label: `${parseInt(data?.phase6) * 3.17}%`,
+                      label: `${parseInt(data?.work_experience) * 3.17}%`,
                       position:
                         "top-72 mt-3 -right-10  md:top-3/4 md:-translate-y-1/4   md:-right-24 ",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",
@@ -1134,7 +1134,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 4,
-                      label: `${Math.round(data?.phase7 * 3.17)}%`,
+                      label: `${Math.round(data?.country * 3.17)}%`,
                       position:
                         "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",

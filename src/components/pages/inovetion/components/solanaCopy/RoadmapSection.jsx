@@ -101,7 +101,7 @@ const RoadmapSection = () => {
                     {item.quarter}
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-white mb-6">
+                  <h3 className="text-2xl text-left font-bold text-white mb-6">
                     {item.title}
                   </h3>
                   

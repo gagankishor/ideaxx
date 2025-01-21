@@ -15,7 +15,6 @@ const DynamicBackground = () => {
         y: (e.clientY / window.innerHeight) * 2 - 1
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
@@ -23,25 +22,21 @@ const DynamicBackground = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-
-  // Calculate background transitions based on scroll
   const getBackgroundOpacity = (index) => {
-    const scrollSection = Math.floor(scrollY / 1000); // Change background every 1000px
+    const scrollSection = Math.floor(scrollY / 1000);
     const progress = (scrollY % 1000) / 1000;
     
     if (scrollSection === index) return 1 - progress;
     if (scrollSection === index - 1) return progress;
     return 0;
   };
-
   return (
     <div className="fixed inset-0 w-full h-full">
-      {/* First Background Layer */}
       <div
         className="absolute inset-0 transition-opacity duration-1000"
         style={{
           opacity: getBackgroundOpacity(0),
-          backgroundImage: `url('/api/placeholder/1920/1080')`,
+          backgroundImage: `url('/investers/ideaxBanner_2.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           transform: `
@@ -51,13 +46,11 @@ const DynamicBackground = () => {
           transition: "transform 0.3s ease-out",
         }}
       />
-
-      {/* Second Background Layer */}
       <div
         className="absolute inset-0 transition-opacity duration-1000"
         style={{
           opacity: getBackgroundOpacity(1),
-          backgroundImage: `url('/api/placeholder/1920/1080')`,
+          backgroundImage: `url('/investers/image.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           transform: `
@@ -67,8 +60,20 @@ const DynamicBackground = () => {
           transition: "transform 0.3s ease-out",
         }}
       />
-
-      {/* Grid Overlay with Parallax */}
+      <div
+        className="absolute inset-0 transition-opacity duration-1000"
+        style={{
+          opacity: getBackgroundOpacity(1),
+          backgroundImage: `url('/investers/ideaxBanner .jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          transform: `
+            rotate(${-scrollY * 0.03}deg) 
+            scale(${1 + scrollY * 0.0001})
+          `,
+          transition: "transform 0.3s ease-out",
+        }}
+      />
       <div
         className="absolute inset-0"
         style={{
@@ -86,8 +91,6 @@ const DynamicBackground = () => {
           transition: "transform 0.2s ease-out",
         }}
       />
-
-      {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Top Left Orb */}
         <div
@@ -106,7 +109,6 @@ const DynamicBackground = () => {
         >
           <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-600 via-teal-500 to-transparent blur-xl" />
         </div>
-
         {/* Bottom Right Orb */}
         <div
           className="absolute -right-1/4 -bottom-1/4 w-[800px] h-[800px]"
@@ -124,8 +126,6 @@ const DynamicBackground = () => {
         >
           <div className="w-full h-full rounded-full bg-gradient-to-l from-purple-600 via-pink-500 to-transparent blur-xl" />
         </div>
-
-        {/* Center Orb */}
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]"
           style={{
@@ -143,5 +143,4 @@ const DynamicBackground = () => {
     </div>
   );
 };
-
 export default DynamicBackground;

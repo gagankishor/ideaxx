@@ -327,7 +327,7 @@ export default function Wizard() {
   const handleBlur = async () => {
     try {
       if (
-        formData?.description?.length < 50 ||
+        formData?.description?.trim().length < 50 ||
         formData?.description === undefined ||
         formData?.description === null
       ) {
@@ -484,7 +484,7 @@ export default function Wizard() {
             "wizardResultData",
             JSON.stringify(response.data.data)
           );
-          router.push("/wizard-result");
+          router.push(`/wizard-result/${response.data.data.uniqueKey}`);
           // redirect('/wizard-result')
           // router.push({
           //   pathname: '/wizard-result',
@@ -580,7 +580,7 @@ export default function Wizard() {
           "wizardResultData",
           JSON.stringify(response.data.data)
         );
-        router.push("/wizard-result");
+        router.push(`/wizard-result/${response.data.data.uniqueKey}`);
         // router.push({
         //   pathname: '/wizard-result',
         //   query: { data: JSON.stringify(data.data) },
@@ -694,7 +694,7 @@ export default function Wizard() {
               "wizardResultData",
               JSON.stringify(response.data.data)
             );
-            router.push("/wizard-result");
+            router.push(`/wizard-result/${response.data.data.uniqueKey}`);
             // router.push({
             //   pathname: '/wizard-result',
             //   query: { data: JSON.stringify(data.data) },
@@ -972,9 +972,9 @@ export default function Wizard() {
                                     fontWeight: "300",
                                   }}
                                 >
-                                  {formData.description?.length || 0}/250
+                                  {formData.description?.trim().length || 0}/250
                                   characters written |{" "}
-                                  {250 - (formData.description?.length || 0)}{" "}
+                                  {250 - (formData.description?.trim().length || 0)}{" "}
                                   characters remaining
                                 </small>
                               </div>
@@ -992,7 +992,7 @@ export default function Wizard() {
                                         <div className="spinner2"></div>
                                       </div>
                                     </div>
-                                  ) : formData?.description?.length < 50 ? (
+                                  ) : formData?.description?.trim().length < 50 ? (
                                     showError
                                   ) : (
                                     " "

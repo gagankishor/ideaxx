@@ -24,6 +24,6 @@ export const metadata = {
   }
 };
 const MainWizardtemp = () => {
-  return <Wizard />;
+  return <Wizard/>;
 };
 export default MainWizardtemp;

@@ -1,29 +1,26 @@
 import  { useState, useEffect } from 'react';
-
 const TestimonialsSection = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof document !== 'undefined') {
       const element = document.getElementById('testimonials-section');
-      if (!element) return;
       
+      if (!element) return;
+    
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
       // Calculate progress based on section's position relative to viewport center
       const distanceFromCenter = Math.abs(rect.top + rect.height/2 - windowHeight/2);
       const maxDistance = windowHeight/2 + rect.height/2;
       const progress = 1 - Math.min(distanceFromCenter/maxDistance, 1);
-      
       setScrollProgress(progress);
+    }
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const testimonials = [
     {
       quote: "Solana has revolutionized our blockchain development process",
@@ -51,7 +48,6 @@ const TestimonialsSection = () => {
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-purple-900/30" />
-      
       <div className="max-w-6xl mx-auto px-4 relative">
         <h2 
           className="text-4xl font-bold text-white text-center mb-16"
@@ -62,14 +58,12 @@ const TestimonialsSection = () => {
         >
           What Developers Say
         </h2>
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => {
             // Calculate individual card animations
             const delay = index * 0.1;
             const cardProgress = Math.max(0, Math.min(1, scrollProgress * 2 - delay));
             const floatOffset = Math.sin((Date.now() / 2000) + index * 2) * 10;
-            
             return (
               <div
                 key={index}
@@ -111,5 +105,4 @@ const TestimonialsSection = () => {
     </section>
   );
 };
-
 export default TestimonialsSection;

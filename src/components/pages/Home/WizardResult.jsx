@@ -371,7 +371,7 @@ const WizardResult = () => {
   const [shareModalOpen, setShareModalOpen] = useState(false);
   const [shareModalOpen2, setShareModalOpen2] = useState(false);
   const onRequestTaskCompletion = () => {
-    setTaskCompletion(false); 
+    setTaskCompletion(false);
   };
   const handleOpenTaskCompletionCard = () => {
     setTaskCompletion(true);
@@ -402,7 +402,7 @@ const WizardResult = () => {
   const handleCloseShareModal = () => {
     setShareModalOpen(false);
   };
-  
+
   const handleCloseShareModal2 = () => {
     setShareModalOpen2(false);
   };
@@ -412,21 +412,21 @@ const WizardResult = () => {
       description: "Login daily to this button game page",
       points: "+1",
       button: "Claim Now",
-      onclickButton:handleOpenCongratulationsCard
+      onclickButton: handleOpenCongratulationsCard,
     },
     {
       title: "Share Your Result",
       description: "Share your result and get 2 free test ",
       points: "+2",
       button: "Share Result",
-      onclickButton:handleShareAchievement2
+      onclickButton: handleShareAchievement2,
     },
     {
       title: "Referral Task",
       description: "Refer a friend via the link",
       points: "+3",
       button: "Invite Friends",
-      onclickButton:handleShareAchievement
+      onclickButton: handleShareAchievement,
     },
   ];
   const socialShareLinks = {
@@ -440,8 +440,8 @@ const WizardResult = () => {
     linkedinR: `https://www.linkedin.com/sharing/share-offsite/?url=https://ideax.in/wizard-result&title=Empower Your Business with IDX on Solana&summary=Streamline operations, enhance security, and drive efficiency with our AI-driven blockchain solution. Trusted by 200+ companies and over 1,000 customers!&source=IdeaX`,
   };
   const handleShare = (platform) => {
-    window.open(socialShareLinks[platform], "_blank"); 
-    handleOpenCongratulationsCard()
+    window.open(socialShareLinks[platform], "_blank");
+    handleOpenCongratulationsCard();
   };
   return (
     <>
@@ -1263,12 +1263,11 @@ const WizardResult = () => {
                           strokeDasharray={circumference}
                           strokeDashoffset={offset}
                           strokeLinecap="round"
-                          transform="rotate(-90 60 60)" // Adjusted rotation origin
+                          transform="rotate(-90 60 60)"
                         />
-                        {/* Percentage Text */}
                         <text
-                          x="60" // Adjusted to match the new center position
-                          y="65" // Adjusted to match the new center position
+                          x="60"
+                          y="65"
                           textAnchor="middle"
                           fontSize="15"
                           fill="black"
@@ -1343,7 +1342,6 @@ const WizardResult = () => {
                     </li>
                   ))}
                 </ul>
-                {/* <div>{textForTipData}</div> */}
               </div>
             </div>
             <div className="overview-right h-full">
@@ -1574,21 +1572,20 @@ const WizardResult = () => {
                           </linearGradient>
                         </defs>
                         <circle
-                          cx="60" // Adjusted center for better alignment
-                          cy="60" // Adjusted center for better alignment
+                          cx="60"
+                          cy="60"
                           r={radius}
                           fill="none"
-                          stroke="url(#gradientStroke)" // Reference the gradient here
+                          stroke="url(#gradientStroke)"
                           strokeWidth="8"
                           strokeDasharray={circumference}
                           strokeDashoffset={offset}
                           strokeLinecap="round"
-                          transform="rotate(-90 60 60)" // Adjusted rotation origin
+                          transform="rotate(-90 60 60)"
                         />
-                        {/* Percentage Text */}
                         <text
-                          x="60" // Adjusted to match the new center position
-                          y="65" // Adjusted to match the new center position
+                          x="60"
+                          y="65"
                           textAnchor="middle"
                           fontSize="15"
                           fill="black"
@@ -1610,23 +1607,7 @@ const WizardResult = () => {
             </div>
           </div>
         </section>
-        {/* <section>
-          <div className="mt-10 border border-gray-300 rounded-lg w-[94%]  mx-auto p-8 bg-white flex flex-col md:flex-row items-center justify-between space-y-5 md:space-y-0 ">
-            <div>
-              <h3 className="text-2xl font-light text-gray-800 leading-relaxed text-center md:text-left">
-                Take the first step{" "}
-                <span className="font-semibold">towards</span> making your idea
-                to a reality, <span className="font-semibold">launch</span> your
-                idea now.
-              </h3>
-            </div>
-            <div className="btns-container">
-              <Link href="/plan-details" passHref>
-                <button className="btn min-w-[170px]">Launch Your Idea</button>
-              </Link>
-            </div>
-          </div>
-        </section> */}
+        
       </div>
       <div className="bg-black text-center py-10 px-4 sm:py-16">
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-10 lg:max-w-6xl mx-auto">
@@ -1636,7 +1617,6 @@ const WizardResult = () => {
           <span className="font-semibold">towards</span> making your idea to a
           reality, <span className="font-semibold">launch</span> your idea now.
         </h1>
-
         <div className="btns-container mt-10 flex md:flex-row justify-center gap-5">
           <button
             className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"

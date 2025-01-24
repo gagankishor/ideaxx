@@ -86,7 +86,7 @@ const WizardResult = () => {
   // const [displayedText, setDisplayedText] = useState("");
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  const axiosInstance = useAxiosWithAuth();
+  // const axiosInstance = useAxiosWithAuth();
   const { uniqueKey } = params;
   useEffect(() => {
     const fetchData = async () => {

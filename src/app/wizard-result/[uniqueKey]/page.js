@@ -33,6 +33,7 @@ import Modal from "react-modal";
 import { RestAPI } from "@/config/Api";
 import { useParams } from "next/navigation";
 import axios from "axios";
+// import useAxiosWithAuth from "@/config/useAxiosWithAuth";
 
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
@@ -84,18 +85,15 @@ const WizardResult = () => {
   const [aiContent, setAiContent] = useState("");
   // const [displayedText, setDisplayedText] = useState("");
   const [loading, setLoading] = useState(true);
-  // const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [data, setData] = useState(null);
-  
-  // const [error, setError] = useState(null);
+  const axiosInstance = useAxiosWithAuth();
   const { uniqueKey } = params;
-  // console.log(uniqueKey)
   useEffect(() => {
     const fetchData = async () => {
       console.log("firstdsgsd")
       try {
         const response = await axios.get(`${RestAPI}/wizard-result/${uniqueKey}`);
-        setData(response.data.data.wizardResult); // Assuming the data is in `response.data`
+        setData(response.data.data.wizardResult);
         setAiContent(response.data.data.wizardResult?.resultText)
         // console.log("first",response)
       } catch (err) {
@@ -405,6 +403,20 @@ const WizardResult = () => {
     setShowCongratulations(false);
   };
   const handleOpenCongratulationsCard = () => {
+
+    // try {
+    //   const endpoint = `/points/addPoint`;
+    //   const response = await axiosInstance({
+    //     method: "post",
+    //     url: endpoint,
+    //     headers: {
+    //       Accept: "application/vnd.api+json",
+    //       "Content-Type": "multipart/form-data",
+    //     },
+    //   });
+    // } catch (error) {
+    //   console.error("Error deleting result:", error);
+    // }
     setShowCongratulations(true);
     onRequestTaskCompletion(false);
     setShareModalOpen(false);
@@ -415,6 +427,7 @@ const WizardResult = () => {
   };
   const handleCloseShareModal = () => {
     setShareModalOpen(false);
+
   };
   const tasks = [
     {
@@ -454,7 +467,6 @@ const WizardResult = () => {
   const handleShare = (platform) => {
     window.open(socialShareLinks[platform], "_blank"); 
     handleOpenCongratulationsCard()
-
   };
   // console.log("displayedText",displayedText)
   return (
@@ -1138,7 +1150,7 @@ const WizardResult = () => {
                     },
                     {
                       id: 4,
-                      label: `${Math.round(data?.country_score * 3.17) || 5* 3.17}%`,
+                      label: `${(data?.country_score * 3.17) || 5* 3.17}%`,
                       position:
                         "top-80 mt-14 -left-10 md:mt-0 md:-top-14 md:left-3",
                       bgColor: "linear-gradient(135deg, #6a11cb, #2575fc)",

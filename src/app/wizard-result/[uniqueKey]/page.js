@@ -522,14 +522,14 @@ const WizardResult = () => {
                   <div className="text-sm text-gray-600">Investment</div>
                   <div className="text-xl">
                     {parseInt(data?.investment_plan) == 1
-                      ? "Less than 1 Lakh "
+                      ? "Less than 1K USD "
                       : parseInt(data?.investment_plan) == 2
-                      ? "1 Lakh ₹ - 10 Lakh ₹"
+                      ? "1K USD - 10K USD"
                       : parseInt(data?.investment_plan) == 3
-                      ? "10 Lakh ₹ - 50 Lakh ₹"
+                      ? "10K USD - 50K USD"
                       : parseInt(data?.investment_plan) == 4
-                      ? "50 Lakh ₹ - 1 Crore ₹"
-                      : "More than 1 Crore ₹"}
+                      ? "50K USD - 100K USD"
+                      : "More than 100K USD"}
                   </div>
                 </div>
                 <div>
@@ -688,10 +688,10 @@ const WizardResult = () => {
           <div className=" w-[100%]">
             <div className=" text-left ">
               <h2 className=" mb-0 text-left">Market Research Analytics</h2>
-              <p className="text-left">
+              {/* <p className="text-left">
                 Slight changes may occur in the results depending on market
                 trends.
-              </p>
+              </p> */}
             </div>
             <div className="business-overview items-center">
               <div className="overview-left md:pr-10">

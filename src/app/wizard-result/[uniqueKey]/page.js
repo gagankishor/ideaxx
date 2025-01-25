@@ -476,7 +476,7 @@ const WizardResult = () => {
     <>
       <div className=" py-5">
         <h2 className=" mb-0 text-center">Results Summary Overview</h2>
-        <p className="text-center">
+        <p className="text-center max-w-[80%] mx-auto">
           Slight changes may occur in the results depending on market trends.
         </p>
       </div>
@@ -510,7 +510,7 @@ const WizardResult = () => {
           <div className="bg-gray-200 h-[1px] w-full my-5"></div>
           <div className="space-y-4">
             <div className=" flex flex-col justify-between md:flex-row">
-              <div className="w-[50%] pr-2">
+              <div className="md:w-[50%] pr-2">
                 <div className=" ">
                   <div className="text-sm text-gray-600">Idea</div>
                   <div className="text-xl">
@@ -544,7 +544,7 @@ const WizardResult = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[50%]">
+              <div className="md:w-[50%]">
                 <div>
                   <div className="text-sm text-gray-600">
                     Experience with your idea
@@ -600,7 +600,7 @@ const WizardResult = () => {
           <div className="bg-gray-200 h-[1px] w-full my-5"></div>
           <div className="space-y-4">
             <div className=" flex flex-col justify-between md:flex-row">
-              <div className="w-[50%]">
+              <div className="md:w-[50%]">
                 <div className=" ">
                   <div className="text-sm text-gray-600">Market Potential</div>
                   <div className="text-xl">
@@ -625,7 +625,7 @@ const WizardResult = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[50%]">
+              <div className="md:w-[50%]">
                 <div>
                   <div className="text-sm text-gray-600">
                     Competitive Landscape
@@ -697,7 +697,7 @@ const WizardResult = () => {
               </p> */}
             </div>
             <div className="business-overview items-center">
-              <div className="overview-left md:pr-10">
+              <div className="overview-left md:pr-10 " >
                 <div
                   className="overview-item"
                   style={{ marginTop: "20px", position: "relative" }}
@@ -826,7 +826,7 @@ const WizardResult = () => {
                   </div>
                 </div>
               </div>
-              <div className="overview-right " style={{ margin: "0px" }}>
+              <div className="overview-right md:pt-20 lg:pt-0" style={{ margin: "0px" }}>
                 {[
                   {
                     href: "#market",
@@ -1095,7 +1095,7 @@ const WizardResult = () => {
                 )}
               </div>
             </div>
-            <div className="overview-right h-full">
+            <div className="overview-right h-full md:flex-col md:pt-20 lg:pt-0">
               {[
                 {
                   href: "#idea",
@@ -1176,7 +1176,7 @@ const WizardResult = () => {
                   <div
                     href={item.href}
                     key={index}
-                    className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 md:min-w-[380px] ${
+                    className={`circular-progress   flex flex-col items-center w-full lg:w-1/3 p-5 lg:min-w-[380px] ${
                       index !== 0
                         ? "xl-custom:border-l-2 xl-custom:border-gray-300"
                         : ""
@@ -1306,7 +1306,7 @@ const WizardResult = () => {
                         </text>
                       </svg>
                     </div>
-                    <div className="description-box-parent">
+                    <div className="w-full">
                       <h4 className=" text-left mt-12">
                         Your idea description
                       </h4>
@@ -1314,7 +1314,7 @@ const WizardResult = () => {
                       <textarea
                         placeholder="Describe your idea in few line ..."
                         value={data?.idea_description || ""}
-                        className="description-box "
+                        className="border-gray-500 border  p-2 w-full h-32 rounded-md "
                         aria-label="Description box"
                         rows="4"
                         readOnly
@@ -1375,7 +1375,7 @@ const WizardResult = () => {
                 {/* <div>{textForTipData}</div> */}
               </div>
             </div>
-            <div className="overview-right h-full">
+            <div className="overview-right h-full md:flex-col md:pt-20 lg:pt-0">
               {[
                 {
                   href: "#ideax",
@@ -1500,7 +1500,7 @@ const WizardResult = () => {
                   <div
                     href={item.href}
                     key={index}
-                    className={`circular-progress   flex flex-col items-center w-full md:w-1/3 p-5 pr-0 md:min-w-[380px] ${
+                    className={`circular-progress   flex flex-col items-center w-full lg:w-1/3 p-5 lg:pr-0 lg:min-w-[380px] ${
                       index !== 0
                         ? "xl-custom:border-l-2 xl-custom:border-gray-300"
                         : ""
@@ -1626,7 +1626,7 @@ const WizardResult = () => {
                         </text>
                       </svg>
                     </div>
-                    <p className="mt-16 max-w-[300px] text-justify mb-0 text-base md:text-lg lg:text-sm font-thin text-gray-800">
+                    <p className="mt-16 max-w-[300px] md:max-w-full text-justify mb-0 text-base md:text-lg lg:text-sm font-thin text-gray-800">
                       Enhance your idea&rsquo;s success with interactive
                       demonstrations, a user-friendly mobile responsive, social
                       media integration, and personalized recommendations.
@@ -1666,16 +1666,16 @@ const WizardResult = () => {
           reality, <span className="font-semibold">launch</span> your idea now.
         </h1>
 
-        <div className="btns-container mt-10 flex md:flex-row justify-center gap-5">
+        <div className="btns-container mt-10 flex flex-col md:flex-row justify-center items-center gap-5">
           <button
-            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto md:mx-0"
             style={{ fontSize: "14px" }}
             onClick={handleOpenMotivationalCard}
           >
             Get More Free Test <FaArrowAltCircleRight />
           </button>
           <Link
-            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-0"
+            className="btn flex items-center mt-7 justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto md:mx-0"
             style={{ fontSize: "14px" }}
             href="/plan-details"
           >

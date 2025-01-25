@@ -142,7 +142,7 @@ export default function Footer() {
     },
   ];
   const renderDropdownList = (items, startIndex) => (
-    <ul className="space-y-2 text-left">
+    <ul className="space-y-2 text-left ">
       {items.map((item, index) => {
         const fullIndex = startIndex + index;
         const isActive = activeDropdown === fullIndex;
@@ -245,7 +245,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-6 gap-8 text-sm text-gray-600 md:h-[400px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-600 lg:grid-cols-6 lg:h-[450px]">
         <div>
           <p className="font-semibold mb-4 text-left">AI Tools</p>
           {renderDropdownList(aiTools, 0)}
@@ -265,7 +265,7 @@ export default function Footer() {
             aiTools.length + solutions.length + services.length
           )}
         </div>
-        <div className="md:col-span-2 ">
+        <div className="col-span-2 ">
           <Image src="/logo.webp" alt="ideax logo" width={200} height={200} />
           <ul className="space-y-2 text-left p-2">
             <li className="mt-4">
@@ -376,7 +376,7 @@ export default function Footer() {
               <FaFacebook size={30} />
             </a>
           </div>
-          <div className="flex space-x-4 ">
+          <div className="flex space-x-4  ">
             <Link href="/termsOfService">Terms of Use</Link>
             <Link href="/privacyPolicy">Privacy Policy</Link>
             <span>&copy; 2024-2025 Ideax, Inc</span>

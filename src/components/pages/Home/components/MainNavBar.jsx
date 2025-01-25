@@ -47,8 +47,8 @@ export const MainNavBar = () => {
   return (
     <>
       <nav className="border-b-[1px] border-gray-100">
-        <div className="container border-b-[1px] border-gray-100">
-          <div className="logo-side ">
+        <div className="container border-b-[1px] border-gray-100" style={{ padding: "9px 20px" }}>
+          <div className="logo-side py-auto">
             <Link href="/">
               {" "}
               <div className="w-12">
@@ -57,7 +57,7 @@ export const MainNavBar = () => {
                   height={200}
                   src="/logo.webp"
                   sizes="8"
-                  className=" bg-black rounded-full p-1"
+                  className="rounded-full"
                   alt=" IDX on Solana"
                 />
               </div>

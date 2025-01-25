@@ -3965,7 +3965,7 @@ nav .container .burger {
 
 .stat-item {
   position: relative;
-  height: 445px;
+  /* height: 445px; */
   border-radius: 8px;
   overflow: hidden; 
   display: flex;

@@ -7,7 +7,7 @@ const testimonials = [
     videoSrc: "/BelloAnimationsVideo.mp4",
     image:"/landing/360HomeDecore.webp",
     quote:
-      "The tools provided a significant breakthrough in streamlining our operations and achieving key milestones.",
+      "The tools provided a significant breakthrough in streamlining our operations and achieving  milestones.",
     name: "Mr. Taki Kedo",
     title: "CEO, 360 Home decor",
     stats: [
@@ -139,10 +139,10 @@ const ImpactSection = () => {
             <Slider
               ref={sliderRef}
               {...settings}
-              className="w-full max-w-[340px] sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1200px] 2xl:max-w-[1400px] mx-auto pt-8 "
+              className="w-full max-w-[340px] sm:max-w-[640px] md:max-w-[738px] lg:max-w-[980px] xl:max-w-[1200px] 2xl:max-w-[1400px] mx-auto pt-8 "
             >
               {testimonials.map((testimonial, index) => (
-                <div className="stat-item relative" key={index}>
+                <div className="stat-item relative md:h-[415px] lg:h-[445px]" key={index}>
                   <div className="absolute w-full h-full  lg:block">
                   {testimonial.imageSrc ? (
                     <img
@@ -169,7 +169,7 @@ const ImpactSection = () => {
                     </div>
                   )}
                 </div>
-                  <div className="relative z-10 p-14 bg-opacity-75  bg-black h-full md:bg-opacity-35">
+                  <div className="relative z-10 p-7 md:p-7 bg-opacity-50  bg-black h-full md:bg-opacity-35">
                     <div className="flex flex-col md:flex-row items-start h-full">
                       <div className="md:w-2/3 flex flex-col justify-end space-y-2 h-full">
                         <p className="text-sm font-medium text-left">
@@ -195,7 +195,7 @@ const ImpactSection = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="md:w-1/3 text-left space-y-2 h-full flex flex-col items-start">
+                      <div className="hidden md:w-1/3 text-left space-y-2 h-full  md:flex flex-col items-start">
                         {testimonial.stats.map((stat, statIndex) => (
                           <div
                             key={statIndex}

@@ -33,8 +33,8 @@ import Modal from "react-modal";
 import { RestAPI } from "@/config/Api";
 import { useParams } from "next/navigation";
 import axios from "axios";
+import useAxiosWithAuth from "@/config/useAxiosWithAuth";
 // import useAxiosWithAuth from "@/config/useAxiosWithAuth";
-
 Chart.register(ArcElement, Tooltip, Legend);
 const CircularProgress = ({
   percentage,
@@ -86,7 +86,7 @@ const WizardResult = () => {
   // const [displayedText, setDisplayedText] = useState("");
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  // const axiosInstance = useAxiosWithAuth();
+  const axiosInstance = useAxiosWithAuth();
   const { uniqueKey } = params;
   useEffect(() => {
     const fetchData = async () => {
@@ -258,7 +258,7 @@ const WizardResult = () => {
           ((20 -
             parseFloat(CompetitiveLandscapeData?.finalScore?.replace("%", "")) /
               5) *
-            60) /
+            60) /  
             100
         ) +
         parseFloat(((20 - parseFloat(data?.marketPotential) / 5) * 60) / 100)
@@ -402,21 +402,24 @@ const WizardResult = () => {
   const onCloseCongratulations = () => {
     setShowCongratulations(false);
   };
-  const handleOpenCongratulationsCard = () => {
-
-    // try {
-    //   const endpoint = `/points/addPoint`;
-    //   const response = await axiosInstance({
-    //     method: "post",
-    //     url: endpoint,
-    //     headers: {
-    //       Accept: "application/vnd.api+json",
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   });
-    // } catch (error) {
-    //   console.error("Error deleting result:", error);
-    // }
+  const handleOpenCongratulationsCard = async (platform) => {
+    try {
+      const endpoint = `/points/add`;
+      const response = await axiosInstance({
+        method: "post",
+        url: endpoint,
+        data: { activity: platform },
+        headers: {
+          Accept: "application/vnd.api+json",
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      if (response.status === 200) {
+        console.log("Points added successfully");
+      }
+    } catch (error) {
+      console.error("Error adding points:", error);
+    }
     setShowCongratulations(true);
     onRequestTaskCompletion(false);
     setShareModalOpen(false);
@@ -430,13 +433,13 @@ const WizardResult = () => {
 
   };
   const tasks = [
-    {
-      title: "Daily Check-in Task",
-      description: "Login daily to this button game page",
-      points: "+1",
-      button: "Claim Now",
-      onclickButton:handleOpenCongratulationsCard
-    },
+    // {
+    //   title: "Daily Check-in Task",
+    //   description: "Login daily to this button game page",
+    //   points: "+1",
+    //   button: "Claim Now",
+    //   onclickButton:handleOpenCongratulationsCard
+    // },
     {
       title: "Share Your Result",
       description: "Share your result and get 2 free test ",
@@ -466,7 +469,7 @@ const WizardResult = () => {
   };
   const handleShare = (platform) => {
     window.open(socialShareLinks[platform], "_blank"); 
-    handleOpenCongratulationsCard()
+    handleOpenCongratulationsCard(platform)
   };
   // console.log("displayedText",displayedText)
   return (

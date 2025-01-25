@@ -2,38 +2,52 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
 const AnimatedText = ({ score }) => {
-  const [currentScore, setCurrentScore] = useState(score);
-
+  const [currentScore, setCurrentScore] = useState(0);
+  const parsedScore = parseFloat(score);
+  
   useEffect(() => {
-    // if (typeof score !== "number" || isNaN(score)) return;
+    if (typeof parsedScore !== "number" || isNaN(parsedScore)) {
+      console.error("Invalid score value:", parsedScore);
+      setCurrentScore(0); // Fallback value
+      return;
+    }
+    else{
 
-    const duration = 2000; // Total duration of the animation in ms
-    const steps = 60; // Number of updates during the animation
-    const increment = score / steps; // Amount to increment per step
-    const intervalDuration = duration / steps; // Duration per step
+      
+      const duration = 2000; // Total animation duration in ms
+    const steps = 60; // Number of steps for the animation
+    const increment = parsedScore / steps; // Value to add per step
+    const intervalDuration = duration / steps; // Time per step in ms
 
-    let current = increment;
+    let current = 0; // Ensure `current` is always a number
     let stepCount = 0;
 
     const interval = setInterval(() => {
       stepCount += 1;
-      current = stepCount === steps ? score : current + increment;
+      current = stepCount === steps ? parsedScore : current + increment;
 
-      setCurrentScore(parseFloat(current.toFixed(2)));
-
+      // Ensure current is a valid number before updating the state
+      if (typeof current === "number" && !isNaN(current)) {
+        setCurrentScore(parseFloat(current.toFixed(2)));
+      } else {
+        console.error("Invalid current value during animation:", current);
+        clearInterval(interval);
+      }
+      
       if (stepCount >= steps) {
-        clearInterval(interval); // Clear interval at the last step
+        clearInterval(interval); // Clear the interval at the final step
       }
     }, intervalDuration);
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    
+    return () => clearInterval(interval); // Cleanup on unmount
+  }
   }, [score]);
 
   return <>{currentScore}</>;
 };
 
 AnimatedText.propTypes = {
-  score: PropTypes.number.isRequired, // Ensure score is passed and is a number
+  score: PropTypes.number.isRequired, // Ensure score is a required number
 };
 
 export default AnimatedText;

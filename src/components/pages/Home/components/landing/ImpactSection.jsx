@@ -124,7 +124,7 @@ const ImpactSection = () => {
   return (
     <section className="flex flex-col  items-center bg-gradient-to-b from-[#341E81] to-[#341E81] py-12 text-white">
       <div className="impact-section text-center">
-        <h2 className="max-w-[98%] text-3xl font-bold mb-14">
+        <h2 className="max-w-[98%] text-3xl px-5 font-bold mb-14">
           Delivering impact across 200+ industries
         </h2>
         <div className="impact-details flex justify-center items-start gap-8 max-w-5xl mx-auto">

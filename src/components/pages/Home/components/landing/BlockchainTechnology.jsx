@@ -4,7 +4,7 @@ const BlockchainTechnology = () => {
     <div className="bg-gray-900 mt-20 text-gray-100 py-12 px-6 sm:px-16">
       {/* Headline */}
       <h2
-        className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB] "
+        className="text-4xl  font-bold text-left mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#29DAB9] to-[#9348FB] "
         
       >
         Our Blockchain Technology
@@ -15,7 +15,7 @@ const BlockchainTechnology = () => {
         className="mb-12"
         
       >
-        <h3 className="text-2xl font-semibold mb-4 text-[#29DAB9]">
+        <h3 className="text-2xl text-left font-semibold mb-4 text-[#29DAB9]">
           Harness the Speed of Solana
         </h3>
         <p className="text-lg text-left text-gray-300 leading-7">
@@ -36,7 +36,7 @@ const BlockchainTechnology = () => {
         className="mb-12"
         
       >
-        <h3 className="text-xl font-semibold mb-4 text-[#29DAB9]">
+        <h3 className="text-xl text-left font-semibold mb-4 text-[#29DAB9]">
           Reduced Operational Costs
         </h3>
         <p className="text-lg text-left text-gray-300 leading-7">
@@ -52,7 +52,7 @@ const BlockchainTechnology = () => {
       <section
         
       >
-        <h3 className="text-xl font-semibold mb-4 text-[#29DAB9]">
+        <h3 className="text-xl text-left font-semibold mb-4 text-[#29DAB9]">
           Security Features
         </h3>
         

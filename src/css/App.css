@@ -3610,7 +3610,7 @@ nav .container .burger {
     width: 100%;
   } */
   .hero .container .hero-block {
-    width: 100vw;
+    /* width: 100vw; */
     overflow: hidden;
   }
   nav .container .right-side ul li {

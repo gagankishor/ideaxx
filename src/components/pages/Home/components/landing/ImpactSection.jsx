@@ -1,6 +1,7 @@
 "use client"
 import Slider from "react-slick";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 const testimonials = [
   {
     videoSrc: "/BelloAnimationsVideo.mp4",
@@ -176,10 +177,11 @@ const ImpactSection = () => {
                         </p>
                         <div className=" flex flex-row gap-5">
                           <div>
-                            <img
+                            <Image
                               src={testimonial.image}
                               alt={testimonial.name}
                               width={50}
+                              height={70}
                               className=" w-[50px] rounded-full"
                             />
                           </div>

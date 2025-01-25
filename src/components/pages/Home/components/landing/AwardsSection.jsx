@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import TrustBoxWidget from "./TrustBoxWidget";
+import Image from "next/image";
 const AwardsSection = () => {
   const blogs = [
     {
@@ -109,10 +110,12 @@ const AwardsSection = () => {
                     <div
                       className="flex-shrink-0 w-full md:w-60"
                     >
-                      <img
+                      <Image
                         src={blog.image}
                         className="w-full md:w-60 h-auto rounded-md object-cover"
                         alt={`Blog ${blog.id}`}
+                        width={240}
+                        height={160}
                       />
                     </div>
                     <div className="flex-grow w-full">

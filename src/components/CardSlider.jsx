@@ -170,7 +170,7 @@ const CardSlider = () => {
                   objectFit: "cover",
                   backgroundColor: "transparent",
                 }}
-                height={200}
+                height={400}
                 width={350}
                 className="slider-card-image"
               />

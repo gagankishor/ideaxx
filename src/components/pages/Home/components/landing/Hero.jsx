@@ -54,14 +54,14 @@ export const Hero = () => {
                     </div>
           <Image
                       width={400}
-                      height={400}
+                      height={200}
                       src="/Startup-Business-Idea-Checker-Online-Ideax.webp"
                       alt="Startup Idea Checker"
                       className="motion-img1 animate-bounce-up"
                     />
                     <Image
                       width={400}
-                      height={400}
+                      height={200}
                       src="/Startup-Business-Idea-Checker-Online-Ideax-2.webp"
                       alt="Business idea checker online"
                       className="motion-img2 animate-bounce-down"

@@ -55,7 +55,7 @@ export const MainNavBar = () => {
                 <Image
                   width={200}
                   height={200}
-                  src="/logo.webp"
+                  src="/logo2.webp"
                   sizes="8"
                   className="rounded-full"
                   alt=" IDX on Solana"

@@ -266,7 +266,7 @@ export default function Footer() {
           )}
         </div>
         <div className="col-span-2 ">
-          <Image src="/logo.webp" alt="ideax logo" width={200} height={200} />
+          <Image src="/logo2.webp" alt="ideax logo" width={200} height={200} />
           <ul className="space-y-2 text-left p-2">
             <li className="mt-4">
               Ideax empowers entrepreneurs with AI-driven tools, market

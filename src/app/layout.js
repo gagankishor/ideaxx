@@ -5,8 +5,8 @@ import "../css/App.css";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "IDX on Solana - IDX Token - Enterprise Crypto Blockchain Solution",
-  description: "IDX on Solana is the top crypto token of 2025 with highest growth potential. Buy IDX token today. Best Enterprises Blockchain Solution.",
+  title: "IDX on Solana - IDX Token - Enterprise blockchain solution",
+  description: "IDX on Solana is the top crypto token of 2025 with highest growth potential. Buy IDX token today. Best enterprises crypto blockchain solution.",
   keywords: "IDX on Solana, IDX Token, IDX Crypto, Solana IDX Token, IDX Token price, IDX Token Purchase",
   icons: {
     icon: "/favicon.ico", 

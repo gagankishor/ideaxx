@@ -3,7 +3,6 @@ import { Blogs } from '@/components/components/Blogs';
 import { EnterpriseLaunch } from '@/components/components/EnterpriseLaunch';
 import { Pletforms } from '@/components/components/Pletforms';
 import { RiSeoLine } from 'react-icons/ri'
-
 export const SEO = () => {
     const blogs = [
         { id: 1, name: "Blog", logo: "/blog.webp", link: "#" },
@@ -19,7 +18,6 @@ export const SEO = () => {
       ];
   return (
     <>
-      
       <div className="dashboard container">
         <div className="content">
           <h1 id="heading">

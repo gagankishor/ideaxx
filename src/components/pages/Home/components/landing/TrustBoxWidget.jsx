@@ -195,7 +195,7 @@ const TrustBoxWidget = () => {
                       target: "_blank",
                       rel: "noopener noreferrer",
                       image: {
-                        src: "/award-section/Coinmarketcap_svg_logo.png",
+                        src: "/award-section/Coinmarketcap_svg_logo_w.webp",
                         alt: "coin MarketCap logo",
                         className: "w-48",
                       },

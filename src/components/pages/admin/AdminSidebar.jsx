@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   Users,
-  
   LogOut,
   Menu,
   X,
@@ -17,7 +16,7 @@ import PropTypes from 'prop-types';
 
 const menuItems = [
   {
-    title: 'Dashboard',
+    title: 'Admin Dashboard',
     icon: Home,
     path: '/admin'
   },
@@ -227,13 +226,13 @@ const AdminSidebar = () => {
       >
         {/* Logo */}
         <div className="flex items-center justify-center h-16 border-b border-gray-200">
-          <Link href="/admin/dashboard" className="text-xl font-bold text-gray-800">
+          <Link href="/admin" className="text-xl font-bold text-gray-800">
             Admin Panel
           </Link>
         </div>
 
         {/* Navigation */}
-        <nav className="p-4 space-y-2 overflow-hidden" role="navigation">
+        <div className="p-4 space-y-2 overflow-hidden" role="navigation">
           {menuItems.map((item) => (
             <MenuItem
               key={item.title}
@@ -244,7 +243,7 @@ const AdminSidebar = () => {
               onLinkClick={handleLinkClick}
             />
           ))}
-        </nav>
+        </div>
 
         {/* Logout Button */}
         <div className="absolute bottom-0 w-full p-4 border-t border-gray-200">

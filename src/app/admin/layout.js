@@ -1,46 +1,25 @@
-"use client";
-
-import  { useState } from "react";
 import PropTypes from 'prop-types';
+import AdminSidebar from '@/components/pages/admin/AdminSidebar';
 
 const AdminLayout = ({ children }) => {
-  
-  const [showNotifications, setShowNotifications] = useState(false);
-  const [showUserMenu, setShowUserMenu] = useState(false);
-
-  // Get the current page title from the pathname
-  
-
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Main Content */}
-      
-      <div className="p-10">
-        {/* Top Navigation Bar */}
+      {/* Sidebar */}
+      <AdminSidebar />
 
+      {/* Main Content */}
+      <div className="lg:ml-64">
         {/* Main Content Area */}
-        <main className=" ">
-          {/* Breadcrumbs */}
-          {/* <AdminSidebar /> */}
-          {/* Page Content */}
+        <main className="min-h-screen">
           <div className="">{children}</div>
         </main>
       </div>
-
-      {/* Click Away Listeners */}
-      {(showNotifications || showUserMenu) && (
-        <div
-          className="fixed inset-0 z-20"
-          onClick={() => {
-            setShowNotifications(false);
-            setShowUserMenu(false);
-          }}
-        />
-      )}
     </div>
   );
 };
+
 AdminLayout.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
+
 export default AdminLayout;

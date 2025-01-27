@@ -97,7 +97,7 @@ const AdminTestResults = () => {
         <div className="bg-white rounded-lg shadow-lg p-6">
           <div className="flex items-center mb-6">
             <UserIcon className="w-6 h-6 text-blue-500 mr-2" />
-            <h1 className="text-2xl font-bold text-gray-800">User Management</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Test Results</h1>
           </div>
 
           {error && (

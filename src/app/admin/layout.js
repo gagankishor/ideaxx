@@ -15,7 +15,7 @@ const AdminLayout = ({ children }) => {
     <div className="min-h-screen bg-gray-50">
       {/* Main Content */}
       
-      <div className="lg:ml-64">
+      <div className="p-10">
         {/* Top Navigation Bar */}
 
         {/* Main Content Area */}

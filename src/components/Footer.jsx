@@ -230,10 +230,10 @@ export default function Footer() {
               Business solutions platform powered by Solana network{" "}
             </h4>
             <Link href="https://solana.com/" className="hidden md:block">
-              <img src="/landing/image.webp" width={25} alt="Solana logo" />
+              <Image src="/landing/image.webp" width={25} height={25} alt="Solana logo" />
             </Link>
           </div>
-          <div className="btns-container">
+          <div className="btns-container"> 
             <Link
               className="btn flex items-center justify-center gap-2 px-4 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               style={{ fontSize: "14px" }}

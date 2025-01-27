@@ -8,7 +8,7 @@ const HeroSection = () => {
         Empower Your Business with IDX on Solana
       </h1>
       <div className="flex items-baseline space-x-0 mb-8">
-        <img src="/logo2.webp" width={200} height={200} alt="IDX Token" className="" />
+        <img src="/logo2.webp" width={150} height={150} alt="IDX Token" className="h-24 w-24" />
       </div>
       <p className="text-lg sm:text-xl text-center text-gray-300 mb-8 max-w-lg">
         Streamline operations, enhance security, and drive efficiency with our AI-driven blockchain solution.

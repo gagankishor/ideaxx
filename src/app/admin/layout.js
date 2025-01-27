@@ -1,6 +1,7 @@
 "use client";
 
 import  { useState } from "react";
+import PropTypes from 'prop-types';
 
 const AdminLayout = ({ children }) => {
   
@@ -39,5 +40,7 @@ const AdminLayout = ({ children }) => {
     </div>
   );
 };
-
+AdminLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 export default AdminLayout;

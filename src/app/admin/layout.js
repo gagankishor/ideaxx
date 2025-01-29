@@ -35,7 +35,7 @@ const AdminLayout = ({ children }) => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center">
         <h1 className="text-2xl font-bold text-red-500">Access Denied</h1>
-        <p className="text-gray-700 mt-2">You don't have admin access.</p>
+        <p className="text-gray-700 mt-2">You don&lsquo;t have admin access.</p>
       </div>
     );
   }

@@ -9,10 +9,10 @@ export default {
         has: [
           {
             type: 'host',
-            value: 'www.ideax.in',
+            value: 'www.idxsolana.io',
           },
         ],
-        destination: 'https://ideax.in/:path*',
+        destination: 'https://idxsolana.io/:path*',
         permanent: true,
       },
     ];

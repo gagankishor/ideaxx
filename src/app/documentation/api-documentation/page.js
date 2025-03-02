@@ -55,7 +55,7 @@ const APIDocumentation = () => {
                   <div className="bg-gray-800 p-2 rounded">
                     <span className="text-blue-500 font-mono">POST</span>
                     <code className="block mt-1 text-sm overflow-x-auto">
-                      https://ideax.in/api/get-idea-result
+                      https://idxsolana.io/api/get-idea-result
                     </code>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const APIDocumentation = () => {
                     <td className="p-4">
                       <span className="text-blue-500 font-mono">POST</span>{" "}
                       <code className="bg-gray-800 px-2 py-1 rounded">
-                        https://ideax.in/api/get-idea-result
+                        https://idxsolana.io/api/get-idea-result
                       </code>
                     </td>
                   </tr>
@@ -267,7 +267,7 @@ const APIDocumentation = () => {
                 <div className="bg-gray-900 rounded-lg p-4">
                   <div className="font-bold text-gray-200 mb-2">Base URL</div>
                   <code className="block bg-gray-800 p-2 rounded text-sm overflow-x-auto scrollbar-hover">
-                    https://ideax.in/api/widget/:uniqueKey
+                    https://idxsolana.io/api/widget/:uniqueKey
                   </code>
                 </div>
 
@@ -331,7 +331,7 @@ const APIDocumentation = () => {
                     </th>
                     <td className="p-4">
                       <code className="bg-gray-800 px-2 py-1 rounded">
-                        https://ideax.in/api/widget/:uniqueKey
+                        https://idxsolana.io/api/widget/:uniqueKey
                       </code>
                     </td>
                   </tr>
@@ -391,7 +391,7 @@ const APIDocumentation = () => {
             </h3>
             <pre className="bg-[#1E1E1E] p-4 rounded text-sm text-[#C0C0C0] overflow-x-auto relative scrollbar-hover">
               {`<iframe
-              src="https://idxsolana.io/api/widget/abc123"
+              src="https://idxsolana.io/api/widget/415a86cd"
               width="300"
               height="200"
               style="border: none;">
@@ -400,7 +400,7 @@ const APIDocumentation = () => {
                 className="absolute top-2 right-2 bg-[#3B3B3B] text-white px-2 py-1 rounded text-xs"
                 onClick={() =>
                   copyToClipboard(`<iframe
-                  src="https://idxsolana.io/api/widget/abc123"
+                  src="https://idxsolana.io/api/widget/415a86cd"
                   width="300"
                   height="200"
                   style="border: none;">
@@ -417,7 +417,7 @@ const APIDocumentation = () => {
             </h3>
             <div className="overflow-hidden rounded-lg border bg-white">
               <iframe
-                src="https://idxsolana.io/api/widget/fe3492f0"
+                src="https://idxsolana.io/api/widget/415a86cd"
                 width="100%"
                 height="400"
                 className="w-full h-96"

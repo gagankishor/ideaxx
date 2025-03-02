@@ -294,7 +294,7 @@ const APIDocumentation = () => {
                         <span className="font-semibold">Logo:</span> A logo
                         image hosted at{" "}
                         <code className="bg-gray-700 px-1 rounded">
-                          https://ideax.in/logo.png
+                          https://idxsolana.io/logo.png
                         </code>
                       </li>
                       <li>
@@ -357,7 +357,7 @@ const APIDocumentation = () => {
                           <span className="font-semibold">Logo:</span> A logo
                           image hosted at{" "}
                           <code className="bg-gray-800 px-2 py-1 rounded">
-                            https://ideax.in/logo.png
+                            https://idxsolana.io/logo.png
                           </code>
                         </li>
                         <li>

@@ -28,4 +28,4 @@ AlertDescription.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string
 };
-  export { Alert, AlertDescription };
+export { Alert, AlertDescription };

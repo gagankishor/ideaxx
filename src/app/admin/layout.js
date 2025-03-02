@@ -21,9 +21,9 @@ const AdminLayout = ({ children }) => {
         }
       } catch (error) {
         console.error("Error fetching admin permissions:", error);
-        router.replace("/404");
+        setIsAdmin(false);
       }
-    };
+    }; 
 
     checkAdminPermission();
   }, [router, axiosInstance]);

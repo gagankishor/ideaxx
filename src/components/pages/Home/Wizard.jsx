@@ -883,7 +883,7 @@ export default function Wizard() {
                             </button>
                           </div>
                         ) : (
-                          <div>
+                          <div>     
                             {localStorage?.getItem("email") && (
                               <div
                                 className="email-container"
